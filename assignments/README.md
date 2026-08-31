@@ -1,17 +1,18 @@
 # Lab Assignments
 
-| Lab | Title | Status |
-| --- | --- | --- |
-| [Lab 1](lab-01/) | Getting Started with Geographic Information Systems | ✅ Converted |
-| [Lab 2](lab-02/) | Map Symbology and Layouts | ✅ Converted |
-| Lab 3 | GPS Data Collection and Importing Into QGIS | Google Docs |
-| Lab 4 | Changing, Editing, and Fixing GIS Data | Google Docs |
-| Lab 5 | Working with Raster Data | Google Docs |
-| Lab 6 | Spatial Data Web Services | Google Docs |
-| Lab 7 | Projections and Coordinate Systems | Google Docs |
-| Lab 8 | Metadata | Google Docs |
-| Lab 9 | Geoprocessing: The Yellowstone Disaster | Google Docs |
-| Lab 10 | Geoplanning: Domes for Mozambique | Google Docs |
-| Lab 11 | Workflows: Walmart Site Selection | Google Docs |
+| Lab | Title |
+| --- | --- |
+| [Lab 1](lab-01/) | Getting Started with Geographic Information Systems |
+| [Lab 2](lab-02/) | Map Symbology and Layouts |
+| [Lab 3](lab-03/) | GPS Data Collection and Importing Into QGIS |
+| [Lab 4](lab-04/) | Changing, Editing, and Fixing GIS Data |
+| [Lab 5](lab-05/) | Working with Raster Data |
+| [Lab 6](lab-06/) | Spatial Data Web Services |
+| [Lab 7](lab-07/) | Projections and Coordinate Systems |
+| [Lab 8](lab-08/) | Metadata |
+| [Lab 9](lab-09/) | Geoprocessing — The Yellowstone Disaster |
+| [Lab 10](lab-10/) | Geoplanning — Domes for Mozambique |
+| [Lab 11](lab-11/) | Workflows — Walmart Site Selection |
 
-Each converted lab is a folder containing a `README.md` (the assignment, which GitHub renders when you open the folder) and an `images/` directory.
+Each lab is a folder containing a `README.md` (the assignment, which GitHub
+renders when you open the folder) and an `images/` directory.

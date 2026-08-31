@@ -13,4 +13,4 @@ Geomatics is the discipline of gathering, analyzing, and visualizing geographic 
 
 ## Status
 
-This repository is a pilot migration of the course materials from Google Docs to Markdown. Labs 1 and 2 are converted; Labs 3–11 remain in Google Docs for now.
+All 11 lab assignments are converted from the course Google Docs (see `tools/` for the conversion pipeline). Lecture materials are coming soon.
