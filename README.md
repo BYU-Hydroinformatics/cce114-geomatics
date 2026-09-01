@@ -10,6 +10,7 @@ Geomatics is the discipline of gathering, analyzing, and visualizing geographic 
 | --- | --- |
 | [assignments/](assignments/) | Lab assignments (one folder per lab, with images) |
 | [lectures/](lectures/) | Lecture materials (coming soon) |
+| [policies/](policies/) | Course policies, including the [AI Use Policy](policies/ai-policy.md) |
 
 ## Status
 
