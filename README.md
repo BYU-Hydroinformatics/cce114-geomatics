@@ -2,7 +2,7 @@
 
 Course materials for **Civil and Construction Engineering 114 (Geomatics)** at Brigham Young University, taught by Dr. Dan Ames.
 
-**📖 Read the course site: https://danames.github.io/cce114-geomatics/**
+**📖 Read the course site: https://danames.com/cce114-geomatics/**
 
 The site is built with [MkDocs Material](https://squidfunk.github.io/mkdocs-material/) from the Markdown in [`docs/`](docs/) and redeploys automatically on every push to `main`.
 
