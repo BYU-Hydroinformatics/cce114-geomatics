@@ -26,4 +26,5 @@ Geomatics is the discipline of gathering, analyzing, and visualizing geographic 
 
 ## Lectures
 
-Lecture materials are coming soon.
+Interactive web slide decks, starting with [Day 1](lectures/README.md) (Course
+Introduction · Introduction to GIS). More converted as the semester goes.

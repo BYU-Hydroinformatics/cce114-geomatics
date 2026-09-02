@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 92 1240 368" width="1240" height="368">
+<rect x="0" y="92" width="1240" height="368" fill="#FFFFFF"/>
+<defs>
+<marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+  <path d="M 0 0 L 10 5 L 0 10 z" fill="#E0722F"/>
+</marker>
+<marker id="ab" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+  <path d="M 0 0 L 10 5 L 0 10 z" fill="#7FA6BC"/>
+</marker>
+</defs>
+<text x="30" y="118" font-family="Calibri, Helvetica, Arial, sans-serif" font-size="15" font-weight="700" fill="#5F7183" letter-spacing="2.2">BUILT FROM</text>
+<text x="670" y="118" font-family="Calibri, Helvetica, Arial, sans-serif" font-size="15" font-weight="700" fill="#5F7183" letter-spacing="2.2">SUPPORTS WORK IN</text>
+<rect x="30" y="150" width="125" height="52" rx="9" fill="#E6EEF4" stroke="#7FA6BC" stroke-width="1.5"/><text x="92.5" y="176.0" font-family="Calibri, Helvetica, Arial, sans-serif" font-size="13.5" font-weight="600" fill="#1E2A38" text-anchor="middle" dominant-baseline="central">Surveying</text>
+<rect x="165" y="150" width="125" height="52" rx="9" fill="#E6EEF4" stroke="#7FA6BC" stroke-width="1.5"/><text x="227.5" y="176.0" font-family="Calibri, Helvetica, Arial, sans-serif" font-size="13.5" font-weight="600" fill="#1E2A38" text-anchor="middle" dominant-baseline="central">Geodesy</text>
+<rect x="30" y="212" width="125" height="52" rx="9" fill="#E6EEF4" stroke="#7FA6BC" stroke-width="1.5"/><text x="92.5" y="238.0" font-family="Calibri, Helvetica, Arial, sans-serif" font-size="13.5" font-weight="600" fill="#1E2A38" text-anchor="middle" dominant-baseline="central">Remote Sensing</text>
+<rect x="165" y="212" width="125" height="52" rx="9" fill="#E6EEF4" stroke="#7FA6BC" stroke-width="1.5"/><text x="227.5" y="238.0" font-family="Calibri, Helvetica, Arial, sans-serif" font-size="13.5" font-weight="600" fill="#1E2A38" text-anchor="middle" dominant-baseline="central">Photogrammetry</text>
+<rect x="30" y="274" width="125" height="52" rx="9" fill="#E6EEF4" stroke="#7FA6BC" stroke-width="1.5"/><text x="92.5" y="300.0" font-family="Calibri, Helvetica, Arial, sans-serif" font-size="13.5" font-weight="600" fill="#1E2A38" text-anchor="middle" dominant-baseline="central">Cartography</text>
+<rect x="165" y="274" width="125" height="52" rx="9" fill="#E6EEF4" stroke="#7FA6BC" stroke-width="1.5"/><text x="227.5" y="300.0" font-family="Calibri, Helvetica, Arial, sans-serif" font-size="13.5" font-weight="600" fill="#1E2A38" text-anchor="middle" dominant-baseline="central">GIS &amp; Computing</text>
+<rect x="30" y="336" width="125" height="52" rx="9" fill="#E6EEF4" stroke="#7FA6BC" stroke-width="1.5"/><text x="92.5" y="362.0" font-family="Calibri, Helvetica, Arial, sans-serif" font-size="13.5" font-weight="600" fill="#1E2A38" text-anchor="middle" dominant-baseline="central">Spatial Planning</text>
+<rect x="165" y="336" width="125" height="52" rx="9" fill="#E6EEF4" stroke="#7FA6BC" stroke-width="1.5"/><text x="227.5" y="362.0" font-family="Calibri, Helvetica, Arial, sans-serif" font-size="13.5" font-weight="600" fill="#1E2A38" text-anchor="middle" dominant-baseline="central">Land Law</text>
+<path d="M 300 212 L 392 270" stroke="#7FA6BC" stroke-width="2.4" fill="none" marker-end="url(#ab)" opacity="0.85"/>
+<path d="M 300 270 L 392 270" stroke="#7FA6BC" stroke-width="2.4" fill="none" marker-end="url(#ab)" opacity="0.85"/>
+<path d="M 300 328 L 392 270" stroke="#7FA6BC" stroke-width="2.4" fill="none" marker-end="url(#ab)" opacity="0.85"/>
+<circle cx="490" cy="270" r="94" fill="none" stroke="#E0722F" stroke-width="3"/>
+<circle cx="490" cy="270" r="86" fill="#2E5468"/>
+<path d="M 448 230 L 490 217 L 532 230 L 490 243 Z" fill="#FFFFFF" opacity="0.45"/>
+<path d="M 448 242 L 490 229 L 532 242 L 490 255 Z" fill="#FFFFFF" opacity="0.65"/>
+<path d="M 448 254 L 490 241 L 532 254 L 490 267 Z" fill="#FFFFFF" opacity="0.85"/>
+<text x="490" y="300" font-family="Calibri, Helvetica, Arial, sans-serif" font-size="26" font-weight="700" fill="#FFFFFF" text-anchor="middle">GEOMATICS</text>
+<text x="490" y="404" font-family="Calibri, Helvetica, Arial, sans-serif" font-size="13" fill="#5F7183" text-anchor="middle">knowing <tspan font-style="italic">where</tspan> things are — and what that means</text>
+<path d="M 588 270 L 660 212" stroke="#E0722F" stroke-width="2.4" fill="none" marker-end="url(#ar)" opacity="0.9"/>
+<path d="M 588 270 L 660 270" stroke="#E0722F" stroke-width="2.4" fill="none" marker-end="url(#ar)" opacity="0.9"/>
+<path d="M 588 270 L 660 328" stroke="#E0722F" stroke-width="2.4" fill="none" marker-end="url(#ar)" opacity="0.9"/>
+<rect x="670" y="150" width="172" height="52" rx="9" fill="#5E8F71" stroke="#5E8F71" stroke-width="1.5"/><text x="756.0" y="176.0" font-family="Calibri, Helvetica, Arial, sans-serif" font-size="13.5" font-weight="700" fill="#FFFFFF" text-anchor="middle" dominant-baseline="central">Engineering Design</text>
+<rect x="854" y="150" width="172" height="52" rx="9" fill="#5E8F71" stroke="#5E8F71" stroke-width="1.5"/><text x="940.0" y="176.0" font-family="Calibri, Helvetica, Arial, sans-serif" font-size="13.5" font-weight="700" fill="#FFFFFF" text-anchor="middle" dominant-baseline="central">Construction</text>
+<rect x="1038" y="150" width="172" height="52" rx="9" fill="#5E8F71" stroke="#5E8F71" stroke-width="1.5"/><text x="1124.0" y="176.0" font-family="Calibri, Helvetica, Arial, sans-serif" font-size="13.5" font-weight="700" fill="#FFFFFF" text-anchor="middle" dominant-baseline="central">Environment &amp; Water</text>
+<rect x="670" y="212" width="172" height="52" rx="9" fill="#5E8F71" stroke="#5E8F71" stroke-width="1.5"/><text x="756.0" y="238.0" font-family="Calibri, Helvetica, Arial, sans-serif" font-size="13.5" font-weight="700" fill="#FFFFFF" text-anchor="middle" dominant-baseline="central">Land Management</text>
+<rect x="854" y="212" width="172" height="52" rx="9" fill="#EDF4EE" stroke="#8FB39A" stroke-width="1.5"/><text x="940.0" y="238.0" font-family="Calibri, Helvetica, Arial, sans-serif" font-size="13.5" font-weight="600" fill="#1E2A38" text-anchor="middle" dominant-baseline="central">Site Selection</text>
+<rect x="1038" y="212" width="172" height="52" rx="9" fill="#EDF4EE" stroke="#8FB39A" stroke-width="1.5"/><text x="1124.0" y="238.0" font-family="Calibri, Helvetica, Arial, sans-serif" font-size="13.5" font-weight="600" fill="#1E2A38" text-anchor="middle" dominant-baseline="central">Asset Management</text>
+<rect x="670" y="274" width="172" height="52" rx="9" fill="#EDF4EE" stroke="#8FB39A" stroke-width="1.5"/><text x="756.0" y="300.0" font-family="Calibri, Helvetica, Arial, sans-serif" font-size="13.5" font-weight="600" fill="#1E2A38" text-anchor="middle" dominant-baseline="central">Emergency Response</text>
+<rect x="854" y="274" width="172" height="52" rx="9" fill="#EDF4EE" stroke="#8FB39A" stroke-width="1.5"/><text x="940.0" y="300.0" font-family="Calibri, Helvetica, Arial, sans-serif" font-size="13.5" font-weight="600" fill="#1E2A38" text-anchor="middle" dominant-baseline="central">Utilities &amp; Operations</text>
+<rect x="1038" y="274" width="172" height="52" rx="9" fill="#EDF4EE" stroke="#8FB39A" stroke-width="1.5"/><text x="1124.0" y="300.0" font-family="Calibri, Helvetica, Arial, sans-serif" font-size="13.5" font-weight="600" fill="#1E2A38" text-anchor="middle" dominant-baseline="central">Logistics &amp; Routing</text>
+<rect x="670" y="336" width="172" height="52" rx="9" fill="#EDF4EE" stroke="#8FB39A" stroke-width="1.5"/><text x="756.0" y="362.0" font-family="Calibri, Helvetica, Arial, sans-serif" font-size="13.5" font-weight="600" fill="#1E2A38" text-anchor="middle" dominant-baseline="central">Demographics</text>
+<rect x="854" y="336" width="172" height="52" rx="9" fill="#EDF4EE" stroke="#8FB39A" stroke-width="1.5"/><text x="940.0" y="362.0" font-family="Calibri, Helvetica, Arial, sans-serif" font-size="13.5" font-weight="600" fill="#1E2A38" text-anchor="middle" dominant-baseline="central">Compliance</text>
+<rect x="1038" y="336" width="172" height="52" rx="9" fill="#EDF4EE" stroke="#8FB39A" stroke-width="1.5"/><text x="1124.0" y="362.0" font-family="Calibri, Helvetica, Arial, sans-serif" font-size="13.5" font-weight="600" fill="#1E2A38" text-anchor="middle" dominant-baseline="central">Finance &amp; Marketing</text>
+<rect x="670" y="424" width="17" height="17" rx="4" fill="#5E8F71"/>
+<text x="696" y="437" font-family="Calibri, Helvetica, Arial, sans-serif" font-size="13" fill="#5F7183">core to civil, environmental &amp; construction engineering</text>
+</svg>
