@@ -2,16 +2,15 @@
 
 Course materials for **Civil and Construction Engineering 114 (Geomatics)** at Brigham Young University, taught by Dr. Dan Ames.
 
-Geomatics is the discipline of gathering, analyzing, and visualizing geographic and spatial data — surveying, GPS, GIS, remote sensing, and mapping. This course uses [QGIS](https://qgis.org/) (3.44 LTR) and public data sources such as the [Utah SGID](https://gis.utah.gov/products/sgid/).
+**📖 Read the course site: https://danames.github.io/cce114-geomatics/**
 
-## Contents
+The site is built with [MkDocs Material](https://squidfunk.github.io/mkdocs-material/) from the Markdown in [`docs/`](docs/) and redeploys automatically on every push to `main`.
 
-| Folder | What's inside |
+| Where | What |
 | --- | --- |
-| [assignments/](assignments/) | Lab assignments (one folder per lab, with images) |
-| [lectures/](lectures/) | Lecture materials (coming soon) |
-| [policies/](policies/) | Course policies, including the [AI Use Policy](policies/ai-policy.md) |
+| [docs/assignments/](docs/assignments/) | Lab assignments 1–11 (one folder per lab, with images) |
+| [docs/policies/](docs/policies/) | Course policies, including the [AI Use Policy](docs/policies/ai-policy.md) |
+| [docs/lectures/](docs/lectures/) | Lecture materials (coming soon) |
+| [tools/](tools/) | The Google Docs → Markdown conversion pipeline |
 
-## Status
-
-All 11 lab assignments are converted from the course Google Docs (see `tools/` for the conversion pipeline). Lecture materials are coming soon.
+To preview locally: `pip install mkdocs-material mkdocs-github-admonitions-plugin && mkdocs serve`

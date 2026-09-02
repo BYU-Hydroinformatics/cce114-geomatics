@@ -25,7 +25,7 @@ These are open-book, untimed, and designed to reinforce reading and lecture conc
 ## 3. Labs
 AI is a great assistant for troubleshooting QGIS errors, explaining geoprocessing steps, or helping you write up your lab report more clearly. However, you must personally perform all data manipulation, analysis, and map-making — AI should support your understanding of the software and writing, not replace your hands-on work in QGIS. Disclose how you used it in your report.
 
-Some assignments are *designed* around AI: Lab 3 requires an AI-generated error report, and the Web Mapping with AI Experience is AI-assisted from the start. Each lab also ends with a short **"Using AI on This Lab"** section with specific suggestions for that lab — read it ([assignments](../assignments/)).
+Some assignments are *designed* around AI: Lab 3 requires an AI-generated error report, and the Web Mapping with AI Experience is AI-assisted from the start. Each lab also ends with a short **"Using AI on This Lab"** section with specific suggestions for that lab — read it ([assignments](../assignments/README.md)).
 
 One bright line applies to every lab: **never present AI-generated results, screenshots, or measurements as something you produced in QGIS or in the field.** Fabricated data is an integrity problem, not an AI style choice.
 

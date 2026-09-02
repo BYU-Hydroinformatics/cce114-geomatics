@@ -1,0 +1,63 @@
+site_name: CCE 114 — Geomatics
+site_description: Course materials for Civil and Construction Engineering 114 (Geomatics) at BYU
+site_url: https://danames.github.io/cce114-geomatics/
+repo_url: https://github.com/danames/cce114-geomatics
+repo_name: danames/cce114-geomatics
+
+theme:
+  name: material
+  features:
+    - navigation.sections
+    - navigation.top
+    - navigation.footer
+    - toc.integrate
+    - content.code.copy
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  icon:
+    logo: material/map
+
+extra_css:
+  - stylesheets/extra.css
+
+plugins:
+  - search
+  - gh-admonitions
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - tables
+  - pymdownx.tilde
+  - pymdownx.superfences
+  - toc:
+      permalink: true
+
+nav:
+  - Home: index.md
+  - Assignments:
+      - Overview: assignments/README.md
+      - Lab 1 — Getting Started with GIS: assignments/lab-01/README.md
+      - Lab 2 — Map Symbology and Layouts: assignments/lab-02/README.md
+      - Lab 3 — GPS Data Collection: assignments/lab-03/README.md
+      - Lab 4 — Changing, Editing, Fixing Data: assignments/lab-04/README.md
+      - Lab 5 — Working with Raster Data: assignments/lab-05/README.md
+      - Lab 6 — Spatial Data Web Services: assignments/lab-06/README.md
+      - Lab 7 — Projections & Coordinate Systems: assignments/lab-07/README.md
+      - Lab 8 — Metadata: assignments/lab-08/README.md
+      - Lab 9 — The Yellowstone Disaster: assignments/lab-09/README.md
+      - Lab 10 — Domes for Mozambique: assignments/lab-10/README.md
+      - Lab 11 — Walmart Site Selection: assignments/lab-11/README.md
+  - Policies:
+      - AI Use Policy: policies/ai-policy.md
+  - Lectures: lectures/README.md
