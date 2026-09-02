@@ -168,8 +168,6 @@ Culverts are enclosed conduits, acting as subterranean drains or tunnels, that p
 
 ![Double-arch concrete culvert carrying a stream under a road](images/anchored14.png)
 
-1. ~~Download and drag the Culverts in Spanish Fork.gpkg, River in Spanish Fork.gpkg, Fixed Spanish Fork.gpkg, and Utah\_Canals\_Broken.gpkg~~
-
 Instead of a canned download, you are going to pull live data straight from UGRC's SGID server — the same source Utah's engineering firms use.
 
 1\. Open the Data Source Manager (Layer \> Data Source Manager) and click the Vector tab. Set Source Type to "Protocol: HTTP(S), cloud, etc.", leave the Type as "GeoJSON", and paste the address below into the URI box. (That long address is simply a question we are asking UGRC's server: "please send just the streams and canals around Spanish Fork.")
@@ -180,39 +178,36 @@ https://services1.arcgis.com/99lidPhWCzftIe9K/arcgis/rest/services/UtahStreamsNH
 
 2\. Click Add, then Close. A layer named "query" appears with about 98 waterway features, including the Spanish Fork River, the East Bench Canal, and the Mapleton Lateral.
 
+> [!NOTE]
+> If the live server is ever down, a backup copy of this data is here: [SF_Waterways.gpkg](data/SF_Waterways.gpkg) — download it, drag it into QGIS, and skip to step 4.
+
 3\. That layer lives on the internet and cannot be edited there. Right-click it, choose Export \> Save Features As..., set the Format to GeoPackage, save it in your lab folder as "SF\_Waterways.gpkg" with layer name "Waterways", and set the CRS to EPSG:26912. Click OK, then remove the temporary "query" layer so only Waterways remains.
 
 4\. Give the Waterways layer a bright blue line symbol so it stands out against the imagery, and SAVE your project.
 
 ### **Finding the mistakes**
 
-~~Import the culverts layer along with the spanish fork and rivers layer. Look around at the culvert layer. You’ll notice that there are 15 points, but none of the points are actually on culverts. It will be your job to locate the culvert and move the point so your project can be more precise~~
-
-> [!TIP]
-> Look at points where the River and Canals connect\!
-
 These waterway lines were originally digitized from older, smaller-scale USGS maps. Zoom in and follow the East Bench Canal, which runs a few hundred meters west of the temple site. In places, the blue line drifts noticeably off the actual canal you can see in the aerial imagery. Your job is to fix a piece of it: pick a stretch of canal at least 300 meters (about 1,000 feet) long where the line and the imagery disagree, and take a BEFORE screenshot of it — you will need this screenshot for your deliverables.
 
 ### **Fixing the lines with the Vertex Tool**
 
-2. Click on the Waterways layer so that it is highlighted and toggle the yellow pencil in the toolbar. Your layer is now in editing mode.  
-3. If you do not see the editing tools, right click on the toolbar ribbons at the top and make sure both “Digitizing Toolbar” and “Advanced Digitizing Toolbar” are checked   
-4. Now select the Vertex Tool on the Digitizing Toolbar. Hover over your chosen stretch of canal: click a vertex to grab it, then click again to drop it right on the canal centerline you see in the imagery. Double-click on a segment to add a new vertex where the line needs to bend, and click a vertex and press Delete to remove one that should not be there  
-5. ~~(There is only one point for each waterway/intersection.)~~
+1. Click on the Waterways layer so that it is highlighted and toggle the yellow pencil in the toolbar. Your layer is now in editing mode.  
+2. If you do not see the editing tools, right click on the toolbar ribbons at the top and make sure both “Digitizing Toolbar” and “Advanced Digitizing Toolbar” are checked   
+3. Now select the Vertex Tool on the Digitizing Toolbar. Hover over your chosen stretch of canal: click a vertex to grab it, then click again to drop it right on the canal centerline you see in the imagery. Double-click on a segment to add a new vertex where the line needs to bend, and click a vertex and press Delete to remove one that should not be there  
 
 Work down the whole stretch until your blue line follows the real canal, then take your AFTER screenshot from the same zoom level. Click Save Layer Edits and toggle editing off.
 
 ### **Mapping the culverts**
 
-6. First, create one last GeoPackage point layer named "Culverts" (Layer \> Create Layer \> New GeoPackage Layer..., Geometry Type: Point) with two fields: Waterway (Text) and Road (Text). Then open Project \> Snapping Options and make sure snapping to the Waterways layer is turned on — every culvert point should land exactly on the waterway line it belongs to. Finally, toggle editing on the Culverts layer.  
-7. Now it is up to you to figure out where the culverts should go. To add a point, toggle this button (Add Point Feature). Everywhere you click, there will be a new point — and thanks to snapping, points placed near a waterway will lock right onto the line. Fill in the Waterway and Road attributes for each culvert as you go.   
-8. When you click, there will be a pop-up. Hit ok or enter if you want to keep that point, or cancel if you want to delete it.  
-9. You should map a minimum of 10 culverts. (Hint: look at where canals and streams cross under roads — every crossing without a visible bridge needs a culvert.)
+1. First, create one last GeoPackage point layer named "Culverts" (Layer \> Create Layer \> New GeoPackage Layer..., Geometry Type: Point) with two fields: Waterway (Text) and Road (Text). Then open Project \> Snapping Options and make sure snapping to the Waterways layer is turned on — every culvert point should land exactly on the waterway line it belongs to. Finally, toggle editing on the Culverts layer.  
+2. Now it is up to you to figure out where the culverts should go. To add a point, toggle this button (Add Point Feature). Everywhere you click, there will be a new point — and thanks to snapping, points placed near a waterway will lock right onto the line. Fill in the Waterway and Road attributes for each culvert as you go.   
+3. When you click, there will be a pop-up. Hit ok or enter if you want to keep that point, or cancel if you want to delete it.  
+4. You should map a minimum of 10 culverts. (Hint: look at where canals and streams cross under roads — every crossing without a visible bridge needs a culvert.)
 
 ![Vertex Tool tooltip over the map listing how to lock features and select, add, or remove vertices](images/anchored16.png)
 
-10. Once Finished, press the pencil over the save icon ![Digitizing toolbar with the Save Layer Edits button on the far right](images/image8.png)(far right) and then click the yellow pencil to deactivate editing mode.   
-11. **SAVE** your project
+5. Once Finished, press the pencil over the save icon ![Digitizing toolbar with the Save Layer Edits button on the far right](images/image8.png)(far right) and then click the yellow pencil to deactivate editing mode.   
+6. **SAVE** your project
 
 ## **Phase 4: The Map Layout**
 
