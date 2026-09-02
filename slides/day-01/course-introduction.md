@@ -100,7 +100,7 @@ Random sample Civil/Environmental/Construction jobs from Monster.com…
 
 <div>
 
-- New [lab assignment](https://danames.com/cce114-geomatics/assignments/lab-01/) each week
+- New [lab assignment](https://byu-hydroinformatics.github.io/cce114-geomatics/assignments/lab-01/) each week
 - Assigned/introduced in class on Tuesday
 - You are responsible to work independently on your lab starting as soon as it is assigned.
 - Due Saturday night
@@ -165,7 +165,7 @@ Random sample Civil/Environmental/Construction jobs from Monster.com…
   - Explaining a concept from the reading
 - Do the GIS work yourself: build your own maps, run your own analysis, and solve the problems with your own brain.
 - Always report it when you used AI to improve your report writing or to help solve any problems.
-- Full policy: [danames.com/cce114-geomatics/policies/ai-policy](https://danames.com/cce114-geomatics/policies/ai-policy/)
+- Full policy: [byu-hydroinformatics.github.io/cce114-geomatics/policies/ai-policy](https://byu-hydroinformatics.github.io/cce114-geomatics/policies/ai-policy/)
 
 </div>
 

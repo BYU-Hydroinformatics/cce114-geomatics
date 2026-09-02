@@ -277,7 +277,7 @@ As you go to different parts of the room/world, take a minute to get to know the
 - Read the assigned pages in *GIS Fundamentals* (Bolstad & Manson, 7th ed.)
 - Take the open-book quiz on Learning Suite — due Friday at midnight
 - Install QGIS on your own computer (free: [qgis.org/download](https://qgis.org/download))
-- [Lab 1](https://danames.com/cce114-geomatics/assignments/lab-01/) is assigned Tuesday and due Saturday night
+- [Lab 1](https://byu-hydroinformatics.github.io/cce114-geomatics/assignments/lab-01/) is assigned Tuesday and due Saturday night
 - Questions? Office hours: [calendly.com/dan-ames/office-hours](https://calendly.com/dan-ames/office-hours)
 
 <!-- Emphasise installing QGIS before Tuesday — Lab 1 assumes it's working on their own machine. -->
