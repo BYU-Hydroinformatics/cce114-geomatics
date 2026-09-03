@@ -20,11 +20,21 @@ Geomatics is the discipline of gathering, analyzing, and visualizing geographic 
 | [Lab 10](assignments/lab-10/README.md) | Geoplanning — Domes for Mozambique |
 | [Lab 11](assignments/lab-11/README.md) | Workflows — Walmart Site Selection |
 
-## Policies
+## Course Structure
 
-- [AI Use Policy](policies/ai-policy.md) — how to use AI well in this course (short version: use it to learn, always disclose, own your work).
+- [Course Overview](course.md) — description, instructors, prerequisites, textbook, learning outcomes, and how the course works.
+- [Schedule](schedule.md) — the 15-week sequence: Tuesday concept lectures, Thursday hands-on sessions, and what is due each week.
+- [Quizzes, Activities & Experiences](assignments/deliverables.md) and the [Final Project](assignments/final-project.md).
 
 ## Lectures
 
-Interactive web slide decks, starting with [Day 1](lectures/README.md) (Course
-Introduction · Introduction to GIS). More converted as the semester goes.
+Interactive web slide decks, one page per class day under [Lectures](lectures/README.md).
+Converted from the PowerPoints as the semester goes; Day 1 and Day 2 are up.
+
+## Policies
+
+- [Grading](policies/grading.md) — categories, grading scale, late work.
+- [Attendance & Participation](policies/attendance.md) — showing up, participating, classroom procedures.
+- [Exams](policies/exams.md) — two Concepts Exams in the Testing Center and a hands-on Final Exam.
+- [AI Use Policy](policies/ai-policy.md) — how to use AI well in this course (short version: use it to learn, always disclose, own your work).
+- [University Policies](policies/university.md) — Honor Code, plagiarism, Title IX, accessibility, mental health.
