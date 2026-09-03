@@ -85,4 +85,4 @@ Lab 3 Part 1 is the same collection at seven sites in groups, with a group avera
 
 - [Day 7 lecture page](../lectures/day-07.md)
 - [Lab 3: GPS Data Collection and Importing Into QGIS](../assignments/lab-03/README.md)
-- Tuesday's decks: [GPS, Part 1](https://byu-hydroinformatics.github.io/cce114-geomatics/slides/day-06/gps-part-1.html) and [GPS, Part 2](https://byu-hydroinformatics.github.io/cce114-geomatics/slides/day-07/gps-part-2.html)
+- Tuesday's deck: [The Global Positioning System](https://byu-hydroinformatics.github.io/cce114-geomatics/slides/day-06/gps-part-1.html); the [extended GPS slides](https://byu-hydroinformatics.github.io/cce114-geomatics/slides/day-07/gps-part-2.html) hold the longer metres demo if you want it

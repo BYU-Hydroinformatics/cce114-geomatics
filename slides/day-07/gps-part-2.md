@@ -12,12 +12,12 @@ footer: "CCE 114 · Day 7 — The Global Positioning System, Part 2"
 
 # The Global Positioning System
 
-## Part 2 — Trilateration, error, and metres
+## Extended slides — Trilateration, error, and metres
 
 CCE 114 Geomatics
 Dr. Dan Ames
 
-<!-- Tuesday, second half of the GPS lecture (Fall 2026: Parts 1 and 2 are both given on Tuesday of Week 4; Thursday is field collection and the QGIS import with Dr. Halgren). One graded activity today: "Where Am I", solved on paper and uploaded to Learning Suite, after the Air Force One warm-up. -->
+<!-- Reference deck. The Tuesday lecture uses the simplified "The Global Positioning System" deck, which already contains the Air Force One warm-up and the Prague activity. This deck keeps the longer material: the four-step position-fixing build, the error budget and PDOP arithmetic, and the latitude/longitude-to-metres demo, for anyone who wants the full story or for a semester with more time. -->
 
 ---
 

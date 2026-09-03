@@ -34,15 +34,15 @@ Everything else on Tuesdays is discussion and the quiz-style slides built into t
 
 ## Week 4: Find Air Force One
 
-*In the [GPS, Part 2](https://byu-hydroinformatics.github.io/cce114-geomatics/slides/day-07/gps-part-2.html) deck, "Warm-up: find Air Force One."*
+*In the [Global Positioning System](https://byu-hydroinformatics.github.io/cce114-geomatics/slides/day-06/gps-part-1.html) deck, "Warm-up: find Air Force One." The deck opens with the two activities and then gives the short GPS explanation.*
 
-**Setup, before class.** Tape a printed photo of Air Force One somewhere in the room, not in plain sight. Mark three fixed points in the room as satellites 1, 2, and 3 (a corner of the lectern, a door frame, a window sill; label them with sticky notes). Measure the straight-line distance from each satellite to the photo with a tape and put the three numbers on the slide. The 2021 classroom numbers on the slide (169, 216, 151 inches) belong to that room; re-measure for 234 CB.
+**Setup, before class.** Tape a printed photo of Air Force One somewhere in the room, not in plain sight. Mark three fixed points in the room as satellites 1, 2, and 3 (a corner of the lectern, a door frame, a window sill; label them with sticky notes). Measure the straight-line distance from each satellite to the photo with a tape and type the three numbers into the blanks on the slide (the 2021 room's were 169, 216, and 151 inches; re-measure for 234 CB).
 
 **Run.** Show the slide, give five minutes, let them use string, a tape, or their arms. Whoever finds it says how. The point: three ranges from three known points fix a position. That is trilateration, and it is the whole GPS idea before the math.
 
 ## Week 4: Where Am I: trilaterate Prague
 
-*Same deck, "Activity: Where Am I?"; the QGIS version by Harrison Stewart is in the Teaching folder under In class activities.*
+*Same deck, "Activity: Where Am I?" and "The answer: Prague"; the QGIS version by Harrison Stewart is in the Teaching folder under In class activities.*
 
 **Setup.** Printed maps of Europe with a scale bar, one per student, or let them use a web map with the measure tool. Compasses or string.
 

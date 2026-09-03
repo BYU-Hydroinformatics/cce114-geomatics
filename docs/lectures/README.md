@@ -26,7 +26,7 @@ rhythm starts in Week 2.
 
 ## Week 4: The Global Positioning System
 
-- Tue · [Day 6: The Global Positioning System](day-06.md) — slides: [The Global Positioning System, Part 1](https://byu-hydroinformatics.github.io/cce114-geomatics/slides/day-06/gps-part-1.html), [The Global Positioning System, Part 2](https://byu-hydroinformatics.github.io/cce114-geomatics/slides/day-07/gps-part-2.html)
+- Tue · [Day 6: The Global Positioning System](day-06.md) — slides: [The Global Positioning System](https://byu-hydroinformatics.github.io/cce114-geomatics/slides/day-06/gps-part-1.html), [GPS extended slides: trilateration build, error budget, metres demo (reference)](https://byu-hydroinformatics.github.io/cce114-geomatics/slides/day-07/gps-part-2.html)
 - Thu · [Day 7: GPS Field Data Collection and Importing Into QGIS](day-07.md) — [hands-on guide](../hands-on/week-04.md)
 
 ## Week 5: Working with Vector Data
