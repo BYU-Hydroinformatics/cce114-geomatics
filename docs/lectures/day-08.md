@@ -11,7 +11,7 @@
 
 ## Slides
 
-*Slides for this day are not on the site yet. They will be added as the semester goes.*
+- [Working with Vector Data](https://byu-hydroinformatics.github.io/cce114-geomatics/slides/day-08/working-with-vector-data.html)
 
 ## Reading
 

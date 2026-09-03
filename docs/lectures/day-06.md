@@ -10,7 +10,7 @@
 
 ## Slides
 
-*Slides for this day are not on the site yet. They will be added as the semester goes.*
+- [The Global Positioning System, Part 1](https://byu-hydroinformatics.github.io/cce114-geomatics/slides/day-06/gps-part-1.html)
 
 ## In-class activity
 

@@ -10,7 +10,7 @@
 
 ## Slides
 
-*Slides for this day are not on the site yet. They will be added as the semester goes.*
+- [Finding Spatial Data and Web Services](https://byu-hydroinformatics.github.io/cce114-geomatics/slides/day-12/finding-spatial-data-and-web-services.html)
 
 ## Reading
 

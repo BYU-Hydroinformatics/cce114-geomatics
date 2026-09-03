@@ -10,7 +10,7 @@
 
 ## Slides
 
-*Slides for this day are not on the site yet. They will be added as the semester goes.*
+- [Introduction to Geoprocessing](https://byu-hydroinformatics.github.io/cce114-geomatics/slides/day-18/introduction-to-geoprocessing.html)
 
 ## Materials
 

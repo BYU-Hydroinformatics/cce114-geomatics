@@ -9,7 +9,7 @@
 
 ## Slides
 
-*Slides for this day are not on the site yet. They will be added as the semester goes.*
+- [Introduction to CCE 414](https://byu-hydroinformatics.github.io/cce114-geomatics/slides/day-21/intro-to-cce-414.html)
 
 ## Materials
 

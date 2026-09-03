@@ -9,7 +9,7 @@
 
 ## Slides
 
-*Slides for this day are not on the site yet. They will be added as the semester goes.*
+- [Project Site Selection: the Walmart Problem](https://byu-hydroinformatics.github.io/cce114-geomatics/slides/day-22/walmart-site-selection.html)
 
 ## Materials
 
