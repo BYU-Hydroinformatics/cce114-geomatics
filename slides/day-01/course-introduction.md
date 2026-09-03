@@ -255,6 +255,38 @@ Dr. Dan Ames • Dr. James Halgren
 
 ---
 
+# Your Teaching Assistants
+
+<!-- TODO: photos. No pictures of the TAs exist in any source deck. When Harrison, Isabel, and Adriene send photos, save them as images/ci-ta-harrison.jpg, images/ci-ta-isabel.jpg, and images/ci-ta-adriene.jpg and replace the three placeholder <div>s below with <img src="..." style="width:100%; height:260px; object-fit:cover; border-radius:8px;" />. -->
+
+<div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; align-items: start; margin-top: 0.2em;">
+
+<div style="text-align: center;">
+<div style="height:260px; border-radius:8px; background:#e8edf3; display:flex; align-items:center; justify-content:center; font-size:3.2em; color:#7a8899;">HS</div>
+<div style="font-weight:700; margin-top:0.5em;">Harrison Stewart</div>
+<div style="font-size:0.72em; color:#555;">Labs and lab hours · leads the Web Mapping with AI kickoff</div>
+</div>
+
+<div style="text-align: center;">
+<div style="height:260px; border-radius:8px; background:#e8edf3; display:flex; align-items:center; justify-content:center; font-size:3.2em; color:#7a8899;">IF</div>
+<div style="font-weight:700; margin-top:0.5em;">Isabel Fullam</div>
+<div style="font-size:0.72em; color:#555;">Labs and lab hours · grades the Community and Professional Map Experience</div>
+</div>
+
+<div style="text-align: center;">
+<div style="height:260px; border-radius:8px; background:#e8edf3; display:flex; align-items:center; justify-content:center; font-size:3.2em; color:#7a8899;">AC</div>
+<div style="font-weight:700; margin-top:0.5em;">Adriene Cope</div>
+<div style="font-size:0.72em; color:#555;">Labs and lab hours · new to the course this semester</div>
+</div>
+
+</div>
+
+<p style="font-size:0.72em; color:#555; margin-top:1.1em;">Office hours, locations, and contact details are on Learning Suite. Come to lab hours early in the week, not the night before a lab is due.</p>
+
+<!-- The TAs are your first stop for lab help. Names are from the Fall 2026 Learning Suite syllabus; hours and rooms live on Learning Suite so this slide does not go stale. -->
+
+---
+
 <!-- _class: quiz -->
 
 # Who are you?
