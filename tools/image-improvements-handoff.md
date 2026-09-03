@@ -82,3 +82,28 @@ then `gh run watch` the pages.yml workflow and spot-check
 `https://byu-hydroinformatics.github.io/cce114-geomatics/assignments/lab-NN/` plus a
 direct image URL. Local preview if wanted: `pip install mkdocs-material
 mkdocs-github-admonitions-plugin && mkdocs serve` from the repo root.
+
+## Lecture deck follow-ups (added 2026-09-02, after converting Days 4-23)
+
+Every deck under `slides/day-NN/` ends with a `<!-- Conversion notes -->` comment. The items
+that need a person, collected from those notes:
+
+**ArcGIS/ArcMap screenshots to re-shoot in QGIS 3.44** (keep the filenames; the markdown
+references don't change):
+- Day 4: `mc-major-cities-icon-map.jpg` (student layout made in ArcMap; a QGIS Print Layout example would replace it).
+- Day 10: `ras-dem-3d-arcview.jpg` (ArcView 3D surface with streams; use a QGIS 3D view or slope/hillshade pair).
+- Day 14: `crs-arcgis-transformation-dialog.png` (ArcMap datum transformation dialog; replace with Project Properties > CRS); also find a QGIS way to show Tissot indicatrices.
+- Day 16: `md-qgis-metadata-panel.jpg` is QGIS but from a 2.x release; re-shoot Layer Properties > Metadata in 3.44.
+- Day 18: `gp-attribute-table-arcmap.jpg`, `gp-select-by-query-arcmap.jpg`, `gp-select-by-query-sql.png`, `gp-select-by-location-arcmap.jpg`.
+- Day 22: `ws-udot-routes-table.png`, `ws-select-i15.png`, `ws-model-builder.png` (attribute table, Select by Expression, Graphical Modeler).
+- Day 23: `fp-example-map.jpg` (past student's ArcMap final map; a QGIS example would be better).
+- Day 21: thirteen ArcGIS 10 screenshots are kept on purpose because the deck describes CCE 414; confirm which software CCE 414 uses now before deciding.
+
+**Instructor confirmations left as TODO comments in the decks:** Day 7 Air Force One room
+distances (re-measure for the actual classroom); Day 6 worked example keeps the source's
+non-GPS-scale numbers with a sanity-check callout; Day 12 and Day 23 class sign-up/scavenger
+sheet links (old Google links were dead); Day 4 poll answer key; Day 23 exam window; and the
+"due Saturday" lines on every Before Next Class slide should match Learning Suite each semester.
+
+**Not converted:** Day 20 Geoplanning (no source deck exists) and the Surveying decks (not in
+the current schedule).
