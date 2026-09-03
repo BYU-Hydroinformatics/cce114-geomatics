@@ -60,7 +60,7 @@ Dr. Dan Ames and Dr. James Halgren
 
 # A Quick Look: Utah County in QGIS
 
-- Unzip `UtahCountyData.zip`, then drag each layer into QGIS:
+- Download and unzip [UtahCountyData.zip](https://byu-hydroinformatics.github.io/cce114-geomatics/lectures/data/UtahCountyData.zip), then drag each layer into QGIS:
   - **UtahCountyBoundary**: one polygon. Where does the county end?
   - **UtahCountyMajorRoads**: polylines. Length, but no area.
   - **UtahCountyCellularTowers**: points. A location, nothing more.
@@ -621,7 +621,7 @@ Each pixel (raster cell) is stored as a hexadecimal number that tells the screen
 
 ![bg right:40% w:90%](images/dm-demo-point.png)
 
-- Create a map in QGIS with the Utah County data
+- Create a map in QGIS with the [Utah County data](https://byu-hydroinformatics.github.io/cce114-geomatics/lectures/data/UtahCountyData.zip)
 - Create a new **vector layer**, choosing the right geometry type
 - Use the editing toolbar to add points and edit vertices
 - Note the vocabulary: a *vector layer* is a **feature class** in a geodatabase, or a **shapefile** in a folder
@@ -634,7 +634,7 @@ Each pixel (raster cell) is stored as a hexadecimal number that tells the screen
 
 - Read Chapter 2, *Data Models*, in *GIS Fundamentals* (Bolstad & Manson)
 - Take the open-book quiz on Learning Suite
-- Bring your laptop with QGIS installed on Thursday
+- Bring your laptop with QGIS installed on Thursday, and download [UtahCountyData.zip](https://byu-hydroinformatics.github.io/cce114-geomatics/lectures/data/UtahCountyData.zip) beforehand
 - Current lab: see the [Assignments page](https://byu-hydroinformatics.github.io/cce114-geomatics/assignments/)
 - Questions? Office hours: [calendly.com/dan-ames/office-hours](https://calendly.com/dan-ames/office-hours)
 

@@ -14,5 +14,7 @@ a demo and hands-on session in QGIS (Dr. Halgren).
 ## Day 2
 
 - [GIS Data Models & File Formats](https://byu-hydroinformatics.github.io/cce114-geomatics/slides/day-02/gis-data-models.html)
+- Data for the demo and Thursday's hands-on session: [UtahCountyData.zip](data/UtahCountyData.zip) (38 MB;
+  county boundary, major roads, and cellular tower shapefiles plus a DEM)
 
 More lectures will be converted as the semester goes.
