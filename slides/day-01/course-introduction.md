@@ -187,7 +187,7 @@ Random sample Civil/Environmental/Construction jobs from Monster.com…
 
 # Introductions
 
-Dr. Dan Ames
+Dr. Dan Ames • Dr. James Halgren
 
 ---
 
@@ -219,6 +219,35 @@ Dr. Dan Ames
 <img src="images/ci-dan-winter-selfie.png" style="width:100%; height:150px; object-fit:cover;" />
 <img src="images/ci-dan-camp-dinner.jpg" style="width:100%; height:150px; object-fit:cover;" />
 <img src="images/ci-dan-boating-daughter.jpg" style="width:100%; height:150px; object-fit:cover;" />
+
+</div>
+
+</div>
+
+---
+
+# Dr. James Halgren
+
+<div class="columns" style="grid-template-columns: 1fr 2.1fr; align-items: start;">
+
+<div style="font-size: 0.78em;">
+
+- Rhode Island, Arvada (Denver), Provo, Fort Collins, DC, Tuscaloosa, Taylorsville
+- Chile Santiago South Mission
+- BYU, Colorado State University
+- National Weather Service, EDAW, RTi, RTI, Lynker, UA
+- Roll Tide!!!
+- Flood Mapping, Operational Hydrology
+- Cooperative Institute for Research to Operations in Hydrology
+
+</div>
+
+<div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 6px;">
+
+<img src="images/ci-james-1.jpg" style="width:100%; height:225px; object-fit:cover;" />
+<img src="images/ci-james-2.jpg" style="width:100%; height:225px; object-fit:cover;" />
+<img src="images/ci-james-3.jpg" style="width:100%; height:225px; object-fit:cover;" />
+<img src="images/ci-james-4.jpg" style="width:100%; height:225px; object-fit:cover;" />
 
 </div>
 
