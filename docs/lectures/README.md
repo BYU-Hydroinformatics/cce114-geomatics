@@ -7,6 +7,9 @@ Each week, **Tuesday** is a concepts lecture from these slides (Dr. Ames) and **
 a demo and hands-on session in QGIS (Dr. Halgren). Days are numbered from the first class
 meeting of the semester; see the [schedule](../schedule.md) for the week-by-week view.
 
+**Week 1 meets only once, on Thursday** (Day 1: course introduction). The Tuesday/Thursday
+rhythm starts in Week 2.
+
 ## Week 1: Introduction
 
 - Tue · [Day 1: Course Introduction and Introduction to GIS](day-01.md) — slides: [Course Introduction](https://byu-hydroinformatics.github.io/cce114-geomatics/slides/day-01/course-introduction.html), [Introduction to GIS](https://byu-hydroinformatics.github.io/cce114-geomatics/slides/day-01/intro-to-gis.html)

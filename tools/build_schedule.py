@@ -241,7 +241,9 @@ def lectures_index() -> str:
            "press <kbd>F</kbd> for fullscreen and <kbd>P</kbd> for presenter view with speaker notes.", "",
            "Each week, **Tuesday** is a concepts lecture from these slides (Dr. Ames) and **Thursday** is",
            "a demo and hands-on session in QGIS (Dr. Halgren). Days are numbered from the first class",
-           "meeting of the semester; see the [schedule](../schedule.md) for the week-by-week view.", ""]
+           "meeting of the semester; see the [schedule](../schedule.md) for the week-by-week view.", "",
+           "**Week 1 meets only once, on Thursday** (Day 1: course introduction). The Tuesday/Thursday",
+           "rhythm starts in Week 2.", ""]
     for w, info in WEEKS.items():
         out += [f"## Week {w}: {info['theme']}", ""]
         for d in DAYS:
