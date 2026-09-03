@@ -69,14 +69,14 @@ Your objective is to rectify these errors. Using a high-resolution aerial basema
 ## **Phase 1: Project Setup and Data Preparation**
 
 5. **Create New Layers (GeoPackage):** Navigate to Layer \> Create Layer \> New GeoPackage Layer... and create the following:  
-6. **Name your first layer “Street\_Lights”. Set the Geometry Type dropdown to Point. Finally, add New Fields (the schema) to your layer — for example: ID (Whole Number), Fixture\_Type (Text), Voltage (Whole Number).**  
-7. **Name your second layer “Curb\_Lines”. Set the Geometry Type dropdown to LineString. Finally, add fields — for example: ID (Whole Number), Material (Text), Condition (Text).**
+6. **Name your first layer “Street\_Lights”. Set the Geometry Type dropdown to Point. Finally, add New Fields (the schema) to your layer — for example: ID (Integer), Fixture\_Type (Text), Voltage (Integer).**  
+7. **Name your second layer “Curb\_Lines”. Set the Geometry Type dropdown to LineString. Finally, add fields — for example: ID (Integer), Material (Text), Condition (Text).**
 
 ![Layer menu open showing Create Layer and New GeoPackage Layer highlighted](images/image1.png)
 
-8. Make sure when creating each layer, you click the three dots next to Database and save the file into your lab folder (on the lab computers, your student folder on the D: drive) with the name required above. Otherwise, your GeoPackage Datasets won't save, losing all your progress. Pro Tip: Always make sure your project CRS is the same as your map\!  
+8. Make sure when creating each layer, you click the three dots next to File name and save the file into your lab folder (on the lab computers, your student folder on the D: drive) with the name required above. Otherwise, your GeoPackage Datasets won't save, losing all your progress. Leave the CRS dropdown set to Project CRS (EPSG:26912). Pro Tip: Always make sure your project CRS is the same as your map\!  
 
-![Database field showing a GeoPackage file path saved in the student's lab folder](images/anchored2.png)
+![File name field showing a GeoPackage file path saved in the student's lab folder](images/anchored2.png)
 
 9. Once you have created both layers, Street\_Lights and Curb\_Lines should appear in your Layers panel like this. (look below) To add a Schema or a table structure, look at the example below, fill out the “New Field” section and make sure to click “Add to Fields List” before you click ok. Pay attention though as each layer has different schema attributes — use the field lists from the layer descriptions above.  
 
@@ -97,12 +97,12 @@ There are several different techniques and algorithms for doing what we are tryi
 
 2. **Create a polygon layer** for the Spanish Fork Temple footprint in this area. The temple footprint itself should be about 30,000 square feet.  
 3. Go to Layer \> Create Layer \> New GeoPackage Layer... — the same tool you used in Phase 1, so all of your layers stay in the same GeoPackage format.  
-4. Next to “Database”, click the ellipses. Save it to your lab folder and name it “Temple\_Footprint”. Also add a Name field (Text type) — you will use it to label your buildings in the map layout later.  
+4. Next to “File name”, click the ellipses. Save it to your lab folder and name it “Temple\_Footprint”. Also add a Name field (Text type) — you will use it to label your buildings in the map layout later.  
 5. For “Geometry Type”, change it to “Polygon”.  
 6. Before you draw anything, skim ahead to the area-check steps near the end of Phase 2 — knowing the target square footage now will save you redraws later.  
 7. Make sure your screen looks like this and hit “OK”  
 
-![New layer dialog for the temple footprint with Polygon geometry type and an id field in the fields list](images/anchored5.png)
+![New GeoPackage Layer dialog for Temple_Footprint with Polygon geometry type, Project CRS EPSG:26912, and a Name text field in the fields list](images/anchored5.png)
 
 8. Before you continue\!\!\! **Configure your snapping options following the steps below:**  
    1. Navigate to **Project \> Snapping Options...** (or use the Snapping Toolbar).  

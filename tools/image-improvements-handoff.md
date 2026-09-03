@@ -26,7 +26,16 @@ re-shooting screenshots, not more pipeline work.
   `PROJ_LIB=.../Contents/Resources/qgis/proj GDAL_DATA=.../Contents/Resources/gdal`).
 - So either install QGIS 3.44 LTR side-by-side on the Mac (macOS dmg from
   qgis.org/download — LTR and latest coexist fine) or capture on a lab machine.
-- Best workflow found so far: **Dan drives QGIS, Claude does everything around it** —
+- **Best workflow (found 2026-09-02): QGIS captures its own dialogs.** Run
+  `tools/qgis_lab04_dialog_shots.py` from the QGIS Python console (instructions in the file
+  header). It opens each dialog via `iface` actions, fills widgets by `objectName`, and saves
+  `QWidget.grab()` PNGs at native Retina 2x — no screen-recording permission, no clicking,
+  no focus stealing. Gotchas: QGIS cannot read/write under ~/Desktop, ~/Documents or
+  ~/Downloads (macOS privacy), so keep scripts and output elsewhere; the profile
+  `python/startup.py` hook did not fire in 3.44, so paste the `exec(...)` line into the
+  console instead; `grab()` omits the macOS title bar. Lab 4's four dialog shots were
+  redone this way.
+- Fallback workflow for map-canvas shots: **Dan drives QGIS, Claude does everything around it** —
   tell him exactly what to set up on screen per shot (layers, zoom, dialog, which
   annotations), he screenshots (⌘⇧4/⌘⇧5; Retina gives 2× natively), drops files
   somewhere agreed, and Claude renames to the existing `images/` filenames (keep
@@ -38,12 +47,10 @@ re-shooting screenshots, not more pipeline work.
 
 ## Priority list (from the review/conversion agents' findings)
 
-**Lab 4 — highest priority (screenshots actively contradict the text):**
-1. `anchored5.png` shows the *New Shapefile Layer* dialog (EPSG:4326, .shp path) where
-   the text now says *New GeoPackage Layer* — re-shoot that dialog.
-2. `anchored2.png` / `anchored3.png` show a "Lab 3" folder path in the GeoPackage
-   save dialog — cosmetic but confusing; re-shoot with a Lab 4 path.
-3. `crs-dialog.png` is the one crop that stayed low-res (didn't match for upscaling).
+**Lab 4 — DONE 2026-09-02 for items 1–3** (`anchored5`, `anchored2`, `anchored3`,
+`crs-dialog` re-shot from QGIS 3.44 at 2x; README wording updated: the dialog row is now
+"File name" not "Database", field types are "Integer"/"Text", CRS left on Project CRS).
+Remaining:
 4. `anchored10–12, anchored14` are small culvert photos (~250 px, native resolution) —
    replace with better-resolution culvert photos (any source Dan likes) or leave.
 5. Data for staging shots: `docs/assignments/lab-04/data/SF_Waterways.gpkg` (98
