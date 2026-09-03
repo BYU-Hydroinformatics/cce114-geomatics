@@ -144,7 +144,9 @@ The satellite and your receiver generate the **same code at the same time**. The
 
 <!-- _class: quiz -->
 
-# How far away? Distance = Rate × Time
+# How far away is the satellite?
+
+![bg right:36% w:94%](images/gps-thunderclap-timing.jpg)
 
 A GPS satellite's code arrives **0.067 seconds** after it was sent. The speed of light is **299,792,458 m/s**. How far away is the satellite?
 
@@ -231,9 +233,11 @@ Negative longitude = west. Negative latitude = south.
 </div>
 <div>
 
+![w:330 center](images/gps-coordinate-formats.jpg)
+
 - Your phone and QGIS both prefer **decimal degrees**
 - Dropping the minus sign is the most common way to put Provo in China
-- <a href="https://tagis.dep.wv.gov/convert/" target="_blank">tagis.dep.wv.gov/convert</a> converts between formats
+- <a href="https://tagis.dep.wv.gov/convert/" target="_blank">tagis.dep.wv.gov/convert</a> converts formats
 
 </div>
 </div>
@@ -260,21 +264,24 @@ Negative longitude = west. Negative latitude = south.
 </div>
 <div>
 
+![w:360 center](images/gps-decimal-places.jpg)
+
 - Rounding is **throwing away accuracy you paid for**
 - A phone fix is good to a few meters, so it deserves **five decimal places**
-- Four decimals cannot resolve a building; two cannot resolve a city block
 - **Record every digit your phone gives you** on Thursday
 
 </div>
 </div>
 
-<!-- The practical takeaway of the hour. Students copy 40.25, -111.65 into a spreadsheet and wonder why the point lands in a field. -->
+<!-- Four decimals cannot resolve a building; two cannot resolve a city block. The practical takeaway of the hour. Students copy 40.25, -111.65 into a spreadsheet and wonder why the point lands in a field. -->
 
 ---
 
 <!-- _class: quiz -->
 
 # Precision or accuracy?
+
+![bg right:40% w:96%](images/gps-precision-accuracy.jpg)
 
 Your phone reports `40.2496612, -111.6493388` while sitting on a desk. The true position of the desk is 8 m away.
 
@@ -297,6 +304,8 @@ Your phone reports `40.2496612, -111.6493388` while sitting on a desk. The true 
 - **Latitude:** about **111 km per degree** everywhere
 - **Longitude shrinks toward the poles:** 111 km per degree at the equator, **zero** at the pole
 - At Provo (φ ≈ 40.25°): 1° of longitude ≈ 111,320 × cos φ ≈ **85 km**
+
+![w:230 center](images/gps-longitude-convergence.jpg)
 
 </div>
 <div>
@@ -400,6 +409,8 @@ Satellites bunched together → a **large** area of uncertainty. Satellites spre
 ---
 
 # Before Next Class
+
+![bg right:34% w:94%](images/gps-before-next-class.jpg)
 
 - Upload your **"Where Am I"** solution photo to Learning Suite today
 - Read **Chapter 5, GNSS and Coordinate Surveying**, in *GIS Fundamentals* (Bolstad & Manson)
