@@ -423,14 +423,13 @@ Also, for the record:
 
 # Point symbols can be anything
 
-![bg right:45% w:72%](images/mc-major-cities-icon-map.jpg)
+![bg right:55% w:97%](images/mc-major-cities-qgis-layout.png)
 
-- Student layout of the major cities of Salt Lake and Utah counties
-- Note that it has a **title**, a **legend**, a **north arrow**, a **scale bar**, a **neat line**, and a **spatial reference** block
-- The point marker is a picture icon — the stock icon happens to be a man named Dan Ames
-- Probably not related to Dr. Ames… probably
+- A QGIS **Print Layout** of the major cities of Salt Lake and Utah counties
+- It has a **title**, a **legend**, a **north arrow**, a **scale bar**, a **neat line**, and a **spatial reference** block
+- The marker is a star sized by population — but it could be any shape, an SVG, or a picture
 
-<!-- Map by David Shill, 10/15/19. Use it as the checklist slide in reverse: every required element is present. It also shows what happens when a picture marker is too large and too detailed for the scale of the map: the icons collide and the labels have to be pushed away with leader lines. -->
+<!-- Made in QGIS 3.44 Print Layout from UGRC SGID data (cities and towns, municipal and county boundaries; cities over 20,000 people). Use it as the checklist slide in reverse: every required element is present. The original student map (David Shill, 2019) used a picture marker that was too large and too detailed for the scale of the map: the icons collided and the labels had to be pushed away with leader lines. Worth describing as the cautionary tale, and the photo marker in that student version happened to be a man named Dan Ames, probably not related to Dr. Ames. -->
 
 ---
 
@@ -506,3 +505,5 @@ Also, for the record:
 <!-- Confirm the Saturday due dates on Learning Suite before class. Lab 2 uses the checklist from the middle of this lecture, so point back at it. -->
 
 <!-- Conversion notes (2026-09-02): source deck "Maps and Cartography.pptx" (2021 archive, 28 slides), plus four slides from "Interesting Map Perspectives.pptx" (red-vs-gray population, light pollution, land use, air traffic control zones). Source slide 28 ("Live Demo on Friday — Adjusting symbology in ArcGIS Pro") was replaced with the Thursday-with-Dr.-Halgren preview and rewritten for QGIS; no other source slide was dropped. Section-header slides 6, 11, and 23 became lead slides. Slides built from PowerPoint callout shapes (source slides 8, 15, 17-21) were re-rendered from the PDF at 150 dpi rather than rebuilt. The "Major Cities of Salt Lake and Utah Counties" student layout (mc-major-cities-icon-map.jpg) is an ArcMap/ArcGIS-produced layout; it is kept because the point is the layout checklist, but a QGIS-made replacement would be better. No other ArcGIS screenshots remain. Two slides were added that are not in the source: "The checklist for every map you turn in" and "Symbology by geometry type", both assembled from the callouts and poll options on source slide 8 and source slide 15. Course number corrected from CCE 214 to CCE 114 on the title slide. -->
+
+<!-- Update 2026-09-02: ArcGIS-era screenshots replaced with QGIS 3.44 captures made by tools/qgis_reshoot_screens.py: mc-major-cities-qgis-layout.png replaces the ArcMap student layout. -->

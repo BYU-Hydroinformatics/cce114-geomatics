@@ -140,44 +140,42 @@ Utah's data lives at the **Utah Geospatial Resource Center** (gis.utah.gov), the
 
 # View the Attribute Table
 
-![h:430 center](images/gp-attribute-table-arcmap.jpg)
+![h:430 center](images/gp-attribute-table-qgis.png)
 
-Every polygon is a row. To find Utah County, we need the row where the county name is `Utah`.
+Every polygon is a row. To find Utah County, we need the row where the county name is `UTAH`.
 
-<!-- Utah census counties attribute table. The point of the screenshot is that the geometry and the table are the same object seen two ways: highlight a row and the polygon lights up. NOTE: this is an old ArcMap screenshot; the QGIS attribute table behaves the same way. -->
+<!-- The UGRC Utah county boundaries attribute table in QGIS 3.44, with the Utah row selected and moved to the top. The point of the screenshot is that the geometry and the table are the same object seen two ways: highlight a row and the polygon lights up. -->
 
 ---
 
 # Select by Attribute: Find Utah County
 
-<div class="columns">
+<div class="columns" style="grid-template-columns: 1.3fr 1fr;">
 <div>
 
-![w:520 center](images/gp-select-by-query-arcmap.jpg)
+![w:640 center](images/gp-select-by-expression-qgis.png)
 
 </div>
 <div>
 
-![w:440 center](images/gp-select-by-query-sql.png)
-
-- A query on the **table**, not on the map
+- A query on the **table**, not on the map: `"NAME" = 'UTAH'`
 - In QGIS: **Select by Expression**, or *Processing Toolbox ▸ Vector selection ▸ Select by attribute*
 - The result is one selected polygon
 
 </div>
 </div>
 
-<!-- An attribute query knows nothing about geography; it is a database WHERE clause that happens to select shapes. NOTE: ArcMap screenshot. In QGIS the same query is written in the Select by Expression dialog as "NAME10" = 'Utah'. -->
+<!-- An attribute query knows nothing about geography; it is a database WHERE clause that happens to select shapes. This is the QGIS 3.44 Select by Expression dialog with "NAME" = 'UTAH' typed in; Select Features at the bottom right runs it. -->
 
 ---
 
 # Select by Location: Schools in Utah County
 
-![h:420 center](images/gp-select-by-location-arcmap.jpg)
+![h:440 center](images/gp-select-by-location-qgis.png)
 
 **Select by location** uses geometry, not attributes: give it a target layer, a source layer, and a spatial relationship — *intersects*, *within*, *touches*, *contains*.
 
-<!-- Here is the answer to "how many schools are in Utah County": select the schools whose points fall within the selected county polygon, then read the count at the bottom of the attribute table. This is the first genuinely spatial operation of the day. NOTE: ArcMap screenshot; QGIS has Vector ▸ Research Tools ▸ Select by Location with the same relationship list. -->
+<!-- Here is the answer to "how many schools are in Utah County": select the schools whose points fall within the selected county polygon, then read the count at the bottom of the attribute table. This is the first genuinely spatial operation of the day. This is the QGIS 3.44 Select by Location dialog (Vector ▸ Research Tools), set to select the PreK-12 schools that intersect the selected Utah County feature; point out the Selected features only checkbox. -->
 
 ---
 
@@ -565,3 +563,5 @@ Every one of those is a buffer, a select by location, or a difference.
 <!-- Lab 9 is long and involves three large downloads, one of them nearly 200 MB. Tell students to start it before Thursday so they arrive with questions. -->
 
 <!-- Conversion notes (2026-09-02): source deck "Introduction to geoprocessing.pptx" (2021, 27 slides), plus "example cities near rivers workflow diagram.pptx" for the Thursday preview slide (rendered at 200 dpi from shapes). No slides were dropped for content; source slide 3 (the "Map it / query-it / Analyze It" logo slide) became a text-only section break because the three vendor logos added nothing at slide size. Source slide 5 (the Esri "geographic approach" table image) was rebuilt as HTML so the ArcGIS/ArcMap wording could be changed to QGIS. Seven slides are new: "Clip vs. Intersect", "Finding the Tools in QGIS", the three Yellowstone/Lab 9 slides, and the two Thursday preview slides. 36 slides total. ArcGIS screenshots that still need a QGIS re-shoot: gp-attribute-table-arcmap.jpg (attribute table), gp-select-by-query-arcmap.jpg + gp-select-by-query-sql.png (select by attribute), gp-select-by-location-arcmap.jpg (select by location) — all four are ArcMap 10.x and are flagged in their speaker notes. TODO: confirm the title of the Yellowstone movie clip and where to stop playing it. The three Yellowstone images are reused from docs/assignments/lab-09/images. -->
+
+<!-- Update 2026-09-02: ArcGIS-era screenshots replaced with QGIS 3.44 captures made by tools/qgis_reshoot_screens.py: gp-attribute-table-qgis.png, gp-select-by-expression-qgis.png, gp-select-by-location-qgis.png replace the four ArcMap screenshots. -->

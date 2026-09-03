@@ -344,17 +344,17 @@ When you run an **Intersection** or a **Union**, the attribute tables of both la
 
 # The attribute table tells you how to select
 
-![h:470 center](images/ws-udot-routes-table.png)
+![h:470 center](images/ws-roads-attribute-table-qgis.png)
 
-<!-- Open the attribute table before you write any query. RT_NAME, RT_TYPE, LABEL: the column that separates interstates from local roads is right there. This screenshot is from ArcMap; in QGIS the same table opens with the Open Attribute Table button, and the columns are identical because it is the same shapefile. -->
+<!-- Open the attribute table before you write any query. HWYNAME, DOT_RTNAME, FULLNAME: the column that separates interstates from local roads is right there. This is the QGIS 3.44 attribute table for the UGRC major roads layer, switched to Show Selected Features after selecting HWYNAME = 'I-15': every row is one piece of the interstate. -->
 
 ---
 
 # Just I-15 and the highways
 
-![h:465 center](images/ws-select-i15.png)
+![w:820 center](images/ws-select-i15-qgis.png)
 
-<!-- An attribute query, RT_NAME = '0015', selects I-15 out of the full routes layer. This is an ArcMap Select By Attributes dialog; in QGIS you do exactly the same thing with Select by Expression, or run Extract by Expression from the Processing Toolbox to get the result as a new layer in one step. Note that I-15 comes out as many separate line features, which is why we Dissolve before buffering. -->
+<!-- An attribute query, "HWYNAME" = 'I-15', selects I-15 out of the full roads layer. This is the QGIS Select by Expression dialog; Extract by Expression from the Processing Toolbox gives the same result as a new layer in one step. Note that I-15 comes out as many separate line features, which is why we Dissolve before buffering. -->
 
 ---
 
@@ -400,9 +400,9 @@ When you run an **Intersection** or a **Union**, the attribute tables of both la
 
 # Putting it all together
 
-![w:1050 center](images/ws-model-builder.png)
+![h:560 center](images/ws-graphical-modeler-qgis.png)
 
-<!-- The full workflow as a model diagram: blue ovals are input data, yellow boxes are tools, green ovals are intermediate layers. Trace the three branches with them: census blocks to density selection, roads to a dissolved highway buffer, Walmarts to a buffer. All three meet at Intersect and Erase, and out comes Possible_Walmart_Locations. This was built in ArcGIS ModelBuilder; QGIS has the same thing, the Graphical Modeler, under Processing, Model Designer. -->
+<!-- The full workflow in the QGIS Model Designer (Processing ▸ Model Designer): yellow boxes are the three inputs, white boxes are algorithms, the green box is the output. Trace the three branches with them: census blocks to a density field and an extract by expression, roads to I-15 then Dissolve then Buffer, Walmarts to a Buffer. Intersection keeps the dense blocks near roads, Difference removes the existing-Walmart buffers, and out comes Possible Walmart locations. -->
 
 ---
 
@@ -457,3 +457,5 @@ When you run an **Intersection** or a **Union**, the attribute tables of both la
 <!-- Confirm the Testing Center closing time and the exact reading chapter before class. Remind students that the exam covers the geoprocessing tools from today, including the QGIS names. -->
 
 <!-- Conversion notes (2026-09-02): source deck "Geoprocessing - Walmart Site Selection.pptx" (2021, 30 slides, no speaker notes in the original; all notes here are new). Dropped: source slide 26 "Buffer? What next?" reused the identical Current Walmarts image, so it became a text-only class activity; source slide 28 repeated the same generic workflow diagram already shown on slide 19, so it was replaced with the "what to carry into the final project" summary. Software wording updated to QGIS throughout (Erase renamed Difference, ArcToolbox renamed Processing Toolbox, Select By Attributes renamed Select by Expression, ModelBuilder noted as the QGIS Graphical Modeler). Data sources updated: AGRC renamed UGRC, and the "digitize Walmart locations off Google Maps" step replaced with the Walmart open data portal. ArcGIS screenshots kept and flagged for a QGIS re-shoot: images/ws-udot-routes-table.png (ArcMap attribute table), images/ws-select-i15.png (ArcMap Select By Attributes dialog), images/ws-model-builder.png (ArcGIS ModelBuilder diagram); the small Utah County, buffer, Walmart-points and census-block maps are plain map renders with no visible ArcGIS chrome. TODO for the instructor: confirm the Bolstad & Manson chapter number and the Testing Center closing time on the Before Next Class slide, and confirm the Lab 11 Saturday due date. -->
+
+<!-- Update 2026-09-02: ArcGIS-era screenshots replaced with QGIS 3.44 captures made by tools/qgis_reshoot_screens.py: ws-roads-attribute-table-qgis.png, ws-select-i15-qgis.png, ws-graphical-modeler-qgis.png replace the ArcMap table, dialog, and ModelBuilder diagram. -->

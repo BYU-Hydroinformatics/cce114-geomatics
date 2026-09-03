@@ -52,7 +52,7 @@ Dr. Dan Ames and Dr. James Halgren
 
 <!-- Open at least the Jason Davies transitions page live: sliding from Mercator to Mollweide to orthographic does more in ten seconds than a slide can. Come back to The True Size at the Greenland question. XKCD 977 is a good end-of-class laugh. -->
 
-<!-- TODO: the 2021 deck demonstrated Tissot circles live in ArcGIS Pro. Find and test the QGIS equivalent (the Indicatrix plugin, or use map-projections.net, which draws Tissot indicatrices for every projection). -->
+<!-- The 2021 deck demonstrated Tissot circles live in ArcGIS Pro. In this version use map-projections.net (last link above), which draws Tissot indicatrices for every projection; the QGIS Indicatrix plugin is an alternative if you want it live in QGIS. -->
 
 ---
 
@@ -596,14 +596,12 @@ In **QGIS**:
 </div>
 <div>
 
-![w:440](images/crs-arcgis-transformation-dialog.png)
+![w:520 center](images/crs-qgis-project-crs-dialog.png)
 
 </div>
 </div>
 
-<!-- The screenshot is the old ArcMap datum transformation dialog from the 2021 deck; the concept is identical in QGIS, which shows the same choice under Settings, Options, Transformations. Emphasise the distinction between declaring a CRS and reprojecting, because it is the single most common student mistake in Lab 7. -->
-
-<!-- TODO: replace the ArcMap screenshot with a QGIS Project Properties / CRS screenshot. -->
+<!-- The screenshot is the QGIS 3.44 Project Properties, CRS page, filtered to 26912 with NAD83 / UTM zone 12N selected, the same dialog students use in Lab 4. Datum transformation choices live on the Transformations page just below it. Emphasise the distinction between declaring a CRS and reprojecting, because it is the single most common student mistake in Lab 7. -->
 
 ---
 
@@ -660,3 +658,5 @@ In **QGIS**:
 <!-- Confirm the Saturday due dates against Learning Suite before class. Point students at The True Size and the Jason Davies transitions page again; they are the fastest way to build intuition before the lab. -->
 
 <!-- Conversion notes (2026-09-02): converted from "Coordinate Systems and Projections.pptx" (2021 archive, 51 slides). Dropped: source slide 8, a screenshot of the Flat Earth Society Facebook page showing the presenter's logged-in account, folded into a bullet on the Ferguson map slide; source slide 11, hidden in the original, an equal-area globe-drawing activity that could be restored if there is time. Added, not in the source: Today's Goals, geographic vs. projected coordinate systems, "every projection distorts something", the State Plane summary slide, "choosing a coordinate system", the Thursday preview, and Before Next Class. Software wording updated from ArcGIS to QGIS throughout. ArcGIS screenshots still in the deck: images/crs-arcgis-transformation-dialog.png on the "How to deal with it" slide, which needs a QGIS re-shoot. Open TODO: find a QGIS equivalent for the ArcGIS Pro Tissot-circle demo referenced on the "Things to play with" slide. -->
+
+<!-- Update 2026-09-02: ArcGIS-era screenshots replaced with QGIS 3.44 captures made by tools/qgis_reshoot_screens.py: crs-qgis-project-crs-dialog.png replaces the ArcMap transformation dialog; Tissot TODO resolved via map-projections.net. -->

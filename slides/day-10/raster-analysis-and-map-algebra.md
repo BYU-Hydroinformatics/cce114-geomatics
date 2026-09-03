@@ -597,7 +597,7 @@ A raster is just an **array**, which is why map algebra is fast. But the arrays 
 
 # Surfaces derived from a DEM
 
-<div class="columns" style="grid-template-columns: 1.2fr 0.8fr;">
+<div class="columns" style="grid-template-columns: 1fr 1.15fr;">
 <div>
 
 Each is **map algebra on a neighbourhood** of cells:
@@ -611,14 +611,12 @@ Each is **map algebra on a neighbourhood** of cells:
 </div>
 <div>
 
-![w:460 center](images/ras-dem-3d-arcview.jpg)
+![w:640 center](images/ras-dem-derived-surfaces.jpg)
 
 </div>
 </div>
 
-<!-- The neighbourhood is usually the eight cells surrounding each cell: slope and aspect are fitted to that 3x3 window. Emphasise that the input to every one of these is a single DEM: no extra data is collected, the information was already in the grid. This is the payoff of the raster model and the reason hydrology is done in raster. The right-hand figure shows an elevation surface with a derived stream network draped over it. In QGIS these are all in the Processing Toolbox: Raster analysis gives you Slope, Aspect and Hillshade, Raster extraction gives you Contour, and the GDAL and SAGA providers give the hydrology tools. -->
-
-<!-- FLAG: this is an old ArcView 3D Analyst screenshot; a QGIS 3D map view or a Slope/Hillshade pair would be a better re-shoot. -->
+<!-- The neighbourhood is usually the eight cells surrounding each cell: slope and aspect are fitted to that 3x3 window. Emphasise that the input to every one of these is a single DEM: no extra data is collected, the information was already in the grid. This is the payoff of the raster model and the reason hydrology is done in raster. The right-hand figure is the Utah County DEM from Week 2 run through two of these tools in QGIS: a hillshade with 200 m contours on the left, slope in degrees on the right, both over the Wasatch Front east of Provo. In QGIS these are all in the Processing Toolbox: Raster analysis gives you Slope, Aspect and Hillshade, Raster extraction gives you Contour, and the GDAL and SAGA providers give the hydrology tools. -->
 
 ---
 
@@ -661,3 +659,5 @@ Each is **map algebra on a neighbourhood** of cells:
 <!-- Confirm the Quiz 5 and Lab 5 due dates on Learning Suite before class. The Belonging Map experience is also due this week. -->
 
 <!-- Conversion notes (2026-09-02): source deck "114 - Raster Analysis and Map Algebra.pptx" (Feb 2025), 19 slides, none hidden. All 19 source slides are represented. Dropped media: the BYU logo EMF from the title slide (the theme carries the branding), the two dated ArcView 3.x screenshots on the "Why we use raster GIS" slide (a 3D terrain view and a 3D Seattle view), and the Excel 97 screenshot on the second Map Algebra slide (illegible and badly dated; the spreadsheet analogy is kept in the speaker notes). ArcGIS screenshot that needs a QGIS re-shoot: images/ras-dem-3d-arcview.jpg on the "Surfaces derived from a DEM" slide, an ArcView 3D Analyst window; replace with a QGIS 3D map view or a slope/hillshade pair. Software wording updated for QGIS: ArcToolbox becomes the Processing Toolbox, CLIP becomes Clip raster by mask layer, and the Raster Calculator is named on the Raster menu. Slides added beyond the source: Today's Goals; "The four things that define a raster" (cells, resolution, extent, no-data); the discrete-or-continuous quiz; the work-one-cell map algebra quiz; the DEM and derived-surfaces section; "Where this goes in engineering"; the Thursday preview; and Before Next Class. The stray ModelBuilder workshop abstract in the source title slide's speaker notes was left over from a different deck and was not carried across. -->
+
+<!-- Update 2026-09-02: ArcGIS-era screenshots replaced with QGIS 3.44 captures made by tools/qgis_reshoot_screens.py: ras-dem-derived-surfaces.jpg (hillshade + contours, slope) replaces the ArcView 3D screenshot. -->

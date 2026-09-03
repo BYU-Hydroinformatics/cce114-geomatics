@@ -88,8 +88,19 @@ mkdocs-github-admonitions-plugin && mkdocs serve` from the repo root.
 Every deck under `slides/day-NN/` ends with a `<!-- Conversion notes -->` comment. The items
 that need a person, collected from those notes:
 
-**ArcGIS/ArcMap screenshots to re-shoot in QGIS 3.44** (keep the filenames; the markdown
-references don't change):
+**ArcGIS/ArcMap screenshots: DONE 2026-09-02.** All items below except Day 21 were re-shot in
+QGIS 3.44 with `tools/qgis_reshoot_screens.py` (dialog grabs at 2x via QWidget.render, plus two
+Print Layout exports and a hillshade/slope pair). Data came from the UtahCountyData zip and four
+UGRC REST downloads:
+
+```
+B=https://services1.arcgis.com/99lidPhWCzftIe9K/ArcGIS/rest/services
+for svc in Utah_County_Boundaries CitiesTownsLocations UtahMunicipalBoundaries Schools_PreKto12; do
+  curl -s "$B/$svc/FeatureServer/0/query?where=1%3D1&outFields=*&outSR=26912&f=geojson&resultRecordCount=2000" -o $svc.geojson
+done
+```
+
+Original list, for the record:
 - Day 4: `mc-major-cities-icon-map.jpg` (student layout made in ArcMap; a QGIS Print Layout example would replace it).
 - Day 10: `ras-dem-3d-arcview.jpg` (ArcView 3D surface with streams; use a QGIS 3D view or slope/hillshade pair).
 - Day 14: `crs-arcgis-transformation-dialog.png` (ArcMap datum transformation dialog; replace with Project Properties > CRS); also find a QGIS way to show Tissot indicatrices.

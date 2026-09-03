@@ -234,17 +234,17 @@ Name them as you go: `step1_clip`, `step2_buffer`, `step3_difference`.
 
 # The finished product
 
-![bg right:50% contain](images/fp-example-map.jpg)
+![bg right:50% contain](images/fp-example-map-qgis.png)
 
 What to notice:
 
 - A **title** that says what the map shows
 - **Legend, scale bar, north arrow, data sources, projection**
-- Two **inset maps** zoomed to the best candidate sites
+- The **result stated in one line** in the margin
 - Candidate areas symbolised so they read at a glance
 - Nothing on the page that is not doing a job
 
-<!-- A past student's final map: an overview with the candidate areas in magenta, two inset maps zoomed to the best sites, legend, scale bars, north arrow, and the projection named at the bottom. This is the standard. Note this example was made in ArcMap, so the layout furniture looks a little different from QGIS Print Layout, but the required elements are identical. -->
+<!-- An example final map made in QGIS 3.44 Print Layout: a small site-selection result (cell towers within 1 km of a major road in Utah County) with title, subtitle, legend, scale bar, north arrow, data sources, projection, a neat line, and the result stated in one sentence. This is the standard. Past student maps often add inset maps zoomed to the best candidate sites, which is a good addition when the candidates are small. -->
 
 ---
 
@@ -489,3 +489,5 @@ For whichever you pick: **What are the criteria? What data are required? What to
 <!-- Remind them the Testing Center has its own closing hours and that the exam is not open book. -->
 
 <!-- Conversion notes (2026-09-02): source "Final Project Discussion.pptx" (2026, 25 slides). Nothing dropped outright; source slides 14 and 15 both used the same cookie photo and were merged into one slide, and the "Get Started" Google Sheet link was replaced with a pointer to Learning Suite because the 2018 sheet URL is stale (marked TODO). Software wording updated to QGIS throughout: ArcMap digitizing to QGIS digitizing, Erase noted as QGIS "Difference", ArcToolbox implied tools mapped to the Processing Toolbox, AGRC updated to UGRC. ArcGIS-era artwork kept and flagged: images/fp-example-map.jpg is a student final map produced in ArcMap (map output rather than a software screenshot, so it is still a fair example, but a QGIS Print Layout example would be better). The tool-order quiz slide and the QGIS name table are new, written for this session. -->
+
+<!-- Update 2026-09-02: ArcGIS-era screenshots replaced with QGIS 3.44 captures made by tools/qgis_reshoot_screens.py: fp-example-map-qgis.png (QGIS Print Layout example) replaces the ArcMap student map. -->
