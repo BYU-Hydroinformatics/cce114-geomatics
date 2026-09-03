@@ -121,10 +121,10 @@ subfolder, built by marp-cli in the workflow. `slides/theme/cce114.css` is the s
 Collected from the conversion notes at the end of each deck (search for `Conversion notes` and
 `TODO`) and from `tools/image-improvements-handoff.md`:
 
-- **Final exam day (open, asked 2026-09-02):** Learning Suite lists the final exam in class on Tue Dec 8,
-  11:00 to 2:00, and Dec 8 now also carries remaining final project presentations. Confirm the
-  university-scheduled final slot for a TTh 1:00 pm class (finals run Dec 12 to 17), then fix the LS
-  schedule entry, the Final Exam assignment date, and Day 28 in `tools/build_schedule.py`.
+- **Final exam day (resolved 2026-09-02):** the university slot for Fall 2026 is Thu Dec 17, 11:00 am to
+  2:00 pm, 234 CB. The site now says finals week generically; Dec 8 is presentations part 2 and review.
+  Learning Suite's Dec 8 entry, a new Dec 17 entry, and the Final Exam assignment date were updated the
+  same night (see the session notes); re-check each semester.
 - **Day 21:** confirm what software CCE 414 uses now and whether its lab list is current; then
   decide whether to keep the ArcGIS 10 screenshots.
 - **Day 7:** the Air Force One activity distances are from the 2021 classroom; re-measure.

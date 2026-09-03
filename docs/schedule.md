@@ -27,6 +27,6 @@ Reading quizzes open on Tuesday and close **Saturday at 11:59 pm**; lab reports 
 | 12 | Project Site Selection | [Day 22: Project Site Selection, Part 1](lectures/day-22.md) | [Day 23: Project Site Selection, Part 2](lectures/day-23.md) | [Lab 11: Walmart Site Selection](assignments/lab-11/README.md)<br>[Concepts Exam 2 (Testing Center)](policies/exams.md) |
 | 13 | Final Project | [Day 24: Final Project Work Session](lectures/day-24.md) | [Day 25: Final Project Work Session or Holiday](lectures/day-25.md) | — |
 | 14 | Final Project | [Day 26: Introduction to CCE 414 and Final Project Work Session](lectures/day-26.md) | [Day 27: Final Project Presentations](lectures/day-27.md) | [Web Mapping with AI Experience (Wednesday)](assignments/web-mapping-with-ai.md)<br>[Final project presentations (Thursday)](assignments/final-project.md)<br>[Final Project (Saturday)](assignments/final-project.md) |
-| 15 | Final Exam | [Day 28: Final Exam](lectures/day-28.md) | [Day 29: Last Day of Class](lectures/day-29.md) | [Final Exam (in class)](policies/exams.md)<br>[Course evaluation (extra credit)](policies/grading.md) |
+| 15 | Presentations and Exam Review | [Day 28: Final Project Presentations, Part 2, and Exam Review](lectures/day-28.md) | [Day 29: Last Day of Class](lectures/day-29.md) | [Final Exam (finals week, university-scheduled slot)](policies/exams.md)<br>[Course evaluation (extra credit)](policies/grading.md) |
 
 Holidays and reading days shift between semesters; Week 13 and Week 15 absorb them.

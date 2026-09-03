@@ -1,12 +1,12 @@
-# Day 28: Final Exam
+# Day 28: Final Project Presentations, Part 2, and Exam Review
 
 **Week 15** · Class session
 
 ## Topics
 
 - Remaining final project presentations
-- The final exam is given in class in the regular classroom; see Learning Suite for the exact time
-- Practical, hands-on exam in QGIS; AI tools are not permitted
+- Final exam review; the exam itself is given during finals week in the university-scheduled slot for this class, in the regular classroom (exact date and time on Learning Suite)
+- The final is a practical, hands-on exam in QGIS; AI tools are not permitted
 
 ## Slides
 
@@ -14,5 +14,5 @@
 
 ## Due this week (Saturday, 11:59 pm unless noted)
 
-- [Final Exam (in class)](../policies/exams.md)
+- [Final Exam (finals week, university-scheduled slot)](../policies/exams.md)
 - [Course evaluation (extra credit)](../policies/grading.md)

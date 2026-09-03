@@ -156,10 +156,10 @@ DAYS = [
          links=[("Prior-year recording of the CCE 414 introduction", "https://youtu.be/RIzy0JRB8VI")]),
     dict(n=27, week=14, kind="other", title="Final Project Presentations",
          topics=["Groups present their final mapping projects; presentations continue on Tuesday of Week 15"]),
-    dict(n=28, week=15, kind="other", title="Final Exam",
+    dict(n=28, week=15, kind="other", title="Final Project Presentations, Part 2, and Exam Review",
          topics=["Remaining final project presentations",
-                 "The final exam is given in class in the regular classroom; see Learning Suite for the exact time",
-                 "Practical, hands-on exam in QGIS; AI tools are not permitted"]),
+                 "Final exam review; the exam itself is given during finals week in the university-scheduled slot for this class, in the regular classroom (exact date and time on Learning Suite)",
+                 "The final is a practical, hands-on exam in QGIS; AI tools are not permitted"]),
     dict(n=29, week=15, kind="other", title="Last Day of Class",
          topics=["Final exam study session or wrap-up; in some semesters this is a university reading day with no class"]),
 ]
@@ -180,7 +180,7 @@ WEEKS = {
     12: dict(theme="Project Site Selection", due=["Lab 11", "Concepts Exam 2 (Testing Center)"]),
     13: dict(theme="Final Project", due=[]),
     14: dict(theme="Final Project", due=["Web Mapping with AI Experience (Wednesday)", "Final project presentations (Thursday)", "Final Project (Saturday)"]),
-    15: dict(theme="Final Exam", due=["Final Exam (in class)", "Course evaluation (extra credit)"]),
+    15: dict(theme="Presentations and Exam Review", due=["Final Exam (finals week, university-scheduled slot)", "Course evaluation (extra credit)"]),
 }
 
 LABS = {1: "Getting Started with GIS", 2: "Map Symbology and Layouts", 3: "GPS Data Collection and Importing Into QGIS",

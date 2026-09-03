@@ -79,9 +79,9 @@ rhythm starts in Week 2.
 - [Day 26: Introduction to CCE 414 and Final Project Work Session](day-26.md) — slides: [Introduction to CCE 414](https://byu-hydroinformatics.github.io/cce114-geomatics/slides/day-21/intro-to-cce-414.html)
 - [Day 27: Final Project Presentations](day-27.md)
 
-## Week 15: Final Exam
+## Week 15: Presentations and Exam Review
 
-- [Day 28: Final Exam](day-28.md)
+- [Day 28: Final Project Presentations, Part 2, and Exam Review](day-28.md)
 - [Day 29: Last Day of Class](day-29.md)
 
 ## Data

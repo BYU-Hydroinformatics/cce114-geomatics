@@ -55,7 +55,8 @@ completing this course, students will also be prepared to take Engineering Appli
   your laptop.
 - **Each week** you read the assigned textbook pages, take an open-book online quiz, and complete a
   lab. Quizzes and lab reports are due **Saturday at 11:59 pm**. See the [schedule](schedule.md).
-- **Two Concepts Exams** in the Testing Center and a hands-on **Final Exam** in class. See
+- **Two Concepts Exams** in the Testing Center and a hands-on **Final Exam** in the regular classroom
+  during finals week. See
   [Exams](policies/exams.md).
 - **A final mapping project** in the last weeks of the semester. See
   [Final Project](assignments/final-project.md).

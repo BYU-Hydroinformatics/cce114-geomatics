@@ -16,12 +16,13 @@ covered in class so far, with emphasis on the material since Exam 1: web service
 data, geodesy and projections, metadata, geoprocessing, and site selection. The Thursday session
 of Week 12 includes a study session.
 
-## Final Exam (Week 15)
+## Final Exam (finals week)
 
-The final exam is a **hands-on, practical exam given in class** at the designated time, in the
-regular classroom. You complete the exam in QGIS following the provided instructions and upload a
-PDF of your results to Learning Suite. Expect an extended time block; the exact time is on Learning
-Suite.
+The final exam is a **hands-on, practical exam given in the regular classroom during finals
+week**, in the university-scheduled final exam slot for this class (a three-hour block; the exact
+date and time are on Learning Suite). You complete the exam in QGIS following the provided
+instructions and upload a PDF of your results to Learning Suite. The last Tuesday of classes is a
+review session.
 
 ## Rules That Apply to All Exams
 

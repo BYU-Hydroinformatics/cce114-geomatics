@@ -12,5 +12,5 @@
 
 ## Due this week (Saturday, 11:59 pm unless noted)
 
-- [Final Exam (in class)](../policies/exams.md)
+- [Final Exam (finals week, university-scheduled slot)](../policies/exams.md)
 - [Course evaluation (extra credit)](../policies/grading.md)
