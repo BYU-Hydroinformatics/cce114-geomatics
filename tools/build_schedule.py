@@ -58,7 +58,7 @@ DAYS = [
          activity="Playing with Symbology: make a colorful map in QGIS and upload a screenshot"),
     dict(n=6, week=4, kind="concepts", title="The Global Positioning System",
          slides=[("The Global Positioning System", f"{SITE}/slides/day-06/gps-part-1.html"),
-                 ("GPS extended slides: trilateration build, error budget, metres demo (reference)", f"{SITE}/slides/day-07/gps-part-2.html")],
+                 ("GPS extended slides: trilateration build, error budget, meters demo (reference)", f"{SITE}/slides/day-07/gps-part-2.html")],
          topics=["How GPS and GNSS positioning work", "Trilateration: where is Air Force One?",
                  "Latitude and longitude, precision, and error",
                  "Converting from latitude/longitude to meters, and why it is not straightforward"],

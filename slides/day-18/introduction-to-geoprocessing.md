@@ -15,7 +15,7 @@ footer: "CCE 114 · Day 18 — Introduction to Geoprocessing"
 CCE 114 Geomatics
 Dr. Dan Ames and Dr. James Halgren
 
-<!-- Tuesday concept lecture, Week 10. Today is the vocabulary and the logic of geoprocessing: what the common tools do and how you chain them together. Thursday, Dr. Halgren runs the same ideas as a hands-on QGIS session, and Lab 9 (The Yellowstone Disaster) is the graded version. -->
+<!-- Tuesday concept lecture, Week 10. Today is the vocabulary and the logic of geoprocessing: what the common tools do and how you chain them together. Thursday runs the same ideas as a hands-on QGIS session, and Lab 9 (The Yellowstone Disaster) is the graded version. -->
 
 ---
 

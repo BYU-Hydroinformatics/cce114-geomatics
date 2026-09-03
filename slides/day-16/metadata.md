@@ -443,7 +443,7 @@ Poll:
 
 ![h:490 center](images/md-qgis-metadata-panel.png)
 
-<!-- QGIS 3.44 Layer Properties, Metadata page, for the UGRC Utah County Boundaries layer with the identification fields filled in. Right-click a layer, Properties, Metadata, and you get the ISO-style tabs: identification, categories, keywords, access, extent, contact, links, history, validation. Dr. Halgren walks through it on Thursday. -->
+<!-- QGIS 3.44 Layer Properties, Metadata page, for the UGRC Utah County Boundaries layer with the identification fields filled in. Right-click a layer, Properties, Metadata, and you get the ISO-style tabs: identification, categories, keywords, access, extent, contact, links, history, validation. Thursday walks through it in QGIS. -->
 
 ---
 

@@ -287,7 +287,7 @@ Four criteria → **four grids** → one combined score.
 </div>
 </div>
 
-<!-- Insist on the difference between a no-data cell and a cell whose value is zero. On the engineering paper, cells outside Utah were given a real 0 that means "unsuitable", which is a value; a no-data cell means the software should not compute with it at all. Mixing the two is the single most common raster bug students hit in the lab. In QGIS you can see all four of these on the Information tab of the layer properties, which is the first thing Dr. Halgren shows on Thursday. -->
+<!-- Insist on the difference between a no-data cell and a cell whose value is zero. On the engineering paper, cells outside Utah were given a real 0 that means "unsuitable", which is a value; a no-data cell means the software should not compute with it at all. Mixing the two is the single most common raster bug students hit in the lab. In QGIS you can see all four of these on the Information tab of the layer properties, which is the first thing Thursday shows on Thursday. -->
 
 ---
 
