@@ -51,6 +51,8 @@ By the end of class you should be able to:
 </div>
 <div style="text-align:center;">
 
+![w:400 center](images/gp-map-library.jpg)
+
 <p style="font-size:1.5em;font-weight:700;color:#002e5d;line-height:1.25;">But what can you<br>do with it?</p>
 
 </div>
@@ -321,6 +323,8 @@ Intersect the catchments with the counties: every output polygon knows **which c
 
 # Clip vs. Intersect
 
+![bg right:36% w:94%](images/gp-cookie-cutter.jpg)
+
 <div class="columns">
 <div>
 
@@ -384,6 +388,8 @@ Both layers in, and **everything** comes out — the overlap and both non-overla
 
 <div class="columns">
 <div>
+
+![w:300 center](images/gp-toolbox-search.jpg)
 
 Open the **Processing Toolbox**
 *(View ▸ Panels ▸ Processing Toolbox)*, then type the tool name in the search box.
@@ -486,6 +492,8 @@ Sketch the boxes and ovals before you look at the next slide.
 <div class="columns">
 <div>
 
+![w:380 center](images/gp-yellowstone-scene.jpg)
+
 Before you start the lab, watch the clip:
 
 <p style="font-size:1.05em;"><a href="https://www.youtube.com/watch?v=JGEgTXsGOPk&t=346s" target="_blank"><strong>▶ Yellowstone movie clip</strong></a></p>
@@ -536,6 +544,8 @@ Every one of those is a buffer, a select by location, or a difference.
 
 # Thursday: hands-on in QGIS
 
+![bg right:36% w:94%](images/gp-thursday-qgis.jpg)
+
 - We build the **cities near rivers** analysis for real, in QGIS
 - Chaining tools into a workflow: the output of each tool is a layer you save to disk and feed to the next one
 - The U.S. cities and rivers data is posted on **Learning Suite**
@@ -552,6 +562,8 @@ Every one of those is a buffer, a select by location, or a difference.
 ---
 
 # Before Next Class
+
+![bg right:36% w:94%](images/gp-before-next-class.jpg)
 
 - Read **Chapter 9, *Basic Spatial Analysis***, in *GIS Fundamentals* (Bolstad & Manson)
 - Take **Quiz 8: Geoprocessing and Spatial Data Analysis** (open book, on Learning Suite)

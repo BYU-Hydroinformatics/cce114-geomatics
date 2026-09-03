@@ -74,6 +74,8 @@ I heard three radio stations announcing the time, but each was off from the actu
 </div>
 <div>
 
+![w:190 center](images/gps-lost-in-europe.jpg)
+
 **To turn in (graded, 5 points):**
 
 1. Convert each delay to a distance (**D = R × T**, R = 299,792 km/s)

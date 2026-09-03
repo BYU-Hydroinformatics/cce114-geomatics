@@ -60,15 +60,17 @@ Dr. Dan Ames and Dr. James Halgren
 
 # A Quick Look: Utah County in QGIS
 
-- Download and unzip [UtahCountyData.zip](https://byu-hydroinformatics.github.io/cce114-geomatics/lectures/data/UtahCountyData.zip), then drag each layer into QGIS:
-  - **UtahCountyBoundary**: one polygon. Where does the county end?
-  - **UtahCountyMajorRoads**: polylines. Length, but no area.
-  - **UtahCountyCellularTowers**: points. A location, nothing more.
-  - Open the towers **attribute table**: one row per tower, one column per fact
-  - **UtahCountyDEM.tif**: a raster. Every cell holds an elevation.
-- Click a feature with **Identify**. Ask each time: *what did the computer have to store?*
+![bg right:33% w:94%](images/dm-quick-look-layers.jpg)
 
-<!-- Keep this to about five minutes as a look, not a tutorial; students do the full version Thursday in the Thursday hands-on session. Drag layers in one at a time and ask the same question after each: what did the computer have to store to draw that? The next six slides are backups of every step in case the projector or QGIS misbehaves. -->
+- Unzip [UtahCountyData.zip](https://byu-hydroinformatics.github.io/cce114-geomatics/lectures/data/UtahCountyData.zip) and drag in each layer:
+  - **UtahCountyBoundary**: one polygon
+  - **UtahCountyMajorRoads**: polylines, no area
+  - **UtahCountyCellularTowers**: just points
+  - **Attribute table**: one row per tower
+  - **UtahCountyDEM.tif**: a raster of elevations
+- **Identify** a feature. Ask each time: *what did the computer have to store?*
+
+<!-- Ask of the boundary: where does the county end? Roads have length but no area; a tower is a location and nothing more; the attribute table has one row per tower and one column per fact; every raster cell holds one elevation. Keep this to about five minutes as a look, not a tutorial; students do the full version Thursday in the Thursday hands-on session. Drag layers in one at a time and ask the same question after each: what did the computer have to store to draw that? The next six slides are backups of every step in case the projector or QGIS misbehaves. -->
 
 ---
 
@@ -432,6 +434,8 @@ How can we represent this state shape using the fewest bytes of memory possible?
 </div>
 <div>
 
+![w:340 center](images/dm-state-activity.jpg)
+
 **Discussion:** Which data model did you use to encode your state?
 
 <ol type="A">
@@ -631,6 +635,8 @@ Each pixel (raster cell) is stored as a hexadecimal number that tells the screen
 ---
 
 # Before Next Class
+
+![bg right:36% w:94%](images/dm-before-next-class.jpg)
 
 - Read Chapter 2, *Data Models*, in *GIS Fundamentals* (Bolstad & Manson)
 - Take the open-book quiz on Learning Suite

@@ -72,6 +72,8 @@ Dr. Dan Ames and Dr. James Halgren
 
 # Which of the following are geoprocessing tools?
 
+![bg right:40% w:94%](images/ws-quiz-tools.jpg)
+
 <ol type="A">
 <li>Buffer</li>
 <li>Union</li>
@@ -87,6 +89,8 @@ Dr. Dan Ames and Dr. James Halgren
 <!-- _class: quiz -->
 
 # Finding all the area that is *near* a school is done with which tool?
+
+![bg right:40% w:94%](images/ws-quiz-near-school.jpg)
 
 <ol type="A">
 <li>Intersection</li>
@@ -104,6 +108,8 @@ Dr. Dan Ames and Dr. James Halgren
 
 # Eliminating an area that does *not* satisfy your query is done with…
 
+![bg right:40% w:94%](images/ws-quiz-erase.jpg)
+
 <ol type="A">
 <li>Union</li>
 <li>Clip</li>
@@ -119,6 +125,8 @@ Dr. Dan Ames and Dr. James Halgren
 <!-- _class: quiz -->
 
 # Intersection and Union
+
+![bg right:40% w:94%](images/ws-quiz-overlay-attributes.jpg)
 
 When you run an **Intersection** or a **Union**, the attribute tables of both layers are joined together for…
 
@@ -230,6 +238,8 @@ When you run an **Intersection** or a **Union**, the attribute tables of both la
 </div>
 <div>
 
+![w:340 center](images/ws-conditions.jpg)
+
 **Which tool does each one?**
 
 - "not near" → ?
@@ -248,6 +258,8 @@ When you run an **Intersection** or a **Union**, the attribute tables of both la
 
 <div class="columns">
 <div>
+
+![w:260 center](images/ws-criteria-plan.jpg)
 
 **What are the criteria?**
 
@@ -282,6 +294,8 @@ When you run an **Intersection** or a **Union**, the attribute tables of both la
 
 # Criteria, written precisely
 
+![bg right:36% w:94%](images/ws-criteria-precise.jpg)
+
 - **Proximity to other Walmarts:** find locations at least **2 miles** from any existing Walmart
 - **Proximity to major roads:** find locations **within 2 miles** of I-15 or a highway
 - **Population density:** using 2010 Census data, find areas with over **2000 people per square kilometer**
@@ -292,6 +306,8 @@ When you run an **Intersection** or a **Union**, the attribute tables of both la
 ---
 
 # Data
+
+![bg right:36% w:94%](images/ws-data-layers.jpg)
 
 - **Utah County boundary** and **roads and freeways**: [Utah Geospatial Resource Center (UGRC)](https://gis.utah.gov/), formerly AGRC
 - **Census blocks:** the Utah Census Block 2010 demographic data package from UGRC
@@ -305,16 +321,18 @@ When you run an **Intersection** or a **Union**, the attribute tables of both la
 
 # Tools: the QGIS Processing Toolbox
 
-- **Select by Expression** — find features matching a rule, e.g. all roads where `RT_NAME = '0015'`, or all census blocks above a density threshold
-- **Buffer** — the area within a given distance of a feature. Proximity.
-- **Clip** — cut the input layer to the shape of an overlay layer. The cookie cutter.
-- **Intersection** — keep only where two layers overlap, carrying both attribute tables
-- **Difference** *(Erase in ArcGIS)* — remove the input wherever the overlay covers it
-- **Select by Location / Extract by Location** — select features by how they sit relative to another layer
-- **Dissolve** — merge features that share an attribute value into one
-- **Field Calculator** — compute a new column, e.g. density = population / area
+![bg right:30% w:94%](images/ws-toolbox.jpg)
 
-<!-- These are the tools for Lab 11 and the final project. Every one of them is in the Processing Toolbox; teach them the search box at the top of the toolbox rather than memorizing menu paths. Difference vs Erase is the naming trap; say it twice. -->
+- **Select by Expression** — features that match a rule
+- **Buffer** — everything within a distance. Proximity.
+- **Clip** — cut the input to an overlay's shape. Cookie cutter.
+- **Intersection** — keep only the overlap, with both tables
+- **Difference** *(Erase in ArcGIS)* — remove the overlay's area
+- **Select / Extract by Location** — features by where they sit
+- **Dissolve** — merge features that share a value
+- **Field Calculator** — a new column, e.g. a density field
+
+<!-- Fuller versions of each line: Select by Expression finds features matching a rule, e.g. all roads where RT_NAME = '0015', or all census blocks above a density threshold. Buffer is the area within a given distance of a feature. Clip cuts the input layer to the shape of an overlay layer. Intersection keeps only where two layers overlap and carries both attribute tables. Difference removes the input wherever the overlay covers it. Select by Location / Extract by Location picks features by how they sit relative to another layer. Dissolve merges features that share an attribute value into one. Field Calculator computes a new column, e.g. density = population / area. These are the tools for Lab 11 and the final project. Every one of them is in the Processing Toolbox; teach them the search box at the top of the toolbox rather than memorizing menu paths. Difference vs Erase is the naming trap; say it twice. -->
 
 ---
 
@@ -378,6 +396,8 @@ When you run an **Intersection** or a **Union**, the attribute tables of both la
 
 # Buffer? What next?
 
+![bg right:36% w:94%](images/ws-activity-order.jpg)
+
 - We have the Walmart points. **Buffer them 2 miles.** Then what?
 - In pairs, put the remaining steps in order and name the tool for each:
   - Keep only what is inside Utah County
@@ -421,6 +441,8 @@ When you run an **Intersection** or a **Union**, the attribute tables of both la
 
 # What to carry into the final project
 
+![bg right:36% w:94%](images/ws-carry-forward.jpg)
+
 - Write the criteria down as **numbers with units** before you open QGIS
 - Draw the **workflow diagram** on paper: layers as rectangles, tools as ovals
 - Check the **CRS** of every layer before any distance-based tool
@@ -436,6 +458,8 @@ When you run an **Intersection** or a **Union**, the attribute tables of both la
 
 # Thursday: hands-on in QGIS
 
+![bg right:36% w:94%](images/ws-thursday-lab.jpg)
+
 - Review of **workflow diagrams**: how to draw one and how to read someone else's
 - The **final mapping project** description, walked through in detail
   - [Final project page](https://byu-hydroinformatics.github.io/cce114-geomatics/assignments/final-project/)
@@ -446,6 +470,8 @@ When you run an **Intersection** or a **Union**, the attribute tables of both la
 ---
 
 # Before Next Class
+
+![bg right:36% w:94%](images/ws-before-next.jpg)
 
 - **Lab 11: Walmart Site Selection** is due **Saturday** — [Lab 11](https://byu-hydroinformatics.github.io/cce114-geomatics/assignments/lab-11/)
   - Store locations: [Walmart open data portal](https://walmart-open-data-walmarttech.opendata.arcgis.com/)

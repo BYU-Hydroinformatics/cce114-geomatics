@@ -39,15 +39,17 @@ Dr. Dan Ames and Dr. James Halgren
 
 # Things to play with
 
-- **Map projection transitions** — watch one projection morph into another:
+![bg right:30% w:96%](images/crs-play-with-projections.jpg)
+
+- **Map projection transitions** — one projection morphs into another:
   [jasondavies.com/maps/transition](https://www.jasondavies.com/maps/transition/)
-- **The True Size Of…** — drag a country across the map and watch it grow:
+- **The True Size Of…** — drag a country and watch it grow:
   [thetruesize.com](https://www.thetruesize.com/)
-- **XKCD 977, "Map Projections"** — what your favorite projection says about you:
+- **XKCD 977, "Map Projections"** — what your favorite says about you:
   [xkcd.com/977](https://xkcd.com/977/)
 - **Interactive Album of Map Projections** (Penn State):
   [projections.mgis.psu.edu](https://projections.mgis.psu.edu/)
-- **Compare Map Projections** — side by side, with distortion circles:
+- **Compare Map Projections**, with distortion circles:
   [map-projections.net/imglist.php](https://map-projections.net/imglist.php)
 
 <!-- Open at least the Jason Davies transitions page live: sliding from Mercator to Mollweide to orthographic does more in ten seconds than a slide can. Come back to The True Size at the Greenland question. XKCD 977 is a good end-of-class laugh. -->
@@ -80,6 +82,8 @@ Dr. Dan Ames and Dr. James Halgren
 <!-- _class: quiz -->
 
 # What is Geodesy?
+
+![bg right:40% w:92%](images/crs-what-is-geodesy.jpg)
 
 <ol type="A">
 <li>The science of measuring the shape of the Earth</li>
@@ -159,6 +163,8 @@ Dr. Dan Ames and Dr. James Halgren
 </div>
 <div>
 
+![w:280 center](images/crs-gcs-vs-pcs.jpg)
+
 **Projected (PCS)**
 
 - Coordinates are **distances**: easting and northing
@@ -169,13 +175,13 @@ Dr. Dan Ames and Dr. James Halgren
 </div>
 </div>
 
-- Every projected coordinate system is built on a geographic one. You need both halves to place a point.
-
-<!-- This is the slide students should photograph. In QGIS the CRS chooser shows both kinds in one list, which is exactly why people mix them up. If you ask QGIS for the area of a polygon while the project is in EPSG:4326, you get square degrees, which mean nothing. -->
+<!-- Every projected coordinate system is built on a geographic one; you need both halves to place a point. This is the slide students should photograph. In QGIS the CRS chooser shows both kinds in one list, which is exactly why people mix them up. If you ask QGIS for the area of a polygon while the project is in EPSG:4326, you get square degrees, which mean nothing. -->
 
 ---
 
 # Every projection distorts something
+
+![bg right:30% w:96%](images/crs-distortion-tradeoff.jpg)
 
 - A flat map cannot preserve all four of these at once:
   - **Shape** (angles) — a *conformal* projection preserves it locally
@@ -343,6 +349,8 @@ Let's compare some place sizes: [thetruesize.com](https://www.thetruesize.com/)
 
 # Which statement is most accurate?
 
+![bg right:40% w:92%](images/crs-quiz-conic-conus.jpg)
+
 <ol type="A">
 <li>Considering map distortion, this projection is equally suitable for every state in a straight line between Utah and Kentucky</li>
 <li>Considering map distortion, this projection is equally suitable for southeastern Florida and northeastern Washington state</li>
@@ -365,6 +373,8 @@ Let's compare some place sizes: [thetruesize.com](https://www.thetruesize.com/)
 
 # Answer: B
 
+![bg right:40% w:92%](images/crs-quiz-conic-conus.jpg)
+
 - **Southeastern Florida and northeastern Washington state** sit at roughly the **same distance from the line of true scale**, so they carry roughly the same distortion
 - A: Utah to Kentucky crosses the standard circle, so the error varies a lot along that line
 - C: north and south Texas are at very different distances from the standard circle
@@ -376,6 +386,8 @@ Let's compare some place sizes: [thetruesize.com](https://www.thetruesize.com/)
 <!-- _class: quiz -->
 
 # Which statement is most accurate?
+
+![bg right:34% w:94%](images/crs-quiz-utm-zone.jpg)
 
 <ol type="A">
 <li>UTM projections minimize distortion in distance, shape, and area equally well for all areas within a single UTM zone</li>
@@ -408,6 +420,8 @@ Let's compare some place sizes: [thetruesize.com](https://www.thetruesize.com/)
 
 # Answer: C
 
+![bg right:40% w:92%](images/crs-quiz-utm-zone.jpg)
+
 - UTM minimises distortion **along a line of longitude at the middle of a particular zone** — the zone's **central meridian**
 - Distortion grows toward the **edges** of the zone, so a project straddling a zone boundary is a problem
 - Nothing about UTM favours one hemisphere; the equator is not special except in Zone-specific false northings
@@ -419,6 +433,8 @@ Let's compare some place sizes: [thetruesize.com](https://www.thetruesize.com/)
 <!-- _class: quiz -->
 
 # Which projection best minimizes distortion in the state of Tennessee?
+
+![bg right:40% w:92%](images/crs-quiz-tennessee.jpg)
 
 <ol type="A">
 <li>Lambert Conformal Conic</li>
@@ -448,6 +464,8 @@ Let's compare some place sizes: [thetruesize.com](https://www.thetruesize.com/)
 <!-- _class: quiz -->
 
 # Answer: A — Lambert Conformal Conic
+
+![bg right:40% w:92%](images/crs-quiz-tennessee.jpg)
 
 - Match the **shape of the projection surface to the shape of the area**
 - Long **east-west** regions → **conic**, with standard parallels along the long axis
@@ -484,6 +502,8 @@ Let's compare some place sizes: [thetruesize.com](https://www.thetruesize.com/)
 <!-- _class: quiz -->
 
 # Why is coordinate transformation also referred to as *registration*?
+
+![bg right:40% w:92%](images/crs-quiz-registration.jpg)
 
 <ol type="A">
 <li>Because it is necessary to register your map online before it can be published</li>
@@ -615,6 +635,8 @@ In **QGIS**:
 
 # Choosing a coordinate system
 
+![bg right:28% w:96%](images/crs-choosing-crs.jpg)
+
 - Ask, in order:
   1. **Where** is the project, and how big is it?
   2. What am I going to **measure** — lengths, areas, angles?
@@ -623,9 +645,8 @@ In **QGIS**:
   - Global or web display → **Web Mercator** (EPSG:3857); never compute area in it
   - Regional, a few hundred km → **UTM** zone, NAD 83 or WGS 84
   - A single U.S. state, survey-grade → **State Plane**, in that state's zone and units
-  - Anything with lat/long in degrees → a **geographic** CRS: fine for storage, wrong for measurement
 
-<!-- This is the slide that answers "what do I put in the QGIS box?" It is also, more or less, the rubric for the Lab 7 write-up. -->
+<!-- Fourth rule of thumb, say it aloud: anything with lat/long in degrees is a geographic CRS, fine for storage and wrong for measurement. This is the slide that answers "what do I put in the QGIS box?" It is also, more or less, the rubric for the Lab 7 write-up. -->
 
 ---
 
@@ -647,6 +668,8 @@ In **QGIS**:
 ---
 
 # Before Next Class
+
+![bg right:36% w:94%](images/crs-before-next-class.jpg)
 
 - Read **Chapter 3, *Geodesy, Datums, Map Projections, and Coordinate Systems***, in *GIS Fundamentals*
 - Take **Quiz 6, Map Projections and Coordinate Systems**, open book, on Learning Suite — **due Saturday**

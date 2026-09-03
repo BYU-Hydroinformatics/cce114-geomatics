@@ -23,6 +23,8 @@ Dr. Dan Ames and Dr. James Halgren
 
 # Today's Goals
 
+![bg right:36% w:94%](images/mc-todays-goals.jpg)
+
 - By the end of class you should be able to:
   - Name the **layout elements** every technical map needs, and spot the one that is missing
   - Choose **symbology** for points, lines, polygons, and rasters on purpose
@@ -172,6 +174,8 @@ Dr. Dan Ames and Dr. James Halgren
 </div>
 <div>
 
+![w:340 center](images/mc-map-checklist.jpg)
+
 - **Neat line** — a border that frames the map
 - **Metadata** — who made it, when, from what data, in what coordinate system
 - **Legible text** and **distinct colors**
@@ -188,6 +192,8 @@ Dr. Dan Ames and Dr. James Halgren
 <!-- _class: quiz -->
 
 # Two questions about map elements
+
+![bg right:30% w:94%](images/mc-map-elements-quiz.jpg)
 
 <div class="columns">
 <div>
@@ -295,6 +301,8 @@ Also, for the record:
 
 # Symbology by geometry type
 
+![bg right:32% w:94%](images/mc-symbology-toolkit.jpg)
+
 <div class="columns">
 <div>
 
@@ -307,14 +315,13 @@ Also, for the record:
 
 - **Rasters** — color ramp, stretch, shading, transparency
 - **Labels / annotation** — font, size, color, halo, placement
-- All of these live in the **layer properties** in QGIS, under *Symbology* and *Labels*
 
 </div>
 </div>
 
 <p style="margin-top:0.4em;">Every choice should answer a question the reader has. If it does not, it is decoration.</p>
 
-<!-- This is the vocabulary list for Lab 2 and for Thursday. In QGIS these are Layer Properties, then the Symbology tab and the Labels tab; single symbol, categorized, and graduated renderers are the three you will use most. -->
+<!-- This is the vocabulary list for Lab 2 and for Thursday. All of these live in the layer properties in QGIS, under Symbology and Labels. In QGIS these are Layer Properties, then the Symbology tab and the Labels tab; single symbol, categorized, and graduated renderers are the three you will use most. -->
 
 ---
 
@@ -495,6 +502,8 @@ Also, for the record:
 ---
 
 # Before Next Class
+
+![bg right:36% w:94%](images/mc-before-next-class.jpg)
 
 - Read the **map design** sections of Chapter 4 in *GIS Fundamentals* (Bolstad & Manson)
 - **Quiz 2 — Spatial Data Models and File Types**, open book on Learning Suite, due **Saturday**

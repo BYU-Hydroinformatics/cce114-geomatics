@@ -51,6 +51,8 @@ By the end of class you should be able to:
 </div>
 <div>
 
+![w:340 center](images/md-three-sources.jpg)
+
 - The first and third options, you did yourself, so you know how they were made
 - The middle one is a stranger's work
 - Today is about answering **"what is it?"** before you build anything on top of it
@@ -124,6 +126,8 @@ Poll:
 </div>
 <div>
 
+![w:340 center](images/md-label-record.jpg)
+
 **On a dataset**
 
 - Title and originating agency
@@ -179,6 +183,8 @@ Poll:
 
 </div>
 <div>
+
+![w:340 center](images/md-mars-orbiter.jpg)
 
 - The numbers were not wrong
 - The numbers were **undocumented**
@@ -239,6 +245,8 @@ Poll:
 </div>
 <div>
 
+![w:340 center](images/md-what-where-when.jpg)
+
 **When?**
 
 - When were the data collected?
@@ -271,6 +279,8 @@ Poll:
 </div>
 <div>
 
+![w:340 center](images/md-why-how-who.jpg)
+
 **Who?**
 
 - Which organization collected the data?
@@ -285,6 +295,8 @@ Poll:
 ---
 
 # Fit for *its* purpose is not fit for *yours*
+
+![bg right:36% w:94%](images/md-right-data-wrong-job.jpg)
 
 - A parcel layer digitized for **tax assessment** is not a survey boundary
 - A statewide roads layer at **1:100,000** will not place a curb
@@ -315,6 +327,8 @@ Poll:
 </div>
 <div>
 
+![w:340 center](images/md-card-catalog.jpg)
+
 - A **standard** says what has to be there
 - A **style** or **profile** says how one organization fills it in
 - Same idea as a survey report template: fixed headings, local content
@@ -327,6 +341,8 @@ Poll:
 ---
 
 # FGDC CSDGM: the U.S. federal standard
+
+![bg right:36% w:94%](images/md-fgdc-federal.jpg)
 
 - **Content Standard for Digital Geospatial Metadata**, from the Federal Geographic Data Committee
 - Executive Order 12906 (1994) told federal agencies to document geospatial data this way as part of the National Spatial Data Infrastructure
@@ -351,6 +367,8 @@ Poll:
 </div>
 <div>
 
+![w:340 center](images/md-seven-sections.jpg)
+
 5. **Entity and Attribute** — what each column and code means
 6. **Distribution** — where to get it, format, constraints
 7. **Metadata Reference** — who wrote *the metadata*, and when
@@ -363,6 +381,8 @@ Poll:
 ---
 
 # What an FGDC record looks like inside
+
+![bg right:30% w:94%](images/md-xml-inside.jpg)
 
 ```xml
 <metadata>
@@ -385,13 +405,14 @@ Poll:
 
 # ISO 19115: the international standard
 
+![bg right:32% w:94%](images/md-iso-global.jpg)
+
 - **ISO 19115, *Geographic information — Metadata***, is the international equivalent
-- Revised as **ISO 19115-1**; the XML encodings are ISO 19139 and ISO 19115-3
-- Richer and more structured than FGDC, and organized in a similar way: identification, quality, spatial representation, reference system, distribution
+- Richer and more structured than FGDC, but organized the same way: identification, quality, spatial representation, reference system, distribution
 - Used across Europe, Australia, Canada, and increasingly by U.S. federal agencies
 - **QGIS layer metadata follows the ISO 19115 model**, which is why the panel you will use Thursday has fields like *Identification, Extent, Access, Fields, History*
 
-<!-- The practical takeaway for this class: FGDC and ISO ask the same six questions with different tag names. If you can read one you can read the other. QGIS chose ISO, which is one reason FGDC .xml files do not import cleanly into QGIS. -->
+<!-- Current revision is ISO 19115-1; the XML encodings are ISO 19139 and ISO 19115-3 (mention in passing, not on the slide). The practical takeaway for this class: FGDC and ISO ask the same six questions with different tag names. If you can read one you can read the other. QGIS chose ISO, which is one reason FGDC .xml files do not import cleanly into QGIS. -->
 
 ---
 
@@ -405,6 +426,8 @@ Poll:
 
 </div>
 <div>
+
+![w:340 center](images/md-other-styles.jpg)
 
 - **STAC** — SpatioTemporal Asset Catalog, used for satellite and drone imagery collections
 - **Esri metadata styles** — ArcGIS can write FGDC, ISO, or its own style; the same record, different export
@@ -427,6 +450,8 @@ Poll:
 
 </div>
 <div>
+
+![w:340 center](images/md-where-it-lives.jpg)
 
 - **Web service** — returned in the service's `GetCapabilities` or item page
 - **Data portal** — on the download page itself
@@ -466,6 +491,8 @@ Poll:
 </div>
 <div>
 
+![w:340 center](images/md-fitness-checklist.jpg)
+
 5. **Accuracy and lineage** — how was it made, and from what?
 6. **Attributes** — is every column defined?
 7. **Constraints** — license, restrictions, required credit
@@ -481,6 +508,8 @@ Poll:
 <!-- _class: quiz -->
 
 # Which dataset would you use?
+
+![bg right:40% w:94%](images/md-two-datasets.jpg)
 
 You are laying out a new road west of Lehi and you need building footprints.
 
@@ -520,6 +549,8 @@ Collected 2024, from 6-inch imagery, lineage documented, county GIS contact list
 </div>
 <div>
 
+![w:340 center](images/md-utah-county.jpg)
+
 - Search for **`bounding`** to find *where*
 - Read the abstract and keywords for *what*
 - Read the purpose for *why*
@@ -545,6 +576,8 @@ Collected 2024, from 6-inch imagery, lineage documented, county GIS contact list
 
 </div>
 <div>
+
+![w:340 center](images/md-data-portals.jpg)
 
 **[data.gov](https://www.data.gov)**
 
@@ -573,6 +606,8 @@ Collected 2024, from 6-inch imagery, lineage documented, county GIS contact list
 </div>
 <div>
 
+![w:340 center](images/md-activity-notes.jpg)
+
 - Prompts if you are stuck:
   - Which of the six questions do you most often skip?
   - What is the difference between FGDC and ISO 19115?
@@ -587,6 +622,8 @@ Collected 2024, from 6-inch imagery, lineage documented, county GIS contact list
 
 # Thursday: hands-on in QGIS
 
+![bg right:36% w:94%](images/md-thursday-qgis.jpg)
+
 - **Creating and editing metadata in QGIS**: Layer Properties > Metadata
 - Filling in identification, extent, contacts, and history for a layer you made
 - Saving metadata as a `.qmd` file so it travels with the data
@@ -598,6 +635,8 @@ Collected 2024, from 6-inch imagery, lineage documented, county GIS contact list
 ---
 
 # Before Next Class
+
+![bg right:36% w:94%](images/md-before-next.jpg)
 
 - Do the linked readings for **Quiz 7: Metadata** — Part 1 is what metadata is and metadata standards; Part 2 sends you to [gis.utah.gov/data](https://gis.utah.gov/data/) and [data.gov](https://www.data.gov)
 - **Quiz 7** and **[Lab 8: Metadata](https://byu-hydroinformatics.github.io/cce114-geomatics/assignments/lab-08/)** are due **Saturday, 11:59 pm**

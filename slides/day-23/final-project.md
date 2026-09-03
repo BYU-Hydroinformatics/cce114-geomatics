@@ -98,15 +98,16 @@ By the end of class you should be able to:
 </div>
 <div>
 
+![w:300 center](images/fp-tools-kit.jpg)
+
 - **Difference** (ArcGIS calls it *Erase*) — cut the input features out of the target
 - **Dissolve** — merge like features into one
 - **Digitize** — build a new layer by drawing features yourself
-- **Field Calculator** — compute a new attribute column, e.g. density = population ÷ area
 
 </div>
 </div>
 
-<!-- These all live in the QGIS Processing Toolbox under Vector overlay and Vector geometry. Erase is the one name that changes: in QGIS it is Difference. Field Calculator is in the attribute table window. -->
+<!-- These all live in the QGIS Processing Toolbox under Vector overlay and Vector geometry. Erase is the one name that changes: in QGIS it is Difference. One more tool that is not an overlay: the Field Calculator, in the attribute table window, computes a new attribute column, e.g. density = population divided by area. -->
 
 ---
 
@@ -123,6 +124,8 @@ By the end of class you should be able to:
 <!-- _class: quiz -->
 
 # In what order would you run these?
+
+![bg right:40% w:94%](images/fp-quiz-order.jpg)
 
 To find land at least 2 miles from an existing Walmart, inside Utah County, and within 2 miles of a highway:
 
@@ -219,16 +222,16 @@ To find land at least 2 miles from an existing Walmart, inside Utah County, and 
 </div>
 <div>
 
+![w:300 center](images/fp-analogy-trays.jpg)
+
 Every cut writes a **new layer**.
 
 Keep them. Those intermediate layers are what you screenshot for the report, and they are the only way to check one criterion at a time when the answer looks wrong.
 
-Name them as you go: `step1_clip`, `step2_buffer`, `step3_difference`.
-
 </div>
 </div>
 
-<!-- Emphasise the last line. Students routinely overwrite their intermediates and then have nothing to show for the processing steps, which is a graded part of the report. Tell them to name layers step1_clip, step2_buffer, and so on. -->
+<!-- Emphasise "keep them". Students routinely overwrite their intermediates and then have nothing to show for the processing steps, which is a graded part of the report. Tell them to name layers as they go: step1_clip, step2_buffer, step3_difference, and so on. -->
 
 ---
 
@@ -272,6 +275,8 @@ What to notice:
 ---
 
 # Choose your problem
+
+![bg right:36% w:94%](images/fp-choose-problem.jpg)
 
 Find a suitable location for:
 
@@ -430,6 +435,8 @@ For whichever you pick: **What are the criteria? What data are required? What to
 
 # What to include in your map
 
+![bg right:36% w:94%](images/fp-map-elements.jpg)
+
 - All **required cartographic elements**: title, legend, scale bar, north arrow, neatline, data sources, projection
 - At least one **inset map** zoomed to the selected sites
 - A **point marker** on each selected site
@@ -440,6 +447,8 @@ For whichever you pick: **What are the criteria? What data are required? What to
 ---
 
 # The deliverable
+
+![bg right:36% w:94%](images/fp-deliverable-report.jpg)
 
 - **One PDF report**, submitted online
 - Due the **Saturday of Week 14**
@@ -456,6 +465,8 @@ For whichever you pick: **What are the criteria? What data are required? What to
 
 # Get started right now
 
+![bg right:36% w:94%](images/fp-signup-sheet.jpg)
+
 - Enter your **name**, your **selected project**, and your **selected county** in the class sign-up sheet
 - Only **one or two people per county** — first come, first served
 - Then, on paper: list your **criteria**, the **layers** you will need, and a first **workflow diagram**
@@ -469,6 +480,8 @@ For whichever you pick: **What are the criteria? What data are required? What to
 
 # The next two weeks
 
+![bg right:36% w:94%](images/fp-work-session.jpg)
+
 - **Week 13 and Week 14 class sessions are work sessions.** Bring your laptop and your data; both instructors are in the room to help
 - Come with a specific question: a tool that will not run, a projection mismatch, a layer you cannot find
 - Use the work sessions for the hard parts and do the writing and map layout on your own time
@@ -478,6 +491,8 @@ For whichever you pick: **What are the criteria? What data are required? What to
 ---
 
 # Before Next Class
+
+![bg right:36% w:94%](images/fp-before-next-class.jpg)
 
 - Choose your **project and county** and sign up
 - Download at least **two** of your four datasets and open them in QGIS

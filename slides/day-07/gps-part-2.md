@@ -161,23 +161,24 @@ I heard three radio stations announcing the time, but each was off from the actu
 </div>
 <div>
 
+![w:260 center](images/gps-lost-in-europe.jpg)
+
 **To turn in:**
 
-1. Work it on paper — convert each delay to a distance, then draw the circles on a map of Europe
+1. Convert each delay to a distance, then draw the circles on a map of Europe
 2. Write your **name** and your **solution** on the paper
-3. **Photograph it** and upload the photo to **Learning Suite**
+3. **Photograph it** and upload to **Learning Suite**
 
 </div>
 </div>
 
-<!-- This is the graded activity. Give them a printed map of Europe with a scale bar, or let them use a web map. Twelve to fifteen minutes. Circulate and check that they converted seconds to kilometers before drawing anything. -->
+<!-- This is the graded activity, worked on paper. Give them a printed map of Europe with a scale bar, or let them use a web map. Twelve to fifteen minutes. Circulate and check that they converted seconds to kilometers before drawing anything. -->
 
 ---
 
 # Step 1: delays become distances
 
-<div class="columns">
-<div>
+![bg right:32% w:94%](images/gps-thunderclap-timing.jpg)
 
 **D = R × T**, R = 299,792 km/s
 
@@ -187,17 +188,9 @@ I heard three radio stations announcing the time, but each was off from the actu
 | Paris | 0.00295 | **884 km** |
 | London | 0.00345 | **1,034 km** |
 
-</div>
-<div>
-
-**Step 2:** draw a circle of that radius around each city.
-
-**Step 3:** the three circles meet at one point. That point is the answer.
+**Step 2:** draw a circle of that radius around each city. **Step 3:** the three circles meet at one point. That point is the answer.
 
 Note the scale: a millisecond of error here is **300 km**. GPS needs nanoseconds.
-
-</div>
-</div>
 
 <!-- Check the arithmetic with them: 0.00237 s x 299,792 km/s = 710.5 km. The original speaker notes list 711, 885 and 1035 km, and label the first one "miles" by mistake; they are all kilometers. -->
 
@@ -240,6 +233,8 @@ Note the scale: a millisecond of error here is **300 km**. GPS needs nanoseconds
 </div>
 <div>
 
+![w:300 center](images/gps-error-sources.jpg)
+
 - These are **independent** error sources
 - Independent errors do **not** simply add — they combine as a **root sum of squares**
 - The result is then **multiplied by PDOP**
@@ -280,6 +275,8 @@ Take the middle of each range:
 **Same receiver, same sky, same instant — the geometry alone nearly triples the error.**
 
 Now redo it on your own paper with the *low* end of every range, and with PDOP = 1.5.
+
+![w:220 center](images/gps-error-combine.jpg)
 
 </div>
 </div>
@@ -385,6 +382,8 @@ $$\Delta x \approx 111{,}320 \times \cos(\varphi)$$
 </div>
 <div>
 
+![w:340 center](images/gps-demo-latlong-utm.jpg)
+
 - **EPSG:4326** = WGS 84 lat/long, the degrees your phone gives you
 - **EPSG:32612** = UTM Zone 12N, meters
 - Two different answers for the same place — same point, different units
@@ -450,6 +449,8 @@ $$\Delta x \approx 111{,}320 \times \cos(\varphi)$$
 ---
 
 # Before Next Class
+
+![bg right:36% w:94%](images/gps-before-next-class.jpg)
 
 - Upload your **"Where Am I"** paper solution — name and answer, photographed — to Learning Suite
 - Read **Chapter 5, GNSS and Coordinate Surveying**, in *GIS Fundamentals* (Bolstad & Manson) if you have not already

@@ -39,6 +39,8 @@ Dr. Dan Ames and Dr. James Halgren
 
 # What is the value of today's lecture?
 
+![bg right:40% w:94%](images/web-lecture-value.jpg)
+
 <ol type="A">
 <li>$100</li>
 <li>$10,000</li>
@@ -84,15 +86,16 @@ Dr. Dan Ames and Dr. James Halgren
 </div>
 <div>
 
+![w:300 center](images/web-who-makes-data.jpg)
+
 - The rule of thumb: **data is created by whoever needs it for their own job**
 - Parcels come from the county assessor because taxes depend on them
-- Streamflow comes from USGS because someone has to run the gages
 - Ask *who would care about this?* and then go to that organization's site
 
 </div>
 </div>
 
-<!-- The single most useful search heuristic in this lecture: don't search for the data, search for the agency whose job depends on that data. If you want culverts, you want a DOT. If you want soils, you want USDA. If you want a floodplain, you want FEMA. -->
+<!-- Second example, if it helps: streamflow comes from USGS because someone has to run the gages. The single most useful search heuristic in this lecture: don't search for the data, search for the agency whose job depends on that data. If you want culverts, you want a DOT. If you want soils, you want USDA. If you want a floodplain, you want FEMA. -->
 
 ---
 
@@ -126,6 +129,8 @@ Dr. Dan Ames and Dr. James Halgren
 
 <div class="columns">
 <div>
+
+![w:300 center](images/web-federal-sources.jpg)
 
 - **USGS GIS data** — [usgs.gov](https://www.usgs.gov/products/data-and-tools/gis-data)
 - **USDA Web Soil Survey** — soils, anywhere in the U.S.
@@ -195,6 +200,8 @@ Dr. Dan Ames and Dr. James Halgren
 
 </div>
 <div>
+
+![w:280 center](images/web-scavenger-teams.jpg)
 
 - For each, note:
   - The **direct download or service URL**
@@ -444,6 +451,8 @@ Dr. Dan Ames and Dr. James Halgren
 
 # You need to buffer a stream network by 100 m. Which service?
 
+![bg right:40% w:94%](images/web-quiz-buffer.jpg)
+
 <div class="columns" style="grid-template-columns: 1fr 1fr;">
 <div>
 
@@ -467,6 +476,8 @@ Dr. Dan Ames and Dr. James Halgren
 ---
 
 # A web service is just a URL
+
+![bg right:33% w:94%](images/web-service-url.jpg)
 
 <div style="font-size:0.72em;">
 
@@ -585,14 +596,15 @@ https://services1.arcgis.com/99lidPhWCzftIe9K/ArcGIS/rest/services
 </div>
 <div>
 
+![w:300 center](images/web-cautions.jpg)
+
 - **A picture is not data.** You cannot analyse a WMS layer, only look at it
-- **Rendering can be slow** with big vector services; limit the extent
 - **License and attribution**: public agency data is usually free to use with credit. Read the terms, and cite the source on your map
 
 </div>
 </div>
 
-<!-- The professional point: a live service is a dependency. On a real project you decide deliberately which layers are live, because they change, and which are cached locally, because you cannot afford them to vanish the night before a submittal. -->
+<!-- One more caution worth saying aloud: rendering can be slow with big vector services, so limit the extent. The professional point: a live service is a dependency. On a real project you decide deliberately which layers are live, because they change, and which are cached locally, because you cannot afford them to vanish the night before a submittal. -->
 
 ---
 
@@ -612,6 +624,8 @@ https://services1.arcgis.com/99lidPhWCzftIe9K/ArcGIS/rest/services
 ---
 
 # Before Next Class
+
+![bg right:36% w:94%](images/web-before-next-class.jpg)
 
 - Read **Chapter 7, *Digital Data***, in *GIS Fundamentals* (Bolstad & Manson)
 - Take the open-book quiz on **Learning Suite**

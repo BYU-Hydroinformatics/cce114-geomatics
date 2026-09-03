@@ -21,6 +21,8 @@ Dr. James Halgren and Dr. Dan Ames
 
 # Today's Goals
 
+![bg right:36% w:94%](images/cr-goals.jpg)
+
 By the end of this session you should be able to:
 
 - Say what **Concepts Exam 2 covers** and how it is administered
@@ -34,6 +36,8 @@ By the end of this session you should be able to:
 
 # Concepts Exam 2: how it works
 
+![bg right:36% w:94%](images/cr-how-it-works.jpg)
+
 - Taken in the **Testing Center**
 - **Closed book, closed notes** — and **no AI tools**
 - Drawn from the **textbook quizzes** and the **lecture concepts** covered so far
@@ -44,6 +48,8 @@ By the end of this session you should be able to:
 ---
 
 # What is on it
+
+![bg right:30% w:94%](images/cr-what-is-on-it.jpg)
 
 <div class="columns">
 <div>
@@ -88,6 +94,8 @@ By the end of this session you should be able to:
 <!-- _class: quiz -->
 
 # Intro to GIS
+
+![bg right:40% w:94%](images/cr-intro-gis.jpg)
 
 **1. What functions can a GIS perform?**
 
@@ -180,6 +188,8 @@ By the end of this session you should be able to:
 
 # Data models
 
+![bg right:40% w:94%](images/cr-data-models.jpg)
+
 **1. What is the meaning of the saying "raster is faster but vector is better"?**
 
 <ol type="A">
@@ -263,6 +273,8 @@ By the end of this session you should be able to:
 
 # Cartography
 
+![bg right:40% w:94%](images/cr-cartography.jpg)
+
 **1. Which of the following are components of maps?**
 
 <ol type="A">
@@ -301,6 +313,8 @@ By the end of this session you should be able to:
 
 # Metadata
 
+![bg right:40% w:94%](images/cr-metadata.jpg)
+
 **What do metadata describe?**
 
 <ol type="A">
@@ -317,6 +331,8 @@ By the end of this session you should be able to:
 <!-- _class: quiz -->
 
 # Vector data, digitizing and editing
+
+![bg right:40% w:94%](images/cr-digitizing.jpg)
 
 **1. On-screen digitizing can be used for recording information from which of the following?**
 
@@ -374,6 +390,8 @@ By the end of this session you should be able to:
 
 # GPS and GNSS
 
+![bg right:40% w:94%](images/cr-gnss.jpg)
+
 **1. What are the three main components of any GNSS?**
 
 <ol type="A">
@@ -411,6 +429,8 @@ By the end of this session you should be able to:
 <!-- _class: quiz -->
 
 # Raster data and imagery
+
+![bg right:40% w:94%](images/cr-imagery.jpg)
 
 **1. What makes a sensor passive?**
 
@@ -459,6 +479,8 @@ By the end of this session you should be able to:
 
 # Geodesy
 
+![bg right:40% w:94%](images/cr-geodesy.jpg)
+
 **1. What is geodesy?**
 
 <ol type="A">
@@ -497,6 +519,8 @@ By the end of this session you should be able to:
 
 # Projections and datums
 
+![bg right:40% w:94%](images/cr-projections-datums.jpg)
+
 **1. What is a datum?**
 
 <ol type="A">
@@ -534,6 +558,8 @@ Which statement is most accurate?
 
 # Projections: UTM
 
+![bg right:40% w:94%](images/cr-utm.jpg)
+
 **Which statement about a transverse Mercator projection is most accurate?**
 
 <ol type="A">
@@ -567,6 +593,8 @@ Which statement is most accurate?
 <!-- _class: quiz -->
 
 # Finding data
+
+![bg right:40% w:94%](images/cr-finding-data.jpg)
 
 **1. What are the benefits of using a uniform global data source?**
 
@@ -606,6 +634,8 @@ Which statement is most accurate?
 
 # Finding data and web services
 
+![bg right:40% w:94%](images/cr-web-services.jpg)
+
 **5. The TIGER system is a key government tool in the collection of census data.**
 
 <ol type="A">
@@ -637,6 +667,8 @@ Which statement is most accurate?
 
 # Geoprocessing: spatial scope
 
+![bg right:40% w:94%](images/cr-spatial-scope.jpg)
+
 **3. Spatial scope is the extent or area of the input data used in determining the values at output locations, and is generally characterized as local, neighborhood or global.**
 
 **4. Reclassifying every county in Utah as high, middle or low income from its own per-capita income is an example of what?**
@@ -650,6 +682,8 @@ Which statement is most accurate?
 <!-- _class: quiz -->
 
 # Geoprocessing: buffers
+
+![bg right:40% w:94%](images/cr-buffers.jpg)
 
 **1. Buffers may be determined for both vector and raster data.**
 
@@ -674,6 +708,8 @@ Which statement is most accurate?
 
 # Geoprocessing: overlays
 
+![bg right:40% w:94%](images/cr-overlays.jpg)
+
 **3. An overlay operation combines the features from two or more spatial data layers into a single data layer.** *(True / False)*
 
 **4. Point-on-line overlay is common because point features often intersect line features, e.g. accident locations.** *(True / False)*
@@ -687,6 +723,8 @@ Which statement is most accurate?
 <!-- _class: quiz -->
 
 # Site selection
+
+![bg right:40% w:94%](images/cr-site-selection.jpg)
 
 **Which sequence finds land inside Utah County that is at least 2 miles from an existing Walmart?**
 
@@ -720,6 +758,8 @@ Which statement is most accurate?
 
 # How to study this week
 
+![bg right:30% w:94%](images/cr-how-to-study.jpg)
+
 - Redo every **textbook quiz** — the exam questions are in the same style, and several are the same questions
 - Re-read the **figures** the quizzes point at: the distortion diagram, the State Plane zone map, the workflow chain
 - For each lecture topic, write **one sentence** explaining it from memory, then check it
@@ -731,6 +771,8 @@ Which statement is most accurate?
 ---
 
 # Before Next Class
+
+![bg right:36% w:94%](images/cr-before-next-class.jpg)
 
 - Take **Concepts Exam 2** in the Testing Center — closed book, closed notes, **no AI tools**
 - **Week 13 and Week 14 classes are final project work sessions** — bring your laptop, your data, and a specific question

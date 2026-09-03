@@ -427,6 +427,8 @@ The front half of the biofuel siting analysis — and this is only half of it
 </div>
 <div>
 
+![w:340 center](images/ce414-fork-in-the-trail.jpg)
+
 **What you get out of it**
 
 - Siting, routing, terrain, hydrology, and remote sensing workflows
@@ -442,6 +444,8 @@ The front half of the biofuel siting analysis — and this is only half of it
 
 # Missed class, or want it again?
 
+![bg right:36% w:94%](images/ce414-watch-recording.jpg)
+
 - Last year's recording of this same lecture: <a href="https://youtu.be/RIzy0JRB8VI" target="_blank">youtu.be/RIzy0JRB8VI</a>
 - Course description and prerequisites: the BYU course catalog entry for **CCE 414**
 - Still not sure? Bring your plan of study to office hours: [calendly.com/dan-ames/office-hours](https://calendly.com/dan-ames/office-hours)
@@ -451,6 +455,8 @@ The front half of the biofuel siting analysis — and this is only half of it
 ---
 
 # Before Next Class
+
+![bg right:36% w:94%](images/ce414-before-next-class.jpg)
 
 - **Lab 10: [Domes for Mozambique](https://byu-hydroinformatics.github.io/cce114-geomatics/assignments/lab-10/)** is due **Saturday at 11:59 pm**
 - Next week is **Week 12: Project Site Selection** — Tuesday and Thursday both

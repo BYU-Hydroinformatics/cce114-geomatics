@@ -52,6 +52,8 @@ Dr. Dan Ames and Dr. James Halgren
 </div>
 <div>
 
+![w:340 center](images/vec-data-sources.jpg)
+
 - Today is the first one: you are the somebody
 - The engineering question is always the same: *how good does this have to be, and how will anyone know?*
 
@@ -95,6 +97,8 @@ Dr. Dan Ames and Dr. James Halgren
 
 </div>
 <div>
+
+![w:340 center](images/vec-three-decisions.jpg)
 
 - All three are locked in when you click **OK**
 - Adding a field later is easy; changing geometry type is not
@@ -142,6 +146,8 @@ Dr. Dan Ames and Dr. James Halgren
 
 # Field types you will actually use
 
+![bg right:34% w:94%](images/vec-field-types.jpg)
+
 | Type | Use it for | Example |
 | --- | --- | --- |
 | **Text (string)** | names, categories, labels | `Fixture_Type` = "LED cobra head" |
@@ -156,6 +162,8 @@ Dr. Dan Ames and Dr. James Halgren
 <!-- _class: quiz -->
 
 # You are mapping a campus
+
+![bg right:40% w:94%](images/vec-campus-quiz.jpg)
 
 Which geometry type for each, and why?
 
@@ -322,15 +330,17 @@ Which geometry type for each, and why?
 </div>
 <div>
 
+![w:280 center](images/vec-topology-gap.jpg)
+
 - QGIS tools that keep you honest:
-  - **Enable Snapping** with a sensible tolerance
+  - **Enable Snapping** before you draw
   - **Topological Editing** — move a shared vertex once, both features follow
   - **Avoid Overlap** — new polygons get clipped to their neighbors
 
 </div>
 </div>
 
-<!-- Concrete stakes: an unsnapped culvert is invisible to a hydrologic model, so the model routes water over the road instead of under it, and the design storm comes out wrong. This is why Lab 4 makes them snap every culvert onto the waterway line. -->
+<!-- Snapping needs a sensible tolerance, as on the previous slide. Concrete stakes: an unsnapped culvert is invisible to a hydrologic model, so the model routes water over the road instead of under it, and the design storm comes out wrong. This is why Lab 4 makes them snap every culvert onto the waterway line. -->
 
 ---
 
@@ -410,6 +420,8 @@ Which geometry type for each, and why?
 </div>
 <div>
 
+![w:340 center](images/vec-geometry-plus-table.jpg)
+
 - "Which street lights on 100 South are over 20 years old?"
   - *street lights* → the layer
   - *on 100 South* → geometry
@@ -437,13 +449,12 @@ Which geometry type for each, and why?
 </div>
 <div>
 
+![w:280 center](images/vec-schema-design.jpg)
+
 **Example schemas from Lab 4**
 
 `Street_Lights` (Point)
 ID (integer) · Fixture_Type (text) · Voltage (integer)
-
-`Curb_Lines` (LineString)
-ID (integer) · Material (text) · Condition (text)
 
 `Temple_Footprint` (Polygon)
 Name (text) · area (decimal)
@@ -451,7 +462,7 @@ Name (text) · area (decimal)
 </div>
 </div>
 
-<!-- The labeling question is the one from the original deck and it is a good one: if you do not create a Name field, you have nothing to label the map with, and you will be re-typing attributes for forty features the night before it is due. -->
+<!-- Third Lab 4 schema, for the line layer: Curb_Lines (LineString) with ID (integer), Material (text), Condition (text). The labeling question is the one from the original deck and it is a good one: if you do not create a Name field, you have nothing to label the map with, and you will be re-typing attributes for forty features the night before it is due. -->
 
 ---
 
@@ -472,6 +483,8 @@ Name (text) · area (decimal)
 <!-- _class: quiz -->
 
 # What is wrong with this schema?
+
+![bg right:40% w:94%](images/vec-schema-quiz.jpg)
 
 A student builds a `Buildings` polygon layer with:
 
@@ -536,17 +549,18 @@ A student builds a `Buildings` polygon layer with:
 </div>
 <div>
 
+![w:280 center](images/vec-gpkg-vs-shp.jpg)
+
 **Shapefile** — `.shp` + friends
 
 - Really 3 to 6 files that must travel together: `.shp`, `.shx`, `.dbf`, `.prj`, `.cpg`
 - Field names limited to **10 characters**
 - One geometry type per file, historic 2 GB limit
-- Still everywhere, because it is 30 years old
 
 </div>
 </div>
 
-<!-- The classic shapefile disaster: emailing somebody "the shapefile" meaning only the .shp, or losing the .prj and with it any record of the CRS. A GeoPackage is one file, so it cannot be half-sent. -->
+<!-- Shapefile is still everywhere, because it is 30 years old. The classic shapefile disaster: emailing somebody "the shapefile" meaning only the .shp, or losing the .prj and with it any record of the CRS. A GeoPackage is one file, so it cannot be half-sent. -->
 
 ---
 
@@ -562,6 +576,8 @@ A student builds a `Buildings` polygon layer with:
 ---
 
 # Five ways to lose an afternoon
+
+![bg right:36% w:94%](images/vec-lost-afternoon.jpg)
 
 - Digitizing into a **temporary scratch layer**, then closing QGIS
 - Never clicking the **…** next to File name, so the layer has no home on disk
@@ -591,6 +607,8 @@ A student builds a `Buildings` polygon layer with:
 ---
 
 # Before Next Class
+
+![bg right:36% w:94%](images/vec-before-next-class.jpg)
 
 - Read **Chapter 4, *Maps, Data Entry, and Editing***, in *GIS Fundamentals* (Bolstad & Manson)
 - **Quiz 4 (GPS Part 2)** — open book, on Learning Suite, due **Saturday**

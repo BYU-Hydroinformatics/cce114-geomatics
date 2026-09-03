@@ -311,6 +311,8 @@ Four criteria → **four grids** → one combined score.
 
 # Discrete or continuous?
 
+![bg right:40% w:94%](images/ras-discrete-or-continuous.jpg)
+
 Which of these would you store as a **continuous** raster, and which as a **discrete** one?
 
 <div class="columns">
@@ -516,6 +518,8 @@ What is the value of the **top-right cell** of the output?
 </tr>
 </table>
 
+![w:280 center](images/ras-work-one-cell.jpg)
+
 </div>
 <div>
 
@@ -622,6 +626,8 @@ Each is **map algebra on a neighborhood** of cells:
 
 # Where this goes in engineering
 
+![bg right:36% w:94%](images/ras-engineering-uses.jpg)
+
 - **Site suitability** — exactly what you drew on paper: score every criterion, combine, rank
 - **Drainage and hydrology** — watershed delineation, time of concentration, flood extent
 - **Earthwork** — cut and fill is one raster subtracted from another
@@ -648,6 +654,8 @@ Each is **map algebra on a neighborhood** of cells:
 ---
 
 # Before Next Class
+
+![bg right:28% w:94%](images/ras-before-next-class.jpg)
 
 - Read the **raster sections of Chapter 2** and **Chapter 10, *Raster Analysis***, in *GIS Fundamentals* (Bolstad & Manson)
 - Take **Quiz 5 — Getting Started with Raster Data**, open book, on Learning Suite
