@@ -17,7 +17,7 @@ Part 1
 CCE 114 Geomatics
 Dr. Dan Ames and Dr. James Halgren
 
-<!-- Tuesday concept lecture, week 8. Thursday is the hands-on session with Dr. Halgren, where students set project and layer CRSs in QGIS and reproject data. This is the lecture that Quiz 6 and Lab 7 are built on, so flag both early. -->
+<!-- Tuesday concept lecture, week 8. Thursday is the hands-on session, where students set project and layer CRSs in QGIS and reproject data. This is the lecture that Quiz 6 and Lab 7 are built on, so flag both early. -->
 
 ---
 
@@ -31,7 +31,7 @@ Dr. Dan Ames and Dr. James Halgren
   - Explain why every flat map **distorts** something, and name what a given projection preserves
   - Tell a **geographic** coordinate system from a **projected** one
   - Choose between **UTM** and **State Plane** for an engineering project, and defend the choice
-- Thursday, with Dr. Halgren: you do all of this in QGIS
+- Thursday, in the hands-on session, you do all of this in QGIS
 
 <!-- Set expectations. Today is concepts; Thursday is the software. Reading is GIS Fundamentals chapter 3, which this lecture follows. -->
 
@@ -43,7 +43,7 @@ Dr. Dan Ames and Dr. James Halgren
   [jasondavies.com/maps/transition](https://www.jasondavies.com/maps/transition/)
 - **The True Size Of…** — drag a country across the map and watch it grow:
   [thetruesize.com](https://www.thetruesize.com/)
-- **XKCD 977, "Map Projections"** — what your favourite projection says about you:
+- **XKCD 977, "Map Projections"** — what your favorite projection says about you:
   [xkcd.com/977](https://xkcd.com/977/)
 - **Interactive Album of Map Projections** (Penn State):
   [projections.mgis.psu.edu](https://projections.mgis.psu.edu/)
@@ -153,7 +153,7 @@ Dr. Dan Ames and Dr. James Halgren
 
 - Coordinates are **angles**: latitude and longitude
 - Measured on an ellipsoid, from a **datum**
-- Degrees, not metres — a degree of longitude is 111 km at the equator and 0 km at the pole
+- Degrees, not meters — a degree of longitude is 111 km at the equator and 0 km at the pole
 - Example: WGS 84 (EPSG:4326)
 
 </div>
@@ -163,7 +163,7 @@ Dr. Dan Ames and Dr. James Halgren
 
 - Coordinates are **distances**: easting and northing
 - A GCS **plus** a projection
-- Metres or feet, so you can compute length and area directly
+- Meters or feet, so you can compute length and area directly
 - Example: UTM Zone 12N, NAD 83 (EPSG:26912)
 
 </div>
@@ -181,7 +181,7 @@ Dr. Dan Ames and Dr. James Halgren
   - **Shape** (angles) — a *conformal* projection preserves it locally
   - **Area** — an *equal-area* projection preserves it
   - **Distance** — an *equidistant* projection preserves it, but only from certain points or along certain lines
-  - **Direction** — an *azimuthal* projection preserves it from the centre
+  - **Direction** — an *azimuthal* projection preserves it from the center
 - So the real question is never "which projection is right?" but **"what am I willing to distort?"**
 - Distortion is smallest near where the projection surface touches the globe, and grows with distance from it
 
@@ -228,7 +228,7 @@ Let's compare some place sizes: [thetruesize.com](https://www.thetruesize.com/)
 
 ![h:430 center](images/crs-mercator-projection.png)
 
-<!-- This is a Mercator projection, not a Transverse Mercator. How would you make it? Wrap the projection surface into a cylinder around the equator and project outward from a light source at the centre of the Earth. Mercator's virtue is that a line of constant compass bearing is a straight line, which is why it won the age of sail and why it is still the default for web maps. -->
+<!-- This is a Mercator projection, not a Transverse Mercator. How would you make it? Wrap the projection surface into a cylinder around the equator and project outward from a light source at the center of the Earth. Mercator's virtue is that a line of constant compass bearing is a straight line, which is why it won the age of sail and why it is still the default for web maps. -->
 
 ---
 
@@ -236,7 +236,7 @@ Let's compare some place sizes: [thetruesize.com](https://www.thetruesize.com/)
 
 ![h:450 center](images/crs-cylinder-projection-surface.jpg)
 
-<!-- Put a light at the centre of the globe, wrap a sheet of paper into a cylinder around it, and trace where the graticule falls on the paper. Unroll the cylinder and you have a flat map. Everything that follows is a variation on the shape of that sheet and where it touches the globe. -->
+<!-- Put a light at the center of the globe, wrap a sheet of paper into a cylinder around it, and trace where the graticule falls on the paper. Unroll the cylinder and you have a flat map. Everything that follows is a variation on the shape of that sheet and where it touches the globe. -->
 
 ---
 
@@ -255,7 +255,7 @@ Let's compare some place sizes: [thetruesize.com](https://www.thetruesize.com/)
 
 ![h:420 center](images/crs-transverse-oblique-mercator.png)
 
-<!-- Two other cylindrical variants: transverse (the cylinder is rotated 90 degrees, so it touches along a meridian) and oblique (rotated to any angle). In each case there is a ring around the globe where distortion is minimised. Now ask the key question: what if you could re-centre that line over your area of interest? What if you rotated the transverse cylinder all the way around, stopping every 6 degrees? -->
+<!-- Two other cylindrical variants: transverse (the cylinder is rotated 90 degrees, so it touches along a meridian) and oblique (rotated to any angle). In each case there is a ring around the globe where distortion is minimised. Now ask the key question: what if you could re-center that line over your area of interest? What if you rotated the transverse cylinder all the way around, stopping every 6 degrees? -->
 
 ---
 
@@ -349,7 +349,7 @@ Let's compare some place sizes: [thetruesize.com](https://www.thetruesize.com/)
 <li>Considering map distortion, this projection is equally suitable for north, central, and south Texas</li>
 </ol>
 
-<!-- Do not answer yet. Show them the scale-error map on the next slide and let them reason from it. The projection here is a conic centred on the continental United States. -->
+<!-- Do not answer yet. Show them the scale-error map on the next slide and let them reason from it. The projection here is a conic centered on the continental United States. -->
 
 ---
 
@@ -369,7 +369,7 @@ Let's compare some place sizes: [thetruesize.com](https://www.thetruesize.com/)
 - A: Utah to Kentucky crosses the standard circle, so the error varies a lot along that line
 - C: north and south Texas are at very different distances from the standard circle
 
-<!-- Drive the general rule home: with a projection, what matters is not the compass direction from the centre, it is the distance from the line or lines of true scale. -->
+<!-- Drive the general rule home: with a projection, what matters is not the compass direction from the center, it is the distance from the line or lines of true scale. -->
 
 ---
 
@@ -546,7 +546,7 @@ Let's compare some place sizes: [thetruesize.com](https://www.thetruesize.com/)
 </div>
 </div>
 
-<!-- The Earth is not really shaped like this: the relief in the picture is exaggerated enormously to make the geoid visible. The real departures from an ellipsoid are on the order of a hundred metres. This is the surface your elevations are measured from, which is why orthometric height and ellipsoid height are different numbers for the same point. -->
+<!-- The Earth is not really shaped like this: the relief in the picture is exaggerated enormously to make the geoid visible. The real departures from an ellipsoid are on the order of a hundred meters. This is the surface your elevations are measured from, which is why orthometric height and ellipsoid height are different numbers for the same point. -->
 
 ---
 
@@ -631,7 +631,7 @@ In **QGIS**:
 
 <!-- _class: activity -->
 
-# Thursday with Dr. Halgren
+# Thursday: hands-on in QGIS
 
 ![bg right:38% w:88%](images/crs-utm-zones-conus.png)
 

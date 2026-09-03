@@ -6,7 +6,7 @@
 
 | | |
 | --- | --- |
-| **Goal** | Students collect real positions with their phones, then watch those positions land on a map in QGIS in the right place, in metres, with the scatter between students visible as error. |
+| **Goal** | Students collect real positions with their phones, then watch those positions land on a map in QGIS in the right place, in meters, with the scatter between students visible as error. |
 | **Why this week** | Tuesday Dr. Ames covered how GPS works, trilaterated Prague on paper, and found Air Force One. Today is the other half: what a phone position is once you have it. Lab 3 repeats this workflow with seven campus sites and a group average. |
 | **Students bring** | A phone with a GPS app that shows full-precision latitude and longitude (not Google or Apple Maps; see below). Laptop with QGIS 3.44. |
 | **Graded item** | *In Class Activity: GPS Class Activity* (5 points). Students enter three positions in the class sheet and record the three site names on Learning Suite. |
@@ -18,7 +18,7 @@
 - [ ] The campus site list from Lab 3 Part 1 printed or on a slide (Joseph statue in the JSB grove, Tree of Life, Testing Center lobby, Maeser statue, Tau Beta Pi statue by the Clyde, the bridge to the LSB, the ESC pendulum, the library entrance windows, the JFSB fountain, the bike rack between the Talmage and JFSB, the Brigham Young statue south of the ASB, the TNRB 4th-floor bust, the MOA entrance, the Victory Bell, Cosmo in the Bookstore).
 - [ ] A TA stays in the room to watch belongings while students are out.
 - [ ] Free GPS apps to suggest: **GPS Status** or **GPS Test** (Android), **GPS Coordinates** or the built-in **Compass** app (iPhone; it shows degrees, minutes, seconds, so they need to convert or use another app). Any app that shows five or more decimal places of a degree is fine.
-- [ ] QGIS open with the Google satellite XYZ basemap and the project CRS set to **EPSG:26912**, so the import lands in metres immediately.
+- [ ] QGIS open with the Google satellite XYZ basemap and the project CRS set to **EPSG:26912**, so the import lands in meters immediately.
 - [ ] The [tagis.dep.wv.gov/convert](https://tagis.dep.wv.gov/convert/) converter open in a tab for the cross-check.
 
 ## Plan (50 minutes)
@@ -52,17 +52,17 @@ Say these five things and put them on the screen:
 3. In QGIS: **Layer > Add Layer > Add Delimited Text Layer...** File name = the CSV. File format: CSV. Under **Geometry Definition** choose **Point coordinates**, X field = the longitude column, Y field = the latitude column, Geometry CRS = **EPSG:4326 (WGS 84)**. Click **Add**.
 4. The points appear on campus. If one is in the ocean or Asia, a sign is wrong or latitude and longitude are swapped. Find whose it is and fix the row; that is the lesson.
 
-### 3. Metres, not degrees (7 minutes)
+### 3. Meters, not degrees (7 minutes)
 
-1. Point at the bottom-right CRS badge: the project is **EPSG:26912, NAD83 / UTM zone 12N**. The layer is stored in degrees but drawn in metres; QGIS reprojects on the fly.
+1. Point at the bottom-right CRS badge: the project is **EPSG:26912, NAD83 / UTM zone 12N**. The layer is stored in degrees but drawn in meters; QGIS reprojects on the fly.
 2. Make it permanent: right-click the layer > **Export > Save Features As...** Format GeoPackage, file `class_gps.gpkg`, CRS **EPSG:26912**. Add the saved file to the map.
 3. On the new layer, open the **Field Calculator**: new field `easting`, decimal, expression `$x`; then `northing` with `$y`. Sanity check: eastings near 444,000 to 445,000 and northings near 4,455,000 to 4,456,000.
-4. Paste one student's latitude and longitude into the converter with output set to **UTM NAD83 Zone 12N**. It should match the field calculator to within a metre. Two tools, one answer.
+4. Paste one student's latitude and longitude into the converter with output set to **UTM NAD83 Zone 12N**. It should match the field calculator to within a meter. Two tools, one answer.
 
 ### 4. Seeing the error (6 minutes)
 
 1. Pick a site that several students visited. Zoom in until their points separate.
-2. **Measure Line** tool (the ruler): click from one student's point to another's. Ten metres apart at the same statue is typical for a phone. Ask why: buildings, sky view, whether the phone had settled.
+2. **Measure Line** tool (the ruler): click from one student's point to another's. Ten meters apart at the same statue is typical for a phone. Ask why: buildings, sky view, whether the phone had settled.
 3. Optional if time: **Vector > Geometry Tools > Mean Coordinate(s)** grouped by the site-name field. That group average is what Lab 3 asks them to compute by hand.
 
 ## Student activity
@@ -77,7 +77,7 @@ Lab 3 Part 1 is the same collection at seven sites in groups, with a group avera
 
 - **All the points are stacked in one place or in the Gulf of Guinea.** Latitude and longitude are swapped, or the longitude lost its minus sign. Check the X and Y field choices in the import dialog.
 - **A point is 100 km off.** Someone typed `40.2466 N` with a letter, so the field imported as text. Strip the letters in the CSV and re-add.
-- **"Layer has no CRS" or points do not draw in metres.** The Geometry CRS in the import dialog was left blank. It must be EPSG:4326 because that is what phones report.
+- **"Layer has no CRS" or points do not draw in meters.** The Geometry CRS in the import dialog was left blank. It must be EPSG:4326 because that is what phones report.
 - **`$x` returns degrees.** They ran the field calculator on the original CSV layer, not the reprojected GeoPackage. `$x` is in the layer's own CRS.
 - **Phones report only four decimals.** The app is rounding. Switch to one of the apps listed above.
 
@@ -85,4 +85,4 @@ Lab 3 Part 1 is the same collection at seven sites in groups, with a group avera
 
 - [Day 7 lecture page](../lectures/day-07.md)
 - [Lab 3: GPS Data Collection and Importing Into QGIS](../assignments/lab-03/README.md)
-- Tuesday's deck: [The Global Positioning System](https://byu-hydroinformatics.github.io/cce114-geomatics/slides/day-06/gps-part-1.html); the [extended GPS slides](https://byu-hydroinformatics.github.io/cce114-geomatics/slides/day-07/gps-part-2.html) hold the longer metres demo if you want it
+- Tuesday's deck: [The Global Positioning System](https://byu-hydroinformatics.github.io/cce114-geomatics/slides/day-06/gps-part-1.html); the [extended GPS slides](https://byu-hydroinformatics.github.io/cce114-geomatics/slides/day-07/gps-part-2.html) hold the longer meters demo if you want it

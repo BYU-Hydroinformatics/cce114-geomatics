@@ -17,7 +17,7 @@ footer: "CCE 114 · Day 22 — Project Site Selection"
 CCE 114 Geomatics
 Dr. Dan Ames and Dr. James Halgren
 
-<!-- Tuesday concept lecture, Week 12. This is the lecture behind Lab 11 and the pattern students will reuse in the final project. Thursday, Dr. Halgren walks through the workflow diagrams and the final project description. -->
+<!-- Tuesday concept lecture, Week 12. This is the lecture behind Lab 11 and the pattern students will reuse in the final project. Thursday, we walk through the workflow diagrams and the final project description. -->
 
 ---
 
@@ -145,7 +145,7 @@ When you run an **Intersection** or a **Union**, the attribute tables of both la
 
 ![h:465 center](images/ws-reclassify-population.png)
 
-<!-- Same operation on census data: population density becomes population classes. This is exactly the criterion we will use for the Walmart problem, over 2000 people per square kilometre. Note that here we will do it with an attribute query on polygons rather than on a raster, but the thinking is identical. -->
+<!-- Same operation on census data: population density becomes population classes. This is exactly the criterion we will use for the Walmart problem, over 2000 people per square kilometer. Note that here we will do it with an attribute query on polygons rather than on a raster, but the thinking is identical. -->
 
 ---
 
@@ -153,7 +153,7 @@ When you run an **Intersection** or a **Union**, the attribute tables of both la
 
 ![h:430 center](images/ws-buffer-types.jpg)
 
-<!-- Buffer works on points, lines and polygons, and always returns polygons. Ask what a buffer of a polygon looks like: the polygon plus a collar around it. In QGIS: Processing Toolbox, Vector geometry, Buffer. Watch the units, which come from the layer's CRS, so a projected CRS in metres or feet, never degrees. -->
+<!-- Buffer works on points, lines and polygons, and always returns polygons. Ask what a buffer of a polygon looks like: the polygon plus a collar around it. In QGIS: Processing Toolbox, Vector geometry, Buffer. Watch the units, which come from the layer's CRS, so a projected CRS in meters or feet, never degrees. -->
 
 ---
 
@@ -284,7 +284,7 @@ When you run an **Intersection** or a **Union**, the attribute tables of both la
 
 - **Proximity to other Walmarts:** find locations at least **2 miles** from any existing Walmart
 - **Proximity to major roads:** find locations **within 2 miles** of I-15 or a highway
-- **Population density:** using 2010 Census data, find areas with over **2000 people per square kilometre**
+- **Population density:** using 2010 Census data, find areas with over **2000 people per square kilometer**
 - **Adequate space:** Walmart stores run 51,000–224,000 ft², averaging about **102,000 ft²**. Find locations where an average store would fit without demolishing large areas of existing buildings.
 
 <!-- This is the difference between a wish and a criterion: a number and a unit. "Not near a Walmart" is a wish; "at least 2 miles from any existing Walmart" is something Buffer can execute. The last criterion, adequate space, is the hard one, and it is where students have to make and defend a judgement call. -->
@@ -362,7 +362,7 @@ When you run an **Intersection** or a **Union**, the attribute tables of both la
 
 ![h:460 center](images/ws-buffer-i15.png)
 
-<!-- Two miles either side of the interstate. Ask what went wrong here: the buffer is drawn around each road segment separately, so the overlapping circles show the segments. Dissolve the buffer, or check "dissolve result" in the Buffer dialog, and you get one clean corridor polygon. Also check the units: 2 miles is about 3219 metres. -->
+<!-- Two miles either side of the interstate. Ask what went wrong here: the buffer is drawn around each road segment separately, so the overlapping circles show the segments. Dissolve the buffer, or check "dissolve result" in the Buffer dialog, and you get one clean corridor polygon. Also check the units: 2 miles is about 3219 meters. -->
 
 ---
 
@@ -434,14 +434,14 @@ When you run an **Intersection** or a **Union**, the attribute tables of both la
 
 <!-- _class: activity -->
 
-# Thursday with Dr. Halgren
+# Thursday: hands-on in QGIS
 
 - Review of **workflow diagrams**: how to draw one and how to read someone else's
 - The **final mapping project** description, walked through in detail
   - [Final project page](https://byu-hydroinformatics.github.io/cce114-geomatics/assignments/final-project/)
 - **Study session for Concepts Exam 2** — bring your questions
 
-<!-- Preview of Thursday. Dr. Halgren runs the workflow diagram review and introduces the final project, then opens the floor for exam review. -->
+<!-- Preview of Thursday. The Thursday session is the workflow diagram review and the final project introduction, then opens the floor for exam review. -->
 
 ---
 

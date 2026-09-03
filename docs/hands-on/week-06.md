@@ -38,7 +38,7 @@
 Right-click the DEM > **Properties > Information**. Read out loud and ask what each means:
 
 - **Dimensions**: columns by rows. The whole raster is that many numbers and nothing else.
-- **Pixel size**: the cell size, in the layer's units. With EPSG:26912 that is metres; this is a 10 m or 30 m DEM.
+- **Pixel size**: the cell size, in the layer's units. With EPSG:26912 that is meters; this is a 10 m or 30 m DEM.
 - **CRS** and **Extent**: where the grid sits and how big it is.
 - **Data type** (Float32 or Int16) and **No-data value**: a no-data cell is not zero. Zero is an elevation.
 
@@ -52,14 +52,14 @@ The **Source** tab shows the file path and lets you rename the layer. Renaming c
 
 ### 3. Reading elevations
 
-1. **Identify Features** on the DEM: one band, one value, in metres.
+1. **Identify Features** on the DEM: one band, one value, in meters.
 2. **Properties > Elevation**: set **Represents Elevation Surface**. Apply.
 3. **View > Elevation Profile**. Click the **Capture Curve** tool, draw a line from Utah Lake east across Provo to the Wasatch, right-click to finish. The profile appears below the map. Ask where campus is on it, and what the vertical exaggeration is doing.
 4. If the profile panel misbehaves on someone's laptop, the **Profile Tool** plugin (Plugins > Manage and Install) does the same job.
 
 ### 4. One analysis, two ways
 
-1. **Raster > Analysis > Slope**. Input the DEM; leave the Z factor at 1 because the CRS is in metres. Run. Style the result pseudocolor. Lab 5 asks for exactly this.
+1. **Raster > Analysis > Slope**. Input the DEM; leave the Z factor at 1 because the CRS is in meters. Run. Style the result pseudocolor. Lab 5 asks for exactly this.
 2. **Raster > Raster Calculator**: expression `"dem@1" > 1500` produces a 1/0 raster of everything above 1500 m. Tuesday's engineering-paper reclass was this, done by hand.
 
 ## Student activity
@@ -74,7 +74,7 @@ Start the *Geomatics Exam 1 Prep* Kahoot from the Learning Suite Kahoot page. St
 
 - **The DEM draws as a flat gray square.** Min and max are not set. Symbology > Min/Max Value Settings > **Cumulative count cut**, Apply.
 - **"Represents Elevation Surface" is missing.** They are on an older QGIS. The Profile Tool plugin covers it.
-- **Slope output is all zero or all 90.** Z factor or units problem: the DEM is in EPSG:4326 (degrees) so a metre rise looks enormous. Reproject the DEM to EPSG:26912 first with **Raster > Projections > Warp (Reproject)**.
+- **Slope output is all zero or all 90.** Z factor or units problem: the DEM is in EPSG:4326 (degrees) so a meter rise looks enormous. Reproject the DEM to EPSG:26912 first with **Raster > Projections > Warp (Reproject)**.
 - **Raster Calculator says the expression is invalid.** Layer names with spaces or hyphens need the quotes exactly as the dialog inserts them; double-click the layer in the list instead of typing.
 - **Kahoot PIN will not join.** Refresh the lobby; the BYU network sometimes blocks the first attempt.
 

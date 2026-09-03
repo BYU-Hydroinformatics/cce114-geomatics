@@ -14,7 +14,7 @@
 
 ## Before class
 
-- [ ] United States.zip unzipped and the three layers loaded on the projector machine, project CRS set to **EPSG:5070** (NAD83 CONUS Albers) so buffers are in metres and honest across the country.
+- [ ] United States.zip unzipped and the three layers loaded on the projector machine, project CRS set to **EPSG:5070** (NAD83 CONUS Albers) so buffers are in meters and honest across the country.
 - [ ] The **Processing Toolbox** panel open (Processing > Toolbox).
 - [ ] The workflow diagram from the Day 18 deck (the annotated buffer, select, output chain) on a slide.
 - [ ] Learning Suite open to the *Cities Near Rivers* activity.

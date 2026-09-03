@@ -322,7 +322,7 @@ The front half of the biofuel siting analysis — and this is only half of it
 - Learn to **georeference** an image that has no spatial location of its own
 - Stretch a historical map onto real-world coordinates and digitize from it
 
-<!-- A favourite lab. You pick a historical map — a city plan, a fire insurance map, an old survey — and pin it to the modern world by matching identifiable points. Then you can digitize the old street grid, the old shoreline, the old channel, and measure how much has moved. Engineers do this for real when tracking channel migration, buried infrastructure, and historical land use. -->
+<!-- A favorite lab. You pick a historical map — a city plan, a fire insurance map, an old survey — and pin it to the modern world by matching identifiable points. Then you can digitize the old street grid, the old shoreline, the old channel, and measure how much has moved. Engineers do this for real when tracking channel migration, buried infrastructure, and historical land use. -->
 
 ---
 

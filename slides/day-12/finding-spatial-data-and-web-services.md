@@ -15,7 +15,7 @@ footer: "CCE 114 · Day 12 — Finding Spatial Data and Web Services"
 CCE 114 Geomatics
 Dr. Dan Ames and Dr. James Halgren
 
-<!-- Tuesday concept lecture. Today is about where spatial data comes from and how to pull it straight off a server into QGIS. Thursday with Dr. Halgren is the hands-on session where students connect QGIS to live services and build a layout. The map on the right was made entirely from web services: no downloads, no unzipping. -->
+<!-- Tuesday concept lecture. Today is about where spatial data comes from and how to pull it straight off a server into QGIS. Thursday in the Thursday hands-on session is the hands-on session where students connect QGIS to live services and build a layout. The map on the right was made entirely from web services: no downloads, no unzipping. -->
 
 ---
 
@@ -29,7 +29,7 @@ Dr. Dan Ames and Dr. James Halgren
   - Explain what the **UGRC** and the **SGID** are, and find a dataset in them
   - Tell **WMS, WMTS, WFS, WCS, XYZ** and **ArcGIS REST** apart, and say what each returns
   - Connect **QGIS** to a live web service instead of downloading a file
-- Thursday, with Dr. Halgren: you connect QGIS to these services and build a layout
+- Thursday, in the hands-on session, you connect QGIS to these services and build a layout
 
 <!-- Set expectations. Reading for this week is GIS Fundamentals Chapter 7, Digital Data, which surveys the major public data sources. Everything on this slide shows up again in Lab 6. -->
 
@@ -63,9 +63,9 @@ Dr. Dan Ames and Dr. James Halgren
 
 ![h:420 center](images/web-datagov.png)
 
-[data.gov](https://data.gov/) — the U.S. government's open data catalogue: **over 550,000 datasets**, with a **Geospatial** category
+[data.gov](https://data.gov/) — the U.S. government's open data catalog: **over 550,000 datasets**, with a **Geospatial** category
 
-<!-- data.gov is the front door to federal open data. It is a catalogue, not a warehouse: it indexes datasets that live on agency servers and links out to them. Good for discovery, sometimes frustrating for download, because you land on whatever the agency built. -->
+<!-- data.gov is the front door to federal open data. It is a catalog, not a warehouse: it indexes datasets that live on agency servers and links out to them. Good for discovery, sometimes frustrating for download, because you land on whatever the agency built. -->
 
 ---
 
@@ -87,7 +87,7 @@ Dr. Dan Ames and Dr. James Halgren
 - The rule of thumb: **data is created by whoever needs it for their own job**
 - Parcels come from the county assessor because taxes depend on them
 - Streamflow comes from USGS because someone has to run the gages
-- Ask *who would care about this?* and then go to that organisation's site
+- Ask *who would care about this?* and then go to that organization's site
 
 </div>
 </div>
@@ -144,7 +144,7 @@ Dr. Dan Ames and Dr. James Halgren
 </div>
 </div>
 
-<!-- Do not try to memorise this list; recognise the names so you know one exists when you need it. For an engineering project in the U.S. you can usually assemble elevation, hydrography, soils, floodplain, and parcels from these five sources in an afternoon, at no cost. -->
+<!-- Do not try to memorise this list; recognize the names so you know one exists when you need it. For an engineering project in the U.S. you can usually assemble elevation, hydrography, soils, floodplain, and parcels from these five sources in an afternoon, at no cost. -->
 
 ---
 
@@ -199,7 +199,7 @@ Dr. Dan Ames and Dr. James Halgren
 - For each, note:
   - The **direct download or service URL**
   - The **format** (shapefile, GeoPackage, GeoTIFF, feature service)
-  - Whether it is **free** and what **licence** it carries
+  - Whether it is **free** and what **license** it carries
 - Be ready to report one thing that surprised you
 
 </div>
@@ -223,7 +223,7 @@ Dr. Dan Ames and Dr. James Halgren
 
 - **UGRC**, at [gis.utah.gov](https://gis.utah.gov/)
 - The state's central GIS office: it collects, standardises, and publishes Utah's spatial data
-- You may see it called the **AGRC** (Automated Geographic Reference Center) in older documents and lecture slides — **same organisation, renamed**
+- You may see it called the **AGRC** (Automated Geographic Reference Center) in older documents and lecture slides — **same organization, renamed**
 - Nearly everything it publishes is **free and public**
 
 </div>
@@ -244,7 +244,7 @@ Dr. Dan Ames and Dr. James Halgren
 
 **State Geographic Information Datasource** — [gis.utah.gov/products/sgid](https://gis.utah.gov/products/sgid/)
 
-<!-- The SGID is the catalogue behind UGRC. Three doors on the homepage: What is the SGID, Data Categories (browse), and SGID Index (search). The open portion is public and needs no account. This is the site Lab 6 sends you to. -->
+<!-- The SGID is the catalog behind UGRC. Three doors on the homepage: What is the SGID, Data Categories (browse), and SGID Index (search). The open portion is public and needs no account. This is the site Lab 6 sends you to. -->
 
 ---
 
@@ -587,7 +587,7 @@ https://services1.arcgis.com/99lidPhWCzftIe9K/ArcGIS/rest/services
 
 - **A picture is not data.** You cannot analyse a WMS layer, only look at it
 - **Rendering can be slow** with big vector services; limit the extent
-- **Licence and attribution**: public agency data is usually free to use with credit. Read the terms, and cite the source on your map
+- **License and attribution**: public agency data is usually free to use with credit. Read the terms, and cite the source on your map
 
 </div>
 </div>
@@ -598,7 +598,7 @@ https://services1.arcgis.com/99lidPhWCzftIe9K/ArcGIS/rest/services
 
 <!-- _class: activity -->
 
-# Thursday with Dr. Halgren
+# Thursday: hands-on in QGIS
 
 ![bg right:38% w:88%](images/web-rest-directory.png)
 

@@ -89,7 +89,7 @@ By the end of class you should be able to:
 <tr><td><strong>5. Act</strong> on the knowledge</td><td>Present or share the result. Acting often raises the next question.</td><td>Build a map layout, export a PDF, share the layers, refine the criteria and run it again.</td></tr>
 </table>
 
-<!-- Rebuilt from the Esri "geographic approach" table in the source deck, with the ArcGIS/ArcMap references changed to QGIS. Walk the five steps quickly; the next four slides are one worked example of steps 1 through 4. Notice step 3 is the one students skip, and it is the one that wastes their afternoon when the CRS is in degrees and the buffer tool wants metres. -->
+<!-- Rebuilt from the Esri "geographic approach" table in the source deck, with the ArcGIS/ArcMap references changed to QGIS. Walk the five steps quickly; the next four slides are one worked example of steps 1 through 4. Notice step 3 is the one students skip, and it is the one that wastes their afternoon when the CRS is in degrees and the buffer tool wants meters. -->
 
 ---
 
@@ -134,7 +134,7 @@ Utah's data lives at the **Utah Geospatial Resource Center** (gis.utah.gov), the
 - Is the dataset **current**?
 - What else?
 
-<!-- This is the step everyone wants to skip. Add one more to the list out loud: what coordinate reference system is it in? A layer in geographic coordinates is measured in degrees, and you cannot buffer degrees by 10 kilometres. Lab 9 makes students reproject a road layer for exactly this reason. -->
+<!-- This is the step everyone wants to skip. Add one more to the list out loud: what coordinate reference system is it in? A layer in geographic coordinates is measured in degrees, and you cannot buffer degrees by 10 kilometers. Lab 9 makes students reproject a road layer for exactly this reason. -->
 
 ---
 
@@ -534,14 +534,14 @@ Every one of those is a buffer, a select by location, or a difference.
 
 <!-- _class: activity -->
 
-# Thursday: Hands-On with Dr. Halgren
+# Thursday: hands-on in QGIS
 
 - We build the **cities near rivers** analysis for real, in QGIS
 - Chaining tools into a workflow: the output of each tool is a layer you save to disk and feed to the next one
 - The U.S. cities and rivers data is posted on **Learning Suite**
 - **In-class activity — Cities Near Rivers:** upload a screenshot of your map showing all U.S. cities within 10 km of a major river, and record completion on Learning Suite
 
-<!-- Preview of Thursday. Dr. Halgren runs the session. Tell students to bring the same laptop and QGIS install they have been using; the activity is a screenshot upload, so nobody leaves without a finished map. The next slide is the version of the workflow diagram to walk through before they start. -->
+<!-- Preview of Thursday. The Thursday session Tell students to bring the same laptop and QGIS install they have been using; the activity is a screenshot upload, so nobody leaves without a finished map. The next slide is the version of the workflow diagram to walk through before they start. -->
 
 ---
 

@@ -17,7 +17,7 @@ footer: "CCE 114 · Day 4 — Maps, Symbology, and Cartography"
 CCE 114 Geomatics
 Dr. Dan Ames and Dr. James Halgren
 
-<!-- Tuesday concept lecture. Thursday is the hands-on session with Dr. Halgren, where students build a map of the United States in QGIS and change symbology themselves. -->
+<!-- Tuesday concept lecture. Thursday is the hands-on session, where students build a map of the United States in QGIS and change symbology themselves. -->
 
 ---
 
@@ -28,7 +28,7 @@ Dr. Dan Ames and Dr. James Halgren
   - Choose **symbology** for points, lines, polygons, and rasters on purpose
   - Use **labels, legends, and scale bars** so a reader can use your map without you
   - Recognize how a map can mislead through **obfuscation, omission, or dramatic symbology**
-- Thursday, with Dr. Halgren: you build a map of the United States in QGIS and play with symbology
+- Thursday, in the hands-on session, you build a map of the United States in QGIS and play with symbology
 
 <!-- Set expectations. This is the concepts day; the hands-on symbology work happens Thursday. Reading is the map design sections of chapter 4 in Bolstad and Manson. Lab 2 and Quiz 2 are both due Saturday. -->
 
@@ -480,7 +480,7 @@ Also, for the record:
 
 <!-- _class: activity -->
 
-# Thursday with Dr. Halgren: Playing with Symbology
+# Thursday: hands-on in QGIS, Playing with Symbology
 
 ![bg right:38% w:88%](images/mc-emoji-states.jpg)
 
@@ -490,7 +490,7 @@ Also, for the record:
 - **Add labels** to your features
 - In-class activity: make a colorful map and upload a screenshot
 
-<!-- Preview of Thursday. Dr. Halgren runs the hands-on session. Students bring laptops with QGIS installed. The "Playing with Symbology" activity is graded on participation: make a colorful map and upload a screenshot. -->
+<!-- Preview of Thursday. The Thursday session Students bring laptops with QGIS installed. The "Playing with Symbology" activity is graded on participation: make a colorful map and upload a screenshot. -->
 
 ---
 

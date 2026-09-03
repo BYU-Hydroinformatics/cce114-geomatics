@@ -28,7 +28,7 @@ Dr. Dan Ames and Dr. James Halgren
   - Name two ways a civil or environmental engineer uses GIS
 - Software for this course: **QGIS** — free, open source, runs on Mac and Windows
 
-<!-- Set expectations for the hour. Note the software change: this course now uses QGIS, not ArcGIS Pro. QGIS is free and cross-platform, so students install it themselves rather than relying on a lab licence. -->
+<!-- Set expectations for the hour. Note the software change: this course now uses QGIS, not ArcGIS Pro. QGIS is free and cross-platform, so students install it themselves rather than relying on a lab license. -->
 
 ---
 
@@ -173,7 +173,7 @@ As you go to different parts of the room/world, take a minute to get to know the
 
 ![h:470 center](images/gis-qgis-points.png)
 
-<!-- Points are city centres derived from the city polygons. Ask what a point loses compared to a polygon — area, shape, boundary. -->
+<!-- Points are city centers derived from the city polygons. Ask what a point loses compared to a polygon — area, shape, boundary. -->
 
 ---
 
@@ -213,7 +213,7 @@ As you go to different parts of the room/world, take a minute to get to know the
 - Toggle each layer on and off in the Layers panel
 - Identify a feature: click it and read its attributes
 - Open the attribute table — select a row, watch it light up on the map
-- Change the symbology: colour, outline, point size
+- Change the symbology: color, outline, point size
 - Run one tool: Processing Toolbox → Vector geometry → Buffer
 - Follow along on your own laptop if you already have QGIS installed.
 

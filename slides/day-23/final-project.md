@@ -67,7 +67,7 @@ By the end of class you should be able to:
 - **Proximity to other Walmarts:** at least **2 miles** from any existing store
 - **Proximity to major roads:** within **2 miles** of I-15 or a highway
 - **Population density:** over **2000 people per km²** (Census block data)
-- **Adequate space:** stores run 51,000–224,000 ft², average about **102,000 ft²** — find places where that fits without demolishing a neighbourhood
+- **Adequate space:** stores run 51,000–224,000 ft², average about **102,000 ft²** — find places where that fits without demolishing a neighborhood
 
 <!-- The jump from "near a highway" to "within 2 miles of I-15 or a highway" is the whole trick. Every criterion needs a number and a layer before you can run a single tool. Their final project criteria have to be written this way too. -->
 

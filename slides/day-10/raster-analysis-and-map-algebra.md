@@ -15,7 +15,7 @@ footer: "CCE 114 · Day 10 — Raster Analysis and Map Algebra"
 CCE 114 Geomatics
 Dr. Dan Ames and Dr. James Halgren
 
-<!-- Tuesday concept lecture, Week 6. Today is raster: what a grid of cells actually is, and what you can do by adding grids together. The image on the right is a student's finished engineering-paper suitability map from Winter 2025 (credit: Rachel Partington). We build one of those in the first half of class. Thursday is the QGIS session with Dr. Halgren. -->
+<!-- Tuesday concept lecture, Week 6. Today is raster: what a grid of cells actually is, and what you can do by adding grids together. The image on the right is a student's finished engineering-paper suitability map from Winter 2025 (credit: Rachel Partington). We build one of those in the first half of class. Thursday is the QGIS session in the Thursday hands-on session. -->
 
 ---
 
@@ -192,7 +192,7 @@ Four criteria → **four grids** → one combined score.
 
 - Combine your four grids into **one** heat map of suitability
 - You can **add**, **multiply**, or invent your own rule
-- Colour the cells by their combined value, or just write the totals onto one of your sheets
+- Color the cells by their combined value, or just write the totals onto one of your sheets
 - Be ready to defend the rule you chose
 
 </div>
@@ -281,7 +281,7 @@ Four criteria → **four grids** → one combined score.
 <tr><td style="border:1px solid #7a8698;height:40px;">14</td><td style="border:1px solid #7a8698;">15</td><td style="border:1px solid #7a8698;">18</td><td style="border:1px solid #7a8698;">18</td><td style="border:1px solid #7a8698;">16</td><td style="border:1px solid #7a8698;">14</td></tr>
 </table>
 </div>
-<div style="margin-top:0.4em;"><span style="color:#0062b8;font-weight:700;">one cell = 30 m × 30 m</span> · grey cells are no-data</div>
+<div style="margin-top:0.4em;"><span style="color:#0062b8;font-weight:700;">one cell = 30 m × 30 m</span> · gray cells are no-data</div>
 </div>
 
 </div>
@@ -295,7 +295,7 @@ Four criteria → **four grids** → one combined score.
 
 ![h:430 center](images/ras-discrete-continuous.jpg)
 
-<!-- Four panels: land use and roads are discrete, meaning the number is a code for a category and the boundaries between classes are real edges. The DEM and the aerial image are continuous: the value changes a little from every cell to its neighbour and there is no edge. -->
+<!-- Four panels: land use and roads are discrete, meaning the number is a code for a category and the boundaries between classes are real edges. The DEM and the aerial image are continuous: the value changes a little from every cell to its neighbor and there is no edge. -->
 
 ---
 
@@ -303,7 +303,7 @@ Four criteria → **four grids** → one combined score.
 
 ![h:440 center](images/ras-landuse-elevation.jpg)
 
-<!-- Left: a land use raster, where 22, 41, 81 and 91 are codes, not quantities. Averaging them would be meaningless. Right: an elevation surface, where averaging neighbouring cells is a perfectly sensible thing to do. The test is whether arithmetic on the values means anything. -->
+<!-- Left: a land use raster, where 22, 41, 81 and 91 are codes, not quantities. Averaging them would be meaningless. Right: an elevation surface, where averaging neighboring cells is a perfectly sensible thing to do. The test is whether arithmetic on the values means anything. -->
 
 ---
 
@@ -387,7 +387,7 @@ Then: which one of them is **not** a good candidate for a raster at all?
 <div>
 
 - Better suited to spatially **continuous** data such as elevation
-- Better for **visualisation** and for modelling environmental phenomena
+- Better for **visualization** and for modeling environmental phenomena
 - Other continuous data: pH, air pressure, temperature, salinity
 - A **simplified realisation** of the world, so processing is fast and efficient
 - Geoprocessing becomes **array arithmetic** on a grid
@@ -559,7 +559,7 @@ A raster is just an **array**, which is why map algebra is fast. But the arrays 
 </div>
 </div>
 
-<!-- The figure shows two grids with different origins and different cell sizes; cell A and cell B overlap partly, so there is no clean cell-to-cell correspondence. QGIS will resample for you if you let it, but it will pick the resampling rule, and nearest neighbour on a land-cover raster is right while nearest neighbour on elevation throws away accuracy. Fix it deliberately: reproject and align the grids before the Raster Calculator, not after. The engineering-paper analogue is holding two sheets up to the light and finding the squares do not line up. -->
+<!-- The figure shows two grids with different origins and different cell sizes; cell A and cell B overlap partly, so there is no clean cell-to-cell correspondence. QGIS will resample for you if you let it, but it will pick the resampling rule, and nearest neighbor on a land-cover raster is right while nearest neighbor on elevation throws away accuracy. Fix it deliberately: reproject and align the grids before the Raster Calculator, not after. The engineering-paper analogue is holding two sheets up to the light and finding the squares do not line up. -->
 
 ---
 
@@ -600,7 +600,7 @@ A raster is just an **array**, which is why map algebra is fast. But the arrays 
 <div class="columns" style="grid-template-columns: 1fr 1.15fr;">
 <div>
 
-Each is **map algebra on a neighbourhood** of cells:
+Each is **map algebra on a neighborhood** of cells:
 
 - **Slope** — rate of change of elevation, in degrees or percent
 - **Aspect** — the compass direction the slope faces
@@ -616,7 +616,7 @@ Each is **map algebra on a neighbourhood** of cells:
 </div>
 </div>
 
-<!-- The neighbourhood is usually the eight cells surrounding each cell: slope and aspect are fitted to that 3x3 window. Emphasise that the input to every one of these is a single DEM: no extra data is collected, the information was already in the grid. This is the payoff of the raster model and the reason hydrology is done in raster. The right-hand figure is the Utah County DEM from Week 2 run through two of these tools in QGIS: a hillshade with 200 m contours on the left, slope in degrees on the right, both over the Wasatch Front east of Provo. In QGIS these are all in the Processing Toolbox: Raster analysis gives you Slope, Aspect and Hillshade, Raster extraction gives you Contour, and the GDAL and SAGA providers give the hydrology tools. -->
+<!-- The neighborhood is usually the eight cells surrounding each cell: slope and aspect are fitted to that 3x3 window. Emphasise that the input to every one of these is a single DEM: no extra data is collected, the information was already in the grid. This is the payoff of the raster model and the reason hydrology is done in raster. The right-hand figure is the Utah County DEM from Week 2 run through two of these tools in QGIS: a hillshade with 200 m contours on the left, slope in degrees on the right, both over the Wasatch Front east of Provo. In QGIS these are all in the Processing Toolbox: Raster analysis gives you Slope, Aspect and Hillshade, Raster extraction gives you Contour, and the GDAL and SAGA providers give the hydrology tools. -->
 
 ---
 
@@ -634,16 +634,16 @@ Each is **map algebra on a neighbourhood** of cells:
 
 <!-- _class: activity -->
 
-# Thursday with Dr. Halgren
+# Thursday: hands-on in QGIS
 
 ![bg right:36% w:88%](images/ras-landuse-elevation.jpg)
 
 - Load a **GeoTIFF** in QGIS and read the **Information** and **Source** tabs: data type, rows and columns, cell size, units, projection
-- **Raster symbology**: render types, singleband pseudocolor, colour ramps, classification
+- **Raster symbology**: render types, singleband pseudocolor, color ramps, classification
 - **Elevation surfaces** and **cross-section profiles**: *View > Elevation Profile*, or the **Profile Tool** plugin
 - Bring your laptop with QGIS installed
 
-<!-- Preview of Thursday. Dr. Halgren runs the hands-on session. The Information tab is where today's four defining properties, cell size, extent, rows and columns, and no-data, stop being abstract. -->
+<!-- Preview of Thursday. The Thursday session The Information tab is where today's four defining properties, cell size, extent, rows and columns, and no-data, stop being abstract. -->
 
 ---
 

@@ -12,7 +12,7 @@
 ## Slides
 
 - [The Global Positioning System](https://byu-hydroinformatics.github.io/cce114-geomatics/slides/day-06/gps-part-1.html)
-- [GPS extended slides: trilateration build, error budget, metres demo (reference)](https://byu-hydroinformatics.github.io/cce114-geomatics/slides/day-07/gps-part-2.html)
+- [GPS extended slides: trilateration build, error budget, meters demo (reference)](https://byu-hydroinformatics.github.io/cce114-geomatics/slides/day-07/gps-part-2.html)
 
 ## In-class activity
 

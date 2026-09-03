@@ -52,7 +52,7 @@ Say out loud: a basemap is a picture of the world served in tiles. You cannot cl
 
 ### 3. Create and edit a layer
 
-1. **Layer > Create Layer > New GeoPackage Layer...** Database: browse to the data folder and name it `week02.gpkg`. Table name `new_towers`, geometry type **Point**, CRS **EPSG:26912 (NAD83 / UTM zone 12N)** so coordinates are in metres. Add a text field `name` and an integer field `height_m`. OK.
+1. **Layer > Create Layer > New GeoPackage Layer...** Database: browse to the data folder and name it `week02.gpkg`. Table name `new_towers`, geometry type **Point**, CRS **EPSG:26912 (NAD83 / UTM zone 12N)** so coordinates are in meters. Add a text field `name` and an integer field `height_m`. OK.
 2. Select the new layer, click **Toggle Editing** (the pencil), then **Add Point Feature**. Click three spots on the map; fill in the attribute form each time.
 3. **Save Layer Edits**, then toggle editing off. Show that the points survive a project save and reopen; the shapefile towers and your GeoPackage towers are the same kind of thing.
 4. Select the roads layer, toggle editing, choose the **Vertex Tool**, and drag one vertex of a road a little. Then **discard** the change (toggle editing off and choose Discard) so the class sees that edits are not real until saved.

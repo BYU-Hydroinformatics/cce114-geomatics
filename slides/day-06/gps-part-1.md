@@ -17,7 +17,7 @@ footer: "CCE 114 · Day 6 — The Global Positioning System"
 CCE 114 Geomatics
 Dr. Dan Ames
 
-<!-- Tuesday concept lecture, Week 4, simplified for a 50-minute hour that also holds two activities. Order: Air Force One warm-up (5 min), the Prague "Where Am I" activity (15 min), then the short explanation of how GPS does the same thing (about 25 min). Thursday is field collection on campus and the QGIS import with Dr. Halgren. The longer version of this material (four-step position fix, error budget arithmetic, the metres demo) is in the extended deck linked from the Day 6 page. -->
+<!-- Tuesday concept lecture, Week 4, simplified for a 50-minute hour that also holds two activities. Order: Air Force One warm-up (5 min), the Prague "Where Am I" activity (15 min), then the short explanation of how GPS does the same thing (about 25 min). Thursday is field collection on campus and the QGIS import in the Thursday hands-on session. The longer version of this material (four-step position fix, error budget arithmetic, the meters demo) is in the extended deck linked from the Day 6 page. -->
 
 ---
 
@@ -29,7 +29,7 @@ By the end of class you should be able to:
 
 - **Find a hidden object from three distances**, first in this room, then on a map of Europe
 - Explain how a GPS receiver turns a **signal delay** into a **distance**, and distances into a **position**
-- Read a **latitude and longitude** and say what a decimal place is worth in metres
+- Read a **latitude and longitude** and say what a decimal place is worth in meters
 - Name the **big sources of GPS error** and the one you control
 
 <!-- Set expectations: two activities first, explanation second. Students will have done trilateration with their own hands before anyone says the word. The reading is GIS Fundamentals chapter 5, GNSS and Coordinate Surveying. -->
@@ -84,7 +84,7 @@ I heard three radio stations announcing the time, but each was off from the actu
 </div>
 </div>
 
-<!-- Printed maps of Europe with a scale bar, one per student, or a web map with the measure tool. Compasses or string. Twelve to fifteen minutes. Circulate and check that they converted seconds to kilometres before drawing; the usual mistake is a circle in metres on a map scaled in kilometres. Reveal the answer only after they commit. -->
+<!-- Printed maps of Europe with a scale bar, one per student, or a web map with the measure tool. Compasses or string. Twelve to fifteen minutes. Circulate and check that they converted seconds to kilometers before drawing; the usual mistake is a circle in meters on a map scaled in kilometers. Reveal the answer only after they commit. -->
 
 ---
 
@@ -195,9 +195,9 @@ A GPS satellite's code arrives **0.067 seconds** after it was sent. The speed of
 <div class="columns" style="grid-template-columns: 1fr 1.15fr;">
 <div>
 
-- The receiver solves in **X, Y, Z** from the centre of the Earth, then converts to **latitude, longitude, height** on an ellipsoid
+- The receiver solves in **X, Y, Z** from the center of the Earth, then converts to **latitude, longitude, height** on an ellipsoid
 - An angle only becomes a distance once you say **which ellipsoid** (the datum) you are standing on
-- GPS uses **WGS-84**; most U.S. data is **NAD83**; the two agree to about a metre
+- GPS uses **WGS-84**; most U.S. data is **NAD83**; the two agree to about a meter
 - Height is above the ellipsoid, **not** above sea level; more on that in Week 8
 
 </div>
@@ -208,7 +208,7 @@ A GPS satellite's code arrives **0.067 seconds** after it was sent. The speed of
 </div>
 </div>
 
-<!-- The key sentence is the title. It is the reason converting to metres, two slides from now, is not one multiplication, and it is why QGIS asks for a CRS every time you add a layer. Datums and the geoid get their own day in Week 8. -->
+<!-- The key sentence is the title. It is the reason converting to meters, two slides from now, is not one multiplication, and it is why QGIS asks for a CRS every time you add a layer. Datums and the geoid get their own day in Week 8. -->
 
 ---
 
@@ -261,7 +261,7 @@ Negative longitude = west. Negative latitude = south.
 <div>
 
 - Rounding is **throwing away accuracy you paid for**
-- A phone fix is good to a few metres, so it deserves **five decimal places**
+- A phone fix is good to a few meters, so it deserves **five decimal places**
 - Four decimals cannot resolve a building; two cannot resolve a city block
 - **Record every digit your phone gives you** on Thursday
 
@@ -285,11 +285,11 @@ Your phone reports `40.2496612, -111.6493388` while sitting on a desk. The true 
 <li>Neither</li>
 </ol>
 
-<!-- Answer B. Seven decimal places is about a centimetre of precision; being 8 m from the truth is poor accuracy. The receiver reports every digit it computed, not the digits it can defend. On the quiz. -->
+<!-- Answer B. Seven decimal places is about a centimeter of precision; being 8 m from the truth is poor accuracy. The receiver reports every digit it computed, not the digits it can defend. On the quiz. -->
 
 ---
 
-# Why lat/long to metres is not one multiplication
+# Why lat/long to meters is not one multiplication
 
 <div class="columns">
 <div>
@@ -304,15 +304,15 @@ Your phone reports `40.2496612, -111.6493388` while sitting on a desk. The true 
 **So, the rule:**
 
 1. **Never** measure length or area in degrees
-2. **Project** into metres first: **UTM Zone 12N** (EPSG:26912) for Utah
+2. **Project** into meters first: **UTM Zone 12N** (EPSG:26912) for Utah
 3. Then measure
 
-Thursday, Dr. Halgren does exactly this with the points you collect.
+Thursday, we will do exactly this with the points you collect.
 
 </div>
 </div>
 
-<!-- Do cos(40.25) = 0.763 on the board. Ask what happens at 60 degrees north (half) and at the pole (zero). Degrees for storing and sharing, projected metres for measuring; QGIS will happily hand you a meaningless number in degrees. -->
+<!-- Do cos(40.25) = 0.763 on the board. Ask what happens at 60 degrees north (half) and at the pole (zero). Degrees for storing and sharing, projected meters for measuring; QGIS will happily hand you a meaningless number in degrees. -->
 
 ---
 
@@ -335,7 +335,7 @@ Thursday, Dr. Halgren does exactly this with the points you collect.
 | Ionosphere and troposphere | 5 – 8 m |
 | Multipath (bounced signals) | 0.5 – 1 m |
 | Receiver noise | 0.3 – 1.5 m |
-| **User error** | **up to a kilometre or more** |
+| **User error** | **up to a kilometer or more** |
 
 The row you control is the last one: wrong sign, wrong datum, wrong point, rounding.
 
@@ -370,7 +370,7 @@ Satellites bunched together → a **large** area of uncertainty. Satellites spre
 <div>
 
 - Put a second receiver on a point whose position is **already known** (a base station)
-- Whatever error it sees right now, a receiver a few kilometres away sees **almost the same error at the same moment**
+- Whatever error it sees right now, a receiver a few kilometers away sees **almost the same error at the same moment**
 - Compute the base's **dx, dy** correction and apply it to the moving receiver
 - Today's versions: **WAAS** in your phone, **RTK** on a survey rover, the **Utah reference network**
 
@@ -382,20 +382,20 @@ Satellites bunched together → a **large** area of uncertainty. Satellites spre
 </div>
 </div>
 
-<!-- One idea, one slide. Work the arithmetic on the board if there is time: base knows it is at (Bx, By), satellites say (Bx+5, By-3), correction is (-5, +3), apply it to the rover. Survey-grade receivers reach centimetres this way. -->
+<!-- One idea, one slide. Work the arithmetic on the board if there is time: base knows it is at (Bx, By), satellites say (Bx+5, By-3), correction is (-5, +3), apply it to the rover. Survey-grade receivers reach centimeters this way. -->
 
 ---
 
-# Thursday: hands-on with Dr. Halgren
+# Thursday: hands-on in QGIS
 
 ![bg right:31% w:96%](images/gps-trilateration-circles.jpg)
 
 - **Twenty minutes on campus:** collect three positions with your phone, full precision, into the shared **"GPS activity"** sheet
-- **Live demo:** the class points imported into QGIS from a CSV, given a CRS, and reprojected to UTM metres
+- **Live demo:** the class points imported into QGIS from a CSV, given a CRS, and reprojected to UTM meters
 - **See the error:** how far apart two phones put the same statue
 - Bring a **phone with a GPS app** that shows five decimal places, and a **laptop with QGIS**
 
-<!-- Preview of Thursday. Dr. Halgren runs the session: field collection first, then the import demo. The "GPS Class Activity" item on Learning Suite is recorded that day. Run sheet: byu-hydroinformatics.github.io/cce114-geomatics/hands-on/week-04/ -->
+<!-- Preview of Thursday. The Thursday session field collection first, then the import demo. The "GPS Class Activity" item on Learning Suite is recorded that day. Run sheet: byu-hydroinformatics.github.io/cce114-geomatics/hands-on/week-04/ -->
 
 ---
 
@@ -410,4 +410,4 @@ Satellites bunched together → a **large** area of uncertainty. Satellites spre
 
 <!-- Confirm the Saturday due dates against Learning Suite before class. -->
 
-<!-- Revision notes (2026-09-03): simplified from the 40-slide Part 1 deck at Dan's request so that Tuesday of Week 4 holds the Air Force One warm-up, the Prague activity, and a short GPS explanation in one 50-minute hour. Kept: constellations, the code-delay trick, the range quiz, ranges-to-position, angles-not-distances, coordinate formats, the decimal-place table, the precision/accuracy quiz, the lat/long-to-metres rule, a one-slide error budget, PDOP, and DGPS. Dropped or merged: the 3 D's of map data, the four-concepts roadmap, the U.S. Government framing, modulation methods, the 0.674 s worked example, the datum table, the geoid/ellipsoid slide (Week 8 covers it), the six separate error-source slides, the cumulative-error figure, the PDOP distribution figure, the DGPS post-processing and base/rover arithmetic figures, and the Tuesday campus-walk activity (now Thursday). The Air Force One and Prague slides came from the Part 2 deck, which is kept as the extended reference deck. Original sources: "GPS and Triangulation.pptx" (2025) and "GPS basics.pptx" (2024). -->
+<!-- Revision notes (2026-09-03): simplified from the 40-slide Part 1 deck at Dan's request so that Tuesday of Week 4 holds the Air Force One warm-up, the Prague activity, and a short GPS explanation in one 50-minute hour. Kept: constellations, the code-delay trick, the range quiz, ranges-to-position, angles-not-distances, coordinate formats, the decimal-place table, the precision/accuracy quiz, the lat/long-to-meters rule, a one-slide error budget, PDOP, and DGPS. Dropped or merged: the 3 D's of map data, the four-concepts roadmap, the U.S. Government framing, modulation methods, the 0.674 s worked example, the datum table, the geoid/ellipsoid slide (Week 8 covers it), the six separate error-source slides, the cumulative-error figure, the PDOP distribution figure, the DGPS post-processing and base/rover arithmetic figures, and the Tuesday campus-walk activity (now Thursday). The Air Force One and Prague slides came from the Part 2 deck, which is kept as the extended reference deck. Original sources: "GPS and Triangulation.pptx" (2025) and "GPS basics.pptx" (2024). -->

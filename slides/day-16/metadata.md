@@ -15,7 +15,7 @@ footer: "CCE 114 · Day 16 — Metadata"
 CCE 114 Geomatics
 Dr. Dan Ames and Dr. James Halgren
 
-<!-- Tuesday concept lecture, Week 9. Today is the "what and why" of metadata: what it is, what standards exist, and how to read a metadata record well enough to decide whether a dataset is safe to use. Thursday with Dr. Halgren is the hands-on version: creating and editing metadata in QGIS and evaluating real datasets on gis.utah.gov and data.gov. -->
+<!-- Tuesday concept lecture, Week 9. Today is the "what and why" of metadata: what it is, what standards exist, and how to read a metadata record well enough to decide whether a dataset is safe to use. Thursday in the Thursday hands-on session is the hands-on version: creating and editing metadata in QGIS and evaluating real datasets on gis.utah.gov and data.gov. -->
 
 ---
 
@@ -585,7 +585,7 @@ Collected 2024, from 6-inch imagery, lineage documented, county GIS contact list
 
 ---
 
-# Thursday with Dr. Halgren
+# Thursday: hands-on in QGIS
 
 - **Creating and editing metadata in QGIS**: Layer Properties > Metadata
 - Filling in identification, extent, contacts, and history for a layer you made
@@ -593,7 +593,7 @@ Collected 2024, from 6-inch imagery, lineage documented, county GIS contact list
 - **Finding and evaluating datasets** on [gis.utah.gov](https://gis.utah.gov/data/) and [data.gov](https://www.data.gov)
 - Bring your laptop with QGIS 3.44 LTR installed
 
-<!-- Preview of Day 17. Dr. Halgren runs the hands-on session; students write metadata rather than just read it. -->
+<!-- Preview of Day 17. The Thursday session students write metadata rather than just read it. -->
 
 ---
 

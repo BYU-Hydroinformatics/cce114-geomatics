@@ -12,12 +12,12 @@ footer: "CCE 114 · Day 7 — The Global Positioning System, Part 2"
 
 # The Global Positioning System
 
-## Extended slides — Trilateration, error, and metres
+## Extended slides — Trilateration, error, and meters
 
 CCE 114 Geomatics
 Dr. Dan Ames
 
-<!-- Reference deck. The Tuesday lecture uses the simplified "The Global Positioning System" deck, which already contains the Air Force One warm-up and the Prague activity. This deck keeps the longer material: the four-step position-fixing build, the error budget and PDOP arithmetic, and the latitude/longitude-to-metres demo, for anyone who wants the full story or for a semester with more time. -->
+<!-- Reference deck. The Tuesday lecture uses the simplified "The Global Positioning System" deck, which already contains the Air Force One warm-up and the Prague activity. This deck keeps the longer material: the four-step position-fixing build, the error budget and PDOP arithmetic, and the latitude/longitude-to-meters demo, for anyone who wants the full story or for a semester with more time. -->
 
 ---
 
@@ -30,7 +30,7 @@ By the end of class you will have:
 - **Trilaterated a position by hand** from three signal delays, on paper
 - Explained the difference between **triangulation** and **trilateration**
 - **Computed a positional error** by combining the error budget with PDOP
-- **Converted a latitude/longitude to metres** and checked the answer in QGIS
+- **Converted a latitude/longitude to meters** and checked the answer in QGIS
 - Turned in the **"Where Am I"** solution on Learning Suite
 
 <!-- Say up front that they will be doing arithmetic today, not watching it. Have paper, calculators, rulers and a compass or a piece of string ready. -->
@@ -170,7 +170,7 @@ I heard three radio stations announcing the time, but each was off from the actu
 </div>
 </div>
 
-<!-- This is the graded activity. Give them a printed map of Europe with a scale bar, or let them use a web map. Twelve to fifteen minutes. Circulate and check that they converted seconds to kilometres before drawing anything. -->
+<!-- This is the graded activity. Give them a printed map of Europe with a scale bar, or let them use a web map. Twelve to fifteen minutes. Circulate and check that they converted seconds to kilometers before drawing anything. -->
 
 ---
 
@@ -199,7 +199,7 @@ Note the scale: a millisecond of error here is **300 km**. GPS needs nanoseconds
 </div>
 </div>
 
-<!-- Check the arithmetic with them: 0.00237 s x 299,792 km/s = 710.5 km. The original speaker notes list 711, 885 and 1035 km, and label the first one "miles" by mistake; they are all kilometres. -->
+<!-- Check the arithmetic with them: 0.00237 s x 299,792 km/s = 710.5 km. The original speaker notes list 711, 885 and 1035 km, and label the first one "miles" by mistake; they are all kilometers. -->
 
 ---
 
@@ -340,7 +340,7 @@ Two readings of the same point, one minute apart:
 
 <!-- _class: lead -->
 
-# Demo: from latitude/longitude to metres
+# Demo: from latitude/longitude to meters
 
 ---
 
@@ -386,7 +386,7 @@ $$\Delta x \approx 111{,}320 \times \cos(\varphi)$$
 <div>
 
 - **EPSG:4326** = WGS 84 lat/long, the degrees your phone gives you
-- **EPSG:32612** = UTM Zone 12N, metres
+- **EPSG:32612** = UTM Zone 12N, meters
 - Two different answers for the same place — same point, different units
 
 </div>
@@ -401,10 +401,10 @@ $$\Delta x \approx 111{,}320 \times \cos(\varphi)$$
 <div class="columns">
 <div>
 
-- With the project CRS set to **EPSG:32612**, use the **measure tool** between two of your points — the answer is in **metres**
+- With the project CRS set to **EPSG:32612**, use the **measure tool** between two of your points — the answer is in **meters**
 - Switch the project CRS back to **EPSG:4326** and measure again
 - QGIS will happily hand you a number in **degrees**. It is meaningless as a length
-- **Rule of thumb:** degrees for storing and sharing, projected metres for measuring
+- **Rule of thumb:** degrees for storing and sharing, projected meters for measuring
 
 </div>
 <div>
@@ -414,7 +414,7 @@ $$\Delta x \approx 111{,}320 \times \cos(\varphi)$$
 </div>
 </div>
 
-<!-- QGIS does apply an ellipsoidal correction when the project ellipsoid is set, so the measure tool may still give a sensible metre value in a geographic CRS. Show both, and make the point that the field calculator and most geoprocessing tools will not do that for you. -->
+<!-- QGIS does apply an ellipsoidal correction when the project ellipsoid is set, so the measure tool may still give a sensible meter value in a geographic CRS. Show both, and make the point that the field calculator and most geoprocessing tools will not do that for you. -->
 
 ---
 
@@ -437,7 +437,7 @@ $$\Delta x \approx 111{,}320 \times \cos(\varphi)$$
 </div>
 </div>
 
-<!-- 111,320 / 84,960 = 1.31, which is the signature of that particular mistake at this latitude. Worth naming so they recognise it in the lab. -->
+<!-- 111,320 / 84,960 = 1.31, which is the signature of that particular mistake at this latitude. Worth naming so they recognize it in the lab. -->
 
 ---
 
@@ -445,7 +445,7 @@ $$\Delta x \approx 111{,}320 \times \cos(\varphi)$$
 
 ![h:420 center](images/gps-error-cumulative.png)
 
-<!-- Close the loop on the instrument-versus-user point from Tuesday. System and other flaws are under about 9 metres; user error can be plus or minus a kilometre. Everything in today's checklist is about the second number. -->
+<!-- Close the loop on the instrument-versus-user point from Tuesday. System and other flaws are under about 9 meters; user error can be plus or minus a kilometer. Everything in today's checklist is about the second number. -->
 
 ---
 
@@ -459,4 +459,4 @@ $$\Delta x \approx 111{,}320 \times \cos(\varphi)$$
 
 <!-- Confirm the Saturday due dates against Learning Suite before class. Remind them that Lab 3 uses the points they collected on Tuesday, so anyone who missed the activity needs to go collect three points. -->
 
-<!-- Conversion notes (2026-09-02): sources were "GPS and Triangulation.pptx" (2025) slides 1-5, 13-15, 22, 24-26 and, for the four-step position-fixing build, "GPS basics.pptx" (2024) slides 33-36, a legacy Trimble real-time-surveying deck whose pale blue slide background was whitened when the figures were extracted. Hidden source slide 5 (the classroom distances for the Air Force One activity) was kept deliberately as an instructor backup: the three distances are on the activity slide and the 2021 satellite locations plus the Clyde 254 alternative are in its speaker notes — the instructor should re-measure for the actual room. Hidden slide 13 ("d1 d2 d3") was dropped as a bare shape overlay with no context. No ArcGIS screenshots appear in either source deck, so no QGIS re-shoots are needed; the QGIS workflow on the "Demo, step by step" and "Now measure something" slides was written for this deck. New material not in the sources, written to cover the assigned topics: the triangulation-versus-trilateration slide, the root-sum-of-squares error computation and its worked example, the PDOP quiz, and the whole latitude/longitude-to-metres demo section. The Prague distances are computed from the source delays and match the numbers in the original speaker notes; the original note labels the Amsterdam distance "miles", which is a typo for kilometres. -->
+<!-- Conversion notes (2026-09-02): sources were "GPS and Triangulation.pptx" (2025) slides 1-5, 13-15, 22, 24-26 and, for the four-step position-fixing build, "GPS basics.pptx" (2024) slides 33-36, a legacy Trimble real-time-surveying deck whose pale blue slide background was whitened when the figures were extracted. Hidden source slide 5 (the classroom distances for the Air Force One activity) was kept deliberately as an instructor backup: the three distances are on the activity slide and the 2021 satellite locations plus the Clyde 254 alternative are in its speaker notes — the instructor should re-measure for the actual room. Hidden slide 13 ("d1 d2 d3") was dropped as a bare shape overlay with no context. No ArcGIS screenshots appear in either source deck, so no QGIS re-shoots are needed; the QGIS workflow on the "Demo, step by step" and "Now measure something" slides was written for this deck. New material not in the sources, written to cover the assigned topics: the triangulation-versus-trilateration slide, the root-sum-of-squares error computation and its worked example, the PDOP quiz, and the whole latitude/longitude-to-meters demo section. The Prague distances are computed from the source delays and match the numbers in the original speaker notes; the original note labels the Amsterdam distance "miles", which is a typo for kilometers. -->

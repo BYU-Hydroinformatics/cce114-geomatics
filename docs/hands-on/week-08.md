@@ -75,7 +75,7 @@ Lab 7's mystery points CSV has coordinates with no CRS given. The method: look a
 - **`$area` is a tiny decimal.** Project measurements are planimetric and the layer is in degrees. Switch to ellipsoidal, or reproject.
 - **Export keeps the old CRS.** The CRS dropdown in Save Features As was left on "Layer CRS." Choose the target explicitly.
 - **The CRS search finds nothing.** They typed the name with a typo; search by the EPSG number.
-- **Utah Central comes in metres, not feet.** There are two: EPSG:3566 is US feet, EPSG:26912-style metre versions exist too. Read the CRS description.
+- **Utah Central comes in meters, not feet.** There are two: EPSG:3566 is US feet, EPSG:26912-style meter versions exist too. Read the CRS description.
 
 ## Links
 

@@ -396,15 +396,15 @@ By the end of this session you should be able to:
 **3. What is the range in GNSS accuracy?**
 
 <ol type="A">
-<li>Centimetres to metres</li>
-<li>Centimetres to 100+ metres</li>
-<li>Millimetres to centimetres</li>
-<li>One metre to ten metres</li>
+<li>Centimeters to meters</li>
+<li>Centimeters to 100+ meters</li>
+<li>Millimeters to centimeters</li>
+<li>One meter to ten meters</li>
 </ol>
 
 **4. A high RMSE value is considered good.**
 
-<!-- Answers: 3 is B. Survey-grade equipment with corrections gets centimetres; a phone under tree cover or between tall buildings can be off by a hundred metres or more. 4 is False — RMSE is an error measure, so lower is better. -->
+<!-- Answers: 3 is B. Survey-grade equipment with corrections gets centimeters; a phone under tree cover or between tall buildings can be off by a hundred meters or more. 4 is False — RMSE is an error measure, so lower is better. -->
 
 ---
 
@@ -637,13 +637,13 @@ Which statement is most accurate?
 
 # Geoprocessing: spatial scope
 
-**3. Spatial scope is the extent or area of the input data used in determining the values at output locations, and is generally characterized as local, neighbourhood or global.**
+**3. Spatial scope is the extent or area of the input data used in determining the values at output locations, and is generally characterized as local, neighborhood or global.**
 
 **4. Reclassifying every county in Utah as high, middle or low income from its own per-capita income is an example of what?**
 
 **5. Determining the wealthiest county in Utah from those same values is an example of what?**
 
-<!-- Answers: 3 True. 4 is a local operation: the output for each county depends only on that county's own value. 5 is a global operation: to know which county is the wealthiest you have to look at every county in the dataset. A neighbourhood operation sits in between — a moving window, or "each county and the ones touching it". -->
+<!-- Answers: 3 True. 4 is a local operation: the output for each county depends only on that county's own value. 5 is a global operation: to know which county is the wealthiest you have to look at every county in the dataset. A neighborhood operation sits in between — a moving window, or "each county and the ones touching it". -->
 
 ---
 
@@ -726,7 +726,7 @@ Which statement is most accurate?
 - Practise the vocabulary pairs that get confused: geoid vs ellipsoid, isopleth vs choropleth, active vs passive, local vs global, WMS vs WFS
 - Go to the **Testing Center early** in the window, not on the last afternoon
 
-<!-- Encourage them to study in pairs and quiz each other out loud; it exposes the topics they only recognise rather than know. -->
+<!-- Encourage them to study in pairs and quiz each other out loud; it exposes the topics they only recognize rather than know. -->
 
 ---
 

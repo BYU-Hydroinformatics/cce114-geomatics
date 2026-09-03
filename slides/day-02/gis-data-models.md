@@ -15,7 +15,7 @@ footer: "CCE 114 · Day 2 — GIS Data Models & File Formats"
 CCE 114 Geomatics
 Dr. Dan Ames and Dr. James Halgren
 
-<!-- Tuesday concept lecture. Thursday is the hands-on session with Dr. Halgren, where students build and edit these layers themselves in QGIS. -->
+<!-- Tuesday concept lecture. Thursday is the hands-on session, where students build and edit these layers themselves in QGIS. -->
 
 ---
 
@@ -29,7 +29,7 @@ Dr. Dan Ames and Dr. James Halgren
   - Name the five things every GIS is built from
   - Encode the same shape three ways: **vector**, **raster**, **TIN**
   - Pick the right data model for a dataset, and say why
-- Thursday, with Dr. Halgren: you build and edit these layers yourself in QGIS
+- Thursday, in the hands-on session, you build and edit these layers yourself in QGIS
 
 <!-- Set expectations. This is the concepts day; the hands-on work happens Thursday. Reading is Bolstad & Manson chapter 2, Data Models, which this lecture follows closely. -->
 
@@ -68,7 +68,7 @@ Dr. Dan Ames and Dr. James Halgren
   - **UtahCountyDEM.tif**: a raster. Every cell holds an elevation.
 - Click a feature with **Identify**. Ask each time: *what did the computer have to store?*
 
-<!-- Keep this to about five minutes as a look, not a tutorial; students do the full version Thursday with Dr. Halgren. Drag layers in one at a time and ask the same question after each: what did the computer have to store to draw that? The next six slides are backups of every step in case the projector or QGIS misbehaves. -->
+<!-- Keep this to about five minutes as a look, not a tutorial; students do the full version Thursday in the Thursday hands-on session. Drag layers in one at a time and ask the same question after each: what did the computer have to store to draw that? The next six slides are backups of every step in case the projector or QGIS misbehaves. -->
 
 ---
 
@@ -108,7 +108,7 @@ Dr. Dan Ames and Dr. James Halgren
 
 ![h:470 center](images/dm-demo-raster.png)
 
-<!-- A regular grid. Every cell holds a number, here elevation in metres. There are no features to click on, just cells. -->
+<!-- A regular grid. Every cell holds a number, here elevation in meters. There are no features to click on, just cells. -->
 
 ---
 
@@ -315,7 +315,7 @@ What are the **geometry characteristics** of each of these feature types?
 <li>None of the above</li>
 </ol>
 
-<!-- This is the Lochsa River in northern Idaho. A photo is a raster: a grid of pixels, each holding a colour. -->
+<!-- This is the Lochsa River in northern Idaho. A photo is a raster: a grid of pixels, each holding a color. -->
 
 ---
 
@@ -387,7 +387,7 @@ Lochsa River, northern Idaho
 
 <!-- Look at this state outline. Anyone know which state it is? Right, Colorado. How did you know? Spatial reasoning based on the shape and the location of Denver.
 
-How can we represent this state shape using the fewest bytes of memory possible? Let's digitize the corners. I have to measure them from some point of origin; for this example I measured distances from an origin at the exact centre of the image. We also need to know the units. Here the units are inches, so we would need to scale them up to kilometres to make this "geolocatable". -->
+How can we represent this state shape using the fewest bytes of memory possible? Let's digitize the corners. I have to measure them from some point of origin; for this example I measured distances from an origin at the exact center of the image. We also need to know the units. Here the units are inches, so we would need to scale them up to kilometers to make this "geolocatable". -->
 
 ---
 
@@ -427,7 +427,7 @@ How can we represent this state shape using the fewest bytes of memory possible?
 - Look at the state and figure out a good way to represent it using **ONLY numbers**
 - Think about the data encoding models from the book: **raster**, **vector**, **TIN**
 - Feel free to invent your own
-- **RULE:** no symbols, colours, or letters. Just numbers…
+- **RULE:** no symbols, colors, or letters. Just numbers…
 
 </div>
 <div>
@@ -534,9 +534,9 @@ What is good about it? Fast, easy to fill in. What is bad? Pixelated borders and
 </div>
 </div>
 
-Each pixel (raster cell) is stored as a hexadecimal number that tells the screen which colour to display.
+Each pixel (raster cell) is stored as a hexadecimal number that tells the screen which color to display.
 
-<!-- Digital photos are raster images. Each pixel has a different value from the one next to it, representing a different colour. Raster works really well for digital photos. -->
+<!-- Digital photos are raster images. Each pixel has a different value from the one next to it, representing a different color. Raster works really well for digital photos. -->
 
 ---
 
@@ -551,7 +551,7 @@ Each pixel (raster cell) is stored as a hexadecimal number that tells the screen
 - Polygon?
 - Raster?
 
-<!-- Raster. Each cell contains a temperature value; the colours are drawn by the GIS software based on the value. Temperature is continuous: it has a value everywhere, which is exactly what a raster stores. -->
+<!-- Raster. Each cell contains a temperature value; the colors are drawn by the GIS software based on the value. Temperature is continuous: it has a value everywhere, which is exactly what a raster stores. -->
 
 ---
 
@@ -617,7 +617,7 @@ Each pixel (raster cell) is stored as a hexadecimal number that tells the screen
 
 <!-- _class: activity -->
 
-# Thursday: Hands-On with Dr. Halgren
+# Thursday: hands-on in QGIS
 
 ![bg right:40% w:90%](images/dm-demo-point.png)
 
@@ -626,7 +626,7 @@ Each pixel (raster cell) is stored as a hexadecimal number that tells the screen
 - Use the editing toolbar to add points and edit vertices
 - Note the vocabulary: a *vector layer* is a **feature class** in a geodatabase, or a **shapefile** in a folder
 
-<!-- Preview of Thursday. Dr. Halgren runs the hands-on session: students create and edit vector layers with the data from today's demo. -->
+<!-- Preview of Thursday. The Thursday session students create and edit vector layers with the data from today's demo. -->
 
 ---
 

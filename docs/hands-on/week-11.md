@@ -46,7 +46,7 @@ A drawing, a scan, a photo: pixels with no idea where they are. Georeferencing a
 
 ### 3. Transformation settings and residuals
 
-1. **Settings > Transformation Settings**. Walk the list: **Linear** (shift and scale only, needs 2 GCPs), **Helmert** (adds rotation, 2 GCPs), **Polynomial 1** (affine, 3 GCPs, the default for a flat scan), **Polynomial 2** (6 GCPs, corrects gentle warps), **Thin Plate Spline** (bends locally to fit every point exactly, which hides bad points). Resampling **Cubic** for imagery, **Nearest neighbour** for a categorical scan. Target CRS EPSG:26912. Output file next to the image. Tick **Load in project when done**.
+1. **Settings > Transformation Settings**. Walk the list: **Linear** (shift and scale only, needs 2 GCPs), **Helmert** (adds rotation, 2 GCPs), **Polynomial 1** (affine, 3 GCPs, the default for a flat scan), **Polynomial 2** (6 GCPs, corrects gentle warps), **Thin Plate Spline** (bends locally to fit every point exactly, which hides bad points). Resampling **Cubic** for imagery, **Nearest neighbor** for a categorical scan. Target CRS EPSG:26912. Output file next to the image. Tick **Load in project when done**.
 2. Look at the GCP table: the **dX, dY** and **residual** columns appear once there are enough points for the chosen transformation. The **Mean error (RMS)** is at the bottom. A residual of 30 m on a 1:24,000 scan is a misplaced click; 3 m is fine.
 3. Turn off one point (untick it) and watch the RMS change. That is quality control, and it is why TPS with four points is meaningless: it forces zero residual everywhere.
 

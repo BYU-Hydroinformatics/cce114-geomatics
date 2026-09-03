@@ -17,7 +17,7 @@ footer: "CCE 114 · Day 8 — Working with Vector Data"
 CCE 114 Geomatics
 Dr. Dan Ames and Dr. James Halgren
 
-<!-- Tuesday concept lecture. Up to now students have only *added* data that somebody else made. Today they learn where vector data comes from and how it gets onto a disk. Thursday with Dr. Halgren they do it themselves in QGIS, digitizing their own home. -->
+<!-- Tuesday concept lecture. Up to now students have only *added* data that somebody else made. Today they learn where vector data comes from and how it gets onto a disk. Thursday in the Thursday hands-on session they do it themselves in QGIS, digitizing their own home. -->
 
 ---
 
@@ -31,7 +31,7 @@ Dr. Dan Ames and Dr. James Halgren
   - **Edit** features that are already wrong, with the Vertex Tool
   - Design an **attribute table** and its schema
   - **Save to disk**, and say when to use a **GeoPackage** and when a **shapefile**
-- Thursday, with Dr. Halgren: you do all five of these in QGIS
+- Thursday, in the hands-on session, you do all five of these in QGIS
 
 <!-- These five words are the shape of the whole hour: create, digitize, edit, attributes, save. Reading is Chapter 4, Maps, Data Entry, and Editing, in Bolstad & Manson. -->
 
@@ -282,7 +282,7 @@ Which geometry type for each, and why?
 <li>As few as possible</li>
 <li>As many as possible</li>
 <li>Enough that the line matches the imagery at the scale you will use it</li>
-<li>One every 10 metres, evenly spaced</li>
+<li>One every 10 meters, evenly spaced</li>
 </ol>
 
 </div>
@@ -325,7 +325,7 @@ Which geometry type for each, and why?
 - QGIS tools that keep you honest:
   - **Enable Snapping** with a sensible tolerance
   - **Topological Editing** — move a shared vertex once, both features follow
-  - **Avoid Overlap** — new polygons get clipped to their neighbours
+  - **Avoid Overlap** — new polygons get clipped to their neighbors
 
 </div>
 </div>
@@ -350,7 +350,7 @@ Which geometry type for each, and why?
 - Click a vertex to grab it, click again to drop it where it belongs
 - **Double-click a segment** to add a vertex
 - Select a vertex and press **Delete** to remove one
-- **Right-click to lock** onto a feature first, so you do not grab the neighbour by accident
+- **Right-click to lock** onto a feature first, so you do not grab the neighbor by accident
 
 </div>
 <div>
@@ -465,7 +465,7 @@ Name (text) · area (decimal)
 - Geometry is available to expressions: `$area`, `$length`, `$x`, `$y`
 - Lab 4 area in square feet: `$area * 10.7639`
 
-<!-- The Lab 4 expression is $area * 10.7639, because $area returns square metres in a projected CRS and the client wants square feet. Point out that $area is only meaningful because the layer is in UTM; in EPSG:4326 it would return square degrees, which is nonsense. -->
+<!-- The Lab 4 expression is $area * 10.7639, because $area returns square meters in a projected CRS and the client wants square feet. Point out that $area is only meaningful because the layer is in UTM; in EPSG:4326 it would return square degrees, which is nonsense. -->
 
 ---
 
@@ -575,7 +575,7 @@ A student builds a `Buildings` polygon layer with:
 
 <!-- _class: activity -->
 
-# Thursday: Hands-On with Dr. Halgren
+# Thursday: hands-on in QGIS
 
 ![bg right:38% w:92%](images/vec-neighborhood-closeup.jpg)
 
