@@ -7,6 +7,10 @@
 - Hands-on practice creating, digitizing, and editing vector layers
 - Snapping and topology
 
+## Hands-on guide
+
+[Week 5 Thursday run sheet](../hands-on/week-05.md): the plan Dr. Halgren follows, with the demo steps, the graded activity, and the common snags.
+
 ## Slides
 
 *Slides for this day are not on the site yet. They will be added as the semester goes.*

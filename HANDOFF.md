@@ -56,6 +56,21 @@ preview, and Before Next Class slides, and with software wording updated from Ar
 All ArcMap screenshots in those decks were replaced with QGIS 3.44 captures today, except in the
 Day 21 deck, which describes CCE 414 and keeps its ArcGIS 10 screenshots on purpose.
 
+**Thursday hands-on run sheets and Tuesday activities (2026-09-02, evening).** `docs/hands-on/` holds one
+run sheet per Thursday for Weeks 2 to 12 (goal, prep checklist, 50-minute plan, QGIS 3.44 walkthrough,
+the graded upload, common snags) plus `tuesday-activities.md`, which collects Dr. Ames's lecture
+activities with their setup and the full metadata-melodrama script. `docs/assignments/web-mapping-with-ai.md`
+is the spec for the Web Mapping with AI Experience (kicked off Week 11 Thursday). Structural decisions
+made with Dan that day: both GPS decks are given on Tuesday of Week 4 and Thursday is field collection
+plus the CSV import; Week 11 became "Geoplanning and Georeferencing" (Tuesday: georeference a pencil sketch
+of your neighborhood; Thursday: a real scan with GCPs and residuals) because no georeferencing lecture or
+lab existed; the CCE 414 intro moved to Tuesday of Week 14, followed by project work; final project
+presentations are Thursday of Week 14 and Tuesday of Week 15. Thursday day pages link their run sheet
+through the `handson=` key in `tools/build_schedule.py`. Graded in-class activities are one per class
+meeting, 5 points each; new ones are First Map: Utah County (Week 2 Thu), DEM Profile (Week 6 Thu),
+Playing with Projections (Week 8 Thu), AGRC Metadata (Week 9 Thu), and Georeference Your Neighborhood
+Sketch (Week 11 Tue).
+
 **Data.** `docs/lectures/data/UtahCountyData.zip` (38 MB: county boundary, major roads, cellular
 towers, DEM) is published for the Day 2 demo and Thursday sessions. Lab 4 ships a GeoPackage
 fallback in its folder.

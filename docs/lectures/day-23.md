@@ -7,9 +7,13 @@
 
 ## Topics
 
-- Review workflow diagrams
-- Final mapping project description
-- Study session for Concepts Exam 2
+- Review workflow diagrams and the Lab 11 model
+- Final mapping project kickoff: choose a county and a problem
+- Exam 2 review Kahoot
+
+## Hands-on guide
+
+[Week 12 Thursday run sheet](../hands-on/week-12.md): the plan Dr. Halgren follows, with the demo steps, the graded activity, and the common snags.
 
 ## Slides
 

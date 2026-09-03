@@ -4,6 +4,7 @@
 
 ## Topics
 
+- Remaining final project presentations
 - The final exam is given in class in the regular classroom; see Learning Suite for the exact time
 - Practical, hands-on exam in QGIS; AI tools are not permitted
 

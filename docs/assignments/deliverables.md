@@ -30,17 +30,23 @@ the readings seriously.
 
 ## In-Class Activities
 
-Short activities during class, recorded on Learning Suite the same day. They are listed on the
-day pages under [Lectures](../lectures/README.md); the usual set is:
+Short activities during class, worth 5 points each (10 for the vector editing week), recorded on
+Learning Suite the same day. Tuesday activities are part of Dr. Ames's lectures; Thursday
+activities are the hands-on QGIS work with Dr. Halgren. The run sheets are on the
+[Thursday Hands-On](../hands-on/README.md) and [Tuesday activities](../hands-on/tuesday-activities.md) pages.
 
-- State Boundary Vector Data Model activity (Week 2)
-- Playing with Symbology (Week 3)
-- GPS Class Activity and Where Am I (Week 4)
-- Creating and Editing Vector Data (Week 5)
-- Engineering Paper Raster Analysis (Week 6)
-- Getting Data through Web Mapping Services (Week 7)
-- What I learned about metadata (Week 9)
-- Cities Near Rivers (Week 10)
+| Week | Tuesday (lecture) | Thursday (hands-on in QGIS) |
+| --- | --- | --- |
+| 2 | State Boundary Vector Data Model Activity | First Map: Utah County |
+| 3 | | Playing with Symbology |
+| 4 | Where Am I (trilaterate Prague on paper) | GPS Class Activity (collect and import campus positions) |
+| 5 | | Creating and Editing Vector Data (10 points) |
+| 6 | Engineering Paper Raster Analysis | DEM Profile |
+| 7 | | Getting Data through Web Mapping Services |
+| 8 | | Playing with Projections |
+| 9 | What I learned about metadata | AGRC Metadata |
+| 10 | | Cities Near Rivers |
+| 11 | Georeference Your Neighborhood Sketch | |
 
 ## Experiences
 
@@ -68,8 +74,10 @@ discussed and what you learned about professional map-based communication. Answe
 
 ### Web Mapping with AI Experience (Week 14)
 
-Learn how to build a website with a map on it, with AI assistance from the start. Full
-instructions are posted on Learning Suite when the assignment opens.
+Learn how to build a website with a map on it, with AI assistance from the start: a public web
+page with an interactive map showing a layer you exported from QGIS, plus a short note on how you
+used the AI. Full instructions: [Web Mapping with AI Experience](web-mapping-with-ai.md). It is
+introduced in class on Thursday of Week 11.
 
 ## Attendance and Course Evaluation
 

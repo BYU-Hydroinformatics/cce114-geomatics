@@ -446,7 +446,7 @@ At Provo, φ ≈ 40.25°:
 <div>
 
 - For a single point, <a href="https://tagis.dep.wv.gov/convert/" target="_blank">tagis.dep.wv.gov/convert</a> converts lat/long to UTM and back
-- Thursday you will do this conversion both ways with Dr. Halgren and check it against QGIS
+- Thursday you will import real phone positions into QGIS with Dr. Halgren and watch this conversion happen
 
 </div>
 </div>
@@ -574,7 +574,7 @@ Standard Positioning Service, civilian users:
 - The atmosphere is the biggest instrument error
 - **User error dwarfs all of it**: wrong datum, wrong units, wrong point, fat fingers
 - Errors are **cumulative**, and they are **multiplied by PDOP**
-- Thursday you will combine these numbers into a single expected error
+- Thursday you will see this error as the scatter between phones at the same spot
 
 </div>
 </div>
@@ -693,13 +693,12 @@ Satellites close together → a **large** area of uncertainty. Satellites widely
 
 ![bg right:31% w:96%](images/gps-trilateration-circles.jpg)
 
-- **Trilateration by hand:** given three signal delays, find the position on paper
-- **"Where is Air Force One?"** — the same problem, indoors
-- **Computing positional error:** combine the error budget and PDOP into one number
-- **Live demo:** converting latitude/longitude to metres, and checking it in QGIS
-- Bring a **laptop**, a **calculator**, and something to **draw circles** with
+- **Twenty minutes on campus:** collect three positions with your phone, full precision, into the shared **"GPS activity"** sheet
+- **Live demo:** the class points imported into QGIS from a CSV, given a CRS, and reprojected to UTM metres
+- **See the error:** how far apart two phones put the same statue
+- Bring a **phone with a GPS app** that shows five decimal places, and a **laptop with QGIS**
 
-<!-- Preview of Thursday. Dr. Halgren runs the session; the "Where Am I" paper exercise is graded and uploaded to Learning Suite. -->
+<!-- Preview of Thursday. Dr. Halgren runs the session: field collection first, then the import demo. The "GPS Class Activity" item on Learning Suite is recorded that day. Run sheet: byu-hydroinformatics.github.io/cce114-geomatics/hands-on/week-04/ -->
 
 ---
 
@@ -708,8 +707,8 @@ Satellites close together → a **large** area of uncertainty. Satellites widely
 - Read **Chapter 5, GNSS and Coordinate Surveying**, in *GIS Fundamentals* (Bolstad & Manson)
 - Take **Quiz 3 (GPS Part 1)**, open book, on Learning Suite — **due Saturday**
 - **Lab 3: GPS Data Collection and Importing Into QGIS** — [assignments page](https://byu-hydroinformatics.github.io/cce114-geomatics/assignments/lab-03/) — **due Saturday**
-- Finish today's activity: three points in the shared **"GPS activity"** sheet, then mark it complete on Learning Suite
-- Bring your laptop with QGIS on Thursday
+- Upload your **"Where Am I"** solution photo to Learning Suite today
+- Bring your phone with a GPS app and your laptop with QGIS on Thursday
 - Questions? Office hours: [calendly.com/dan-ames/office-hours](https://calendly.com/dan-ames/office-hours)
 
 <!-- Confirm the Saturday due dates against Learning Suite before class. -->

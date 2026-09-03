@@ -9,6 +9,10 @@
 - Explore the attribute table
 - Add labels
 
+## Hands-on guide
+
+[Week 3 Thursday run sheet](../hands-on/week-03.md): the plan Dr. Halgren follows, with the demo steps, the graded activity, and the common snags.
+
 ## Slides
 
 *Slides for this day are not on the site yet. They will be added as the semester goes.*

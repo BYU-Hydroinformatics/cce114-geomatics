@@ -1,19 +1,24 @@
-# Day 21: Introduction to CCE 414: Engineering Applications of GIS
+# Day 21: Georeferencing in QGIS and the Web Mapping with AI Kickoff
 
 **Week 11** · Thursday · Demo and hands-on (Dr. Halgren)
 
 ## Topics
 
-- Preview of the follow-on course
-- Engineering problems solved with GIS
+- Georeference a scanned historic map: ground control points, transformation types, residuals
+- What a site plan for the Domes for Mozambique project needs from georeferencing
+- Web Mapping with AI Experience kickoff: from a QGIS layer to a public web map with an AI assistant
+
+## Hands-on guide
+
+[Week 11 Thursday run sheet](../hands-on/week-11.md): the plan Dr. Halgren follows, with the demo steps, the graded activity, and the common snags.
 
 ## Slides
 
-- [Introduction to CCE 414](https://byu-hydroinformatics.github.io/cce114-geomatics/slides/day-21/intro-to-cce-414.html)
+*Slides for this day are not on the site yet. They will be added as the semester goes.*
 
 ## Materials
 
-- [Prior-year recording of this lecture](https://youtu.be/RIzy0JRB8VI)
+- [Web Mapping with AI Experience](../assignments/web-mapping-with-ai.md)
 
 ## Due this week (Saturday, 11:59 pm unless noted)
 

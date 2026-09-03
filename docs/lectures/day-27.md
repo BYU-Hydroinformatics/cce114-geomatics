@@ -1,10 +1,10 @@
-# Day 27: Final Project Work Session
+# Day 27: Final Project Presentations
 
 **Week 14** · Class session
 
 ## Topics
 
-- Work on your final project in class with Dr. Ames' help
+- Groups present their final mapping projects; presentations continue on Tuesday of Week 15
 
 ## Slides
 
@@ -12,5 +12,6 @@
 
 ## Due this week (Saturday, 11:59 pm unless noted)
 
-- [Web Mapping with AI Experience (Wednesday)](../assignments/deliverables.md#experiences)
+- [Web Mapping with AI Experience (Wednesday)](../assignments/web-mapping-with-ai.md)
+- [Final project presentations (Thursday)](../assignments/final-project.md)
 - [Final Project (Saturday)](../assignments/final-project.md)

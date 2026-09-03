@@ -10,6 +10,10 @@
 - Connect QGIS to online services
 - Build a layout from live web layers
 
+## Hands-on guide
+
+[Week 7 Thursday run sheet](../hands-on/week-07.md): the plan Dr. Halgren follows, with the demo steps, the graded activity, and the common snags.
+
 ## Slides
 
 *Slides for this day are not on the site yet. They will be added as the semester goes.*

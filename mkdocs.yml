@@ -61,7 +61,22 @@ nav:
       - Lab 10 — Domes for Mozambique: assignments/lab-10/README.md
       - Lab 11 — Walmart Site Selection: assignments/lab-11/README.md
       - Quizzes, Activities & Experiences: assignments/deliverables.md
+      - Web Mapping with AI Experience: assignments/web-mapping-with-ai.md
       - Final Project: assignments/final-project.md
+  - Thursday Hands-On:
+      - Overview: hands-on/README.md
+      - Tuesday Lecture Activities: hands-on/tuesday-activities.md
+      - "Week 2 — First Map in QGIS": hands-on/week-02.md
+      - "Week 3 — Symbology, Labels, and a Layout": hands-on/week-03.md
+      - "Week 4 — GPS Field Collection and Import": hands-on/week-04.md
+      - "Week 5 — Digitize Your Home": hands-on/week-05.md
+      - "Week 6 — Raster Data and an Elevation Profile": hands-on/week-06.md
+      - "Week 7 — Web Services": hands-on/week-07.md
+      - "Week 8 — Playing with Projections": hands-on/week-08.md
+      - "Week 9 — Writing Metadata": hands-on/week-09.md
+      - "Week 10 — Cities Near Rivers": hands-on/week-10.md
+      - "Week 11 — Georeferencing and the AI Web Map Kickoff": hands-on/week-11.md
+      - "Week 12 — Workflows, Final Project, Exam 2 Kahoot": hands-on/week-12.md
   - Lectures:
       - Overview: lectures/README.md
       - "Week 1 — Introduction":
@@ -73,8 +88,8 @@ nav:
           - "Day 4 — Maps, Symbology, and Cartography, Part 1": lectures/day-04.md
           - "Day 5 — Maps, Symbology, and Cartography, Part 2": lectures/day-05.md
       - "Week 4 — The Global Positioning System":
-          - "Day 6 — The Global Positioning System, Part 1": lectures/day-06.md
-          - "Day 7 — The Global Positioning System, Part 2": lectures/day-07.md
+          - "Day 6 — The Global Positioning System": lectures/day-06.md
+          - "Day 7 — GPS Field Data Collection and Importing Into QGIS": lectures/day-07.md
       - "Week 5 — Working with Vector Data":
           - "Day 8 — Working with Vector Data, Part 1": lectures/day-08.md
           - "Day 9 — Working with Vector Data, Part 2": lectures/day-09.md
@@ -93,9 +108,9 @@ nav:
       - "Week 10 — Geoprocessing":
           - "Day 18 — Geoprocessing, Part 1": lectures/day-18.md
           - "Day 19 — Geoprocessing, Part 2": lectures/day-19.md
-      - "Week 11 — Geoplanning":
-          - "Day 20 — Geoplanning": lectures/day-20.md
-          - "Day 21 — Introduction to CCE 414: Engineering Applications of GIS": lectures/day-21.md
+      - "Week 11 — Geoplanning and Georeferencing":
+          - "Day 20 — Geoplanning and Georeferencing": lectures/day-20.md
+          - "Day 21 — Georeferencing in QGIS and the Web Mapping with AI Kickoff": lectures/day-21.md
       - "Week 12 — Project Site Selection":
           - "Day 22 — Project Site Selection, Part 1": lectures/day-22.md
           - "Day 23 — Project Site Selection, Part 2": lectures/day-23.md
@@ -103,8 +118,8 @@ nav:
           - "Day 24 — Final Project Work Session": lectures/day-24.md
           - "Day 25 — Final Project Work Session or Holiday": lectures/day-25.md
       - "Week 14 — Final Project":
-          - "Day 26 — Final Project Work Session": lectures/day-26.md
-          - "Day 27 — Final Project Work Session": lectures/day-27.md
+          - "Day 26 — Introduction to CCE 414 and Final Project Work Session": lectures/day-26.md
+          - "Day 27 — Final Project Presentations": lectures/day-27.md
       - "Week 15 — Final Exam":
           - "Day 28 — Final Exam": lectures/day-28.md
           - "Day 29 — Last Day of Class": lectures/day-29.md

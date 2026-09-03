@@ -15,9 +15,9 @@ footer: "CCE 114 · Day 7 — The Global Positioning System, Part 2"
 ## Part 2 — Trilateration, error, and metres
 
 CCE 114 Geomatics
-Dr. James Halgren
+Dr. Dan Ames
 
-<!-- Thursday working session. Two graded activities today: "Where Am I", solved on paper and uploaded to Learning Suite, and the Air Force One warm-up. Bring the error budget from Tuesday. -->
+<!-- Tuesday, second half of the GPS lecture (Fall 2026: Parts 1 and 2 are both given on Tuesday of Week 4; Thursday is field collection and the QGIS import with Dr. Halgren). One graded activity today: "Where Am I", solved on paper and uploaded to Learning Suite, after the Air Force One warm-up. -->
 
 ---
 
@@ -25,7 +25,7 @@ Dr. James Halgren
 
 ![bg right:32% w:78%](images/gps-where-am-i-sign.jpg)
 
-This is a **working session**. By the end of class you will have:
+By the end of class you will have:
 
 - **Trilaterated a position by hand** from three signal delays, on paper
 - Explained the difference between **triangulation** and **trilateration**

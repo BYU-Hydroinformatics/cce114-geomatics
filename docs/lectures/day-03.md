@@ -8,6 +8,10 @@
 - Make a map in QGIS using each data type
 - Live demo of creating and editing vector data in QGIS
 
+## Hands-on guide
+
+[Week 2 Thursday run sheet](../hands-on/week-02.md): the plan Dr. Halgren follows, with the demo steps, the graded activity, and the common snags.
+
 ## Slides
 
 *Slides for this day are not on the site yet. They will be added as the semester goes.*

@@ -7,6 +7,10 @@
 - Cities near rivers analysis in QGIS
 - Chaining tools into a workflow
 
+## Hands-on guide
+
+[Week 10 Thursday run sheet](../hands-on/week-10.md): the plan Dr. Halgren follows, with the demo steps, the graded activity, and the common snags.
+
 ## Slides
 
 *Slides for this day are not on the site yet. They will be added as the semester goes.*
