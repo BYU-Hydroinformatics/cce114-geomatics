@@ -33,6 +33,9 @@ plugins:
   - search
   - gh-admonitions
 
+hooks:
+  - tools/page_version.py
+
 markdown_extensions:
   - admonition
   - attr_list

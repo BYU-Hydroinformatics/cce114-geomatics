@@ -16,3 +16,9 @@
   max-height: 34rem;
   width: auto;
 }
+
+/* Per-page version stamp appended by tools/page_version.py */
+.page-version {
+  color: var(--md-default-fg-color--light);
+  font-size: 0.7rem;
+}

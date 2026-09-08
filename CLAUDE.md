@@ -120,6 +120,8 @@ from its caption, a screenshot too small to read at presentation size.
 - Images: nothing wider than about 2000 px; keep a deck's `images/` folder under ~15 MB; JPEG for
   photographs, PNG for anything with text.
 - Do not commit built output: `site/`, `_site/`, or deck `.html`.
+- Every lab and lecture page ends with a version stamp (`yyyy.mm.rev`) that `tools/page_version.py`
+  computes from git history at build time. Never hand-write a version; commit the change and it bumps.
 - Converting a PowerPoint? `tools/slide-conversion-guide.md` is the authority. Follow it exactly so
   every deck behaves the same.
 
