@@ -279,7 +279,7 @@ What are the **geometry characteristics** of each of these feature types?
 <div class="columns">
 <div>
 
-<a href="https://youtu.be/wSWY0Mq3zFU" target="_blank">
+<a href="https://youtu.be/HHFzNpS3RN0" target="_blank">
 
 ![w:500](images/dm-video-lochsa-raft.png)
 
@@ -294,12 +294,12 @@ What are the **geometry characteristics** of each of these feature types?
 <li>Neither</li>
 </ol>
 
-<p style="font-size:0.7em;"><a href="https://youtu.be/wSWY0Mq3zFU" target="_blank">youtu.be/wSWY0Mq3zFU</a></p>
+<p style="font-size:0.7em;"><a href="https://youtu.be/HHFzNpS3RN0" target="_blank">youtu.be/HHFzNpS3RN0</a></p>
 
 </div>
 </div>
 
-<!-- This is a rafting ride on the Lochsa River in Idaho on Memorial Day weekend 2013 (May 28, 2013). Is this video "reality" or a "model"? It is a video of reality, but it is actually a model: a representation of reality. -->
+<!-- This is a rafting ride on the Lochsa River in Idaho during spring runoff 2024 (May 19, 2024). Is this video "reality" or a "model"? It is a video of reality, but it is actually a model: a representation of reality. -->
 
 ---
 
@@ -393,28 +393,29 @@ How can we represent this state shape using the fewest bytes of memory possible?
 
 ---
 
-# "I'll Sue Ya" (Weird Al Yankovic)
+# State of Deseret and Utah
 
 <div class="columns">
 <div>
 
-<a href="https://youtu.be/MeXQBHLIPcw?t=2m6s" target="_blank">
+<a href="https://storymaps.arcgis.com/stories/88b6f2be26d0466b927ea72b1b060842" target="_blank">
 
-![w:520](images/dm-weird-al.jpg)
+![h:400](images/dm-brigham-young.jpg)
 
 </a>
+
+<p style="font-size:0.6em;">Brigham Young. Image courtesy of The Church of Jesus Christ of Latter-day Saints.</p>
 
 </div>
 <div>
 
-- Weird Al sues the state of Colorado for looking a little too much like Wyoming
-- Play from 2:06 to about 2:30
-- <a href="https://youtu.be/MeXQBHLIPcw?t=2m6s" target="_blank">youtu.be/MeXQBHLIPcw?t=2m6s</a>
+- The interesting history of the boundaries of the state of Utah.
+- <a href="https://storymaps.arcgis.com/stories/88b6f2be26d0466b927ea72b1b060842" target="_blank">storymaps.arcgis.com/stories/88b6f2be26d0466b927ea72b1b060842</a>
 
 </div>
 </div>
 
-<!-- We are going to look at the state of Colorado. Play the audio from 2:06 to 2:30 and stop there; some later scenes are a little dodgy to show in class. -->
+<!-- Brigham Young proposed the state of Deseret in 1849, a few years after arriving in the Salt Lake Valley. On 4 May, 1896, Utah became the 45th state admitted to the Union. -->
 
 ---
 
