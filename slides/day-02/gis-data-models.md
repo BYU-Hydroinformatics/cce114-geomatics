@@ -184,14 +184,14 @@ What are the **geometry characteristics** of each of these feature types?
 
 # File Formats
 
-![bg right:38% w:90%](images/dm-file-format-icons.jpg)
+![bg right:45% w:96%](images/dm-file-format-icons.jpg)
 
-- How the data are *stored* on the computer: the same data model can be saved many ways
+- How the data are *stored*: one data model, many possible formats
 - From today's demo:
-  - **Shapefile**: `UtahCountyMajorRoads.shp` plus its `.shx`, `.dbf`, `.prj` siblings
-  - **GeoTIFF**: `UtahCountyDEM.tif`, a raster with its location built in
-- Other common ones: **GeoPackage** (`.gpkg`, one file, many layers), **GeoJSON** (plain text), **KML**
-- QGIS reads all of these; the data model does not change when the format does
+  - **Shapefile**: `UtahCountyMajorRoads.shp` plus `.shx`, `.dbf`, `.prj`
+  - **GeoTIFF**: `UtahCountyDEM.tif`, a raster that knows where it is
+- Also common: **GeoPackage** (one file, many layers), **GeoJSON** (plain text), **KML**
+- QGIS reads them all; changing the format does not change the data model
 
 <!-- Open the unzipped data folder in Finder or Explorer and count the files that make up one shapefile: .shp holds the geometry, .dbf the attribute table, .shx the index, .prj the coordinate system. Lose the .dbf and the roads still draw but the attribute table is gone. Contrast with the DEM: one .tif file (the .tfw and .aux.xml are optional helpers). GeoPackage is what Lab 4 uses later in the course. -->
 
