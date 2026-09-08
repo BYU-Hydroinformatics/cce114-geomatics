@@ -73,6 +73,16 @@ basemap section), and a fresh QGIS 3.44 Symbology capture, `symbology-tab.png`, 
 The capture came from `tools/qgis_lab01_symbology_shot.py`, a standalone script that runs QGIS's
 bundled Python from a terminal — no QGIS session needed (header has the env vars).
 
+**Day 2 demo screenshots (partly done 2026-09-08):** the "Utah County in QGIS" demo project had its
+layer stack upside down (Elevation on top, towers at the bottom), so the "All five together" slide
+hid the vectors under the raster and the point slide showed towers faded under the polygon fill.
+`dm-demo-all-five.png` (slide 9 on screen, also the title-slide background) was re-shot from QGIS 3.44
+with the raster at the bottom using `tools/qgis_day02_demo_shots.py` (QGIS launches, builds the
+project, grabs its own window, quits). The other four demo shots (`dm-demo-polygon/polyline/point/
+raster.png`) still show the old order and dark panels; the script's SHOT variable stages each one, so
+re-shooting them is one command apiece. Dan's Mac is in light mode and QGIS 3.44 ignores a per-app
+dark-appearance default, so new shots are light.
+
 **Lab 1–2 (lower priority):** UGRC website screenshots still match the live site's
 labels (verified Aug 2026) but predate its current look; QGIS window chrome in older
 shots shows pre-3.44 styling. Refresh opportunistically.
