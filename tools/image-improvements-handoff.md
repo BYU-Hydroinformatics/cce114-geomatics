@@ -66,6 +66,13 @@ updated: yellow Download button, "Step 2/3/4" panels — screenshots should matc
 Also both example-layout images contain Dan's red markup annotations (struck
 "Slope"/"DEM" labels) inside the drawings — re-export clean layouts.
 
+**Lab 1 — DONE 2026-09-08 (TA report):** the old `anchored5.png` was a composite of the Data
+Source Manager XYZ window pasted over Layer Properties > Symbology, and it sat in the symbology
+section. Split it: the DSM window is cropped out as `xyz-connection-added.png` under step 17.4 (the
+basemap section), and a fresh QGIS 3.44 Symbology capture, `symbology-tab.png`, sits under step 23.
+The capture came from `tools/qgis_lab01_symbology_shot.py`, a standalone script that runs QGIS's
+bundled Python from a terminal — no QGIS session needed (header has the env vars).
+
 **Lab 1–2 (lower priority):** UGRC website screenshots still match the live site's
 labels (verified Aug 2026) but predate its current look; QGIS window chrome in older
 shots shows pre-3.44 styling. Refresh opportunistically.

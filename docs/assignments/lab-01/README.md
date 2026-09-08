@@ -86,6 +86,8 @@ This is an easy task in QGIS that you can accomplish by downloading an existing 
 
 ![XYZ Connection dialog filled in](images/anchored4.png)
     4. You should now see “Google Satellite Hybrid” in the dropdown at the top. It will also be available here in future projects when you use the same computer. Click “Add” and close the DSM window.  
+
+![Data Source Manager XYZ tab with Google Satellite Hybrid selected in the dropdown and the Add button highlighted](images/xyz-connection-added.png)
     5. You should now see a second layer on your map that looks like Google Maps’ satellite view. That’s because this layer is using the same data as your Google Maps app.
 
     **Option 2:** Use the QuickMapServices Plugin. Go to the Plugins menu and Plugin Manager, and search for this plugin. Install it. Then, open it from the toolbar and use its search function to find the Google (or other base maps) you want to use in your map.
@@ -102,7 +104,7 @@ This is an easy task in QGIS that you can accomplish by downloading an existing 
 22. Find the Symbology tab on the left side of the window that opens  
 23. Review the listed default options in the large box and select one that is clearly visible over the satellite map. Increase the width if needed, and press OK. (Keep it simple this time, we’ll do more with symbology in the future)  
 
-![Symbology tab with Google Satellite Hybrid added](images/anchored5.png)
+![Layer Properties window for Utah_Quaternary_Faults with the Symbology tab, the Width field, the list of default line styles, and the OK button highlighted](images/symbology-tab.png)
 24.  Follow the same steps for the Counties and Utah boundary layers. Find any “Project Style” that is an outline.   
 25. Add labels to the Counties layer. Double-click on the Counties layer and find “Labels” on the left side (It should be under “Symbology”). On the top, you’ll see a drop-down menu that says “No Labels”. Select “Single Label” then mess around with the settings until you get something you’re happy with.   
 26. Now the faults and boundaries should be easier to see, and your map should look something like this:
