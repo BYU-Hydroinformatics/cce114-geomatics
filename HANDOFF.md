@@ -139,6 +139,10 @@ Collected from the conversion notes at the end of each deck (search for `Convers
   now the 7th edition, and the mapping is noted as pending.
 - **Final project:** the site page is a placeholder that points to the Mapping Term Project
   document on Learning Suite; converting that document into the page is the natural next step.
+- **Lab headings (Labs 2 to 11):** Lab 1 was reworded on 2026-09-08 so the instructions section is
+  "Step by Step Instructions" and its subsections are numbered, active-voice steps ("Step 1: Download
+  Data from UGRC", "Step 2: Create the Map", "Step 3: Change the Symbology"). Do the same for the other
+  ten labs. Check for inbound anchor links before renaming a heading; Lab 1 had none.
 - **Lab images:** Labs 5 and 9 have known content issues in old screenshots (raster.utah.gov
   wizard, a 10 km vs 5 km annotation); see `tools/image-improvements-handoff.md`.
 - **Repository size:** the repo is about 190 MB because of images and the data zip. Fine for now;
