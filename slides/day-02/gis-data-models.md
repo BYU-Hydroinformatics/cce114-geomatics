@@ -146,20 +146,6 @@ What are the **geometry characteristics** of each of these feature types?
 
 ---
 
-# Data Models
-
-![bg right:38% w:90%](images/dm-vector-diagram.jpg)
-
-- **Point** data model: `(x, y)`
-- **Polyline** data model: `(x0,y0), (x1,y1), (x2,y2), …`
-- **Polygon** data model: `(x0,y0), (x1,y1), (x2,y2), … (x0,y0)`
-- How can you store this data?
-- What is the file format?
-
-<!-- Roads = an ordered list of coordinate pairs. Boundary = the same, but the last pair repeats the first to close the ring. Point back at the demo screenshots if anyone needs to see it again. -->
-
----
-
 # Data Model vs. File Format
 
 <div class="columns" style="text-align:center;">
@@ -179,7 +165,35 @@ What are the **geometry characteristics** of each of these feature types?
 </div>
 </div>
 
-<!-- The demo file names make this concrete: UtahCountyMajorRoads.shp is the file format; "polyline" is the data model. The same roads could be stored as .gpkg or .geojson and still be polylines. -->
+<!-- Introduce both ideas here, then take them one at a time on the next two slides. The demo file names make this concrete: UtahCountyMajorRoads.shp is the file format; "polyline" is the data model. The same roads could be stored as .gpkg or .geojson and still be polylines. -->
+
+---
+
+# Data Models
+
+![bg right:38% w:90%](images/dm-data-model-brain.jpg)
+
+- The *conceptual* organization of the data: what the computer has to store
+- **Point** data model: `(x, y)`
+- **Polyline** data model: `(x0,y0), (x1,y1), (x2,y2), …`
+- **Polygon** data model: `(x0,y0), (x1,y1), (x2,y2), … (x0,y0)`
+
+<!-- Roads = an ordered list of coordinate pairs. Boundary = the same, but the last pair repeats the first to close the ring. Point back at the demo screenshots if anyone needs to see it again. Nothing here says how the numbers are written to disk; that is the next slide. -->
+
+---
+
+# File Formats
+
+![bg right:38% w:90%](images/dm-file-format-icons.jpg)
+
+- How the data are *stored* on the computer: the same data model can be saved many ways
+- From today's demo:
+  - **Shapefile**: `UtahCountyMajorRoads.shp` plus its `.shx`, `.dbf`, `.prj` siblings
+  - **GeoTIFF**: `UtahCountyDEM.tif`, a raster with its location built in
+- Other common ones: **GeoPackage** (`.gpkg`, one file, many layers), **GeoJSON** (plain text), **KML**
+- QGIS reads all of these; the data model does not change when the format does
+
+<!-- Open the unzipped data folder in Finder or Explorer and count the files that make up one shapefile: .shp holds the geometry, .dbf the attribute table, .shx the index, .prj the coordinate system. Lose the .dbf and the roads still draw but the attribute table is gone. Contrast with the DEM: one .tif file (the .tfw and .aux.xml are optional helpers). GeoPackage is what Lab 4 uses later in the course. -->
 
 ---
 
