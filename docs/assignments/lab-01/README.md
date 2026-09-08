@@ -48,9 +48,9 @@ This is an easy task in QGIS that you can accomplish by downloading an existing 
 * For this lab we will use the GIS software application, QGIS (also known as Quantum GIS). This is a free/open source GIS package that runs on Windows, Mac, and Linux operating systems. The software is pre-installed in the Clyde Building 234 computer lab. You can also download it and install it on your own computer from this website: [https://www.qgis.org/](https://www.qgis.org/). We will be using this version throughout the course: *“Long Term Version 3.44 (LTR)”.*   
 * There are no custom data downloads for this lab. Follow the instructions to download data from the State of Utah GIS website: [https://gis.utah.gov/products/sgid/](https://gis.utah.gov/products/sgid/)
 
-## **Instructions**
+## **Step by Step Instructions**
 
-### **Downloading Data from UGRC**
+### **Step 1: Download Data from UGRC**
 
 1. Google “Utah GIS data”  
 2. Click one of the Utah.gov links  
@@ -66,7 +66,7 @@ This is an easy task in QGIS that you can accomplish by downloading an existing 
 10. Open your downloads folder and **unzip the file you just downloaded (it will have a name like “Utah\_Quaternary\_Faults.zip”)**  
 11. Repeat steps 4-10. Go to the Boundaries category instead of Geoscience and find “Utah County Boundaries” and “Utah State Boundary”
 
-### **Creating the Map**
+### **Step 2: Create the Map**
 
 12. Open QGIS  
 13. Create a new project by clicking the blank page in the upper left corner  
@@ -98,7 +98,7 @@ This is an easy task in QGIS that you can accomplish by downloading an existing 
 19. Find the Layers Panel on the main QGIS window.  
 20. You’ll probably see that the Google layer is above the Utah Quaternary Faults layer. Swap them by clicking and dragging one so that the faults layer is on top. This is how you rearrange layers to appear above or below each other in the display.
 
-### **Changing Symbology**
+### **Step 3: Change the Symbology**
 
 21. Double-click on the Utah\_Quaternary\_Faults layer in the Layers Panel  
 22. Find the Symbology tab on the left side of the window that opens  
