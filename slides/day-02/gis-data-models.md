@@ -162,18 +162,19 @@ What are the **geometry characteristics** of each of these feature types?
 
 # Data Model vs. File Format
 
-<div class="columns">
+<div class="columns" style="text-align:center;">
 <div>
 
-- **Data Model** = the *conceptual* organization of the data
-- **File Format** = how data are *stored* on the computer
+**Data Model** = the *conceptual* organization of the data
 
-![w:300 center](images/dm-file-format-icons.jpg)
+![h:360 center](images/dm-data-model-brain.jpg)
 
 </div>
 <div>
 
-![w:420 center](images/dm-data-model-brain.jpg)
+**File Format** = how data are *stored* on the computer
+
+![h:360 center](images/dm-file-format-icons.jpg)
 
 </div>
 </div>
