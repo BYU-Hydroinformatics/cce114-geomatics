@@ -255,6 +255,23 @@ Collected from the conversion notes at the end of each deck (search for `Convers
   5,200"; and every external link in Labs 9, 10 and 11 resolves. The USGS Hebgen Lake article
   answers 403 to a plain script but 200 to a browser, so it is fine.
 
+- **Learning Suite lab links: audited and extended 2026-09-10.** All eleven lab assignments already
+  linked correctly to the site, and the data attachments were on the four labs that need them
+  (4, 7, 8 and 10), so nothing was broken. What was missing was on the **Schedule**: lecture and
+  Thursday entries linked straight to the site, but lab entries were system-generated assignment
+  rows with no link, so a student on the schedule needed an extra click. Each lab's due date now
+  carries a short "Lab N instructions" text item linking to its page, sitting directly under the
+  generated row. To add more later: click the empty right-hand side of a day's Class Info cell and
+  a **New Text Item** dialog opens for that date, even on days that already have entries.
+
+- **Lab 8's wetland shapefile name: fixed 2026-09-10.** The lab asked for "Lehi\_wetlands01" in
+  four places, but the Learning Suite attachment is `Lehi_wetland01.zip` and every file inside it
+  is singular (`.shp`, `.dbf`, `.prj`, `.cpg`, `.shx`, `.qmd`). The lab now uses the singular name
+  and states the attachment filename. **Worth a look:** that zip also ships a `Lehi_wetland01.qmd`
+  metadata sidecar, which QGIS loads automatically with the layer. If it carries real content, then
+  students may open the Metadata panel in steps 11 to 15 and find it already populated, which would
+  undercut the exercise. I could not read the file's contents to check.
+
 - **Lab 4 culvert photos** (`anchored10`, `anchored11`, `anchored12`, `anchored14`) are 225 to 369 px
   wide. They are photographs, not QGIS captures, so no script replaces them; they need images Dan is
   happy to license.

@@ -80,10 +80,10 @@ Utah County is experiencing rapid growth, necessitating a new freeway extension 
 
 Now that you’ve got answers to your metadata questions, there’s one thing left to do before the meeting. Your boss is very environmentally conscious and noticed some wetlands in the project area. He sent out a surveying crew to map one wetland in particular that could be avoided, and he needs you to create metadata for the polygon shapefile the crew created.
 
-6. Download the “Lehi\_wetlands01” shapefile from the Lab 8 assignment on Learning Suite.  
+6. Download the “Lehi\_wetland01” shapefile from the Lab 8 assignment on Learning Suite. The attachment is called **Lehi\_wetland01.zip** — note the singular “wetland”.  
 7. Create a new QGIS project with a Google Satellite Hybrid basemap  
-8. Add the “Lehi\_wetlands01” shapefile to the project  
-9. Right-click on the “Lehi\_wetlands01” layer in the Layers Panel, and click “Properties…”  
+8. Add the “Lehi\_wetland01” shapefile to the project  
+9. Right-click on the “Lehi\_wetland01” layer in the Layers Panel, and click “Properties…”  
 10. Find the “Metadata” tab on the left.  
 11. Fill out the following information in the “Identification” tab of the metadata:  
     1. Title: Lehi Project Wetland Boundaries  
@@ -115,7 +115,7 @@ Now that you’ve got answers to your metadata questions, there’s one thing le
 
 16. Then click “Apply” at the bottom of the window, but keep the window open  
 17. On the bottom left, click the dropdown that says “Metadata” and select “Save Metadata to File…”  
-18. Name the file “Lehi\_wetlands01” and save it where you can easily find it  
+18. Name the file “Lehi\_wetland01” and save it where you can easily find it  
 19. Open your new metadata file as plain text, and take a screenshot of it that shows *at least* the first 25 lines (for grading purposes)
 
 There is no layout to create for this lab. If any of the metadata tabs look different from the figures above, check that you are on the **Metadata** page of Layer Properties and not the **Information** page, which looks similar and is read-only. Ask a TA if you get stuck, we’re available\!
