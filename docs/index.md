@@ -23,13 +23,10 @@ Geomatics is the discipline of gathering, analyzing, and visualizing geographic 
 ## Course Structure
 
 - [Course Overview](course.md) — description, instructors, prerequisites, textbook, learning outcomes, and how the course works.
-- [Schedule](schedule.md) — the 15-week sequence: Tuesday concept lectures, Thursday hands-on sessions, and what is due each week.
+- [Schedule](schedule.md) — one page per week. Each week page has both class sessions together:
+  the Tuesday concepts lecture (topics, slides, reading) and the Thursday hands-on session in
+  QGIS (the instructor's run sheet), plus what is due that week.
 - [Quizzes, Activities & Experiences](assignments/deliverables.md) and the [Final Project](assignments/final-project.md).
-
-## Lectures
-
-Interactive web slide decks, one page per class day under [Lectures](lectures/README.md).
-Converted from the PowerPoints as the semester goes; Day 1 and Day 2 are up.
 
 ## Policies
 

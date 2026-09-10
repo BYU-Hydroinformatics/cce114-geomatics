@@ -1,8 +1,62 @@
-# Week 4 Thursday: GPS Field Collection and Importing the Class Data
+# Week 4 — The Global Positioning System
 
-**Day 7 · Thursday · Field collection, then live demo in QGIS (Dr. Halgren)** · feeds [Lab 3](../assignments/lab-03/README.md)
+**Due this week (Saturday, 11:59 pm unless noted):**
 
-## At a glance
+- [Quiz 3: GPS, Part 1](../assignments/deliverables.md#reading-quizzes)
+- [Lab 3: GPS Data Collection and Importing Into QGIS](../assignments/lab-03/README.md)
+
+## Tuesday — The Global Positioning System
+
+*Day 6 · Concepts lecture (Dr. Ames)*
+
+### Topics
+
+- How GPS and GNSS positioning work
+- Trilateration: where is Air Force One?
+- Latitude and longitude, precision, and error
+- Converting from latitude/longitude to meters, and why it is not straightforward
+
+### Slides
+
+- [The Global Positioning System](https://byu-hydroinformatics.github.io/cce114-geomatics/slides/day-06/gps-part-1.html)
+- [GPS extended slides: trilateration build, error budget, meters demo (reference)](https://byu-hydroinformatics.github.io/cce114-geomatics/slides/day-07/gps-part-2.html)
+
+### In-class activity
+
+Find Air Force One, then Where Am I: trilaterate Prague on paper from three signal delays and upload a photo of your solution. Record your completion on Learning Suite.
+
+### Reading
+
+GIS Fundamentals, Chapter 5 (GNSS and Coordinate Surveying)
+
+<!-- tuesday-notes -->
+*In the [Global Positioning System](https://byu-hydroinformatics.github.io/cce114-geomatics/slides/day-06/gps-part-1.html) deck, "Warm-up: find Air Force One." The deck opens with the two activities and then gives the short GPS explanation.*
+
+**Setup, before class.** Tape a printed photo of Air Force One somewhere in the room, not in plain sight. Mark three fixed points in the room as satellites 1, 2, and 3 (a corner of the lectern, a door frame, a window sill; label them with sticky notes). Measure the straight-line distance from each satellite to the photo with a tape and type the three numbers into the blanks on the slide (the 2021 room's were 169, 216, and 151 inches; re-measure for 234 CB).
+
+**Run.** Show the slide, give five minutes, let them use string, a tape, or their arms. Whoever finds it says how. The point: three ranges from three known points fix a position. That is trilateration, and it is the whole GPS idea before the math.
+
+*Same deck, "Activity: Where Am I?" and "The answer: Prague"; the QGIS version by Harrison Stewart is in the Teaching folder under In class activities.*
+
+**Setup.** Printed maps of Europe with a scale bar, one per student, or let them use a web map with the measure tool. Compasses or string.
+
+**Run.**
+
+1. The story: lost in Europe, three radio stations announce the time, each arrives late by the travel time. Amsterdam 2.37 × 10⁻³ s, Paris 2.95 × 10⁻³ s, London 3.45 × 10⁻³ s.
+2. Distance is delay × speed of light (299,792,458 m/s): about 710 km, 884 km, and 1,034 km.
+3. Draw the three circles on the map. They meet at Prague.
+4. Students write their name and the solution on the paper, photograph it, and upload it to *In Class Activity: Where Am I* on Learning Suite.
+
+Fifteen minutes. Circulate and check that they converted seconds to kilometers before drawing; the usual mistake is a circle in meters on a map scaled in kilometers.
+
+## Thursday — GPS Field Collection and Importing the Class Data
+
+*Day 7 · Demo and hands-on (Dr. Halgren)*
+
+<!-- thursday-notes -->
+**Feeds** [Lab 3](../assignments/lab-03/README.md).
+
+### At a glance
 
 | | |
 | --- | --- |
@@ -12,7 +66,7 @@
 | **Graded item** | *In Class Activity: GPS Class Activity* (5 points). Students enter three positions in the class sheet and record the three site names on Learning Suite. |
 | **Feeds** | Lab 3: GPS Data Collection and Importing Into QGIS. Due Saturday. |
 
-## Before class
+### Before class
 
 - [ ] The class Google Sheet open on the projector at the **GPS activity** tab (linked from the Week 4 entries on Learning Suite). The header row is `Your Name, Location Name, Latitude (Decimal Degrees), Longitude (Decimal Degrees), ...` with three example rows. Clear last semester's student rows if any remain.
 - [ ] The campus site list from Lab 3 Part 1 printed or on a slide (Joseph statue in the JSB grove, Tree of Life, Testing Center lobby, Maeser statue, Tau Beta Pi statue by the Clyde, the bridge to the LSB, the ESC pendulum, the library entrance windows, the JFSB fountain, the bike rack between the Talmage and JFSB, the Brigham Young statue south of the ASB, the TNRB 4th-floor bust, the MOA entrance, the Victory Bell, Cosmo in the Bookstore).
@@ -21,7 +75,7 @@
 - [ ] QGIS open with the Google satellite XYZ basemap and the project CRS set to **EPSG:26912**, so the import lands in meters immediately.
 - [ ] The [tagis.dep.wv.gov/convert](https://tagis.dep.wv.gov/convert/) converter open in a tab for the cross-check.
 
-## Plan (50 minutes)
+### Plan (50 minutes)
 
 | Time | Segment |
 | --- | --- |
@@ -33,9 +87,9 @@
 | 0:40 | Measure the scatter: two students at the same site, distance between their points |
 | 0:46 | Record completion on Learning Suite; Lab 3 pointer |
 
-## Walkthrough
+### Walkthrough
 
-### 1. Instructions before they leave (3 minutes)
+#### 1. Instructions before they leave (3 minutes)
 
 Say these five things and put them on the screen:
 
@@ -45,44 +99,38 @@ Say these five things and put them on the screen:
 4. Latitude is the first number, about 40.25 here; longitude is about **negative** 111.65. West longitudes are negative in decimal degrees.
 5. Type your rows into the **GPS activity** tab (name, site name, latitude, longitude) before you come back in. Be back by the time on the screen.
 
-### 2. From the sheet to QGIS (7 minutes)
+#### 2. From the sheet to QGIS (7 minutes)
 
 1. In Google Sheets, **File > Download > Comma Separated Values (.csv)** for the GPS activity tab. Save it as `class_gps.csv`.
 2. If the sheet has stray rows (blank names, the example rows, a `N`/`W` suffix on numbers), fix them in the CSV now, out loud. Real field data is messy; this is normal.
 3. In QGIS: **Layer > Add Layer > Add Delimited Text Layer...** File name = the CSV. File format: CSV. Under **Geometry Definition** choose **Point coordinates**, X field = the longitude column, Y field = the latitude column, Geometry CRS = **EPSG:4326 (WGS 84)**. Click **Add**.
 4. The points appear on campus. If one is in the ocean or Asia, a sign is wrong or latitude and longitude are swapped. Find whose it is and fix the row; that is the lesson.
 
-### 3. Meters, not degrees (7 minutes)
+#### 3. Meters, not degrees (7 minutes)
 
 1. Point at the bottom-right CRS badge: the project is **EPSG:26912, NAD83 / UTM zone 12N**. The layer is stored in degrees but drawn in meters; QGIS reprojects on the fly.
 2. Make it permanent: right-click the layer > **Export > Save Features As...** Format GeoPackage, file `class_gps.gpkg`, CRS **EPSG:26912**. Add the saved file to the map.
 3. On the new layer, open the **Field Calculator**: new field `easting`, decimal, expression `$x`; then `northing` with `$y`. Sanity check: eastings near 444,000 to 445,000 and northings near 4,455,000 to 4,456,000.
 4. Paste one student's latitude and longitude into the converter with output set to **UTM NAD83 Zone 12N**. It should match the field calculator to within a meter. Two tools, one answer.
 
-### 4. Seeing the error (6 minutes)
+#### 4. Seeing the error (6 minutes)
 
 1. Pick a site that several students visited. Zoom in until their points separate.
 2. **Measure Line** tool (the ruler): click from one student's point to another's. Ten meters apart at the same statue is typical for a phone. Ask why: buildings, sky view, whether the phone had settled.
 3. Optional if time: **Vector > Geometry Tools > Mean Coordinate(s)** grouped by the site-name field. That group average is what Lab 3 asks them to compute by hand.
 
-## Student activity
+### Student activity
 
 Students must have entered three rows in the GPS activity sheet during the field time. On Learning Suite, they open **In Class Activity: GPS Class Activity**, mark it complete, and type the names of the three sites they entered. Full credit for three rows in the sheet and the names recorded.
 
-## Lab 3 pointer
+### Lab 3 pointer
 
 Lab 3 Part 1 is the same collection at seven sites in groups, with a group average and a conversion to UTM in the converter. Part 2 is today's import, plus creating a polygon of the campus and computing its area. Students who kept today's CSV and GeoPackage have Part 2 half done.
 
-## Common snags
+### Common snags
 
 - **All the points are stacked in one place or in the Gulf of Guinea.** Latitude and longitude are swapped, or the longitude lost its minus sign. Check the X and Y field choices in the import dialog.
 - **A point is 100 km off.** Someone typed `40.2466 N` with a letter, so the field imported as text. Strip the letters in the CSV and re-add.
 - **"Layer has no CRS" or points do not draw in meters.** The Geometry CRS in the import dialog was left blank. It must be EPSG:4326 because that is what phones report.
 - **`$x` returns degrees.** They ran the field calculator on the original CSV layer, not the reprojected GeoPackage. `$x` is in the layer's own CRS.
 - **Phones report only four decimals.** The app is rounding. Switch to one of the apps listed above.
-
-## Links
-
-- [Day 7 lecture page](../lectures/day-07.md)
-- [Lab 3: GPS Data Collection and Importing Into QGIS](../assignments/lab-03/README.md)
-- Tuesday's deck: [The Global Positioning System](https://byu-hydroinformatics.github.io/cce114-geomatics/slides/day-06/gps-part-1.html); the [extended GPS slides](https://byu-hydroinformatics.github.io/cce114-geomatics/slides/day-07/gps-part-2.html) hold the longer meters demo if you want it

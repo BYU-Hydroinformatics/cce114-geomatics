@@ -1,8 +1,48 @@
-# Week 6 Thursday: Raster Data in QGIS and an Elevation Profile
+# Week 6 — Working with Raster Data
 
-**Day 11 · Thursday · Live demo and hands-on in QGIS (Dr. Halgren)** · feeds [Lab 5](../assignments/lab-05/README.md) · ends with the Exam 1 Kahoot
+**Due this week (Saturday, 11:59 pm unless noted):**
 
-## At a glance
+- [Quiz 5: Getting Started with Raster Data](../assignments/deliverables.md#reading-quizzes)
+- [Lab 5: Working with Raster Data](../assignments/lab-05/README.md)
+- [BYU Belonging Map (Wednesday)](../assignments/deliverables.md#experiences)
+
+## Tuesday — Working with Raster Data, Part 1
+
+*Day 10 · Concepts lecture (Dr. Ames)*
+
+### Topics
+
+- Raster data structure: cells, resolution, extent, no-data
+- Raster analysis and map algebra
+- Digital elevation models and derived surfaces
+
+### Slides
+
+- [Raster Analysis and Map Algebra](https://byu-hydroinformatics.github.io/cce114-geomatics/slides/day-10/raster-analysis-and-map-algebra.html)
+
+### In-class activity
+
+Engineering Paper Raster Analysis: work a map algebra problem by hand and upload a photo. Record your completion on Learning Suite.
+
+### Reading
+
+GIS Fundamentals, Chapter 2 raster sections and Chapter 10 (Raster Analysis)
+
+<!-- tuesday-notes -->
+*In the [Raster Analysis and Map Algebra](https://byu-hydroinformatics.github.io/cce114-geomatics/slides/day-10/raster-analysis-and-map-algebra.html) deck, the eight activity slides after the title.*
+
+**Setup.** A sheet of engineering paper per student, pencils. The slides carry the problem: a Utah suitability analysis done by hand, one raster per criterion, combined with map algebra.
+
+**Run.** Students rip the sheet into quarters, fill every cell of each quarter with a number for one criterion (the deck walks them through it), then combine the quarters cell by cell into the final raster. Insist on no blank cells; a raster is completely filled in. Twenty-five minutes. They photograph the result and upload it to *In Class Activity: Engineering Paper Raster Analysis*.
+
+## Thursday — Raster Data in QGIS and an Elevation Profile
+
+*Day 11 · Demo and hands-on (Dr. Halgren)*
+
+<!-- thursday-notes -->
+**Feeds** [Lab 5](../assignments/lab-05/README.md) · ends with the Exam 1 Kahoot.
+
+### At a glance
 
 | | |
 | --- | --- |
@@ -12,13 +52,13 @@
 | **Graded item** | *In Class Activity: DEM Profile* (5 points). Upload a screenshot showing a pseudocolor DEM with an elevation profile. |
 | **Feeds** | Lab 5: Working with Raster Data. Due Saturday. |
 
-## Before class
+### Before class
 
 - [ ] QGIS open with the DEM loaded and the county boundary on top as an outline.
 - [ ] The Exam 1 Kahoot from the Learning Suite **Kahoot** content page (*Geomatics Exam 1 Prep*) open in a second browser tab and started to the lobby screen.
 - [ ] Learning Suite open to the *DEM Profile* activity.
 
-## Plan (50 minutes)
+### Plan (50 minutes)
 
 | Time | Segment |
 | --- | --- |
@@ -31,9 +71,9 @@
 | 0:35 | Kahoot: Exam 1 prep |
 | 0:48 | Lab 5 pointer; exam closes Wednesday |
 
-## Walkthrough
+### Walkthrough
 
-### 1. What is in the file
+#### 1. What is in the file
 
 Right-click the DEM > **Properties > Information**. Read out loud and ask what each means:
 
@@ -44,33 +84,33 @@ Right-click the DEM > **Properties > Information**. Read out loud and ask what e
 
 The **Source** tab shows the file path and lets you rename the layer. Renaming changes nothing on disk.
 
-### 2. Three ways to see one grid
+#### 2. Three ways to see one grid
 
 1. **Symbology > Render type: Singleband gray**. Min and max stretch. Dark is low.
 2. **Singleband pseudocolor**. Pick a terrain color ramp, **Mode: Equal Interval**, 8 classes, **Classify**, Apply. Then try **Continuous**. Say what "pseudo" means: the cells are elevations, not colors; the ramp is a lookup table you chose.
 3. **Hillshade**. Azimuth 315, altitude 45. Duplicate the layer, keep one as pseudocolor with 60 percent opacity on top of the hillshade. That pair is how most published relief maps are built.
 
-### 3. Reading elevations
+#### 3. Reading elevations
 
 1. **Identify Features** on the DEM: one band, one value, in meters.
 2. **Properties > Elevation**: set **Represents Elevation Surface**. Apply.
 3. **View > Elevation Profile**. Click the **Capture Curve** tool, draw a line from Utah Lake east across Provo to the Wasatch, right-click to finish. The profile appears below the map. Ask where campus is on it, and what the vertical exaggeration is doing.
 4. If the profile panel misbehaves on someone's laptop, the **Profile Tool** plugin (Plugins > Manage and Install) does the same job.
 
-### 4. One analysis, two ways
+#### 4. One analysis, two ways
 
 1. **Raster > Analysis > Slope**. Input the DEM; leave the Z factor at 1 because the CRS is in meters. Run. Style the result pseudocolor. Lab 5 asks for exactly this.
 2. **Raster > Raster Calculator**: expression `"dem@1" > 1500` produces a 1/0 raster of everything above 1500 m. Tuesday's engineering-paper reclass was this, done by hand.
 
-## Student activity
+### Student activity
 
 Students style the DEM as singleband pseudocolor with at least five classes, draw an elevation profile across the county, and take one screenshot that shows the map and the profile panel together. Upload it to **In Class Activity: DEM Profile** on Learning Suite. Full credit for pseudocolor plus a profile.
 
-## Kahoot (15 minutes)
+### Kahoot (15 minutes)
 
 Start the *Geomatics Exam 1 Prep* Kahoot from the Learning Suite Kahoot page. Students join with the PIN on their phones. Read the questions that get the most wrong answers twice; those are the ones to review before Wednesday. Remind them the Testing Center closes early on some days and the exam is closed book.
 
-## Common snags
+### Common snags
 
 - **The DEM draws as a flat gray square.** Min and max are not set. Symbology > Min/Max Value Settings > **Cumulative count cut**, Apply.
 - **"Represents Elevation Surface" is missing.** They are on an older QGIS. The Profile Tool plugin covers it.
@@ -78,9 +118,6 @@ Start the *Geomatics Exam 1 Prep* Kahoot from the Learning Suite Kahoot page. St
 - **Raster Calculator says the expression is invalid.** Layer names with spaces or hyphens need the quotes exactly as the dialog inserts them; double-click the layer in the list instead of typing.
 - **Kahoot PIN will not join.** Refresh the lobby; the BYU network sometimes blocks the first attempt.
 
-## Links
+#### Links
 
-- [Day 11 lecture page](../lectures/day-11.md)
-- [Lab 5: Working with Raster Data](../assignments/lab-05/README.md)
 - [Exams](../policies/exams.md)
-- Tuesday's deck: [Raster Analysis and Map Algebra](https://byu-hydroinformatics.github.io/cce114-geomatics/slides/day-10/raster-analysis-and-map-algebra.html)

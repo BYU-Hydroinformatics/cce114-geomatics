@@ -28,8 +28,9 @@ the original documents and are readable, though older QGIS versions show in some
 semester-agnostic pages:
 
 - `docs/course.md`: description, instructors, prerequisites, textbook, learning outcomes, how the course works
-- `docs/schedule.md`: 15 weeks, each with a Tuesday concepts day and a Thursday hands-on day, plus what is due
-- `docs/lectures/day-NN.md`: 29 lecture-day pages with topics, slides, materials, activities, reading, and due items
+- `docs/schedule.md`: the 15-week overview table, linking to the weekly pages below
+- `docs/weeks/week-NN.md`: 15 weekly lesson-plan pages (restructured 2026-09-09, see below), each with
+  the Tuesday concepts session and the Thursday hands-on session together
 - `docs/policies/`: grading, attendance and participation, exams, university policies, plus the existing AI policy
 - `docs/assignments/deliverables.md` (quizzes, in-class activities, experiences) and `docs/assignments/final-project.md`
 
@@ -56,20 +57,34 @@ preview, and Before Next Class slides, and with software wording updated from Ar
 All ArcMap screenshots in those decks were replaced with QGIS 3.44 captures today, except in the
 Day 21 deck, which describes CCE 414 and keeps its ArcGIS 10 screenshots on purpose.
 
-**Thursday hands-on run sheets and Tuesday activities (2026-09-02, evening).** `docs/hands-on/` holds one
-run sheet per Thursday for Weeks 2 to 12 (goal, prep checklist, 50-minute plan, QGIS 3.44 walkthrough,
-the graded upload, common snags) plus `tuesday-activities.md`, which collects Dr. Ames's lecture
-activities with their setup and the full metadata-melodrama script. `docs/assignments/web-mapping-with-ai.md`
-is the spec for the Web Mapping with AI Experience (kicked off Week 11 Thursday). Structural decisions
-made with Dan that day: both GPS decks are given on Tuesday of Week 4 and Thursday is field collection
-plus the CSV import; Week 11 became "Geoplanning and Georeferencing" (Tuesday: georeference a pencil sketch
-of your neighborhood; Thursday: a real scan with GCPs and residuals) because no georeferencing lecture or
-lab existed; the CCE 414 intro moved to Tuesday of Week 14, followed by project work; final project
-presentations are Thursday of Week 14 and Tuesday of Week 15. Thursday day pages link their run sheet
-through the `handson=` key in `tools/build_schedule.py`. Graded in-class activities are one per class
-meeting, 5 points each; new ones are First Map: Utah County (Week 2 Thu), DEM Profile (Week 6 Thu),
-Playing with Projections (Week 8 Thu), AGRC Metadata (Week 9 Thu), and Georeference Your Neighborhood
-Sketch (Week 11 Tue).
+**Thursday hands-on run sheets and Tuesday activities (2026-09-02, evening).** Originally built as
+`docs/hands-on/`, one run sheet per Thursday for Weeks 2 to 12 (goal, prep checklist, 50-minute plan,
+QGIS 3.44 walkthrough, the graded upload, common snags) plus `tuesday-activities.md`, collecting
+Dr. Ames's lecture activities with their setup and the full metadata-melodrama script. On
+2026-09-09 this content was folded into the Tuesday/Thursday sections of each `docs/weeks/week-NN.md`
+page (see "Restructuring" below) — the `docs/hands-on/` tree no longer exists; the same content lives
+under the `<!-- tuesday-notes -->` and `<!-- thursday-notes -->` markers on the relevant week pages.
+`docs/assignments/web-mapping-with-ai.md` is the spec for the Web Mapping with AI Experience (kicked
+off Week 11 Thursday). Structural decisions made with Dan that day: both GPS decks are given on
+Tuesday of Week 4 and Thursday is field collection plus the CSV import; Week 11 became "Geoplanning
+and Georeferencing" (Tuesday: georeference a pencil sketch of your neighborhood; Thursday: a real
+scan with GCPs and residuals) because no georeferencing lecture or lab existed; the CCE 414 intro
+moved to Tuesday of Week 14, followed by project work; final project presentations are Thursday of
+Week 14 and Tuesday of Week 15. Graded in-class activities are one per class meeting, 5 points each;
+new ones are First Map: Utah County (Week 2 Thu), DEM Profile (Week 6 Thu), Playing with Projections
+(Week 8 Thu), AGRC Metadata (Week 9 Thu), and Georeference Your Neighborhood Sketch (Week 11 Tue).
+
+**Restructuring to one page per week (2026-09-09).** The site originally spread each week across
+three menus: `docs/lectures/day-NN.md` (Tuesday, generated), `docs/hands-on/week-NN.md` (Thursday,
+hand-written), and `docs/hands-on/tuesday-activities.md` (a separate Tuesday-activity index) — three
+places for the same 15 weeks, and a sidebar of about 90 links. At Dan's request this became one page
+per week, `docs/weeks/week-NN.md`, so the nav is simply Week 1 through Week 15 under a **Schedule**
+tab (Overview + the 15 weeks), and Learning Suite can point at one URL per week. Thursday sessions
+now head with the run sheet's applied title (e.g. "First Map in QGIS") rather than the lecture
+generator's academic title, since both sessions share a page. `tools/build_schedule.py` was rewritten
+to emit `docs/weeks/week-NN.md` instead of one page per day; see rule 3 in `CLAUDE.md` for the two
+marker names. **Follow-up still needed from Dan:** update any direct links on Learning Suite that
+pointed at the old `lectures/day-NN` or `hands-on/week-NN` URLs to the new `weeks/week-NN` URLs.
 
 **Data.** `docs/lectures/data/UtahCountyData.zip` (38 MB: county boundary, major roads, cellular
 towers, DEM) is published for the Day 2 demo and Thursday sessions. Lab 4 ships a GeoPackage
@@ -80,10 +95,10 @@ fallback in its folder.
 Two files are the source of truth for structure; edit them rather than their outputs.
 
 - **`tools/build_schedule.py`** holds the DAYS and WEEKS tables. Running
-  `python3 tools/build_schedule.py` regenerates `docs/schedule.md`, `docs/lectures/README.md`, all
-  29 day pages, and the Lectures section of `mkdocs.yml`. To add a slide deck to a day, add it to
-  that day's `slides=` list and rerun. Hand-written text survives on a day page only below a
-  `<!-- notes -->` marker.
+  `python3 tools/build_schedule.py` regenerates `docs/schedule.md`, all 15 `docs/weeks/week-NN.md`
+  pages, and the Schedule section of `mkdocs.yml`. To add a slide deck to a day, add it to that
+  day's `slides=` list and rerun. Hand-written text survives on a week page only below a
+  `<!-- tuesday-notes -->` or `<!-- thursday-notes -->` marker (see rule 3 in `CLAUDE.md`).
 - **`mkdocs.yml`** holds the rest of the navigation (labs, policies, course pages).
 
 Slide decks are plain Markdown in `slides/day-NN/`, one folder per day with an `images/`

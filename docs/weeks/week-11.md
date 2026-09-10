@@ -1,8 +1,56 @@
-# Week 11 Thursday: Georeferencing in QGIS, and the Web Mapping with AI Kickoff
+# Week 11 — Geoplanning and Georeferencing
 
-**Day 21 · Thursday · Live demo and hands-on in QGIS (Dr. Halgren), then the Web Mapping with AI kickoff (Harrison)** · feeds [Lab 10](../assignments/lab-10/README.md) and the [Web Mapping with AI Experience](../assignments/web-mapping-with-ai.md)
+**Due this week (Saturday, 11:59 pm unless noted):**
 
-## At a glance
+- [Lab 10: Domes for Mozambique](../assignments/lab-10/README.md)
+
+## Tuesday — Geoplanning and Georeferencing
+
+*Day 20 · Concepts lecture (Dr. Ames)*
+
+### Topics
+
+- Introduction to geoplanning
+- Domes for the World and the Mozambique project
+- Georeferencing: attaching real-world coordinates to an image that has none
+
+### Slides
+
+*Slides for this day are not on the site yet. They will be added as the semester goes.*
+
+### In-class activity
+
+Georeference Your Neighborhood Sketch: draw your neighborhood in pencil, photograph it, email it to yourself, and georeference it in QGIS. Record your completion on Learning Suite.
+
+<!-- tuesday-notes -->
+*New in Fall 2026, paired with the Tuesday georeferencing presentation. Thursday of the same week, Dr. Halgren runs the advanced version with a real scanned map in this page's Thursday section.*
+
+**Setup.** Pencils and paper. Every student needs a laptop with QGIS 3.44 today, so announce it the Thursday before. The Google satellite XYZ basemap connection from Week 2.
+
+**Run.**
+
+1. **Draw** (7 minutes). On paper, in pencil, draw the neighborhood around your home or apartment from memory: your building, the streets on all four sides, and at least four things you could find on a satellite image (intersections, a park corner, a church, a parking lot). Label nothing; north up.
+2. **Photograph** it with your phone and **email it to yourself**. Save the image to your laptop in a folder without spaces in the path.
+3. **QGIS.** Open a project with the satellite basemap, set the project CRS to EPSG:26912, and zoom to your neighborhood.
+4. **Layer > Georeferencer...** Open Raster, choose the photo. **Add Point** on an intersection in the sketch, then **From Map Canvas** and click the same intersection on the satellite image. Repeat for four points spread to the corners of the sketch.
+5. **Settings > Transformation Settings**: Transformation type **Helmert** (it can rotate and scale a hand drawing but will not warp it), Resampling Nearest neighbor, Target CRS EPSG:26912, an output file next to the photo, tick **Load in project when done**. Then **Start Georeferencing**.
+6. The sketch lands on the satellite image. Set its opacity to 50 percent. Which of your streets are in the right place? Which are not? Try **Polynomial 1** and compare; with six or more points, try **Polynomial 2** and notice it starts bending the drawing to fit.
+7. Take a screenshot with the sketch over the imagery and upload it to *In Class Activity: Georeference Your Neighborhood Sketch* on Learning Suite.
+
+Twenty-five minutes. What they learn: a drawing has no coordinates until you give it some, four good control points are worth more than ten bad ones, and memory is a poor surveying instrument.
+
+## Thursday — Georeferencing in QGIS, and the Web Mapping with AI Kickoff
+
+*Day 21 · Demo and hands-on (Dr. Halgren)*
+
+### Materials
+
+- [Web Mapping with AI Experience](../assignments/web-mapping-with-ai.md)
+
+<!-- thursday-notes -->
+**Feeds** [Lab 10](../assignments/lab-10/README.md) and the [Web Mapping with AI Experience](../assignments/web-mapping-with-ai.md).
+
+### At a glance
 
 | | |
 | --- | --- |
@@ -12,14 +60,14 @@
 | **Graded item** | None on Thursday. Tuesday's *Georeference Your Neighborhood Sketch* (5 points) is Dr. Ames's item; students who did not finish can upload it after today's session. |
 | **Feeds** | Lab 10: Geoplanning, Domes for Mozambique. Due Saturday. Web Mapping with AI Experience, due Wednesday of Week 14. |
 
-## Before class
+### Before class
 
 - [ ] An image to georeference, saved locally: a scanned historic USGS quad of Provo from [USGS topoView](https://ngmdb.usgs.gov/topoview/) (download the JPEG, not the GeoTIFF, so it truly has no coordinates), or a campus plan sheet PDF exported to PNG. Test it once.
 - [ ] QGIS open with the Google satellite XYZ basemap and the project CRS at **EPSG:26912**. The Georeferencer is under **Layer > Georeferencer...** in 3.44 (Raster > Georeferencer in older versions).
 - [ ] Harrison ready with a finished example web map open in a browser and the [assignment page](../assignments/web-mapping-with-ai.md) in a tab.
 - [ ] A GeoJSON export of any layer ready (steps below) for the kickoff demo.
 
-## Plan (50 minutes)
+### Plan (50 minutes)
 
 | Time | Segment |
 | --- | --- |
@@ -32,35 +80,35 @@
 | 0:30 | Web Mapping with AI kickoff: the deliverable, a finished example, QGIS to GeoJSON to a web page in ten minutes |
 | 0:46 | Questions; where to get help |
 
-## Walkthrough
+### Walkthrough
 
-### 1. Why
+#### 1. Why
 
 A drawing, a scan, a photo: pixels with no idea where they are. Georeferencing attaches real-world coordinates to pixel positions so the image can sit under vector data. Every renovation project starts with an old plan sheet; every site visit produces a sketch. Tuesday's sketch was the gentle version; today's image is the working version.
 
-### 2. Ground control points
+#### 2. Ground control points
 
 1. **Layer > Georeferencer...** In the Georeferencer window, **Open Raster** and choose the image. It appears in its own canvas with pixel coordinates.
 2. **Add Point** tool. Click a feature you can also find on the basemap: a road intersection, a building corner, a bridge end. In the dialog, click **From Map Canvas**, then click the same feature on the QGIS map. The GCP appears in the table with source pixels and destination coordinates.
 3. Repeat for four points, spread to the corners of the image. Say the rule: spread wide, avoid a line, use hard corners not soft edges.
 
-### 3. Transformation settings and residuals
+#### 3. Transformation settings and residuals
 
 1. **Settings > Transformation Settings**. Walk the list: **Linear** (shift and scale only, needs 2 GCPs), **Helmert** (adds rotation, 2 GCPs), **Polynomial 1** (affine, 3 GCPs, the default for a flat scan), **Polynomial 2** (6 GCPs, corrects gentle warps), **Thin Plate Spline** (bends locally to fit every point exactly, which hides bad points). Resampling **Cubic** for imagery, **Nearest neighbor** for a categorical scan. Target CRS EPSG:26912. Output file next to the image. Tick **Load in project when done**.
 2. Look at the GCP table: the **dX, dY** and **residual** columns appear once there are enough points for the chosen transformation. The **Mean error (RMS)** is at the bottom. A residual of 30 m on a 1:24,000 scan is a misplaced click; 3 m is fine.
 3. Turn off one point (untick it) and watch the RMS change. That is quality control, and it is why TPS with four points is meaningless: it forces zero residual everywhere.
 
-### 4. Run and judge
+#### 4. Run and judge
 
 1. **Start Georeferencing**. The output loads over the basemap. Set its opacity to 50 percent and toggle it. Do the roads line up across the whole image or only near the GCPs?
 2. Add two more GCPs in the worst area, switch to Polynomial 2, rerun. Better in the middle, and the corners? Discuss what more points buy and when they stop helping.
 3. Optional: **Vector** digitize a building footprint from the georeferenced 1950s map and compare to today's imagery. That is a change-detection analysis in two minutes.
 
-### 5. Lab 10 connection
+#### 5. Lab 10 connection
 
 Domes for Mozambique places a site inside a project boundary and plans around it. If the site drawing comes as an image, this is how it becomes a layer. Also point out that Lab 10 starts by **choosing a CRS for Mozambique** (UTM 36S or 37S), the Week 8 lesson applied somewhere new.
 
-## Web Mapping with AI kickoff (16 minutes, Harrison)
+### Web Mapping with AI kickoff (16 minutes, Harrison)
 
 The assignment is on the site: [Web Mapping with AI Experience](../assignments/web-mapping-with-ai.md). Cover:
 
@@ -70,18 +118,10 @@ The assignment is on the site: [Web Mapping with AI Experience](../assignments/w
 4. **Publish.** Create a GitHub repository, upload the two files, enable **Pages** in Settings. The page URL is the submission. The assignment page walks this with screenshots.
 5. **Where to get help.** Harrison's office hours and the Week 12 lab hour. Start this week; the last week of the semester is the final project.
 
-## Common snags
+### Common snags
 
 - **Georeferencer menu is missing.** It is a core plugin; **Plugins > Manage and Install > Installed > Georeferencer GDAL** must be ticked.
 - **Output loads far from the basemap.** The target CRS did not match the map canvas CRS at the time the GCPs were captured. Redo with both at 26912.
 - **RMS column is blank.** Not enough points for the transformation; Polynomial 2 needs six.
 - **The image is upside down or mirrored.** A scan from a PDF sometimes carries a rotation flag. Rotate it in an image editor first, or just place the GCPs and let Helmert handle rotation.
 - **`fetch` of the GeoJSON fails in the browser.** Opening `index.html` from disk blocks local file loads. Run `python3 -m http.server` in the folder and open `http://localhost:8000`, or publish to Pages and test there.
-
-## Links
-
-- [Day 21 lecture page](../lectures/day-21.md)
-- [Lab 10: Domes for Mozambique](../assignments/lab-10/README.md)
-- [Web Mapping with AI Experience](../assignments/web-mapping-with-ai.md)
-- [Tuesday activities: Georeference Your Neighborhood Sketch](tuesday-activities.md#week-11-georeference-your-neighborhood-sketch)
-- [USGS topoView](https://ngmdb.usgs.gov/topoview/) for historic quads

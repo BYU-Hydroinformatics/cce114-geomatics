@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Generate the week-by-week schedule page and one placeholder page per lecture day.
+"""Generate the week-by-week schedule page and one page per week of the course.
 
 The course runs every Fall (Sep-Dec) and Winter (Jan-Apr). Everything here is expressed
 as week numbers and weekdays, never calendar dates, so the site does not need a rewrite
@@ -7,15 +7,25 @@ each semester: Tuesdays are concept lectures (Dr. Ames), Thursdays are demos and
 work (Dr. Halgren). Day numbers count class meetings from the first one.
 
 Edit the DAYS and WEEKS tables below, then run:  python3 tools/build_schedule.py
-It rewrites docs/schedule.md, docs/lectures/README.md, docs/lectures/day-NN.md and the
-Lectures section of mkdocs.yml. Hand edits to the generated day pages are preserved below
-the "<!-- notes -->" marker if you add one; everything above it is regenerated.
+It rewrites docs/schedule.md, docs/weeks/week-NN.md (one per week), and the Schedule
+section of mkdocs.yml.
+
+Each week page has two generated parts (topics, slides, materials, one-line activity
+blurb, reading, due list) rebuilt from the tables below every run, plus up to two
+hand-written zones that survive a rerun: everything below a "<!-- tuesday-notes -->"
+marker (the fuller write-up of that week's in-class activity) and everything below a
+"<!-- thursday-notes -->" marker (the instructor run sheet: at-a-glance, prep, the
+50-minute plan, the walkthrough, the graded upload, and common snags). Add a marker by
+hand to a week page to start a preserved zone; re-running the script never touches
+content below a marker that is already there.
 """
 import re
 from pathlib import Path
+from typing import Optional
 
 ROOT = Path(__file__).resolve().parent.parent
 DOCS = ROOT / "docs"
+WEEKS_DIR = DOCS / "weeks"
 SITE = "https://byu-hydroinformatics.github.io/cce114-geomatics"
 
 # ---------------------------------------------------------------------------------------
@@ -188,9 +198,29 @@ LABS = {1: "Getting Started with GIS", 2: "Map Symbology and Layouts", 3: "GPS D
         7: "Projections and Coordinate Systems", 8: "Metadata", 9: "The Yellowstone Disaster",
         10: "Domes for Mozambique", 11: "Walmart Site Selection"}
 
-KIND_LABEL = {"concepts": "Tuesday · Concepts lecture (Dr. Ames)",
-              "hands-on": "Thursday · Demo and hands-on (Dr. Halgren)",
+KIND_LABEL = {"concepts": "Concepts lecture (Dr. Ames)",
+              "hands-on": "Demo and hands-on (Dr. Halgren)",
               "other": "Class session"}
+
+# Thursday sessions get the run sheet's applied title instead of the lecture-generator's
+# academic title, since the two are now the same page. Keyed by day number.
+THURSDAY_TITLE = {
+    3: "First Map in QGIS",
+    5: "Symbology, Labels, and a First Layout",
+    7: "GPS Field Collection and Importing the Class Data",
+    9: "Digitize Your Home with Snapping and the Vertex Tool",
+    11: "Raster Data in QGIS and an Elevation Profile",
+    13: "Web Services in QGIS",
+    15: "Playing with Projections",
+    17: "Writing and Evaluating Metadata",
+    19: "Cities Near Rivers",
+    21: "Georeferencing in QGIS, and the Web Mapping with AI Kickoff",
+    23: "Workflow Walkthrough, Final Project Kickoff, Exam 2 Kahoot",
+}
+
+# Days whose Tuesday in-class activity has a fuller write-up preserved under a
+# "<!-- tuesday-notes -->" marker (migrated once from the old tuesday-activities.md).
+TUESDAY_NOTES_DAYS = {2, 6, 10, 12, 14, 16, 20}
 
 
 def lab_link(text: str, prefix: str) -> str:
@@ -215,35 +245,77 @@ def lab_link(text: str, prefix: str) -> str:
     return text
 
 
-def day_page(d: dict) -> str:
-    out = [f"# Day {d['n']}: {d['title']}", "",
-           f"**Week {d['week']}** · {KIND_LABEL[d['kind']]}", ""]
+def session_title(d: dict) -> str:
+    return THURSDAY_TITLE.get(d["n"], d["title"]) if d["kind"] == "hands-on" else d["title"]
+
+
+def session_generated_body(d: dict, skip_topics_and_activity: bool = False) -> list[str]:
+    """The part of a session that is always rebuilt from the tables."""
+    out = [f"*Day {d['n']} · {KIND_LABEL[d['kind']]}*", ""]
     if d.get("note"):
-        out += [f"> [!NOTE]", f"> {d['note']}", ""]
-    out += ["## Topics", ""] + [f"- {t}" for t in d["topics"]] + [""]
-    if d.get("handson"):
-        out += ["## Hands-on guide", "",
-                f"[Week {d['week']} Thursday run sheet](../hands-on/{d['handson']}.md): the plan Dr. Halgren follows, "
-                "with the demo steps, the graded activity, and the common snags.", ""]
+        out += ["> [!NOTE]", f"> {d['note']}", ""]
+    if not skip_topics_and_activity:
+        out += ["### Topics", ""] + [f"- {t}" for t in d["topics"]] + [""]
     if d.get("slides"):
-        out += ["## Slides", ""] + [f"- [{t}]({u})" for t, u in d["slides"]] + [""]
-    else:
-        out += ["## Slides", "", "*Slides for this day are not on the site yet. They will be added as the semester goes.*", ""]
+        out += ["### Slides", ""] + [f"- [{t}]({u})" for t, u in d["slides"]] + [""]
+    elif not skip_topics_and_activity:
+        out += ["### Slides", "", "*Slides for this day are not on the site yet. They will be added as the semester goes.*", ""]
     if d.get("data") or d.get("links"):
-        out += ["## Materials", ""]
+        out += ["### Materials", ""]
         for t, u in d.get("data", []):
             out.append(f"- {t}: [download]({u})" if u else f"- {t} (posted on Learning Suite)")
         for t, u in d.get("links", []):
             out.append(f"- [{t}]({u})")
         out.append("")
-    if d.get("activity"):
-        out += ["## In-class activity", "", d["activity"] + ". Record your completion on Learning Suite.", ""]
+    if not skip_topics_and_activity and d.get("activity"):
+        out += ["### In-class activity", "", d["activity"] + ". Record your completion on Learning Suite.", ""]
     if d.get("reading"):
-        out += ["## Reading", "", d["reading"], ""]
-    due = WEEKS[d["week"]]["due"]
+        out += ["### Reading", "", d["reading"], ""]
+    return out
+
+
+def preserved_after(existing_text: str, marker: str) -> Optional[str]:
+    """Hand-written content directly below `marker`, up to (not including) the next
+    top-level "## " session heading. Content pasted below a marker must use "### " or
+    deeper so it is not mistaken for the start of the next session."""
+    if marker not in existing_text:
+        return None
+    rest = existing_text[existing_text.index(marker) + len(marker):]
+    end = re.search(r"\n## ", rest)
+    return (rest[:end.start()] if end else rest).strip("\n")
+
+
+def session_section(d: dict, weekday: Optional[str], existing_text: str) -> list:
+    heading = f"## {weekday} — {session_title(d)}" if weekday else f"## Day {d['n']} — {session_title(d)}"
+    out = [heading, ""]
+    marker = None
+    if d["kind"] == "hands-on":
+        marker = "<!-- thursday-notes -->"
+        out += session_generated_body(d, skip_topics_and_activity=True)
+    elif d["kind"] in ("concepts", "other") and d["n"] in TUESDAY_NOTES_DAYS:
+        marker = "<!-- tuesday-notes -->"
+        out += session_generated_body(d)
+    else:
+        out += session_generated_body(d)
+    if marker:
+        out.append(marker)
+        preserved = preserved_after(existing_text, marker)
+        out.append(preserved if preserved else "")
+        out.append("")
+    return out
+
+
+def week_page(w: int, existing_text: str) -> str:
+    info = WEEKS[w]
+    days = [d for d in DAYS if d["week"] == w]
+    out = [f"# Week {w} — {info['theme']}", ""]
+    due = info["due"]
     if due:
-        out += [f"## Due this week (Saturday, 11:59 pm unless noted)", ""] + [f"- {lab_link(x, '../')}" for x in due] + [""]
-    return "\n".join(out)
+        out += ["**Due this week (Saturday, 11:59 pm unless noted):**", ""] + [f"- {lab_link(x, '../')}" for x in due] + [""]
+    weekdays = [None] if len(days) == 1 else ["Tuesday", "Thursday"]
+    for d, weekday in zip(days, weekdays):
+        out += session_section(d, weekday, existing_text)
+    return "\n".join(out).rstrip("\n") + "\n"
 
 
 def schedule_page() -> str:
@@ -251,79 +323,40 @@ def schedule_page() -> str:
            "CCE 114 is taught every **Fall** (September to December) and **Winter** (January to April).",
            "The sequence below is the same each semester; only the calendar dates change, so this page",
            "uses week numbers and weekdays. Exact due dates are on Learning Suite.", "",
-           "Each week has two class meetings:", "",
-           "- **Tuesday: concepts.** A lecture from the [slides](lectures/README.md) with discussion and short activities (Dr. Ames).",
+           "Each week has two class meetings, presented together on that week's page:", "",
+           "- **Tuesday: concepts.** A lecture with discussion and short activities (Dr. Ames).",
            "- **Thursday: demo and hands-on.** Working in QGIS on the week's topic (Dr. Halgren).", "",
            "Reading quizzes open on Tuesday and close **Saturday at 11:59 pm**; lab reports are also due **Saturday at 11:59 pm**.", "",
-           "| Week | Theme | Tuesday (concepts) | Thursday (hands-on) | Due this week |",
-           "| --- | --- | --- | --- | --- |"]
+           "| Week | Theme | Due this week |",
+           "| --- | --- | --- |"]
     for w, info in WEEKS.items():
-        days = [d for d in DAYS if d["week"] == w]
-        tue = days[0] if days else None
-        thu = days[1] if len(days) > 1 else None
-        if w == 1:
-            tue, thu = None, days[0]
-        cell = lambda d: f"[Day {d['n']}: {d['title']}](lectures/day-{d['n']:02d}.md)" if d else "—"
         due = "<br>".join(lab_link(x, "") for x in info["due"]) or "—"
-        out.append(f"| {w} | {info['theme']} | {cell(tue)} | {cell(thu)} | {due} |")
+        out.append(f"| [Week {w}: {info['theme']}](weeks/week-{w:02d}.md) | {info['theme']} | {due} |")
     out += ["", "Holidays and reading days shift between semesters; Week 13 and Week 15 absorb them.", ""]
-    return "\n".join(out)
-
-
-def lectures_index() -> str:
-    out = ["# Lectures", "",
-           "Lecture slides are interactive web presentations. Navigate with the arrow keys (or swipe);",
-           "press <kbd>F</kbd> for fullscreen and <kbd>P</kbd> for presenter view with speaker notes.", "",
-           "Each week, **Tuesday** is a concepts lecture from these slides (Dr. Ames) and **Thursday** is",
-           "a demo and hands-on session in QGIS (Dr. Halgren). Days are numbered from the first class",
-           "meeting of the semester; see the [schedule](../schedule.md) for the week-by-week view.", "",
-           "**Week 1 meets only once, on Thursday** (Day 1: course introduction). The Tuesday/Thursday",
-           "rhythm starts in Week 2.", ""]
-    for w, info in WEEKS.items():
-        out += [f"## Week {w}: {info['theme']}", ""]
-        for d in DAYS:
-            if d["week"] != w:
-                continue
-            tag = {"concepts": "Tue", "hands-on": "Thu", "other": ""}[d["kind"]]
-            tag = f"{tag} · " if tag else ""
-            line = f"- {tag}[Day {d['n']}: {d['title']}](day-{d['n']:02d}.md)"
-            if d.get("slides"):
-                line += " — slides: " + ", ".join(f"[{t}]({u})" for t, u in d["slides"])
-            if d.get("handson"):
-                line += f" — [hands-on guide](../hands-on/{d['handson']}.md)"
-            out.append(line)
-        out.append("")
-    out += ["## Data", "",
-            f"- [UtahCountyData.zip]({SITE}/lectures/data/UtahCountyData.zip) (38 MB): county boundary, major roads,",
-            "  and cellular tower shapefiles plus a DEM, used in Week 2.", ""]
     return "\n".join(out)
 
 
 def update_nav(mkdocs_yml: Path) -> None:
     text = mkdocs_yml.read_text()
-    lines = ["  - Lectures:", "      - Overview: lectures/README.md"]
+    lines = ["  - Schedule:", "      - Overview: schedule.md"]
     for w, info in WEEKS.items():
-        lines.append(f"      - \"Week {w} — {info['theme']}\":")
-        for d in DAYS:
-            if d["week"] == w:
-                lines.append(f"          - \"Day {d['n']} — {d['title']}\": lectures/day-{d['n']:02d}.md")
+        lines.append(f"      - \"Week {w} — {info['theme']}\": weeks/week-{w:02d}.md")
     block = "\n".join(lines) + "\n"
-    new = re.sub(r"  - Lectures:.*?(?=\n  - [A-Z]|\Z)", block.rstrip("\n"), text, flags=re.S)
-    mkdocs_yml.write_text(new)
+    text = re.sub(r"  - Schedule: schedule\.md\n", block, text)
+    text = re.sub(r"  - Thursday Hands-On:.*?(?=\n  - [A-Z])", "", text, flags=re.S)
+    text = re.sub(r"  - Lectures:.*?(?=\n  - [A-Z]|\Z)", "", text, flags=re.S)
+    mkdocs_yml.write_text(text)
 
 
 def main() -> None:
     (DOCS / "schedule.md").write_text(schedule_page())
-    (DOCS / "lectures" / "README.md").write_text(lectures_index())
-    for d in DAYS:
-        path = DOCS / "lectures" / f"day-{d['n']:02d}.md"
-        body = day_page(d)
-        if path.exists() and "<!-- notes -->" in path.read_text():
-            keep = path.read_text().split("<!-- notes -->", 1)[1]
-            body = body + "\n<!-- notes -->" + keep
-        path.write_text(body)
+    WEEKS_DIR.mkdir(exist_ok=True)
+    for w in WEEKS:
+        path = WEEKS_DIR / f"week-{w:02d}.md"
+        existing = path.read_text() if path.exists() else ""
+        path.write_text(week_page(w, existing))
     update_nav(ROOT / "mkdocs.yml")
-    print(f"wrote schedule.md, lectures/README.md, {len(DAYS)} day pages, and the mkdocs nav")
+    print(f"wrote schedule.md, {len(WEEKS)} week pages, and the mkdocs nav")
 
 
 if __name__ == "__main__":

@@ -16,7 +16,7 @@ Submit your report as a **single PDF** on Learning Suite. Make sure to include:
 ## Getting Started
 
 - Review the workflow diagrams and the site-selection-as-elimination approach from
-  [Day 22](../lectures/day-22.md) and [Day 23](../lectures/day-23.md).
+  [Week 12](../weeks/week-12.md).
 - [Lab 11: Walmart Site Selection](lab-11/README.md) is the closest model for the kind of workflow
   the project expects.
 - AI can help you plan a workflow and polish your writing; the QGIS work and the results must be

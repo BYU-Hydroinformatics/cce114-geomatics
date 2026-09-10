@@ -5,7 +5,7 @@
 Learn how to build a website with a map on it, with an AI assistant helping from the first line.
 This is the one assignment in the course designed around AI: use it as fully and creatively as you
 like, and tell us what you did. Kicked off in class on Thursday of Week 11 (Harrison Stewart
-presents and grades it); see the [Week 11 hands-on page](../hands-on/week-11.md).
+presents and grades it); see the [Week 11 page](../weeks/week-11.md).
 
 ## What you turn in
 

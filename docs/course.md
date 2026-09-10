@@ -49,8 +49,8 @@ completing this course, students will also be prepared to take Engineering Appli
 
 ## How the Course Works
 
-- **Tuesday: concepts.** A lecture from the [slides](lectures/README.md), with discussion and
-  short in-class activities.
+- **Tuesday: concepts.** A lecture with discussion and short in-class activities. See the
+  [Schedule](schedule.md) for each week's slides.
 - **Thursday: demo and hands-on.** Working in QGIS on the week's topic, led by Dr. Halgren. Bring
   your laptop.
 - **Each week** you read the assigned textbook pages, take an open-book online quiz, and complete a

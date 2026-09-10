@@ -18,8 +18,8 @@ in one commit.
 ## Current state
 
 Unlike the sibling repo, this migration is largely **done** — the site is complete enough to teach
-from. All 11 labs are migrated, 29 lecture-day pages exist, 16 Marp decks cover 14 class days, and
-the schedule and policy pages are written.
+from. All 11 labs are migrated, 15 weekly Schedule pages cover the semester, 16 Marp decks cover 14
+class days, and the policy pages are written.
 
 Two status documents, and you should read the relevant one before starting:
 
@@ -37,11 +37,16 @@ Two status documents, and you should read the relevant one before starting:
 2. **Screenshots must show QGIS 3.44 LTR** — that is what the Clyde 234 lab machines run. Dan's Mac
    also has QGIS 4.2.1; captures from 4.2.1 will not match what students see. Check the version
    before you shoot.
-3. **`tools/build_schedule.py` generates four things.** It rewrites `docs/schedule.md`,
-   `docs/lectures/README.md`, every `docs/lectures/day-NN.md`, and the Lectures section of
-   `mkdocs.yml`. **Never hand-edit those files** — edit the `DAYS` and `WEEKS` tables in the script
-   and re-run it. Hand-written notes survive only *below* a `<!-- notes -->` marker in a day page;
-   everything above it is regenerated and your edit will vanish.
+3. **`tools/build_schedule.py` generates three things.** It rewrites `docs/schedule.md`, every
+   `docs/weeks/week-NN.md`, and the Schedule section of `mkdocs.yml`. **Never hand-edit those
+   files** — edit the `DAYS` and `WEEKS` tables in the script and re-run it. Each week page can
+   carry two hand-written zones that survive a rerun: everything below a `<!-- tuesday-notes -->`
+   marker (the fuller write-up of that week's in-class activity, where one exists) and everything
+   below a `<!-- thursday-notes -->` marker (the instructor's run sheet for that Thursday: at a
+   glance, before class, the 50-minute plan, the walkthrough, the graded upload, common snags).
+   Content pasted below a marker must use `###` or deeper — a bare `##` heading is read as the
+   start of the next class session and everything after it is dropped on the next regeneration.
+   Everything above a marker is regenerated and a hand-edit there will vanish.
 4. **Never fabricate a screenshot.** Captures come from a real QGIS session. If an image is needed
    and does not exist, leave a `<!-- TODO -->` and say so in your report.
 5. **Never invent a field name, tool setting, coordinate system, or data figure.** If you cannot
@@ -83,7 +88,7 @@ Full GUI automation of QGIS was evaluated and judged not worth the fiddle. Don't
 | Path | What |
 | --- | --- |
 | `docs/assignments/lab-NN/` | One folder per lab: `README.md` + `images/` |
-| `docs/lectures/` | One page per class day — **generated**, see rule 3 |
+| `docs/weeks/` | One page per week (Tuesday + Thursday together) — **generated**, see rule 3 |
 | `docs/policies/` | Grading, attendance, exams, AI use, university policies |
 | `slides/day-NN/` | Marp deck source + its own `images/` |
 | `slides/theme/cce114.css` | The deck theme. Do not edit it for a one-off; use inline styles |

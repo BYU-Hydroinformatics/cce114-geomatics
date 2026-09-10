@@ -406,7 +406,7 @@ Satellites bunched together → a **large** area of uncertainty. Satellites spre
 - **See the error:** how far apart two phones put the same statue
 - Bring a **phone with a GPS app** that shows five decimal places, and a **laptop with QGIS**
 
-<!-- Preview of Thursday. The Thursday session field collection first, then the import demo. The "GPS Class Activity" item on Learning Suite is recorded that day. Run sheet: byu-hydroinformatics.github.io/cce114-geomatics/hands-on/week-04/ -->
+<!-- Preview of Thursday. The Thursday session field collection first, then the import demo. The "GPS Class Activity" item on Learning Suite is recorded that day. Run sheet: byu-hydroinformatics.github.io/cce114-geomatics/weeks/week-04/ -->
 
 ---
 

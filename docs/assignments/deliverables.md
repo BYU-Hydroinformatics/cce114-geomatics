@@ -32,8 +32,8 @@ the readings seriously.
 
 Short activities during class, worth 5 points each (10 for the vector editing week), recorded on
 Learning Suite the same day. Tuesday activities are part of Dr. Ames's lectures; Thursday
-activities are the hands-on QGIS work with Dr. Halgren. The run sheets are on the
-[Thursday Hands-On](../hands-on/README.md) and [Tuesday activities](../hands-on/tuesday-activities.md) pages.
+activities are the hands-on QGIS work with Dr. Halgren. The full setup and instructions for each
+are on that week's [Schedule](../schedule.md) page.
 
 | Week | Tuesday (lecture) | Thursday (hands-on in QGIS) |
 | --- | --- | --- |

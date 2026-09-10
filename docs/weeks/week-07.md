@@ -1,8 +1,46 @@
-# Week 7 Thursday: Web Services in QGIS
+# Week 7 — Finding Spatial Data and Web Services
 
-**Day 13 · Thursday · Live demo and hands-on in QGIS (Dr. Halgren)** · feeds [Lab 6](../assignments/lab-06/README.md) · includes the Community and Professional Map Experience pitch
+**Due this week (Saturday, 11:59 pm unless noted):**
 
-## At a glance
+- [Lab 6: Spatial Data Web Services](../assignments/lab-06/README.md)
+- [Concepts Exam 1 (Testing Center, midweek)](../policies/exams.md)
+
+## Tuesday — Finding Spatial Data and Web Services
+
+*Day 12 · Concepts lecture (Dr. Ames)*
+
+### Topics
+
+- Where spatial data comes from: government repositories and data portals
+- Online data sources and servers at the Utah Geospatial Resource Center (UGRC)
+- Web map services: WMS, WMTS, ArcGIS REST, XYZ tiles
+
+### Slides
+
+- [Finding Spatial Data and Web Services](https://byu-hydroinformatics.github.io/cce114-geomatics/slides/day-12/finding-spatial-data-and-web-services.html)
+
+### Reading
+
+GIS Fundamentals, Chapter 7 (Digital Data)
+
+<!-- tuesday-notes -->
+*In the [Finding Spatial Data and Web Services](https://byu-hydroinformatics.github.io/cce114-geomatics/slides/day-12/finding-spatial-data-and-web-services.html) deck, "Data Source Scavenger Hunt."*
+
+**Setup.** The **Data Source Scavenger Hunt** tab of the class Google Sheet (columns: name, U.S. state, repository URL, then a checklist of dataset types). Clear last semester's rows.
+
+**Run.** Groups of two or three pick a state or country someone is connected to. Five minutes to find its statewide GIS portal, a transportation dataset, and a water dataset, and to note the URL, format, and license for each in the sheet. Five minutes of reporting out: one surprise per group. Not graded.
+
+## Thursday — Web Services in QGIS
+
+*Day 13 · Demo and hands-on (Dr. Halgren)*
+
+> [!NOTE]
+> Concepts Exam 1 is taken in the Testing Center this week.
+
+<!-- thursday-notes -->
+**Feeds** [Lab 6](../assignments/lab-06/README.md) · includes the Community and Professional Map Experience pitch.
+
+### At a glance
 
 | | |
 | --- | --- |
@@ -12,14 +50,14 @@
 | **Graded item** | *In Class Activity: Getting Data through Web Mapping Services* (5 points). Upload a layout image built from three or more service layers. |
 | **Feeds** | Lab 6: Spatial Data Web Services. Due Saturday. Concepts Exam 1 closed Wednesday. |
 
-## Before class
+### Before class
 
 - [ ] The UGRC endpoint open in a browser tab: `https://services1.arcgis.com/99lidPhWCzftIe9K/ArcGIS/rest/services/` (the plain directory listing; scroll it once so you know what is there).
 - [ ] The **ArcGIS REST Server** connection already created in QGIS (steps below) so the demo starts at the browse step.
 - [ ] Isabel (who grades the Community and Professional Map Experience) ready for a ten-minute pitch, or you give it.
 - [ ] Learning Suite open to the *Getting Data through Web Mapping Services* activity.
 
-## Plan (50 minutes)
+### Plan (50 minutes)
 
 | Time | Segment |
 | --- | --- |
@@ -31,35 +69,35 @@
 | 0:27 | Students: three-plus layers, layout, upload |
 | 0:40 | Community and Professional Map Experience pitch |
 
-## Walkthrough
+### Walkthrough
 
-### 1. Look at the service before touching QGIS
+#### 1. Look at the service before touching QGIS
 
 1. Open the endpoint URL. It is a folder listing of feature services: boundaries, transportation, water, cadastre, and so on. Click one (for example a roads service), then a layer inside it. The page shows the fields, the geometry type, the spatial reference (WKID), and the record count.
 2. Scroll to the bottom and click **Query**; set `Where` to `1=1`, `Out fields` to `*`, `Format` to JSON, and run it. That JSON is what QGIS receives. Nobody is emailing a shapefile.
 
-### 2. Connect QGIS
+#### 2. Connect QGIS
 
 1. **Layer > Data Source Manager > ArcGIS REST Server**. Click **New**, Name `UGRC`, URL the endpoint above. OK, then **Connect**.
 2. The tree lists every service. Expand one, tick a layer, and **Add**. Do this for a polygon (counties or municipalities), a line (roads or streams), and a point layer (schools, hospitals, or cell sites). Close the dialog.
 3. Right-click a layer > **Properties > Source**. The provider is `arcgisfeatureserver` and the URL is the layer's REST page. Point out the CRS: UGRC serves most layers in EPSG:26912 already.
 4. **Properties > Source > Query Builder**: `"COUNTY" = 'UTAH'` (use the real field name) to fetch only part of a statewide layer. The filter runs on the server.
 
-### 3. The other kinds, briefly
+#### 3. The other kinds, briefly
 
 - **WMS/WMTS**: Data Source Manager > WMS/WMTS > New. Any public WMS works; the USGS National Map services are a reliable example. Add a layer; it is an image, not features, so Identify returns nothing useful and there is no attribute table. That is the WMS trade: fast, pretty, not analyzable.
 - **XYZ**: already used in Week 2. Tiles, images, no attributes.
 - Say the rule of thumb from Lab 6: WMS is a picture, WFS and ArcGIS REST feature services are ingredients.
 
-### 4. Layout
+#### 4. Layout
 
 Same as Week 3: **Project > New Print Layout**, map, legend, scale bar, north arrow, title, and a data-source label that names the services. Export as PNG.
 
-## Student activity
+### Student activity
 
 Students connect to the UGRC endpoint, pick three or more layers that interest them, style them so they are distinguishable, add the required map elements in a layout, and export an image. Upload it to **In Class Activity: Getting Data through Web Mapping Services**. Full credit for three service layers and a layout; a screenshot of the canvas earns partial credit.
 
-## Community and Professional Map Experience pitch (10 minutes)
+### Community and Professional Map Experience pitch (10 minutes)
 
 Due Wednesday of Week 10. The assignment: attend a real construction or engineering event or presentation, take a picture there, build a QGIS map of where it was held plus anything relevant, and write what maps were shown and what they learned about map-based communication, answering three questions (what data, what analysis, what decision). Cover:
 
@@ -68,7 +106,7 @@ Due Wednesday of Week 10. The assignment: attend a real construction or engineer
 3. **The map.** The same venue-point-plus-basemap layout from the Week 3 Belonging Map demo, now with something from today's session: the parcel, the road, or the district the agenda item was about, pulled from the UGRC services.
 4. **When.** Meetings are usually Tuesday evenings; there are three weeks left. Pick one tonight.
 
-## Common snags
+### Common snags
 
 - **"Failed to connect" to the REST server.** The URL has a trailing space or is missing `/rest/services`. Copy it from this page.
 - **Layers add but draw nothing.** The layer is huge and QGIS is still fetching; wait, or set a Query Builder filter first. Statewide parcels will not load in class.
@@ -76,9 +114,6 @@ Due Wednesday of Week 10. The assignment: attend a real construction or engineer
 - **WMS shows nothing at this zoom.** Many WMS layers have scale limits; zoom out.
 - **No internet.** There is no offline fallback for this session. The Clyde building lab machines are wired; move there.
 
-## Links
+#### Links
 
-- [Day 13 lecture page](../lectures/day-13.md)
-- [Lab 6: Spatial Data Web Services](../assignments/lab-06/README.md)
 - [Community and Professional Map Experience](../assignments/deliverables.md#community-and-professional-map-experience-week-10)
-- Tuesday's deck: [Finding Spatial Data and Web Services](https://byu-hydroinformatics.github.io/cce114-geomatics/slides/day-12/finding-spatial-data-and-web-services.html)
