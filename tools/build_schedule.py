@@ -245,6 +245,25 @@ def lab_link(text: str, prefix: str) -> str:
     return text
 
 
+def slug(text: str) -> str:
+    """Mirror python-markdown's default toc slugify so links can target a heading."""
+    import unicodedata
+    text = unicodedata.normalize("NFKD", text).encode("ascii", "ignore").decode("ascii")
+    text = re.sub(r"[^\w\s-]", "", text).strip().lower()
+    return re.sub(r"[-\s]+", "-", text)
+
+
+def session_heading(d: dict, weekday: Optional[str]) -> str:
+    return f"{weekday} — {session_title(d)}" if weekday else f"Day {d['n']} — {session_title(d)}"
+
+
+def week_sessions(w: int) -> list:
+    """(day, weekday) pairs for a week; a single-meeting week has weekday None."""
+    days = [d for d in DAYS if d["week"] == w]
+    weekdays = [None] if len(days) == 1 else ["Tuesday", "Thursday"]
+    return list(zip(days, weekdays))
+
+
 def session_title(d: dict) -> str:
     return THURSDAY_TITLE.get(d["n"], d["title"]) if d["kind"] == "hands-on" else d["title"]
 
@@ -286,8 +305,7 @@ def preserved_after(existing_text: str, marker: str) -> Optional[str]:
 
 
 def session_section(d: dict, weekday: Optional[str], existing_text: str) -> list:
-    heading = f"## {weekday} — {session_title(d)}" if weekday else f"## Day {d['n']} — {session_title(d)}"
-    out = [heading, ""]
+    out = [f"## {session_heading(d, weekday)}", ""]
     marker = None
     if d["kind"] == "hands-on":
         marker = "<!-- thursday-notes -->"
@@ -307,13 +325,11 @@ def session_section(d: dict, weekday: Optional[str], existing_text: str) -> list
 
 def week_page(w: int, existing_text: str) -> str:
     info = WEEKS[w]
-    days = [d for d in DAYS if d["week"] == w]
     out = [f"# Week {w} — {info['theme']}", ""]
     due = info["due"]
     if due:
         out += ["**Due this week (Saturday, 11:59 pm unless noted):**", ""] + [f"- {lab_link(x, '../')}" for x in due] + [""]
-    weekdays = [None] if len(days) == 1 else ["Tuesday", "Thursday"]
-    for d, weekday in zip(days, weekdays):
+    for d, weekday in week_sessions(w):
         out += session_section(d, weekday, existing_text)
     return "\n".join(out).rstrip("\n") + "\n"
 
@@ -327,25 +343,33 @@ def schedule_page() -> str:
            "- **Tuesday: concepts.** A lecture with discussion and short activities (Dr. Ames).",
            "- **Thursday: demo and hands-on.** Working in QGIS on the week's topic (Dr. Halgren).", "",
            "Reading quizzes open on Tuesday and close **Saturday at 11:59 pm**; lab reports are also due **Saturday at 11:59 pm**.", "",
-           "| Week | Theme | Due this week |",
-           "| --- | --- | --- |"]
+           "| Week | Tuesday (concepts) | Thursday (hands-on) | Due this week |",
+           "| --- | --- | --- | --- |"]
     for w, info in WEEKS.items():
+        page = f"weeks/week-{w:02d}.md"
+        cells = {"Tuesday": "—", "Thursday": "—"}
+        for d, weekday in week_sessions(w):
+            link = f"[{session_title(d)}]({page}#{slug(session_heading(d, weekday))})"
+            cells[weekday or "Thursday"] = link   # Week 1 meets only on Thursday
         due = "<br>".join(lab_link(x, "") for x in info["due"]) or "—"
-        out.append(f"| [Week {w}: {info['theme']}](weeks/week-{w:02d}.md) | {info['theme']} | {due} |")
+        out.append(f"| [Week {w}: {info['theme']}]({page}) | {cells['Tuesday']} | {cells['Thursday']} | {due} |")
     out += ["", "Holidays and reading days shift between semesters; Week 13 and Week 15 absorb them.", ""]
     return "\n".join(out)
 
 
 def update_nav(mkdocs_yml: Path) -> None:
     text = mkdocs_yml.read_text()
+    # Material's navigation.indexes only treats a file named index.md or README.md as a
+    # section's own page, and schedule.md keeps its URL for Learning Suite links, so the
+    # overview stays a labeled first child; the Schedule tab opens it as the first page.
     lines = ["  - Schedule:", "      - Overview: schedule.md"]
     for w, info in WEEKS.items():
         lines.append(f"      - \"Week {w} — {info['theme']}\": weeks/week-{w:02d}.md")
     block = "\n".join(lines) + "\n"
-    text = re.sub(r"  - Schedule: schedule\.md\n", block, text)
-    text = re.sub(r"  - Thursday Hands-On:.*?(?=\n  - [A-Z])", "", text, flags=re.S)
-    text = re.sub(r"  - Lectures:.*?(?=\n  - [A-Z]|\Z)", "", text, flags=re.S)
-    mkdocs_yml.write_text(text)
+    new_text, n = re.subn(r"  - Schedule:\n(?:      .*\n)*", block, text)
+    if n != 1:
+        raise SystemExit("mkdocs.yml: expected exactly one '  - Schedule:' nav block")
+    mkdocs_yml.write_text(new_text)
 
 
 def main() -> None:

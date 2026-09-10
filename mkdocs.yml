@@ -7,7 +7,9 @@ repo_name: BYU-Hydroinformatics/cce114-geomatics
 theme:
   name: material
   features:
-    - navigation.sections
+    - navigation.tabs          # one tab per top-level section; the sidebar shows only that section
+    - navigation.tabs.sticky
+    - navigation.indexes       # a section's first bare entry is the section's own page
     - navigation.top
     - navigation.footer
     - content.code.copy
@@ -66,7 +68,7 @@ nav:
       - "Week 14 — Final Project": weeks/week-14.md
       - "Week 15 — Presentations and Exam Review": weeks/week-15.md
   - Assignments:
-      - Overview: assignments/README.md
+      - assignments/README.md
       - Lab 1 — Getting Started with GIS: assignments/lab-01/README.md
       - Lab 2 — Map Symbology and Layouts: assignments/lab-02/README.md
       - Lab 3 — GPS Data Collection: assignments/lab-03/README.md

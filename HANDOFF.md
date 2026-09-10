@@ -79,7 +79,7 @@ three menus: `docs/lectures/day-NN.md` (Tuesday, generated), `docs/hands-on/week
 hand-written), and `docs/hands-on/tuesday-activities.md` (a separate Tuesday-activity index) — three
 places for the same 15 weeks, and a sidebar of about 90 links. At Dan's request this became one page
 per week, `docs/weeks/week-NN.md`, so the nav is simply Week 1 through Week 15 under a **Schedule**
-tab (Overview + the 15 weeks), and Learning Suite can point at one URL per week. Thursday sessions
+tab, and Learning Suite can point at one URL per week. Thursday sessions
 now head with the run sheet's applied title (e.g. "First Map in QGIS") rather than the lecture
 generator's academic title, since both sessions share a page. `tools/build_schedule.py` was rewritten
 to emit `docs/weeks/week-NN.md` instead of one page per day; see rule 3 in `CLAUDE.md` for the two
@@ -91,6 +91,19 @@ Suite. All 43 on the Schedule page (26 `lectures/day-NN`, 11 `hands-on/week-NN`,
 Assignments page now point at `weeks/week-NN` with the right Tuesday or Thursday anchor. Every
 target and anchor was checked against the live site. Slide and lab links were unaffected. If the
 week pages are ever retitled, those anchors go stale, because the `##` heading text is the slug.
+
+**Top tabs and the schedule table (2026-09-10).** Even with one page per week the left sidebar was
+still one 48-link column (Schedule, Assignments, Policies all expanded), with Assignments below the
+fold on every page. `mkdocs.yml` now uses Material's `navigation.tabs` plus `navigation.indexes`
+instead of `navigation.sections`: each top-level section is a tab across the top and the sidebar
+shows only the active section; `assignments/README.md` is its section's own page (Material only
+allows `index.md` or `README.md` there, so `schedule.md` stays a labeled "Overview" child to keep
+its URL). The schedule table got its Tuesday and Thursday columns back, each cell linking to the
+session heading on the week page (`weeks/week-NN.md#tuesday-...` / `#thursday-...`); the generator
+computes those slugs with the same rule python-markdown uses, so they stay in step with the
+headings. The generator's nav rewrite also now replaces the whole existing `- Schedule:` block and
+fails loudly if it cannot find it (the previous pattern matched only the pre-restructure file, so a
+rerun left the nav untouched).
 
 **Data.** `docs/lectures/data/UtahCountyData.zip` (38 MB: county boundary, major roads, cellular
 towers, DEM) is published for the Day 2 demo and Thursday sessions. Lab 4 ships a GeoPackage
