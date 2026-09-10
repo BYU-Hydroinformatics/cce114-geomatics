@@ -83,8 +83,14 @@ tab (Overview + the 15 weeks), and Learning Suite can point at one URL per week.
 now head with the run sheet's applied title (e.g. "First Map in QGIS") rather than the lecture
 generator's academic title, since both sessions share a page. `tools/build_schedule.py` was rewritten
 to emit `docs/weeks/week-NN.md` instead of one page per day; see rule 3 in `CLAUDE.md` for the two
-marker names. **Follow-up still needed from Dan:** update any direct links on Learning Suite that
-pointed at the old `lectures/day-NN` or `hands-on/week-NN` URLs to the new `weeks/week-NN` URLs.
+marker names.
+
+**Learning Suite links: done 2026-09-09.** The restructure broke every direct link on Learning
+Suite. All 43 on the Schedule page (26 `lectures/day-NN`, 11 `hands-on/week-NN`, 6
+`hands-on/tuesday-activities#...`) and 5 more inside In Class Activity descriptions on the
+Assignments page now point at `weeks/week-NN` with the right Tuesday or Thursday anchor. Every
+target and anchor was checked against the live site. Slide and lab links were unaffected. If the
+week pages are ever retitled, those anchors go stale, because the `##` heading text is the slug.
 
 **Data.** `docs/lectures/data/UtahCountyData.zip` (38 MB: county boundary, major roads, cellular
 towers, DEM) is published for the Day 2 demo and Thursday sessions. Lab 4 ships a GeoPackage
@@ -154,10 +160,20 @@ Collected from the conversion notes at the end of each deck (search for `Convers
   now the 7th edition, and the mapping is noted as pending.
 - **Final project:** the site page is a placeholder that points to the Mapping Term Project
   document on Learning Suite; converting that document into the page is the natural next step.
-- **Lab headings (Labs 2 to 11):** Lab 1 was reworded on 2026-09-08 so the instructions section is
-  "Step by Step Instructions" and its subsections are numbered, active-voice steps ("Step 1: Download
-  Data from UGRC", "Step 2: Create the Map", "Step 3: Change the Symbology"). Do the same for the other
-  ten labs. Check for inbound anchor links before renaming a heading; Lab 1 had none.
+- **Lab headings (Labs 3 to 11):** Lab 1 was reworded on 2026-09-08 and Lab 2 on 2026-09-09 so the
+  instructions section is "Step by Step Instructions" and its subsections are numbered, active-voice
+  steps ("Step 1: Download Data from UGRC", "Step 2: Create the Map"). Do the same for the other nine
+  labs. Check for inbound anchor links before renaming a heading; Labs 1 and 2 had none.
+- **Lab 2 (done 2026-09-09):** rebuilt end to end. All fifteen figures re-shot in QGIS 3.44 at 2x
+  and eight steps that had no figure got one, descriptive alt text throughout, the rubric split into
+  four rows, and three short written questions added. A run-through with live UGRC data also turned
+  up four instruction bugs, now fixed: 55 of the 138 "airports" are heliports, eight municipalities
+  (including Logan) have a population of 0, graduated legend labels default to four decimal places,
+  and unchecking road categories does not remove them from a layout legend. The review and the
+  method are in `tools/lab02-improvement-plan.md`; the capture scripts are
+  `tools/qgis_lab02_dialog_shots.py`, `tools/qgis_lab02_window_shots.py`, and
+  `tools/lab02_annotate.py`. **The same run-through is worth doing on Labs 3 to 11** — every one of
+  those four bugs was invisible from reading the text.
 - **Lab images:** Labs 5 and 9 have known content issues in old screenshots (raster.utah.gov
   wizard, a 10 km vs 5 km annotation); see `tools/image-improvements-handoff.md`.
 - **Repository size:** the repo is about 190 MB because of images and the data zip. Fine for now;
