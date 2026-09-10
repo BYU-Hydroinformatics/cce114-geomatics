@@ -216,6 +216,29 @@ Collected from the conversion notes at the end of each deck (search for `Convers
   appearance rules as Labs 3 and 4: the script's `--profile lab56shots` handles QGIS's own theme,
   and the Mac has to be in Light appearance by hand.
 
+- **Labs 7 and 8: done 2026-09-10.** Semester dropped from both headers, both renumbered under
+  active-voice step headings (Lab 7 runs 1 to 31, Lab 8 1 to 19), and **Lab 8 got its first
+  figures**: five captures of the QGIS Metadata tabs its steps walk through. The lab used to say in
+  its own text "There are also no QGIS screenshots for this lab yet". Script:
+  `tools/qgis_lab08_metadata_shots.py`.
+
+  Two corrections worth knowing about:
+
+  - **Lab 7's five spoiler answers were Claude reconstructions**, flagged in
+    `tools/image-improvements-handoff.md` for someone to check against Dan's Google Doc. They are
+    now checked against Natural Earth country polygons measured in an equal-area projection.
+    Four were right. One was not: it claimed India is "nearly four times" Greenland, where the real
+    ratio is about 1.4. All five now carry the numbers, and the review markers are gone.
+  - **Lab 8's metadata hints had drifted from the files students download.** The Utah County
+    Boundaries XML no longer has a `metd` tag the Part 1 hint tells students to search for; it uses
+    `pubdate` and `ModDate`. Question 1 told students that UGRC downloads no longer carry `ModDate`
+    and to search `metd` instead, which is exactly backwards for Utah Buildings, where `ModDate` is
+    2021-08-10 and there is no `metd`. Question 6 asserted the Major Lakes XML "has no contact
+    section at all", which it does have. And question 4 expects Major Lakes and Roads to differ in
+    CRS; both currently ship as Web Mercator, so the question now says that finding a match is a
+    good answer too. Lab 8's Lehi transportation plan link was also a 404 and now points at the
+    live PDF, with Lehi's Studies and Master Plans page named as the stable fallback.
+
 - **Lab 4 culvert photos** (`anchored10`, `anchored11`, `anchored12`, `anchored14`) are 225 to 369 px
   wide. They are photographs, not QGIS captures, so no script replaces them; they need images Dan is
   happy to license.

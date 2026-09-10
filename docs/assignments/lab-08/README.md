@@ -2,7 +2,7 @@
 
 **Civil and Construction Engineering 114 — Geomatics**
 
-Winter 2026 · Dr. Dan Ames
+Dr. Dan Ames · Brigham Young University
 
 *Lab assignment developed by Nathan Godfrey and Dr. Ames*
 
@@ -10,7 +10,7 @@ Winter 2026 · Dr. Dan Ames
 
 ## **Background**
 
-Utah County is experiencing rapid growth: the Kem C. Gardner Policy Institute projects the county will roughly double by 2065, adding more than 750,000 people—more than any other county in Utah—and nearly catching Salt Lake County as the state’s largest (https://gardner.utah.edu/news/utahs-population-projected-to-reach-5-6-million-by-2065/). This growth requires significant new infrastructure, and cities like Lehi have published their plans to accommodate it. [This map](https://www.lehi-ut.gov/wp-content/uploads/2023/02/Master_Transportation_Plan_11x17-minor-rev.-Jan-23-2023.pdf) shows the locations of 1900 S and a proposed offshore freeway in Lehi, both key elements of this lab. And the freeway is less hypothetical than it sounds: in October 2023, Lehi’s planning commission recommended that UDOT study an off-shore freeway skirting the north edge of Utah Lake, after the city’s traffic engineer reported that Pioneer Crossing carries about double the traffic it was designed for (https://www.ksl.com/article/50766825/lehi-officials-recommend-utah-lake-north-shore-freeway-as-traffic-solution).
+Utah County is experiencing rapid growth: the Kem C. Gardner Policy Institute projects the county will roughly double by 2065, adding more than 750,000 people—more than any other county in Utah—and nearly catching Salt Lake County as the state’s largest (https://gardner.utah.edu/news/utahs-population-projected-to-reach-5-6-million-by-2065/). This growth requires significant new infrastructure, and cities like Lehi have published their plans to accommodate it. [Lehi's Master Transportation Plan](https://media-002-us.cdn.govstack.com/lehi-ut-us/media/m5xd103k/master_transportation_planpdf.pdf) shows the locations of 1900 S and a proposed offshore freeway, both key elements of this lab. (If that link ever moves, the plan is listed on Lehi's [Studies and Master Plans](https://www.lehi-ut.gov/business-development/studies-and-master-plans/) page.) And the freeway is less hypothetical than it sounds: in October 2023, Lehi’s planning commission recommended that UDOT study an off-shore freeway skirting the north edge of Utah Lake, after the city’s traffic engineer reported that Pioneer Crossing carries about double the traffic it was designed for (https://www.ksl.com/article/50766825/lehi-officials-recommend-utah-lake-north-shore-freeway-as-traffic-solution).
 
 A critical part of planning new infrastructure is understanding metadata. Metadata is essentially information about a dataset, including details such as “who, what, when, where, and how.” In GIS, key metadata elements include the coordinate reference system (CRS), data sources, creation date, update frequency, scale, and any transformations the data has undergone. By understanding metadata, we can use datasets more effectively and make accurate decisions.  
 If metadata sounds like boring paperwork, remember the Mars Climate Orbiter: in 1999, NASA lost the $125 million spacecraft because ground software delivered thruster data in English units while the onboard software expected metric. One undocumented detail about a dataset can sink a project, whether it flies to Mars or paves a freeway (https://science.nasa.gov/mission/mars-climate-orbiter/).
@@ -37,9 +37,9 @@ In part two, you are part of a team responsible for designing a new highway runn
 
 **REVIEW THE deliverables section at the end of the document before continuing. You should always do this before starting any of your labs. It will help you make sense of the lab and not waste time.**
 
-## **Instructions**
+## **Step by Step Instructions**
 
-### **Part 1**
+### **Step 1: Read a Real Metadata File**
 
 1. On the UGRC website, find the “Utah County Boundaries” dataset from the Boundaries category  
 2. Download the shapefile data  
@@ -49,7 +49,7 @@ In part two, you are part of a team responsible for designing a new highway runn
 > When you download the shapefile for this data, an **XML file** comes with it that contains the metadata that you can view as plain text.
 
 4. Use the metadata to fill out the following table. (In other files, you’ll see that the amount of information in the metadata can vary widely. This file in particular has everything you need to fill out 1-2 points on each row of the table.)  
-   1. Hint: Try using Ctrl+f to search the text for keywords: “UGRC” for who (check the keywords list and the use constraints paragraph), “metd” for when (the metadata date, written as YYYYMMDD near the bottom of the file—the abstract mentions a date too), and “bounding” for where
+   1. Hint: Try using Ctrl+f to search the text for keywords: “UGRC” for who (check the keywords list and the use constraints paragraph), “pubdate” and “ModDate” for when (both are written as YYYYMMDD; `pubdate` is when the data was published and `ModDate` is when the file was last modified), and “bounding” for where. Different UGRC downloads tag their dates differently — some use `metd` instead — so if one search comes up empty, try the others before deciding the date is missing.
 
 | Dataset name | Utah County Boundaries |
 | :---- | :---- |
@@ -62,21 +62,21 @@ In part two, you are part of a team responsible for designing a new highway runn
 5. Now press Ctrl+f again in the metadata XML and search for “license”. This will take you to a paragraph that almost every professional dataset includes—the usage limits for the data. Say, for example, that your spouse is a digital artist. They get excited about the maps you’re making, and they want to create and sell cool map art on Etsy.com. This section of the metadata can tell you if they could legally use the dataset for that purpose.  
    1. To avoid diving into copyright law, yes, the Utah County Boundaries dataset’s licensing allows people to make and sell art from it. If this interests you, research the license listed in the metadata.
 
-### **Part 2**
+### **Step 2: Answer the Project Team's Questions**
 
 Utah County is experiencing rapid growth, necessitating a new freeway extension from I-15 to Saratoga Springs. The existing road closest to the lake, currently known as 1900 S in Lehi (or Saratoga Road), will be transformed into a freeway. Your transportation firm has access to several datasets that will guide the planning of the off-ramp and the new route. With a meeting coming up soon, your boss has sent you a list of metadata-related questions to review and prepare answers for before the team discussion. Use the metadata from the UGRC datasets mentioned below as you consider the answers to the following questions/situations:
 
-* \#1: There have been some significant changes in a housing development along 1900 S over the past 2 years. Your firm wants to use the “Utah Buildings” dataset to determine whether any buildings are in the way of the project. When was this dataset last updated? Is this dataset likely to be up to date? (UGRC’s current downloads no longer include a “ModDate” value; instead, search the XML for “metd”—the date the metadata was last updated, written as YYYYMMDD near the bottom of the file)
+* \#1: There have been some significant changes in a housing development along 1900 S over the past 2 years. Your firm wants to use the “Utah Buildings” dataset to determine whether any buildings are in the way of the project. When was this dataset last updated? Is this dataset likely to be up to date? (Search the XML for “ModDate”, written as YYYYMMDD. Not every UGRC download uses the same tag — some carry `metd` instead — so if one is missing, search for the other.)
 
 * \#2: Your firm wants to make sure it cites sources and gives credit wherever possible. What person/company/organization is responsible for the creation of the “Utah Buildings” dataset? (Hint: it’s not the UGRC)
 
 * \#3: There is a small slice of federal land in the way that the new freeway might need to be built over. To avoid more paperwork, the firm hopes to plan around it, using the “Land Ownership” dataset from the UGRC (listed under the Cadastre category). Check the metadata for use constraints (this file uses a different metadata style than the others—try searching for “constraints”). Is this shapefile usable for legal, engineering, and surveying purposes?
 
-* \#4: A second plan has come up as well: to just build the freeway out over the water in the north end of Utah Lake. To obtain initial measurements, your firm wants to use both the “Utah Major Lakes” and “Utah Roads” datasets. For each file, what is the coordinate reference system (CRS) used? (The XML metadata doesn’t record the CRS—open the .prj file that came in each download, or add the layers to QGIS and check Layer Properties → Information. Note the map units while you’re there.) Why might it be important to *compare* these when using files to plan specific road measurements?
+* \#4: A second plan has come up as well: to just build the freeway out over the water in the north end of Utah Lake. To obtain initial measurements, your firm wants to use both the “Utah Major Lakes” and “Utah Roads” datasets. For each file, what is the coordinate reference system (CRS) used? (The XML metadata doesn’t record the CRS—open the .prj file that came in each download, or add the layers to QGIS and check Layer Properties → Information. Note the map units while you’re there.) Why might it be important to *compare* these when using files to plan specific road measurements? Note that finding they **match** is a perfectly good answer — the point is that you checked rather than assumed, and that you can say what would have gone wrong if they had not.
 
 * \#5: On the topic of this secondary plan, how recent is the data in the “Utah Major Lakes” dataset? (search for the “metd” date like before) Would this data be usable for the precise, current waterline of Utah Lake?
 
-* \#6: You notice a problem; it looks like there’s a nonexistent island in the Utah Lake dataset. Who can you contact about this?	 (Here’s a real-world wrinkle: the downloaded XML has no contact section at all—which is itself a lesson about metadata. Go to the distributor’s website, gis.utah.gov, and find its Contact page. Record the organization, phone \#, and email address you would use.)
+* \#6: You notice a problem; it looks like there’s a nonexistent island in the Utah Lake dataset. Who can you contact about this? Search the XML for “cntinfo” and see what contact details the file itself carries, then compare them with the Contact page on the distributor’s website, gis.utah.gov. Record the organization, phone number and email address you would actually use, and say why you chose that one over the other.
 
 Now that you’ve got answers to your metadata questions, there’s one thing left to do before the meeting. Your boss is very environmentally conscious and noticed some wetlands in the project area. He sent out a surveying crew to map one wetland in particular that could be avoided, and he needs you to create metadata for the polygon shapefile the crew created.
 
@@ -88,22 +88,37 @@ Now that you’ve got answers to your metadata questions, there’s one thing le
 11. Fill out the following information in the “Identification” tab of the metadata:  
     1. Title: Lehi Project Wetland Boundaries  
     2. Abstract: *Write a brief abstract, including the data collection method and purpose*  
+
+![Layer Properties Metadata page, Identification tab, with the Title and Abstract filled in and the Metadata dropdown visible at the bottom left](images/metadata-identification.png)
+
 12. Fill out the following information in the “Access” tab of the metadata:  
     1. Click the green \+ to add a new license, and select “Creative Commons Attribution 4.0” from the dropdown  
+
+![Metadata Access tab with Creative Commons Attribution 4.0 added to the licenses list](images/metadata-access.png)
+
 13. In the “Extent” tab, note the CRS is visible (no need to change it for this lab, just know where to find it)  
+
+![Metadata Extent tab showing the coordinate reference system for the layer](images/metadata-extent.png)
+
 14. Fill out the following information in the “Contact” tab of the metadata:  
     1. Name: your name  
     2. Organization: Transportation Firm  
     3. Email: your email  
+
+![Metadata Contact tab with a contact name, organization and email filled in](images/metadata-contact.png)
+
 15. Fill out the following information in the “History” tab of the metadata:  
     1. Created: October 28th, 2024  
     2. Published: the date that you complete this lab (time doesn’t matter)  
+
+![Metadata History tab listing the created and published history entries](images/metadata-history.png)
+
 16. Then click “Apply” at the bottom of the window, but keep the window open  
 17. On the bottom left, click the dropdown that says “Metadata” and select “Save Metadata to File…”  
 18. Name the file “Lehi\_wetlands01” and save it where you can easily find it  
 19. Open your new metadata file as plain text, and take a screenshot of it that shows *at least* the first 25 lines (for grading purposes)
 
-There is no layout to create for this lab. There are also no QGIS screenshots for this lab yet, so please ask a TA for help if you need it, we’re available\!
+There is no layout to create for this lab. If any of the metadata tabs look different from the figures above, check that you are on the **Metadata** page of Layer Properties and not the **Information** page, which looks similar and is read-only. Ask a TA if you get stuck, we’re available\!
 
 ## **Deliverables**
 

@@ -2,7 +2,7 @@
 
 **Civil and Construction Engineering 114 — Geomatics**
 
-Winter 2026 · Dr. Dan Ames
+Dr. Dan Ames · Brigham Young University
 
 *Lab assignment developed by Nathan Godfrey and Dr. Ames*
 
@@ -54,9 +54,9 @@ It’s a year from now. You see a world map (Mercator Projection) on your friend
 
 **REVIEW THE deliverables section at the end of the document before continuing. You should always do this before starting any of your labs. It will help you make sense of the lab and not waste time.**
 
-## **Instructions**
+## **Step by Step Instructions**
 
-### **Projections**
+### **Step 1: Build the Four-Projection Layout**
 
 1. First, open a new QGIS project and change the CRS to the usual EPSG:26912 using the button in the bottom right corner.  
 2. Download the data folder for the lab from the Lab 7 assignment on Learning Suite. Remember not to use a network drive (NO J: DRIVE\!), but save the file locally.  
@@ -100,7 +100,7 @@ It’s a year from now. You see a world map (Mercator Projection) on your friend
 13. Add a title by each map frame that says which projection is being used (see example above for the title text), and another with your name  
 14. Export the layout as an image or PDF, save your project, and close it
 
-### **Projected Coordinate Systems**
+### **Step 2: See What a Coordinate Pair Means in the Wrong Zone**
 
 15. Create a new project, and set the CRS to the usual EPSG:26912 projection  
 16. Set a basemap  
@@ -126,7 +126,7 @@ It’s a year from now. You see a world map (Mercator Projection) on your friend
 23. Change the symbology to something easily visible, zoom/pan until all these points are visible, and take a screenshot of your QGIS window.  
 24. Save this project and close it
 
-### **True Size**
+### **Step 3: Test Your Eye Against the True Size**
 
 25. Open a browser and go to maps.google.com  
 26. The basemap for this site is the Web Mercator projection, which distorts area and distance. Let’s prove that now.  
@@ -144,11 +144,11 @@ It’s a year from now. You see a world map (Mercator Projection) on your friend
 
 30. Take a screenshot of the browser showing your work on at least questions a-d (we won’t make you complete the puzzle that is question e, you’ll get the idea just by attempting it)  
 31. Compare your answers with the following solutions; you will not be graded on how correct you were (open each dropdown to see the answer):  
-    1. <details><summary>Spoiler</summary> About two whole Australias fit inside Russia (with a bit of room to spare).<!-- reconstructed answer: Dan, compare with your Doc's dropdown wording --></details>  
-    2. <details><summary>Spoiler</summary> Brazil — by a lot. It is roughly five times the area of Alaska, even though Web Mercator makes Alaska look comparable.<!-- reconstructed answer: Dan, compare with your Doc's dropdown wording --></details>  
-    3. <details><summary>Spoiler</summary> Antarctica sits between Europe and South America in size — far smaller than the giant white band Web Mercator shows.<!-- reconstructed answer: Dan, compare with your Doc's dropdown wording --></details>  
-    4. <details><summary>Spoiler</summary> India — nearly four times the area of Greenland, despite how the map makes Greenland look.<!-- reconstructed answer: Dan, compare with your Doc's dropdown wording --></details>  
-    5. <details><summary>Spoiler</summary> Yes — all nine countries can be packed inside Argentina.<!-- reconstructed answer: Dan, compare with your Doc's dropdown wording --></details> and here’s a link to the solution if you want to see it ([answer](https://drive.google.com/file/d/1ZesMv7uGwfIKyGwtXmWU7k93komtoV_o/view?usp=sharing))
+    1. <details><summary>Spoiler</summary> About two. Russia is roughly 17.0 million square km and Australia about 7.7 million, so two Australias fit with room to spare, but not three.</details>  
+    2. <details><summary>Spoiler</summary> Brazil, by a lot. About 8.5 million square km against Alaska's 1.7 million, so roughly five times the area, even though Web Mercator stretches Alaska until it looks comparable.</details>  
+    3. <details><summary>Spoiler</summary> Antarctica is about 14 million square km, which puts it between Europe (about 10 million) and South America (about 18 million) — far smaller than the endless white band Web Mercator smears along the bottom of the map.</details>  
+    4. <details><summary>Spoiler</summary> India, but by less than most people guess: about 3.2 million square km against Greenland's 2.2 million, so roughly one and a half times, not several times. The striking part is not the ratio but that Web Mercator reverses it — on the wall map Greenland looks far bigger.</details>  
+    5. <details><summary>Spoiler</summary> Yes. The nine together come to about 1.7 million square km against Argentina's 2.8 million, so they fit with a good deal of room left over.</details> and here’s a link to the solution if you want to see it ([answer](https://drive.google.com/file/d/1ZesMv7uGwfIKyGwtXmWU7k93komtoV_o/view?usp=sharing))
 
 ## **Deliverables**
 

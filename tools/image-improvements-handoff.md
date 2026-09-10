@@ -89,9 +89,12 @@ dark-appearance default, so new shots are light.
 labels (verified Aug 2026) but predate its current look; QGIS window chrome in older
 shots shows pre-3.44 styling. Refresh opportunistically.
 
-**While in the neighborhood (not images):** Lab 7 step 31's five spoiler answers are
-Claude reconstructions (marked with an HTML comment) — Dan should compare with his
-Google Doc's dropdown wording; nobody has yet.
+**Lab 7 spoiler answers — DONE 2026-09-10.** The five answers were Claude reconstructions carrying
+"compare with your Doc" HTML comments. They are now checked against Natural Earth country polygons
+measured in an equal-area projection (EPSG:6933). Four were right; the India/Greenland one claimed
+"nearly four times" where the real ratio is about 1.4, and is corrected. All five now state the
+areas, and the review markers are removed. Dan may still want to compare the wording with his Doc,
+but the facts are no longer unverified.
 
 ## Verification loop
 
