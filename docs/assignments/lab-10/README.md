@@ -2,7 +2,7 @@
 
 **Civil and Construction Engineering 114 — Geomatics**
 
-Winter 2026 · Dr. Dan Ames
+Dr. Dan Ames · Brigham Young University
 
 *Lab assignment developed by Nathan Godfrey and Dr. Ames*
 
@@ -71,9 +71,9 @@ Have you ever questioned how realistic these labs are? Well, here’s a project 
 
 **REVIEW THE deliverables section at the end of the document before continuing. You should always do this before starting any of your labs. It will help you make sense of the lab and not waste time.**
 
-## **Instructions:**
+## **Step by Step Instructions**
 
-### **Selecting a New CRS**
+### **Step 1: Set a CRS That Fits Mozambique**
 
 1. Open a new project in QGIS  
 2. Apply the Google Satellite Hybrid basemap   
@@ -83,7 +83,7 @@ Have you ever questioned how realistic these labs are? Well, here’s a project 
 > [!NOTE]
 > Notice that this is also a **UTM zone projection**, like the one that we’ve been using for Utah. This one is **centered near Mozambique**, and gives us less distortion there. Zoom out for a second, and reflect on which locations and purposes this projection might not be useful for. *Is it a good projection for global navigation? Would it be useful for measurements in Provo? Does it give a good representation of the relative sizes of countries?*
 
-### **The Context**
+### **Step 2: Get to Know the Site and Its Flood History**
 
 5. Copy these coordinates (694911.607, 7815141.831) and paste them into the “Coordinate” textbox at the bottom of the main QGIS window  
 6. Use the “Scale” dropdown next to it to zoom to a 1:1000 scale  
@@ -97,7 +97,7 @@ Have you ever questioned how realistic these labs are? Well, here’s a project 
    1. [https://reliefweb.int/map/mozambique/mozambique-beira-city-chingussura-structural-damage-construction-typology-26-march](https://reliefweb.int/map/mozambique/mozambique-beira-city-chingussura-structural-damage-construction-typology-26-march)  
 9. Open the PDF. Each red square on this map layout represents a structure that was damaged by Cyclone Idai in 2019\. The Manga chapel is located just left of the number “3” and you can see that parts of the roof are missing. Notice how this map layout includes all the cartographic elements that we require in this class? You’ll even do a locator map in this lab, like the ones they have on the right side.
 
-### **The Site**
+### **Step 3: Map the Canals and the Flood Hazard Zone**
 
 10. Now download the zip folder from Learning Suite, unzip it, and add the “project\_boundary1” file to the map.  
 11. Right-click on the boundary layer in the Layers Panel, and select “Zoom to Layer(s)”. Our site is about 2.5 km NNE of the Manga Chapel.  
@@ -128,7 +128,7 @@ Have you ever questioned how realistic these labs are? Well, here’s a project 
 
 ![Example site with the canal centerlines buffered into a tan flood hazard zone and purple protected-area points scattered across the farmland plots](images/anchored3.png)
 
-### **(Geo)Planning**
+### **Step 4: Lay Out the Community**
 
 Homes:
 
@@ -183,7 +183,7 @@ Open Air Market
 
 ![Example completed plan over satellite imagery with the warning "Do not copy this layout. This is just an example, and you can probably make a better design than this one."](images/example-plan.png)
 
-### **Labels, Symbology, and Layouts**
+### **Step 5: Label, Symbolize, and Build the Layout**
 
 35. Add appropriate labels to the market, recreation area, church, mosque, and school.  
     1. Unless you did so upon creating the layer, you’ll need to open the attribute table and add a new field for each location that you need to label.
@@ -212,7 +212,7 @@ Open Air Market
 
 ![Example DFTW Project Layout with the site map, legend, scale bar, north arrow, author information, and an inset locator map of Mozambique](images/layout-example.png)
 
-### **Final Discussion Questions**
+### **Step 6: Answer the Discussion Questions**
 
 46. Write your answers to the following questions:  
     1. What additional geospatial data/info would help you with this project if you were actually doing it? What potential sources are there for this data?  

@@ -2,7 +2,7 @@
 
 **Civil and Construction Engineering 114 — Geomatics**
 
-Winter 2026 · Dr. Dan Ames
+Dr. Dan Ames · Brigham Young University
 
 *Lab assignment developed by Nathan Godfrey and Dr. Ames*
 
@@ -31,9 +31,9 @@ If this scenario sounds far-fetched, consider this: in June 2022, record floodin
 
 **REVIEW THE deliverables section at the end of the document before continuing. You should always do this before starting any of your labs. It will help you make sense of the lab and not waste time.**
 
-## **Instructions**
+## **Step by Step Instructions**
 
-### **Part 1: Floods**
+### **Step 1: Map the Flood Risk Below Lake Level**
 
 Yellowstone Lake is about to spill into the rest of the park\! The Continental Divide is disappearing in a series of unexplainable earthquakes and landslides of biblical proportions. Find the areas of the park that are lower than the lake, and therefore the most prone to flooding if that happens.
 
@@ -75,7 +75,7 @@ Yellowstone Lake is about to spill into the rest of the park\! The Continental D
 
 ![Example Part 1 layout: Yellowstone Lake Overflow Map with title, context text box, Below Lake/Above Lake legend, north arrow, citations, and scale bar](images/anchored4.png)
 
-### **Part 2: Noxious Gas**
+### **Step 2: Buffer the Geysers and Find What Must Evacuate**
 
 Old Faithful and some of the surrounding geysers were all contaminated and are about to erupt with noxious gas\! Find any hotels, lodges, or other buildings within a one-kilometer radius of the geysers that need to be evacuated.  
 This part is not pure fiction either. When the magnitude 7.3 Hebgen Lake earthquake struck just west of the park in 1959, at least 289 hot springs erupted as geysers within a day, about 160 of them for the first time ever. Details here: https://www.usgs.gov/news/60-years-1959-m73-hebgen-lake-earthquake-its-history-and-effects-yellowstone-region
@@ -106,7 +106,7 @@ This part is not pure fiction either. When the magnitude 7.3 Hebgen Lake earthqu
 27. Visually explore your map and use the basemap to determine if there are any buildings that need to be evacuated.  
 28. Create a second map layout showing your basemap, buffer polygons, and four geysers with readable labels. Include all the appropriate cartographic elements including labels, titles, scale bar, neatline, etc. Add context by adding a text box to the map explaining what this map represents. Export your layout before moving on.
 
-### **Part 3: Search and Rescue**
+### **Step 3: Find the Helicopter Search Area**
 
 Experts from the state of Idaho have requested assistance. Since only a small portion of Yellowstone is within Idaho's boundaries, Idaho is only responsible for a very small part of the disaster zone. Fish Creek Road (aka Forest Road 082\) is the highway that ground teams will be searching from, and they will cover anything up to 5km from the road. Helicopters will need to search anything further than that. Find the helicopter search area that is within the National Park, within the State of Idaho, and over 5 kilometers from Fish Creek Road.
 
@@ -132,7 +132,7 @@ Experts from the state of Idaho have requested assistance. Since only a small po
     2. Selection attribute \= “name”  
     3. Value \= “FISH CREEK”
 
-![Select by Attribute dialog with the reprojected roads input layer and “name” selection attribute highlighted, and an overlaid note explaining that the road data was created in geographic coordinates (EPSG:4269) measured in degrees, so it must be reprojected into a CRS with projected coordinates before QGIS can buffer it by a linear distance](images/anchored9.png)
+![Select by Attribute dialog with the reprojected roads input layer and “name” selection attribute highlighted, and an overlaid note explaining that the road data was created in geographic coordinates (EPSG:4269) measured in degrees, so it must be reprojected into a CRS with projected coordinates before QGIS can buffer it by 5 km](images/anchored9.png)
 
 *Buffering the Selected Roads*
 

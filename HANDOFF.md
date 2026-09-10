@@ -239,6 +239,22 @@ Collected from the conversion notes at the end of each deck (search for `Convers
     good answer too. Lab 8's Lehi transportation plan link was also a 404 and now points at the
     live PDF, with Lehi's Studies and Master Plans page named as the stable fallback.
 
+- **Labs 9, 10 and 11: done 2026-09-10.** Semester dropped from all three headers and all three
+  renumbered under active-voice step headings (Lab 9 runs 1 to 55, Lab 10 1 to 47, Lab 11 1 to 31).
+  **That completes the pass over all eleven labs.**
+
+  The figure fix here closes the last content bug listed in `tools/image-improvements-handoff.md`:
+  Lab 9's `anchored9.png` carried a red callout reading "10km buffer" twice, where step 41 buffers
+  Fish Creek Road by **5 km**. The wrong number was drawn into the image, so the dialog was
+  re-shot (`tools/qgis_lab09_selectby_shot.py`) and the note redrawn
+  (`tools/lab09_annotate.py`).
+
+  Claims checked against live sources rather than assumed: Utah County's 2020 census blocks really
+  do sum to exactly 659,399 people across 10,092 blocks, so Lab 11's "check the count yourself"
+  invitation holds; Walmart's public store dataset carries 5,209 points against the lab's "about
+  5,200"; and every external link in Labs 9, 10 and 11 resolves. The USGS Hebgen Lake article
+  answers 403 to a plain script but 200 to a browser, so it is fine.
+
 - **Lab 4 culvert photos** (`anchored10`, `anchored11`, `anchored12`, `anchored14`) are 225 to 369 px
   wide. They are photographs, not QGIS captures, so no script replaces them; they need images Dan is
   happy to license.

@@ -2,7 +2,7 @@
 
 **Civil and Construction Engineering 114 — Geomatics**
 
-Winter 2026 · Dr. Dan Ames
+Dr. Dan Ames · Brigham Young University
 
 *Lab assignment developed by Nathan Godfrey and Dr. Ames*
 
@@ -21,7 +21,7 @@ And the approach works: about 90% of Americans now live within 10 miles of a Wal
 ## **Problem Statement**
 
 As a site selection specialist at Walmart, you're tasked with finding the optimal location for a new store in Utah County, Utah. This decision plays a crucial role in Walmart's mission of providing convenient access to affordable products for its customers.  
-Utah County is a good place to practice. Utah was the fastest-growing state in the nation from 2010 to 2020 (https://www.census.gov/library/stories/state-by-state/utah.html), and Utah County leads the state's growth, with 659,399 residents counted in the 2020 Census. Fun fact: the census blocks you download in this lab add up to exactly that number, so you can check the count yourself.
+Utah County is a good place to practice. Utah was the fastest-growing state in the nation from 2010 to 2020 (https://www.census.gov/library/stories/state-by-state/utah.html), and Utah County leads the state's growth, with 659,399 residents counted in the 2020 Census. Fun fact: the census blocks you download in this lab add up to exactly that number — 10,092 blocks summing to 659,399 people — so you can check the count yourself with the Statistics panel once the data is loaded.
 
 For the purposes of this exercise, we will arbitrarily limit the factors with which you are concerned to the following:
 
@@ -49,14 +49,14 @@ You’ll also save all of your data layers for this project in a GeoPackage.
 
 **REVIEW THE deliverables section at the end of the document before continuing. You should always do this before starting any of your labs. It will help you make sense of the lab and not waste time.**
 
-## **Instructions**
+## **Step by Step Instructions**
 
-### **Workflow Diagram**
+### **Step 1: Start Your Workflow Diagram**
 
 1. As you work through this lab, create a workflow diagram that shows the exact steps you took to complete this lab. Your workflow should be detailed enough that someone else could replicate your work with just your workflow. This includes every dataset and every step (aka tool) that you use.  
    1. You’re welcome to do this on paper or find a convenient computer program, as long as it is legible (no tiny unreadable text) when you turn it in with your lab.
 
-### **Add the Data**
+### **Step 2: Add the Data**
 
 2. Open a new QGIS project and set the XYZ base layer to the “Google Satellite” layer (not the “Satellite Hybrid” imagery)  
 3. Change the CRS to EPSG: 26912, our usual CRS for Utah  
@@ -69,9 +69,9 @@ You’ll also save all of your data layers for this project in a GeoPackage.
 
 6. Go to the UGRC website (gis.utah.gov). Find and **download** the same “Utah Roads” dataset that we used in Lab 2 (see step 11), and another one in the Demographics category called “Census 2020 Blocks”  
    1. If the shapefile download isn’t working, use the “File Geodatabase” instead and treat it like a shapefile  
-7. Follow this [link](https://walmart-open-data-walmarttech.opendata.arcgis.com/datasets/39ce1c357bd2424ca481db84aed29464_0/explore?location=40.218329%2C-111.585158%2C10.61) to the Walmart Open Data Hub and download the shapefile of their store locations. Add it to the map too. This is Walmart’s own public data \- every operating US store and Sam’s Club, about 5,200 points, kept current by the company.
+7. Follow this [link](https://walmart-open-data-walmarttech.opendata.arcgis.com/datasets/39ce1c357bd2424ca481db84aed29464_0/explore?location=40.218329%2C-111.585158%2C10.61) to the Walmart Open Data Hub and download the shapefile of their store locations. Add it to the map too. This is Walmart’s own public data \- every operating US store and Sam’s Club, about 5,200 points (5,209 when this was last checked), kept current by the company.
 
-### **Build a GeoPackage**
+### **Step 3: Build the GeoPackage**
 
 8. Open the Processing Toolbox Panel and find the “Extract by Attribute” tool  
 9. Open it, and use this tool to extract the borders of Utah County to a new layer called, “UtahCounty”  
@@ -109,7 +109,7 @@ You’ll also save all of your data layers for this project in a GeoPackage.
 
 21. Remove any other Walmart locations layers from your project, just keeping your most recent output. You should now only have 4 vector layers \- store locations, freeway/highways, census blocks, and the boundaries of Utah County.
 
-### **Analysis**
+### **Step 4: Run the Analysis**
 
 22. In the new census block layer, you will need to create a new attribute table column called “Density” and calculate it as the population divided by the area. To do this, open the layer’s attribute table, toggle editing mode on, and click the “Open Field Calculator” button.  
     1. Create a new field: TRUE (checkbox)  

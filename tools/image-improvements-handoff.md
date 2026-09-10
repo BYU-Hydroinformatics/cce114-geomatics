@@ -56,10 +56,12 @@ Remaining:
 5. Data for staging shots: `docs/assignments/lab-04/data/SF_Waterways.gpkg` (98
    waterways, EPSG:26912) is in the repo; the lab's own steps describe the rest.
 
-**Lab 9:** the screenshots near "Retrieving the Shapefiles" show the NPS download
-page from its shapefile era (dataset is now geodatabase-only; the *text* is already
-fixed). Also `anchored9.png` has a content bug baked into the drawing: the red note
-says "10km buffer" but the lab uses **5 km** — re-shoot or edit the annotation.
+**Lab 9 — `anchored9.png` DONE 2026-09-10.** The red note said "10km buffer" twice while the lab
+buffers Fish Creek Road by 5 km, and the wrong number was baked into the drawing. The Select by
+Attribute dialog is re-shot (`tools/qgis_lab09_selectby_shot.py`) and the note redrawn with the
+right distance (`tools/lab09_annotate.py`). Still open: the screenshots near "Retrieving the
+Shapefiles" show the NPS download page from its shapefile era; the dataset is geodatabase-only now
+and the *text* already says so, so this is cosmetic. Those are web-page captures, not QGIS.
 
 **Lab 5 — layouts DONE 2026-09-10:** both example-layout images used to carry Dan's red markup
 (struck "Slope"/"DEM" labels) baked into the drawing. They are now clean QGIS 3.44 exports, along
