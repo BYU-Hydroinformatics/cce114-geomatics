@@ -40,9 +40,14 @@
 - [Final Mapping Project](https://byu-hydroinformatics.github.io/cce114-geomatics/slides/day-23/final-project.html)
 - [Concepts Review](https://byu-hydroinformatics.github.io/cce114-geomatics/slides/day-23/concepts-review.html)
 
-> [!TIP]
-> 🖱️ **Hands-On Practice: Workflow Walkthrough, Final Project Kickoff, Exam 2 Kahoot**
->
-> This session has its own step-by-step guide: what to have ready, a practice run you can do beforehand, the 50-minute plan, the click-by-click QGIS walkthrough, the graded upload, and the snags that usually come up.
->
-> **[Open the Week 12 hands-on guide &rarr;](../handson/week-12.md)**
+<div class="handson-cta" markdown="1">
+
+**Hands-On Practice**{ .handson-cta__eyebrow }
+
+**Workflow Walkthrough, Final Project Kickoff, Exam 2 Kahoot**{ .handson-cta__title }
+
+This session has its own step-by-step guide: what to have ready, a practice run to do beforehand, the 50-minute plan, the click-by-click QGIS walkthrough, the graded upload, and the snags that usually come up.
+
+[Open the Week 12 hands-on guide →](../handson/week-12.md){ .handson-cta__button }
+
+</div>

@@ -48,3 +48,46 @@
 [data-md-color-scheme="slate"] .md-typeset .badge-handson { background-color: #2f9e63; }
 [data-md-color-scheme="slate"] .md-typeset .badge-lab     { background-color: #c67c30; }
 [data-md-color-scheme="slate"] .md-typeset .badge-session { background-color: #8a8a8a; }
+
+/* The link from a week page out to that Thursday's hands-on guide. Deliberately loud: this is
+   the one thing an instructor needs to find on the page. */
+.md-typeset .handson-cta {
+  margin: 1.6em 0;
+  padding: 1.1em 1.3em 1.2em;
+  border: 2px solid #0f7b3f;
+  border-left-width: 8px;
+  border-radius: 6px;
+  background-color: rgba(15, 123, 63, 0.06);
+}
+.md-typeset .handson-cta > :first-child { margin-top: 0; }
+.md-typeset .handson-cta > :last-child { margin-bottom: 0; }
+.md-typeset .handson-cta__eyebrow {
+  display: block;
+  color: #0f7b3f;
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+.md-typeset .handson-cta__title {
+  display: block;
+  margin-top: 0.15em;
+  font-size: 1.15rem;
+  line-height: 1.3;
+}
+.md-typeset a.handson-cta__button {
+  display: inline-block;
+  margin-top: 0.3em;
+  padding: 0.5em 1.1em;
+  border-radius: 4px;
+  background-color: #0f7b3f;
+  color: #fff;
+  font-weight: 700;
+}
+.md-typeset a.handson-cta__button:hover { background-color: #0a5c2f; }
+[data-md-color-scheme="slate"] .md-typeset .handson-cta {
+  border-color: #2f9e63;
+  background-color: rgba(47, 158, 99, 0.12);
+}
+[data-md-color-scheme="slate"] .md-typeset .handson-cta__eyebrow { color: #56c489; }
+[data-md-color-scheme="slate"] .md-typeset a.handson-cta__button { background-color: #2f9e63; }

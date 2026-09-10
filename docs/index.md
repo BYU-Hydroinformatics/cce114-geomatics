@@ -24,8 +24,11 @@ Geomatics is the discipline of gathering, analyzing, and visualizing geographic 
 
 - [Course Overview](course.md) — description, instructors, prerequisites, textbook, learning outcomes, and how the course works.
 - [Schedule](schedule.md) — one page per week. Each week page has both class sessions together:
-  the Tuesday concepts lecture (topics, slides, reading) and the Thursday hands-on session in
-  QGIS (the instructor's run sheet), plus what is due that week.
+  the Tuesday lecture (topics, slides, reading) and the Thursday hands-on session in QGIS, plus
+  what is due that week.
+- [Hands-On Practice](handson/README.md) — one page per Thursday working session, Weeks 2 through
+  12. Each is a step-by-step QGIS guide with a practice run, the session plan, the walkthrough,
+  the graded upload, and the snags that usually come up.
 - [Quizzes, Activities & Experiences](assignments/deliverables.md) and the [Final Project](assignments/final-project.md).
 
 ## Policies

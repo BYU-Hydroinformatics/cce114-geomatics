@@ -7,10 +7,6 @@
 - Creating and editing metadata in QGIS
 - Finding and evaluating datasets on gis.utah.gov and data.gov
 
-### Graded in-class activity
-
-AGRC Metadata: evaluate one published dataset and fill a row of the AGRC Metadata tab in the class sheet. Students record completion on Learning Suite.
-
 <!-- runsheet -->
 **Feeds** [Lab 8](../assignments/lab-08/README.md).
 

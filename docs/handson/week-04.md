@@ -8,10 +8,6 @@
 - Importing the class points into QGIS from a CSV, assigning the CRS, and reprojecting to UTM
 - Seeing GPS error as the scatter between students at the same site
 
-### Graded in-class activity
-
-GPS Class Activity: enter three campus positions in the shared sheet and record the site names on Learning Suite. Students record completion on Learning Suite.
-
 <!-- runsheet -->
 **Feeds** [Lab 3](../assignments/lab-03/README.md).
 

@@ -46,9 +46,14 @@ GIS Fundamentals, Chapter 7 (Digital Data)
 
 Build a map using three or more layers from the Utah ArcGIS REST services and upload a nice layout. Record your completion on Learning Suite.
 
-> [!TIP]
-> 🖱️ **Hands-On Practice: Web Services in QGIS**
->
-> This session has its own step-by-step guide: what to have ready, a practice run you can do beforehand, the 50-minute plan, the click-by-click QGIS walkthrough, the graded upload, and the snags that usually come up.
->
-> **[Open the Week 7 hands-on guide &rarr;](../handson/week-07.md)**
+<div class="handson-cta" markdown="1">
+
+**Hands-On Practice**{ .handson-cta__eyebrow }
+
+**Web Services in QGIS**{ .handson-cta__title }
+
+This session has its own step-by-step guide: what to have ready, a practice run to do beforehand, the 50-minute plan, the click-by-click QGIS walkthrough, the graded upload, and the snags that usually come up.
+
+[Open the Week 7 hands-on guide →](../handson/week-07.md){ .handson-cta__button }
+
+</div>

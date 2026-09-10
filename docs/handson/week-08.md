@@ -8,10 +8,6 @@
 - Reproject a layer for real and compare measured lengths and areas
 - Choosing a projection for an engineering problem
 
-### Graded in-class activity
-
-Playing with Projections: upload a screenshot of the same data in two different projections. Students record completion on Learning Suite.
-
 <!-- runsheet -->
 **Feeds** [Lab 7](../assignments/lab-07/README.md).
 

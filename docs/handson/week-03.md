@@ -13,10 +13,6 @@
 
 - United States shapefiles (posted on Learning Suite)
 
-### Graded in-class activity
-
-Playing with Symbology: make a colorful map in QGIS and upload a screenshot. Students record completion on Learning Suite.
-
 <!-- runsheet -->
 **Feeds** [Lab 2](../assignments/lab-02/README.md) and the BYU Belonging Map.
 

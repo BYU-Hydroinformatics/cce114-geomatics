@@ -7,10 +7,6 @@
 - Hands-on practice creating, digitizing, and editing vector layers
 - Snapping and topology
 
-### Graded in-class activity
-
-Creating and Editing Vector Data: digitize your home with snapped lines and upload a screenshot or PDF. Students record completion on Learning Suite.
-
 <!-- runsheet -->
 **Feeds** [Lab 4](../assignments/lab-04/README.md).
 

@@ -42,9 +42,14 @@ GIS Fundamentals, Chapter 4 (Maps, Data Entry, and Editing) map design sections
 
 Playing with Symbology: make a colorful map in QGIS and upload a screenshot. Record your completion on Learning Suite.
 
-> [!TIP]
-> 🖱️ **Hands-On Practice: Symbology, Labels, and a First Layout**
->
-> This session has its own step-by-step guide: what to have ready, a practice run you can do beforehand, the 50-minute plan, the click-by-click QGIS walkthrough, the graded upload, and the snags that usually come up.
->
-> **[Open the Week 3 hands-on guide &rarr;](../handson/week-03.md)**
+<div class="handson-cta" markdown="1">
+
+**Hands-On Practice**{ .handson-cta__eyebrow }
+
+**Symbology, Labels, and a First Layout**{ .handson-cta__title }
+
+This session has its own step-by-step guide: what to have ready, a practice run to do beforehand, the 50-minute plan, the click-by-click QGIS walkthrough, the graded upload, and the snags that usually come up.
+
+[Open the Week 3 hands-on guide →](../handson/week-03.md){ .handson-cta__button }
+
+</div>

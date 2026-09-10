@@ -37,9 +37,14 @@ GIS Fundamentals, Chapter 4 (Maps, Data Entry, and Editing)
 
 Creating and Editing Vector Data: digitize your home with snapped lines and upload a screenshot or PDF. Record your completion on Learning Suite.
 
-> [!TIP]
-> 🖱️ **Hands-On Practice: Digitize Your Home with Snapping and the Vertex Tool**
->
-> This session has its own step-by-step guide: what to have ready, a practice run you can do beforehand, the 50-minute plan, the click-by-click QGIS walkthrough, the graded upload, and the snags that usually come up.
->
-> **[Open the Week 5 hands-on guide &rarr;](../handson/week-05.md)**
+<div class="handson-cta" markdown="1">
+
+**Hands-On Practice**{ .handson-cta__eyebrow }
+
+**Digitize Your Home with Snapping and the Vertex Tool**{ .handson-cta__title }
+
+This session has its own step-by-step guide: what to have ready, a practice run to do beforehand, the 50-minute plan, the click-by-click QGIS walkthrough, the graded upload, and the snags that usually come up.
+
+[Open the Week 5 hands-on guide →](../handson/week-05.md){ .handson-cta__button }
+
+</div>

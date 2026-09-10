@@ -63,11 +63,16 @@ GIS Fundamentals, Chapter 2 (Data Models)
 
 ### In-class activity
 
-State Boundary Vector Data Model activity (trade coordinate lists with a neighbor and guess the state). Record your completion on Learning Suite.
+First Map: Utah County: build a QGIS project with a basemap, the four Utah County layers, and your own point layer, and upload a screenshot. Record your completion on Learning Suite.
 
-> [!TIP]
-> 🖱️ **Hands-On Practice: First Map in QGIS**
->
-> This session has its own step-by-step guide: what to have ready, a practice run you can do beforehand, the 50-minute plan, the click-by-click QGIS walkthrough, the graded upload, and the snags that usually come up.
->
-> **[Open the Week 2 hands-on guide &rarr;](../handson/week-02.md)**
+<div class="handson-cta" markdown="1">
+
+**Hands-On Practice**{ .handson-cta__eyebrow }
+
+**First Map in QGIS**{ .handson-cta__title }
+
+This session has its own step-by-step guide: what to have ready, a practice run to do beforehand, the 50-minute plan, the click-by-click QGIS walkthrough, the graded upload, and the snags that usually come up.
+
+[Open the Week 2 hands-on guide →](../handson/week-02.md){ .handson-cta__button }
+
+</div>

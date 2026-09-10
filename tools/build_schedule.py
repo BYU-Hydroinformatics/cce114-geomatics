@@ -56,7 +56,7 @@ DAYS = [
          topics=["Raster and image data models, continued", "Make a map in QGIS using each data type",
                  "Live demo of creating and editing vector data in QGIS"],
          data=[("UtahCountyData.zip", f"{SITE}/lectures/data/UtahCountyData.zip")],
-         activity="State Boundary Vector Data Model activity (trade coordinate lists with a neighbor and guess the state)"),
+         activity="First Map: Utah County: build a QGIS project with a basemap, the four Utah County layers, and your own point layer, and upload a screenshot"),
     dict(n=4, week=3, kind="concepts", title="Maps, Symbology, and Cartography, Part 1",
          slides=[("Maps, Symbology, and Cartography", f"{SITE}/slides/day-04/maps-and-cartography.html")],
          topics=["Map design fundamentals", "Symbology for points, lines, and polygons",
@@ -204,7 +204,8 @@ LABS = {1: "Getting Started with GIS", 2: "Map Symbology and Layouts", 3: "GPS D
 # day changes between semesters (CLAUDE.md rule 7).
 KIND_LABEL = {"concepts": "Lecture", "hands-on": "Hands-On Practice", "other": "Class Session"}
 KIND_CLASS = {"concepts": "badge-lecture", "hands-on": "badge-handson", "other": "badge-session"}
-KIND_EMOJI = {"concepts": "📖", "hands-on": "🖱️", "other": "📍"}
+# Emoji were tried here and render inconsistently in the theme's font stack (the mouse glyph
+# does not render at all on the lab machines), so session type is carried by the CSS badges.
 
 
 def badge(kind: str) -> str:
@@ -230,6 +231,14 @@ THURSDAY_TITLE = {
 # Days whose Tuesday in-class activity has a fuller write-up preserved under a
 # "<!-- tuesday-notes -->" marker (migrated once from the old tuesday-activities.md).
 TUESDAY_NOTES_DAYS = {2, 6, 10, 12, 14, 16, 20}
+
+
+# The Learning Suite "In Class Activity" name for each hands-on day, used in the hands-on
+# index. Taken from the "Graded item" row of each run sheet; None where Thursday has no item.
+ACTIVITY_NAME = {3: "First Map: Utah County", 5: "Playing with Symbology", 7: "GPS Class Activity",
+                 9: "Creating and Editing Vector Data", 11: "DEM Profile",
+                 13: "Getting Data through Web Mapping Services", 15: "Playing with Projections",
+                 17: "AGRC Metadata", 19: "Cities Near Rivers", 21: None, 23: None}
 
 
 def lab_link(text: str, prefix: str) -> str:
@@ -335,16 +344,16 @@ def session_section(d: dict, weekday: Optional[str], existing_text: str) -> list
 
 def handson_callout(d: dict) -> list:
     """The prominent link from a week page out to that Thursday's hands-on page."""
-    return ["> [!TIP]",
-            f"> {KIND_EMOJI['hands-on']} **Hands-On Practice: {session_title(d)}**",
-            ">",
-            "> This session has its own step-by-step guide: what to have ready, a practice run "
-            "you can do beforehand, the 50-minute plan, the click-by-click QGIS walkthrough, "
-            "the graded upload, and the snags that usually come up.",
-            ">",
-            f"> **[Open the Week {d['week']} hands-on guide "
-            f"&rarr;](../handson/week-{d['week']:02d}.md)**",
-            ""]
+    w = d["week"]
+    return ['<div class="handson-cta" markdown="1">', "",
+            "**Hands-On Practice**{ .handson-cta__eyebrow }", "",
+            f"**{session_title(d)}**{{ .handson-cta__title }}", "",
+            "This session has its own step-by-step guide: what to have ready, a practice run to "
+            "do beforehand, the 50-minute plan, the click-by-click QGIS walkthrough, the graded "
+            "upload, and the snags that usually come up.", "",
+            f"[Open the Week {w} hands-on guide \u2192](../handson/week-{w:02d}.md)"
+            "{ .handson-cta__button }", "",
+            "</div>", ""]
 
 
 def handson_day(w: int) -> Optional[dict]:
@@ -378,9 +387,7 @@ def handson_page(d: dict, existing_text: str) -> str:
         for a, b in d.get("links", []):
             out.append(f"- [{a}]({b})")
         out.append("")
-    if d.get("activity"):
-        out += ["### Graded in-class activity", "",
-                d["activity"] + ". Students record completion on Learning Suite.", ""]
+    # The graded item is not repeated here: every run sheet's "At a glance" table names it.
     out.append("<!-- runsheet -->")
     preserved = preserved_after(existing_text, "<!-- runsheet -->")
     out.append(preserved if preserved else "")
@@ -403,8 +410,7 @@ def handson_index() -> str:
             continue
         lab = LABS.get(w - 1)
         lab_cell = f"[Lab {w - 1}](../assignments/lab-{w - 1:02d}/README.md)" if lab else "—"
-        act = d.get("activity", "")
-        act = (act.split(":")[0] if ":" in act else act) or "—"
+        act = ACTIVITY_NAME.get(d["n"]) or "—"
         out.append(f"| {w} | [{session_title(d)}](week-{w:02d}.md) | {lab_cell} | {act} |")
     out += ["", "> [!TIP]", "> Each page is written so that someone who has never run the session "
             "can rehearse it alone in about twenty minutes before class.", ""]
@@ -428,14 +434,13 @@ def schedule_page() -> str:
            "The sequence below is the same each semester; only the calendar dates change, so this page",
            "uses week numbers and weekdays. Exact due dates are on Learning Suite.", "",
            "Each week has two class meetings, presented together on that week's page:", "",
-           f"- {KIND_EMOJI['concepts']} **Tuesday: lecture.** Concepts, discussion, and a short "
-           "in-class activity.",
-           f"- {KIND_EMOJI['hands-on']} **Thursday: hands-on practice.** Working in QGIS on the "
-           "week's topic. Each session also has its own step-by-step guide under "
-           "[Hands-On Practice](handson/README.md).", "",
+           f"- {badge('concepts')} **Tuesday.** Concepts, discussion, and a short in-class "
+           "activity.",
+           f"- {badge('hands-on')} **Thursday.** Working in QGIS on the week's topic. Every "
+           "session has its own step-by-step guide under [Hands-On Practice](handson/README.md), "
+           "written so it can be rehearsed alone beforehand.", "",
            "Reading quizzes open on Tuesday and close **Saturday at 11:59 pm**; lab reports are also due **Saturday at 11:59 pm**.", "",
-           f"| Week | {KIND_EMOJI['concepts']} Tuesday (lecture) | "
-           f"{KIND_EMOJI['hands-on']} Thursday (hands-on) | Due this week |",
+           "| Week | Tuesday (lecture) | Thursday (hands-on practice) | Due this week |",
            "| --- | --- | --- | --- |"]
     for w, info in WEEKS.items():
         page = f"weeks/week-{w:02d}.md"

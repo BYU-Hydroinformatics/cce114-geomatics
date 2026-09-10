@@ -12,10 +12,6 @@
 
 - UtahCountyData.zip: [download](https://byu-hydroinformatics.github.io/cce114-geomatics/lectures/data/UtahCountyData.zip)
 
-### Graded in-class activity
-
-State Boundary Vector Data Model activity (trade coordinate lists with a neighbor and guess the state). Students record completion on Learning Suite.
-
 <!-- runsheet -->
 **Feeds** [Lab 1](../assignments/lab-01/README.md).
 

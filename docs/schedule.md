@@ -6,12 +6,12 @@ uses week numbers and weekdays. Exact due dates are on Learning Suite.
 
 Each week has two class meetings, presented together on that week's page:
 
-- 📖 **Tuesday: lecture.** Concepts, discussion, and a short in-class activity.
-- 🖱️ **Thursday: hands-on practice.** Working in QGIS on the week's topic. Each session also has its own step-by-step guide under [Hands-On Practice](handson/README.md).
+- **Lecture**{ .badge .badge-lecture } **Tuesday.** Concepts, discussion, and a short in-class activity.
+- **Hands-On Practice**{ .badge .badge-handson } **Thursday.** Working in QGIS on the week's topic. Every session has its own step-by-step guide under [Hands-On Practice](handson/README.md), written so it can be rehearsed alone beforehand.
 
 Reading quizzes open on Tuesday and close **Saturday at 11:59 pm**; lab reports are also due **Saturday at 11:59 pm**.
 
-| Week | 📖 Tuesday (lecture) | 🖱️ Thursday (hands-on) | Due this week |
+| Week | Tuesday (lecture) | Thursday (hands-on practice) | Due this week |
 | --- | --- | --- | --- |
 | [Week 1: Introduction](weeks/week-01.md) | — | [Course Introduction and Introduction to GIS](weeks/week-01.md#day-1-course-introduction-and-introduction-to-gis) | — |
 | [Week 2: GIS Data Models](weeks/week-02.md) | [GIS Data Models, Part 1](weeks/week-02.md#tuesday-gis-data-models-part-1) | [First Map in QGIS](handson/week-02.md) | [Quiz 1: Intro to GIS & Map Design Fundamentals](assignments/deliverables.md#reading-quizzes)<br>[Lab 1: Getting Started with GIS](assignments/lab-01/README.md) |

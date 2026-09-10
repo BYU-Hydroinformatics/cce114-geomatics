@@ -9,10 +9,6 @@
 - Elevation surfaces and cross-section profiles (View > Elevation Profile, or the Profile Tool plugin)
 - Exam 1 review Kahoot in the last fifteen minutes
 
-### Graded in-class activity
-
-DEM Profile: upload a screenshot of a pseudocolor DEM with an elevation profile. Students record completion on Learning Suite.
-
 <!-- runsheet -->
 **Feeds** [Lab 5](../assignments/lab-05/README.md) · ends with the Exam 1 Kahoot.
 

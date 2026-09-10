@@ -105,6 +105,27 @@ headings. The generator's nav rewrite also now replaces the whole existing `- Sc
 fails loudly if it cannot find it (the previous pattern matched only the pre-restructure file, so a
 rerun left the nav untouched).
 
+**Hands-On Practice pages (2026-09-10).** The eleven Thursday run sheets moved out of the week
+pages into `docs/handson/week-NN.md`, one page and one URL per session, listed under a new
+**Hands-On** top tab with an index at `docs/handson/README.md`. The week page keeps the
+student-facing Thursday section (badge, topics, materials, graded activity) and carries a large
+green callout linking out to the guide. Each hands-on page gained a **Practice run before class**
+section: the data needed, a twenty- to thirty-minute solo rehearsal in the same order as the class
+walkthrough, an explicit "you are ready when" test, and the one failure most likely to bite. The
+motivation was that whoever teaches Thursday could not easily find or rehearse the session in
+advance.
+
+Session type is now marked with a CSS badge — **Lecture**, **Hands-On Practice**, **Lab** — defined
+in `docs/stylesheets/extra.css` and emitted by the generator; lab badges were added by hand to the
+eleven lab pages, each naming the due week and linking to the hands-on session that prepares for
+it. Emoji were tried first and rejected: the mouse glyph does not render in the theme's font stack.
+
+`KIND_LABEL` no longer names professors ("Demo and hands-on (Dr. Halgren)" became the
+Hands-On Practice badge), which brings the generated pages in line with rule 7 in `CLAUDE.md`.
+The `<!-- thursday-notes -->` marker is gone; the run sheets now sit below `<!-- runsheet -->` on
+the hands-on pages. Session `##` headings on the week pages did not change, so the Learning Suite
+links fixed on 2026-09-09 still resolve.
+
 **Data.** `docs/lectures/data/UtahCountyData.zip` (38 MB: county boundary, major roads, cellular
 towers, DEM) is published for the Day 2 demo and Thursday sessions. Lab 4 ships a GeoPackage
 fallback in its folder.
@@ -159,6 +180,18 @@ Collected from the conversion notes at the end of each deck (search for `Convers
   2:00 pm, 234 CB. The site now says finals week generically; Dec 8 is presentations part 2 and review.
   Learning Suite's Dec 8 entry, a new Dec 17 entry, and the Final Exam assignment date were updated the
   same night (see the session notes); re-check each semester.
+- **Two data bundles are not on the site (blocks rehearsal).** The Week 3 hands-on session needs
+  *United States Shapefiles.zip* and the Week 10 session needs *United States.zip*; both live only
+  on Learning Suite, so those two sessions cannot be practiced from the site the way the others
+  can. Publishing them under `docs/lectures/data/` alongside `UtahCountyData.zip` is the single
+  highest-value remaining fix. Both hands-on pages carry a `<!-- TODO -->` at the spot.
+- **The hands-on pages have no figures.** All eleven walkthroughs are text only, while the labs are
+  heavily illustrated. Roughly four to six QGIS 3.44 captures per session would let a novice
+  confirm their screen matches. The scripted capture pipeline in `tools/` already does this kind of
+  work; see `tools/image-improvements-handoff.md`.
+- **Week 3, 7 and 11 run sheets name a specific TA** (Adriene, Isabel, Harrison) as the person who
+  gives a pitch. Those names go stale every semester and a substitute cannot act on them. Consider
+  rewording to the role.
 - **Day 21:** confirm what software CCE 414 uses now and whether its lab list is current; then
   decide whether to keep the ArcGIS 10 screenshots.
 - **Day 7:** the Air Force One activity distances are from the 2021 classroom; re-measure.

@@ -45,9 +45,14 @@ GIS Fundamentals, Chapter 9 (Basic Spatial Analysis)
 
 Cities Near Rivers: upload a screenshot of your map showing all U.S. cities within 10 km of a major river. Record your completion on Learning Suite.
 
-> [!TIP]
-> 🖱️ **Hands-On Practice: Cities Near Rivers**
->
-> This session has its own step-by-step guide: what to have ready, a practice run you can do beforehand, the 50-minute plan, the click-by-click QGIS walkthrough, the graded upload, and the snags that usually come up.
->
-> **[Open the Week 10 hands-on guide &rarr;](../handson/week-10.md)**
+<div class="handson-cta" markdown="1">
+
+**Hands-On Practice**{ .handson-cta__eyebrow }
+
+**Cities Near Rivers**{ .handson-cta__title }
+
+This session has its own step-by-step guide: what to have ready, a practice run to do beforehand, the 50-minute plan, the click-by-click QGIS walkthrough, the graded upload, and the snags that usually come up.
+
+[Open the Week 10 hands-on guide →](../handson/week-10.md){ .handson-cta__button }
+
+</div>

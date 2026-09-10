@@ -11,10 +11,6 @@
 
 - United States data for the cities-near-rivers analysis (posted on Learning Suite)
 
-### Graded in-class activity
-
-Cities Near Rivers: upload a screenshot of your map showing all U.S. cities within 10 km of a major river. Students record completion on Learning Suite.
-
 <!-- runsheet -->
 **Feeds** [Lab 9](../assignments/lab-09/README.md).
 

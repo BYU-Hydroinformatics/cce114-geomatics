@@ -10,10 +10,6 @@
 - Connect QGIS to online services
 - Build a layout from live web layers
 
-### Graded in-class activity
-
-Build a map using three or more layers from the Utah ArcGIS REST services and upload a nice layout. Students record completion on Learning Suite.
-
 <!-- runsheet -->
 **Feeds** [Lab 6](../assignments/lab-06/README.md) · includes the Community and Professional Map Experience pitch.
 

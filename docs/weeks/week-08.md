@@ -50,9 +50,14 @@ GIS Fundamentals, Chapter 3 (Geodesy, Datums, Map Projections, and Coordinate Sy
 
 Playing with Projections: upload a screenshot of the same data in two different projections. Record your completion on Learning Suite.
 
-> [!TIP]
-> 🖱️ **Hands-On Practice: Playing with Projections**
->
-> This session has its own step-by-step guide: what to have ready, a practice run you can do beforehand, the 50-minute plan, the click-by-click QGIS walkthrough, the graded upload, and the snags that usually come up.
->
-> **[Open the Week 8 hands-on guide &rarr;](../handson/week-08.md)**
+<div class="handson-cta" markdown="1">
+
+**Hands-On Practice**{ .handson-cta__eyebrow }
+
+**Playing with Projections**{ .handson-cta__title }
+
+This session has its own step-by-step guide: what to have ready, a practice run to do beforehand, the 50-minute plan, the click-by-click QGIS walkthrough, the graded upload, and the snags that usually come up.
+
+[Open the Week 8 hands-on guide →](../handson/week-08.md){ .handson-cta__button }
+
+</div>
