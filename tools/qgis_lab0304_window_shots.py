@@ -18,7 +18,7 @@ import traceback
 
 if '--list' in sys.argv:
     print('lab3-toolbar-icons lab3-digitizing-toolbar lab3-campus-polygon lab3-example-layout '
-          'lab4-data-source-manager lab4-snapping-toolbar lab4-toolbar-icons '
+          'lab3-delimited-text lab4-data-source-manager lab4-snapping-toolbar lab4-toolbar-icons '
           'lab4-temple-site lab4-footprints lab4-canal-before lab4-canal-after')
     raise SystemExit
 
@@ -204,7 +204,7 @@ def main():
         log('layout export', exp.exportToImage(os.path.join(OUT, 'lab3-example-layout.png'), s),
             'area %.0f m2 = %.0f acres' % (area, acres))
 
-    elif SHOT == 'lab4-data-source-manager':
+    elif SHOT in ('lab3-delimited-text', 'lab4-data-source-manager'):
         settle(4)
         # There is no iface.actionDataSourceManager() in 3.44; find the action by its text.
         act = next((a for a in iface.mainWindow().findChildren(type(iface.actionExit()))
@@ -222,7 +222,27 @@ def main():
         else:
             dlg.resize(1180, 900)
             settle(2)
-            grab(dlg, 'lab4-data-source-manager')
+            if SHOT == 'lab3-delimited-text':
+                # Lab 3 step 13 is about the Delimited Text tab with points.csv loaded.
+                # setCurrentPage takes an int here, not a provider key, so pick the row in the
+                # source-type list by its text instead.
+                from qgis.PyQt.QtWidgets import QListWidget
+                for lw in dlg.findChildren(QListWidget):
+                    hit = next((i for i in range(lw.count())
+                                if 'delimited' in lw.item(i).text().lower()), None)
+                    if hit is not None:
+                        lw.setCurrentRow(hit)
+                        break
+                else:
+                    log('MISSING Delimited Text row in the source list')
+                settle(3)
+                from qgis.PyQt.QtWidgets import QLineEdit
+                for le in dlg.findChildren(QLineEdit):
+                    if 'file' in le.objectName().lower() and le.isVisible():
+                        le.setText(os.path.join(DATA, 'points.csv'))
+                        break
+                settle(3)
+            grab(dlg, SHOT)
 
     elif SHOT == 'lab4-snapping-toolbar':
         add('SF_Waterways.gpkg', 'Waterways')

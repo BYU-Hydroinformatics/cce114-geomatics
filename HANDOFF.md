@@ -166,11 +166,27 @@ Collected from the conversion notes at the end of each deck (search for `Convers
 - **Labs 3 and 4 (text done 2026-09-10, figures not):** renumbered, semester dropped from the header,
   Lab 4's deliverables and rubric restructured, and four data corrections made — the largest being
   that Lab 4 required ten culverts where only nine road crossings exist within a kilometer of the
-  temple site. The capture scripts (`tools/qgis_lab0304_dialog_shots.py`,
-  `tools/qgis_lab0304_window_shots.py`, `tools/reshoot_lab0304.sh`) are written and debugged but the
-  figures were **not** re-shot: Qt takes its palette from the macOS session appearance and the Mac
-  was in dark mode. **To finish: set Appearance to Light, then run `./tools/reshoot_lab0304.sh
-  <work dir>`.** Details and the data-rebuild commands are in `tools/lab0304-improvement-plan.md`.
+  temple site. The figures were **not** re-shot, because Qt takes its palette from the macOS session
+  appearance and that Mac was in dark mode.
+
+  **Picking this up on any Mac takes four commands**, and needs nothing from the machine the work
+  started on. Put the Mac in **Light** appearance first, then:
+
+  ```bash
+  export PYTHONHOME=/Applications/QGIS.app/Contents/Frameworks \
+         PROJ_LIB=/Applications/QGIS.app/Contents/Resources/qgis/proj \
+         GDAL_DATA=/Applications/QGIS.app/Contents/Resources/qgis/gdal
+  /Applications/QGIS.app/Contents/MacOS/python3.12 tools/lab0304_make_demo_data.py ~/lab34work
+  ./tools/reshoot_lab0304.sh ~/lab34work
+  python3 -m mkdocs build --strict
+  ```
+
+  The demo data rebuilds itself from sources the labs cite (the campus polygon is committed at
+  `tools/lab0304-data/byu-campus.geojson` so nothing depends on Overpass), the captures are
+  annotated automatically, and each figure lands at the filename the Markdown already references,
+  so there are no Markdown edits to make. `reshoot_lab0304.sh` refuses to run in dark mode.
+  **Read `tools/lab0304-improvement-plan.md` first** — it carries the capture-to-figure mapping,
+  the three judgment calls left open, and why the appearance cannot be scripted.
 - **Lab 4 culvert photos** (`anchored10`, `anchored11`, `anchored12`, `anchored14`) are 225 to 369 px
   wide. They are photographs, not QGIS captures, so no script replaces them; they need images Dan is
   happy to license.

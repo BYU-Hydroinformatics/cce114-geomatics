@@ -46,10 +46,8 @@ for s in $(python3 "$REPO/tools/qgis_lab0304_window_shots.py" --list); do
 done
 grep -E "saved|MISSING|EXCEPTION" "$OUT/window-shots-34.log" || true
 
-echo "== annotations =="
-python3 "$REPO/tools/lab02_annotate.py" "$OUT" "$OUT/final" 2>/dev/null || \
-  echo "  (annotate step: point tools/lab02_annotate.py at these shots, or add a lab 3/4 variant)"
+echo "== annotations, written straight into the labs' images folders =="
+python3 "$REPO/tools/lab0304_annotate.py" "$OUT" "$REPO"
 
 echo
-echo "Figures are in $OUT. Copy them into docs/assignments/lab-03/images and lab-04/images,"
-echo "update the Markdown references, then mkdocs build --strict."
+echo "Now: python3 -m mkdocs build --strict, read both pages, then commit."
