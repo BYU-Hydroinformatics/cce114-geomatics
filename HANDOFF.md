@@ -160,10 +160,20 @@ Collected from the conversion notes at the end of each deck (search for `Convers
   now the 7th edition, and the mapping is noted as pending.
 - **Final project:** the site page is a placeholder that points to the Mapping Term Project
   document on Learning Suite; converting that document into the page is the natural next step.
-- **Lab headings (Labs 3 to 11):** Lab 1 was reworded on 2026-09-08 and Lab 2 on 2026-09-09 so the
-  instructions section is "Step by Step Instructions" and its subsections are numbered, active-voice
-  steps ("Step 1: Download Data from UGRC", "Step 2: Create the Map"). Do the same for the other nine
-  labs. Check for inbound anchor links before renaming a heading; Labs 1 and 2 had none.
+- **Lab headings (Labs 5 to 11):** Labs 1 to 4 now use "Step by Step Instructions" with numbered,
+  active-voice subsection headings and one continuous step sequence. Do the same for the other seven.
+  Check for inbound anchor links before renaming a heading; Labs 1 to 4 had none.
+- **Labs 3 and 4 (text done 2026-09-10, figures not):** renumbered, semester dropped from the header,
+  Lab 4's deliverables and rubric restructured, and four data corrections made — the largest being
+  that Lab 4 required ten culverts where only nine road crossings exist within a kilometer of the
+  temple site. The capture scripts (`tools/qgis_lab0304_dialog_shots.py`,
+  `tools/qgis_lab0304_window_shots.py`, `tools/reshoot_lab0304.sh`) are written and debugged but the
+  figures were **not** re-shot: Qt takes its palette from the macOS session appearance and the Mac
+  was in dark mode. **To finish: set Appearance to Light, then run `./tools/reshoot_lab0304.sh
+  <work dir>`.** Details and the data-rebuild commands are in `tools/lab0304-improvement-plan.md`.
+- **Lab 4 culvert photos** (`anchored10`, `anchored11`, `anchored12`, `anchored14`) are 225 to 369 px
+  wide. They are photographs, not QGIS captures, so no script replaces them; they need images Dan is
+  happy to license.
 - **Lab 2 (done 2026-09-09):** rebuilt end to end. All fifteen figures re-shot in QGIS 3.44 at 2x
   and eight steps that had no figure got one, descriptive alt text throughout, the rubric split into
   four rows, and three short written questions added. A run-through with live UGRC data also turned
