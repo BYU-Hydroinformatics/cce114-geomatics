@@ -211,9 +211,10 @@ Collected from the conversion notes at the end of each deck (search for `Convers
   now the 7th edition, and the mapping is noted as pending.
 - **Final project:** the site page is a placeholder that points to the Mapping Term Project
   document on Learning Suite; converting that document into the page is the natural next step.
-- **Lab headings (Labs 5 to 11):** Labs 1 to 4 now use "Step by Step Instructions" with numbered,
-  active-voice subsection headings and one continuous step sequence. Do the same for the other seven.
-  Check for inbound anchor links before renaming a heading; Labs 1 to 4 had none.
+- **Lab headings: done for all eleven (2026-09-10).** Every lab now uses "Step by Step Instructions"
+  with numbered, active-voice subsection headings and one continuous step sequence, and none names a
+  semester. If a heading is ever renamed again, check for inbound anchor links first; there were
+  none anywhere in the eleven.
 - **Labs 3 and 4: done 2026-09-10.** Renumbered into one continuous step sequence each, semester
   dropped from both headers, Lab 4's deliverables and rubric restructured, four data corrections
   made (the largest: Lab 4 required ten culverts where only nine road crossings exist within a
@@ -352,8 +353,11 @@ Collected from the conversion notes at the end of each deck (search for `Convers
   `tools/qgis_lab02_dialog_shots.py`, `tools/qgis_lab02_window_shots.py`, and
   `tools/lab02_annotate.py`. **The same run-through is worth doing on Labs 3 to 11** — every one of
   those four bugs was invisible from reading the text.
-- **Lab images:** Labs 5 and 9 have known content issues in old screenshots (raster.utah.gov
-  wizard, a 10 km vs 5 km annotation); see `tools/image-improvements-handoff.md`.
+- **Lab images:** the two content bugs are fixed (Lab 5's marked-up layouts and Lab 9's 10 km
+  annotation that should have said 5 km). What remains there is cosmetic and web-page based, not
+  QGIS: Lab 5's raster.utah.gov wizard shots and Lab 9's NPS download page shots predate the current
+  look of those sites, though both labs' text still matches. See
+  `tools/image-improvements-handoff.md`.
 - **Repository size:** about 190 MB, nearly all of it images plus the history of the data zip. The
   38 MB `UtahCountyData.zip` moved to the `course-data-2026` GitHub release on 2026-09-10, so it no
   longer ships in the working tree, though git history still holds it. Put any further large
