@@ -61,10 +61,12 @@ page from its shapefile era (dataset is now geodatabase-only; the *text* is alre
 fixed). Also `anchored9.png` has a content bug baked into the drawing: the red note
 says "10km buffer" but the lab uses **5 km** — re-shoot or edit the annotation.
 
-**Lab 5:** raster.utah.gov wizard screenshots predate the current UI (text already
-updated: yellow Download button, "Step 2/3/4" panels — screenshots should match).
-Also both example-layout images contain Dan's red markup annotations (struck
-"Slope"/"DEM" labels) inside the drawings — re-export clean layouts.
+**Lab 5 — layouts DONE 2026-09-10:** both example-layout images used to carry Dan's red markup
+(struck "Slope"/"DEM" labels) baked into the drawing. They are now clean QGIS 3.44 exports, along
+with nine other Lab 5 figures; see `tools/qgis_lab0506_shots.py`. Still open: the raster.utah.gov
+wizard screenshots (`anchored2`, `anchored4`, `anchored8`, `image1`) predate the current look. The
+wizard's Step 1 to 4 panel names still match the lab text, checked 2026-09-10, so this is cosmetic.
+Those are web-page captures, so they need a browser rather than the QGIS scripts.
 
 **Lab 1 — DONE 2026-09-08 (TA report):** the old `anchored5.png` was a composite of the Data
 Source Manager XYZ window pasted over Layer Properties > Symbology, and it sat in the symbology

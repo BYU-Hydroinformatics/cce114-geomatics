@@ -198,6 +198,24 @@ Collected from the conversion notes at the end of each deck (search for `Convers
   scriptable and must be set to Light by hand; `reshoot_lab0304.sh` refuses to run in dark mode.
   `tools/lab0304-improvement-plan.md` has the capture-to-figure mapping and the short list of
   figures still made by hand (context menus, a tooltip, and Lab 4's two annotated aerial views).
+- **Labs 5 and 6: done 2026-09-10.** Semester dropped from both headers, Lab 6's QGIS version
+  pinned, both renumbered under active-voice step headings (Lab 5 runs 1 to 56, Lab 6 1 to 23), and
+  **eleven Lab 5 figures re-shot in QGIS 3.44**. That clears the oldest item in
+  `tools/image-improvements-handoff.md`: the two Lab 5 example layouts carried Dan's red
+  strike-through markup ("Slope" struck out on the elevation layout, "DEM" on the slope layout) and
+  are now clean exports. Lab 5 step 12 also promised a figure it never had; it has one now.
+
+  Verified against live data rather than assumed: each DEM tile really is a 4,000 x 4,000 grid of
+  5 m cells, so the lab's "roughly 96 million elevation values" across six tiles is right; the UGRC
+  REST service really does carry 892 datasets, matching Lab 6's "nearly 900"; and the DEM reads
+  about 1,330 m over Utah Lake against a published 1,368 m, so Lab 5's warning that the number will
+  disagree now names the size of the gap.
+
+  Rebuild and re-shoot with `tools/lab0506_make_demo_data.py` then `tools/qgis_lab0506_shots.py`
+  (about 145 MB of downloads); the commands are printed at the end of the data builder. Same two
+  appearance rules as Labs 3 and 4: the script's `--profile lab56shots` handles QGIS's own theme,
+  and the Mac has to be in Light appearance by hand.
+
 - **Lab 4 culvert photos** (`anchored10`, `anchored11`, `anchored12`, `anchored14`) are 225 to 369 px
   wide. They are photographs, not QGIS captures, so no script replaces them; they need images Dan is
   happy to license.

@@ -2,7 +2,7 @@
 
 **Civil and Construction Engineering 114 — Geomatics**
 
-Winter 2026 · Dr. Dan Ames
+Dr. Dan Ames · Brigham Young University
 
 *Lab assignment developed by Nathan Godfrey and Dr. Ames*
 
@@ -46,9 +46,9 @@ This scenario is less hypothetical than you might think. The 80 MW Elektron Sola
 
 **REVIEW THE deliverables section at the end of the document before continuing. You should always do this before starting any of your labs. It will help you make sense of the lab and not waste time.**
 
-## **Instructions**
+## **Step by Step Instructions**
 
-### **Adding a Raster to the Project**
+### **Step 1: Download the DEM Tiles and Add Them to QGIS**
 
 1. Using the Utah GIS website from past labs, find the “Elevation” category  
    ![Elevation category tile on the UGRC SGID data page](images/image1.png)  
@@ -73,7 +73,9 @@ This scenario is less hypothetical than you might think. The 80 MW Elektron Sola
 11. Select all 6, then click “Open,” then “Add.”  
 12. Zoom in on Utah Lake and you should be able to see the rasters like this:
 
-### **Merging Raster Layers**
+![QGIS window showing the six grayscale DEM tiles added over the Google Satellite basemap, covering Utah Lake and Provo](images/tiles-added.jpg)
+
+### **Step 2: Merge the Tiles Into One Raster**
 
 13. Right-click on the toolbar. Find and check the “Processing Toolbox Panel”  
 14. You will be using a lot of this toolbox later, but for now, search for “merge raster” and open the “Merge” tool under GDAL by double-clicking on it.  
@@ -93,7 +95,7 @@ This scenario is less hypothetical than you might think. The 80 MW Elektron Sola
 18. There should be a new layer in the Layers panel with your chosen name. This means it worked, and you can close the Merge tool window.  
 19. To speed up QGIS, remove the unneeded raster layers by right-clicking each and selecting “Remove Layer”. The only DEM that you need now is the merged layer. You may also close the Processing Toolbox if you wish.
 
-### **Editing Raster Symbology**
+### **Step 3: Symbolize the Elevation**
 
 20. Double-click on the merged raster layer in the Layers panel and find the “Symbology” tab.  
 21. Change the “Render type” dropdown to “Hillshade” and click “Apply.” Notice the change it makes on your map. Try the contour option and see how it’s different.   
@@ -101,7 +103,7 @@ This scenario is less hypothetical than you might think. The 80 MW Elektron Sola
 23. Change the “Color ramp” to any color scheme you like and press OK.  
 24. Your map should look something like this (with the color scheme that you chose):  
 
-![QGIS window showing the merged DEM rendered in a green-to-red singleband pseudocolor ramp over the satellite basemap](images/anchored6.png)
+![QGIS window showing the merged DEM rendered in a green-to-red singleband pseudocolor ramp over the satellite basemap](images/anchored6.jpg)
 
 25. Right-click on your raster layer in the Layers panel, and select “Duplicate Layer”  
 26. Change the duplicate layer to the “Hillshade” render type in the Symbology menu. Press OK and make sure it is underneath your original “Singleband pseudocolor” layer  
@@ -109,12 +111,12 @@ This scenario is less hypothetical than you might think. The 80 MW Elektron Sola
 
 28. Change the transparency to 40-50%, click OK, and watch the magic of combining the two layer types:
 
-![QGIS window showing the semi-transparent pseudocolor elevation layer combined with the hillshade layer, giving shaded 3D-looking terrain](images/anchored7.png)
+![QGIS window showing the semi-transparent pseudocolor elevation layer combined with the hillshade layer, giving shaded 3D-looking terrain](images/anchored7.jpg)
 
 > [!TIP]
 > **This example** shows how one might display data with useful symbology that is also easy to intuitively understand. While you may need only one layer for specific purposes, this creative visualization can provide a clearer perspective of the area’s elevation than any one layer, even satellite imagery. Take a moment to check and uncheck various layers in the Layers panel, and see how this new combination improves your understanding. Without the elevation colors, can you tell if one peak is higher than another? Without the hillshade or satellite imagery, how easy is it to see Utah Lake?
 
-### **Adding City Names**
+### **Step 4: Label the Cities and Build the Elevation Layout**
 
 29. To add city names to the map, follow this link: [https://opendata.gis.utah.gov/datasets/utah-city-and-town-locations/about](https://opendata.gis.utah.gov/datasets/utah-city-and-town-locations/about) and download the shapefile data.  
 30. Add it to your project  
@@ -122,9 +124,9 @@ This scenario is less hypothetical than you might think. The 80 MW Elektron Sola
 32. Add labels instead, with text/buffer settings that make the city names easy to read  
 33. Prepare and export a layout with all the required elements, showing the full elevation view (color and hillshade layers) with the city names on top. It should look something like this:
 
-![Example elevation layout titled “Utah Valley Slope DEM” (with “Slope” struck out in red), showing the pseudocolor-plus-hillshade elevation view with city labels, north arrow, scale bar, legend, and citations](images/elevation-layout.png)
+![Example elevation layout titled “Utah Valley Elevation”, showing the pseudocolor elevation over hillshade with city labels, legend, north arrow, scale bar, and citations](images/elevation-layout.jpg)
 
-### **Finding Altitude/Elevation from a DEM**
+### **Step 5: Read Elevations off the DEM**
 
 34. Click on the ![Identify Features icon](images/image3.png) “Identify Features” tool in the top toolbar. This tool lets you click on the map for information about an item. Use it to **explore** the map.  
 
@@ -133,14 +135,14 @@ This scenario is less hypothetical than you might think. The 80 MW Elektron Sola
 
 35. A side panel should appear with a number value labeled “Band 1.” This is the elevation in meters (that's the unit UGRC publishes these DEMs in — QGIS just reports the cell value).  
 36. Write down the elevation of Utah Lake.  
-37. (Heads up: if you Google Utah Lake's elevation you'll get about 1,368 m / 4,489 ft, and your DEM will probably disagree. Auto-correlated DEMs are built by matching overlapping aerial photos, which works poorly over open water — UGRC even warns that anomalies are expected in this dataset. Write down what your DEM says, and don't panic.)  
+37. (Heads up: if you Google Utah Lake's elevation you'll get about 1,368 m / 4,489 ft, and your DEM will disagree — over the open water it reads around 1,330 m, roughly 37 m low. Auto-correlated DEMs are built by matching overlapping aerial photos, which works poorly over featureless water, and UGRC warns on the product page that anomalies are expected in this dataset. Write down what your DEM says, and don't panic. Being able to say *why* a number is wrong is worth more than the number.)  
 38. Uncheck the hillshade layer in the Layers panel, and use the transparent elevation raster over the satellite map to find BYU. (You may want to swap out the Google Satellite layer for the Google Satellite Hybrid layer from Lab 1, to help you find locations)  
 39. Write down the elevation of the Clyde/EB.  
 40. Pan over to the Y on the mountain (directly east of campus) and write down the elevation at the top of the Y.
 
 ![QGIS window zoomed to the Y on Y Mountain with the Identify Results panel open and a red arrow labeled “Answer here” pointing to the Band 1 value](images/identify-y.png)
 
-### **Using the Slope Tool**
+### **Step 6: Run the Slope Tool**
 
 41. Reselect the “Pan Map” tool (white hand) and close the “Identify Results” panel  
 42. Right-click on the toolbar, and check the “Processing Toolbox Panel” from earlier  
@@ -156,9 +158,9 @@ This scenario is less hypothetical than you might think. The 80 MW Elektron Sola
 
 46. Close the Slope tool window when it finishes. You should now have another layer, which shows slope instead of elevation. It should look something like this:
 
-![QGIS window showing the slope raster in grayscale over the satellite basemap, with flat Utah Lake and valley floor in black and steep mountain slopes in lighter grays](images/anchored10.png)
+![QGIS window showing the slope raster in grayscale over the satellite basemap, with flat Utah Lake and valley floor in black and steep mountain slopes in lighter grays](images/anchored10.jpg)
 
-### **Exporting a Raster Layer**
+### **Step 7: Export the Slope Raster and Build the Slope Layout**
 
 47. You’ve now prepared the slope file that your boss asked for\! Right-click on the slope layer in the Layers panel, and navigate to *Export\>\>Save As…*  
 
@@ -183,7 +185,7 @@ This scenario is less hypothetical than you might think. The 80 MW Elektron Sola
 
 56. Change the title to something appropriate, and export this second layout 
 
-![Example slope layout titled “Utah Valley Slope DEM” (with “DEM” struck out in red and replaced by “Raster”), showing the grayscale slope raster with city labels, north arrow, scale bar, legend, and citations](images/slope-layout.png)
+![Example slope layout titled “Utah Valley Slope”, showing the grayscale slope raster with city labels, legend reading Slope (degrees), north arrow, scale bar, and citations](images/slope-layout.jpg)
 
 ## **Deliverables**
 

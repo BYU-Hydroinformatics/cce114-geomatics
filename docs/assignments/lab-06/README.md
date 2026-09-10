@@ -2,7 +2,7 @@
 
 **Civil and Construction Engineering 114 — Geomatics**
 
-Winter 2026 · Dr. Dan Ames
+Dr. Dan Ames · Brigham Young University
 
 *Lab assignment developed by Nathan Godfrey and Dr. Ames*
 
@@ -70,15 +70,15 @@ Be creative, and if you want to do something ridiculous like answer the question
 
 ## **Software and Data**
 
-* For this lab, we will use the GIS software application, QGIS (also known as Quantum GIS). This is a free/open source GIS package that runs on Windows, Mac, and Linux. The software is pre-installed on the computers in the Clyde Building 234 computer lab. You can also download it and install it on your own computer from this website: [https://www.qgis.org/](https://www.qgis.org/).  
+* For this lab, we will use the GIS software application, QGIS (also known as Quantum GIS). This is a free/open source GIS package that runs on Windows, Mac, and Linux. The software is pre-installed on the computers in the Clyde Building 234 computer lab. You can also download it and install it on your own computer from this website: [https://www.qgis.org/](https://www.qgis.org/). We will be using this version throughout the course: *“Long Term Version 3.44 (LTR)”*.  
 * There are no custom data downloads for this lab. Follow the instructions to load data directly from the State of Utah GIS website via web services: [https://gis.utah.gov/products/sgid/](https://gis.utah.gov/products/sgid/)  
 * Imagery from Google will also be used as a base layer (or a different base layer of your choice).
 
 **REVIEW THE deliverables section at the end of the document before continuing. You should always do this before starting any of your labs. It will help you make sense of the lab and not waste time.**
 
-## **Instructions**
+## **Step by Step Instructions**
 
-### **Exploring UGRC Datasets**
+### **Step 1: Explore the UGRC Datasets**
 
 1. Go to the UGRC site we’ve been using: [https://gis.utah.gov/products/sgid/](https://gis.utah.gov/products/sgid/)   
 2. Click the "Browse Our Data" link to view available GIS data for the State of Utah.  
@@ -100,7 +100,7 @@ Be creative, and if you want to do something ridiculous like answer the question
 > [!NOTE]
 > This index lets you search a larger collection of data that also includes items from the DWR, UDOT, and other state agencies. As long as you can still find the required information and files, feel free to use any of these datasets for this assignment.
 
-### **Data Summary Table**
+### **Step 2: Choose Three Datasets and Write Your Question**
 
 6. Choose your 3 datasets and a question they help answer, and create a table with them  
 7. Include in your table:  
@@ -111,7 +111,7 @@ Be creative, and if you want to do something ridiculous like answer the question
    5. The methods available for accessing the data  
 8. Write an introductory paragraph explaining your question and chosen datasets. What is the question you are trying to answer? How will you use each dataset in answering your question?
 
-### **Connecting to and Adding Data via Web Service**
+### **Step 3: Connect to the Web Service and Add the Data**
 
 > [!TIP]
 > In the following steps, I’m going to make a map that answers the question “Is there a correlation between Utah’s oil/gas field locations and recent geologic activity?” **In your project, find and use different data to answer your own question.**
@@ -123,7 +123,7 @@ Be creative, and if you want to do something ridiculous like answer the question
 13. Paste this UGRC services link into the URL field (this is the web service that hosts the SGID data you browsed in the index): [https://services1.arcgis.com/99lidPhWCzftIe9K/ArcGIS/rest/services](https://services1.arcgis.com/99lidPhWCzftIe9K/ArcGIS/rest/services)  
 14. In “Authentication,” select the “Basic” tab, and enter “ugrc” as both the username and password (these services are actually public, so if your connection fails later, try again leaving this set to “No Authentication”)  
 15. Click “OK” and then “Connect” (remember that sometimes the Data Source Manager can drop behind the main QGIS window, check there if it disappears)  
-16. You should now have a new item under ArcGIS Rest Servers in the Data Source Manager. Expand the dropdown to see the full list of datasets that you’ve connected to — as of this writing, nearly 900 of them, all served live from UGRC’s servers.
+16. You should now have a new item under ArcGIS Rest Servers in the Data Source Manager. Expand the dropdown to see the full list of datasets that you’ve connected to — 892 of them when this was last checked, all served live from UGRC’s servers.
 
 ![Data Source Manager with the Utah SGID ArcGIS REST Server connection expanded, listing its datasets](images/anchored6.png)
 
@@ -132,14 +132,14 @@ Be creative, and if you want to do something ridiculous like answer the question
 > [!WARNING]
 > Most of the data in the UGRC library will be under the first link, but it is not all stored under that connection. **If you have more trouble** with finding the data that you want through the web service connection, do not just download it, **ask a TA** or Dr. Ames for help instead\!
 
-18. If a dataset you found by searching the index is **not appearing in this list**, it may be stored in a different place (in testing this lab, this happened with the Utah Oil and Gas Fields data). To get around this, repeat steps 10-15 with this link ([https://services.arcgis.com/ZzrwjTRez6FJiOq4/ArcGIS/rest/services](https://services.arcgis.com/ZzrwjTRez6FJiOq4/ArcGIS/rest/services)) and a different connection name like “Utah SGID 2”  
+18. If a dataset you found by searching the index is **not appearing in this list**, it may be stored in a different place (in testing this lab, this happened with the Utah Oil and Gas Fields data). To get around this, repeat steps 10-15 with this link ([https://services.arcgis.com/ZzrwjTRez6FJiOq4/ArcGIS/rest/services](https://services.arcgis.com/ZzrwjTRez6FJiOq4/ArcGIS/rest/services)) and a different connection name like “Utah SGID 2”. That second server carries a much larger catalog, over two thousand services, so if something is missing from the first connection it is very likely here.  
 19. Also, select a basemap that is useful to your project’s purpose. For this example, I chose the Google Satellite Hybrid.  
 
 ![Three stacked Data Source Manager windows searching the Utah SGID connections for fault, volcanic, and oil datasets, with QuaternaryFaults, QuaternaryVolcanicVents, and Utah Oil and Gas Fields highlighted](images/anchored7.png)
 
 20. You may add more layers, but only 3 are necessary to get full points. I ended up adding Utah’s state boundaries in the example (easily found by typing “bound” in the search bar). 
 
-### **Designing a Useful Map and Layout**
+### **Step 4: Design the Map and Layout**
 
 21. Modify the symbology from the default colors and outlines to symbols that make sense for the data layers you have added, ensuring the map is clearly readable.
 
@@ -149,9 +149,9 @@ Be creative, and if you want to do something ridiculous like answer the question
 
 ![Example map layout titled Utah Oil/Gas Fields vs Quaternary Tectonic and Volcanic Activity, with legend, scale bar, north arrow, and citations](images/layout-example.png)
 
-### **Writing a Conclusion**
+### **Step 5: Write Your Conclusion**
 
-23. Write a brief conclusion paragraph indicating which datasets you used and **what purpose your final map serves** (e.g., emergency response, recreation planning, real estate development, environmental analysis).
+23. Write a brief conclusion paragraph indicating which datasets you used and **what purpose your final map serves** (e.g., emergency response, recreation planning, real estate development, environmental analysis). If your map did not settle your question, say so and say what data you would need next — a negative result you can explain is worth full marks here.
 
 ## **Deliverables**
 
