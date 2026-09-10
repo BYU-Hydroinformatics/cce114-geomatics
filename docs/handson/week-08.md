@@ -28,7 +28,7 @@
 
 **What you need.** QGIS 3.44 LTR and any wide-area polygon layer: the Tissot indicatrix layer if
 you have it, the Week 3 United States states, or failing both the Utah County boundary from
-[UtahCountyData.zip](https://byu-hydroinformatics.github.io/cce114-geomatics/lectures/data/UtahCountyData.zip). Start with the project CRS at **EPSG:4326**.
+[UtahCountyData.zip](https://github.com/BYU-Hydroinformatics/cce114-geomatics/releases/download/course-data-2026/UtahCountyData.zip). Start with the project CRS at **EPSG:4326**.
 
 Have five EPSG codes to hand: **4326** WGS 84 in degrees, **3857** Web Mercator, **5070** NAD83
 CONUS Albers and equal area, **26912** NAD83 UTM zone 12N, and **3566** NAD83 Utah Central in US

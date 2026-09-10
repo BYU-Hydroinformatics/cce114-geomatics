@@ -126,9 +126,14 @@ The `<!-- thursday-notes -->` marker is gone; the run sheets now sit below `<!--
 the hands-on pages. Session `##` headings on the week pages did not change, so the Learning Suite
 links fixed on 2026-09-09 still resolve.
 
-**Data.** `docs/lectures/data/UtahCountyData.zip` (38 MB: county boundary, major roads, cellular
-towers, DEM) is published for the Day 2 demo and Thursday sessions. Lab 4 ships a GeoPackage
-fallback in its folder.
+**Data.** `UtahCountyData.zip` (38 MB: county boundary, major roads, cellular towers, DEM) is
+attached to the **`course-data-2026` GitHub release** rather than committed, so clones stay small;
+the Day 2 deck, the week pages and the hands-on pages all link to that asset. Every lab's own data
+lives in `docs/assignments/lab-NN/data/` and ships with the site. To add another large file, run
+`gh release upload course-data-2026 <file>` and link to the asset URL the release gives you.
+Release assets are public and unmetered. Note that removing the zip from the working tree does not
+shrink `.git`, which still carries it in history; that would need a history rewrite, which nobody
+should do casually on a published repository.
 
 ## How things are generated
 
@@ -183,7 +188,7 @@ Collected from the conversion notes at the end of each deck (search for `Convers
 - **Two data bundles are not on the site (blocks rehearsal).** The Week 3 hands-on session needs
   *United States Shapefiles.zip* and the Week 10 session needs *United States.zip*; both live only
   on Learning Suite, so those two sessions cannot be practiced from the site the way the others
-  can. Publishing them under `docs/lectures/data/` alongside `UtahCountyData.zip` is the single
+  can. Attaching them to the `course-data-2026` GitHub release alongside `UtahCountyData.zip` is the single
   highest-value remaining fix. Both hands-on pages carry a `<!-- TODO -->` at the spot.
 - **The hands-on pages have no figures.** All eleven walkthroughs are text only, while the labs are
   heavily illustrated. Roughly four to six QGIS 3.44 captures per session would let a novice
@@ -349,8 +354,10 @@ Collected from the conversion notes at the end of each deck (search for `Convers
   those four bugs was invisible from reading the text.
 - **Lab images:** Labs 5 and 9 have known content issues in old screenshots (raster.utah.gov
   wizard, a 10 km vs 5 km annotation); see `tools/image-improvements-handoff.md`.
-- **Repository size:** the repo is about 190 MB because of images and the data zip. Fine for now;
-  further datasets should go to GitHub Releases or Git LFS.
+- **Repository size:** about 190 MB, nearly all of it images plus the history of the data zip. The
+  38 MB `UtahCountyData.zip` moved to the `course-data-2026` GitHub release on 2026-09-10, so it no
+  longer ships in the working tree, though git history still holds it. Put any further large
+  dataset on that release rather than in `docs/`.
 
 ## Where the source material is
 

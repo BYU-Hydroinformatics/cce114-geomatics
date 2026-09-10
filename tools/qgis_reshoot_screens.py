@@ -6,7 +6,7 @@
 # Widgets are captured with QWidget.render() at 2x (Retina) so no screen-recording permission
 # is needed; layouts are exported with QgsLayoutExporter.
 #
-# Inputs: the UtahCountyData folder (docs/lectures/data/UtahCountyData.zip, unzipped) and four
+# Inputs: the UtahCountyData folder (unzipped from the course-data-2026 GitHub release) and four
 # GeoJSON downloads from UGRC (county boundaries, cities and towns, municipal boundaries,
 # PreK-12 schools; see the curl commands in tools/image-improvements-handoff.md). Set the
 # OUT / UCD / UGRC paths below to writable folders outside ~/Desktop, ~/Documents, ~/Downloads.

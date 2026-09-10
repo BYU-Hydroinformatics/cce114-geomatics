@@ -26,7 +26,7 @@
 > Twenty minutes, mostly filling in a dialog. The value is knowing where each of the eight
 > metadata pages lives before you are standing at the projector.
 
-**What you need.** QGIS 3.44 LTR, the county boundary from [UtahCountyData.zip](https://byu-hydroinformatics.github.io/cce114-geomatics/lectures/data/UtahCountyData.zip), a UGRC
+**What you need.** QGIS 3.44 LTR, the county boundary from [UtahCountyData.zip](https://github.com/BYU-Hydroinformatics/cce114-geomatics/releases/download/course-data-2026/UtahCountyData.zip), a UGRC
 product page open at [gis.utah.gov/products/sgid](https://gis.utah.gov/products/sgid/), and one
 thin [data.gov](https://www.data.gov) dataset page for contrast. Find that thin one in advance;
 hunting for a bad example live wastes five minutes.

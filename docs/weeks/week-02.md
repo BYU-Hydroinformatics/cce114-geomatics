@@ -23,7 +23,7 @@
 
 ### Materials
 
-- UtahCountyData.zip: [download](https://byu-hydroinformatics.github.io/cce114-geomatics/lectures/data/UtahCountyData.zip)
+- UtahCountyData.zip: [download](https://github.com/BYU-Hydroinformatics/cce114-geomatics/releases/download/course-data-2026/UtahCountyData.zip)
 
 ### In-class activity
 
@@ -59,7 +59,7 @@ GIS Fundamentals, Chapter 2 (Data Models)
 
 ### Materials
 
-- UtahCountyData.zip: [download](https://byu-hydroinformatics.github.io/cce114-geomatics/lectures/data/UtahCountyData.zip)
+- UtahCountyData.zip: [download](https://github.com/BYU-Hydroinformatics/cce114-geomatics/releases/download/course-data-2026/UtahCountyData.zip)
 
 ### In-class activity
 

@@ -62,7 +62,7 @@ Dr. Dan Ames and Dr. James Halgren
 
 ![bg right:33% w:94%](images/dm-quick-look-layers.jpg)
 
-- Unzip [UtahCountyData.zip](https://byu-hydroinformatics.github.io/cce114-geomatics/lectures/data/UtahCountyData.zip) and drag in each layer:
+- Unzip [UtahCountyData.zip](https://github.com/BYU-Hydroinformatics/cce114-geomatics/releases/download/course-data-2026/UtahCountyData.zip) and drag in each layer:
   - **UtahCountyBoundary**: one polygon
   - **UtahCountyMajorRoads**: polylines, no area
   - **UtahCountyCellularTowers**: just points
@@ -641,7 +641,7 @@ Each pixel (raster cell) is stored as a hexadecimal number that tells the screen
 
 ![bg right:40% w:90%](images/dm-demo-point.png)
 
-- Create a map in QGIS with the [Utah County data](https://byu-hydroinformatics.github.io/cce114-geomatics/lectures/data/UtahCountyData.zip)
+- Create a map in QGIS with the [Utah County data](https://github.com/BYU-Hydroinformatics/cce114-geomatics/releases/download/course-data-2026/UtahCountyData.zip)
 - Create a new **vector layer**, choosing the right geometry type
 - Use the editing toolbar to add points and edit vertices
 - Note the vocabulary: a *vector layer* is a **feature class** in a geodatabase, or a **shapefile** in a folder
@@ -656,7 +656,7 @@ Each pixel (raster cell) is stored as a hexadecimal number that tells the screen
 
 - Read Chapter 2, *Data Models*, in *GIS Fundamentals* (Bolstad & Manson)
 - Take the open-book quiz on Learning Suite
-- Bring your laptop with QGIS installed on Thursday, and download [UtahCountyData.zip](https://byu-hydroinformatics.github.io/cce114-geomatics/lectures/data/UtahCountyData.zip) beforehand
+- Bring your laptop with QGIS installed on Thursday, and download [UtahCountyData.zip](https://github.com/BYU-Hydroinformatics/cce114-geomatics/releases/download/course-data-2026/UtahCountyData.zip) beforehand
 - Current lab: see the [Assignments page](https://byu-hydroinformatics.github.io/cce114-geomatics/assignments/)
 - Questions? Office hours: [calendly.com/dan-ames/office-hours](https://calendly.com/dan-ames/office-hours)
 

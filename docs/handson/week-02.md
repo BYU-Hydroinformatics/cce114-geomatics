@@ -10,7 +10,7 @@
 
 ### Materials
 
-- UtahCountyData.zip: [download](https://byu-hydroinformatics.github.io/cce114-geomatics/lectures/data/UtahCountyData.zip)
+- UtahCountyData.zip: [download](https://github.com/BYU-Hydroinformatics/cce114-geomatics/releases/download/course-data-2026/UtahCountyData.zip)
 
 <!-- runsheet -->
 **Feeds** [Lab 1](../assignments/lab-01/README.md).
@@ -21,7 +21,7 @@
 | --- | --- |
 | **Goal** | Every student leaves with a QGIS project that has a basemap, the four Utah County layers, and a point layer they created and edited themselves. |
 | **Why this week** | Tuesday named the data models (vector point, line, polygon; raster). Today students see each one as a real layer, and they learn the two moves Lab 1 depends on: adding a web basemap and adding downloaded data. |
-| **Students bring** | Laptop with QGIS 3.44 LTR. [UtahCountyData.zip](https://byu-hydroinformatics.github.io/cce114-geomatics/lectures/data/UtahCountyData.zip) downloaded and unzipped (38 MB; have them start the download while the devotional happens). |
+| **Students bring** | Laptop with QGIS 3.44 LTR. [UtahCountyData.zip](https://github.com/BYU-Hydroinformatics/cce114-geomatics/releases/download/course-data-2026/UtahCountyData.zip) downloaded and unzipped (38 MB; have them start the download while the devotional happens). |
 | **Graded item** | *In Class Activity: First Map: Utah County* (5 points). Upload a screenshot. |
 
 ### Practice run before class
@@ -30,7 +30,7 @@
 > Twenty minutes on your own laptop and you will have done every move the class does. Work
 > through it once and the session runs itself.
 
-**What you need.** QGIS 3.44 LTR and [UtahCountyData.zip](https://byu-hydroinformatics.github.io/cce114-geomatics/lectures/data/UtahCountyData.zip), unzipped to a folder with a
+**What you need.** QGIS 3.44 LTR and [UtahCountyData.zip](https://github.com/BYU-Hydroinformatics/cce114-geomatics/releases/download/course-data-2026/UtahCountyData.zip), unzipped to a folder with a
 short path such as `C:\GIS\UtahCounty` or `~/GIS/UtahCounty`. On macOS keep it out of Desktop,
 Documents and Downloads; QGIS cannot read those without extra permission.
 

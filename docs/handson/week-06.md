@@ -18,7 +18,7 @@
 | --- | --- |
 | **Goal** | Students read a raster's properties, style a DEM three ways, pull an elevation profile across a valley, and run one raster analysis tool. |
 | **Why this week** | Tuesday students did raster analysis by hand on engineering paper. Today the same ideas run on a real DEM. Lab 5 merges DEM tiles, styles them, reads elevations, and computes slope. Concepts Exam 1 closes in the Testing Center next Wednesday, so the last 15 minutes are the review Kahoot. |
-| **Students bring** | Laptop with QGIS 3.44 and the Utah County DEM from [UtahCountyData.zip](https://byu-hydroinformatics.github.io/cce114-geomatics/lectures/data/UtahCountyData.zip) (they downloaded it in Week 2). A phone for Kahoot. |
+| **Students bring** | Laptop with QGIS 3.44 and the Utah County DEM from [UtahCountyData.zip](https://github.com/BYU-Hydroinformatics/cce114-geomatics/releases/download/course-data-2026/UtahCountyData.zip) (they downloaded it in Week 2). A phone for Kahoot. |
 | **Graded item** | *In Class Activity: DEM Profile* (5 points). Upload a screenshot showing a pseudocolor DEM with an elevation profile. |
 | **Feeds** | Lab 5: Working with Raster Data. Due Saturday. |
 
@@ -27,7 +27,7 @@
 > [!TIP]
 > Twenty minutes. The elevation profile is the part worth rehearsing; the rest is symbology.
 
-**What you need.** QGIS 3.44 LTR and the DEM from [UtahCountyData.zip](https://byu-hydroinformatics.github.io/cce114-geomatics/lectures/data/UtahCountyData.zip), plus the county
+**What you need.** QGIS 3.44 LTR and the DEM from [UtahCountyData.zip](https://github.com/BYU-Hydroinformatics/cce114-geomatics/releases/download/course-data-2026/UtahCountyData.zip), plus the county
 boundary to drape over it as an outline.
 
 **Do this, in order.**

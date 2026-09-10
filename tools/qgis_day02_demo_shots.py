@@ -1,7 +1,8 @@
 # Day 2 demo screenshots: rebuild the "Utah County in QGIS" project and have QGIS 3.44 grab
 # its own main window. Runs INSIDE QGIS at launch, from a terminal:
 #
-#   cd <scratch dir>; unzip docs/lectures/data/UtahCountyData.zip -d ucd
+#   cd <scratch dir>; curl -LO https://github.com/BYU-Hydroinformatics/cce114-geomatics/releases/download/course-data-2026/UtahCountyData.zip
+#   unzip UtahCountyData.zip -d ucd
 #   DEMO_DIR="$PWD" SHOT=all-five /Applications/QGIS.app/Contents/MacOS/QGIS --nologo \
 #       --code /path/to/qgis_day02_demo_shots.py
 #
