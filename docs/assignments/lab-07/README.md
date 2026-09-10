@@ -1,5 +1,7 @@
 # Lab 7: Projections and Coordinate Systems
 
+**Lab**{ .badge .badge-lab } · Due Saturday of Week 8, 11:59 pm · Prepared for by the [Week 8 hands-on session](../../handson/week-08.md)
+
 **Civil and Construction Engineering 114 — Geomatics**
 
 Dr. Dan Ames · Brigham Young University
@@ -49,7 +51,7 @@ It’s a year from now. You see a world map (Mercator Projection) on your friend
 ## **Software and Data**
 
 * For this lab, we will use the GIS software application, QGIS (also known as Quantum GIS). This is a free/open source GIS package that runs on Windows, Mac, and Linux operating systems. The software is pre-installed in the Clyde Building 234 computer lab. You can also download it and install it on your own computer from this website: [https://www.qgis.org/](https://www.qgis.org/). We will be using this version throughout the course: “Long Term Version” 3.44 (LTR)*.*   
-* There are custom data downloads for this lab. Follow the instructions to download data from Learning Suite. This data comes from past lab assignments.  
+* This lab has two small data downloads, both linked from the steps below and hosted with the course site rather than on Learning Suite.  
 * Imagery from Google will also be used as a base layer. 
 
 **REVIEW THE deliverables section at the end of the document before continuing. You should always do this before starting any of your labs. It will help you make sense of the lab and not waste time.**
@@ -59,8 +61,8 @@ It’s a year from now. You see a world map (Mercator Projection) on your friend
 ### **Step 1: Build the Four-Projection Layout**
 
 1. First, open a new QGIS project and change the CRS to the usual EPSG:26912 using the button in the bottom right corner.  
-2. Download the data folder for the lab from the Lab 7 assignment on Learning Suite. Remember not to use a network drive (NO J: DRIVE\!), but save the file locally.  
-3. Extract (unzip) the folder and add the new files to your project. Do this by dragging the entire unzipped folder into the layers panel. Click “OK” on any of the “Select Transformation” windows that pop up.  
+2. Download [lab7\_projections.gpkg](data/lab7_projections.gpkg). Remember not to use a network drive (NO J: DRIVE\!), but save the file locally.  
+3. Drag the file straight into the Layers panel. It is a GeoPackage, so there is nothing to unzip: two layers appear, **StateBoundary** and **TissotIndicatrix**. Click “OK” on any of the “Select Transformation” windows that pop up.  
 4. Your map should look something like this, with US state boundaries and **Tissot circles.**
 
 ![QGIS window in EPSG:26912 showing US state boundaries surrounded by Tissot indicatrix circles](images/anchored2.png)
@@ -104,7 +106,7 @@ It’s a year from now. You see a world map (Mercator Projection) on your friend
 
 15. Create a new project, and set the CRS to the usual EPSG:26912 projection  
 16. Set a basemap  
-17. Download the “mystery points” CSV (from the Lab 7 info on Learning Suite), and use the “Delimited Text” tab in the Data Source Manager to add it to the map. Leave all the default options, just ensure it is using our usual “EPSG:26912” for the “Geometry CRS” (see below).  
+17. Download [mystery\_points.csv](data/mystery_points.csv), and use the “Delimited Text” tab in the Data Source Manager to add it to the map. Leave all the default options, just ensure it is using our usual “EPSG:26912” for the “Geometry CRS” (see below).  
 18. Then, add it again but change the “Geometry CRS” to “EPSG:26911 \- NAD83 / UTM zone 11N”
 
 ![Data Source Manager Delimited Text tab with the mystery points CSV loaded, with the Delimited Text tab and the Geometry CRS dropdown highlighted](images/dsm-delimited-text.png)

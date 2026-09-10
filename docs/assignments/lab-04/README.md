@@ -1,5 +1,7 @@
 # Lab 4: Changing, Editing, and Fixing GIS Data
 
+**Lab**{ .badge .badge-lab } · Due Saturday of Week 5, 11:59 pm · Prepared for by the [Week 5 hands-on session](../../handson/week-05.md)
+
 **Civil and Construction Engineering 114 — Geomatics**
 
 Dr. Dan Ames · Brigham Young University

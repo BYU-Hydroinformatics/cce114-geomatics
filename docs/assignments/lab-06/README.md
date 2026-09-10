@@ -1,5 +1,7 @@
 # Lab 6: Spatial Data Web Services
 
+**Lab**{ .badge .badge-lab } · Due Saturday of Week 7, 11:59 pm · Prepared for by the [Week 7 hands-on session](../../handson/week-07.md)
+
 **Civil and Construction Engineering 114 — Geomatics**
 
 Dr. Dan Ames · Brigham Young University

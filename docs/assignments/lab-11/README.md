@@ -1,5 +1,7 @@
 # Lab 11: Workflows — Walmart Site Selection
 
+**Lab**{ .badge .badge-lab } · Due Saturday of Week 12, 11:59 pm · Prepared for by the [Week 12 hands-on session](../../handson/week-12.md)
+
 **Civil and Construction Engineering 114 — Geomatics**
 
 Dr. Dan Ames · Brigham Young University

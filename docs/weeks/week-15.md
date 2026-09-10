@@ -7,7 +7,7 @@
 
 ## Tuesday — Final Project Presentations, Part 2, and Exam Review
 
-*Day 28 · Class session*
+**Class Session**{ .badge .badge-session } · *Day 28*
 
 ### Topics
 
@@ -21,7 +21,7 @@
 
 ## Thursday — Last Day of Class
 
-*Day 29 · Class session*
+**Class Session**{ .badge .badge-session } · *Day 29*
 
 ### Topics
 

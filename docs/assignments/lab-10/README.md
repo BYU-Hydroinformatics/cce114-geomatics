@@ -1,5 +1,7 @@
 # Lab 10: Geoplanning — Domes for Mozambique
 
+**Lab**{ .badge .badge-lab } · Due Saturday of Week 11, 11:59 pm · Prepared for by the [Week 11 hands-on session](../../handson/week-11.md)
+
 **Civil and Construction Engineering 114 — Geomatics**
 
 Dr. Dan Ames · Brigham Young University
@@ -66,7 +68,7 @@ Have you ever questioned how realistic these labs are? Well, here’s a project 
 ## **Software and Data**
 
 * For this lab, we will use the GIS software application, QGIS (also known as Quantum GIS). This is a free/open source GIS package that runs on Windows, Mac, and Linux operating systems. The software is pre-installed in the Clyde Building 234 computer lab. You can also download it and install it on your own computer from this website: [https://www.qgis.org/](https://www.qgis.org/). We will be using this version throughout the course: *“Long Term Version 3.44 (LTR)”.*   
-* There are custom data downloads for this lab. Follow the instructions to download data from Learning Suite. There is also data from the Mozambique Instituto Nacional de Estatistica (INE), also posted on Learning Suite for convenience.  
+* This lab has two small data downloads, both linked from the steps below and hosted with the course site rather than on Learning Suite. The provincial boundaries come from the Mozambique Instituto Nacional de Estatística (INE).  
 * Imagery from Google will also be used as a base layer. 
 
 **REVIEW THE deliverables section at the end of the document before continuing. You should always do this before starting any of your labs. It will help you make sense of the lab and not waste time.**
@@ -99,7 +101,7 @@ Have you ever questioned how realistic these labs are? Well, here’s a project 
 
 ### **Step 3: Map the Canals and the Flood Hazard Zone**
 
-10. Now download the zip folder from Learning Suite, unzip it, and add the “project\_boundary1” file to the map.  
+10. Now download [project\_boundary1.zip](data/project_boundary1.zip), unzip it, and add the “project\_boundary1” file to the map.  
 11. Right-click on the boundary layer in the Layers Panel, and select “Zoom to Layer(s)”. Our site is about 2.5 km NNE of the Manga Chapel.  
 12. There are a couple of things to consider before we start laying out the plans for this community. First, visually inspect the area. Write your answers to the following questions:  
     1. Is there any human activity already taking place in the area? Or is it just wild, natural land? Zoom in. Are there any structures or farmland that might have to be bought or moved?  
@@ -202,7 +204,7 @@ Open Air Market
 
 40. Return to the main window and uncheck all of your layers besides the project boundary  
 41. Use the same attribute table method to create a label titled “Manga Project” on the project site boundary  
-42. Add the second zip folder from Learning Suite, titled “moz\_adm” to the project. Right-click on the moz\_adm layer in the Layers Panel and click “Zoom to Layer(s)”  
+42. Download and unzip [moz\_adm.zip](data/moz_adm.zip), then add the “moz\_adm” layer to the project. Right-click on the moz\_adm layer in the Layers Panel and click “Zoom to Layer(s)”  
 43. Your main QGIS window should now only show the province borders of Mozambique and a label pointing to the location of our project (see the image below)  
 
 ![Mozambique province outlines with a label pointing to the Manga Project location](images/locator-preview.png)

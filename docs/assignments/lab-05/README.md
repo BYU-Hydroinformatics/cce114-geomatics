@@ -1,5 +1,7 @@
 # Lab 5: Working with Raster Data
 
+**Lab**{ .badge .badge-lab } · Due Saturday of Week 6, 11:59 pm · Prepared for by the [Week 6 hands-on session](../../handson/week-06.md)
+
 **Civil and Construction Engineering 114 — Geomatics**
 
 Dr. Dan Ames · Brigham Young University

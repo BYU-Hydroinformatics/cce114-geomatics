@@ -1,0 +1,2835 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Course materials for Civil and Construction Engineering 114 (Geomatics) at BYU">
+      
+      
+      
+        <link rel="canonical" href="https://byu-hydroinformatics.github.io/cce114-geomatics/assignments/lab-07/">
+      
+      
+        <link rel="prev" href="../lab-06/">
+      
+      
+        <link rel="next" href="../lab-08/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Lab 7 — Projections & Coordinate Systems - CCE 114 — Geomatics</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#lab-7-projections-and-coordinate-systems" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="CCE 114 — Geomatics" class="md-header__button md-logo" aria-label="CCE 114 — Geomatics" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m15 19-6-2.11V5l6 2.11M20.5 3h-.16L15 5.1 9 3 3.36 4.9c-.21.07-.36.25-.36.48V20.5a.5.5 0 0 0 .5.5c.05 0 .11 0 .16-.03L9 18.9l6 2.1 5.64-1.9c.21-.1.36-.25.36-.48V3.5a.5.5 0 0 0-.5-.5"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            CCE 114 — Geomatics
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Lab 7 — Projections & Coordinate Systems
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/BYU-Hydroinformatics/cce114-geomatics" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    BYU-Hydroinformatics/cce114-geomatics
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../course/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Course Overview
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../schedule/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Schedule
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../handson/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Hands-On
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Assignments
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../policies/grading/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Policies
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="CCE 114 — Geomatics" class="md-nav__button md-logo" aria-label="CCE 114 — Geomatics" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m15 19-6-2.11V5l6 2.11M20.5 3h-.16L15 5.1 9 3 3.36 4.9c-.21.07-.36.25-.36.48V20.5a.5.5 0 0 0 .5.5c.05 0 .11 0 .16-.03L9 18.9l6 2.1 5.64-1.9c.21-.1.36-.25.36-.48V3.5a.5.5 0 0 0-.5-.5"/></svg>
+
+    </a>
+    CCE 114 — Geomatics
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/BYU-Hydroinformatics/cce114-geomatics" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    BYU-Hydroinformatics/cce114-geomatics
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../course/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Course Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Schedule
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Schedule
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../schedule/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../weeks/week-01/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Week 1 — Introduction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../weeks/week-02/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Week 2 — GIS Data Models
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../weeks/week-03/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Week 3 — Maps, Symbology, and Cartography
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../weeks/week-04/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Week 4 — The Global Positioning System
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../weeks/week-05/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Week 5 — Working with Vector Data
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../weeks/week-06/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Week 6 — Working with Raster Data
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../weeks/week-07/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Week 7 — Finding Spatial Data and Web Services
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../weeks/week-08/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Week 8 — Geodesy, Projections, and Coordinate Systems
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../weeks/week-09/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Week 9 — Metadata
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../weeks/week-10/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Week 10 — Geoprocessing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../weeks/week-11/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Week 11 — Geoplanning and Georeferencing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../weeks/week-12/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Week 12 — Project Site Selection
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../weeks/week-13/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Week 13 — Final Project
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../weeks/week-14/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Week 14 — Final Project
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../weeks/week-15/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Week 15 — Presentations and Exam Review
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../handson/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hands-On
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Hands-On
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../handson/week-02/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Week 2 — First Map in QGIS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../handson/week-03/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Week 3 — Symbology, Labels, and a First Layout
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../handson/week-04/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Week 4 — GPS Field Collection and Importing the Class Data
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../handson/week-05/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Week 5 — Digitize Your Home with Snapping and the Vertex Tool
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../handson/week-06/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Week 6 — Raster Data in QGIS and an Elevation Profile
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../handson/week-07/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Week 7 — Web Services in QGIS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../handson/week-08/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Week 8 — Playing with Projections
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../handson/week-09/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Week 9 — Writing and Evaluating Metadata
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../handson/week-10/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Week 10 — Cities Near Rivers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../handson/week-11/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Week 11 — Georeferencing in QGIS, and the Web Mapping with AI Kickoff
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../handson/week-12/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Week 12 — Workflow Walkthrough, Final Project Kickoff, Exam 2 Kahoot
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Assignments
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Assignments
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lab-01/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 1 — Getting Started with GIS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lab-02/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 2 — Map Symbology and Layouts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lab-03/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 3 — GPS Data Collection
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lab-04/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 4 — Changing, Editing, Fixing Data
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lab-05/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 5 — Working with Raster Data
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lab-06/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 6 — Spatial Data Web Services
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 7 — Projections & Coordinate Systems
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 7 — Projections & Coordinate Systems
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#background" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Background
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Background">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#projections" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Projections
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#coordinate-systems" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Coordinate Systems
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#problem-statement" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem Statement
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#learning-objectives" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Learning Objectives
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#software-and-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Software and Data
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-by-step-instructions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step by Step Instructions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step by Step Instructions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1-build-the-four-projection-layout" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 1: Build the Four-Projection Layout
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-see-what-a-coordinate-pair-means-in-the-wrong-zone" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 2: See What a Coordinate Pair Means in the Wrong Zone
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-test-your-eye-against-the-true-size" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 3: Test Your Eye Against the True Size
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deliverables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Deliverables
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#grading-rubric" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Grading Rubric
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extra-links" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Extra Links
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-ai-on-this-lab" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Using AI on This Lab
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lab-08/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 8 — Metadata
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lab-09/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 9 — The Yellowstone Disaster
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lab-10/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 10 — Domes for Mozambique
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lab-11/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 11 — Walmart Site Selection
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deliverables/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quizzes, Activities & Experiences
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../web-mapping-with-ai/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Web Mapping with AI Experience
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../final-project/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Final Project
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Policies
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Policies
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../policies/grading/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Grading
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../policies/attendance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Attendance & Participation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../policies/exams/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Exams
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../policies/ai-policy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI Use Policy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../policies/university/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    University Policies
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#background" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Background
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Background">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#projections" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Projections
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#coordinate-systems" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Coordinate Systems
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#problem-statement" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem Statement
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#learning-objectives" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Learning Objectives
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#software-and-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Software and Data
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-by-step-instructions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step by Step Instructions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step by Step Instructions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1-build-the-four-projection-layout" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 1: Build the Four-Projection Layout
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-see-what-a-coordinate-pair-means-in-the-wrong-zone" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 2: See What a Coordinate Pair Means in the Wrong Zone
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-test-your-eye-against-the-true-size" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 3: Test Your Eye Against the True Size
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deliverables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Deliverables
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#grading-rubric" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Grading Rubric
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extra-links" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Extra Links
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-ai-on-this-lab" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Using AI on This Lab
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="lab-7-projections-and-coordinate-systems">Lab 7: Projections and Coordinate Systems<a class="headerlink" href="#lab-7-projections-and-coordinate-systems" title="Permanent link">&para;</a></h1>
+<p><strong class="badge badge-lab">Lab</strong> · Due Saturday of Week 8, 11:59 pm · Prepared for by the <a href="../../handson/week-08/">Week 8 hands-on session</a></p>
+<p><strong>Civil and Construction Engineering 114 — Geomatics</strong></p>
+<p>Dr. Dan Ames · Brigham Young University</p>
+<p><em>Lab assignment developed by Nathan Godfrey and Dr. Ames</em></p>
+<p><img alt="World map with QGIS and BYU logos" src="images/title-hero.png" /></p>
+<h2 id="background"><strong>Background</strong><a class="headerlink" href="#background" title="Permanent link">&para;</a></h2>
+<p><img alt="Four drawings of a man's head plotted on globular, orthographic, stereographic, and Mercator projections, showing how each projection distorts the face differently" src="images/anchored1.png" /></p>
+<p><strong>Figure 1.</strong> From Charles H. Deetz, <em>Elements of Map Projection With Applications to Map and Chart Construction</em> (Washington: Government Printing Office, 1921): 51. HathiTrust/Cornell</p>
+<h3 id="projections"><strong>Projections</strong><a class="headerlink" href="#projections" title="Permanent link">&para;</a></h3>
+<p>The study of the shape of the Earth is called geodesy. From this field of science, we learn that the shape of the Earth is an ellipsoid, a slightly smashed sphere that bulges at the equator. However, most of the time, engineers, earth scientists, and builders work at such a small scale that the earth’s surface can be assumed to be flat. Similarly, for most navigation and reckoning purposes, people find it much easier to use flat paper maps than to use spherical (or ellipsoidal) globes. How can we take a curved Earth and represent it on a flat map? It can be done in many ways. This is the purpose of map projections.<br />
+We use map projections to give realistic approximations of the size, shape, and position of things on the earth, as represented in 2 dimensions instead of a 3D globe. The word “projections” comes from the idea of shining a light inside the globe, and “projecting” the image of the earth’s surface out onto a flat piece of paper, like projecting an image on a movie screen. These projections always create distortion in one or more ways. The goal is to find and use projections best suited to the type of work you need to do.<br />
+Distortion is not a small effect. On the Mercator map hanging on your friend's wall, Greenland looks about the same size as Africa. In reality, Africa is about 14 times larger (roughly 30.4 million square km versus Greenland's 2.2 million). Mercator published his projection in 1569 so sailors could steer straight compass courses; it was never meant to compare sizes, but it became the default wall map anyway.</p>
+<h3 id="coordinate-systems"><strong>Coordinate Systems</strong><a class="headerlink" href="#coordinate-systems" title="Permanent link">&para;</a></h3>
+<p>Coordinate systems are a way to tell us where things are located on the Earth. The coordinate systems that we use can be broken down into two main categories: <strong>geographic</strong> and <strong>projected</strong>.</p>
+<ul>
+<li><strong>Geographic coordinates</strong> are based on the 3-dimensional shape of the Earth, and are measured in angular units (degrees). Latitude and longitude lines are a system of geographic coordinates.  </li>
+<li><strong>Projected coordinates</strong>, as the name implies, are based on a 2-dimensional projection. Measured in distances like feet, miles, and kilometers, projected coordinate systems are generally more useful for analysis that involves such measurements. The CRS that our labs have used (UTM Zone 12N) is a projected coordinate system.</li>
+</ul>
+<p>In short, <strong>geographic</strong> coordinate systems are the round grids on a globe, and <strong>projected</strong> coordinate systems are the flat grids on a map. They are measured in different units, and GIS software does calculations in one or the other, not both at once. In this course, we will only use <strong>projected</strong> coordinate systems.<br />
+One more reason to respect your coordinates: when software gets missing or broken location data, it often defaults to (0,0). In WGS84 that spot is in the Gulf of Guinea, off the coast of West Africa, and so much buggy GPS data "lands" there that GIS professionals jokingly named it Null Island. For years, NOAA even kept a real weather buoy moored at 0°N, 0°E (Station 13010, nicknamed "Soul"). Later in this lab, you will plot a (0,0) point yourself and see where UTM thinks it is.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>When you set a <strong>CRS</strong> in QGIS (or another GIS software), you are essentially selecting a pair of <strong>projection</strong> (so that the map can be displayed on your flat monitor) and <strong>coordinate system</strong> (so that your computer can process measurements).</p>
+</div>
+<p>This lab will introduce you to changing your CRS in QGIS and illustrate what you might look for in selecting one. You will be required to add data to a map, change the CRS, and examine the results. You will use data layers as normal, but when creating the layout, you will add multiple map frames and change the CRS of each.</p>
+<h2 id="problem-statement"><strong>Problem Statement</strong><a class="headerlink" href="#problem-statement" title="Permanent link">&para;</a></h2>
+<p>It’s a year from now. You see a world map (Mercator Projection) on your friend’s wall, and it reminds you of your CCE 114 class. Recalling Dr. Ames’s lecture on projections, you tell your friend: “Did you know that all world maps are wrong in some way?” They don’t believe you. You try to explain map projections, but it would be a lot easier if you could make a map to show them. You still have QGIS on your laptop, and you decide to make a layout to help them understand projections (you really miss CCE 114).</p>
+<h2 id="learning-objectives"><strong>Learning Objectives</strong><a class="headerlink" href="#learning-objectives" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Repeat skills from the previous labs  </li>
+<li>Learn how to change the CRS in QGIS, and what it means  </li>
+<li>Learn how to select a CRS for a given project  </li>
+<li>Examine different types of distortion present in map projections</li>
+</ul>
+<h2 id="software-and-data"><strong>Software and Data</strong><a class="headerlink" href="#software-and-data" title="Permanent link">&para;</a></h2>
+<ul>
+<li>For this lab, we will use the GIS software application, QGIS (also known as Quantum GIS). This is a free/open source GIS package that runs on Windows, Mac, and Linux operating systems. The software is pre-installed in the Clyde Building 234 computer lab. You can also download it and install it on your own computer from this website: <a href="https://www.qgis.org/">https://www.qgis.org/</a>. We will be using this version throughout the course: “Long Term Version” 3.44 (LTR)<em>.</em>   </li>
+<li>This lab has two small data downloads, both linked from the steps below and hosted with the course site rather than on Learning Suite.  </li>
+<li>Imagery from Google will also be used as a base layer. </li>
+</ul>
+<p><strong>REVIEW THE deliverables section at the end of the document before continuing. You should always do this before starting any of your labs. It will help you make sense of the lab and not waste time.</strong></p>
+<h2 id="step-by-step-instructions"><strong>Step by Step Instructions</strong><a class="headerlink" href="#step-by-step-instructions" title="Permanent link">&para;</a></h2>
+<h3 id="step-1-build-the-four-projection-layout"><strong>Step 1: Build the Four-Projection Layout</strong><a class="headerlink" href="#step-1-build-the-four-projection-layout" title="Permanent link">&para;</a></h3>
+<ol>
+<li>First, open a new QGIS project and change the CRS to the usual EPSG:26912 using the button in the bottom right corner.  </li>
+<li>Download <a href="data/lab7_projections.gpkg">lab7_projections.gpkg</a>. Remember not to use a network drive (NO J: DRIVE!), but save the file locally.  </li>
+<li>Drag the file straight into the Layers panel. It is a GeoPackage, so there is nothing to unzip: two layers appear, <strong>StateBoundary</strong> and <strong>TissotIndicatrix</strong>. Click “OK” on any of the “Select Transformation” windows that pop up.  </li>
+<li>Your map should look something like this, with US state boundaries and <strong>Tissot circles.</strong></li>
+</ol>
+<p><img alt="QGIS window in EPSG:26912 showing US state boundaries surrounded by Tissot indicatrix circles" src="images/anchored2.png" /></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The <strong>Tissot Indicatrix</strong> contains circles that visually represent how the projection has distorted a map. If there was zero distortion, each of the circles would appear as a perfect circle, perfectly spaced, and equal in size to the others. Projections that <em>preserve area</em> will have circles of identical area but not necessarily shape or spacing. An <em>equidistant</em> projection keeps the relative distances constant. A projection that <em>preserves shape</em> doesn’t necessarily preserve size, spacing, etc. A Tissot Indicator for a projection that does not get distorted is called a standard circle.</p>
+</div>
+<ol>
+<li>Add the Google Satellite basemap  </li>
+<li>SAVE your project! (At this point, we’ve mostly stopped reminding you, but it is IMPORTANT)  </li>
+<li>Create a new print layout.  </li>
+<li>Use the “Add Map” tool 4 times to create 4 map frames of equal size on the page. Leave room for a title near each. <em>In this lab, you will not need to leave room for map elements or other text besides your name, and a title for each of the 4 maps (see example below).</em>  </li>
+<li>Use “Select/Move Item” on the left to select one of the map frames.  </li>
+<li>On the right panel, in “Item Properties” <strong>change the CRS</strong> to “<strong>EPSG:3857 - WGS 84 / Pseudo-Mercator</strong>”</li>
+</ol>
+<p><img alt="Layout Item Properties panel with the CRS setting under Main Properties highlighted" src="images/item-properties.png" /></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Gerardus Mercator created a projection in the 1500s that was expertly crafted for sailing the seas, as it preserves compass directions and angles for navigation. It became so popular that it is often used in geographic education today, despite the heavy distortion of area, shape, and distance the further you get from the equator. <strong>This slight variant we're using - called “Web Mercator” - is by far the most common projection you'll see today, being the go-to for web applications like Google Maps, Apple Maps, Google Earth, ArcGIS, etc.</strong></p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p><strong>IMPORTANT NOTE:</strong> In this lab, <strong>we are not reprojecting any of the data sets</strong>. There is a reprojection tool to do this in the Geoprocessing Toolbox. At times it is necessary, like in situations where you have multiple datasets in different projections. However, in this lab, <em>we are only changing the CRS of the display</em>. The difference is massively important when using data for calculations and analysis!</p>
+</div>
+<ol>
+<li>Repeat this twice more, changing two more map frames to:  <ol>
+<li>“<strong>ESRI:102003 - USA_Contiguous_Albers_Equal_Area_Conic</strong>”  </li>
+<li>“<strong>EPSG:4326 - WGS 84</strong>”</li>
+</ol>
+</li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The Albers Equal Area Conic projection <strong>keeps areas proportional, but shapes and distances are distorted</strong>. However, all distortion is minimal within the central focus of the map.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The WGS 84 CRS is considered “unprojected” since <strong>it uses latitude/longitude coordinates</strong> and not physical distances. It turns longitude into straight vertical lines, and latitude into straight horizontal lines, all equally spaced to create a grid of perfect squares.</p>
+</div>
+<ol>
+<li>Zoom each map in closer to the United States and observe how sizes and shapes change in these various projections, and how each distorts them in a different way. Your layout should look something like this:</li>
+</ol>
+<p><img alt="Example layout with four map frames of the United States titled UTM Zone 12N, Web Mercator, Albers Equal Area Conic, and WGS 84 (Lat/Lon), each distorting the states and Tissot circles differently" src="images/anchored4.png" /></p>
+<ol>
+<li>Add a title by each map frame that says which projection is being used (see example above for the title text), and another with your name  </li>
+<li>Export the layout as an image or PDF, save your project, and close it</li>
+</ol>
+<h3 id="step-2-see-what-a-coordinate-pair-means-in-the-wrong-zone"><strong>Step 2: See What a Coordinate Pair Means in the Wrong Zone</strong><a class="headerlink" href="#step-2-see-what-a-coordinate-pair-means-in-the-wrong-zone" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Create a new project, and set the CRS to the usual EPSG:26912 projection  </li>
+<li>Set a basemap  </li>
+<li>Download <a href="data/mystery_points.csv">mystery_points.csv</a>, and use the “Delimited Text” tab in the Data Source Manager to add it to the map. Leave all the default options, just ensure it is using our usual “EPSG:26912” for the “Geometry CRS” (see below).  </li>
+<li>Then, add it again but change the “Geometry CRS” to “EPSG:26911 - NAD83 / UTM zone 11N”</li>
+</ol>
+<p><img alt="Data Source Manager Delimited Text tab with the mystery points CSV loaded, with the Delimited Text tab and the Geometry CRS dropdown highlighted" src="images/dsm-delimited-text.png" /></p>
+<ol>
+<li>Your map should look like this:  </li>
+</ol>
+<p><img alt="QGIS window showing the mystery points CSV added twice: one point pair in Nevada and one in Utah, differing only by the Geometry CRS used" src="images/anchored7.png" /></p>
+<ol>
+<li>As you can see, although the coordinate numbers remain the same, they can mean something completely different in another CRS. For UTM zones, the origin of the coordinate system is on the equator, in the bottom left corner of the UTM zone. Create a new CSV file that contains only the coordinates (0,0). In Notepad (or any plain text editor), make a file with a header line X,Y and a single data line 0,0 and save it as origin.csv. Name the layer “Origin Locator”.  </li>
+</ol>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>If you don’t remember how to create and add csv files to QGIS, <strong>look back at the instructions for lab 3 or make a copy of the mystery points file.</strong></p>
+</div>
+<ol>
+<li>Add this new CSV file to your project in the 12N zone, and again in the 11N zone by repeating steps 17-18  </li>
+<li>You should end up with something like this.</li>
+</ol>
+<p><img alt="QGIS window zoomed out to show all point layers: mystery points over the western United States and the two origin locator points far offshore on the equator" src="images/anchored9.png" /></p>
+<ol>
+<li>Change the symbology to something easily visible, zoom/pan until all these points are visible, and take a screenshot of your QGIS window.  </li>
+<li>Save this project and close it</li>
+</ol>
+<h3 id="step-3-test-your-eye-against-the-true-size"><strong>Step 3: Test Your Eye Against the True Size</strong><a class="headerlink" href="#step-3-test-your-eye-against-the-true-size" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Open a browser and go to maps.google.com  </li>
+<li>The basemap for this site is the Web Mercator projection, which distorts area and distance. Let’s prove that now.  </li>
+<li>Just by visual inspection of Google Maps, write your best-guess answers to the following questions:  <ol>
+<li>How many whole Australias can fit inside of Russia?  </li>
+<li>Which is larger, Alaska or Brazil?  </li>
+<li>Which continent(s) are closest in size to Antarctica?  </li>
+<li>Which is larger, Greenland or India?  </li>
+<li>Which of the following countries could all fit together in Argentina? Norway, Sweden, Finland, Denmark, Iceland, Ireland, the United Kingdom, Belgium, and the Netherlands?  </li>
+</ol>
+</li>
+<li>It turns out there’s a website that allows you to answer these questions very easily. Go to thetruesize.com  </li>
+<li>Now use this site to re-answer the questions above. You can zoom/pan with the mouse, add a movable country/state to the map by typing it in the search bar, and rotate them with the compass in the bottom left corner. Right-clicking a shape will <strong>delete it.</strong></li>
+</ol>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>You will need to turn in a screenshot that shows your work on this map, so <strong>don’t remove your work yet!</strong></p>
+</div>
+<ol>
+<li>Take a screenshot of the browser showing your work on at least questions a-d (we won’t make you complete the puzzle that is question e, you’ll get the idea just by attempting it)  </li>
+<li>Compare your answers with the following solutions; you will not be graded on how correct you were (open each dropdown to see the answer):  <ol>
+<li><details><summary>Spoiler</summary> About two. Russia is roughly 17.0 million square km and Australia about 7.7 million, so two Australias fit with room to spare, but not three.</details>  </li>
+<li><details><summary>Spoiler</summary> Brazil, by a lot. About 8.5 million square km against Alaska's 1.7 million, so roughly five times the area, even though Web Mercator stretches Alaska until it looks comparable.</details>  </li>
+<li><details><summary>Spoiler</summary> Antarctica is about 14 million square km, which puts it between Europe (about 10 million) and South America (about 18 million) — far smaller than the endless white band Web Mercator smears along the bottom of the map.</details>  </li>
+<li><details><summary>Spoiler</summary> India, but by less than most people guess: about 3.2 million square km against Greenland's 2.2 million, so roughly one and a half times, not several times. The striking part is not the ratio but that Web Mercator reverses it — on the wall map Greenland looks far bigger.</details>  </li>
+<li><details><summary>Spoiler</summary> Yes. The nine together come to about 1.7 million square km against Argentina's 2.8 million, so they fit with a good deal of room left over.</details> and here’s a link to the solution if you want to see it (<a href="https://drive.google.com/file/d/1ZesMv7uGwfIKyGwtXmWU7k93komtoV_o/view?usp=sharing">answer</a>)</li>
+</ol>
+</li>
+</ol>
+<h2 id="deliverables"><strong>Deliverables</strong><a class="headerlink" href="#deliverables" title="Permanent link">&para;</a></h2>
+<p>Submit a PDF file that contains:</p>
+<ol>
+<li>The layout of the 4 different projections, states, and Tissot circles is included  </li>
+<li>A screenshot of the QGIS window with the mystery coordinate points in different projections  </li>
+<li>A screenshot of your work on thetruesize.com and your answers to each of the questions  </li>
+<li>Answers to the following questions:  </li>
+<li>What kind of distortion do you see in each different projection? (Area, shape, distances, etc.)  </li>
+<li>WGS84 (EPSG:4326) is the default CRS for GPS receivers, Google Earth, and many other mapping tools. Why can’t we just use that CRS for everything everywhere?  </li>
+<li>The grading rubric, filled in with your self-evaluation</li>
+</ol>
+<h2 id="grading-rubric"><strong>Grading Rubric</strong><a class="headerlink" href="#grading-rubric" title="Permanent link">&para;</a></h2>
+<p>The following rubric will be used to evaluate your lab assignment. You should use this as a guide to ensure you include all the required elements for this lab. Shown under “Score” is the maximum possible points you can receive for each item. </p>
+<p>Sometimes, points are awarded on a "yes or no" basis, giving full points if something is present and none if it is not. Other times, points are given on a scale, depending on how well you complete the task. Please keep this in mind. For example, if there is a written answer required, grading will be based on a scale of points, depending on the quality and completeness of your written answer.</p>
+<p>Copy the rubric and paste it into your lab report. Fill in your self-evaluation of the rubric, showing how many points you feel you have earned for each item.</p>
+<table>
+<thead>
+<tr>
+<th>Requirement</th>
+<th>Score</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Create and include the required 4-projection map layout: Basemap layer is visible <em>(1 pt)</em> States, Tissot circles, and name are visible <em>(6 pts)</em> Layout is neat and provides a view of all 4 required projections <em>(8 pts)</em></td>
+<td>/15</td>
+</tr>
+<tr>
+<td>Include a screenshot of mystery points: Your screenshot shows all 4 required point layers (6 points in all) in their proper locations <em>(5 pts)</em></td>
+<td>/5</td>
+</tr>
+<tr>
+<td>Include a screenshot of thetruesize.com work: Your work is clearly visible in the screenshot <em>(2 pts)</em> Your answers (correct or incorrect) from the first attempt at questions a-e <em>(3 pts)</em></td>
+<td>/5</td>
+</tr>
+<tr>
+<td>Provide correct and thoughtful answers to the questions in the deliverables: Your responses sufficiently answer each question <em>(5 pts)</em></td>
+<td>/5</td>
+</tr>
+<tr>
+<td><strong>Total</strong></td>
+<td><strong>/30</strong></td>
+</tr>
+</tbody>
+</table>
+<h2 id="extra-links"><strong>Extra Links</strong><a class="headerlink" href="#extra-links" title="Permanent link">&para;</a></h2>
+<p><a href="https://www.leventhalmap.org/digital-exhibitions/bending-lines/interactives/projection-face/">https://www.leventhalmap.org/digital-exhibitions/bending-lines/interactives/projection-face/</a> - Live reprojection tool on the human head<br />
+<a href="https://xkcd.com/977/">https://xkcd.com/977/</a> - xkcd comic<br />
+<a href="https://github.andrewt.net/mercator-rotator/">https://github.andrewt.net/mercator-rotator/</a> - Mercator Rotator<br />
+<a href="https://mrgris.com/projects/merc-extreme/#40.23384,-111.65853">https://mrgris.com/projects/merc-extreme/#40.23384,-111.65853</a> - Mercator Extreme</p>
+<h2 id="using-ai-on-this-lab"><strong>Using AI on This Lab</strong><a class="headerlink" href="#using-ai-on-this-lab" title="Permanent link">&para;</a></h2>
+<p>AI tools like ChatGPT and Gemini can be genuinely useful on this lab if you use them to learn rather than to skip the learning. Good uses: asking why the same easting/northing pair lands in Nevada when you read it as Zone 11N instead of 12N, having AI explain what a Tissot circle actually measures, decoding a confusing "Select Transformation" dialog or a cryptic CRS warning in QGIS, or quizzing yourself on which projections preserve area versus shape before you answer the deliverable questions. What is not okay: having AI write your answers to the distortion questions, inventing results, or describing a map you never actually made. Your screenshots must come from your own QGIS session and your own browser. If you use AI, say so in your submission, and be ready to explain and defend every answer as your own understanding - that is the standard you will be held to in this class and in engineering practice.</p>
+<hr />
+<p class="page-version">Version 2026.09.3 · Last updated September 10, 2026</p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../lab-06/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Lab 6 — Spatial Data Web Services">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Lab 6 — Spatial Data Web Services
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../lab-08/" class="md-footer__link md-footer__link--next" aria-label="Next: Lab 8 — Metadata">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Lab 8 — Metadata
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.indexes", "navigation.top", "navigation.footer", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>

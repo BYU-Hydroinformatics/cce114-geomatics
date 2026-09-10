@@ -1,5 +1,7 @@
 # Lab 8: Metadata
 
+**Lab**{ .badge .badge-lab } · Due Saturday of Week 9, 11:59 pm · Prepared for by the [Week 9 hands-on session](../../handson/week-09.md)
+
 **Civil and Construction Engineering 114 — Geomatics**
 
 Dr. Dan Ames · Brigham Young University
@@ -32,7 +34,7 @@ In part two, you are part of a team responsible for designing a new highway runn
 ## **Software and Data**
 
 * For this lab, we will use the GIS software application, QGIS (also known as Quantum GIS). This is a free/open source GIS package that runs on Windows, Mac, and Linux. The software is pre-installed in the Clyde Building 234 computer lab. You can also download it and install it on your own computer from this website: [https://www.qgis.org/](https://www.qgis.org/). We will be using this version throughout the course: *“Long Term Version 3.44 (LTR)”.*   
-* There are custom data downloads for this lab. Follow the instructions to download data from Learning Suite and the State of Utah GIS website: [https://gis.utah.gov/products/sgid/](https://gis.utah.gov/products/sgid/)  
+* This lab has one small data download, linked from the steps below and hosted with the course site. Everything else comes from the State of Utah GIS website: [https://gis.utah.gov/products/sgid/](https://gis.utah.gov/products/sgid/)  
 * Imagery from Google will also be used as a base layer. 
 
 **REVIEW THE deliverables section at the end of the document before continuing. You should always do this before starting any of your labs. It will help you make sense of the lab and not waste time.**
@@ -80,7 +82,7 @@ Utah County is experiencing rapid growth, necessitating a new freeway extension 
 
 Now that you’ve got answers to your metadata questions, there’s one thing left to do before the meeting. Your boss is very environmentally conscious and noticed some wetlands in the project area. He sent out a surveying crew to map one wetland in particular that could be avoided, and he needs you to create metadata for the polygon shapefile the crew created.
 
-6. Download the “Lehi\_wetland01” shapefile from the Lab 8 assignment on Learning Suite. The attachment is called **Lehi\_wetland01.zip** — note the singular “wetland”.  
+6. Download [Lehi\_wetland01.zip](data/Lehi_wetland01.zip) and unzip it. Note the singular “wetland” in the name.  
 7. Create a new QGIS project with a Google Satellite Hybrid basemap  
 8. Add the “Lehi\_wetland01” shapefile to the project  
 9. Right-click on the “Lehi\_wetland01” layer in the Layers Panel, and click “Properties…”  

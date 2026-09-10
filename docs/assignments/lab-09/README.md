@@ -1,5 +1,7 @@
 # Lab 9: Geoprocessing — The Yellowstone Disaster
 
+**Lab**{ .badge .badge-lab } · Due Saturday of Week 10, 11:59 pm · Prepared for by the [Week 10 hands-on session](../../handson/week-10.md)
+
 **Civil and Construction Engineering 114 — Geomatics**
 
 Dr. Dan Ames · Brigham Young University

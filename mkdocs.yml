@@ -67,6 +67,19 @@ nav:
       - "Week 13 — Final Project": weeks/week-13.md
       - "Week 14 — Final Project": weeks/week-14.md
       - "Week 15 — Presentations and Exam Review": weeks/week-15.md
+  - Hands-On:
+      - handson/README.md
+      - "Week 2 — First Map in QGIS": handson/week-02.md
+      - "Week 3 — Symbology, Labels, and a First Layout": handson/week-03.md
+      - "Week 4 — GPS Field Collection and Importing the Class Data": handson/week-04.md
+      - "Week 5 — Digitize Your Home with Snapping and the Vertex Tool": handson/week-05.md
+      - "Week 6 — Raster Data in QGIS and an Elevation Profile": handson/week-06.md
+      - "Week 7 — Web Services in QGIS": handson/week-07.md
+      - "Week 8 — Playing with Projections": handson/week-08.md
+      - "Week 9 — Writing and Evaluating Metadata": handson/week-09.md
+      - "Week 10 — Cities Near Rivers": handson/week-10.md
+      - "Week 11 — Georeferencing in QGIS, and the Web Mapping with AI Kickoff": handson/week-11.md
+      - "Week 12 — Workflow Walkthrough, Final Project Kickoff, Exam 2 Kahoot": handson/week-12.md
   - Assignments:
       - assignments/README.md
       - Lab 1 — Getting Started with GIS: assignments/lab-01/README.md

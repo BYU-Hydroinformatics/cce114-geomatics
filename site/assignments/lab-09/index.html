@@ -1,0 +1,2736 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Course materials for Civil and Construction Engineering 114 (Geomatics) at BYU">
+      
+      
+      
+        <link rel="canonical" href="https://byu-hydroinformatics.github.io/cce114-geomatics/assignments/lab-09/">
+      
+      
+        <link rel="prev" href="../lab-08/">
+      
+      
+        <link rel="next" href="../lab-10/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Lab 9 — The Yellowstone Disaster - CCE 114 — Geomatics</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#lab-9-geoprocessing-the-yellowstone-disaster" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="CCE 114 — Geomatics" class="md-header__button md-logo" aria-label="CCE 114 — Geomatics" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m15 19-6-2.11V5l6 2.11M20.5 3h-.16L15 5.1 9 3 3.36 4.9c-.21.07-.36.25-.36.48V20.5a.5.5 0 0 0 .5.5c.05 0 .11 0 .16-.03L9 18.9l6 2.1 5.64-1.9c.21-.1.36-.25.36-.48V3.5a.5.5 0 0 0-.5-.5"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            CCE 114 — Geomatics
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Lab 9 — The Yellowstone Disaster
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/BYU-Hydroinformatics/cce114-geomatics" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    BYU-Hydroinformatics/cce114-geomatics
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../course/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Course Overview
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../schedule/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Schedule
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../handson/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Hands-On
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Assignments
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../policies/grading/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Policies
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="CCE 114 — Geomatics" class="md-nav__button md-logo" aria-label="CCE 114 — Geomatics" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m15 19-6-2.11V5l6 2.11M20.5 3h-.16L15 5.1 9 3 3.36 4.9c-.21.07-.36.25-.36.48V20.5a.5.5 0 0 0 .5.5c.05 0 .11 0 .16-.03L9 18.9l6 2.1 5.64-1.9c.21-.1.36-.25.36-.48V3.5a.5.5 0 0 0-.5-.5"/></svg>
+
+    </a>
+    CCE 114 — Geomatics
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/BYU-Hydroinformatics/cce114-geomatics" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    BYU-Hydroinformatics/cce114-geomatics
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../course/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Course Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Schedule
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Schedule
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../schedule/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../weeks/week-01/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Week 1 — Introduction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../weeks/week-02/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Week 2 — GIS Data Models
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../weeks/week-03/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Week 3 — Maps, Symbology, and Cartography
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../weeks/week-04/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Week 4 — The Global Positioning System
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../weeks/week-05/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Week 5 — Working with Vector Data
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../weeks/week-06/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Week 6 — Working with Raster Data
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../weeks/week-07/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Week 7 — Finding Spatial Data and Web Services
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../weeks/week-08/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Week 8 — Geodesy, Projections, and Coordinate Systems
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../weeks/week-09/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Week 9 — Metadata
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../weeks/week-10/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Week 10 — Geoprocessing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../weeks/week-11/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Week 11 — Geoplanning and Georeferencing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../weeks/week-12/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Week 12 — Project Site Selection
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../weeks/week-13/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Week 13 — Final Project
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../weeks/week-14/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Week 14 — Final Project
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../weeks/week-15/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Week 15 — Presentations and Exam Review
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../handson/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hands-On
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Hands-On
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../handson/week-02/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Week 2 — First Map in QGIS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../handson/week-03/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Week 3 — Symbology, Labels, and a First Layout
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../handson/week-04/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Week 4 — GPS Field Collection and Importing the Class Data
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../handson/week-05/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Week 5 — Digitize Your Home with Snapping and the Vertex Tool
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../handson/week-06/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Week 6 — Raster Data in QGIS and an Elevation Profile
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../handson/week-07/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Week 7 — Web Services in QGIS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../handson/week-08/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Week 8 — Playing with Projections
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../handson/week-09/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Week 9 — Writing and Evaluating Metadata
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../handson/week-10/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Week 10 — Cities Near Rivers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../handson/week-11/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Week 11 — Georeferencing in QGIS, and the Web Mapping with AI Kickoff
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../handson/week-12/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Week 12 — Workflow Walkthrough, Final Project Kickoff, Exam 2 Kahoot
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Assignments
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Assignments
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lab-01/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 1 — Getting Started with GIS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lab-02/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 2 — Map Symbology and Layouts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lab-03/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 3 — GPS Data Collection
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lab-04/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 4 — Changing, Editing, Fixing Data
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lab-05/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 5 — Working with Raster Data
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lab-06/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 6 — Spatial Data Web Services
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lab-07/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 7 — Projections & Coordinate Systems
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lab-08/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 8 — Metadata
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 9 — The Yellowstone Disaster
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 9 — The Yellowstone Disaster
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#background" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Background
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#problem-statement" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem Statement
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#learning-objectives" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Learning Objectives
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-by-step-instructions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step by Step Instructions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step by Step Instructions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1-map-the-flood-risk-below-lake-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 1: Map the Flood Risk Below Lake Level
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-buffer-the-geysers-and-find-what-must-evacuate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 2: Buffer the Geysers and Find What Must Evacuate
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-find-the-helicopter-search-area" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 3: Find the Helicopter Search Area
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deliverables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Deliverables
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#grading-rubric" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Grading Rubric
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-ai-on-this-lab" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Using AI on This Lab
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lab-10/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 10 — Domes for Mozambique
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lab-11/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 11 — Walmart Site Selection
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deliverables/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quizzes, Activities & Experiences
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../web-mapping-with-ai/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Web Mapping with AI Experience
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../final-project/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Final Project
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Policies
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Policies
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../policies/grading/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Grading
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../policies/attendance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Attendance & Participation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../policies/exams/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Exams
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../policies/ai-policy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI Use Policy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../policies/university/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    University Policies
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#background" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Background
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#problem-statement" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem Statement
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#learning-objectives" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Learning Objectives
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-by-step-instructions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step by Step Instructions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step by Step Instructions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1-map-the-flood-risk-below-lake-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 1: Map the Flood Risk Below Lake Level
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-buffer-the-geysers-and-find-what-must-evacuate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 2: Buffer the Geysers and Find What Must Evacuate
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-find-the-helicopter-search-area" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 3: Find the Helicopter Search Area
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deliverables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Deliverables
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#grading-rubric" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Grading Rubric
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-ai-on-this-lab" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Using AI on This Lab
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="lab-9-geoprocessing-the-yellowstone-disaster">Lab 9: Geoprocessing — The Yellowstone Disaster<a class="headerlink" href="#lab-9-geoprocessing-the-yellowstone-disaster" title="Permanent link">&para;</a></h1>
+<p><strong class="badge badge-lab">Lab</strong> · Due Saturday of Week 10, 11:59 pm · Prepared for by the <a href="../../handson/week-10/">Week 10 hands-on session</a></p>
+<p><strong>Civil and Construction Engineering 114 — Geomatics</strong></p>
+<p>Dr. Dan Ames · Brigham Young University</p>
+<p><em>Lab assignment developed by Nathan Godfrey and Dr. Ames</em></p>
+<p><img alt="World map with QGIS and BYU logos" src="images/title-hero.png" /></p>
+<h2 id="background"><strong>Background</strong><a class="headerlink" href="#background" title="Permanent link">&para;</a></h2>
+<p>Geoprocessing is the use of various techniques and tools to analyze and manage geographic data. It takes input data, transforms/analyzes it in some way, and gives output data, and its purpose is to <strong>solve spatial problems</strong> and support decision-making. It’s a fairly broad term, and it is safe to say that you’ve already done some simple geoprocessing in this class.</p>
+<p>In GIS software, geoprocessing “tools” are specialized functions and algorithms used to manipulate, analyze, and manage spatial data. These tools enable the transformation of raw data into actionable insights, supporting decision-making and problem-solving in various fields. In QGIS, you find them in the “Processing Toolbox.”</p>
+<h2 id="problem-statement"><strong>Problem Statement</strong><a class="headerlink" href="#problem-statement" title="Permanent link">&para;</a></h2>
+<p>WARNING! Yellowstone Disaster is imminent! Unprecedented climate change and natural disasters have destabilized much of Yellowstone National Park. The National Park Service has tasked you with using your GIS skills to analyze areas most in need of attention as this disaster unfolds. You will evaluate 3 scenarios to find areas that need the most attention. No data will be provided to you. Any data you need should come from the National Map website or be created by you.<br />
+If this scenario sounds far-fetched, consider this: in June 2022, record flooding really did close every entrance to Yellowstone and forced about 10,000 visitors to evacuate in a single day. Rivers rerouted themselves and whole sections of the north entrance road washed away. You can read the story here: https://www.nps.gov/articles/000/yell-flooding.htm</p>
+<p><img alt="Warning triangle icon" src="images/anchored1.png" /></p>
+<h2 id="learning-objectives"><strong>Learning Objectives</strong><a class="headerlink" href="#learning-objectives" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Repeat skills from the previous labs  </li>
+<li>Learn how to use the National Map system  </li>
+<li>Learn how to use GIS processing tools  </li>
+<li>This lab uses the following tools: Reclassify by Table, Buffer, Reproject Layer, Select by Attribute, Clip, Fix Geometries, and Difference  </li>
+<li>Learn practical application of shapefiles and GIS methods</li>
+</ul>
+<p><strong>REVIEW THE deliverables section at the end of the document before continuing. You should always do this before starting any of your labs. It will help you make sense of the lab and not waste time.</strong></p>
+<h2 id="step-by-step-instructions"><strong>Step by Step Instructions</strong><a class="headerlink" href="#step-by-step-instructions" title="Permanent link">&para;</a></h2>
+<h3 id="step-1-map-the-flood-risk-below-lake-level"><strong>Step 1: Map the Flood Risk Below Lake Level</strong><a class="headerlink" href="#step-1-map-the-flood-risk-below-lake-level" title="Permanent link">&para;</a></h3>
+<p>Yellowstone Lake is about to spill into the rest of the park! The Continental Divide is disappearing in a series of unexplainable earthquakes and landslides of biblical proportions. Find the areas of the park that are lower than the lake, and therefore the most prone to flooding if that happens.</p>
+<p><img alt="Line-art icon of a large wave flooding land with a tree" src="images/anchored2.png" /></p>
+<ol>
+<li>Go to this link: <a href="https://apps.nationalmap.gov/viewer/">https://apps.nationalmap.gov/viewer/</a> and click the “Data Download” tab  </li>
+<li>Under “Data” in the Datasets tab, check the “Elevation Products” category and choose <strong>only</strong> the current ⅓ arc-second DEM  </li>
+<li>Zoom in on Yellowstone National Park and use the search options at the top of the sidebar (extent, polygon, point, etc.) on Yellowstone Lake, creating either a point on the lake or a polygon around it.  </li>
+<li>Click <img alt="Search Products button" src="images/image1.png" /> (the “Search Products” button) to bring up a list of elevation datasets that include your markers. Find the one elevation dataset that covers the northwest section of Wyoming (most of the park, including the lake). Make sure you have the correct Yellowstone Lake (the one inside Yellowstone Park)! The search results should look like the image below.  </li>
+<li>Click on “Download Link (TIF)” and wait for the file to download. Remember to store it in a local computer drive, not the student network.</li>
+</ol>
+<p><img alt="TNM Download search results showing the USGS 1/3 Arc Second n45w111 elevation dataset with the Download Link (TIF) highlighted, next to a map of Yellowstone with the dataset footprint outlined" src="images/anchored3.png" /></p>
+<ol>
+<li>Open QGIS and add the raster to a new project  </li>
+<li>Remember to use the CRS button in the bottom left to change your projection to NAD83 zone 12N (AKA EPSG:26912). In this case, you can do it either before or after you add the raster by dragging the downloaded file onto the map.  </li>
+<li>Add a basemap like Google Satellite Hybrid, OpenStreetMap, or Google Terrain  </li>
+<li>Right click on the top toolbar and check the “Processing Toolbox Panel” to open the geoprocessing tools  </li>
+<li>Search “reclass” and, with the DEM layer selected, double click on “Reclassify by table”  </li>
+<li>Set the “Raster layer” to your elevation DEM  </li>
+<li>Click on the ellipses next to “Reclassified raster” and choose “Save to file..” Give the file a name and save it with the rest of your project files.</li>
+</ol>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>If the reclassify tool <strong>disappears</strong> after you click save, <strong>check behind your QGIS window</strong>. Tools tend to do this.</p>
+</div>
+<ol>
+<li>Click on the ellipses next to “Reclassification table”  </li>
+<li>Add 2 rows with the following values to reclassify the elevation into 2 categories: above the lake (1) and below the lake (0). Use 2356 meters as the lake elevation (this would be a massive flood).   <ol>
+<li>Minimum \= 0, Maximum \= 2356, Value \= 0  </li>
+<li>Minimum \= 2356, Maximum \= 3500, Value \= 1</li>
+</ol>
+</li>
+</ol>
+<p><img alt="Reclassify by Table dialogs: the reclassification table with the two rows entered and OK and Add Row highlighted, and the main dialog with the raster layer, table ellipses, and Save to file for the reclassified raster highlighted" src="images/anchored6.png" /></p>
+<ol>
+<li>Click OK, then hit run. Your map should look something like this: </li>
+</ol>
+<p><img alt="QGIS window showing the reclassified elevation raster in black and white over an OpenStreetMap basemap" src="images/image2.png" /></p>
+<ol>
+<li>Change the symbology as you see fit to symbolize areas of flood risk in a useful way (Hint: use the render type named “Paletted/Unique values”)  </li>
+<li>Create a map layout. Include all the required cartographic elements including legends, titles, scale bars, neatlines, etc. Export your layout before moving on.  </li>
+<li>Add context by adding a text box to the layout explaining what this map represents.</li>
+</ol>
+<p><img alt="Example Part 1 layout: Yellowstone Lake Overflow Map with title, context text box, Below Lake/Above Lake legend, north arrow, citations, and scale bar" src="images/anchored4.png" /></p>
+<h3 id="step-2-buffer-the-geysers-and-find-what-must-evacuate"><strong>Step 2: Buffer the Geysers and Find What Must Evacuate</strong><a class="headerlink" href="#step-2-buffer-the-geysers-and-find-what-must-evacuate" title="Permanent link">&para;</a></h3>
+<p>Old Faithful and some of the surrounding geysers were all contaminated and are about to erupt with noxious gas! Find any hotels, lodges, or other buildings within a one-kilometer radius of the geysers that need to be evacuated.<br />
+This part is not pure fiction either. When the magnitude 7.3 Hebgen Lake earthquake struck just west of the park in 1959, at least 289 hot springs erupted as geysers within a day, about 160 of them for the first time ever. Details here: https://www.usgs.gov/news/60-years-1959-m73-hebgen-lake-earthquake-its-history-and-effects-yellowstone-region</p>
+<ol>
+<li>Use Google Maps or other resources to help you find the location of Old Faithful and 3 other geysers. You’ll want them fairly close to each other so that you can see some buildings within the scale of the map.  </li>
+<li>Use your past lab experience to create a new shapefile layer, and add a point at each of the 4 geysers (use Lab 4 if you get stuck) and give each point a name in the attribute table. Here’s a hint: </li>
+</ol>
+<p><img alt="New Shapefile Layer dialog with Point geometry type, Project CRS EPSG:26912, and a text field named “name” added to the Fields List" src="images/anchored5.png" /></p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Make sure to <strong>SAVE</strong> and toggle off edit mode after you’ve added the 4 points.</p>
+</div>
+<ol>
+<li><strong>Once</strong> you have your points, find the “Buffer” tool in the Processing Toolbox.  </li>
+<li>Set the input layer to your geyser points, distance to 1 km, and “Segments” to 32.  </li>
+<li>Check “Dissolve result” so that the resulting shape is combined.  </li>
+<li>Click the ellipses next to “Buffered” and choose “Save to File” so that your buffer layer isn’t temporary (in case you need to save and come back later). Click run.</li>
+</ol>
+<p><img alt="Buffer dialog with the geyser points input layer, distance of 1 kilometer, 32 segments, Dissolve result checked, and the Buffered save ellipses highlighted" src="images/anchored7.png" /></p>
+<ol>
+<li>Your result should look like this: </li>
+</ol>
+<p><img alt="QGIS window showing the dissolved 1 km buffer around the four geyser points as a single purple polygon" src="images/geyser-buffer-result.png" /></p>
+<ol>
+<li>Edit the symbology of the points and buffers, and add labels to the points. You can find this in the “Labels” tab next to where you find the symbology options. </li>
+</ol>
+<p><img alt="Labels tab highlighted just below the Symbology tab in the layer properties sidebar" src="images/anchored8.png" /></p>
+<ol>
+<li>Visually explore your map and use the basemap to determine if there are any buildings that need to be evacuated.  </li>
+<li>Create a second map layout showing your basemap, buffer polygons, and four geysers with readable labels. Include all the appropriate cartographic elements including labels, titles, scale bar, neatline, etc. Add context by adding a text box to the map explaining what this map represents. Export your layout before moving on.</li>
+</ol>
+<h3 id="step-3-find-the-helicopter-search-area"><strong>Step 3: Find the Helicopter Search Area</strong><a class="headerlink" href="#step-3-find-the-helicopter-search-area" title="Permanent link">&para;</a></h3>
+<p>Experts from the state of Idaho have requested assistance. Since only a small portion of Yellowstone is within Idaho's boundaries, Idaho is only responsible for a very small part of the disaster zone. Fish Creek Road (aka Forest Road 082) is the highway that ground teams will be searching from, and they will cover anything up to 5km from the road. Helicopters will need to search anything further than that. Find the helicopter search area that is within the National Park, within the State of Idaho, and over 5 kilometers from Fish Creek Road.</p>
+<p><em>Retrieving the Shapefiles</em></p>
+<ol>
+<li>Go to this page: https://irma.nps.gov/DataStore/Reference/Profile/2224545?lnv=True and download the file labeled “Geodatabase” (Administrative_Boundaries_of_National_Park_System_Units.gdb.zip, about 13 MB). The NPS now publishes this dataset as a geodatabase instead of a shapefile, so don’t panic when you don’t see a .shp file.  </li>
+<li>Unzip it, then drag the folder ending in “.gdb” onto your QGIS map. It holds a single layer called nps_boundary with every national park unit in the country, and QGIS reads it just like a shapefile.  </li>
+<li>Now search the National Map’s “Boundaries” category for a shapefile of the state of Idaho. To do this, use the same method as steps 1-4 but place a point in Idaho before clicking “Search Products.” (You should find “USGS National Boundary Dataset (NBD) in Idaho State or Territory” offered in a few formats — download the Shapefile one.)  </li>
+<li>Within the downloaded zip folder, find the “Shape” folder and the “GU_StateOrTerritory.shp” file within it. Add that file to your project.  </li>
+<li>Go back to the national map website and use the same search method to search for and download the “USGS National Transportation Dataset (NTD) for Idaho” shapefile (again, choose the Shapefile format). It’s under the “Transportation” category. Fair warning: this one is nearly 200 MB, so it may take a few minutes.  </li>
+<li>Within this next downloaded zip folder, there will again be a “Shape” folder. Find the “Trans_RoadSegment.shp” layer and add it to your project.  </li>
+<li>After adding the road segment data to your project, you will need to run the <strong>“Reproject layer”</strong> tool on it in order to do further analysis. In the Processing Toolbox, open the “Reproject Layer” tool.  </li>
+<li>Select the road layer as the input, and use our standard EPSG:26912 as the Target CRS  </li>
+<li>Use the ellipses by “Reprojected” to save the reprojected roads with your files, run the tool, and delete the original road layer from your project</li>
+</ol>
+<p><img alt="Reproject Layer dialog with the Trans_RoadSegment input, EPSG:26912 target CRS, and the Reprojected save ellipses highlighted with a note saying “Don’t leave it as a temporary layer”" src="images/anchored10.png" /></p>
+<p><em>Selecting the Highways</em></p>
+<ol>
+<li>Open the “Select by attribute” tool in the Processing Toolbox. The road data that we downloaded has a helpful “name” column in the attribute table to select by.  </li>
+<li>Use these parameters:  <ol>
+<li>Input layer \= your reprojected roads layer  </li>
+<li>Selection attribute \= “name”  </li>
+<li>Value \= “FISH CREEK”</li>
+</ol>
+</li>
+</ol>
+<p><img alt="Select by Attribute dialog with the reprojected roads input layer and “name” selection attribute highlighted, and an overlaid note explaining that the road data was created in geographic coordinates (EPSG:4269) measured in degrees, so it must be reprojected into a CRS with projected coordinates before QGIS can buffer it by 5 km" src="images/anchored9.png" /></p>
+<p><em>Buffering the Selected Roads</em></p>
+<ol>
+<li>Check the map to see if the yellow selection is a road near Yellowstone National Park, and SAVE your project before going any further. An error in the next steps could crash QGIS, and you don’t want to lose your work if that happens. Also, Idaho has several roads named Fish Creek, so don’t worry if a few selected segments show up far from the park — everything outside the park boundary gets trimmed away in the next steps.  </li>
+<li>Open the buffer tool. <strong>Check “Selected features only”</strong> and set the distance to 5 kilometers. Set “Segments” to 32, and check the “Dissolve result” box.</li>
+</ol>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Be <strong>sure</strong> to check the “Selected features only” box in the buffer tool, or QGIS will try to run a buffer on every road in Idaho and probably crash.</p>
+</div>
+<ol>
+<li>Click the ellipses under “Buffered” to save your resulting layer to a file (Remember to check behind your QGIS windows if the Buffer tool disappears). Click run, then close the tool.</li>
+</ol>
+<p><img alt="Buffer dialog for the roads layer with Selected features only checked, distance of 5 kilometers, 32 segments, Dissolve result checked, and the save ellipses and Run button highlighted" src="images/anchored12.png" /></p>
+<ol>
+<li>Now you have every shape that you need, and your project should now look something like this:</li>
+</ol>
+<p><img alt="QGIS window showing the Fish Creek Road buffer in yellow, the Idaho state boundary in red, and the green NPS boundary polygons over a satellite basemap" src="images/image3.png" /></p>
+<p><em>Processing the Polygons</em></p>
+<ol>
+<li>Start by shaving down the Yellowstone (National Parks) polygon to only the park within Idaho. Search for “clip” in the Processing Toolbox, and open the “Clip” tool under the “Vector overlay” category (a search for “clip” turns up several tools — you want the plain “Clip”).  </li>
+<li>Set the “Input layer” to the national parks polygon(s), and “Overlay layer” should be the Idaho state boundary polygon.</li>
+</ol>
+<p><img alt="Clip dialog with the Fixed geometries input layer, GU_StateOrTerritory overlay layer, and the Clipped save ellipses and Run button highlighted" src="images/anchored13.png" /></p>
+<ol>
+<li>You will probably get an error saying that the national parks boundary layer has “invalid geometry”. Run the “Fix geometries” tool on the trouble dataset with all the default settings.  </li>
+<li>Try running the clip tool again with all the same inputs, except now use the new “Fixed geometries” layer as the “Input Layer”. Zoom to the southwest corner of the park to see your result — the clip also keeps the other NPS units in Idaho, like Craters of the Moon, but you can ignore those.  </li>
+<li>You should now have a tall, thin polygon like this: </li>
+</ol>
+<p><img alt="Tall, thin yellow polygon representing the Idaho portion of Yellowstone along the state border" src="images/anchored11.png" /></p>
+<ol>
+<li>Find and open the “Difference” tool. The “Input layer” is your last result (the tall thin polygon that represents the Idaho side of Yellowstone). For the “Overlay layer” use the highway buffer that you made. Name the output file “search_area” since this will be the final result.</li>
+</ol>
+<p><img alt="Difference dialog with the park_in_idaho input layer, fishcreek_buffer overlay layer, and the search_area.gpkg output and Run button highlighted" src="images/difference-dialog.png" /></p>
+<ol>
+<li>Your search area should look something like this: (if the highway isn’t highlighted in yellow that’s okay, it just means that you deselected it at some point)  </li>
+</ol>
+<p><img alt="Orange search area polygon along the Wyoming border east of the yellow Fish Creek Road selection" src="images/anchored14.png" /></p>
+<ol>
+<li>Your final map needs Fish Creek Road as its own layer, not just a yellow selection buried in the giant roads layer. Open the “Extract by attribute” tool (it works just like Select by attribute, except it saves the matching features as a new layer) and use the same parameters as before: your reprojected roads layer, the “name” attribute, and the value “FISH CREEK”.  </li>
+<li>Change the symbology of your results as necessary  </li>
+<li>Create a third map layout showing the search area, Fish Creek Road, and the Idaho state border. Include all the required cartographic elements including legends, titles, scale bars, neatlines, etc.  </li>
+<li>Add context by adding a text box to the layout explaining what this map represents.  </li>
+<li>Export your final layout</li>
+</ol>
+<h2 id="deliverables"><strong>Deliverables</strong><a class="headerlink" href="#deliverables" title="Permanent link">&para;</a></h2>
+<p>Submit a pdf file that contains:</p>
+<ol>
+<li>Your name, date, class section, and lab assignment number  </li>
+<li>All three layouts - each on their own full page  </li>
+<li>The grading rubric, filled in with your self evaluation</li>
+</ol>
+<h2 id="grading-rubric"><strong>Grading Rubric</strong><a class="headerlink" href="#grading-rubric" title="Permanent link">&para;</a></h2>
+<p>The following rubric will be used to evaluate your lab assignment. You should use this as a guide to make sure that you include all the required elements for this lab. Shown under “Score” is the maximum possible points you can receive for each item. </p>
+<p>Sometimes, points are awarded on a "yes or no" basis, giving full points if something is present and none if it is not. Other times, points are given on a scale, depending on how well you complete the task. Please keep this in mind. For example, if there is a written answer required, grading will be based on a scale of points, depending on the quality and completeness of your written answer.</p>
+<p>Copy the rubric and paste it into your lab report. Fill in your self evaluation of the rubric, showing how many points you feel you have earned for each item.</p>
+<table>
+<thead>
+<tr>
+<th>Requirement</th>
+<th>Score</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Create and include the required map layout for Part 1: Context textbox <em>(2 pt)</em> Clearly shows elevations above/below Yellowstone Lake <em>(5 pts)</em> Includes all required cartographic elements <em>(3 pts - see previous labs for details)</em></td>
+<td>/10</td>
+</tr>
+<tr>
+<td>Create and include the required map layout for Part 2: Context textbox <em>(1 pt)</em> Labels <em>(1 pts)</em> Clearly shows geysers and their 1km radius <em>(5 pt)</em> Includes all required cartographic elements <em>(3 pts - see previous labs for details)</em></td>
+<td>/10</td>
+</tr>
+<tr>
+<td>Create and include the required map layout for Part 3: Context textbox <em>(2 pt)</em> Clearly shows correct search area, Fish Creek Road, and state borders <em>(5 pts)</em> Includes all required cartographic elements <em>(3 pts - see previous labs for details)</em></td>
+<td>/10</td>
+</tr>
+<tr>
+<td><strong>Total</strong></td>
+<td><strong>/30</strong></td>
+</tr>
+</tbody>
+</table>
+<h2 id="using-ai-on-this-lab"><strong>Using AI on This Lab</strong><a class="headerlink" href="#using-ai-on-this-lab" title="Permanent link">&para;</a></h2>
+<p>AI tools like ChatGPT and Gemini can be genuinely useful on this lab, and you are welcome to use them the right way. This lab has a lot of moving parts: three downloaded datasets, seven geoprocessing tools, and at least one spot where QGIS throws an error at you on purpose. If you get stuck, ask an AI to explain what a tool actually does (why do we dissolve a buffer? what does Difference keep, and what does it throw away?), to decode a cryptic error message like the invalid geometry one in Part 3, or to quiz you on when you would reach for Clip versus Difference. What is not okay: having AI write the text-box explanations on your maps, or asking it to describe results you never actually produced. Your three layouts must come from data you downloaded and processed yourself. If you use AI, say so in your report, and be ready to defend every answer and every map as your own understanding. If you cannot explain it without the chatbot, you are not done learning it yet.</p>
+<hr />
+<p class="page-version">Version 2026.09.3 · Last updated September 10, 2026</p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../lab-08/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Lab 8 — Metadata">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Lab 8 — Metadata
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../lab-10/" class="md-footer__link md-footer__link--next" aria-label="Next: Lab 10 — Domes for Mozambique">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Lab 10 — Domes for Mozambique
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.indexes", "navigation.top", "navigation.footer", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -26,6 +26,7 @@ from typing import Optional
 ROOT = Path(__file__).resolve().parent.parent
 DOCS = ROOT / "docs"
 WEEKS_DIR = DOCS / "weeks"
+HANDSON_DIR = DOCS / "handson"
 SITE = "https://byu-hydroinformatics.github.io/cce114-geomatics"
 
 # ---------------------------------------------------------------------------------------
@@ -198,9 +199,17 @@ LABS = {1: "Getting Started with GIS", 2: "Map Symbology and Layouts", 3: "GPS D
         7: "Projections and Coordinate Systems", 8: "Metadata", 9: "The Yellowstone Disaster",
         10: "Domes for Mozambique", 11: "Walmart Site Selection"}
 
-KIND_LABEL = {"concepts": "Concepts lecture (Dr. Ames)",
-              "hands-on": "Demo and hands-on (Dr. Halgren)",
-              "other": "Class session"}
+# Session types. Each has a badge label and a CSS modifier class; docs/stylesheets/extra.css
+# renders them as colored pills. Instructors are deliberately not named here: who teaches which
+# day changes between semesters (CLAUDE.md rule 7).
+KIND_LABEL = {"concepts": "Lecture", "hands-on": "Hands-On Practice", "other": "Class Session"}
+KIND_CLASS = {"concepts": "badge-lecture", "hands-on": "badge-handson", "other": "badge-session"}
+KIND_EMOJI = {"concepts": "📖", "hands-on": "🖱️", "other": "📍"}
+
+
+def badge(kind: str) -> str:
+    """An inline attribute-list span; attr_list turns it into <strong class="badge ...">."""
+    return f"**{KIND_LABEL[kind]}**{{ .badge .{KIND_CLASS[kind]} }}"
 
 # Thursday sessions get the run sheet's applied title instead of the lecture-generator's
 # academic title, since the two are now the same page. Keyed by day number.
@@ -270,14 +279,14 @@ def session_title(d: dict) -> str:
 
 def session_generated_body(d: dict, skip_topics_and_activity: bool = False) -> list[str]:
     """The part of a session that is always rebuilt from the tables."""
-    out = [f"*Day {d['n']} · {KIND_LABEL[d['kind']]}*", ""]
+    out = [f"{badge(d['kind'])} · *Day {d['n']}*", ""]
     if d.get("note"):
         out += ["> [!NOTE]", f"> {d['note']}", ""]
     if not skip_topics_and_activity:
         out += ["### Topics", ""] + [f"- {t}" for t in d["topics"]] + [""]
     if d.get("slides"):
         out += ["### Slides", ""] + [f"- [{t}]({u})" for t, u in d["slides"]] + [""]
-    elif not skip_topics_and_activity:
+    elif not skip_topics_and_activity and d["kind"] != "hands-on":
         out += ["### Slides", "", "*Slides for this day are not on the site yet. They will be added as the semester goes.*", ""]
     if d.get("data") or d.get("links"):
         out += ["### Materials", ""]
@@ -305,22 +314,101 @@ def preserved_after(existing_text: str, marker: str) -> Optional[str]:
 
 
 def session_section(d: dict, weekday: Optional[str], existing_text: str) -> list:
+    """One "## Tuesday — ..." or "## Thursday — ..." block on a week page.
+
+    A hands-on session's full run sheet lives on its own page under docs/handson/; the week
+    page carries the badge, topics, materials, the graded activity, and a callout linking out
+    to it. A Tuesday activity write-up still lives inline under its marker."""
     out = [f"## {session_heading(d, weekday)}", ""]
-    marker = None
+    out += session_generated_body(d)
     if d["kind"] == "hands-on":
-        marker = "<!-- thursday-notes -->"
-        out += session_generated_body(d, skip_topics_and_activity=True)
-    elif d["kind"] in ("concepts", "other") and d["n"] in TUESDAY_NOTES_DAYS:
+        out += handson_callout(d)
+        return out
+    if d["n"] in TUESDAY_NOTES_DAYS:
         marker = "<!-- tuesday-notes -->"
-        out += session_generated_body(d)
-    else:
-        out += session_generated_body(d)
-    if marker:
         out.append(marker)
         preserved = preserved_after(existing_text, marker)
         out.append(preserved if preserved else "")
         out.append("")
     return out
+
+
+def handson_callout(d: dict) -> list:
+    """The prominent link from a week page out to that Thursday's hands-on page."""
+    return ["> [!TIP]",
+            f"> {KIND_EMOJI['hands-on']} **Hands-On Practice: {session_title(d)}**",
+            ">",
+            "> This session has its own step-by-step guide: what to have ready, a practice run "
+            "you can do beforehand, the 50-minute plan, the click-by-click QGIS walkthrough, "
+            "the graded upload, and the snags that usually come up.",
+            ">",
+            f"> **[Open the Week {d['week']} hands-on guide "
+            f"&rarr;](../handson/week-{d['week']:02d}.md)**",
+            ""]
+
+
+def handson_day(w: int) -> Optional[dict]:
+    """The hands-on meeting of week w, if it has one."""
+    for d in DAYS:
+        if d["week"] == w and d["kind"] == "hands-on":
+            return d
+    return None
+
+
+def handson_page(d: dict, existing_text: str) -> str:
+    """A standalone page for one Thursday hands-on session.
+
+    Everything above the "<!-- runsheet -->" marker is regenerated on every run. The run sheet
+    itself (at a glance, practice run, before class, the plan, the walkthrough, the graded
+    upload, common snags) is hand-written below the marker and is never touched, so it must
+    start at "### " or deeper."""
+    w, info = d["week"], WEEKS[d["week"]]
+    out = [f"# Week {w} Hands-On — {session_title(d)}", "",
+           f"{badge('hands-on')} · *Day {d['n']} · Thursday of "
+           f"[Week {w} — {info['theme']}](../weeks/week-{w:02d}.md)*", ""]
+    if d.get("note"):
+        out += ["> [!NOTE]", f"> {d['note']}", ""]
+    out += ["### Topics", ""] + [f"- {x}" for x in d["topics"]] + [""]
+    if d.get("slides"):
+        out += ["### Slides", ""] + [f"- [{a}]({b})" for a, b in d["slides"]] + [""]
+    if d.get("data") or d.get("links"):
+        out += ["### Materials", ""]
+        for a, b in d.get("data", []):
+            out.append(f"- {a}: [download]({b})" if b else f"- {a} (posted on Learning Suite)")
+        for a, b in d.get("links", []):
+            out.append(f"- [{a}]({b})")
+        out.append("")
+    if d.get("activity"):
+        out += ["### Graded in-class activity", "",
+                d["activity"] + ". Students record completion on Learning Suite.", ""]
+    out.append("<!-- runsheet -->")
+    preserved = preserved_after(existing_text, "<!-- runsheet -->")
+    out.append(preserved if preserved else "")
+    return "\n".join(out).rstrip("\n") + "\n"
+
+
+def handson_index() -> str:
+    out = ["# Hands-On Practice", "",
+           "Every Thursday of Weeks 2 through 12 is a working session in QGIS 3.44. Each one has "
+           "its own page below: what the session is for, what to have ready, a practice run you "
+           "can do on your own beforehand, a minute-by-minute plan, the click-by-click "
+           "walkthrough, the graded upload, and the snags that usually come up.", "",
+           "Weeks 1, 13, 14 and 15 have no hands-on session. Week 1 meets once, Week 13 is a work "
+           "session or holiday, and Weeks 14 and 15 are final project presentations.", "",
+           "| Week | Session | Feeds | Graded activity |",
+           "| --- | --- | --- | --- |"]
+    for w in WEEKS:
+        d = handson_day(w)
+        if not d:
+            continue
+        lab = LABS.get(w - 1)
+        lab_cell = f"[Lab {w - 1}](../assignments/lab-{w - 1:02d}/README.md)" if lab else "—"
+        act = d.get("activity", "")
+        act = (act.split(":")[0] if ":" in act else act) or "—"
+        out.append(f"| {w} | [{session_title(d)}](week-{w:02d}.md) | {lab_cell} | {act} |")
+    out += ["", "> [!TIP]", "> Each page is written so that someone who has never run the session "
+            "can rehearse it alone in about twenty minutes before class.", ""]
+    return "\n".join(out)
 
 
 def week_page(w: int, existing_text: str) -> str:
@@ -340,16 +428,24 @@ def schedule_page() -> str:
            "The sequence below is the same each semester; only the calendar dates change, so this page",
            "uses week numbers and weekdays. Exact due dates are on Learning Suite.", "",
            "Each week has two class meetings, presented together on that week's page:", "",
-           "- **Tuesday: concepts.** A lecture with discussion and short activities (Dr. Ames).",
-           "- **Thursday: demo and hands-on.** Working in QGIS on the week's topic (Dr. Halgren).", "",
+           f"- {KIND_EMOJI['concepts']} **Tuesday: lecture.** Concepts, discussion, and a short "
+           "in-class activity.",
+           f"- {KIND_EMOJI['hands-on']} **Thursday: hands-on practice.** Working in QGIS on the "
+           "week's topic. Each session also has its own step-by-step guide under "
+           "[Hands-On Practice](handson/README.md).", "",
            "Reading quizzes open on Tuesday and close **Saturday at 11:59 pm**; lab reports are also due **Saturday at 11:59 pm**.", "",
-           "| Week | Tuesday (concepts) | Thursday (hands-on) | Due this week |",
+           f"| Week | {KIND_EMOJI['concepts']} Tuesday (lecture) | "
+           f"{KIND_EMOJI['hands-on']} Thursday (hands-on) | Due this week |",
            "| --- | --- | --- | --- |"]
     for w, info in WEEKS.items():
         page = f"weeks/week-{w:02d}.md"
         cells = {"Tuesday": "—", "Thursday": "—"}
         for d, weekday in week_sessions(w):
-            link = f"[{session_title(d)}]({page}#{slug(session_heading(d, weekday))})"
+            # A hands-on session links straight to its own guide; everything else links to the
+            # session heading on the week page, which is what Learning Suite points at.
+            target = (f"handson/week-{w:02d}.md" if d["kind"] == "hands-on"
+                      else f"{page}#{slug(session_heading(d, weekday))}")
+            link = f"[{session_title(d)}]({target})"
             cells[weekday or "Thursday"] = link   # Week 1 meets only on Thursday
         due = "<br>".join(lab_link(x, "") for x in info["due"]) or "—"
         out.append(f"| [Week {w}: {info['theme']}]({page}) | {cells['Tuesday']} | {cells['Thursday']} | {due} |")
@@ -366,10 +462,20 @@ def update_nav(mkdocs_yml: Path) -> None:
     for w, info in WEEKS.items():
         lines.append(f"      - \"Week {w} — {info['theme']}\": weeks/week-{w:02d}.md")
     block = "\n".join(lines) + "\n"
-    new_text, n = re.subn(r"  - Schedule:\n(?:      .*\n)*", block, text)
+    text, n = re.subn(r"  - Schedule:\n(?:      .*\n)*", block, text)
     if n != 1:
         raise SystemExit("mkdocs.yml: expected exactly one '  - Schedule:' nav block")
-    mkdocs_yml.write_text(new_text)
+
+    # The Hands-On tab: its index page, then one page per Thursday that has a session.
+    hs = ["  - Hands-On:", "      - handson/README.md"]
+    for w in WEEKS:
+        d = handson_day(w)
+        if d:
+            hs.append(f"      - \"Week {w} — {session_title(d)}\": handson/week-{w:02d}.md")
+    text, n = re.subn(r"  - Hands-On:\n(?:      .*\n)*", "\n".join(hs) + "\n", text)
+    if n != 1:
+        raise SystemExit("mkdocs.yml: expected exactly one '  - Hands-On:' nav block")
+    mkdocs_yml.write_text(text)
 
 
 def main() -> None:
@@ -379,8 +485,20 @@ def main() -> None:
         path = WEEKS_DIR / f"week-{w:02d}.md"
         existing = path.read_text() if path.exists() else ""
         path.write_text(week_page(w, existing))
+    HANDSON_DIR.mkdir(exist_ok=True)
+    (HANDSON_DIR / "README.md").write_text(handson_index())
+    n_handson = 0
+    for w in WEEKS:
+        d = handson_day(w)
+        if not d:
+            continue
+        path = HANDSON_DIR / f"week-{w:02d}.md"
+        existing = path.read_text() if path.exists() else ""
+        path.write_text(handson_page(d, existing))
+        n_handson += 1
     update_nav(ROOT / "mkdocs.yml")
-    print(f"wrote schedule.md, {len(WEEKS)} week pages, and the mkdocs nav")
+    print(f"wrote schedule.md, {len(WEEKS)} week pages, {n_handson} hands-on pages "
+          f"plus their index, and the mkdocs nav")
 
 
 if __name__ == "__main__":

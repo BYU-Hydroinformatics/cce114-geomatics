@@ -1,5 +1,7 @@
 # Lab 1: Getting Started with Geographic Information Systems
 
+**Lab**{ .badge .badge-lab } · Due Saturday of Week 2, 11:59 pm · Prepared for by the [Week 2 hands-on session](../../handson/week-02.md)
+
 **Civil and Construction Engineering 114 — Geomatics**
 
 Dr. Dan Ames · Brigham Young University

@@ -272,6 +272,35 @@ Collected from the conversion notes at the end of each deck (search for `Convers
   students may open the Metadata panel in steps 11 to 15 and find it already populated, which would
   undercut the exercise. I could not read the file's contents to check.
 
+- **Course data moved off Learning Suite: done 2026-09-10.** Labs 7, 8 and 10 were the last three
+  that made students fetch data from Learning Suite. All of it now ships with the site, in a
+  `data/` folder beside each lab the way Lab 4 already did, and the labs link to it directly. No
+  lab depends on Learning Suite for data any more; the only remaining mentions are about submitting
+  work, which is what Learning Suite is for.
+
+  | Lab | File | Size |
+  | --- | --- | --- |
+  | 7 | `lab7_projections.gpkg` (StateBoundary, TissotIndicatrix) | 1.8 MB |
+  | 7 | `mystery_points.csv` | 45 bytes |
+  | 8 | `Lehi_wetland01.zip` | 3.1 KB |
+  | 10 | `project_boundary1.zip` | 3.3 KB |
+  | 10 | `moz_adm.zip` | 1.9 MB |
+
+  **No GitHub Release was needed.** Lab 7's original attachment was a 26 MB zip of a 2018 file
+  geodatabase that unpacked to 67 MB, and nearly all of it was `Lab7_UTCadastre`, 213,431 Utah
+  parcel polygons the lab never mentions and never uses. Dropping that layer and writing the two it
+  does use as a GeoPackage gives 1.8 MB, and students now drag one file in instead of unzipping a
+  geodatabase folder. Converting the whole geodatabase would have gone the other way: 163 MB,
+  because a GeoPackage is not compressed.
+
+  Two attachments were deliberately **not** migrated. Lab 8's Learning Suite copies of Utah County
+  Boundaries and Utah Roads duplicate downloads the lab already sends students to UGRC for, and the
+  roads one is about 115 MB. Leave them or delete them from Learning Suite; nothing links to them.
+
+  Resolved while doing this: the `Lehi_wetland01.qmd` sidecar in Lab 8's zip is **empty** apart from
+  the CRS — no title, abstract or dates — so students still start from a blank Metadata panel and
+  the exercise in steps 11 to 15 is not undercut. That question is closed.
+
 - **Lab 4 culvert photos** (`anchored10`, `anchored11`, `anchored12`, `anchored14`) are 225 to 369 px
   wide. They are photographs, not QGIS captures, so no script replaces them; they need images Dan is
   happy to license.

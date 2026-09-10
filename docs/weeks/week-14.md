@@ -8,7 +8,7 @@
 
 ## Tuesday — Introduction to CCE 414 and Final Project Work Session
 
-*Day 26 · Class session*
+**Class Session**{ .badge .badge-session } · *Day 26*
 
 ### Topics
 
@@ -25,7 +25,7 @@
 
 ## Thursday — Final Project Presentations
 
-*Day 27 · Class session*
+**Class Session**{ .badge .badge-session } · *Day 27*
 
 ### Topics
 

@@ -1,5 +1,7 @@
 # Lab 2: Map Symbology and Layouts
 
+**Lab**{ .badge .badge-lab } · Due Saturday of Week 3, 11:59 pm · Prepared for by the [Week 3 hands-on session](../../handson/week-03.md)
+
 **Civil and Construction Engineering 114 — Geomatics**
 
 Dr. Dan Ames · Brigham Young University

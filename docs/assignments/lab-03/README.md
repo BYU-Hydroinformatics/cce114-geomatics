@@ -1,5 +1,7 @@
 # Lab 3: GPS Data Collection and Importing Into QGIS
 
+**Lab**{ .badge .badge-lab } · Due Saturday of Week 4, 11:59 pm · Prepared for by the [Week 4 hands-on session](../../handson/week-04.md)
+
 **Civil and Construction Engineering 114 — Geomatics**
 
 Dr. Dan Ames · Brigham Young University

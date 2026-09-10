@@ -2,7 +2,7 @@
 
 ## Tuesday — Final Project Work Session
 
-*Day 24 · Class session*
+**Class Session**{ .badge .badge-session } · *Day 24*
 
 ### Topics
 
@@ -14,7 +14,7 @@
 
 ## Thursday — Final Project Work Session or Holiday
 
-*Day 25 · Class session*
+**Class Session**{ .badge .badge-session } · *Day 25*
 
 ### Topics
 

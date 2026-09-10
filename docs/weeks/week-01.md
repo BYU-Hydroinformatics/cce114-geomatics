@@ -2,7 +2,7 @@
 
 ## Day 1 — Course Introduction and Introduction to GIS
 
-*Day 1 · Concepts lecture (Dr. Ames)*
+**Lecture**{ .badge .badge-lecture } · *Day 1*
 
 > [!NOTE]
 > The first class meeting of the semester. In Fall it falls on a Thursday; the Tuesday/Thursday rhythm starts the following week.
