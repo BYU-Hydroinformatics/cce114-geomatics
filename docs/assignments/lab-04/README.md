@@ -2,7 +2,7 @@
 
 **Civil and Construction Engineering 114 — Geomatics**
 
-Winter 2026 · Dr. Dan Ames
+Dr. Dan Ames · Brigham Young University
 
 *Developed with extensive help from Harrison, Isabel, and Kayden*
 
@@ -46,12 +46,12 @@ Your objective is to rectify these errors. Using a high-resolution aerial basema
 ## **Software and Data**
 
 * For this lab, we will use the GIS software application QGIS (also known as Quantum GIS). This is a free and open-source GIS package that runs on Windows, Mac, and Linux operating systems. The software is pre-installed on the computers in the Clyde Building 234 computer lab. You can also download it and install it on your own computer from this website: [https://www.qgis.org/](https://www.qgis.org/). We will be using the latest Long Term Release version, QGIS 3.44 (LTR), in this course.   
-* There are no custom data downloads for this lab. All of the vector data you will fix comes live from the Utah Geospatial Resource Center's State Geographic Information Datasource (SGID): https://gis.utah.gov/products/sgid/ — the Phase 3 instructions show you exactly how to grab it.  
+* There are no custom data downloads for this lab. All of the vector data you will fix comes live from the Utah Geospatial Resource Center's State Geographic Information Datasource (SGID): https://gis.utah.gov/products/sgid/ — Step 5 shows you exactly how to grab it.  
 * Imagery from Google will also be used as a base layer. 
 
-## **Instructions**
+## **Step by Step Instructions**
 
-### **Data and Map Setup**
+### **Step 1: Set Up the Project**
 
 1. Start a new QGIS project.  
 2. Add a satellite image as your base layer. You can do this using the Data Source Manager or the QuickMapServices plugin, following the method from the previous lab.
@@ -66,7 +66,7 @@ Your objective is to rectify these errors. Using a high-resolution aerial basema
 
 4. **SAVE** your project  
 
-## **Phase 1: Project Setup and Data Preparation**
+### **Step 2: Create the Point and Line Layers**
 
 5. **Create New Layers (GeoPackage):** Navigate to Layer \> Create Layer \> New GeoPackage Layer... and create the following:  
 6. **Name your first layer “Street\_Lights”. Set the Geometry Type dropdown to Point. Finally, add New Fields (the schema) to your layer — for example: ID (Integer), Fixture\_Type (Text), Voltage (Integer).**  
@@ -87,24 +87,24 @@ Your objective is to rectify these errors. Using a high-resolution aerial basema
 > [!WARNING]
 > If you're on a lab computer, do **NOT** save anything to your network drive. Instead, save it somewhere locally on the computer itself in a folder with your name. If you save files on a network drive, QGIS will be slower and have more bugs.
 
-### **Phase 1, Part 2: Creating the Temple Footprint Layer**
+### **Step 3: Create the Temple Footprint Layer and Turn On Snapping**
 
 There are several different techniques and algorithms for doing what we are trying to do. In this lab, you may take the approach detailed below. 
 
-1. Find [100 South and 2550 East](https://maps.app.goo.gl/JHrj19fozCdnAq6g6), Spanish Fork, Utah, United States on your base map. This hyperlink should help. You should be looking at an area just south of Maple Mountain High School and just east of a Latter-Day Saint church. It is currently an empty lot (pictured below).  
+11. Find [100 South and 2550 East](https://maps.app.goo.gl/JHrj19fozCdnAq6g6), Spanish Fork, Utah, United States on your base map. This hyperlink should help. You should be looking at an area just south of Maple Mountain High School and just east of a Latter-Day Saint church. It is currently an empty lot (pictured below).  
 
 ![Aerial imagery of the empty lot at 100 South and 2550 East in Spanish Fork, highlighted in orange, south of Maple Mountain High School](images/anchored4.png)
 
-2. **Create a polygon layer** for the Spanish Fork Temple footprint in this area. The temple footprint itself should be about 30,000 square feet.  
-3. Go to Layer \> Create Layer \> New GeoPackage Layer... — the same tool you used in Phase 1, so all of your layers stay in the same GeoPackage format.  
-4. Next to “File name”, click the ellipses. Save it to your lab folder and name it “Temple\_Footprint”. Also add a Name field (Text type) — you will use it to label your buildings in the map layout later.  
-5. For “Geometry Type”, change it to “Polygon”.  
-6. Before you draw anything, skim ahead to the area-check steps near the end of Phase 2 — knowing the target square footage now will save you redraws later.  
-7. Make sure your screen looks like this and hit “OK”  
+12. **Create a polygon layer** for the Spanish Fork Temple footprint in this area. The temple footprint itself should be about 30,000 square feet.  
+13. Go to Layer \> Create Layer \> New GeoPackage Layer... — the same tool you used in Step 2, so all of your layers stay in the same GeoPackage format.  
+14. Next to “File name”, click the ellipses. Save it to your lab folder and name it “Temple\_Footprint”. Also add a Name field (Text type) — you will use it to label your buildings in the map layout later.  
+15. For “Geometry Type”, change it to “Polygon”.  
+16. Before you draw anything, skim ahead to the area-check steps at the end of Step 4 — knowing the target square footage now will save you redraws later.  
+17. Make sure your screen looks like this and hit “OK”  
 
 ![New GeoPackage Layer dialog for Temple_Footprint with Polygon geometry type, Project CRS EPSG:26912, and a Name text field in the fields list](images/anchored5.png)
 
-8. Before you continue\!\!\! **Configure your snapping options following the steps below:**  
+18. Before you continue\!\!\! **Configure your snapping options following the steps below:**  
    1. Navigate to **Project \> Snapping Options...** (or use the Snapping Toolbar).  
    2. Click the **"Enable Snapping"** icon (magnet).  
    3. Set the **Tolerance** to **12 Pixels**.  
@@ -115,40 +115,40 @@ There are several different techniques and algorithms for doing what we are tryi
    5. Ensure snapping is enabled for all of your vector layers.  
    6. Crucially, make sure to check the **"Avoid Overlap"** box for the **Temple\_Footprint** layer.
 
-## **Phase 2: Data Creation and Digitizing**
+### **Step 4: Digitize the Curbs, Lights, Temple, and Parking Lot**
 
-9. **Digitize Curb Lines (Lines):** **Toggle Editing ![Toggle Editing pencil icon](images/image2.png)** on the Curb\_Lines layer. Add a section of curb along a street and do your best to keep it in line with the road. Create both straight segments and curved segments (by using the "Digitize with Curve" tool). Make sure to add curbs from the indicated red dots between both church buildings. (see picture below)  
+19. **Digitize Curb Lines (Lines):** **Toggle Editing ![Toggle Editing pencil icon](images/image2.png)** on the Curb\_Lines layer. Add a section of curb along a street and do your best to keep it in line with the road. Create both straight segments and curved segments (by using the "Digitize with Curve" tool). Make sure to add curbs from the indicated red dots between both church buildings. (see picture below)  
 
 ![Digitizing toolbar dropdown showing Digitize with Segment, Digitize with Curve, Stream Digitizing, and Digitize Shape options](images/anchored8.png)
 
 ![Aerial view of the temple site with red dots marking where curb lines should start and end between the two church buildings](images/anchored7.png)
 
-10. **Time to add street lights (Points):** **Toggle Editing ![Toggle Editing pencil icon](images/image3.png)** on the Street\_Lights layer. Use the **Add Point Feature** tool to add 10 lights to the basemap around the temple but next to the curb. Fill in all attribute fields for each feature as you create it. You’re free to give whatever attribute data you please, just keep it relevant. Remember, yours will look different so avoid copying the example.   
+20. **Time to add street lights (Points):** **Toggle Editing ![Toggle Editing pencil icon](images/image3.png)** on the Street\_Lights layer. Use the **Add Point Feature** tool to add 10 lights to the basemap around the temple but next to the curb. Fill in all attribute fields for each feature as you create it. You’re free to give whatever attribute data you please, just keep it relevant. Remember, yours will look different so avoid copying the example.   
 
 ![Example of street light points placed as red dots along the curb line at the edge of the field](images/anchored9.png)
 
-11. **Save Edits:** Click the **Save Layer Edits** button ![Save Layer Edits icon](images/image4.png) for all layers and then **Toggle Editing** off (click the yellow pencil again)**![Toggle Editing pencil icon](images/image3.png)**.  
-12. Now, With the “Temple\_Footprint” layer selected, click the “Toggle Editing” **![Toggle Editing pencil icon](images/image3.png)** button near the top right of your screen (it looks like a little yellow pencil).  
-13. Now, click the “Add Polygon Feature” button (it looks like a green blob to the right of the pencil.  
-14. Left click to add the desired vertices to your temple footprint. When done, right-click to end, for “id” just put “1”, and hit “OK”. You should now have a polygon.  
-15. Exit editing mode by clicking the “Toggle Editing” button again, and click “Save”. Next, right-click on your “Temple\_Footprint” layer and click “Open Attribute Table”.  
-16. Click “Toggle editing mode” in your attribute table and then click “Open field calculator”.  
-17. Change the expression to “$area \* 10.7639”. This will give us the area of our polygon. The computer wants to give us the area in square meters, so we must use 10.7639 to convert it to square feet. Change the “Output field name” to “area”. Change the “Output field type” to Decimal number (real).  
-18. Once your screen looks like this, click “OK”.
+21. **Save Edits:** Click the **Save Layer Edits** button ![Save Layer Edits icon](images/image4.png) for all layers and then **Toggle Editing** off (click the yellow pencil again)**![Toggle Editing pencil icon](images/image3.png)**.  
+22. Now, With the “Temple\_Footprint” layer selected, click the “Toggle Editing” **![Toggle Editing pencil icon](images/image3.png)** button near the top right of your screen (it looks like a little yellow pencil).  
+23. Now, click the “Add Polygon Feature” button (it looks like a green blob to the right of the pencil.  
+24. Left click to add the desired vertices to your temple footprint. When done, right-click to end, for “id” just put “1”, and hit “OK”. You should now have a polygon.  
+25. Exit editing mode by clicking the “Toggle Editing” button again, and click “Save”. Next, right-click on your “Temple\_Footprint” layer and click “Open Attribute Table”.  
+26. Click “Toggle editing mode” in your attribute table and then click “Open field calculator”.  
+27. Change the expression to “$area \* 10.7639”. This will give us the area of our polygon. The computer wants to give us the area in square meters, so we must use 10.7639 to convert it to square feet. Change the “Output field name” to “area”. Change the “Output field type” to Decimal number (real).  
+28. Once your screen looks like this, click “OK”.
 
 ![Field Calculator with the expression $area * 10.7639, output field name area, and output field type Decimal number (real)](images/image5.png)
 
-19. Click “Toggle editing mode” again and click “Save”.  
-20. If your area is between 25,000 and 35,000, congratulations\! Your temple is reasonably sized for the plans. If not, click the “1” on the left (your polygon should change colors, exit the attribute table, click the “Toggle Editing” button again, click “Delete Selected” (a red garbage can), and click “Delete 1 Feature”.  
-21. Your polygon is now deleted, and you can reattempt one of the correct size by repeating the drawing steps above (Toggle Editing, Add Polygon Feature, then the area calculation). One difference: when you rerun the Field Calculator, check the “Update existing field” box and choose your “area” field instead of creating a new one — your screen should look like this ![Field Calculator with Update existing field checked and the area field selected](images/image6.png)  
-22. Now that you have your temple footprint, repeat the whole process for a parking lot: create one more polygon GeoPackage layer named “Parking\_Lot” (with a Name field), digitize it, and check its area with the Field Calculator. The parking lot should be adjacent to the temple and have an area between 60,000 and 80,000 square feet.  
-23. Your final lot should resemble this. This guide is designed to help you scale your parking lot and temple, so you don't have to redraw them multiple times. Please do not copy this exactly.
+29. Click “Toggle editing mode” again and click “Save”.  
+30. If your area is between 25,000 and 35,000, congratulations\! Your temple is reasonably sized for the plans. If not, click the “1” on the left (your polygon should change colors, exit the attribute table, click the “Toggle Editing” button again, click “Delete Selected” (a red garbage can), and click “Delete 1 Feature”.  
+31. Your polygon is now deleted, and you can reattempt one of the correct size by repeating the drawing steps above (Toggle Editing, Add Polygon Feature, then the area calculation). One difference: when you rerun the Field Calculator, check the “Update existing field” box and choose your “area” field instead of creating a new one — your screen should look like this ![Field Calculator with Update existing field checked and the area field selected](images/image6.png)  
+32. Now that you have your temple footprint, repeat the whole process for a parking lot: create one more polygon GeoPackage layer named “Parking\_Lot” (with a Name field), digitize it, and check its area with the Field Calculator. The parking lot should be adjacent to the temple and have an area between 60,000 and 80,000 square feet.  
+33. Your final lot should resemble this. This guide is designed to help you scale your parking lot and temple, so you don't have to redraw them multiple times. Please do not copy this exactly.
 
 ![Example aerial view with a yellow temple footprint polygon inside a purple U-shaped parking lot polygon](images/image7.png)
 
-## **Phase 3: Advanced Precision Editing (Topological Correction)**
+### **Step 5: Pull the Waterways and Correct Them**
 
-### **Culverts in GIS and Hydrology**
+#### **Culverts in GIS and Hydrology**
 
 Culverts are enclosed conduits, acting as subterranean drains or tunnels, that pass *under* roads, railways, or embankments. Their essential function is to maintain the natural flow of water (e.g., streams, runoff) across the transportation barrier.
 
@@ -164,54 +164,62 @@ Culverts are enclosed conduits, acting as subterranean drains or tunnels, that p
 > 2. **Hydrologic Modeling:** Correctly mapped culverts are fundamental inputs for hydraulic models used by engineers to predict flow rates, analyze drainage, and design storm water management plans.
 > 3. **Topological Accuracy:** Culvert features (often digitized as linear features) must maintain strict topological integrity in a GIS database. They must correctly connect upstream and downstream stream segments and exist logically *beneath* the road feature.
 
-### **Getting the data**
+#### **Getting the data**
 
 ![Double-arch concrete culvert carrying a stream under a road](images/anchored14.png)
 
 Instead of a canned download, you are going to pull live data straight from UGRC's SGID server — the same source Utah's engineering firms use.
 
-1\. Open the Data Source Manager (Layer \> Data Source Manager) and click the Vector tab. Set Source Type to "Protocol: HTTP(S), cloud, etc.", leave the Type as "GeoJSON", and paste the address below into the URI box. (That long address is simply a question we are asking UGRC's server: "please send just the streams and canals around Spanish Fork.")
+34. Open the Data Source Manager (Layer \> Data Source Manager) and click the Vector tab. Set Source Type to "Protocol: HTTP(S), cloud, etc.", leave the Type as "GeoJSON", and paste the address below into the URI box. (That long address is simply a question we are asking UGRC's server: "please send just the streams and canals around Spanish Fork.")
 
 ```
 https://services1.arcgis.com/99lidPhWCzftIe9K/arcgis/rest/services/UtahStreamsNHD/FeatureServer/0/query?where=FType+IN+(336,460)&geometry=-111.68,40.06,-111.56,40.15&geometryType=esriGeometryEnvelope&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=GNIS_Name,FType_Text,FCode_Text&f=geojson
 ```
 
-2\. Click Add, then Close. A layer named "query" appears with about 98 waterway features, including the Spanish Fork River, the East Bench Canal, and the Mapleton Lateral.
+35. Click Add, then Close. A layer named "query" appears with 98 waterway features — 57 streams and rivers and 41 canals and ditches — including the Spanish Fork River, the East Bench Canal, and the Mapleton Lateral. If you get a very different count, the address did not paste cleanly.
 
 > [!NOTE]
 > If the live server is ever down, a backup copy of this data is here: [SF_Waterways.gpkg](data/SF_Waterways.gpkg) — download it, drag it into QGIS, and skip to step 4.
 
-3\. That layer lives on the internet and cannot be edited there. Right-click it, choose Export \> Save Features As..., set the Format to GeoPackage, save it in your lab folder as "SF\_Waterways.gpkg" with layer name "Waterways", and set the CRS to EPSG:26912. Click OK, then remove the temporary "query" layer so only Waterways remains.
+36. That layer lives on the internet and cannot be edited there. Right-click it, choose Export \> Save Features As..., set the Format to GeoPackage, save it in your lab folder as "SF\_Waterways.gpkg" with layer name "Waterways", and set the CRS to EPSG:26912. Click OK, then remove the temporary "query" layer so only Waterways remains.
 
-4\. Give the Waterways layer a bright blue line symbol so it stands out against the imagery, and SAVE your project.
+37. Give the Waterways layer a bright blue line symbol so it stands out against the imagery, and SAVE your project.
 
-### **Finding the mistakes**
+#### **Finding the mistakes**
 
 These waterway lines were originally digitized from older, smaller-scale USGS maps. Zoom in and follow the East Bench Canal, which runs a few hundred meters west of the temple site. In places, the blue line drifts noticeably off the actual canal you can see in the aerial imagery. Your job is to fix a piece of it: pick a stretch of canal at least 300 meters (about 1,000 feet) long where the line and the imagery disagree, and take a BEFORE screenshot of it — you will need this screenshot for your deliverables.
 
-### **Fixing the lines with the Vertex Tool**
+#### **Fixing the lines with the Vertex Tool**
 
-1. Click on the Waterways layer so that it is highlighted and toggle the yellow pencil in the toolbar. Your layer is now in editing mode.  
-2. If you do not see the editing tools, right click on the toolbar ribbons at the top and make sure both “Digitizing Toolbar” and “Advanced Digitizing Toolbar” are checked   
-3. Now select the Vertex Tool on the Digitizing Toolbar. Hover over your chosen stretch of canal: click a vertex to grab it, then click again to drop it right on the canal centerline you see in the imagery. Double-click on a segment to add a new vertex where the line needs to bend, and click a vertex and press Delete to remove one that should not be there  
+38. Click on the Waterways layer so that it is highlighted and toggle the yellow pencil in the toolbar. Your layer is now in editing mode.  
+39. If you do not see the editing tools, right click on the toolbar ribbons at the top and make sure both “Digitizing Toolbar” and “Advanced Digitizing Toolbar” are checked   
+40. Now select the Vertex Tool on the Digitizing Toolbar. Hover over your chosen stretch of canal: click a vertex to grab it, then click again to drop it right on the canal centerline you see in the imagery. Double-click on a segment to add a new vertex where the line needs to bend, and click a vertex and press Delete to remove one that should not be there  
 
 Work down the whole stretch until your blue line follows the real canal, then take your AFTER screenshot from the same zoom level. Click Save Layer Edits and toggle editing off.
 
-### **Mapping the culverts**
+#### **Mapping the culverts**
 
-1. First, create one last GeoPackage point layer named "Culverts" (Layer \> Create Layer \> New GeoPackage Layer..., Geometry Type: Point) with two fields: Waterway (Text) and Road (Text). Then open Project \> Snapping Options and make sure snapping to the Waterways layer is turned on — every culvert point should land exactly on the waterway line it belongs to. Finally, toggle editing on the Culverts layer.  
-2. Now it is up to you to figure out where the culverts should go. To add a point, toggle this button (Add Point Feature). Everywhere you click, there will be a new point — and thanks to snapping, points placed near a waterway will lock right onto the line. Fill in the Waterway and Road attributes for each culvert as you go.   
-3. When you click, there will be a pop-up. Hit ok or enter if you want to keep that point, or cancel if you want to delete it.  
-4. You should map a minimum of 10 culverts. (Hint: look at where canals and streams cross under roads — every crossing without a visible bridge needs a culvert.)
+41. First, create one last GeoPackage point layer named "Culverts" (Layer \> Create Layer \> New GeoPackage Layer..., Geometry Type: Point) with two fields: Waterway (Text) and Road (Text). Then open Project \> Snapping Options and make sure snapping to the Waterways layer is turned on — every culvert point should land exactly on the waterway line it belongs to. Finally, toggle editing on the Culverts layer.  
+42. Now it is up to you to figure out where the culverts should go. To add a point, toggle this button (Add Point Feature). Everywhere you click, there will be a new point — and thanks to snapping, points placed near a waterway will lock right onto the line. Fill in the Waterway and Road attributes for each culvert as you go.   
+43. When you click, there will be a pop-up. Hit ok or enter if you want to keep that point, or cancel if you want to delete it.  
+44. You should map a minimum of 10 culverts. (Hint: look at where canals and streams cross under roads — every crossing without a visible bridge needs a culvert.)
+
+> [!IMPORTANT]
+> Do not stay zoomed in on the temple site looking for ten crossings, because they are not there.
+> Inside a one-kilometer circle around the site the East Bench Canal crosses only **nine** roads.
+> Follow the canal north and south instead: out to about two kilometers there are seventeen
+> crossings, which is plenty. The other named waterways in this download — the Spanish Fork River,
+> the Mapleton Lateral, the Mill Race Canal — all sit more than two kilometers away, so the East
+> Bench Canal is the one you will be working along.
 
 ![Vertex Tool tooltip over the map listing how to lock features and select, add, or remove vertices](images/anchored16.png)
 
-5. Once Finished, press the pencil over the save icon ![Digitizing toolbar with the Save Layer Edits button on the far right](images/image8.png)(far right) and then click the yellow pencil to deactivate editing mode.   
-6. **SAVE** your project
+45. Once Finished, press the pencil over the save icon ![Digitizing toolbar with the Save Layer Edits button on the far right](images/image8.png)(far right) and then click the yellow pencil to deactivate editing mode.   
+46. **SAVE** your project
 
-## **Phase 4: The Map Layout**
+### **Step 6: Build the Map Layout**
 
-Time to show off. Using the layout skills from the previous labs (Project \> New Print Layout), build a map centered on the temple site that shows the satellite imagery, your five created layers (Street\_Lights, Curb\_Lines, Temple\_Footprint, Parking\_Lot, and Culverts), and the corrected Waterways layer.
+Time to show off. Using the layout skills from Lab 2 (Project \> New Print Layout), build a map centered on the temple site that shows the satellite imagery, your five created layers (Street\_Lights, Curb\_Lines, Temple\_Footprint, Parking\_Lot, and Culverts), and the corrected Waterways layer.
 
 * Give every layer custom symbology that makes sense: lights as point symbols, curbs and waterways as clearly different line styles, and semi-transparent fills for the two footprints so the imagery shows through.  
 * Label the Temple\_Footprint and Parking\_Lot polygons using their Name field.  
@@ -222,17 +230,24 @@ Time to show off. Using the layout skills from the previous labs (Project \> New
 
 To complete this lab, you must submit a **PDF file** that contains the following items:
 
-* **Student Information:** Your name, date, class section, and lab assignment number.  
-* **Map Layout:** Your final, polished map layout exported as a PDF. Ensure it displays the corrected municipal assets and meets the Public Works Department's goals.  
-* **Screenshots: Your BEFORE and AFTER screenshots of the canal stretch you realigned with the Vertex Tool.**  
-* **Self-Evaluation:** The grading rubric provided below, filled in with your own point assessment.
+1. Your name, date, class section, and lab assignment number  
+2. Your final, polished map layout exported as a PDF, showing the corrected municipal assets  
+3. Your BEFORE and AFTER screenshots of the canal stretch you realigned with the Vertex Tool  
+4. The name of the road and waterway for one culvert you mapped, and one sentence on how you knew a culvert belonged there rather than a bridge  
+5. The grading rubric below, filled in with your self-evaluation
 
 ## **Grading Rubric**
 
+The following rubric will be used to evaluate your lab assignment. Use this as a guide to ensure that you include all the required elements for this lab. Shown under “Score” is the maximum possible points you can receive for each item.
+
+Copy the rubric and paste it into your lab report. Fill in your self-evaluation of the rubric, showing how many points you feel you have earned for each item.
+
 | Requirement | Score |
 | ----- | ----- |
-| *Required Map Layout Content:* Satellite imagery base layer is clearly visible (2pts) BEFORE and AFTER screenshots of the canal stretch you realigned with the Vertex Tool (5pts) Proper custom symbology for all 5 created vector layers plus the Waterways layer (5pts) At least 10 culvert points, each snapped exactly onto a waterway where it crosses a road (4pts) Temple and parking lot footprints are semi-transparent, meet the target areas, and do not overlap (4pts) | /20 |
-| *Cartographic Elements:* Professional Title (e.g., "Temple Location Layout") (2pts) Labels for building footprints (2pts) All required cartographic elements *(6 pts \- see previous labs for details)* | /10 |
+| Data you created: Satellite imagery base layer is clearly visible *(2 pts)* Custom symbology for all five created layers plus Waterways *(5 pts)* Temple and parking lot footprints are semi-transparent, hit the target areas, and do not overlap *(4 pts)* | /11 |
+| Correcting the canal: BEFORE and AFTER screenshots of the stretch you realigned, taken at the same zoom *(5 pts)* The AFTER line follows the canal in the imagery for at least 300 meters *(2 pts)* | /7 |
+| Culverts: At least 10 points, each snapped onto a waterway where it crosses a road *(4 pts)* Waterway and Road attributes filled in *(1 pt)* Your written explanation of one culvert *(1 pt)* | /6 |
+| Cartographic elements: Descriptive title *(1 pt)* Labels on the building footprints *(1 pt)* Neatline, legend, north arrow, scale bar, and citations with name, section and lab number *(4 pts)* | /6 |
 | **Total** | **/30** |
 
 ## **Using AI on This Lab**

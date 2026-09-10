@@ -1,0 +1,55 @@
+#!/bin/bash
+# Re-shoot every Lab 3 and Lab 4 figure from scratch, in one command.
+#
+#   IMPORTANT: put the Mac in LIGHT appearance first.
+#   Qt takes its palette from the macOS session appearance, and in dark mode every dialog comes
+#   out dark, which no Clyde 234 lab machine shows and which does not match Labs 1 and 2. There
+#   is no way to force it from a script: `defaults write -g AppleInterfaceStyle` does not reach
+#   the running GUI session, and the AppleScript route needs an automation prompt.
+#   System Settings > Appearance > Light, then run this.
+#
+#   ./tools/reshoot_lab0304.sh <work dir>
+#
+# <work dir> needs the demo data built by the commands in tools/lab0304-improvement-plan.md:
+# points.csv, pts_corrected.shp, campus.shp, campus_area.shp, temple_footprint.shp,
+# parking_lot.shp and SF_Waterways.gpkg. Keep it outside ~/Desktop, ~/Documents and ~/Downloads.
+set -euo pipefail
+
+WORK="${1:?usage: reshoot_lab0304.sh <work dir>}"
+OUT="$WORK/out"
+REPO="$(cd "$(dirname "$0")/.." && pwd)"
+mkdir -p "$OUT"
+
+if [ "$(defaults read -g AppleInterfaceStyle 2>/dev/null || true)" = "Dark" ]; then
+  echo "macOS is in dark appearance. Switch to Light in System Settings first, or the figures" >&2
+  echo "will not match Labs 1 and 2. Aborting." >&2
+  exit 1
+fi
+
+QGIS=/Applications/QGIS.app/Contents/MacOS/QGIS
+PY=/Applications/QGIS.app/Contents/MacOS/python3.12
+export PYTHONHOME=/Applications/QGIS.app/Contents/Frameworks
+export PROJ_LIB=/Applications/QGIS.app/Contents/Resources/qgis/proj
+export GDAL_DATA=/Applications/QGIS.app/Contents/Resources/qgis/gdal
+export QT_PLUGIN_PATH=/Applications/QGIS.app/Contents/PlugIns
+export LAB34_DATA="$WORK" LAB34_OUT="$OUT"
+
+echo "== dialogs =="
+for s in $("$PY" "$REPO/tools/qgis_lab0304_dialog_shots.py" --list); do
+  SHOT="$s" "$PY" "$REPO/tools/qgis_lab0304_dialog_shots.py" 2>/dev/null | grep -E "x [0-9]+$" || echo "  $s FAILED"
+done
+
+echo "== windows, canvas and layouts =="
+for s in $(python3 "$REPO/tools/qgis_lab0304_window_shots.py" --list); do
+  SHOT="$s" "$QGIS" --nologo --code "$REPO/tools/qgis_lab0304_window_shots.py" >/dev/null 2>&1 || true
+  echo "  $s done"
+done
+grep -E "saved|MISSING|EXCEPTION" "$OUT/window-shots-34.log" || true
+
+echo "== annotations =="
+python3 "$REPO/tools/lab02_annotate.py" "$OUT" "$OUT/final" 2>/dev/null || \
+  echo "  (annotate step: point tools/lab02_annotate.py at these shots, or add a lab 3/4 variant)"
+
+echo
+echo "Figures are in $OUT. Copy them into docs/assignments/lab-03/images and lab-04/images,"
+echo "update the Markdown references, then mkdocs build --strict."
