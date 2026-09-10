@@ -184,7 +184,7 @@ Next, you will need to verify the accuracy of the coordinates you converted in t
 34. Click OK. You should now have a new layer called “campus” in the layers panel.  
 35. With the new layer selected, toggle editing again (with the yellow pencil) and use the “Add Polygon Feature” ![Add Polygon Feature icon](images/image5.png) tool. Draw a polygon by left-clicking around the BYU campus with it, following the roads in this example:
 
-![Example polygon drawn around the BYU campus over satellite imagery, following the surrounding roads](images/anchored6.png)
+![Example polygon drawn around the BYU campus over satellite imagery, following the surrounding roads](images/anchored6.jpg)
 
 36. When you finish the polygon, right-click to finalize the shape. When it asks for an ID, enter any number and click OK.  
 37. Again, use the save button next to the yellow editing pencil, and toggle edit mode off.  

@@ -163,30 +163,28 @@ Collected from the conversion notes at the end of each deck (search for `Convers
 - **Lab headings (Labs 5 to 11):** Labs 1 to 4 now use "Step by Step Instructions" with numbered,
   active-voice subsection headings and one continuous step sequence. Do the same for the other seven.
   Check for inbound anchor links before renaming a heading; Labs 1 to 4 had none.
-- **Labs 3 and 4 (text done 2026-09-10, figures not):** renumbered, semester dropped from the header,
-  Lab 4's deliverables and rubric restructured, and four data corrections made — the largest being
-  that Lab 4 required ten culverts where only nine road crossings exist within a kilometer of the
-  temple site. The figures were **not** re-shot, because Qt takes its palette from the macOS session
-  appearance and that Mac was in dark mode.
-
-  **Picking this up on any Mac takes four commands**, and needs nothing from the machine the work
-  started on. Put the Mac in **Light** appearance first, then:
+- **Labs 3 and 4: done 2026-09-10.** Renumbered into one continuous step sequence each, semester
+  dropped from both headers, Lab 4's deliverables and rubric restructured, four data corrections
+  made (the largest: Lab 4 required ten culverts where only nine road crossings exist within a
+  kilometer of the temple site), and **23 figures re-shot in QGIS 3.44 at 2x**. Re-running the
+  figures later is four commands, and the scripts rebuild their own demo data from sources the labs
+  cite:
 
   ```bash
   export PYTHONHOME=/Applications/QGIS.app/Contents/Frameworks \
          PROJ_LIB=/Applications/QGIS.app/Contents/Resources/qgis/proj \
          GDAL_DATA=/Applications/QGIS.app/Contents/Resources/qgis/gdal
   /Applications/QGIS.app/Contents/MacOS/python3.12 tools/lab0304_make_demo_data.py ~/lab34work
-  ./tools/reshoot_lab0304.sh ~/lab34work
+  ./tools/reshoot_lab0304.sh ~/lab34work        # needs the Mac in LIGHT appearance
   python3 -m mkdocs build --strict
   ```
 
-  The demo data rebuilds itself from sources the labs cite (the campus polygon is committed at
-  `tools/lab0304-data/byu-campus.geojson` so nothing depends on Overpass), the captures are
-  annotated automatically, and each figure lands at the filename the Markdown already references,
-  so there are no Markdown edits to make. `reshoot_lab0304.sh` refuses to run in dark mode.
-  **Read `tools/lab0304-improvement-plan.md` first** — it carries the capture-to-figure mapping,
-  the three judgment calls left open, and why the appearance cannot be scripted.
+  Two things control how light the figures come out. QGIS's own UI theme is handled by the script,
+  which runs the in-app captures under a throwaway `--profile lab34shots` so they use the default
+  light theme whatever the maintainer's profile is set to. The macOS session appearance is **not**
+  scriptable and must be set to Light by hand; `reshoot_lab0304.sh` refuses to run in dark mode.
+  `tools/lab0304-improvement-plan.md` has the capture-to-figure mapping and the short list of
+  figures still made by hand (context menus, a tooltip, and Lab 4's two annotated aerial views).
 - **Lab 4 culvert photos** (`anchored10`, `anchored11`, `anchored12`, `anchored14`) are 225 to 369 px
   wide. They are photographs, not QGIS captures, so no script replaces them; they need images Dan is
   happy to license.

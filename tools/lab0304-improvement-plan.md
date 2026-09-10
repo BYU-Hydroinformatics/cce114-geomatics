@@ -1,14 +1,14 @@
 # Labs 3 and 4: handoff for the screenshot re-shoot
 
-*Updated 2026-09-10. The text, structure and data corrections for both labs are **done, committed
-and live**. Only the figures remain, and they are blocked on one thing: the Mac has to be in Light
-appearance. This file is written so a session on a different machine can finish the job without
-anything from the machine the work started on.*
+*Updated 2026-09-10. Both labs are **done**: text, structure, data corrections and figures, all
+committed and live. Twenty-three figures were re-shot in QGIS 3.44 at 2x. This file stays as the
+record of how the figures are made, so re-running them later is one command, and as the list of
+what is deliberately still hand-made.*
 
-## Start here
+## Re-running the figures
 
 Four commands on a Mac in **Light** appearance, with QGIS 3.44 LTR installed at
-`/Applications/QGIS.app`:
+`/Applications/QGIS.app`. This is exactly how the shipped figures were made:
 
 ```bash
 git clone https://github.com/BYU-Hydroinformatics/cce114-geomatics.git && cd cce114-geomatics
@@ -26,11 +26,17 @@ references. Then `python3 -m mkdocs build --strict`, read both pages, and commit
 `~/lab34work` must not be under `~/Desktop`, `~/Documents` or `~/Downloads` — QGIS cannot read or
 write there on macOS. Anywhere else is fine.
 
-## Why Light appearance, and why it is not automated
+## The two things that control how light or dark the figures come out
 
-Qt takes its palette from the macOS session appearance. In dark mode every capture comes out dark,
-which no Clyde 234 lab machine displays and which does not match Labs 1 and 2. There is no scripted
-way around it, and all three obvious routes were tried and failed:
+**QGIS's own UI theme** is handled by the script: the in-app captures run under a throwaway QGIS
+profile (`--profile lab34shots`), so they use QGIS's default light theme no matter what theme the
+maintainer's own profile is set to, and nothing about that profile is touched. Without this the
+main-window and toolbar shots come out dark grey even on a light Mac; the difference measured 118
+against 243 mean brightness.
+
+**The macOS session appearance** is not scriptable and has to be set by hand. Qt takes its palette
+from it, so in dark mode every dialog comes out dark. All three obvious routes were tried and
+failed:
 
 - forcing a light palette onto the native macOS style paints text fields as solid black boxes;
 - `defaults write -g AppleInterfaceStyle` changes the stored preference but never reaches the
@@ -68,11 +74,14 @@ prints each of these against the labs' stated figures so a mismatch is loud:
 ## Which capture becomes which figure
 
 `tools/lab0304_annotate.py` holds this mapping in `TARGETS`; it is repeated here for a human. The
-final names are the ones the Markdown already uses, so **no Markdown edits are needed** for these.
+final names are the ones the Markdown uses, so re-running needs no Markdown edits.
+
+Three figures that are mostly satellite imagery are written as JPEG at quality 90 with no chroma
+subsampling, the same trade Lab 2 makes: `lab-03/anchored6.jpg`, `lab-04/anchored4.jpg` and
+`lab-04/image7.jpg`. As PNG they ran 2.3 to 2.8 MB each. Lab 4's images folder is 5.1 MB.
 
 | Capture | Becomes |
 | --- | --- |
-| `lab3-delimited-text` | lab-03 `dsm-delimited-text.png` |
 | `lab3-save-features-as` | lab-03 `anchored4.png` |
 | `lab3-digitizing-toolbar` | lab-03 `digitizing-toolbar.png` |
 | `lab3-feature-attributes` | lab-03 `feature-attributes.png` |
@@ -92,22 +101,27 @@ final names are the ones the Markdown already uses, so **no Markdown edits are n
 | `lab4-icon-toggle-editing` | lab-04 `image2.png` and `image3.png` |
 | `lab4-icon-save-layer-edits` | lab-04 `image4.png` |
 
-### Three judgment calls left open on purpose
+### Deliberately left alone
 
-1. **`lab3-icon-new-shapefile-layer` is not mapped.** The capture is a 66 px button; the existing
+1. **The Data Source Manager shots are not used.** Its File name box is a `QgsFileWidget`, not a
+   `QLineEdit`, so the path never lands and the capture shows an empty tab — worse than the figure
+   Lab 3 already had, which stays. To finish it, cast that widget the way `set_file()` does in the
+   dialog script, set the Geometry CRS as well, then map `lab3-delimited-text` to
+   `lab-03/dsm-delimited-text.png`. The same fix would give Lab 4 step 34 a figure, which it has
+   never had.
+2. **`lab3-icon-new-shapefile-layer` is not mapped.** The capture is a small button; the existing
    `new-shapefile-button.png` is a wide toolbar strip whose alt text says "toolbar with the New
    Shapefile Layer button highlighted". Swapping one for the other would make the alt text wrong.
-   Decide which the step wants, then either map it and reword the alt text, or re-shoot the strip.
-2. **`lab4-data-source-manager` writes `dsm-vector-protocol.png`, which nothing references yet.**
-   Lab 4 step 34, the HTTP protocol paste, has no figure at all and would be clearer with one. To
-   use it, add this line under step 34:
-   `![Data Source Manager Vector tab with Source Type set to Protocol HTTP(S) and the SGID address pasted into the URI box](images/dsm-vector-protocol.png)`
-3. **Five figures cannot be scripted** and are left as they are: Lab 3's `select-transformation.png`
-   and `panels-toolbars.png`, and Lab 4's `image1.png`, `anchored8.png` and `anchored16.png`. They
-   are context menus, a menu bar and a tooltip, none of which QGIS will hand to a script. Capture
-   them by hand with ⌘⇧4 (Retina gives 2x) if they are worth redoing.
+3. **Five figures cannot be scripted** and are unchanged: Lab 3's `select-transformation.png` and
+   `panels-toolbars.png`, and Lab 4's `image1.png`, `anchored8.png` and `anchored16.png`. They are
+   context menus, a menu bar and a tooltip, none of which QGIS will hand to a script. Capture them
+   by hand with ⌘⇧4 (Retina gives 2x) if they are worth redoing.
+4. **Lab 4's `anchored7.png` and `anchored9.png`** still show the old annotated aerial views with
+   red dots for curbs and street lights. The canvas underneath them is re-shootable
+   (`lab4-temple-site`), but the red annotations are hand-drawn teaching marks; redoing them means
+   deciding where the curbs and lights should go, which is an instructor call.
 
-## Already open before this work, still open
+## Still open
 
 - **Lab 4's culvert photographs** (`anchored10`, `anchored11`, `anchored12`, `anchored14`) are 225
   to 369 px wide. They are photographs, not QGIS captures, so no script replaces them. They need

@@ -93,7 +93,7 @@ There are several different techniques and algorithms for doing what we are tryi
 
 11. Find [100 South and 2550 East](https://maps.app.goo.gl/JHrj19fozCdnAq6g6), Spanish Fork, Utah, United States on your base map. This hyperlink should help. You should be looking at an area just south of Maple Mountain High School and just east of a Latter-Day Saint church. It is currently an empty lot (pictured below).  
 
-![Aerial imagery of the empty lot at 100 South and 2550 East in Spanish Fork, highlighted in orange, south of Maple Mountain High School](images/anchored4.png)
+![Aerial imagery of the empty lot at 100 South and 2550 East in Spanish Fork, highlighted in orange, south of Maple Mountain High School](images/anchored4.jpg)
 
 12. **Create a polygon layer** for the Spanish Fork Temple footprint in this area. The temple footprint itself should be about 30,000 square feet.  
 13. Go to Layer \> Create Layer \> New GeoPackage Layer... — the same tool you used in Step 2, so all of your layers stay in the same GeoPackage format.  
@@ -144,7 +144,7 @@ There are several different techniques and algorithms for doing what we are tryi
 32. Now that you have your temple footprint, repeat the whole process for a parking lot: create one more polygon GeoPackage layer named “Parking\_Lot” (with a Name field), digitize it, and check its area with the Field Calculator. The parking lot should be adjacent to the temple and have an area between 60,000 and 80,000 square feet.  
 33. Your final lot should resemble this. This guide is designed to help you scale your parking lot and temple, so you don't have to redraw them multiple times. Please do not copy this exactly.
 
-![Example aerial view with a yellow temple footprint polygon inside a purple U-shaped parking lot polygon](images/image7.png)
+![Example aerial view with a yellow temple footprint polygon inside a purple U-shaped parking lot polygon](images/image7.jpg)
 
 ### **Step 5: Pull the Waterways and Correct Them**
 

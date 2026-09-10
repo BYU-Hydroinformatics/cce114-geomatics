@@ -27,21 +27,28 @@ if [ "$(defaults read -g AppleInterfaceStyle 2>/dev/null || true)" = "Dark" ]; t
 fi
 
 QGIS=/Applications/QGIS.app/Contents/MacOS/QGIS
+# A throwaway QGIS profile, so the figures use QGIS's default light UI theme no matter what theme
+# the maintainer's own profile is set to, and so nothing about their setup is touched.
+PROFILE=lab34shots
 PY=/Applications/QGIS.app/Contents/MacOS/python3.12
-export PYTHONHOME=/Applications/QGIS.app/Contents/Frameworks
-export PROJ_LIB=/Applications/QGIS.app/Contents/Resources/qgis/proj
-export GDAL_DATA=/Applications/QGIS.app/Contents/Resources/qgis/gdal
-export QT_PLUGIN_PATH=/Applications/QGIS.app/Contents/PlugIns
+# PYTHONHOME must be set for QGIS's own interpreter and must NOT leak into the system python3,
+# which crashes with "No module named 'encodings'" if it inherits it. So set it per call.
+QENV="PYTHONHOME=/Applications/QGIS.app/Contents/Frameworks \
+PROJ_LIB=/Applications/QGIS.app/Contents/Resources/qgis/proj \
+GDAL_DATA=/Applications/QGIS.app/Contents/Resources/qgis/gdal \
+QT_PLUGIN_PATH=/Applications/QGIS.app/Contents/PlugIns"
 export LAB34_DATA="$WORK" LAB34_OUT="$OUT"
 
 echo "== dialogs =="
-for s in $("$PY" "$REPO/tools/qgis_lab0304_dialog_shots.py" --list); do
-  SHOT="$s" "$PY" "$REPO/tools/qgis_lab0304_dialog_shots.py" 2>/dev/null | grep -E "x [0-9]+$" || echo "  $s FAILED"
+for s in $(python3 "$REPO/tools/qgis_lab0304_dialog_shots.py" --list); do
+  env $QENV SHOT="$s" "$PY" "$REPO/tools/qgis_lab0304_dialog_shots.py" 2>/dev/null \
+    | grep -E "x [0-9]+$" || echo "  $s FAILED"
 done
 
 echo "== windows, canvas and layouts =="
 for s in $(python3 "$REPO/tools/qgis_lab0304_window_shots.py" --list); do
-  SHOT="$s" "$QGIS" --nologo --code "$REPO/tools/qgis_lab0304_window_shots.py" >/dev/null 2>&1 || true
+  SHOT="$s" "$QGIS" --nologo --profile "$PROFILE" --code \
+    "$REPO/tools/qgis_lab0304_window_shots.py" >/dev/null 2>&1 || true
   echo "  $s done"
 done
 grep -E "saved|MISSING|EXCEPTION" "$OUT/window-shots-34.log" || true

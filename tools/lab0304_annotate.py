@@ -25,14 +25,18 @@ from lab02_annotate import RED, PAD, LINE, font, box, note, arrow, MAX_WIDTH  # 
 #   lab3-icon-new-shapefile-layer  is a 66 px button; new-shapefile-button.png is a toolbar strip
 #     whose alt text says "toolbar with the New Shapefile Layer button highlighted". Swapping one
 #     for the other would make the alt text wrong. Decide which the step wants first.
+#   lab3-delimited-text / lab4-data-source-manager  capture the Data Source Manager, but its File
+#     name box is a QgsFileWidget, not a QLineEdit, so the path never lands and the shot shows an
+#     empty tab. That is worse than the figure Lab 3 already had, so it is left alone. To finish
+#     it, cast that widget the way set_file() does in the dialog script and set the Geometry CRS,
+#     then map lab3-delimited-text -> lab-03/dsm-delimited-text.png and add a Lab 4 reference.
 TARGETS = [
     # ---- Lab 3
-    ('lab3-delimited-text',        'lab-03', 'dsm-delimited-text.png',      'lab3_dsm'),
     ('lab3-save-features-as',      'lab-03', 'anchored4.png',               'lab3_save_as'),
     ('lab3-digitizing-toolbar',    'lab-03', 'digitizing-toolbar.png',      None),
     ('lab3-feature-attributes',    'lab-03', 'feature-attributes.png',      None),
     ('lab3-new-shapefile-dialog',  'lab-03', 'new-shapefile-dialog.png',    'lab3_new_shp'),
-    ('lab3-campus-polygon',        'lab-03', 'anchored6.png',               None),
+    ('lab3-campus-polygon',        'lab-03', 'anchored6.jpg',               None),
     ('lab3-field-calculator',      'lab-03', 'anchored7.png',               'lab3_calc'),
     ('lab3-attribute-table',       'lab-03', 'anchored8.png',               None),
     ('lab3-example-layout',        'lab-03', 'example-layout.png',          None),
@@ -45,22 +49,20 @@ TARGETS = [
     ('lab4-new-geopackage-point',  'lab-04', 'anchored3.png',               'lab4_gpkg'),
     ('lab4-new-geopackage-polygon', 'lab-04', 'anchored5.png',              'lab4_gpkg'),
     ('lab4-snapping-toolbar',      'lab-04', 'anchored6.png',               None),
-    ('lab4-temple-site',           'lab-04', 'anchored4.png',               None),
-    ('lab4-footprints',            'lab-04', 'image7.png',                  None),
+    ('lab4-temple-site',           'lab-04', 'anchored4.jpg',               None),
+    ('lab4-footprints',            'lab-04', 'image7.jpg',                  None),
     ('lab4-field-calculator',      'lab-04', 'image5.png',                  'lab4_calc'),
-    ('lab4-field-calculator-update', 'lab-04', 'image6.png',                'lab4_calc'),
+    ('lab4-field-calculator-update', 'lab-04', 'image6.png',                'lab4_calc_update'),
     ('lab4-icon-toggle-editing',   'lab-04', 'image2.png',                  None),
     ('lab4-icon-toggle-editing',   'lab-04', 'image3.png',                  None),
     ('lab4-icon-save-layer-edits', 'lab-04', 'image4.png',                  None),
-    # Not referenced by Lab 4 yet. It is a good figure for step 34, the HTTP protocol paste,
-    # which currently has none; see tools/lab0304-improvement-plan.md for the snippet to add.
-    ('lab4-data-source-manager',   'lab-04', 'dsm-vector-protocol.png',     None),
 ]
 
-# Figures that are mostly satellite imagery keep their .png name but are written as JPEG-quality
-# PNG only if small; these are re-encoded as JPEG under the same stem when the lab reference is
-# updated. Left as PNG here so the existing Markdown keeps working.
-PHOTOGRAPHIC = {'lab3-campus-polygon', 'lab3-example-layout', 'lab4-temple-site', 'lab4-footprints'}
+# Figures that are mostly satellite imagery. As PNG these run 2 to 3 MB each; at JPEG quality 90
+# with no chroma subsampling they are a third of the size and the panel text stays sharp, which is
+# the same trade Lab 2 makes. Their entries in TARGETS name a .jpg file, and the Markdown was
+# updated to match.
+PHOTOGRAPHIC = {'lab3-campus-polygon', 'lab4-temple-site', 'lab4-footprints'}
 
 
 def _f(sz):
@@ -104,7 +106,15 @@ def lab4_gpkg(d, r):
 
 
 def lab4_calc(d, r):
-    for k in ('name', 'type', 'expression', 'update', 'existing'):
+    # The plain variant creates a new field, so the Update-existing controls are empty and boxing
+    # them would just point at nothing.
+    for k in ('name', 'type', 'expression'):
+        if k in r:
+            box(d, r[k])
+
+
+def lab4_calc_update(d, r):
+    for k in ('update', 'existing', 'expression'):
         if k in r:
             box(d, r[k])
 
@@ -132,7 +142,10 @@ def main(src, repo):
         out_dir = os.path.join(repo, 'docs', 'assignments', lab, 'images')
         os.makedirs(out_dir, exist_ok=True)
         out = os.path.join(out_dir, final)
-        img.convert('RGB').save(out, optimize=True)
+        if capture in PHOTOGRAPHIC:
+            img.convert('RGB').save(out, quality=90, optimize=True, subsampling=0)
+        else:
+            img.convert('RGB').save(out, optimize=True)
         made.append('%-34s -> %s/%s  %d x %d  %.0f KB' %
                     (capture, lab, final, img.width, img.height,
                      os.path.getsize(out) / 1024))

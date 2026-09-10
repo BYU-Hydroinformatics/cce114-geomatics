@@ -137,6 +137,24 @@ def set_crs(parent, obj, crs):
     sip.cast(w, QgsProjectionSelectionWidget).setCrs(crs)
 
 
+def set_expression(dlg, text):
+    """Type an expression into the Field Calculator.
+
+    The editor is a QScintilla widget, not a QTextEdit, so it has setText and not setPlainText,
+    and QgsExpressionBuilderWidget does not come back from findChildren as itself.
+    """
+    from qgis.PyQt.Qsci import QsciScintilla
+    for w in dlg.findChildren(QsciScintilla):
+        if w.isVisible():
+            w.setText(text)
+            app.processEvents()
+            got = w.text().strip()
+            if got != text:
+                print('  (expression did not stick: %r)' % got)
+            return
+    print('  (no expression editor found)')
+
+
 def set_combo(parent, obj, needle):
     cb = parent.findChild(QComboBox, obj)
     if cb is None:
@@ -194,13 +212,11 @@ def lab3_field_calculator():
         if le.objectName() == 'mOutputFieldNameLineEdit':
             le.setText('area')
     set_combo(d, 'mOutputFieldTypeComboBox', 'Decimal')
-    for w in d.findChildren(QWidget):
-        if w.objectName() == 'txtExpression' and hasattr(w, 'setPlainText'):
-            w.setPlainText('$area')
-    app.processEvents()
+    set_expression(d, '$area')
+    # The expression editor is the QScintilla widget QGIS names txtPython inside this dialog.
     save(d, 'lab3-field-calculator', {'name': 'mOutputFieldNameLineEdit',
                                       'type': 'mOutputFieldTypeComboBox',
-                                      'expression': 'mExpressionWidget'})
+                                      'expression': 'txtPython'})
 
 
 # ------------------------------------------------------------ Lab 3, Part 2 step 33-34
@@ -284,12 +300,9 @@ def _lab4_calc(update_existing, out_name):
             if le.objectName() == 'mOutputFieldNameLineEdit':
                 le.setText('area')
         set_combo(d, 'mOutputFieldTypeComboBox', 'Decimal')
-    for w in d.findChildren(QWidget):
-        if w.objectName() == 'txtExpression' and hasattr(w, 'setPlainText'):
-            w.setPlainText('$area * 10.7639')
-    app.processEvents()
+    set_expression(d, '$area * 10.7639')
     save(d, out_name, {'name': 'mOutputFieldNameLineEdit', 'type': 'mOutputFieldTypeComboBox',
-                       'expression': 'mExpressionWidget', 'update': 'mUpdateExistingGroupBox',
+                       'expression': 'txtPython', 'update': 'mUpdateExistingGroupBox',
                        'existing': 'mExistingFieldComboBox'})
 
 
