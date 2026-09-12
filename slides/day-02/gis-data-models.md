@@ -400,17 +400,17 @@ How can we represent this state shape using the fewest bytes of memory possible?
 
 <a href="https://storymaps.arcgis.com/stories/88b6f2be26d0466b927ea72b1b060842" target="_blank">
 
-![h:400](images/dm-brigham-young.jpg)
+![h:420 center](images/dm-brigham-young.jpg)
 
 </a>
 
-<p style="font-size:0.6em;">Brigham Young. Image courtesy of The Church of Jesus Christ of Latter-day Saints.</p>
+<p style="font-size:0.4em;color:#777;text-align:center;margin:0.3em 0 0;">Brigham Young. Portrait courtesy of The Church of Jesus Christ of Latter-day Saints.</p>
 
 </div>
 <div>
 
 - The interesting history of the boundaries of the state of Utah.
-- <a href="https://storymaps.arcgis.com/stories/88b6f2be26d0466b927ea72b1b060842" target="_blank">storymaps.arcgis.com/stories/88b6f2be26d0466b927ea72b1b060842</a>
+- <a href="https://storymaps.arcgis.com/stories/88b6f2be26d0466b927ea72b1b060842" target="_blank">ArcGIS StoryMaps: Utah boundary history</a>
 
 </div>
 </div>
