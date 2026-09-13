@@ -1,0 +1,10 @@
+# Local-preview overlay. Used only by tools/preview.sh; CI still builds mkdocs.yml.
+#
+# Inherits everything from mkdocs.yml, then points the site at localhost and loads
+# a hook that rewrites the absolute production deck URLs to local ones.
+INHERIT: mkdocs.yml
+
+site_url: http://localhost:8000/
+
+hooks:
+  - tools/preview_hooks.py

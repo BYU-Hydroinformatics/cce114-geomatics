@@ -1,3 +1,12 @@
+# Built output — CI regenerates all of this on every push
 site/
 _site/
 slides/**/*.html
+
+# Local preview (tools/preview.sh)
+.venv-preview/
+docs/slides/
+
+# Local scratch
+.DS_Store
+__pycache__/
