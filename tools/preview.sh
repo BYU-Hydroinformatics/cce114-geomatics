@@ -11,9 +11,9 @@
 # Why this exists rather than a bare `mkdocs serve`:
 #
 #   * mkdocs alone does not build the Marp decks, so half the course is missing.
-#   * The lecture pages link to decks by absolute published URL, so a deck link in
-#     a local preview would take you to the live site instead of your edits.
-#     tools/preview_hooks.py rewrites those links to local ones.
+#   * The week and hands-on pages link to decks by absolute published URL, so a
+#     deck link in a local preview would take you to the live site instead of
+#     your edits. tools/preview_hooks.py rewrites those links to local ones.
 #   * Decks must be rendered with the same flags CI uses. --html in particular:
 #     without it Marp strips `style` attributes and every inline-styled slide
 #     renders wrong, so a local check would pass on a deck that ships broken.
