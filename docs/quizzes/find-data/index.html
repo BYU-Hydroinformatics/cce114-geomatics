@@ -32,7 +32,7 @@
 
       <div class="options" id="optionsBox"></div>
 
-      <div class="feedback" id="feedbackBox"></div>
+      <div class="feedback" id="feedbackBox" role="status" aria-live="polite"></div>
 
       <div class="controls">
         <button class="next-btn" id="nextBtn">Next &rarr;</button>
@@ -50,10 +50,13 @@
         Three or more live layers, styled, with every map element from Lab 2<br>
         <em>A picture if you only need to look at it; the features if you need to analyze it.</em>
       </div>
+      <div class="review" id="review"></div>
       <br>
       <button class="restart-btn" id="restartBtn">Start over</button>
     </div>
   </div>
+
+  <p class="hint">On a laptop: press <strong>A</strong>&ndash;<strong>D</strong> to answer, <strong>Enter</strong> for the next question.</p>
 
   <footer class="page-foot">
     CCE 114 Geomatics &middot;
@@ -75,12 +78,12 @@
       "prompt": "You need culvert locations for a drainage study. What is the fastest way to find them?",
       "setup": "",
       "options": [
+        "Digitize them yourself from aerial imagery",
         "Search data.gov for “culverts”",
         "Ask who would care about culverts for their own job — a department of transportation — and go to that agency's site",
-        "Digitize them yourself from aerial imagery",
         "Search “culvert shapefile download” and work through the results"
       ],
-      "correct": 1,
+      "correct": 2,
       "explanation": "Data is created by whoever needs it for their own job: parcels come from the county assessor because taxes depend on them, streamflow from the USGS because someone has to run the gages. Searching for the agency beats searching for the data — soils means USDA, floodplains mean FEMA, culverts mean a DOT."
     },
     {
@@ -89,11 +92,11 @@
       "setup": "",
       "options": [
         "The file downloads from data.gov's own servers",
-        "You get a web service URL you can paste straight into QGIS",
         "You are sent out to the agency that publishes it, and you deal with whatever download page they built",
-        "You get a preview map, and the download needs a free account"
+        "You get a preview map, and the download needs a free account",
+        "You get a web service URL you can paste straight into QGIS"
       ],
-      "correct": 2,
+      "correct": 1,
       "explanation": "data.gov is a catalog, not a warehouse: it indexes datasets that live on agency servers and links out to them. That makes it very good for discovery and sometimes frustrating for download, because you land on whatever the agency happened to build."
     },
     {
@@ -101,12 +104,12 @@
       "prompt": "A search for Utah county parcels returns page after page of companies selling you parcel data. What fixes it fastest?",
       "setup": "",
       "options": [
-        "Add the word “free”",
         "Add “site:.gov” or “site:.us”",
+        "Add the word “free”",
         "Look for the parcels in a mapping app instead",
         "Add the word “repository”"
       ],
-      "correct": 1,
+      "correct": 0,
       "explanation": "Restricting the search to .gov or .us cuts out every reseller repackaging public data you already paid for. The companion trick from the same slide: add a format word — shapefile, raster, geojson — and you often land on the download page instead of somebody's web map."
     },
     {
@@ -114,12 +117,12 @@
       "prompt": "The hillshade shown in class came back from the USGS 3DEP elevation service as a WMS layer. What did the service actually send?",
       "setup": "",
       "options": [
-        "The elevation value of every cell in the area you asked for",
-        "A picture the server drew, and nothing else",
         "Contour features carrying elevation attributes",
-        "A link to download the source elevation model"
+        "The elevation value of every cell in the area you asked for",
+        "A link to download the source elevation model",
+        "A picture the server drew, and nothing else"
       ],
-      "correct": 1,
+      "correct": 3,
       "explanation": "Web Map Service means the server does the drawing and sends back an image — a PNG, in that case. You can look at it; you cannot query the features underneath, because none came. WMTS is the same bargain with the tiles drawn in advance, and XYZ tiles are the looser, wildly popular version of WMTS: all pictures, all fast, which is exactly what a basemap needs to be."
     },
     {
@@ -127,12 +130,12 @@
       "prompt": "You need to buffer a stream network by 100 meters. Which service do you connect to?",
       "setup": "",
       "options": [
+        "WFS, or an ArcGIS feature service",
         "WMS",
         "WMTS",
-        "WFS, or an ArcGIS feature service",
         "XYZ tiles"
       ],
-      "correct": 2,
+      "correct": 0,
       "explanation": "A buffer is a geometry operation, so you need the geometry — real vector features with their attributes, not a rendered image of them. A feature service is slower to draw than a picture, and worth it the moment you have to select, query, or analyze. WFS has a successor, OGC API - Features, which is the same idea rebuilt on plain URLs and GeoJSON."
     },
     {
@@ -142,10 +145,10 @@
       "options": [
         "WMS",
         "WFS",
-        "WCS",
-        "XYZ tiles"
+        "XYZ tiles",
+        "WCS"
       ],
-      "correct": 2,
+      "correct": 3,
       "explanation": "Web Coverage Service is to rasters what WFS is to vectors: it hands back cell values instead of a picture of them. WFS is the tempting miss — the instinct is right, raw ingredients rather than a cooked meal — but WFS carries vector features, and elevation is a raster coverage."
     },
     {
@@ -153,9 +156,9 @@
       "prompt": "You found QuaternaryFaults in the SGID Index and want it live in QGIS. Which entry in the Data Source Manager, and how do you find the layer among 891 of them?",
       "setup": "The SGID is the State Geographic Information Datasource, the catalog behind UGRC — the state GIS office that older documents still call the AGRC.",
       "options": [
-        "WFS, then scroll the list",
-        "ArcGIS REST Server, then use the search box — layer names are the database names, like QuaternaryFaults",
         "WMS, then scroll the list looking for “Quaternary Faults”",
+        "ArcGIS REST Server, then use the search box — layer names are the database names, like QuaternaryFaults",
+        "WFS, then scroll the list",
         "XYZ tiles, then paste the layer URL directly"
       ],
       "correct": 1,
@@ -167,11 +170,11 @@
       "setup": "",
       "options": [
         "Nothing — a public agency service is as dependable as a file on your own disk",
-        "Download a local copy of the layers you cannot afford to lose, and cite the source on the map",
         "Convert every layer to WMS so the map draws faster",
+        "Download a local copy of the layers you cannot afford to lose, and cite the source on the map",
         "Keep a screenshot of the map canvas as a backup"
       ],
-      "correct": 1,
+      "correct": 2,
       "explanation": "A live service is a dependency: servers go down, go slow, or change their URL, and every web layer is blank when you are offline. On a real project you decide deliberately which layers stay live, because they change, and which you cache locally, because you cannot afford them to vanish the night before a submittal. Two more things before you call it finished: check the CRS, since services usually publish in Web Mercator and QGIS reprojects on the fly, and credit the agency on the layout."
     }
   ]

@@ -32,7 +32,7 @@
 
       <div class="options" id="optionsBox"></div>
 
-      <div class="feedback" id="feedbackBox"></div>
+      <div class="feedback" id="feedbackBox" role="status" aria-live="polite"></div>
 
       <div class="controls">
         <button class="next-btn" id="nextBtn">Next &rarr;</button>
@@ -50,10 +50,13 @@
         <strong>TIN</strong> &mdash; 3D surfaces, high compression<br>
         <em>The data model should follow the phenomenon, not your habits.</em>
       </div>
+      <div class="review" id="review"></div>
       <br>
       <button class="restart-btn" id="restartBtn">Start over</button>
     </div>
   </div>
+
+  <p class="hint">On a laptop: press <strong>A</strong>&ndash;<strong>D</strong> to answer, <strong>Enter</strong> for the next question.</p>
 
   <footer class="page-foot">
     CCE 114 Geomatics &middot;
@@ -75,12 +78,12 @@
       "prompt": "A video shot from a raft running the Lochsa River at spring runoff. Data model, or reality?",
       "setup": "",
       "options": [
-        "Reality — it is a recording of the actual river",
         "A model — a video is a representation of reality, not the river itself",
+        "A data model only once it is loaded into QGIS",
         "Neither",
-        "A data model only once it is loaded into QGIS"
+        "Reality — it is a recording of the actual river"
       ],
-      "correct": 1,
+      "correct": 0,
       "explanation": "A model is an abstraction of reality. The video is a flat, silent, two-minute stand-in for a river that is none of those things — it drops depth, temperature, discharge, and everything upstream and downstream of the raft. Every representation leaves something out; the question is always what."
     },
     {
@@ -88,12 +91,12 @@
       "prompt": "In UtahCountyMajorRoads.shp, which part is the data model and which is the file format?",
       "setup": "",
       "options": [
-        "“Shapefile” is the data model; “polyline” is the file format",
         "“Polyline” is the data model; “shapefile” is the file format",
-        "Both are file formats",
-        "Both are data models"
+        "“Shapefile” is the data model; “polyline” is the file format",
+        "Both are data models",
+        "Both are file formats"
       ],
-      "correct": 1,
+      "correct": 0,
       "explanation": "The data model is the conceptual organization — what has to be stored. A road is a polyline: an ordered list of coordinate pairs. The shapefile is one of many ways to write those numbers to disk."
     },
     {
@@ -103,8 +106,8 @@
       "options": [
         "Nothing opens — .shp on its own is unreadable",
         "The roads draw, but the attribute table is gone and the layer may not know its coordinate system",
-        "Everything works; the other files are backups",
-        "The roads draw as points instead of lines"
+        "The roads draw as points instead of lines",
+        "Everything works; the other files are backups"
       ],
       "correct": 1,
       "explanation": "The .shp holds the geometry, the .dbf the attribute table, the .shx the index, and the .prj the coordinate system. Lose the .dbf and the lines still draw with nothing attached to them. This is the everyday argument for GeoPackage, where one file carries the lot."
@@ -114,12 +117,12 @@
       "prompt": "A photograph of the Lochsa River. Which data model is it?",
       "setup": "",
       "options": [
-        "Raster",
         "Vector",
-        "Triangulated (TIN)",
-        "Reality — a photo is not a model"
+        "Reality — a photo is not a model",
+        "Raster",
+        "Triangulated (TIN)"
       ],
-      "correct": 0,
+      "correct": 2,
       "explanation": "A photo is a grid of pixels, each holding a color as a number. That is a raster, and it is also a model: a flat grid of color values standing in for a river."
     },
     {
@@ -127,10 +130,10 @@
       "prompt": "A map of the same river showing the watershed boundary and the stream network. Which data model?",
       "setup": "",
       "options": [
-        "Raster",
+        "Point",
         "Vector — a polygon for the watershed, polylines for the streams",
         "Triangulated (TIN)",
-        "Point"
+        "Raster"
       ],
       "correct": 1,
       "explanation": "Discrete features with boundaries you can draw are vector. The watershed closes on itself, so it is a polygon; each stream is an ordered list of coordinate pairs, so it is a polyline."
@@ -140,12 +143,12 @@
       "prompt": "Terrain drawn as a wireframe surface, where the mesh is a regular grid of equally spaced elevation values. Raster or TIN?",
       "setup": "",
       "options": [
-        "TIN — any 3D surface mesh is a TIN",
-        "Raster — the grid is regular, one elevation value per cell",
+        "Neither; a surface is not a data model",
         "Vector — the wireframe is made of lines",
-        "Neither; a surface is not a data model"
+        "Raster — the grid is regular, one elevation value per cell",
+        "TIN — any 3D surface mesh is a TIN"
       ],
-      "correct": 1,
+      "correct": 2,
       "explanation": "Regularity is the tell. A raster is an evenly spaced grid, so every cell is the same size whether the ground there is a cliff or a parking lot. A TIN is irregular on purpose: small triangles where the surface bends, large ones where it does not."
     },
     {
@@ -154,11 +157,11 @@
       "setup": "Double-precision numbers are 8 bytes each.",
       "options": [
         "Yes — more storage means more detail",
+        "It depends on which format you save it in",
         "Yes — rasters are always more accurate than vectors",
-        "No — it costs four times as much and gives a blockier boundary, because the phenomenon is a boundary, not a surface",
-        "It depends on which format you save it in"
+        "No — it costs four times as much and gives a blockier boundary, because the phenomenon is a boundary, not a surface"
       ],
-      "correct": 2,
+      "correct": 3,
       "explanation": "The extra bytes bought pixelated edges, not accuracy. Storage is not precision, and a finer grid only makes both numbers worse. A state boundary is a discrete line, so the vector model fits it."
     },
     {
@@ -166,12 +169,12 @@
       "prompt": "Air temperature across the state, mapped as a smooth field of color. Which data model, and why?",
       "setup": "",
       "options": [
-        "Point — temperature is measured at weather stations",
+        "TIN — it is a continuous surface",
         "Polygon — each colored zone is an area",
-        "Raster — temperature has a value everywhere, which is exactly what a grid of cells stores",
-        "TIN — it is a continuous surface"
+        "Point — temperature is measured at weather stations",
+        "Raster — temperature has a value everywhere, which is exactly what a grid of cells stores"
       ],
-      "correct": 2,
+      "correct": 3,
       "explanation": "Temperature is continuous: there is a value at every location, not just where someone put a thermometer. Continuous and highly variable is the raster case; discrete, countable things are the vector case; and a TIN is the compact way to carry a surface for 3D work."
     }
   ]

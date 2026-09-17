@@ -33,6 +33,8 @@ Keep the slug short: it decides the QR's density, and the code is read from the 
 """
 import html
 import json
+import random
+import re
 import sys
 from pathlib import Path
 
@@ -79,11 +81,44 @@ def check(ns: dict, path: Path) -> None:
         raise SystemExit(f"{path.name}: MESSAGES needs three entries (top, middle, low)")
 
 
+# Options whose meaning depends on where they sit. These are pinned to the end and never
+# shuffled; everything above them is.
+TRAILING = re.compile(r"^(all|none|both|neither) of (the )?(above|these)\b", re.I)
+
+
+def balance(qs: list, slug: str) -> None:
+    """Spread the correct answer across the letters, in place.
+
+    Left alone, a written-in-order quiz tends to put the answer in the same slot again and
+    again — six of the first eleven had it in one letter five times out of eight, which
+    rewards guessing and teaches nothing. Each question's options are permuted with a seed
+    made from the quiz and the question, so the order is stable across rebuilds (a student
+    who reloads sees the same page) but unrelated between questions.
+    """
+    targets = [i % 4 for i in range(len(qs))]
+    random.Random(f"{slug}-positions").shuffle(targets)
+    for n, (q, want) in enumerate(zip(qs, targets)):
+        opts = q["options"]
+        pinned = [o for o in opts if TRAILING.match(o)]
+        movable = [o for o in opts if o not in pinned]
+        answer = opts[q["correct"]]
+        if answer in pinned:            # "none of the above" as the answer: leave it alone
+            continue
+        rest = [o for o in movable if o != answer]
+        random.Random(f"{slug}-{n}").shuffle(rest)
+        want = min(want, len(movable) - 1)
+        new = rest[:want] + [answer] + rest[want:] + pinned
+        q["options"] = new
+        q["correct"] = new.index(answer)
+
+
 def render(ns: dict) -> str:
     """Fill the shell. The questions travel as a JSON block that docs/quizzes/assets/quiz.js
     reads — the page carries no logic and no styling of its own."""
     t = TEMPLATE.read_text()
     qs = ns["QUESTIONS"]
+
+    balance(qs, ns["SLUG"])
 
     data = {
         "messages": list(ns["MESSAGES"]),

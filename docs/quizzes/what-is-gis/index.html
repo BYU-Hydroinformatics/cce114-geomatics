@@ -32,7 +32,7 @@
 
       <div class="options" id="optionsBox"></div>
 
-      <div class="feedback" id="feedbackBox"></div>
+      <div class="feedback" id="feedbackBox" role="status" aria-live="polite"></div>
 
       <div class="controls">
         <button class="next-btn" id="nextBtn">Next &rarr;</button>
@@ -50,10 +50,13 @@
         Take the open-book quiz on Learning Suite<br>
         <em>Lab 1 assumes QGIS is already working on your own machine.</em>
       </div>
+      <div class="review" id="review"></div>
       <br>
       <button class="restart-btn" id="restartBtn">Start over</button>
     </div>
   </div>
+
+  <p class="hint">On a laptop: press <strong>A</strong>&ndash;<strong>D</strong> to answer, <strong>Enter</strong> for the next question.</p>
 
   <footer class="page-foot">
     CCE 114 Geomatics &middot;
@@ -88,12 +91,12 @@
       "prompt": "Which of these would you NOT use a GIS for?",
       "setup": "",
       "options": [
-        "Deciding where to put an airport",
-        "Mapping flooding after a hurricane in North Carolina",
         "Designing a high-rise building",
-        "Managing a city's water and sewer infrastructure"
+        "Deciding where to put an airport",
+        "Managing a city's water and sewer infrastructure",
+        "Mapping flooding after a hurricane in North Carolina"
       ],
-      "correct": 2,
+      "correct": 0,
       "explanation": "Designing the building itself is CAD and BIM work, not GIS. A GIS still has plenty to say about the site around it — where to put it, what it floods, what it connects to — so the line is about the design work, not the project."
     },
     {
@@ -101,12 +104,12 @@
       "prompt": "Which GIS software does this course use?",
       "setup": "",
       "options": [
+        "AutoCAD",
         "ArcGIS Pro",
-        "QGIS",
         "Civil 3D",
-        "AutoCAD"
+        "QGIS"
       ],
-      "correct": 1,
+      "correct": 3,
       "explanation": "QGIS: free, open source, and it runs on both Mac and Windows, so you install it on your own machine and keep it after you graduate. If you guessed ArcGIS Pro, that is the software CCE 414 uses; Civil 3D and AutoCAD are design tools, not GIS."
     },
     {
@@ -114,12 +117,12 @@
       "prompt": "Utah city boundaries, the road network, and city centers. Which feature type is each?",
       "setup": "",
       "options": [
+        "They are all polygons at different scales",
         "Polygon, polyline, point",
         "Polyline, polygon, point",
-        "Polygon, point, polyline",
-        "They are all polygons at different scales"
+        "Polygon, point, polyline"
       ],
-      "correct": 0,
+      "correct": 1,
       "explanation": "A city boundary encloses an area, so it is a polygon. A road has length but no area, so it is a polyline. A city center is a single location, so it is a point. Those three are the vector feature types you will meet all semester."
     },
     {
@@ -127,12 +130,12 @@
       "prompt": "How is an attribute table organized?",
       "setup": "",
       "options": [
-        "One row per layer, one column per feature",
         "One row per feature, one column per attribute",
-        "One row per attribute, one column per feature",
-        "One row per map, one column per layer"
+        "One row per map, one column per layer",
+        "One row per layer, one column per feature",
+        "One row per attribute, one column per feature"
       ],
-      "correct": 1,
+      "correct": 0,
       "explanation": "Every feature on the map owns exactly one row. Select a row and the feature lights up on the map; click the feature and its row is the one highlighted. That link is what makes it a GIS rather than a drawing."
     },
     {
@@ -140,12 +143,12 @@
       "prompt": "Is a river a polyline or a polygon?",
       "setup": "",
       "options": [
+        "Neither; a river is a raster",
         "Always a polyline — rivers flow in one direction",
         "Always a polygon — rivers have width",
-        "It depends on the scale you are working at",
-        "Neither; a river is a raster"
+        "It depends on the scale you are working at"
       ],
-      "correct": 2,
+      "correct": 3,
       "explanation": "On a map of the state, a river is a line and its width is beneath the resolution of the map. On a map of one reach for a flood study, the banks matter and it is a polygon. The feature type follows the question you are asking, not the object."
     },
     {
@@ -154,11 +157,11 @@
       "setup": "",
       "options": [
         "A midterm and a final exam",
-        "Weekly readings with open-book quizzes, weekly hands-on labs, and in-class discussion, attendance, and participation",
         "Lab reports only",
+        "Weekly readings with open-book quizzes, weekly hands-on labs, and in-class discussion, attendance, and participation",
         "A single semester project"
       ],
-      "correct": 1,
+      "correct": 2,
       "explanation": "Three things, every week: read and take the open-book quiz, do the lab, and show up and take part. Attendance and participation are worth 25 points across the semester, and you mark your attendance each week."
     },
     {
@@ -166,12 +169,12 @@
       "prompt": "Which of these follows the course's AI policy?",
       "setup": "You are encouraged to use AI tools — responsibly.",
       "options": [
-        "Have AI produce the maps and the analysis, then check them yourself",
-        "Ask AI how to do something in QGIS or to explain a concept, do the GIS work yourself, and say so if AI helped with the writing",
         "Avoid AI entirely; it is not permitted in this course",
-        "Use AI however you like — there is nothing to report"
+        "Use AI however you like — there is nothing to report",
+        "Ask AI how to do something in QGIS or to explain a concept, do the GIS work yourself, and say so if AI helped with the writing",
+        "Have AI produce the maps and the analysis, then check them yourself"
       ],
-      "correct": 1,
+      "correct": 2,
       "explanation": "Use AI to learn, not to produce. Build your own maps, run your own analysis, and solve the problems with your own brain — then report it whenever AI helped with your writing or with working a problem out. The full policy is on the course site."
     }
   ]

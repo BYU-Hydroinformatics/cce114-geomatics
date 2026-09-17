@@ -228,3 +228,72 @@ footer.page-foot a { color: var(--muted); }
   .controls { justify-content: stretch; }
   button.next-btn { width: 100%; padding: 0.8rem 1rem; }
 }
+
+/* The course site has a dark scheme and a lecture hall is a dark room, so follow the phone's
+   setting rather than firing a white page at someone in the back row. Same tokens, redefined. */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #14171c;
+    --card: #1c2129;
+    --text: #e3e8ee;
+    --muted: #9aa7b6;
+    --primary: #7aa9dc;
+    --primary-hover: #93bbe8;
+    --accent: #7aa9dc;
+    --success: #2f9e63;
+    --success-bg: #14291d;
+    --success-text: #9fe0bb;
+    --danger: #e0685f;
+    --danger-bg: #2c1817;
+    --danger-text: #f3b5b0;
+    --border: #2d343e;
+  }
+
+  .prompt { color: var(--text); }
+  button.opt-btn { background: #232932; color: var(--text); }
+  button.opt-btn:hover:not(:disabled) { background: #2b3440; color: #cfe0f2; }
+  button.next-btn, button.restart-btn { color: #0f1419; font-weight: 700; }
+}
+
+/* Keyboard: the buttons are reachable with Tab, so make the focus ring obvious. */
+button:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* The end-of-quiz list of what you got wrong. */
+.review {
+  text-align: left;
+  margin: 1.25rem 0 0;
+  border-top: 1px solid var(--border);
+  padding-top: 1rem;
+}
+
+.review h3 {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+  margin-bottom: 0.6rem;
+}
+
+.review li {
+  list-style: none;
+  font-size: 0.9rem;
+  line-height: 1.45;
+  margin-bottom: 0.7rem;
+  color: var(--text);
+}
+
+.review li span {
+  display: block;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+.hint {
+  text-align: center;
+  font-size: 0.8rem;
+  color: var(--muted);
+  margin-top: 0.75rem;
+}

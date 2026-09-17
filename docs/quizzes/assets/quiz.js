@@ -16,13 +16,14 @@
   var el = {};
   ["sectionBadge", "promptText", "setupText", "optionsBox", "feedbackBox", "nextBtn",
    "progressText", "scoreText", "quizContent", "finalScreen", "finalScoreDisplay",
-   "finalFeedbackText", "scoreBar", "restartBtn"].forEach(function (id) {
+   "finalFeedbackText", "scoreBar", "restartBtn", "review"].forEach(function (id) {
     el[id] = document.getElementById(id);
   });
 
   var index = 0;
   var score = 0;
   var answered = false;
+  var missed = [];
 
   function loadQuestion() {
     answered = false;
@@ -62,6 +63,7 @@
     var q = questions[index];
     var right = selected === q.correct;
     if (right) score++;
+    else missed.push({ prompt: q.prompt, answer: q.options[q.correct] });
 
     el.scoreText.textContent = "Score: " + score + " / " + (index + 1);
 
@@ -81,6 +83,7 @@
 
     el.nextBtn.textContent = (index === questions.length - 1) ? "See how you did" : "Next →";
     el.nextBtn.style.display = "inline-block";
+    el.nextBtn.focus();
   }
 
   function nextQuestion() {
@@ -99,6 +102,23 @@
     var good = Math.ceil(questions.length * 2 / 3);
     el.finalFeedbackText.textContent =
       score === questions.length ? messages[0] : (score >= good ? messages[1] : messages[2]);
+
+    el.review.innerHTML = "";
+    if (missed.length) {
+      var h = document.createElement("h3");
+      h.textContent = missed.length === 1 ? "The one to go back to" : "The ones to go back to";
+      var ul = document.createElement("ul");
+      missed.forEach(function (m) {
+        var li = document.createElement("li");
+        li.textContent = m.prompt;
+        var ans = document.createElement("span");
+        ans.textContent = m.answer;
+        li.appendChild(ans);
+        ul.appendChild(li);
+      });
+      el.review.appendChild(h);
+      el.review.appendChild(ul);
+    }
   }
 
   function restartQuiz() {
@@ -108,8 +128,22 @@
     el.quizContent.style.display = "block";
     el.finalScreen.style.display = "none";
     el.scoreText.textContent = "Score: 0 / 0";
+    missed = [];
+    el.review.innerHTML = "";
     loadQuestion();
   }
+
+  document.addEventListener("keydown", function (e) {
+    if (el.finalScreen.style.display === "block") return;
+    if (e.key === "Enter" && answered) { nextQuestion(); return; }
+    var k = e.key.toUpperCase();
+    var i = LETTERS.indexOf(k);
+    if (i === -1 && k >= "1" && k <= "6") i = Number(k) - 1;
+    if (i > -1 && i < questions[index].options.length && !answered) {
+      e.preventDefault();
+      checkAnswer(i);
+    }
+  });
 
   el.nextBtn.addEventListener("click", nextQuestion);
   el.restartBtn.addEventListener("click", restartQuiz);

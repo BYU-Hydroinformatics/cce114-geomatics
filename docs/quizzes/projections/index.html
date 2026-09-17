@@ -32,7 +32,7 @@
 
       <div class="options" id="optionsBox"></div>
 
-      <div class="feedback" id="feedbackBox"></div>
+      <div class="feedback" id="feedbackBox" role="status" aria-live="polite"></div>
 
       <div class="controls">
         <button class="next-btn" id="nextBtn">Next &rarr;</button>
@@ -50,10 +50,13 @@
         Utah's working CRS: <strong>NAD 83 / UTM Zone 12N, EPSG:26912</strong><br>
         <em>Web Mercator is for looking at. Measure in something else.</em>
       </div>
+      <div class="review" id="review"></div>
       <br>
       <button class="restart-btn" id="restartBtn">Start over</button>
     </div>
   </div>
+
+  <p class="hint">On a laptop: press <strong>A</strong>&ndash;<strong>D</strong> to answer, <strong>Enter</strong> for the next question.</p>
 
   <footer class="page-foot">
     CCE 114 Geomatics &middot;
@@ -76,11 +79,11 @@
       "setup": "",
       "options": [
         "Africa",
-        "Delaware",
         "Russia",
-        "Mexico"
+        "Mexico",
+        "Delaware"
       ],
-      "correct": 3,
+      "correct": 2,
       "explanation": "Greenland is about 2.2 million km², Mexico about 2.0 million. Africa is the tempting answer because that is exactly how big Greenland looks on a Mercator map — and Africa is about fourteen times larger. Mercator stretches east-west to keep angles right, and has to stretch north-south to match, so the inflation grows without limit toward the poles."
     },
     {
@@ -89,11 +92,11 @@
       "setup": "",
       "options": [
         "Nothing — it is simply a more honest world map",
-        "Shape: the parallels are compressed, so countries are squashed out of proportion",
         "Direction: north-south and east-west no longer run straight",
-        "Nearly everything, because it is a conic projection and only fits mid-latitudes"
+        "Nearly everything, because it is a conic projection and only fits mid-latitudes",
+        "Shape: the parallels are compressed, so countries are squashed out of proportion"
       ],
-      "correct": 1,
+      "correct": 3,
       "explanation": "Peters is a cylindrical equal-area projection: area is preserved and north-south and east-west directions still run straight, so the distortion lands on shape and the map is not conformal. A flat map cannot hold shape, area, distance, and direction at once, so the question is never \"which projection is right?\" but \"what am I willing to distort?\""
     },
     {
@@ -103,10 +106,10 @@
       "options": [
         "Nothing — the units are meters, so the area is good",
         "The units are really square degrees and QGIS has mislabeled them",
-        "EPSG:3857 is a geographic coordinate system, so no area can be computed from it",
-        "It is Mercator, so area is inflated more and more away from the equator — meters, but the wrong meters"
+        "It is Mercator, so area is inflated more and more away from the equator — meters, but the wrong meters",
+        "EPSG:3857 is a geographic coordinate system, so no area can be computed from it"
       ],
-      "correct": 3,
+      "correct": 2,
       "explanation": "This trap is quiet, which is what makes it dangerous: EPSG:3857 really is a projected CRS and QGIS really does return meters, so nothing looks wrong. But it is the same projection that makes Greenland the size of Africa, and Provo is a long way from the equator. Web Mercator is for global and web display; reproject to a UTM zone or a State Plane zone before you measure."
     },
     {
@@ -114,12 +117,12 @@
       "prompt": "Where does a UTM projection minimize distortion?",
       "setup": "",
       "options": [
-        "Equally well everywhere inside a single UTM zone",
-        "Along the equator",
         "Along a line of longitude in the middle of a particular zone",
-        "In the northern hemisphere, but not the southern"
+        "Along the equator",
+        "In the northern hemisphere, but not the southern",
+        "Equally well everywhere inside a single UTM zone"
       ],
-      "correct": 2,
+      "correct": 0,
       "explanation": "That line is the zone's central meridian. UTM is a secant transverse cylinder — scale factor 0.9996 on the central meridian, with two lines of true scale either side of it — and distortion grows toward the zone edges, so a site straddling a zone boundary forces a choice: accept the error at the far edge, or move to State Plane. Zone 12's central meridian is 111° west, running down the middle of Utah, which is why NAD 83 / UTM Zone 12N (EPSG:26912) is a good working CRS here."
     },
     {
@@ -129,8 +132,8 @@
       "options": [
         "Cones are inherently more accurate than cylinders, so they are used wherever a state can afford the computation",
         "The shape of the projection surface is matched to the shape of the state, so the line of true scale runs along its long axis",
-        "The zones follow county boundaries that were already surveyed",
-        "Cylindrical surfaces cannot be used above about 40° north"
+        "Cylindrical surfaces cannot be used above about 40° north",
+        "The zones follow county boundaries that were already surveyed"
       ],
       "correct": 1,
       "explanation": "Tennessee is the case in the slides: UTM Zone 16's line of least distortion runs north-south through the middle of a long east-west state, so it is close to true scale over only a narrow strip, while a conic with standard parallels chosen along the long axis fits the whole state. Someone already did this analysis for every state, and the answer is baked into the zone definitions — zones are kept small so scale error stays under about 1 part in 10,000. Utah has three: North, Central, and South. Check the units, because State Plane is traditionally in survey feet."
@@ -140,12 +143,12 @@
       "prompt": "Which of the following is the closest mathematical approximation of the shape of the Earth?",
       "setup": "",
       "options": [
-        "Geoid",
-        "Ellipsoid",
+        "Tetraploid",
         "Sphere",
-        "Tetraploid"
+        "Geoid",
+        "Ellipsoid"
       ],
-      "correct": 1,
+      "correct": 3,
       "explanation": "Read the wording carefully — the geoid is the trap, and it is a fair one. The geoid describes the physical Earth most closely, but it is not a figure you can compute coordinates on: it is an equigravitational surface, the expected sea surface everywhere, and it wanders because the Earth's density does. Of the mathematical figures, an ellipsoid (semi-major axis a, semi-minor axis b, flattening (a−b)/a) fits far better than a sphere. The gap between geoid and ellipsoid is why an orthometric height and an ellipsoid height for the same point are different numbers. (Tetraploid is a genetics term, and a joke.)"
     },
     {
@@ -153,10 +156,10 @@
       "prompt": "The same brass benchmark has three different published NAD 83 coordinates. Did the monument move?",
       "setup": "",
       "options": [
-        "Yes — it moved with the continent between surveys",
+        "Yes — different instruments were used, so the spread is measurement error",
         "No — each is a different realization of the datum, so the reference surface changed, not the monument",
         "No — they are one position written in three different coordinate formats",
-        "Yes — different instruments were used, so the spread is measurement error"
+        "Yes — it moved with the continent between surveys"
       ],
       "correct": 1,
       "explanation": "A datum is an ellipsoid plus the anchoring that ties it to the actual Earth, and that anchoring is revised as measurements improve. Think of a balloon: reshape it slightly and some points on the surface move closer together while others move apart. Between NAD 83 (2007) and NAD 83 (2011) most of the country shifted 0 to 4 cm and the west coast a good deal more — same datum name, different numbers — so ask which realization a control point is on before you accept it."
@@ -166,12 +169,12 @@
       "prompt": "In QGIS, what is the difference between Layer → Set CRS and Processing Toolbox → Reproject Layer?",
       "setup": "",
       "options": [
-        "They do the same thing; Reproject Layer is the batch version",
         "Set CRS declares what the coordinates already are; Reproject Layer computes new coordinates and writes a new dataset",
-        "Set CRS rewrites the coordinates; Reproject Layer only changes how the layer is drawn",
-        "Set CRS applies to the project, Reproject Layer applies to one layer"
+        "Set CRS applies to the project, Reproject Layer applies to one layer",
+        "They do the same thing; Reproject Layer is the batch version",
+        "Set CRS rewrites the coordinates; Reproject Layer only changes how the layer is drawn"
       ],
-      "correct": 1,
+      "correct": 0,
       "explanation": "Set CRS is a label. It moves nothing, and if you declare the wrong CRS the layer sits in the wrong place and no transformation downstream will rescue it. Reproject Layer does the arithmetic and writes the reprojected data. Between the two sits on-the-fly reprojection: layers keep their own CRS and QGIS draws them into the project CRS for display, which is why layers can line up on screen while the files on disk still disagree. This is the easiest way to lose an afternoon in Lab 7."
     }
   ]
