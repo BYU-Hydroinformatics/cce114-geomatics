@@ -68,7 +68,10 @@ Specifically:
   (`<!-- ... -->`). Marp shows these in presenter view. Add a note where a slide would otherwise
   be a bare image so the presenter knows what to say.
 - Mark question slides with `<!-- _class: quiz -->` and in-class activities with
-  `<!-- _class: activity -->`. Multiple-choice options use `<ol type="A">`.
+  `<!-- _class: activity -->`. Multiple-choice options use `<ol type="A">`. `quiz` is a marker in
+  the source and draws nothing on the slide; the red ❓ it used to prefix the title with was
+  removed from the theme on 2026-09-17 at the instructor's request. Do not put it back, and do not
+  type one into a title by hand.
 - Section-break slides use `<!-- _class: lead -->`.
 - **Software wording:** the course now uses QGIS, not ArcGIS/ArcMap/ArcGIS Pro. Change text that
   talks about the software (menus, tool names, "ArcToolbox" to "Processing Toolbox", "feature

@@ -31,7 +31,10 @@ section.lead h1 { color: #ffffff; font-size: 1.8em; }
 section.lead h2, section.lead p { color: #c9d8ea; }
 section.lead a { color: #9ec5ee; }
 
-section.quiz h1::before { content: "❓ "; }
+/* "_class: quiz" carries no styling: it marks a question slide in the source so a deck can be
+   read and converted, and the title is left to speak for itself. It used to prefix the title
+   with a red ❓, which is the same emoji-in-the-theme's-font-stack problem that kept emoji off
+   the schedule badges (CLAUDE.md rule 3). Do not put it back. */
 section.activity { background: #eef3f9; }
 
 img { background: transparent; }
