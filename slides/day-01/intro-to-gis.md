@@ -26,7 +26,7 @@ Dr. Dan Ames and Dr. James Halgren
   - Identify the three vector feature types: points, polylines, polygons
   - Explain how an attribute table connects to features on a map
   - Name two ways a civil or environmental engineer uses GIS
-- Software for this course: **QGIS** — free, open source, runs on Mac and Windows
+- Software for this course: **QGIS**, the **long-term release** — free, open source, runs on Mac and Windows
 
 <!-- Set expectations for the hour. Note the software change: this course now uses QGIS, not ArcGIS Pro. QGIS is free and cross-platform, so students install it themselves rather than relying on a lab license. -->
 
@@ -157,7 +157,7 @@ As you go to different parts of the room/world, take a minute to get to know the
 
 ![h:470 center](images/gis-qgis-polygons.png)
 
-<!-- This is QGIS 4.2 — what students will see when they install it. Point at the Layers panel on the left: the checkbox controls visibility, and the order controls what draws on top. Polygons here are Utah city boundaries. -->
+<!-- These screenshots are QGIS 3.44 LTR, the version on the Clyde 234 machines and the one the labs are written against. If a student installs the latest release instead, the menus will not match the lab handouts — tell them to take the long-term release. Point at the Layers panel on the left: the checkbox controls visibility, and the order controls what draws on top. Polygons here are Utah city boundaries. -->
 
 ---
 
@@ -305,7 +305,7 @@ Not graded, and every answer explains itself. Nothing here was supposed to be ob
 
 - Read the assigned pages in *GIS Fundamentals* (Bolstad & Manson, 7th ed.)
 - Take the open-book quiz on Learning Suite — due **Saturday at 11:59 pm**
-- Install QGIS on your own computer (free: [qgis.org/download](https://qgis.org/download))
+- Install QGIS on your own computer — free from [qgis.org/download](https://qgis.org/download). Take the **long-term release (LTR)**, which is what the lab machines run and what the labs are written for
 - [Lab 1](https://byu-hydroinformatics.github.io/cce114-geomatics/assignments/lab-01/) is assigned Tuesday and due **Saturday at 11:59 pm**
 - Questions? Office hours: [calendly.com/dan-ames/office-hours](https://calendly.com/dan-ames/office-hours)
 

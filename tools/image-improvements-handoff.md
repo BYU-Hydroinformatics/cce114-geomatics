@@ -87,6 +87,17 @@ raster.png`) still show the old order and dark panels; the script's SHOT variabl
 re-shooting them is one command apiece. Dan's Mac is in light mode and QGIS 3.44 ignores a per-app
 dark-appearance default, so new shots are light.
 
+**Day 1 demo screenshots — checked, no change needed (2026-09-17).** A presenter note on the
+Polygon Features slide claimed the five QGIS shots were "QGIS 4.2 — what students will see when
+they install it", which contradicts the 3.44 rule. They were checked against a fresh 3.44.14
+capture from `tools/qgis_day01_demo_shots.py`: the Processing Toolbox group list matches exactly
+(31 groups against 30, the difference being a GRASS provider enabled on whichever machine took the
+originals), as do the toolbars, the Layers panel and the status bar. The images are fine; the note
+was wrong and has been corrected, and the deck now tells students to install the long-term release.
+Do not re-shoot these on version grounds. The script is kept for when they do go stale: its four
+map shots work, its attribute-table and buffer shots do not yet — each carries a note saying what
+to try next. They are also 3200 px wide, against the ~2000 px convention, if anyone is tidying.
+
 **Lab 1–2 (lower priority):** UGRC website screenshots still match the live site's
 labels (verified Aug 2026) but predate its current look; QGIS window chrome in older
 shots shows pre-3.44 styling. Refresh opportunistically.
