@@ -51,27 +51,13 @@ Polygon data model activity: encode a state boundary using only numbers. Record 
 
 **Hands-On Practice**{ .badge .badge-handson } · *Day 3*
 
-### Topics
-
-- Raster and image data models, continued
-- Make a map in QGIS using each data type
-- Live demo of creating and editing vector data in QGIS
-
-### Materials
-
-- UtahCountyData.zip: [download](https://github.com/BYU-Hydroinformatics/cce114-geomatics/releases/download/course-data-2026/UtahCountyData.zip)
-
-### In-class activity
-
-First Map: Utah County: build a QGIS project with a basemap, the four Utah County layers, and your own point layer, and upload a screenshot. Record your completion on Learning Suite.
-
 <div class="handson-cta" markdown="1">
 
 **Hands-On Practice**{ .handson-cta__eyebrow }
 
 **First Map in QGIS**{ .handson-cta__title }
 
-This session has its own step-by-step guide: what to have ready, a practice run to do beforehand, the 50-minute plan, the click-by-click QGIS walkthrough, the graded upload, and the snags that usually come up.
+This session has its own step-by-step guide: what you need, an overview, the click-by-click QGIS walkthrough, what to hand in, and the snags that usually come up.
 
 [Open the Week 2 hands-on guide →](../handson/week-02.md){ .handson-cta__button }
 

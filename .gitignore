@@ -12,3 +12,7 @@ docs/slides/
 __pycache__/
 *.pyc
 .claude/
+
+# Local scratch only: the raw Learning Suite download. Course data that ships with the
+# site lives under docs/ and is committed. Anchored so it cannot match docs/*/data/.
+/data/

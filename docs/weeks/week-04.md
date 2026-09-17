@@ -53,23 +53,13 @@ Fifteen minutes. Circulate and check that they converted seconds to kilometers b
 
 **Hands-On Practice**{ .badge .badge-handson } · *Day 7*
 
-### Topics
-
-- Twenty minutes on campus collecting positions with your phone
-- Importing the class points into QGIS from a CSV, assigning the CRS, and reprojecting to UTM
-- Seeing GPS error as the scatter between students at the same site
-
-### In-class activity
-
-GPS Class Activity: enter three campus positions in the shared sheet and record the site names on Learning Suite. Record your completion on Learning Suite.
-
 <div class="handson-cta" markdown="1">
 
 **Hands-On Practice**{ .handson-cta__eyebrow }
 
 **GPS Field Collection and Importing the Class Data**{ .handson-cta__title }
 
-This session has its own step-by-step guide: what to have ready, a practice run to do beforehand, the 50-minute plan, the click-by-click QGIS walkthrough, the graded upload, and the snags that usually come up.
+This session has its own step-by-step guide: what you need, an overview, the click-by-click QGIS walkthrough, what to hand in, and the snags that usually come up.
 
 [Open the Week 4 hands-on guide →](../handson/week-04.md){ .handson-cta__button }
 

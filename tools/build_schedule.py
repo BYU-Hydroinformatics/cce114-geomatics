@@ -65,7 +65,8 @@ DAYS = [
     dict(n=5, week=3, kind="hands-on", title="Maps, Symbology, and Cartography, Part 2", handson="week-03",
          topics=["Follow along: make a map of the United States",
                  "Practice point, line, and polygon symbology", "Explore the attribute table", "Add labels"],
-         data=[("United States shapefiles", "")],
+         data=[("United States shapefiles (same zip as the one on Learning Suite)",
+                "data/united-states-shapefiles.zip")],
          activity="Playing with Symbology: make a colorful map in QGIS and upload a screenshot"),
     dict(n=6, week=4, kind="concepts", title="The Global Positioning System",
          slides=[("The Global Positioning System", f"{SITE}/slides/day-06/gps-part-1.html"),
@@ -383,10 +384,15 @@ def session_section(d: dict, weekday: Optional[str], existing_text: str) -> list
     page carries the badge, topics, materials, the graded activity, and a callout linking out
     to it. A Tuesday activity write-up still lives inline under its marker."""
     out = [f"## {session_heading(d, weekday)}", ""]
-    out += session_generated_body(d)
     if d["kind"] == "hands-on":
+        # Only the badge and the callout. Topics, materials and the graded activity are on the
+        # hands-on page itself, and carrying a second copy here meant two places to keep in step.
+        out += [f"{badge(d['kind'])} \u00b7 *Day {d['n']}*", ""]
+        if d.get("note"):
+            out += ["> [!NOTE]", f"> {d['note']}", ""]
         out += handson_callout(d)
         return out
+    out += session_generated_body(d)
     if d["n"] in TUESDAY_NOTES_DAYS:
         marker = "<!-- tuesday-notes -->"
         out.append(marker)
@@ -402,9 +408,9 @@ def handson_callout(d: dict) -> list:
     return ['<div class="handson-cta" markdown="1">', "",
             "**Hands-On Practice**{ .handson-cta__eyebrow }", "",
             f"**{session_title(d)}**{{ .handson-cta__title }}", "",
-            "This session has its own step-by-step guide: what to have ready, a practice run to "
-            "do beforehand, the 50-minute plan, the click-by-click QGIS walkthrough, the graded "
-            "upload, and the snags that usually come up.", "",
+            "This session has its own step-by-step guide: what you need, an overview, the "
+            "click-by-click QGIS walkthrough, what to hand in, and the snags that usually "
+            "come up.", "",
             f"[Open the Week {w} hands-on guide \u2192](../handson/week-{w:02d}.md)"
             "{ .handson-cta__button }", "",
             "</div>", ""]

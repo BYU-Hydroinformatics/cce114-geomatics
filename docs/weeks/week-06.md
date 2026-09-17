@@ -39,24 +39,13 @@ Engineering Paper Raster Analysis: work a map algebra problem by hand and upload
 
 **Hands-On Practice**{ .badge .badge-handson } · *Day 11*
 
-### Topics
-
-- Load a GeoTIFF in QGIS and read the Information and Source tabs (data type, rows and columns, cell size, units, projection)
-- Raster symbology: render types, singleband pseudocolor, color ramps, classification
-- Elevation surfaces and cross-section profiles (View > Elevation Profile, or the Profile Tool plugin)
-- Exam 1 review Kahoot in the last fifteen minutes
-
-### In-class activity
-
-DEM Profile: upload a screenshot of a pseudocolor DEM with an elevation profile. Record your completion on Learning Suite.
-
 <div class="handson-cta" markdown="1">
 
 **Hands-On Practice**{ .handson-cta__eyebrow }
 
 **Raster Data in QGIS and an Elevation Profile**{ .handson-cta__title }
 
-This session has its own step-by-step guide: what to have ready, a practice run to do beforehand, the 50-minute plan, the click-by-click QGIS walkthrough, the graded upload, and the snags that usually come up.
+This session has its own step-by-step guide: what you need, an overview, the click-by-click QGIS walkthrough, what to hand in, and the snags that usually come up.
 
 [Open the Week 6 hands-on guide →](../handson/week-06.md){ .handson-cta__button }
 

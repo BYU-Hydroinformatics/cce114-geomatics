@@ -32,26 +32,13 @@ anything on another day says so.
 
 **Hands-On Practice**{ .badge .badge-handson } · *Day 19*
 
-### Topics
-
-- Cities near rivers analysis in QGIS
-- Chaining tools into a workflow
-
-### Materials
-
-- United States data for the cities-near-rivers analysis (posted on Learning Suite)
-
-### In-class activity
-
-Cities Near Rivers: upload a screenshot of your map showing all U.S. cities within 10 km of a major river. Record your completion on Learning Suite.
-
 <div class="handson-cta" markdown="1">
 
 **Hands-On Practice**{ .handson-cta__eyebrow }
 
 **Cities Near Rivers**{ .handson-cta__title }
 
-This session has its own step-by-step guide: what to have ready, a practice run to do beforehand, the 50-minute plan, the click-by-click QGIS walkthrough, the graded upload, and the snags that usually come up.
+This session has its own step-by-step guide: what you need, an overview, the click-by-click QGIS walkthrough, what to hand in, and the snags that usually come up.
 
 [Open the Week 10 hands-on guide →](../handson/week-10.md){ .handson-cta__button }
 
