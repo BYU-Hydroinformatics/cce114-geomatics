@@ -250,6 +250,10 @@ PRACTICE = {
     3: [("map-elements", "Does This Map Work?",
          "Twelve questions on the required map elements, what makes a map ugly, and what a map "
          "does to the reader looking at it. The quiz behind the QR code on the Day 4 deck.")],
+    4: [("gps", "How Does It Know Where You Are?",
+         "Twelve questions on how a receiver turns a radio signal into a position, what the digits "
+         "of a coordinate are worth, and where GPS error comes from. The quiz behind the QR code "
+         "on the Day 6 deck.")],
 }
 
 

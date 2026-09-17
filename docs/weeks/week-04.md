@@ -9,6 +9,12 @@ anything on another day says so.
 | Quiz 3 | [GPS, Part 1](../assignments/deliverables.md#reading-quizzes) — open book, on Learning Suite |
 | Lab 3 | [GPS Data Collection and Importing Into QGIS](../assignments/lab-03/README.md) |
 
+## Practice
+
+Not graded, and nothing to hand in — open it on a phone or a laptop as often as you like.
+
+- [How Does It Know Where You Are?](../quizzes/gps/index.html) — Twelve questions on how a receiver turns a radio signal into a position, what the digits of a coordinate are worth, and where GPS error comes from. The quiz behind the QR code on the Day 6 deck.
+
 ## Tuesday — The Global Positioning System
 
 **Lecture**{ .badge .badge-lecture } · *Day 6*

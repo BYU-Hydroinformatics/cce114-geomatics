@@ -72,6 +72,16 @@ Specifically:
   the source and draws nothing on the slide; the red ❓ it used to prefix the title with was
   removed from the theme on 2026-09-17 at the instructor's request. Do not put it back, and do not
   type one into a title by hand.
+- **Every Tuesday deck ends with a scannable self-check quiz** (instructor's request,
+  2026-09-17, after the first three worked in class). The last content slide before "Before Next
+  Class" is an `<!-- _class: activity -->` slide: the three parts and the URL in small text on the
+  left, the QR code at `w:400` on the right. The quiz itself is generated —
+  `tools/quizzes/<slug>.py` holds the questions, `tools/build_quiz.py` renders it to
+  `docs/quizzes/<slug>/index.html`, and the header of `build_quiz.py` is the step-by-step. Twelve
+  questions in three parts runs about five minutes. Every question carries an explanation, because
+  the explanation is the teaching and the score is not. Keep the slug short: it sets the QR's
+  density, and the code gets read from the back of the room. Verify by decoding the code out of
+  the *rendered slide*, not the source PNG.
 - Section-break slides use `<!-- _class: lead -->`.
 - **Software wording:** the course now uses QGIS, not ArcGIS/ArcMap/ArcGIS Pro. Change text that
   talks about the software (menus, tool names, "ArcToolbox" to "Processing Toolbox", "feature

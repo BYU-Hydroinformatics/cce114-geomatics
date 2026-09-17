@@ -301,7 +301,7 @@
         "Reality — it is a recording of the actual river",
         "A model — a video is a representation of reality, not the river itself",
         "Neither",
-        "A data model only once it is loaded into QGIS"
+        "A data model only once it is loaded into QGIS",
       ],
       correct: 1,
       explanation: "A model is an abstraction of reality. The video is a flat, silent, two-minute stand-in for a river that is none of those things — it drops depth, temperature, discharge, and everything upstream and downstream of the raft. Every representation leaves something out; the question is always what."
@@ -314,7 +314,7 @@
         "“Shapefile” is the data model; “polyline” is the file format",
         "“Polyline” is the data model; “shapefile” is the file format",
         "Both are file formats",
-        "Both are data models"
+        "Both are data models",
       ],
       correct: 1,
       explanation: "The data model is the conceptual organization — what has to be stored. A road is a polyline: an ordered list of coordinate pairs. The shapefile is one of many ways to write those numbers to disk."
@@ -327,7 +327,7 @@
         "The data model — GeoPackage layers are stored differently, so they are no longer polylines",
         "Only the storage. The roads are still polylines, and the coordinates are the same numbers",
         "Nothing at all — GeoPackage is just a renamed shapefile",
-        "The geometry is simplified to fit the new format"
+        "The geometry is simplified to fit the new format",
       ],
       correct: 1,
       explanation: "One data model, many possible formats. Shapefile, GeoPackage, GeoJSON, and KML are four ways of writing down the same polylines; QGIS reads them all, and changing the format does not change the model."
@@ -340,7 +340,7 @@
         "Nothing opens — .shp on its own is unreadable",
         "The roads draw, but the attribute table is gone and the layer may not know its coordinate system",
         "Everything works; the other files are backups",
-        "The roads draw as points instead of lines"
+        "The roads draw as points instead of lines",
       ],
       correct: 1,
       explanation: "The .shp holds the geometry, the .dbf the attribute table, the .shx the index, and the .prj the coordinate system. Lose the .dbf and the lines still draw with nothing attached to them. This is the everyday argument for GeoPackage, where one file carries the lot."
@@ -353,7 +353,7 @@
         "Raster",
         "Vector",
         "Triangulated (TIN)",
-        "Reality — a photo is not a model"
+        "Reality — a photo is not a model",
       ],
       correct: 0,
       explanation: "A photo is a grid of pixels, each holding a color as a number. That is a raster, and it is also a model: a flat grid of color values standing in for a river."
@@ -366,7 +366,7 @@
         "Raster",
         "Vector — a polygon for the watershed, polylines for the streams",
         "Triangulated (TIN)",
-        "Point"
+        "Point",
       ],
       correct: 1,
       explanation: "Discrete features with boundaries you can draw are vector. The watershed closes on itself, so it is a polygon; each stream is an ordered list of coordinate pairs, so it is a polyline."
@@ -379,7 +379,7 @@
         "A coordinate pair, (x, y)",
         "An ordered list of coordinate pairs",
         "A grid of cells covering the county",
-        "A triangle mesh"
+        "A triangle mesh",
       ],
       correct: 0,
       explanation: "One point, one coordinate pair — that is the whole geometry. Everything else about the tower (owner, height, carrier) lives in its row of the attribute table, one row per feature."
@@ -392,7 +392,7 @@
         "One row stores the center of the state",
         "The fifth row is the coordinate system",
         "The last pair repeats the first, to close the ring",
-        "A rounding check, so the area computes correctly"
+        "A rounding check, so the area computes correctly",
       ],
       correct: 2,
       explanation: "A polygon has to close: the last vertex repeats the first. That is what separates the polygon data model from a polyline that happens to end near where it started, and it is true of nearly every spatial format you will meet."
@@ -405,7 +405,7 @@
         "TIN — any 3D surface mesh is a TIN",
         "Raster — the grid is regular, one elevation value per cell",
         "Vector — the wireframe is made of lines",
-        "Neither; a surface is not a data model"
+        "Neither; a surface is not a data model",
       ],
       correct: 1,
       explanation: "Regularity is the tell. A raster is an evenly spaced grid, so every cell is the same size whether the ground there is a cliff or a parking lot. A TIN is irregular on purpose: small triangles where the surface bends, large ones where it does not."
@@ -418,7 +418,7 @@
         "Yes — more storage means more detail",
         "Yes — rasters are always more accurate than vectors",
         "No — it costs four times as much and gives a blockier boundary, because the phenomenon is a boundary, not a surface",
-        "It depends on which format you save it in"
+        "It depends on which format you save it in",
       ],
       correct: 2,
       explanation: "The extra bytes bought pixelated edges, not accuracy. Storage is not precision, and a finer grid only makes both numbers worse. A state boundary is a discrete line, so the vector model fits it."
@@ -431,7 +431,7 @@
         "The triangles shrink toward the edges of the dataset",
         "Detail follows the surface — many small triangles where it bends, few large ones where it is flat",
         "Triangle size is set by the coordinate system",
-        "Smaller triangles are drawn wherever the data are older"
+        "Smaller triangles are drawn wherever the data are older",
       ],
       correct: 1,
       explanation: "That is the whole point of a TIN, and why game engines and engineering surface models use them: spend vertices where the shape changes and none where it does not. A raster cannot do this — its grid is the same spacing everywhere."
@@ -444,13 +444,12 @@
         "Point — temperature is measured at weather stations",
         "Polygon — each colored zone is an area",
         "Raster — temperature has a value everywhere, which is exactly what a grid of cells stores",
-        "TIN — it is a continuous surface"
+        "TIN — it is a continuous surface",
       ],
       correct: 2,
       explanation: "Temperature is continuous: there is a value at every location, not just where someone put a thermometer. Continuous and highly variable is the raster case; discrete, countable things are the vector case; and a TIN is the compact way to carry a surface for 3D work."
-    }
+    },
   ];
-
   const LETTERS = ["A", "B", "C", "D", "E", "F"];
 
   let currentIndex = 0;

@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CCE 114 — What Is a GIS?</title>
+  <title>CCE 114 — How Does It Know Where You Are?</title>
   <meta name="theme-color" content="#002e5d">
-  <meta name="description" content="CCE 114 first-day self-check: what a GIS is and is not, the three vector feature types and the attribute table behind them, and how this course works.">
+  <meta name="description" content="CCE 114 in-class self-check: how a receiver turns a coded time signal into a position, what the digits of a coordinate are worth, and where GPS error comes from.">
   <style>
     :root {
       --bg: #f6f8fa;
@@ -241,11 +241,11 @@
 
 <div class="container">
   <header>
-    <h1>What Is a GIS?</h1>
-    <p class="subtitle">CCE 114 &middot; Day 1 &mdash; Introduction to Geomatics and to GIS<br>
-      Twelve questions in three parts: what a GIS <strong>is</strong> and is not, the
-      <strong>features</strong> and the table behind them, and how this <strong>course</strong>
-      works.</p>
+    <h1>How Does It Know Where You Are?</h1>
+    <p class="subtitle">CCE 114 &middot; Day 6 &mdash; The Global Positioning System<br>
+      Twelve questions in three parts: how a receiver turns a radio signal into a
+      <strong>position</strong>, what the digits of a <strong>coordinate</strong> are actually
+      worth, and where the <strong>error</strong> comes from.</p>
   </header>
 
   <div class="score-bar" id="scoreBar">
@@ -273,11 +273,11 @@
       <div class="final-score" id="finalScoreDisplay">0 / 12</div>
       <p id="finalFeedbackText" style="color: var(--muted); margin-bottom: 1rem;"></p>
       <div class="checklist">
-        <strong style="color: var(--text);">Before Tuesday:</strong><br>
-        Install <strong>QGIS</strong> &mdash; free, from qgis.org/download<br>
-        Do the assigned reading in <em>GIS Fundamentals</em><br>
-        Take the open-book quiz on Learning Suite<br>
-        <em>Lab 1 assumes QGIS is already working on your own machine.</em>
+        <strong style="color: var(--text);">For Thursday:</strong><br>
+        Record <strong>every digit</strong> your phone gives you &mdash; five decimals or more<br>
+        Keep the <strong>minus sign</strong> on the longitude<br>
+        Stand in the open, away from the building wall<br>
+        <em>Degrees for storing and sharing; projected meters for measuring.</em>
       </div>
       <br>
       <button class="restart-btn" onclick="restartQuiz()">Start over</button>
@@ -287,167 +287,167 @@
   <footer class="page-foot">
     CCE 114 Geomatics &middot;
     <a href="../../">Course site</a> &middot;
-    <a href="../../weeks/week-01/">Week 1</a>
+    <a href="../../weeks/week-04/">Week 4</a>
   </footer>
 </div>
 
 <script>
   const questions = [
     {
-      section: "Part 1 — What a GIS is",
-      prompt: "What is a GIS?",
+      section: "Part 1 — From a radio signal to a position",
+      prompt: "What is the difference between GPS and GNSS?",
       setup: "",
       options: [
-        "A collection of maps",
-        "A database",
-        "Hardware, software, and data working together",
-        "All of the above",
+        "They are two names for the same American system",
+        "GNSS is the family of satellite positioning systems; GPS is the United States one",
+        "GPS is the satellites, GNSS is the receivers",
+        "GNSS is the newer, more accurate replacement for GPS",
+      ],
+      correct: 1,
+      explanation: "GNSS is Global Navigation Satellite System, the category. GPS is the U.S. constellation, about 31 working satellites at 20,200 km. GLONASS is Russian, Galileo European, BeiDou Chinese. Your phone listens to several at once, which is why it locks on so quickly."
+    },
+    {
+      section: "Part 1 — From a radio signal to a position",
+      prompt: "Your receiver has no atomic clock. So how does it measure how long the signal took to arrive?",
+      setup: "",
+      options: [
+        "It reads a timestamp out of the message the satellite sends",
+        "It measures the strength of the signal, which falls off with distance",
+        "The satellite and the receiver generate the same code at the same time, and the receiver slides its own copy until the two line up",
+        "It compares the signal against a second satellite and takes the difference",
+      ],
+      correct: 2,
+      explanation: "This is the clever trick at the heart of GPS. How far the receiver had to slide its copy is the travel time. It needs a code generator, not an atomic clock — which is why the thing in your pocket costs what it costs."
+    },
+    {
+      section: "Part 1 — From a radio signal to a position",
+      prompt: "A satellite's code arrives 0.067 seconds after it was sent. How far away is the satellite?",
+      setup: "The speed of light is 299,792,458 m/s.",
+      options: [
+        "About 200 km",
+        "About 2,000 km",
+        "About 20,000 km",
+        "About 200,000 km",
+      ],
+      correct: 2,
+      explanation: "0.067 × 299,792,458 = 20,086,094 m, about 20,100 km, which is the real orbit height. Notice how sharp that is: one microsecond of clock error is 300 m of position error."
+    },
+    {
+      section: "Part 1 — From a radio signal to a position",
+      prompt: "Three satellites narrow your position to two points, one of them absurd. So why does a receiver need a fourth?",
+      setup: "",
+      options: [
+        "To rule out the absurd point",
+        "To solve for the receiver's own clock error",
+        "To improve the signal strength",
+        "As a spare, in case one is blocked",
+      ],
+      correct: 1,
+      explanation: "Four unknowns — latitude, longitude, height, and time — need four measurements. The absurd point rules itself out; it is usually in space or deep underground. Measuring distances like this is called trilateration; triangulation, which people say instead, measures angles."
+    },
+    {
+      section: "Part 2 — What the digits are worth",
+      prompt: "You copy a phone fix into a spreadsheet as 40.25, -111.65. How far can that point have moved?",
+      setup: "",
+      options: [
+        "A few centimeters",
+        "About 11 meters",
+        "About 1.1 kilometers",
+        "It has not moved; those are the same coordinates",
+      ],
+      correct: 2,
+      explanation: "Two decimal places is about 1.1 km of latitude — it cannot resolve a city block, never mind a building. Rounding is throwing away accuracy you already paid for. A phone fix is good to a few meters, so it deserves five decimals (about 1.1 m). Record every digit your phone gives you."
+    },
+    {
+      section: "Part 2 — What the digits are worth",
+      prompt: "You drop the minus sign from a Provo longitude and write 111.65 instead of -111.65. Where does your point land?",
+      setup: "",
+      options: [
+        "In the same place — the sign is a formatting convention",
+        "On the other side of the world, at the same latitude",
+        "At the equator",
+        "It will not import at all",
+      ],
+      correct: 1,
+      explanation: "Negative longitude is west, negative latitude is south. Dropping the minus sign is the most common way to put Provo in China, and it imports perfectly happily — nothing warns you, the dot is just in the wrong hemisphere."
+    },
+    {
+      section: "Part 2 — What the digits are worth",
+      prompt: "Your phone reports 40.2496612, -111.6493388 while sitting still on a desk. The desk is really 8 m away from that. Precise, accurate, both, or neither?",
+      setup: "",
+      options: [
+        "Precise and accurate",
+        "Precise but not accurate",
+        "Accurate but not precise",
+        "Neither",
+      ],
+      correct: 1,
+      explanation: "Seven decimal places is about a centimeter of precision; being 8 m from the truth is poor accuracy. The receiver reports every digit it computed, not the digits it can defend. The two words are not interchangeable and the difference costs people money."
+    },
+    {
+      section: "Part 2 — What the digits are worth",
+      prompt: "Why can you not convert degrees to meters with a single multiplication?",
+      setup: "",
+      options: [
+        "Because the Earth is not a perfect sphere, so the number changes slightly",
+        "Because a degree of longitude shrinks as you move away from the equator, down to zero at the pole",
+        "Because latitude and longitude use different units",
+        "You can — 111 km per degree works everywhere",
+      ],
+      correct: 1,
+      explanation: "A degree of latitude is about 111 km anywhere. A degree of longitude is 111 km at the equator and nothing at all at the pole: at Provo, 111,320 × cos 40.25° ≈ 85 km. So never measure length or area in degrees — project into meters first (UTM Zone 12N, EPSG:26912, for Utah), then measure. QGIS will happily hand you a meaningless number in degrees if you ask it to."
+    },
+    {
+      section: "Part 3 — Where the error comes from",
+      prompt: "Which line of the GPS error budget is the biggest?",
+      setup: "",
+      options: [
+        "Satellite clocks and orbits, 1 to 4 m",
+        "The ionosphere and troposphere, 5 to 8 m",
+        "Multipath, 0.5 to 1 m",
+        "User error, up to a kilometer or more",
       ],
       correct: 3,
-      explanation: "A GIS is all of these at once: computer hardware and software that integrate spatial features, attribute data, and the analysis tools that work on them. A map is one thing a GIS can produce, not the thing itself."
+      explanation: "The atmosphere is the largest instrument error, and user error dwarfs all of it: wrong sign, wrong datum, wrong point, rounding. It is also the only row on the table you control."
     },
     {
-      section: "Part 1 — What a GIS is",
-      prompt: "Which of these would you NOT use a GIS for?",
+      section: "Part 3 — Where the error comes from",
+      prompt: "You take your fix standing against the wall of the Clyde building. What has that done to your position?",
       setup: "",
       options: [
-        "Deciding where to put an airport",
-        "Mapping flooding after a hurricane in North Carolina",
-        "Designing a high-rise building",
-        "Managing a city's water and sewer infrastructure",
+        "Nothing — the wall blocks signals but does not distort them",
+        "Signals bouncing off the building arrive late, so those satellites read as farther away than they are",
+        "The building's mass bends the signal toward it",
+        "It improves the fix, because the wall blocks noise from behind you",
+      ],
+      correct: 1,
+      explanation: "That is multipath: a bounced signal took a longer path, so the range comes out too long. Trees, urban canyons and deep valleys also cost you satellites outright. On Thursday, the lawn will give you a better fix than the wall."
+    },
+    {
+      section: "Part 3 — Where the error comes from",
+      prompt: "Two fixes have the same range errors, but one was taken while the visible satellites were bunched in one part of the sky. Which is better, and what is the multiplier called?",
+      setup: "",
+      options: [
+        "The bunched one; PDOP, and higher is better",
+        "The spread-out one; PDOP, and lower is better — under 3 is good",
+        "They are identical; geometry does not affect the result",
+        "The bunched one; multipath, and lower is better",
+      ],
+      correct: 1,
+      explanation: "Satellites spread across the sky give a small area of uncertainty; bunched together, a large one. The multiplier is dilution of precision. It changes minute by minute as the constellation moves, which is why the same spot can read differently an hour later."
+    },
+    {
+      section: "Part 3 — Where the error comes from",
+      prompt: "How does differential GPS get you a better position?",
+      setup: "",
+      options: [
+        "It averages many fixes taken at the same spot over a long time",
+        "It uses two constellations at once instead of one",
+        "A receiver on a known point measures the error happening right now, and a nearby receiver applies that correction",
+        "It filters out the satellites with the weakest signal",
       ],
       correct: 2,
-      explanation: "Designing the building itself is CAD and BIM work, not GIS. A GIS still has plenty to say about the site around it — where to put it, what it floods, what it connects to — so the line is about the design work, not the project."
-    },
-    {
-      section: "Part 1 — What a GIS is",
-      prompt: "Which GIS software does this course use?",
-      setup: "",
-      options: [
-        "ArcGIS Pro",
-        "QGIS",
-        "Civil 3D",
-        "AutoCAD",
-      ],
-      correct: 1,
-      explanation: "QGIS: free, open source, and it runs on both Mac and Windows, so you install it on your own machine and keep it after you graduate. If you guessed ArcGIS Pro, that is the software CCE 414 uses; Civil 3D and AutoCAD are design tools, not GIS."
-    },
-    {
-      section: "Part 1 — What a GIS is",
-      prompt: "A GIS integrates three things. Which three?",
-      setup: "",
-      options: [
-        "Maps, photographs, and drawings",
-        "Spatial features, attribute data, and analysis tools",
-        "Points, polylines, and polygons",
-        "Hardware, software, and a license",
-      ],
-      correct: 1,
-      explanation: "Features are the shapes on the map, attributes are the table behind them, and the tools are what turn the two into an answer. Points, polylines, and polygons are only the first of the three."
-    },
-    {
-      section: "Part 2 — Features and the table behind them",
-      prompt: "Utah city boundaries, the road network, and city centers. Which feature type is each?",
-      setup: "",
-      options: [
-        "Polygon, polyline, point",
-        "Polyline, polygon, point",
-        "Polygon, point, polyline",
-        "They are all polygons at different scales",
-      ],
-      correct: 0,
-      explanation: "A city boundary encloses an area, so it is a polygon. A road has length but no area, so it is a polyline. A city center is a single location, so it is a point. Those three are the vector feature types you will meet all semester."
-    },
-    {
-      section: "Part 2 — Features and the table behind them",
-      prompt: "How is an attribute table organized?",
-      setup: "",
-      options: [
-        "One row per layer, one column per feature",
-        "One row per feature, one column per attribute",
-        "One row per attribute, one column per feature",
-        "One row per map, one column per layer",
-      ],
-      correct: 1,
-      explanation: "Every feature on the map owns exactly one row. Select a row and the feature lights up on the map; click the feature and its row is the one highlighted. That link is what makes it a GIS rather than a drawing."
-    },
-    {
-      section: "Part 2 — Features and the table behind them",
-      prompt: "You replace a city's boundary polygon with a single point at its center. What have you thrown away?",
-      setup: "",
-      options: [
-        "The attribute table",
-        "Its area, its shape, and its boundary",
-        "Its coordinates",
-        "Nothing — a point carries the same information",
-      ],
-      correct: 1,
-      explanation: "The attributes come along; the geometry does not. A point keeps where the city is and loses how big it is, what shape it has, and where it ends. That is a fair trade for a dot on a national map and a bad one for a zoning question."
-    },
-    {
-      section: "Part 2 — Features and the table behind them",
-      prompt: "Is a river a polyline or a polygon?",
-      setup: "",
-      options: [
-        "Always a polyline — rivers flow in one direction",
-        "Always a polygon — rivers have width",
-        "It depends on the scale you are working at",
-        "Neither; a river is a raster",
-      ],
-      correct: 2,
-      explanation: "On a map of the state, a river is a line and its width is beneath the resolution of the map. On a map of one reach for a flood study, the banks matter and it is a polygon. The feature type follows the question you are asking, not the object."
-    },
-    {
-      section: "Part 2 — Features and the table behind them",
-      prompt: "You run Buffer from the Processing Toolbox. What question does it answer?",
-      setup: "",
-      options: [
-        "What is within a given distance of this feature?",
-        "What is the total area of this layer?",
-        "Which features overlap each other?",
-        "What does this layer look like in another coordinate system?",
-      ],
-      correct: 0,
-      explanation: "Buffer draws the zone within X of something — within 100 m of a stream, within a quarter mile of a bus stop. It is usually the first analysis tool anyone runs, and it is the start of most site-selection work."
-    },
-    {
-      section: "Part 3 — How this course works",
-      prompt: "What does your grade come from?",
-      setup: "",
-      options: [
-        "A midterm and a final exam",
-        "Weekly readings with open-book quizzes, weekly hands-on labs, and in-class discussion, attendance, and participation",
-        "Lab reports only",
-        "A single semester project",
-      ],
-      correct: 1,
-      explanation: "Three things, every week: read and take the open-book quiz, do the lab, and show up and take part. Attendance and participation are worth 25 points across the semester, and you mark your attendance each week."
-    },
-    {
-      section: "Part 3 — How this course works",
-      prompt: "Which of these follows the course's AI policy?",
-      setup: "You are encouraged to use AI tools — responsibly.",
-      options: [
-        "Have AI produce the maps and the analysis, then check them yourself",
-        "Ask AI how to do something in QGIS or to explain a concept, do the GIS work yourself, and say so if AI helped with the writing",
-        "Avoid AI entirely; it is not permitted in this course",
-        "Use AI however you like — there is nothing to report",
-      ],
-      correct: 1,
-      explanation: "Use AI to learn, not to produce. Build your own maps, run your own analysis, and solve the problems with your own brain — then report it whenever AI helped with your writing or with working a problem out. The full policy is on the course site."
-    },
-    {
-      section: "Part 3 — How this course works",
-      prompt: "Your syllabus, the schedule page, and Learning Suite disagree about a due date. Which one wins?",
-      setup: "",
-      options: [
-        "The course site — it is updated most often",
-        "The syllabus — it is the contract",
-        "Learning Suite — scores, due dates, and course materials all live there",
-        "Whichever is latest",
-      ],
-      correct: 2,
-      explanation: "Learning Suite is where you submit, where your scores appear, and where the authoritative dates live. The course site is written by week number so it survives being taught again, which is exactly why it is not the place to settle a date."
+      explanation: "A base station knows where it is. Whatever error it sees at this moment, a receiver a few kilometers away sees almost the same error at the same moment, so the base's correction applies to the rover too. WAAS in your phone, RTK on a survey rover, and the Utah reference network are all this one idea; survey-grade receivers reach centimeters with it."
     },
   ];
   const LETTERS = ["A", "B", "C", "D", "E", "F"];
@@ -542,11 +542,11 @@
     finalScoreDisplay.textContent = score + " / " + questions.length;
 
     if (score === questions.length) {
-      finalFeedbackText.textContent = "Every one, on the first day. Now go install QGIS.";
+      finalFeedbackText.textContent = "Every one. Now go collect points that deserve that.";
     } else if (score >= 9) {
-      finalFeedbackText.textContent = "Solid. Read the explanations on the ones you missed — none of this is meant to be known in advance.";
+      finalFeedbackText.textContent = "Solid. Read the explanations on the ones you missed — the coordinate questions are the ones that bite on Thursday.";
     } else {
-      finalFeedbackText.textContent = "This is day one, so nothing here was supposed to be obvious. Read the explanations and run it again.";
+      finalFeedbackText.textContent = "Worth a second run. The error you control is the last row of the budget, and it is the biggest.";
     }
   }
 

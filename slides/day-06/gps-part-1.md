@@ -410,6 +410,35 @@ Satellites bunched together → a **large** area of uncertainty. Satellites spre
 
 ---
 
+<!-- _class: activity -->
+
+# Your Turn — How Does It Know Where You Are?
+
+<div class="columns">
+<div>
+
+Twelve questions on your phone:
+
+- From a **radio signal** to a position
+- What the **digits** are worth
+- Where the **error** comes from
+
+Not graded, and every answer explains itself. Good practice for this week's open-book quiz.
+
+<span style="font-size: 0.5em; color: #4a5568; white-space: nowrap;">byu-hydroinformatics.github.io/cce114-geomatics/quizzes/gps/</span>
+
+</div>
+<div>
+
+![w:400 center](images/gps-quiz-gps-qr.png)
+
+</div>
+</div>
+
+<!-- Five minutes, in pairs, then a show of hands on the two worth arguing about: why the fourth satellite is needed, and precision against accuracy. The coordinate questions are the ones that matter for Thursday, so do not skip past them. If the room has no signal, put the URL on the board. The page is linked from the Week 4 page too. -->
+
+---
+
 # Before Next Class
 
 ![bg right:34% w:94%](images/gps-before-next-class.jpg)
