@@ -233,6 +233,17 @@ THURSDAY_TITLE = {
 TUESDAY_NOTES_DAYS = {2, 6, 10, 12, 14, 16, 20}
 
 
+# Self-check quizzes, keyed by week. Each is a self-contained page at
+# docs/quizzes/<slug>/index.html that MkDocs copies through untouched, reached in class by
+# the QR code on that week's deck and from the week page afterward by anyone who missed the
+# scan. Nothing is graded and nothing is handed in.
+PRACTICE = {
+    3: [("map-elements", "Does This Map Work?",
+         "Twelve questions on the required map elements, what makes a map ugly, and what a map "
+         "does to the reader looking at it. The quiz behind the QR code on the Day 4 deck.")],
+}
+
+
 # The Learning Suite "In Class Activity" name for each hands-on day, used in the hands-on
 # index. Taken from the "Graded item" row of each run sheet; None where Thursday has no item.
 ACTIVITY_NAME = {3: "First Map: Utah County", 5: "Playing with Symbology", 7: "GPS Class Activity",
@@ -460,6 +471,17 @@ def handson_index() -> str:
     return "\n".join(out)
 
 
+def practice_section(w: int, prefix: str = "../") -> list:
+    """Links out to that week's self-check quizzes, so they outlive the QR code on the slide."""
+    if w not in PRACTICE:
+        return []
+    out = ["## Practice", "",
+           "Not graded, and nothing to hand in \u2014 open it on a phone or a laptop as often as you like.", ""]
+    out += [f"- [{title}]({prefix}quizzes/{s}/index.html) \u2014 {desc}" for s, title, desc in PRACTICE[w]]
+    out.append("")
+    return out
+
+
 def week_page(w: int, existing_text: str) -> str:
     info = WEEKS[w]
     out = [f"# Week {w} — {info['theme']}", ""]
@@ -478,6 +500,7 @@ def week_page(w: int, existing_text: str) -> str:
         out += ["", "| What | Details |", "| --- | --- |"]
         out += [f"| {what} | {detail} |" for what, detail in rows]
         out.append("")
+    out += practice_section(w)
     for d, weekday in week_sessions(w):
         out += session_section(d, weekday, existing_text)
     return "\n".join(out).rstrip("\n") + "\n"

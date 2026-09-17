@@ -487,6 +487,35 @@ Also, for the record:
 
 <!-- _class: activity -->
 
+# Your Turn — Does This Map Work?
+
+<div class="columns">
+<div>
+
+Twelve questions on your phone:
+
+- The **elements** every map has to carry
+- What makes a map **ugly**
+- What a map **does to the reader**
+
+Not graded, and every answer explains itself. The checklist at the end is what **Lab 2** is graded against.
+
+<span style="font-size: 0.5em; color: #4a5568; white-space: nowrap;">byu-hydroinformatics.github.io/cce114-geomatics/quizzes/map-elements/</span>
+
+</div>
+<div>
+
+![w:400 center](images/mc-quiz-map-elements-qr.png)
+
+</div>
+</div>
+
+<!-- Five minutes, in pairs, then a show of hands on the two that start an argument: the best title, and what the red counties on the 2012 map actually mean. If the room has no signal, put the URL on the board or read the items aloud; they work either way. The page is linked from the Week 3 page too, so anyone who misses the scan can find it after class. -->
+
+---
+
+<!-- _class: activity -->
+
 # Thursday: hands-on in QGIS, Playing with Symbology
 
 ![bg right:38% w:88%](images/mc-emoji-states.jpg)

@@ -9,6 +9,12 @@ anything on another day says so.
 | Quiz 2 | [Spatial Data Models and File Types](../assignments/deliverables.md#reading-quizzes) — open book, on Learning Suite |
 | Lab 2 | [Map Symbology and Layouts](../assignments/lab-02/README.md) |
 
+## Practice
+
+Not graded, and nothing to hand in — open it on a phone or a laptop as often as you like.
+
+- [Does This Map Work?](../quizzes/map-elements/index.html) — Twelve questions on the required map elements, what makes a map ugly, and what a map does to the reader looking at it. The quiz behind the QR code on the Day 4 deck.
+
 ## Tuesday — Maps, Symbology, and Cartography, Part 1
 
 **Lecture**{ .badge .badge-lecture } · *Day 4*
