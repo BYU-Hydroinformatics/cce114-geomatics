@@ -6,236 +6,7 @@
   <title>CCE 114 — How Does It Know Where You Are?</title>
   <meta name="theme-color" content="#002e5d">
   <meta name="description" content="CCE 114 in-class self-check: how a receiver turns a coded time signal into a position, what the digits of a coordinate are worth, and where GPS error comes from.">
-  <style>
-    :root {
-      --bg: #f6f8fa;
-      --card: #ffffff;
-      --text: #1f2933;
-      --muted: #5f6b7a;
-      --primary: #002e5d;          /* BYU navy, the course site's primary */
-      --primary-hover: #001f3f;
-      --accent: #0062b8;
-      --success: #0f7b3f;
-      --success-bg: #f0faf4;
-      --success-text: #0b4f29;
-      --danger: #b3261e;
-      --danger-bg: #fdf2f1;
-      --danger-text: #7a1a15;
-      --border: #dde3ea;
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    }
-
-    body {
-      background-color: var(--bg);
-      color: var(--text);
-      display: flex;
-      justify-content: center;
-      padding: 2rem 1rem;
-    }
-
-    .container { max-width: 680px; width: 100%; }
-
-    header { text-align: center; margin-bottom: 1.5rem; }
-
-    h1 { font-size: 1.6rem; margin-bottom: 0.5rem; color: var(--primary); }
-
-    p.subtitle { color: var(--muted); font-size: 0.95rem; line-height: 1.45; }
-
-    .score-bar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background: var(--card);
-      padding: 0.75rem 1.25rem;
-      border-radius: 8px;
-      border: 1px solid var(--border);
-      margin-bottom: 1.25rem;
-      font-size: 0.9rem;
-      font-weight: 500;
-    }
-
-    .quiz-card {
-      background: var(--card);
-      border-radius: 12px;
-      border: 1px solid var(--border);
-      padding: 1.75rem;
-      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
-    }
-
-    .section-badge {
-      display: inline-block;
-      font-size: 0.72rem;
-      text-transform: uppercase;
-      font-weight: 700;
-      letter-spacing: 0.06em;
-      color: var(--accent);
-      margin-bottom: 0.5rem;
-    }
-
-    .prompt {
-      font-size: 1.2rem;
-      font-weight: 700;
-      line-height: 1.35;
-      margin-bottom: 0.5rem;
-      color: #10243a;
-    }
-
-    .setup {
-      color: var(--muted);
-      font-size: 0.95rem;
-      margin-bottom: 1.4rem;
-      line-height: 1.45;
-    }
-
-    .options { display: grid; gap: 0.7rem; margin-bottom: 1.25rem; }
-
-    button.opt-btn {
-      display: flex;
-      align-items: flex-start;
-      gap: 0.7rem;
-      width: 100%;
-      text-align: left;
-      padding: 0.85rem 1rem;
-      font-size: 1rem;
-      line-height: 1.35;
-      font-weight: 500;
-      border: 2px solid var(--border);
-      background: #ffffff;
-      color: var(--text);
-      border-radius: 8px;
-      cursor: pointer;
-      transition: all 0.15s ease-in-out;
-    }
-
-    button.opt-btn:hover:not(:disabled) {
-      border-color: var(--accent);
-      color: var(--primary);
-      background: #eef5fc;
-    }
-
-    button.opt-btn:disabled { cursor: default; }
-
-    .opt-letter {
-      flex: 0 0 1.5rem;
-      font-weight: 700;
-      color: var(--accent);
-    }
-
-    button.correct {
-      background: var(--success) !important;
-      border-color: var(--success) !important;
-      color: #ffffff !important;
-    }
-
-    button.incorrect {
-      background: var(--danger) !important;
-      border-color: var(--danger) !important;
-      color: #ffffff !important;
-    }
-
-    button.correct .opt-letter,
-    button.incorrect .opt-letter { color: #ffffff; }
-
-    .feedback {
-      display: none;
-      padding: 1rem;
-      border-radius: 8px;
-      font-size: 0.95rem;
-      line-height: 1.45;
-      margin-bottom: 1.25rem;
-    }
-
-    .feedback.visible { display: block; }
-
-    .feedback.correct-box {
-      background-color: var(--success-bg);
-      border-left: 4px solid var(--success);
-      color: var(--success-text);
-    }
-
-    .feedback.incorrect-box {
-      background-color: var(--danger-bg);
-      border-left: 4px solid var(--danger);
-      color: var(--danger-text);
-    }
-
-    .feedback strong { display: block; margin-bottom: 0.25rem; }
-
-    .controls { display: flex; justify-content: flex-end; }
-
-    button.next-btn {
-      padding: 0.65rem 1.4rem;
-      font-size: 0.95rem;
-      font-weight: 600;
-      background: var(--primary);
-      color: #ffffff;
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
-      display: none;
-    }
-
-    button.next-btn:hover { background: var(--primary-hover); }
-
-    .final-screen { display: none; text-align: center; padding: 2rem 1rem; }
-
-    .final-screen h2 { font-size: 1.5rem; margin-bottom: 0.75rem; color: var(--primary); }
-
-    .final-score {
-      font-size: 2.5rem;
-      font-weight: 800;
-      color: var(--primary);
-      margin-bottom: 1rem;
-    }
-
-    .checklist {
-      text-align: left;
-      display: inline-block;
-      margin: 0.5rem auto 0;
-      color: var(--muted);
-      font-size: 0.9rem;
-      line-height: 1.6;
-    }
-
-    button.restart-btn {
-      padding: 0.75rem 1.5rem;
-      font-size: 1rem;
-      font-weight: 600;
-      background: var(--primary);
-      color: #ffffff;
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
-      margin-top: 1.5rem;
-    }
-
-    footer.page-foot {
-      text-align: center;
-      margin-top: 1.5rem;
-      font-size: 0.8rem;
-      color: var(--muted);
-    }
-
-    footer.page-foot a { color: var(--muted); }
-
-    /* Phones: this quiz is meant to be scanned off a slide and answered on a handset. */
-    @media (max-width: 480px) {
-      body { padding: 1rem 0.75rem; }
-      h1 { font-size: 1.25rem; }
-      .quiz-card { padding: 1.1rem; }
-      .prompt { font-size: 1.05rem; }
-      .options { gap: 0.55rem; }
-      button.opt-btn { padding: 0.9rem 0.7rem; font-size: 0.95rem; }
-      .controls { justify-content: stretch; }
-      button.next-btn { width: 100%; padding: 0.8rem 1rem; }
-    }
-  </style>
+  <link rel="stylesheet" href="../assets/quiz.css">
 </head>
 <body>
 
@@ -243,13 +14,13 @@
   <header>
     <h1>How Does It Know Where You Are?</h1>
     <p class="subtitle">CCE 114 &middot; Day 6 &mdash; The Global Positioning System<br>
-      Twelve questions in three parts: how a receiver turns a radio signal into a
+      Eight questions in three parts: how a receiver turns a radio signal into a
       <strong>position</strong>, what the digits of a <strong>coordinate</strong> are actually
       worth, and where the <strong>error</strong> comes from.</p>
   </header>
 
   <div class="score-bar" id="scoreBar">
-    <span id="progressText">Question 1 of 12</span>
+    <span id="progressText">Question 1 of 8</span>
     <span id="scoreText">Score: 0 / 0</span>
   </div>
 
@@ -264,13 +35,13 @@
       <div class="feedback" id="feedbackBox"></div>
 
       <div class="controls">
-        <button class="next-btn" id="nextBtn" onclick="nextQuestion()">Next &rarr;</button>
+        <button class="next-btn" id="nextBtn">Next &rarr;</button>
       </div>
     </div>
 
     <div class="final-screen" id="finalScreen">
       <h2>Done</h2>
-      <div class="final-score" id="finalScoreDisplay">0 / 12</div>
+      <div class="final-score" id="finalScoreDisplay">0 / 8</div>
       <p id="finalFeedbackText" style="color: var(--muted); margin-bottom: 1rem;"></p>
       <div class="checklist">
         <strong style="color: var(--text);">For Thursday:</strong><br>
@@ -280,7 +51,7 @@
         <em>Degrees for storing and sharing; projected meters for measuring.</em>
       </div>
       <br>
-      <button class="restart-btn" onclick="restartQuiz()">Start over</button>
+      <button class="restart-btn" id="restartBtn">Start over</button>
     </div>
   </div>
 
@@ -291,277 +62,122 @@
   </footer>
 </div>
 
-<script>
-  const questions = [
+<script type="application/json" id="quizData">
+{
+  "messages": [
+    "Every one. Now go collect points that deserve that.",
+    "Solid. Read the explanations on the ones you missed — the coordinate questions are the ones that bite on Thursday.",
+    "Worth a second run. The error you control is the last row of the budget, and it is the biggest."
+  ],
+  "questions": [
     {
-      section: "Part 1 — From a radio signal to a position",
-      prompt: "What is the difference between GPS and GNSS?",
-      setup: "",
-      options: [
-        "They are two names for the same American system",
-        "GNSS is the family of satellite positioning systems; GPS is the United States one",
-        "GPS is the satellites, GNSS is the receivers",
-        "GNSS is the newer, more accurate replacement for GPS",
-      ],
-      correct: 1,
-      explanation: "GNSS is Global Navigation Satellite System, the category. GPS is the U.S. constellation, about 31 working satellites at 20,200 km. GLONASS is Russian, Galileo European, BeiDou Chinese. Your phone listens to several at once, which is why it locks on so quickly."
-    },
-    {
-      section: "Part 1 — From a radio signal to a position",
-      prompt: "Your receiver has no atomic clock. So how does it measure how long the signal took to arrive?",
-      setup: "",
-      options: [
+      "section": "Part 1 — From a radio signal to a position",
+      "prompt": "Your receiver has no atomic clock. So how does it measure how long the signal took to arrive?",
+      "setup": "",
+      "options": [
         "It reads a timestamp out of the message the satellite sends",
         "It measures the strength of the signal, which falls off with distance",
         "The satellite and the receiver generate the same code at the same time, and the receiver slides its own copy until the two line up",
-        "It compares the signal against a second satellite and takes the difference",
+        "It compares the signal against a second satellite and takes the difference"
       ],
-      correct: 2,
-      explanation: "This is the clever trick at the heart of GPS. How far the receiver had to slide its copy is the travel time. It needs a code generator, not an atomic clock — which is why the thing in your pocket costs what it costs."
+      "correct": 2,
+      "explanation": "This is the clever trick at the heart of GPS. How far the receiver had to slide its copy is the travel time. It needs a code generator, not an atomic clock — which is why the thing in your pocket costs what it costs."
     },
     {
-      section: "Part 1 — From a radio signal to a position",
-      prompt: "A satellite's code arrives 0.067 seconds after it was sent. How far away is the satellite?",
-      setup: "The speed of light is 299,792,458 m/s.",
-      options: [
+      "section": "Part 1 — From a radio signal to a position",
+      "prompt": "A satellite's code arrives 0.067 seconds after it was sent. How far away is the satellite?",
+      "setup": "The speed of light is 299,792,458 m/s.",
+      "options": [
         "About 200 km",
         "About 2,000 km",
         "About 20,000 km",
-        "About 200,000 km",
+        "About 200,000 km"
       ],
-      correct: 2,
-      explanation: "0.067 × 299,792,458 = 20,086,094 m, about 20,100 km, which is the real orbit height. Notice how sharp that is: one microsecond of clock error is 300 m of position error."
+      "correct": 2,
+      "explanation": "0.067 × 299,792,458 = 20,086,094 m, about 20,100 km, which is the real orbit height. Notice how sharp that is: one microsecond of clock error is 300 m of position error."
     },
     {
-      section: "Part 1 — From a radio signal to a position",
-      prompt: "Three satellites narrow your position to two points, one of them absurd. So why does a receiver need a fourth?",
-      setup: "",
-      options: [
+      "section": "Part 1 — From a radio signal to a position",
+      "prompt": "Three satellites narrow your position to two points, one of them absurd. So why does a receiver need a fourth?",
+      "setup": "",
+      "options": [
         "To rule out the absurd point",
         "To solve for the receiver's own clock error",
         "To improve the signal strength",
-        "As a spare, in case one is blocked",
+        "As a spare, in case one is blocked"
       ],
-      correct: 1,
-      explanation: "Four unknowns — latitude, longitude, height, and time — need four measurements. The absurd point rules itself out; it is usually in space or deep underground. Measuring distances like this is called trilateration; triangulation, which people say instead, measures angles."
+      "correct": 1,
+      "explanation": "Four unknowns — latitude, longitude, height, and time — need four measurements. The absurd point rules itself out; it is usually in space or deep underground. Measuring distances like this is called trilateration; triangulation, which people say instead, measures angles."
     },
     {
-      section: "Part 2 — What the digits are worth",
-      prompt: "You copy a phone fix into a spreadsheet as 40.25, -111.65. How far can that point have moved?",
-      setup: "",
-      options: [
+      "section": "Part 2 — What the digits are worth",
+      "prompt": "You copy a phone fix into a spreadsheet as 40.25, -111.65. How far can that point have moved?",
+      "setup": "",
+      "options": [
         "A few centimeters",
         "About 11 meters",
         "About 1.1 kilometers",
-        "It has not moved; those are the same coordinates",
+        "It has not moved; those are the same coordinates"
       ],
-      correct: 2,
-      explanation: "Two decimal places is about 1.1 km of latitude — it cannot resolve a city block, never mind a building. Rounding is throwing away accuracy you already paid for. A phone fix is good to a few meters, so it deserves five decimals (about 1.1 m). Record every digit your phone gives you."
+      "correct": 2,
+      "explanation": "Two decimal places is about 1.1 km of latitude — it cannot resolve a city block, never mind a building. Rounding is throwing away accuracy you already paid for. A phone fix is good to a few meters, so it deserves five decimals (about 1.1 m). Record every digit your phone gives you."
     },
     {
-      section: "Part 2 — What the digits are worth",
-      prompt: "You drop the minus sign from a Provo longitude and write 111.65 instead of -111.65. Where does your point land?",
-      setup: "",
-      options: [
+      "section": "Part 2 — What the digits are worth",
+      "prompt": "You drop the minus sign from a Provo longitude and write 111.65 instead of -111.65. Where does your point land?",
+      "setup": "",
+      "options": [
         "In the same place — the sign is a formatting convention",
         "On the other side of the world, at the same latitude",
         "At the equator",
-        "It will not import at all",
+        "It will not import at all"
       ],
-      correct: 1,
-      explanation: "Negative longitude is west, negative latitude is south. Dropping the minus sign is the most common way to put Provo in China, and it imports perfectly happily — nothing warns you, the dot is just in the wrong hemisphere."
+      "correct": 1,
+      "explanation": "Negative longitude is west, negative latitude is south. Dropping the minus sign is the most common way to put Provo in China, and it imports perfectly happily — nothing warns you, the dot is just in the wrong hemisphere."
     },
     {
-      section: "Part 2 — What the digits are worth",
-      prompt: "Your phone reports 40.2496612, -111.6493388 while sitting still on a desk. The desk is really 8 m away from that. Precise, accurate, both, or neither?",
-      setup: "",
-      options: [
+      "section": "Part 2 — What the digits are worth",
+      "prompt": "Your phone reports 40.2496612, -111.6493388 while sitting still on a desk. The desk is really 8 m away from that. Precise, accurate, both, or neither?",
+      "setup": "",
+      "options": [
         "Precise and accurate",
         "Precise but not accurate",
         "Accurate but not precise",
-        "Neither",
+        "Neither"
       ],
-      correct: 1,
-      explanation: "Seven decimal places is about a centimeter of precision; being 8 m from the truth is poor accuracy. The receiver reports every digit it computed, not the digits it can defend. The two words are not interchangeable and the difference costs people money."
+      "correct": 1,
+      "explanation": "Seven decimal places is about a centimeter of precision; being 8 m from the truth is poor accuracy. The receiver reports every digit it computed, not the digits it can defend. The two words are not interchangeable and the difference costs people money."
     },
     {
-      section: "Part 2 — What the digits are worth",
-      prompt: "Why can you not convert degrees to meters with a single multiplication?",
-      setup: "",
-      options: [
-        "Because the Earth is not a perfect sphere, so the number changes slightly",
-        "Because a degree of longitude shrinks as you move away from the equator, down to zero at the pole",
-        "Because latitude and longitude use different units",
-        "You can — 111 km per degree works everywhere",
-      ],
-      correct: 1,
-      explanation: "A degree of latitude is about 111 km anywhere. A degree of longitude is 111 km at the equator and nothing at all at the pole: at Provo, 111,320 × cos 40.25° ≈ 85 km. So never measure length or area in degrees — project into meters first (UTM Zone 12N, EPSG:26912, for Utah), then measure. QGIS will happily hand you a meaningless number in degrees if you ask it to."
-    },
-    {
-      section: "Part 3 — Where the error comes from",
-      prompt: "Which line of the GPS error budget is the biggest?",
-      setup: "",
-      options: [
+      "section": "Part 3 — Where the error comes from",
+      "prompt": "Which line of the GPS error budget is the biggest?",
+      "setup": "",
+      "options": [
         "Satellite clocks and orbits, 1 to 4 m",
         "The ionosphere and troposphere, 5 to 8 m",
         "Multipath, 0.5 to 1 m",
-        "User error, up to a kilometer or more",
+        "User error, up to a kilometer or more"
       ],
-      correct: 3,
-      explanation: "The atmosphere is the largest instrument error, and user error dwarfs all of it: wrong sign, wrong datum, wrong point, rounding. It is also the only row on the table you control."
+      "correct": 3,
+      "explanation": "The atmosphere is the largest instrument error, and user error dwarfs all of it: wrong sign, wrong datum, wrong point, rounding. It is also the only row on the table you control."
     },
     {
-      section: "Part 3 — Where the error comes from",
-      prompt: "You take your fix standing against the wall of the Clyde building. What has that done to your position?",
-      setup: "",
-      options: [
+      "section": "Part 3 — Where the error comes from",
+      "prompt": "You take your fix standing against the wall of the Clyde building. What has that done to your position?",
+      "setup": "",
+      "options": [
         "Nothing — the wall blocks signals but does not distort them",
         "Signals bouncing off the building arrive late, so those satellites read as farther away than they are",
         "The building's mass bends the signal toward it",
-        "It improves the fix, because the wall blocks noise from behind you",
+        "It improves the fix, because the wall blocks noise from behind you"
       ],
-      correct: 1,
-      explanation: "That is multipath: a bounced signal took a longer path, so the range comes out too long. Trees, urban canyons and deep valleys also cost you satellites outright. On Thursday, the lawn will give you a better fix than the wall."
-    },
-    {
-      section: "Part 3 — Where the error comes from",
-      prompt: "Two fixes have the same range errors, but one was taken while the visible satellites were bunched in one part of the sky. Which is better, and what is the multiplier called?",
-      setup: "",
-      options: [
-        "The bunched one; PDOP, and higher is better",
-        "The spread-out one; PDOP, and lower is better — under 3 is good",
-        "They are identical; geometry does not affect the result",
-        "The bunched one; multipath, and lower is better",
-      ],
-      correct: 1,
-      explanation: "Satellites spread across the sky give a small area of uncertainty; bunched together, a large one. The multiplier is dilution of precision. It changes minute by minute as the constellation moves, which is why the same spot can read differently an hour later."
-    },
-    {
-      section: "Part 3 — Where the error comes from",
-      prompt: "How does differential GPS get you a better position?",
-      setup: "",
-      options: [
-        "It averages many fixes taken at the same spot over a long time",
-        "It uses two constellations at once instead of one",
-        "A receiver on a known point measures the error happening right now, and a nearby receiver applies that correction",
-        "It filters out the satellites with the weakest signal",
-      ],
-      correct: 2,
-      explanation: "A base station knows where it is. Whatever error it sees at this moment, a receiver a few kilometers away sees almost the same error at the same moment, so the base's correction applies to the rover too. WAAS in your phone, RTK on a survey rover, and the Utah reference network are all this one idea; survey-grade receivers reach centimeters with it."
-    },
-  ];
-  const LETTERS = ["A", "B", "C", "D", "E", "F"];
-
-  let currentIndex = 0;
-  let score = 0;
-  let answered = false;
-
-  const sectionBadge = document.getElementById("sectionBadge");
-  const promptText = document.getElementById("promptText");
-  const setupText = document.getElementById("setupText");
-  const optionsBox = document.getElementById("optionsBox");
-  const feedbackBox = document.getElementById("feedbackBox");
-  const nextBtn = document.getElementById("nextBtn");
-  const progressText = document.getElementById("progressText");
-  const scoreText = document.getElementById("scoreText");
-  const quizContent = document.getElementById("quizContent");
-  const finalScreen = document.getElementById("finalScreen");
-  const finalScoreDisplay = document.getElementById("finalScoreDisplay");
-  const finalFeedbackText = document.getElementById("finalFeedbackText");
-  const scoreBar = document.getElementById("scoreBar");
-
-  function loadQuestion() {
-    answered = false;
-    const q = questions[currentIndex];
-
-    sectionBadge.textContent = q.section;
-    promptText.textContent = q.prompt;
-    setupText.textContent = q.setup || "";
-    setupText.style.display = q.setup ? "block" : "none";
-
-    optionsBox.innerHTML = "";
-    q.options.forEach(function (text, i) {
-      const btn = document.createElement("button");
-      btn.className = "opt-btn";
-      btn.innerHTML = '<span class="opt-letter">' + LETTERS[i] + '</span><span></span>';
-      btn.lastChild.textContent = text;
-      btn.onclick = function () { checkAnswer(i); };
-      optionsBox.appendChild(btn);
-    });
-
-    feedbackBox.className = "feedback";
-    feedbackBox.innerHTML = "";
-    nextBtn.style.display = "none";
-
-    progressText.textContent = "Question " + (currentIndex + 1) + " of " + questions.length;
-  }
-
-  function checkAnswer(selected) {
-    if (answered) return;
-    answered = true;
-
-    const q = questions[currentIndex];
-    const isCorrect = selected === q.correct;
-    if (isCorrect) score++;
-
-    scoreText.textContent = "Score: " + score + " / " + (currentIndex + 1);
-
-    const btns = optionsBox.querySelectorAll("button.opt-btn");
-    btns.forEach(function (btn, i) {
-      btn.disabled = true;
-      if (i === q.correct) btn.classList.add("correct");
-      if (i === selected && !isCorrect) btn.classList.add("incorrect");
-    });
-
-    feedbackBox.classList.add("visible");
-    feedbackBox.classList.add(isCorrect ? "correct-box" : "incorrect-box");
-    const head = (isCorrect ? "✓ Correct" : "✗ Not quite") +
-                 " — " + LETTERS[q.correct] + ". " + q.options[q.correct];
-    feedbackBox.innerHTML = "<strong></strong>";
-    feedbackBox.firstChild.textContent = head;
-    feedbackBox.appendChild(document.createTextNode(q.explanation));
-
-    nextBtn.textContent = (currentIndex === questions.length - 1) ? "See how you did" : "Next →";
-    nextBtn.style.display = "inline-block";
-  }
-
-  function nextQuestion() {
-    currentIndex++;
-    if (currentIndex < questions.length) {
-      loadQuestion();
-    } else {
-      showResults();
+      "correct": 1,
+      "explanation": "That is multipath: a bounced signal took a longer path, so the range comes out too long. Trees, urban canyons and deep valleys also cost you satellites outright. On Thursday, the lawn will give you a better fix than the wall."
     }
-  }
-
-  function showResults() {
-    quizContent.style.display = "none";
-    scoreBar.style.display = "none";
-    finalScreen.style.display = "block";
-
-    finalScoreDisplay.textContent = score + " / " + questions.length;
-
-    if (score === questions.length) {
-      finalFeedbackText.textContent = "Every one. Now go collect points that deserve that.";
-    } else if (score >= 9) {
-      finalFeedbackText.textContent = "Solid. Read the explanations on the ones you missed — the coordinate questions are the ones that bite on Thursday.";
-    } else {
-      finalFeedbackText.textContent = "Worth a second run. The error you control is the last row of the budget, and it is the biggest.";
-    }
-  }
-
-  function restartQuiz() {
-    currentIndex = 0;
-    score = 0;
-    scoreBar.style.display = "flex";
-    quizContent.style.display = "block";
-    finalScreen.style.display = "none";
-    scoreText.textContent = "Score: 0 / 0";
-    loadQuestion();
-  }
-
-  loadQuestion();
+  ]
+}
 </script>
+<script src="../assets/quiz.js"></script>
 
 </body>
 </html>

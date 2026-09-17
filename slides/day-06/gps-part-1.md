@@ -410,6 +410,23 @@ Satellites bunched together → a **large** area of uncertainty. Satellites spre
 
 ---
 
+# Before Next Class
+
+![bg right:34% w:94%](images/gps-before-next-class.jpg)
+
+- Upload your **"Where Am I"** solution photo to Learning Suite today
+- Read **Chapter 5, GNSS and Coordinate Surveying**, in *GIS Fundamentals* (Bolstad & Manson)
+- Take **Quiz 3 (GPS Part 1)**, open book, on Learning Suite — **due Saturday**
+- **Lab 3: GPS Data Collection and Importing Into QGIS** — [assignments page](https://byu-hydroinformatics.github.io/cce114-geomatics/assignments/lab-03/) — **due Saturday**
+- Bring your phone with a GPS app and your laptop with QGIS on Thursday
+- Questions? Office hours: [calendly.com/dan-ames/office-hours](https://calendly.com/dan-ames/office-hours)
+
+<!-- Confirm the Saturday due dates against Learning Suite before class. -->
+
+<!-- Revision notes (2026-09-03): simplified from the 40-slide Part 1 deck at Dan's request so that Tuesday of Week 4 holds the Air Force One warm-up, the Prague activity, and a short GPS explanation in one 50-minute hour. Kept: constellations, the code-delay trick, the range quiz, ranges-to-position, angles-not-distances, coordinate formats, the decimal-place table, the precision/accuracy quiz, the lat/long-to-meters rule, a one-slide error budget, PDOP, and DGPS. Dropped or merged: the 3 D's of map data, the four-concepts roadmap, the U.S. Government framing, modulation methods, the 0.674 s worked example, the datum table, the geoid/ellipsoid slide (Week 8 covers it), the six separate error-source slides, the cumulative-error figure, the PDOP distribution figure, the DGPS post-processing and base/rover arithmetic figures, and the Tuesday campus-walk activity (now Thursday). The Air Force One and Prague slides came from the Part 2 deck, which is kept as the extended reference deck. Original sources: "GPS and Triangulation.pptx" (2025) and "GPS basics.pptx" (2024). -->
+
+---
+
 <!-- _class: activity -->
 
 # Your Turn — How Does It Know Where You Are?
@@ -417,7 +434,7 @@ Satellites bunched together → a **large** area of uncertainty. Satellites spre
 <div class="columns">
 <div>
 
-Twelve questions on your phone:
+Eight questions on your phone:
 
 - From a **radio signal** to a position
 - What the **digits** are worth
@@ -436,20 +453,3 @@ Not graded, and every answer explains itself. Good practice for this week's open
 </div>
 
 <!-- Five minutes, in pairs, then a show of hands on the two worth arguing about: why the fourth satellite is needed, and precision against accuracy. The coordinate questions are the ones that matter for Thursday, so do not skip past them. If the room has no signal, put the URL on the board. The page is linked from the Week 4 page too. -->
-
----
-
-# Before Next Class
-
-![bg right:34% w:94%](images/gps-before-next-class.jpg)
-
-- Upload your **"Where Am I"** solution photo to Learning Suite today
-- Read **Chapter 5, GNSS and Coordinate Surveying**, in *GIS Fundamentals* (Bolstad & Manson)
-- Take **Quiz 3 (GPS Part 1)**, open book, on Learning Suite — **due Saturday**
-- **Lab 3: GPS Data Collection and Importing Into QGIS** — [assignments page](https://byu-hydroinformatics.github.io/cce114-geomatics/assignments/lab-03/) — **due Saturday**
-- Bring your phone with a GPS app and your laptop with QGIS on Thursday
-- Questions? Office hours: [calendly.com/dan-ames/office-hours](https://calendly.com/dan-ames/office-hours)
-
-<!-- Confirm the Saturday due dates against Learning Suite before class. -->
-
-<!-- Revision notes (2026-09-03): simplified from the 40-slide Part 1 deck at Dan's request so that Tuesday of Week 4 holds the Air Force One warm-up, the Prague activity, and a short GPS explanation in one 50-minute hour. Kept: constellations, the code-delay trick, the range quiz, ranges-to-position, angles-not-distances, coordinate formats, the decimal-place table, the precision/accuracy quiz, the lat/long-to-meters rule, a one-slide error budget, PDOP, and DGPS. Dropped or merged: the 3 D's of map data, the four-concepts roadmap, the U.S. Government framing, modulation methods, the 0.674 s worked example, the datum table, the geoid/ellipsoid slide (Week 8 covers it), the six separate error-source slides, the cumulative-error figure, the PDOP distribution figure, the DGPS post-processing and base/rover arithmetic figures, and the Tuesday campus-walk activity (now Thursday). The Air Force One and Prague slides came from the Part 2 deck, which is kept as the extended reference deck. Original sources: "GPS and Triangulation.pptx" (2025) and "GPS basics.pptx" (2024). -->

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CCE 114 — Where Should the Water Park Go?</title>
+  <meta name="theme-color" content="#002e5d">
+  <meta name="description" content="CCE 114 in-class self-check: what a grid of cells actually is, what happens when you combine two grids cell by cell, and what a DEM gives you for free.">
+  <link rel="stylesheet" href="../assets/quiz.css">
+</head>
+<body>
+
+<div class="container">
+  <header>
+    <h1>Where Should the Water Park Go?</h1>
+    <p class="subtitle">CCE 114 &middot; Day 10 &mdash; Raster Analysis and Map Algebra<br>
+      Eight questions in three parts: what a <strong>grid of cells</strong> actually is,
+      what happens when you <strong>combine grids</strong> cell by cell, and what an
+      <strong>elevation surface</strong> gives you for free.</p>
+  </header>
+
+  <div class="score-bar" id="scoreBar">
+    <span id="progressText">Question 1 of 8</span>
+    <span id="scoreText">Score: 0 / 0</span>
+  </div>
+
+  <div class="quiz-card" id="quizCard">
+    <div id="quizContent">
+      <div class="section-badge" id="sectionBadge">Part 1</div>
+      <div class="prompt" id="promptText">Question</div>
+      <div class="setup" id="setupText"></div>
+
+      <div class="options" id="optionsBox"></div>
+
+      <div class="feedback" id="feedbackBox"></div>
+
+      <div class="controls">
+        <button class="next-btn" id="nextBtn">Next &rarr;</button>
+      </div>
+    </div>
+
+    <div class="final-screen" id="finalScreen">
+      <h2>Done</h2>
+      <div class="final-score" id="finalScoreDisplay">0 / 8</div>
+      <p id="finalFeedbackText" style="color: var(--muted); margin-bottom: 1rem;"></p>
+      <div class="checklist">
+        <strong style="color: var(--text);">The short version of the hour:</strong><br>
+        A raster is <strong>cell size, extent, rows and columns, and a no-data value</strong><br>
+        <strong>No-data is not zero</strong> &mdash; zero is a score, no-data is "do not compute"<br>
+        <strong>Adding</strong> lets a strong score rescue a weak one; <strong>multiplying</strong> makes a zero fatal<br>
+        Align the grids <em>before</em> the Raster Calculator, not after<br>
+        <em>The data model should match the phenomenon &mdash; continuous surfaces are the raster case.</em>
+      </div>
+      <br>
+      <button class="restart-btn" id="restartBtn">Start over</button>
+    </div>
+  </div>
+
+  <footer class="page-foot">
+    CCE 114 Geomatics &middot;
+    <a href="../../">Course site</a> &middot;
+    <a href="../../weeks/week-06/">Week 6</a>
+  </footer>
+</div>
+
+<script type="application/json" id="quizData">
+{
+  "messages": [
+    "Every one. Your four sheets of engineering paper were doing real work.",
+    "Close. Read the explanations on the ones you missed before Thursday.",
+    "Read the explanations on the ones you missed — no-data and grid alignment are what break the lab. The summary below is the hour in five lines."
+  ],
+  "questions": [
+    {
+      "section": "Part 1 — What a grid of cells really is",
+      "prompt": "A raster has 30 m cells, and its extent is 180 m wide and 120 m tall. How many columns and rows?",
+      "setup": "Rows and columns are extent ÷ cell size.",
+      "options": [
+        "30 columns and 30 rows",
+        "6 columns and 4 rows",
+        "180 columns and 120 rows",
+        "You cannot tell without the coordinate system"
+      ],
+      "correct": 1,
+      "explanation": "180 ÷ 30 = 6 columns, 120 ÷ 30 = 4 rows, so 24 cells hold the whole layer. Cell size, extent, rows and columns, and the no-data value are the four things that define a raster, and all four sit on the Information tab of the layer properties in QGIS. Note what cell size really means: nothing smaller than one cell exists in the data, however far you zoom in."
+    },
+    {
+      "section": "Part 1 — What a grid of cells really is",
+      "prompt": "Outside Utah, your engineering-paper sheet has cells with a value of 0. A downloaded GeoTIFF would more likely carry −9999 there. What is the difference?",
+      "setup": "",
+      "options": [
+        "None — both mean the cell is empty",
+        "0 is a real value the software computes with; −9999 is flagged as no-data and is left out of the arithmetic",
+        "−9999 is just a compact way of storing 0",
+        "0 is used for continuous rasters and −9999 for discrete ones"
+      ],
+      "correct": 1,
+      "explanation": "On paper, 0 meant \"unsuitable\" — a score, and a score that multiplies other scores away. A no-data cell means there is no measurement there at all and the software should not compute with it. Confusing the two is the most common raster bug in the lab, and it is silent: you get a number back either way."
+    },
+    {
+      "section": "Part 1 — What a grid of cells really is",
+      "prompt": "Soil type, annual rainfall, county boundaries, ground elevation, land cover class. Which of these is the poorest candidate for a raster?",
+      "setup": "",
+      "options": [
+        "Soil type",
+        "Annual rainfall",
+        "County boundaries",
+        "Ground elevation",
+        "Land cover class"
+      ],
+      "correct": 2,
+      "explanation": "Counties are a small number of large areas with sharp legal edges — exactly the case vector handles well. Stored as a grid you get a stair-stepped border and a great many wasted cells, which is the Colorado example from Day 2 all over again. Rainfall and elevation are continuous; soil type and land cover are discrete, but they genuinely vary from cell to cell across a large area."
+    },
+    {
+      "section": "Part 2 — Combining grids, cell by cell",
+      "prompt": "The top-right cell of the State grid is 0 and the top-right cell of the Freeway grid is 1. Under the rule State + Freeway, what does the output cell hold?",
+      "setup": "Map algebra is cell by cell: one cell of each input, one cell of output.",
+      "options": [
+        "0",
+        "1",
+        "2",
+        "Cannot tell"
+      ],
+      "correct": 1,
+      "explanation": "0 + 1 = 1. That is the whole operation — no topology, no geometry, just the same arithmetic repeated over every cell of the array, which is why raster analysis scales to continent-sized problems. \"Cannot tell\" is tempting because the cell is outside the state, but the rule you chose is what decides what that means, not the software."
+    },
+    {
+      "section": "Part 2 — Combining grids, cell by cell",
+      "prompt": "Same two cells, but the rule is now State × Freeway. What changes, and what does it mean?",
+      "setup": "",
+      "options": [
+        "The cell becomes 1; multiplying and adding agree on layers of ones and zeros",
+        "The cell becomes 0; a zero in any input vetoes the cell, however well it scores elsewhere",
+        "The cell becomes 2; multiplication doubles the score",
+        "Nothing changes; the rule only affects the color ramp"
+      ],
+      "correct": 1,
+      "explanation": "0 × 1 = 0. Multiplying turns \"must be inside the state\" and \"must be near a freeway\" into hard vetoes; adding turns them into one lost point that a warm temperature score can rescue. Neither is right in general — the rule is a design decision you have to be able to defend."
+    },
+    {
+      "section": "Part 2 — Combining grids, cell by cell",
+      "prompt": "Two rasters in different coordinate systems draw on top of each other perfectly in QGIS. You run the Raster Calculator on them and the result is nonsense. Why?",
+      "setup": "",
+      "options": [
+        "The Raster Calculator cannot read GeoTIFFs in a projected CRS",
+        "QGIS reprojects on the fly for display only; the underlying arrays still do not correspond cell for cell",
+        "The layers need to be in the same folder",
+        "One of them must have been discrete"
+      ],
+      "correct": 1,
+      "explanation": "Lining up on screen is a drawing convenience, not an alignment of the data. Map algebra pairs the first cell of one array with the first cell of the other, so different origins, different cell sizes, or different coordinate systems all hand you a clean-looking answer about the wrong places. Reproject and align first, with Warp (Reproject) — and remember that anything plus no-data is no-data."
+    },
+    {
+      "section": "Part 3 — Elevation, and what raster is for",
+      "prompt": "You are modeling where stormwater runs across a wooded site. Do you want the DEM or the DSM?",
+      "setup": "",
+      "options": [
+        "The DEM — bare earth, without buildings and trees",
+        "The DSM — it has more detail, so it is always the better download",
+        "Either; they hold the same elevations",
+        "Neither; drainage has to be done in vector"
+      ],
+      "correct": 0,
+      "explanation": "A DEM is bare earth; a DSM includes buildings and trees. Water runs on the ground, so a DSM will route your flow over the canopy and your culverts will drain through the woods. The DSM is the right download for the opposite kind of question — a viewshed or a solar study, where the buildings and the trees are the whole point."
+    },
+    {
+      "section": "Part 3 — Elevation, and what raster is for",
+      "prompt": "What extra data do you need to produce slope, aspect, hillshade, contours, flow direction and flow accumulation?",
+      "setup": "",
+      "options": [
+        "A land cover raster to go with the elevation",
+        "A second survey flown at a different time",
+        "None — every one of them is computed from the single DEM you already have",
+        "A vector stream network, to seed the flow tools"
+      ],
+      "correct": 2,
+      "explanation": "Each one is map algebra on a neighborhood — usually the eight cells around each cell, a 3×3 window. No new measurements are collected; the information was already sitting in the grid. That is the payoff of the raster model, and the reason hydrology is done in raster."
+    }
+  ]
+}
+</script>
+<script src="../assets/quiz.js"></script>
+
+</body>
+</html>

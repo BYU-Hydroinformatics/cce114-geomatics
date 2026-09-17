@@ -620,3 +620,32 @@ A student builds a `Buildings` polygon layer with:
 <!-- Lab 4 is the graded version of everything in today's lecture: creating GeoPackage layers, digitizing, snapping, the Vertex Tool, and a schema. Confirm the exact Saturday deadline on Learning Suite before class. -->
 
 <!-- Conversion notes (2026-09-02): source deck "114 - Working with Vector Data.pptx" (Archived, 2026), 8 slides. The source was written as a Thursday hands-on walkthrough ("Make a Map of Your Childhood Home", steps 1-4 with New Shapefile Layer); that walkthrough has been moved to the Thursday preview slide, since Day 8 is the Tuesday concepts lecture, and the concept material (creating layers, digitizing, editing, schemas, saving to disk) has been expanded to fill the hour around the source deck's own Learning Goals list. Source slides not carried over as slides: slide 1 title (replaced by the standard title slide; its speaker note was a stale ArcGIS ModelBuilder workshop abstract, unrelated to this lecture, and was dropped), slides 4-8 (the step-by-step childhood-home walkthrough, now the Thursday preview). No ArcGIS screenshots are used: the only screenshot in the source deck is the QGIS New Shapefile Layer dialog, which is kept on the shapefile slide. QGIS 3.44 screenshots (Create Layer menu, New GeoPackage Layer dialog, digitizing tools, snapping toolbar, Vertex Tool, Field Calculator, example result) were reused from docs/assignments/lab-04/images so the deck matches the wording students see in Lab 4. TODO for the instructor: (1) confirm the Saturday due dates for Quiz 4 and Lab 4 on Learning Suite; (2) the Field Calculator screenshot (images/vec-field-calculator.png) is low resolution in the source and has been cropped to the expression panel — worth re-shooting at full resolution; (3) consider re-shooting the New GeoPackage Layer dialog with a Day 8 example instead of the Lab 4 Street_Lights example if you would rather the lecture not preview the lab. -->
+
+---
+
+<!-- _class: activity -->
+
+# Your Turn — Who Drew That Line?
+
+<div class="columns">
+<div>
+
+Eight questions on your phone:
+
+- Before you **draw anything**
+- Turning what you see into **coordinates**
+- The **table**, and the save
+
+Not graded, and every answer explains itself. Good practice for this week's open-book quiz.
+
+<span style="font-size: 0.5em; color: #4a5568; white-space: nowrap;">byu-hydroinformatics.github.io/cce114-geomatics/quizzes/vector/</span>
+
+</div>
+<div>
+
+![w:400 center](images/vec-quiz-vector-qr.png)
+
+</div>
+</div>
+
+<!-- Five minutes, in pairs, then a show of hands on the two worth arguing about: hydrants and mains in one layer or two, and what Ctrl+S on the project actually saved. Both come back on Thursday. If the room has no signal, put the URL on the board. The page is linked from the Week 5 page too. -->

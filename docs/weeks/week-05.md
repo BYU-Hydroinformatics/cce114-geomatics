@@ -9,6 +9,12 @@ anything on another day says so.
 | Quiz 4 | [GPS, Part 2](../assignments/deliverables.md#reading-quizzes) — open book, on Learning Suite |
 | Lab 4 | [Changing, Editing, and Fixing GIS Data](../assignments/lab-04/README.md) |
 
+## Practice
+
+Not graded, and nothing to hand in — open it on a phone or a laptop as often as you like.
+
+- [Who Drew That Line?](../quizzes/vector/index.html) — Choosing a geometry type, digitizing at a scale the data can support, and what a field's type costs you later.
+
 ## Tuesday — Working with Vector Data, Part 1
 
 **Lecture**{ .badge .badge-lecture } · *Day 8*

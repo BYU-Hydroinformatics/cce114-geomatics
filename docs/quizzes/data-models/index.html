@@ -6,236 +6,7 @@
   <title>CCE 114 — Model, Format, or Reality?</title>
   <meta name="theme-color" content="#002e5d">
   <meta name="description" content="CCE 114 in-class self-check: model versus reality versus file format, naming the vector, raster, and TIN data models, and what each one costs.">
-  <style>
-    :root {
-      --bg: #f6f8fa;
-      --card: #ffffff;
-      --text: #1f2933;
-      --muted: #5f6b7a;
-      --primary: #002e5d;          /* BYU navy, the course site's primary */
-      --primary-hover: #001f3f;
-      --accent: #0062b8;
-      --success: #0f7b3f;
-      --success-bg: #f0faf4;
-      --success-text: #0b4f29;
-      --danger: #b3261e;
-      --danger-bg: #fdf2f1;
-      --danger-text: #7a1a15;
-      --border: #dde3ea;
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    }
-
-    body {
-      background-color: var(--bg);
-      color: var(--text);
-      display: flex;
-      justify-content: center;
-      padding: 2rem 1rem;
-    }
-
-    .container { max-width: 680px; width: 100%; }
-
-    header { text-align: center; margin-bottom: 1.5rem; }
-
-    h1 { font-size: 1.6rem; margin-bottom: 0.5rem; color: var(--primary); }
-
-    p.subtitle { color: var(--muted); font-size: 0.95rem; line-height: 1.45; }
-
-    .score-bar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background: var(--card);
-      padding: 0.75rem 1.25rem;
-      border-radius: 8px;
-      border: 1px solid var(--border);
-      margin-bottom: 1.25rem;
-      font-size: 0.9rem;
-      font-weight: 500;
-    }
-
-    .quiz-card {
-      background: var(--card);
-      border-radius: 12px;
-      border: 1px solid var(--border);
-      padding: 1.75rem;
-      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
-    }
-
-    .section-badge {
-      display: inline-block;
-      font-size: 0.72rem;
-      text-transform: uppercase;
-      font-weight: 700;
-      letter-spacing: 0.06em;
-      color: var(--accent);
-      margin-bottom: 0.5rem;
-    }
-
-    .prompt {
-      font-size: 1.2rem;
-      font-weight: 700;
-      line-height: 1.35;
-      margin-bottom: 0.5rem;
-      color: #10243a;
-    }
-
-    .setup {
-      color: var(--muted);
-      font-size: 0.95rem;
-      margin-bottom: 1.4rem;
-      line-height: 1.45;
-    }
-
-    .options { display: grid; gap: 0.7rem; margin-bottom: 1.25rem; }
-
-    button.opt-btn {
-      display: flex;
-      align-items: flex-start;
-      gap: 0.7rem;
-      width: 100%;
-      text-align: left;
-      padding: 0.85rem 1rem;
-      font-size: 1rem;
-      line-height: 1.35;
-      font-weight: 500;
-      border: 2px solid var(--border);
-      background: #ffffff;
-      color: var(--text);
-      border-radius: 8px;
-      cursor: pointer;
-      transition: all 0.15s ease-in-out;
-    }
-
-    button.opt-btn:hover:not(:disabled) {
-      border-color: var(--accent);
-      color: var(--primary);
-      background: #eef5fc;
-    }
-
-    button.opt-btn:disabled { cursor: default; }
-
-    .opt-letter {
-      flex: 0 0 1.5rem;
-      font-weight: 700;
-      color: var(--accent);
-    }
-
-    button.correct {
-      background: var(--success) !important;
-      border-color: var(--success) !important;
-      color: #ffffff !important;
-    }
-
-    button.incorrect {
-      background: var(--danger) !important;
-      border-color: var(--danger) !important;
-      color: #ffffff !important;
-    }
-
-    button.correct .opt-letter,
-    button.incorrect .opt-letter { color: #ffffff; }
-
-    .feedback {
-      display: none;
-      padding: 1rem;
-      border-radius: 8px;
-      font-size: 0.95rem;
-      line-height: 1.45;
-      margin-bottom: 1.25rem;
-    }
-
-    .feedback.visible { display: block; }
-
-    .feedback.correct-box {
-      background-color: var(--success-bg);
-      border-left: 4px solid var(--success);
-      color: var(--success-text);
-    }
-
-    .feedback.incorrect-box {
-      background-color: var(--danger-bg);
-      border-left: 4px solid var(--danger);
-      color: var(--danger-text);
-    }
-
-    .feedback strong { display: block; margin-bottom: 0.25rem; }
-
-    .controls { display: flex; justify-content: flex-end; }
-
-    button.next-btn {
-      padding: 0.65rem 1.4rem;
-      font-size: 0.95rem;
-      font-weight: 600;
-      background: var(--primary);
-      color: #ffffff;
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
-      display: none;
-    }
-
-    button.next-btn:hover { background: var(--primary-hover); }
-
-    .final-screen { display: none; text-align: center; padding: 2rem 1rem; }
-
-    .final-screen h2 { font-size: 1.5rem; margin-bottom: 0.75rem; color: var(--primary); }
-
-    .final-score {
-      font-size: 2.5rem;
-      font-weight: 800;
-      color: var(--primary);
-      margin-bottom: 1rem;
-    }
-
-    .checklist {
-      text-align: left;
-      display: inline-block;
-      margin: 0.5rem auto 0;
-      color: var(--muted);
-      font-size: 0.9rem;
-      line-height: 1.6;
-    }
-
-    button.restart-btn {
-      padding: 0.75rem 1.5rem;
-      font-size: 1rem;
-      font-weight: 600;
-      background: var(--primary);
-      color: #ffffff;
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
-      margin-top: 1.5rem;
-    }
-
-    footer.page-foot {
-      text-align: center;
-      margin-top: 1.5rem;
-      font-size: 0.8rem;
-      color: var(--muted);
-    }
-
-    footer.page-foot a { color: var(--muted); }
-
-    /* Phones: this quiz is meant to be scanned off a slide and answered on a handset. */
-    @media (max-width: 480px) {
-      body { padding: 1rem 0.75rem; }
-      h1 { font-size: 1.25rem; }
-      .quiz-card { padding: 1.1rem; }
-      .prompt { font-size: 1.05rem; }
-      .options { gap: 0.55rem; }
-      button.opt-btn { padding: 0.9rem 0.7rem; font-size: 0.95rem; }
-      .controls { justify-content: stretch; }
-      button.next-btn { width: 100%; padding: 0.8rem 1rem; }
-    }
-  </style>
+  <link rel="stylesheet" href="../assets/quiz.css">
 </head>
 <body>
 
@@ -243,13 +14,13 @@
   <header>
     <h1>Model, Format, or Reality?</h1>
     <p class="subtitle">CCE 114 &middot; Day 2 &mdash; GIS Data Models and File Formats<br>
-      Twelve questions in three parts: telling a <strong>model</strong> from reality and from the
+      Eight questions in three parts: telling a <strong>model</strong> from reality and from the
       <strong>file format</strong> it is stored in, naming the model you are looking at, and what
       each one <strong>costs</strong> you.</p>
   </header>
 
   <div class="score-bar" id="scoreBar">
-    <span id="progressText">Question 1 of 12</span>
+    <span id="progressText">Question 1 of 8</span>
     <span id="scoreText">Score: 0 / 0</span>
   </div>
 
@@ -264,13 +35,13 @@
       <div class="feedback" id="feedbackBox"></div>
 
       <div class="controls">
-        <button class="next-btn" id="nextBtn" onclick="nextQuestion()">Next &rarr;</button>
+        <button class="next-btn" id="nextBtn">Next &rarr;</button>
       </div>
     </div>
 
     <div class="final-screen" id="finalScreen">
       <h2>Done</h2>
-      <div class="final-score" id="finalScoreDisplay">0 / 12</div>
+      <div class="final-score" id="finalScoreDisplay">0 / 8</div>
       <p id="finalFeedbackText" style="color: var(--muted); margin-bottom: 1rem;"></p>
       <div class="checklist">
         <strong style="color: var(--text);">The summary, one more time:</strong><br>
@@ -280,7 +51,7 @@
         <em>The data model should follow the phenomenon, not your habits.</em>
       </div>
       <br>
-      <button class="restart-btn" onclick="restartQuiz()">Start over</button>
+      <button class="restart-btn" id="restartBtn">Start over</button>
     </div>
   </div>
 
@@ -291,277 +62,122 @@
   </footer>
 </div>
 
-<script>
-  const questions = [
+<script type="application/json" id="quizData">
+{
+  "messages": [
+    "Every one. That is Chapter 2 in twelve questions.",
+    "Solid. Reread the explanations on the ones you missed — the model-versus-format distinction comes back all semester.",
+    "Worth a second run, then reread Chapter 2. The summary below is the short version."
+  ],
+  "questions": [
     {
-      section: "Part 1 — Model, format, or reality",
-      prompt: "A video shot from a raft running the Lochsa River at spring runoff. Data model, or reality?",
-      setup: "",
-      options: [
+      "section": "Part 1 — Model, format, or reality",
+      "prompt": "A video shot from a raft running the Lochsa River at spring runoff. Data model, or reality?",
+      "setup": "",
+      "options": [
         "Reality — it is a recording of the actual river",
         "A model — a video is a representation of reality, not the river itself",
         "Neither",
-        "A data model only once it is loaded into QGIS",
+        "A data model only once it is loaded into QGIS"
       ],
-      correct: 1,
-      explanation: "A model is an abstraction of reality. The video is a flat, silent, two-minute stand-in for a river that is none of those things — it drops depth, temperature, discharge, and everything upstream and downstream of the raft. Every representation leaves something out; the question is always what."
+      "correct": 1,
+      "explanation": "A model is an abstraction of reality. The video is a flat, silent, two-minute stand-in for a river that is none of those things — it drops depth, temperature, discharge, and everything upstream and downstream of the raft. Every representation leaves something out; the question is always what."
     },
     {
-      section: "Part 1 — Model, format, or reality",
-      prompt: "In UtahCountyMajorRoads.shp, which part is the data model and which is the file format?",
-      setup: "",
-      options: [
+      "section": "Part 1 — Model, format, or reality",
+      "prompt": "In UtahCountyMajorRoads.shp, which part is the data model and which is the file format?",
+      "setup": "",
+      "options": [
         "“Shapefile” is the data model; “polyline” is the file format",
         "“Polyline” is the data model; “shapefile” is the file format",
         "Both are file formats",
-        "Both are data models",
+        "Both are data models"
       ],
-      correct: 1,
-      explanation: "The data model is the conceptual organization — what has to be stored. A road is a polyline: an ordered list of coordinate pairs. The shapefile is one of many ways to write those numbers to disk."
+      "correct": 1,
+      "explanation": "The data model is the conceptual organization — what has to be stored. A road is a polyline: an ordered list of coordinate pairs. The shapefile is one of many ways to write those numbers to disk."
     },
     {
-      section: "Part 1 — Model, format, or reality",
-      prompt: "You export the roads layer from a shapefile to a GeoPackage. What changed?",
-      setup: "",
-      options: [
-        "The data model — GeoPackage layers are stored differently, so they are no longer polylines",
-        "Only the storage. The roads are still polylines, and the coordinates are the same numbers",
-        "Nothing at all — GeoPackage is just a renamed shapefile",
-        "The geometry is simplified to fit the new format",
-      ],
-      correct: 1,
-      explanation: "One data model, many possible formats. Shapefile, GeoPackage, GeoJSON, and KML are four ways of writing down the same polylines; QGIS reads them all, and changing the format does not change the model."
-    },
-    {
-      section: "Part 1 — Model, format, or reality",
-      prompt: "A classmate emails you one file, UtahCountyMajorRoads.shp, and nothing else. What happens when you open it?",
-      setup: "A shapefile is really a set of files that travel together.",
-      options: [
+      "section": "Part 1 — Model, format, or reality",
+      "prompt": "A classmate emails you one file, UtahCountyMajorRoads.shp, and nothing else. What happens when you open it?",
+      "setup": "A shapefile is really a set of files that travel together.",
+      "options": [
         "Nothing opens — .shp on its own is unreadable",
         "The roads draw, but the attribute table is gone and the layer may not know its coordinate system",
         "Everything works; the other files are backups",
-        "The roads draw as points instead of lines",
+        "The roads draw as points instead of lines"
       ],
-      correct: 1,
-      explanation: "The .shp holds the geometry, the .dbf the attribute table, the .shx the index, and the .prj the coordinate system. Lose the .dbf and the lines still draw with nothing attached to them. This is the everyday argument for GeoPackage, where one file carries the lot."
+      "correct": 1,
+      "explanation": "The .shp holds the geometry, the .dbf the attribute table, the .shx the index, and the .prj the coordinate system. Lose the .dbf and the lines still draw with nothing attached to them. This is the everyday argument for GeoPackage, where one file carries the lot."
     },
     {
-      section: "Part 2 — Name the data model",
-      prompt: "A photograph of the Lochsa River. Which data model is it?",
-      setup: "",
-      options: [
+      "section": "Part 2 — Name the data model",
+      "prompt": "A photograph of the Lochsa River. Which data model is it?",
+      "setup": "",
+      "options": [
         "Raster",
         "Vector",
         "Triangulated (TIN)",
-        "Reality — a photo is not a model",
+        "Reality — a photo is not a model"
       ],
-      correct: 0,
-      explanation: "A photo is a grid of pixels, each holding a color as a number. That is a raster, and it is also a model: a flat grid of color values standing in for a river."
+      "correct": 0,
+      "explanation": "A photo is a grid of pixels, each holding a color as a number. That is a raster, and it is also a model: a flat grid of color values standing in for a river."
     },
     {
-      section: "Part 2 — Name the data model",
-      prompt: "A map of the same river showing the watershed boundary and the stream network. Which data model?",
-      setup: "",
-      options: [
+      "section": "Part 2 — Name the data model",
+      "prompt": "A map of the same river showing the watershed boundary and the stream network. Which data model?",
+      "setup": "",
+      "options": [
         "Raster",
         "Vector — a polygon for the watershed, polylines for the streams",
         "Triangulated (TIN)",
-        "Point",
+        "Point"
       ],
-      correct: 1,
-      explanation: "Discrete features with boundaries you can draw are vector. The watershed closes on itself, so it is a polygon; each stream is an ordered list of coordinate pairs, so it is a polyline."
+      "correct": 1,
+      "explanation": "Discrete features with boundaries you can draw are vector. The watershed closes on itself, so it is a polygon; each stream is an ordered list of coordinate pairs, so it is a polyline."
     },
     {
-      section: "Part 2 — Name the data model",
-      prompt: "The cellular towers layer from the QGIS demo. What does the computer actually have to store for each tower?",
-      setup: "",
-      options: [
-        "A coordinate pair, (x, y)",
-        "An ordered list of coordinate pairs",
-        "A grid of cells covering the county",
-        "A triangle mesh",
-      ],
-      correct: 0,
-      explanation: "One point, one coordinate pair — that is the whole geometry. Everything else about the tower (owner, height, carrier) lives in its row of the attribute table, one row per feature."
-    },
-    {
-      section: "Part 2 — Name the data model",
-      prompt: "Colorado has four corners, but the coordinate table for it has five rows. Why?",
-      setup: "",
-      options: [
-        "One row stores the center of the state",
-        "The fifth row is the coordinate system",
-        "The last pair repeats the first, to close the ring",
-        "A rounding check, so the area computes correctly",
-      ],
-      correct: 2,
-      explanation: "A polygon has to close: the last vertex repeats the first. That is what separates the polygon data model from a polyline that happens to end near where it started, and it is true of nearly every spatial format you will meet."
-    },
-    {
-      section: "Part 2 — Name the data model",
-      prompt: "Terrain drawn as a wireframe surface, where the mesh is a regular grid of equally spaced elevation values. Raster or TIN?",
-      setup: "",
-      options: [
+      "section": "Part 2 — Name the data model",
+      "prompt": "Terrain drawn as a wireframe surface, where the mesh is a regular grid of equally spaced elevation values. Raster or TIN?",
+      "setup": "",
+      "options": [
         "TIN — any 3D surface mesh is a TIN",
         "Raster — the grid is regular, one elevation value per cell",
         "Vector — the wireframe is made of lines",
-        "Neither; a surface is not a data model",
+        "Neither; a surface is not a data model"
       ],
-      correct: 1,
-      explanation: "Regularity is the tell. A raster is an evenly spaced grid, so every cell is the same size whether the ground there is a cliff or a parking lot. A TIN is irregular on purpose: small triangles where the surface bends, large ones where it does not."
+      "correct": 1,
+      "explanation": "Regularity is the tell. A raster is an evenly spaced grid, so every cell is the same size whether the ground there is a cliff or a parking lot. A TIN is irregular on purpose: small triangles where the surface bends, large ones where it does not."
     },
     {
-      section: "Part 3 — Choosing a model, and what it costs",
-      prompt: "Colorado as a polygon takes about 80 bytes. The same state as a raster took about 360. Is the raster the better model?",
-      setup: "Double-precision numbers are 8 bytes each.",
-      options: [
+      "section": "Part 3 — Choosing a model, and what it costs",
+      "prompt": "Colorado as a polygon takes about 80 bytes. The same state as a raster took about 360. Is the raster the better model?",
+      "setup": "Double-precision numbers are 8 bytes each.",
+      "options": [
         "Yes — more storage means more detail",
         "Yes — rasters are always more accurate than vectors",
         "No — it costs four times as much and gives a blockier boundary, because the phenomenon is a boundary, not a surface",
-        "It depends on which format you save it in",
+        "It depends on which format you save it in"
       ],
-      correct: 2,
-      explanation: "The extra bytes bought pixelated edges, not accuracy. Storage is not precision, and a finer grid only makes both numbers worse. A state boundary is a discrete line, so the vector model fits it."
+      "correct": 2,
+      "explanation": "The extra bytes bought pixelated edges, not accuracy. Storage is not precision, and a finer grid only makes both numbers worse. A state boundary is a discrete line, so the vector model fits it."
     },
     {
-      section: "Part 3 — Choosing a model, and what it costs",
-      prompt: "Why does a TIN put small triangles in some places and large ones in others?",
-      setup: "",
-      options: [
-        "The triangles shrink toward the edges of the dataset",
-        "Detail follows the surface — many small triangles where it bends, few large ones where it is flat",
-        "Triangle size is set by the coordinate system",
-        "Smaller triangles are drawn wherever the data are older",
-      ],
-      correct: 1,
-      explanation: "That is the whole point of a TIN, and why game engines and engineering surface models use them: spend vertices where the shape changes and none where it does not. A raster cannot do this — its grid is the same spacing everywhere."
-    },
-    {
-      section: "Part 3 — Choosing a model, and what it costs",
-      prompt: "Air temperature across the state, mapped as a smooth field of color. Which data model, and why?",
-      setup: "",
-      options: [
+      "section": "Part 3 — Choosing a model, and what it costs",
+      "prompt": "Air temperature across the state, mapped as a smooth field of color. Which data model, and why?",
+      "setup": "",
+      "options": [
         "Point — temperature is measured at weather stations",
         "Polygon — each colored zone is an area",
         "Raster — temperature has a value everywhere, which is exactly what a grid of cells stores",
-        "TIN — it is a continuous surface",
+        "TIN — it is a continuous surface"
       ],
-      correct: 2,
-      explanation: "Temperature is continuous: there is a value at every location, not just where someone put a thermometer. Continuous and highly variable is the raster case; discrete, countable things are the vector case; and a TIN is the compact way to carry a surface for 3D work."
-    },
-  ];
-  const LETTERS = ["A", "B", "C", "D", "E", "F"];
-
-  let currentIndex = 0;
-  let score = 0;
-  let answered = false;
-
-  const sectionBadge = document.getElementById("sectionBadge");
-  const promptText = document.getElementById("promptText");
-  const setupText = document.getElementById("setupText");
-  const optionsBox = document.getElementById("optionsBox");
-  const feedbackBox = document.getElementById("feedbackBox");
-  const nextBtn = document.getElementById("nextBtn");
-  const progressText = document.getElementById("progressText");
-  const scoreText = document.getElementById("scoreText");
-  const quizContent = document.getElementById("quizContent");
-  const finalScreen = document.getElementById("finalScreen");
-  const finalScoreDisplay = document.getElementById("finalScoreDisplay");
-  const finalFeedbackText = document.getElementById("finalFeedbackText");
-  const scoreBar = document.getElementById("scoreBar");
-
-  function loadQuestion() {
-    answered = false;
-    const q = questions[currentIndex];
-
-    sectionBadge.textContent = q.section;
-    promptText.textContent = q.prompt;
-    setupText.textContent = q.setup || "";
-    setupText.style.display = q.setup ? "block" : "none";
-
-    optionsBox.innerHTML = "";
-    q.options.forEach(function (text, i) {
-      const btn = document.createElement("button");
-      btn.className = "opt-btn";
-      btn.innerHTML = '<span class="opt-letter">' + LETTERS[i] + '</span><span></span>';
-      btn.lastChild.textContent = text;
-      btn.onclick = function () { checkAnswer(i); };
-      optionsBox.appendChild(btn);
-    });
-
-    feedbackBox.className = "feedback";
-    feedbackBox.innerHTML = "";
-    nextBtn.style.display = "none";
-
-    progressText.textContent = "Question " + (currentIndex + 1) + " of " + questions.length;
-  }
-
-  function checkAnswer(selected) {
-    if (answered) return;
-    answered = true;
-
-    const q = questions[currentIndex];
-    const isCorrect = selected === q.correct;
-    if (isCorrect) score++;
-
-    scoreText.textContent = "Score: " + score + " / " + (currentIndex + 1);
-
-    const btns = optionsBox.querySelectorAll("button.opt-btn");
-    btns.forEach(function (btn, i) {
-      btn.disabled = true;
-      if (i === q.correct) btn.classList.add("correct");
-      if (i === selected && !isCorrect) btn.classList.add("incorrect");
-    });
-
-    feedbackBox.classList.add("visible");
-    feedbackBox.classList.add(isCorrect ? "correct-box" : "incorrect-box");
-    const head = (isCorrect ? "✓ Correct" : "✗ Not quite") +
-                 " — " + LETTERS[q.correct] + ". " + q.options[q.correct];
-    feedbackBox.innerHTML = "<strong></strong>";
-    feedbackBox.firstChild.textContent = head;
-    feedbackBox.appendChild(document.createTextNode(q.explanation));
-
-    nextBtn.textContent = (currentIndex === questions.length - 1) ? "See how you did" : "Next →";
-    nextBtn.style.display = "inline-block";
-  }
-
-  function nextQuestion() {
-    currentIndex++;
-    if (currentIndex < questions.length) {
-      loadQuestion();
-    } else {
-      showResults();
+      "correct": 2,
+      "explanation": "Temperature is continuous: there is a value at every location, not just where someone put a thermometer. Continuous and highly variable is the raster case; discrete, countable things are the vector case; and a TIN is the compact way to carry a surface for 3D work."
     }
-  }
-
-  function showResults() {
-    quizContent.style.display = "none";
-    scoreBar.style.display = "none";
-    finalScreen.style.display = "block";
-
-    finalScoreDisplay.textContent = score + " / " + questions.length;
-
-    if (score === questions.length) {
-      finalFeedbackText.textContent = "Every one. That is Chapter 2 in twelve questions.";
-    } else if (score >= 9) {
-      finalFeedbackText.textContent = "Solid. Reread the explanations on the ones you missed — the model-versus-format distinction comes back all semester.";
-    } else {
-      finalFeedbackText.textContent = "Worth a second run, then reread Chapter 2. The summary below is the short version.";
-    }
-  }
-
-  function restartQuiz() {
-    currentIndex = 0;
-    score = 0;
-    scoreBar.style.display = "flex";
-    quizContent.style.display = "block";
-    finalScreen.style.display = "none";
-    scoreText.textContent = "Score: 0 / 0";
-    loadQuestion();
-  }
-
-  loadQuestion();
+  ]
+}
 </script>
+<script src="../assets/quiz.js"></script>
 
 </body>
 </html>

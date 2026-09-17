@@ -270,6 +270,20 @@ As you go to different parts of the room/world, take a minute to get to know the
 
 ---
 
+# Before Next Class
+
+![bg right:35% w:88%](images/gis-before-next-class.png)
+
+- Read the assigned pages in *GIS Fundamentals* (Bolstad & Manson, 7th ed.)
+- Take the open-book quiz on Learning Suite — due **Saturday at 11:59 pm**
+- Install QGIS on your own computer — free from [qgis.org/download](https://qgis.org/download). Take the **long-term release (LTR)**, which is what the lab machines run and what the labs are written for
+- [Lab 1](https://byu-hydroinformatics.github.io/cce114-geomatics/assignments/lab-01/) is assigned Tuesday and due **Saturday at 11:59 pm**
+- Questions? Office hours: [calendly.com/dan-ames/office-hours](https://calendly.com/dan-ames/office-hours)
+
+<!-- Emphasise installing QGIS before Tuesday — Lab 1 assumes it's working on their own machine. -->
+
+---
+
 <!-- _class: activity -->
 
 # Your Turn — What Is a GIS?
@@ -277,7 +291,7 @@ As you go to different parts of the room/world, take a minute to get to know the
 <div class="columns">
 <div>
 
-Twelve questions on your phone:
+Eight questions on your phone:
 
 - What a GIS **is**, and is not
 - **Features**, and the table behind them
@@ -296,17 +310,3 @@ Not graded, and every answer explains itself. Nothing here was supposed to be ob
 </div>
 
 <!-- Note this is a different code from the activity sheet two slides back; say so, because some of the room will still be looking at that one. Five minutes, then a show of hands on the two that are worth an argument: whether a river is a polyline or a polygon, and what you lose when a city becomes a point. Covers both of this morning's decks, the course introduction as well as this one. If the room has no signal, put the URL on the board. The page is linked from the Week 1 page too. -->
-
----
-
-# Before Next Class
-
-![bg right:35% w:88%](images/gis-before-next-class.png)
-
-- Read the assigned pages in *GIS Fundamentals* (Bolstad & Manson, 7th ed.)
-- Take the open-book quiz on Learning Suite — due **Saturday at 11:59 pm**
-- Install QGIS on your own computer — free from [qgis.org/download](https://qgis.org/download). Take the **long-term release (LTR)**, which is what the lab machines run and what the labs are written for
-- [Lab 1](https://byu-hydroinformatics.github.io/cce114-geomatics/assignments/lab-01/) is assigned Tuesday and due **Saturday at 11:59 pm**
-- Questions? Office hours: [calendly.com/dan-ames/office-hours](https://calendly.com/dan-ames/office-hours)
-
-<!-- Emphasise installing QGIS before Tuesday — Lab 1 assumes it's working on their own machine. -->

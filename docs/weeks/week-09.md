@@ -8,6 +8,12 @@ anything on another day says so.
 | Quiz 7 | [Metadata](../assignments/deliverables.md#reading-quizzes) — open book, on Learning Suite |
 | Lab 8 | [Metadata](../assignments/lab-08/README.md) |
 
+## Practice
+
+Not graded, and nothing to hand in — open it on a phone or a laptop as often as you like.
+
+- [Would You Drink It?](../quizzes/metadata/index.html) — What a dataset with no documentation costs you, and how to read a metadata record and decide whether to trust the data.
+
 ## Tuesday — Metadata, Part 1
 
 **Lecture**{ .badge .badge-lecture } · *Day 16*

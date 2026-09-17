@@ -10,6 +10,12 @@ anything on another day says so.
 | Lab 9 | [The Yellowstone Disaster](../assignments/lab-09/README.md) |
 | Community and Professional Map Experience | Wednesday — see [Experiences](../assignments/deliverables.md#experiences) |
 
+## Practice
+
+Not graded, and nothing to hand in — open it on a phone or a laptop as often as you like.
+
+- [Which Tool Answers the Question?](../quizzes/geoprocessing/index.html) — Turning a question into a selection, what each overlay tool puts out, and the order to chain them in.
+
 ## Tuesday — Geoprocessing, Part 1
 
 **Lecture**{ .badge .badge-lecture } · *Day 18*

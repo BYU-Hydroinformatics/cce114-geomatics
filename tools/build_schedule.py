@@ -240,20 +240,38 @@ TUESDAY_NOTES_DAYS = {2, 6, 10, 12, 14, 16, 20}
 # scan. Nothing is graded and nothing is handed in.
 PRACTICE = {
     1: [("what-is-gis", "What Is a GIS?",
-         "Twelve questions on what a GIS is and is not, the three vector feature types and the "
-         "attribute table behind them, and how this course works. The quiz behind the QR code on "
-         "the Day 1 deck.")],
+         "What a GIS is and is not, the three vector feature types and the attribute table "
+         "behind them, and how this course works.")],
     2: [("data-models", "Model, Format, or Reality?",
-         "Twelve questions on telling a data model from reality and from the file format it is "
-         "stored in, naming vector, raster, and TIN, and what each one costs. The quiz behind the "
-         "QR code on the Day 2 deck.")],
+         "Telling a data model from reality and from the file format it is stored in, naming "
+         "vector, raster, and TIN, and what each one costs.")],
     3: [("map-elements", "Does This Map Work?",
-         "Twelve questions on the required map elements, what makes a map ugly, and what a map "
-         "does to the reader looking at it. The quiz behind the QR code on the Day 4 deck.")],
+         "The required map elements, what makes a map ugly, and what a map does to the reader "
+         "looking at it.")],
     4: [("gps", "How Does It Know Where You Are?",
-         "Twelve questions on how a receiver turns a radio signal into a position, what the digits "
-         "of a coordinate are worth, and where GPS error comes from. The quiz behind the QR code "
-         "on the Day 6 deck.")],
+         "How a receiver turns a radio signal into a position, what the digits of a coordinate are "
+         "worth, and where GPS error comes from.")],
+    5: [("vector", "Who Drew That Line?",
+         "Choosing a geometry type, digitizing at a scale the data can support, and what a field's "
+         "type costs you later.")],
+    6: [("raster", "Where Should the Water Park Go?",
+         "What a grid of cells really holds, map algebra one cell at a time, and what a DEM gives "
+         "you for free.")],
+    7: [("find-data", "Who Already Has This Data?",
+         "Where spatial data actually comes from, the difference between a picture of the data and "
+         "the features themselves, and getting Utah's data into QGIS.")],
+    8: [("projections", "Why Is Greenland So Big?",
+         "What every flat map gives up, how a projection is fitted to the ground, and the "
+         "difference between declaring a CRS and reprojecting into one.")],
+    9: [("metadata", "Would You Drink It?",
+         "What a dataset with no documentation costs you, and how to read a metadata record and "
+         "decide whether to trust the data.")],
+    10: [("geoprocessing", "Which Tool Answers the Question?",
+          "Turning a question into a selection, what each overlay tool puts out, and the order to "
+          "chain them in.")],
+    12: [("siting", "Where Would You Put It?",
+          "Reading a stated requirement as an operation, chaining the operations, and knowing what "
+          "the surviving polygons do and do not tell you.")],
 }
 
 

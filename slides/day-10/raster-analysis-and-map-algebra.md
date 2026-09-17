@@ -669,3 +669,32 @@ Each is **map algebra on a neighborhood** of cells:
 <!-- Conversion notes (2026-09-02): source deck "114 - Raster Analysis and Map Algebra.pptx" (Feb 2025), 19 slides, none hidden. All 19 source slides are represented. Dropped media: the BYU logo EMF from the title slide (the theme carries the branding), the two dated ArcView 3.x screenshots on the "Why we use raster GIS" slide (a 3D terrain view and a 3D Seattle view), and the Excel 97 screenshot on the second Map Algebra slide (illegible and badly dated; the spreadsheet analogy is kept in the speaker notes). ArcGIS screenshot that needs a QGIS re-shoot: images/ras-dem-3d-arcview.jpg on the "Surfaces derived from a DEM" slide, an ArcView 3D Analyst window; replace with a QGIS 3D map view or a slope/hillshade pair. Software wording updated for QGIS: ArcToolbox becomes the Processing Toolbox, CLIP becomes Clip raster by mask layer, and the Raster Calculator is named on the Raster menu. Slides added beyond the source: Today's Goals; "The four things that define a raster" (cells, resolution, extent, no-data); the discrete-or-continuous quiz; the work-one-cell map algebra quiz; the DEM and derived-surfaces section; "Where this goes in engineering"; the Thursday preview; and Before Next Class. The stray ModelBuilder workshop abstract in the source title slide's speaker notes was left over from a different deck and was not carried across. -->
 
 <!-- Update 2026-09-02: ArcGIS-era screenshots replaced with QGIS 3.44 captures made by tools/qgis_reshoot_screens.py: ras-dem-derived-surfaces.jpg (hillshade + contours, slope) replaces the ArcView 3D screenshot. -->
+
+---
+
+<!-- _class: activity -->
+
+# Your Turn — Where Should the Water Park Go?
+
+<div class="columns">
+<div>
+
+Eight questions on your phone:
+
+- What a **grid of cells** really is
+- **Combining grids**, cell by cell
+- **Elevation**, and what raster is for
+
+Not graded, and every answer explains itself. Good practice for this week's open-book quiz.
+
+<span style="font-size: 0.5em; color: #4a5568; white-space: nowrap;">byu-hydroinformatics.github.io/cce114-geomatics/quizzes/raster/</span>
+
+</div>
+<div>
+
+![w:400 center](images/ras-quiz-raster-qr.png)
+
+</div>
+</div>
+
+<!-- Five minutes, in pairs, then a show of hands on the two worth arguing about: no-data against a real zero, and why adding and multiplying give different answers on the same two cells. If the room has no signal, put the URL on the board. The page is linked from the Week 6 page too. -->

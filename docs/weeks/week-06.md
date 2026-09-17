@@ -10,6 +10,12 @@ anything on another day says so.
 | Lab 5 | [Working with Raster Data](../assignments/lab-05/README.md) |
 | BYU Belonging Map | Wednesday — see [Experiences](../assignments/deliverables.md#experiences) |
 
+## Practice
+
+Not graded, and nothing to hand in — open it on a phone or a laptop as often as you like.
+
+- [Where Should the Water Park Go?](../quizzes/raster/index.html) — What a grid of cells really holds, map algebra one cell at a time, and what a DEM gives you for free.
+
 ## Tuesday — Working with Raster Data, Part 1
 
 **Lecture**{ .badge .badge-lecture } · *Day 10*

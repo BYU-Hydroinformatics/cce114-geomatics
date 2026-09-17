@@ -1,0 +1,167 @@
+"""Where Would You Put It? — Day 22 (Project Site Selection).
+
+Rendered by tools/build_quiz.py to docs/quizzes/siting/index.html. Everything here comes from
+slides/day-22/walmart-site-selection.md, which is the lecture behind Lab 11 and the pattern
+students reuse in the final project.
+"""
+
+SLUG = "siting"
+TITLE = "Where Would You Put It?"
+DAY = 22
+WEEK = 12
+TOPIC = "Project Site Selection"
+DESCRIPTION = ("CCE 114 in-class self-check: how a written requirement becomes a criterion a "
+               "tool can execute, and how to tell a defensible site selection result from one "
+               "that just looks convincing.")
+
+BLURB = """Eight questions in two parts: how a written requirement becomes a
+      <strong>criterion</strong> a tool can execute, and how to chain those tools into a result
+      you can <strong>defend</strong>."""
+
+CLOSING = """\
+        <strong style="color: var(--text);">Before you open QGIS:</strong><br>
+        Write each criterion as a <strong>number with a unit</strong><br>
+        Draw the <strong>workflow</strong> &mdash; layers as rectangles, tools as ovals<br>
+        Check the <strong>CRS</strong> before any distance-based tool, and clip to the study area early<br>
+        <em>The GIS does not pick the site. It narrows the field for the human who does.</em>"""
+
+MESSAGES = [
+    "Every one. Now go draw the workflow for Lab 11 before you open QGIS.",
+    "Solid. Reread the explanations you missed — the criterion questions are the ones Lab 11 grades.",
+    "Worth a second run. This material is on the exam and in Lab 11, and the checklist below is the short version.",
+]
+
+QUESTIONS = [
+    dict(
+        section="Part 1 — Reading a criterion as an operation",
+        prompt="\"Not near an existing Walmart\" cannot be run in QGIS as written. What has to change?",
+        setup="",
+        options=[
+            "It needs a number and a unit — at least 2 miles from any existing Walmart",
+            "It needs to be rewritten as a positive statement rather than a negative one",
+            "It needs the store points converted to polygons first",
+            "Nothing — Buffer accepts a description of proximity",
+        ],
+        correct=0,
+        explanation="That is the whole difference between a wish and a criterion. \"Not near\" is a "
+                    "wish; \"at least 2 miles from any existing Walmart\" is something Buffer can "
+                    "execute and a reader can check. Negatives are fine — Difference is built for "
+                    "them — but the threshold is not optional.",
+    ),
+    dict(
+        section="Part 1 — Reading a criterion as an operation",
+        prompt="Which pair of operations implements \"at least 2 miles from any existing Walmart\"?",
+        setup="You have the nine existing stores as a point layer.",
+        options=[
+            "Buffer the stores 2 miles, then Intersection with your study area",
+            "Buffer the stores 2 miles, then Difference that buffer out of your study area",
+            "Select by Location, then Clip to the store points",
+            "Buffer the stores 2 miles, then Clip your study area to the buffer",
+        ],
+        correct=1,
+        explanation="The buffer is the forbidden zone, so it gets subtracted, not kept. Intersection "
+                    "and Clip are the tempting wrong answers because they start from the same "
+                    "buffer, and both would hand you every location within 2 miles of a competitor "
+                    "— the exact opposite of what was asked. \"Within 2 miles of a highway\" is the "
+                    "criterion that takes Buffer plus Intersection.",
+    ),
+    dict(
+        section="Part 1 — Reading a criterion as an operation",
+        prompt="Three of the four Walmart criteria run straight through as written. Which one still needs a judgment call from you?",
+        setup="",
+        options=[
+            "Proximity to other Walmarts — at least 2 miles from an existing store",
+            "Proximity to major roads — within 2 miles of I-15 or a highway",
+            "Population density — over 2000 people per square kilometer",
+            "Adequate space — room for an average store of about 102,000 ft²",
+        ],
+        correct=3,
+        explanation="The first three are thresholds a tool can test. Adequate space is not: stores "
+                    "run 51,000 to 224,000 ft², and no layer in this stack says whether a location "
+                    "could take one without demolishing large areas of existing buildings. You have "
+                    "to decide what evidence stands in for that, and then say so on the map.",
+    ),
+    dict(
+        section="Part 1 — Reading a criterion as an operation",
+        prompt="Why compute a density field on the census blocks instead of selecting the blocks with the largest population?",
+        setup="2010 census blocks, clipped to Utah County.",
+        options=[
+            "Raw population counts are not published at the block level",
+            "Blocks are tiny downtown and huge in the mountains, so a raw count says as much about the size of the block as about how many people live in it",
+            "Select by Expression cannot compare two numeric columns",
+            "Density is required by the Census redistricting file format",
+        ],
+        correct=1,
+        explanation="A big mountain block can out-count a dense city block and still be nearly "
+                    "empty. Dividing population by area in the Field Calculator takes the size of "
+                    "the block out of the comparison, and only then does the criterion — over 2000 "
+                    "people per square kilometer — mean what it says.",
+    ),
+    dict(
+        section="Part 2 — Chaining it, and believing the answer",
+        prompt="Your 2-mile buffer of I-15 comes out as a chain of overlapping blobs rather than one clean corridor. What happened, and what fixes it?",
+        setup="",
+        options=[
+            "The buffer distance was entered in the wrong units; re-enter it in meters",
+            "I-15 is stored as many separate line features, so each one got its own buffer — Dissolve the result, or check \"dissolve result\" in the Buffer dialog",
+            "The layer is in a geographic CRS, so the buffer is distorted",
+            "The roads layer has duplicate features and needs to be cleaned first",
+        ],
+        correct=1,
+        explanation="Selecting HWYNAME = 'I-15' returns the interstate as many separate segments, "
+                    "and Buffer treats each one on its own. Dissolving — before the buffer or "
+                    "inside it — gives you the single corridor polygon the later overlays expect. "
+                    "The covered area is the same either way, but the leftover seams make a mess of "
+                    "the geometry and the attribute table downstream.",
+    ),
+    dict(
+        section="Part 2 — Chaining it, and believing the answer",
+        prompt="Where does Buffer get the units for the distance you type in?",
+        setup="You want 2 miles.",
+        options=[
+            "From the coordinate reference system of the layer being buffered",
+            "From the project's measurement setting, which defaults to meters",
+            "From whatever unit you pick in the dialog, independent of the data",
+            "From the units of the first layer loaded into the project",
+        ],
+        correct=0,
+        explanation="The units come from the layer's CRS, which is why a distance tool run on an "
+                    "unprojected layer quietly buffers by degrees and hands you nonsense without "
+                    "warning you. Check the CRS of every layer before any distance-based tool, and "
+                    "know the conversion you need: 2 miles is about 3219 meters.",
+    ),
+    dict(
+        section="Part 2 — Chaining it, and believing the answer",
+        prompt="Does the order of the steps matter — clip to Utah County first, or buffer and intersect first and clip at the end?",
+        setup="The same four criteria either way.",
+        options=[
+            "Yes — a different order leaves you with a different set of surviving polygons",
+            "No, it makes no difference at all",
+            "The surviving geometry is the same, but clipping to the county early means every later step runs on a fraction of the data",
+            "Yes — Difference has to run before Intersection or the attributes are lost",
+        ],
+        correct=2,
+        explanation="Intersection and Difference commute here, so what survives is the same either "
+                    "way — which is why \"no difference\" is so tempting. Run time is not the same: "
+                    "cut to the study area early and everything downstream has less to chew on. "
+                    "That matters more in the final project, where the layers are bigger and the "
+                    "chain is longer.",
+    ),
+    dict(
+        section="Part 2 — Chaining it, and believing the answer",
+        prompt="The analysis leaves two surviving clusters, near Spanish Fork and west of Utah Lake. What have you actually produced?",
+        setup="",
+        options=[
+            "The best site, identified objectively by the model",
+            "A candidate set — everything that survived every criterion, for a human to choose among",
+            "A ranked list, with the largest polygon the strongest option",
+            "A preliminary result that becomes an answer once the thresholds are tightened",
+        ],
+        correct=1,
+        explanation="The GIS narrowed the field; it did not decide. Cost, zoning, ownership and "
+                    "politics are in none of these layers. And the shortlist is only as good as the "
+                    "thresholds behind it, so report your criteria and assumptions on the map and "
+                    "ask what would change if 2 miles became 3. That sensitivity is what separates "
+                    "a defensible result from one that merely looks convincing.",
+    ),
+]

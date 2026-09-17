@@ -487,35 +487,6 @@ Also, for the record:
 
 <!-- _class: activity -->
 
-# Your Turn — Does This Map Work?
-
-<div class="columns">
-<div>
-
-Twelve questions on your phone:
-
-- The **elements** every map has to carry
-- What makes a map **ugly**
-- What a map **does to the reader**
-
-Not graded, and every answer explains itself. The checklist at the end is what **Lab 2** is graded against.
-
-<span style="font-size: 0.5em; color: #4a5568; white-space: nowrap;">byu-hydroinformatics.github.io/cce114-geomatics/quizzes/map-elements/</span>
-
-</div>
-<div>
-
-![w:400 center](images/mc-quiz-map-elements-qr.png)
-
-</div>
-</div>
-
-<!-- Five minutes, in pairs, then a show of hands on the two that start an argument: the best title, and what the red counties on the 2012 map actually mean. If the room has no signal, put the URL on the board or read the items aloud; they work either way. The page is linked from the Week 3 page too, so anyone who misses the scan can find it after class. -->
-
----
-
-<!-- _class: activity -->
-
 # Thursday: hands-on in QGIS, Playing with Symbology
 
 ![bg right:38% w:88%](images/mc-emoji-states.jpg)
@@ -545,3 +516,32 @@ Not graded, and every answer explains itself. The checklist at the end is what *
 <!-- Conversion notes (2026-09-02): source deck "Maps and Cartography.pptx" (2021 archive, 28 slides), plus four slides from "Interesting Map Perspectives.pptx" (red-vs-gray population, light pollution, land use, air traffic control zones). Source slide 28 ("Live Demo on Friday — Adjusting symbology in ArcGIS Pro") was replaced with the Thursday-with-Dr.-Halgren preview and rewritten for QGIS; no other source slide was dropped. Section-header slides 6, 11, and 23 became lead slides. Slides built from PowerPoint callout shapes (source slides 8, 15, 17-21) were re-rendered from the PDF at 150 dpi rather than rebuilt. The "Major Cities of Salt Lake and Utah Counties" student layout (mc-major-cities-icon-map.jpg) is an ArcMap/ArcGIS-produced layout; it is kept because the point is the layout checklist, but a QGIS-made replacement would be better. No other ArcGIS screenshots remain. Two slides were added that are not in the source: "The checklist for every map you turn in" and "Symbology by geometry type", both assembled from the callouts and poll options on source slide 8 and source slide 15. Course number corrected from CCE 214 to CCE 114 on the title slide. -->
 
 <!-- Update 2026-09-02: ArcGIS-era screenshots replaced with QGIS 3.44 captures made by tools/qgis_reshoot_screens.py: mc-major-cities-qgis-layout.png replaces the ArcMap student layout. -->
+
+---
+
+<!-- _class: activity -->
+
+# Your Turn — Does This Map Work?
+
+<div class="columns">
+<div>
+
+Eight questions on your phone:
+
+- The **elements** every map has to carry
+- What makes a map **ugly**
+- What a map **does to the reader**
+
+Not graded, and every answer explains itself. The checklist at the end is what **Lab 2** is graded against.
+
+<span style="font-size: 0.5em; color: #4a5568; white-space: nowrap;">byu-hydroinformatics.github.io/cce114-geomatics/quizzes/map-elements/</span>
+
+</div>
+<div>
+
+![w:400 center](images/mc-quiz-map-elements-qr.png)
+
+</div>
+</div>
+
+<!-- Five minutes, in pairs, then a show of hands on the two that start an argument: the best title, and what the red counties on the 2012 map actually mean. If the room has no signal, put the URL on the board or read the items aloud; they work either way. The page is linked from the Week 3 page too, so anyone who misses the scan can find it after class. -->

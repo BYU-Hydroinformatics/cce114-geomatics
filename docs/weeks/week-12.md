@@ -8,6 +8,12 @@ anything on another day says so.
 | Lab 11 | [Walmart Site Selection](../assignments/lab-11/README.md) |
 | Concepts Exam 2 | Testing Center — see [Exams](../policies/exams.md) |
 
+## Practice
+
+Not graded, and nothing to hand in — open it on a phone or a laptop as often as you like.
+
+- [Where Would You Put It?](../quizzes/siting/index.html) — Reading a stated requirement as an operation, chaining the operations, and knowing what the surviving polygons do and do not tell you.
+
 ## Tuesday — Project Site Selection, Part 1
 
 **Lecture**{ .badge .badge-lecture } · *Day 22*

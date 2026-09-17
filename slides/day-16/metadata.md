@@ -649,3 +649,31 @@ Collected 2024, from 6-inch imagery, lineage documented, county GIS contact list
 <!-- Conversion notes (2026-09-02): built from Metadata.pptx (2025, 9 slides), supplemented by "9 - Finding Spatial Data Part 1 - Metadata.pptx" (2017) for the UGRC/gis.utah.gov material. Dropped from the source: nothing substantive; the 2017 deck's AGRC logo image and its Google-Docs class-activity slide were dropped (dead goo.gl link, replaced by the current Learning Suite activity), and the 2025 deck's "Day 2 – But How?" slide became the Thursday preview. The FGDC/ISO 19115 standards section, the Mars Climate Orbiter slide, the fitness-for-use checklist, and the Utah County Boundaries worked example are new material written for this deck, drawn from the Day 16 topic list and the Lab 8 background. No ArcGIS screenshots in this deck: the one software screenshot (images/md-qgis-metadata-panel.jpg) is QGIS, but from an older 2.x-era release, so it is worth re-shooting in QGIS 3.44 LTR when convenient. TODO: confirm the Saturday due date and the Quiz 7 reading links before class. -->
 
 <!-- Update 2026-09-02: ArcGIS-era screenshots replaced with QGIS 3.44 captures made by tools/qgis_reshoot_screens.py: md-qgis-metadata-panel.png re-shot in QGIS 3.44. -->
+
+---
+
+<!-- _class: activity -->
+
+# Your Turn — Would You Drink It?
+
+<div class="columns">
+<div>
+
+Eight questions on your phone:
+
+- Why an undocumented dataset is a **risk**
+- Reading a record, and **deciding**
+
+Not graded, and every answer explains itself. Good practice for Quiz 7 and Lab 8.
+
+<span style="font-size: 0.5em; color: #4a5568; white-space: nowrap;">byu-hydroinformatics.github.io/cce114-geomatics/quizzes/metadata/</span>
+
+</div>
+<div>
+
+![w:400 center](images/md-quiz-metadata-qr.png)
+
+</div>
+</div>
+
+<!-- Five minutes, in pairs. The two worth arguing about out loud are the 1:100,000 roads layer and the Lehi footprints question, where the better-documented dataset is still not the right answer. If the room has no signal, put the URL on the board. The page is linked from the Week 9 page too. -->

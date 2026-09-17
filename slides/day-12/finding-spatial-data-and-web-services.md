@@ -642,3 +642,32 @@ Stale URLs found and fixed: viewer.nationalmap.gov/basic and /advanced-viewer ar
 ArcGIS screenshots: none of the QGIS screenshots need re-shooting; images/web-qgis-*.png and web-qgis-styled-layers.jpg are genuine QGIS 3.x captures reused from Lab 6. The ArcGIS-branded images that remain are web-rest-directory.png and web-rest-featureserver.png (Esri's REST services directory as served by UGRC, viewed in a browser, not the ArcGIS desktop application) and the "ArcGIS REST Server" button chip from the QGIS Data Source Manager — all three are correct as they stand, because UGRC really does serve its data from Esri infrastructure.
 Live captures taken 2026-09-02 (headless Chrome): gis.utah.gov, gis.utah.gov/products/sgid, opendata.gis.utah.gov, data.gov, apps.nationalmap.gov/downloader, earthexplorer.usgs.gov, data-nifc.opendata.arcgis.com, and the UGRC REST directory. The data.gov dataset count (556,482 on the day of capture) and the UGRC service count (891, counted from the REST endpoint) will drift; re-check before quoting them.
 The WMS hillshade on the "OGC standards" slide is a real GetMap response from the USGS 3DEP elevation service for the Wasatch Front, fetched with the URL shown on the "A web service is just a URL" slide. -->
+
+---
+
+<!-- _class: activity -->
+
+# Your Turn — Who Already Has This Data?
+
+<div class="columns">
+<div>
+
+Eight questions on your phone:
+
+- Where the **data** comes from
+- A **picture**, or the features
+- Utah's data, **into QGIS**
+
+Not graded, and every answer explains itself. Good practice for this week's open-book quiz.
+
+<span style="font-size: 0.5em; color: #4a5568; white-space: nowrap;">byu-hydroinformatics.github.io/cce114-geomatics/quizzes/find-data/</span>
+
+</div>
+<div>
+
+![w:400 center](images/web-quiz-find-data-qr.png)
+
+</div>
+</div>
+
+<!-- Five minutes, in pairs, then a show of hands on the two worth arguing about: what a WMS actually sends back, and which service you need before you can buffer anything. Those are the two that decide whether Thursday's map works. If the room has no signal, put the URL on the board. -->

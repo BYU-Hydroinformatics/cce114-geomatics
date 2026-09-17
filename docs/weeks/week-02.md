@@ -13,7 +13,7 @@ anything on another day says so.
 
 Not graded, and nothing to hand in — open it on a phone or a laptop as often as you like.
 
-- [Model, Format, or Reality?](../quizzes/data-models/index.html) — Twelve questions on telling a data model from reality and from the file format it is stored in, naming vector, raster, and TIN, and what each one costs. The quiz behind the QR code on the Day 2 deck.
+- [Model, Format, or Reality?](../quizzes/data-models/index.html) — Telling a data model from reality and from the file format it is stored in, naming vector, raster, and TIN, and what each one costs.
 
 ## Tuesday — GIS Data Models, Part 1
 

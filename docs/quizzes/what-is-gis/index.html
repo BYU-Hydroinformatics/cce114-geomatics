@@ -6,236 +6,7 @@
   <title>CCE 114 — What Is a GIS?</title>
   <meta name="theme-color" content="#002e5d">
   <meta name="description" content="CCE 114 first-day self-check: what a GIS is and is not, the three vector feature types and the attribute table behind them, and how this course works.">
-  <style>
-    :root {
-      --bg: #f6f8fa;
-      --card: #ffffff;
-      --text: #1f2933;
-      --muted: #5f6b7a;
-      --primary: #002e5d;          /* BYU navy, the course site's primary */
-      --primary-hover: #001f3f;
-      --accent: #0062b8;
-      --success: #0f7b3f;
-      --success-bg: #f0faf4;
-      --success-text: #0b4f29;
-      --danger: #b3261e;
-      --danger-bg: #fdf2f1;
-      --danger-text: #7a1a15;
-      --border: #dde3ea;
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    }
-
-    body {
-      background-color: var(--bg);
-      color: var(--text);
-      display: flex;
-      justify-content: center;
-      padding: 2rem 1rem;
-    }
-
-    .container { max-width: 680px; width: 100%; }
-
-    header { text-align: center; margin-bottom: 1.5rem; }
-
-    h1 { font-size: 1.6rem; margin-bottom: 0.5rem; color: var(--primary); }
-
-    p.subtitle { color: var(--muted); font-size: 0.95rem; line-height: 1.45; }
-
-    .score-bar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background: var(--card);
-      padding: 0.75rem 1.25rem;
-      border-radius: 8px;
-      border: 1px solid var(--border);
-      margin-bottom: 1.25rem;
-      font-size: 0.9rem;
-      font-weight: 500;
-    }
-
-    .quiz-card {
-      background: var(--card);
-      border-radius: 12px;
-      border: 1px solid var(--border);
-      padding: 1.75rem;
-      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
-    }
-
-    .section-badge {
-      display: inline-block;
-      font-size: 0.72rem;
-      text-transform: uppercase;
-      font-weight: 700;
-      letter-spacing: 0.06em;
-      color: var(--accent);
-      margin-bottom: 0.5rem;
-    }
-
-    .prompt {
-      font-size: 1.2rem;
-      font-weight: 700;
-      line-height: 1.35;
-      margin-bottom: 0.5rem;
-      color: #10243a;
-    }
-
-    .setup {
-      color: var(--muted);
-      font-size: 0.95rem;
-      margin-bottom: 1.4rem;
-      line-height: 1.45;
-    }
-
-    .options { display: grid; gap: 0.7rem; margin-bottom: 1.25rem; }
-
-    button.opt-btn {
-      display: flex;
-      align-items: flex-start;
-      gap: 0.7rem;
-      width: 100%;
-      text-align: left;
-      padding: 0.85rem 1rem;
-      font-size: 1rem;
-      line-height: 1.35;
-      font-weight: 500;
-      border: 2px solid var(--border);
-      background: #ffffff;
-      color: var(--text);
-      border-radius: 8px;
-      cursor: pointer;
-      transition: all 0.15s ease-in-out;
-    }
-
-    button.opt-btn:hover:not(:disabled) {
-      border-color: var(--accent);
-      color: var(--primary);
-      background: #eef5fc;
-    }
-
-    button.opt-btn:disabled { cursor: default; }
-
-    .opt-letter {
-      flex: 0 0 1.5rem;
-      font-weight: 700;
-      color: var(--accent);
-    }
-
-    button.correct {
-      background: var(--success) !important;
-      border-color: var(--success) !important;
-      color: #ffffff !important;
-    }
-
-    button.incorrect {
-      background: var(--danger) !important;
-      border-color: var(--danger) !important;
-      color: #ffffff !important;
-    }
-
-    button.correct .opt-letter,
-    button.incorrect .opt-letter { color: #ffffff; }
-
-    .feedback {
-      display: none;
-      padding: 1rem;
-      border-radius: 8px;
-      font-size: 0.95rem;
-      line-height: 1.45;
-      margin-bottom: 1.25rem;
-    }
-
-    .feedback.visible { display: block; }
-
-    .feedback.correct-box {
-      background-color: var(--success-bg);
-      border-left: 4px solid var(--success);
-      color: var(--success-text);
-    }
-
-    .feedback.incorrect-box {
-      background-color: var(--danger-bg);
-      border-left: 4px solid var(--danger);
-      color: var(--danger-text);
-    }
-
-    .feedback strong { display: block; margin-bottom: 0.25rem; }
-
-    .controls { display: flex; justify-content: flex-end; }
-
-    button.next-btn {
-      padding: 0.65rem 1.4rem;
-      font-size: 0.95rem;
-      font-weight: 600;
-      background: var(--primary);
-      color: #ffffff;
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
-      display: none;
-    }
-
-    button.next-btn:hover { background: var(--primary-hover); }
-
-    .final-screen { display: none; text-align: center; padding: 2rem 1rem; }
-
-    .final-screen h2 { font-size: 1.5rem; margin-bottom: 0.75rem; color: var(--primary); }
-
-    .final-score {
-      font-size: 2.5rem;
-      font-weight: 800;
-      color: var(--primary);
-      margin-bottom: 1rem;
-    }
-
-    .checklist {
-      text-align: left;
-      display: inline-block;
-      margin: 0.5rem auto 0;
-      color: var(--muted);
-      font-size: 0.9rem;
-      line-height: 1.6;
-    }
-
-    button.restart-btn {
-      padding: 0.75rem 1.5rem;
-      font-size: 1rem;
-      font-weight: 600;
-      background: var(--primary);
-      color: #ffffff;
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
-      margin-top: 1.5rem;
-    }
-
-    footer.page-foot {
-      text-align: center;
-      margin-top: 1.5rem;
-      font-size: 0.8rem;
-      color: var(--muted);
-    }
-
-    footer.page-foot a { color: var(--muted); }
-
-    /* Phones: this quiz is meant to be scanned off a slide and answered on a handset. */
-    @media (max-width: 480px) {
-      body { padding: 1rem 0.75rem; }
-      h1 { font-size: 1.25rem; }
-      .quiz-card { padding: 1.1rem; }
-      .prompt { font-size: 1.05rem; }
-      .options { gap: 0.55rem; }
-      button.opt-btn { padding: 0.9rem 0.7rem; font-size: 0.95rem; }
-      .controls { justify-content: stretch; }
-      button.next-btn { width: 100%; padding: 0.8rem 1rem; }
-    }
-  </style>
+  <link rel="stylesheet" href="../assets/quiz.css">
 </head>
 <body>
 
@@ -243,13 +14,13 @@
   <header>
     <h1>What Is a GIS?</h1>
     <p class="subtitle">CCE 114 &middot; Day 1 &mdash; Introduction to Geomatics and to GIS<br>
-      Twelve questions in three parts: what a GIS <strong>is</strong> and is not, the
+      Eight questions in three parts: what a GIS <strong>is</strong> and is not, the
       <strong>features</strong> and the table behind them, and how this <strong>course</strong>
       works.</p>
   </header>
 
   <div class="score-bar" id="scoreBar">
-    <span id="progressText">Question 1 of 12</span>
+    <span id="progressText">Question 1 of 8</span>
     <span id="scoreText">Score: 0 / 0</span>
   </div>
 
@@ -264,13 +35,13 @@
       <div class="feedback" id="feedbackBox"></div>
 
       <div class="controls">
-        <button class="next-btn" id="nextBtn" onclick="nextQuestion()">Next &rarr;</button>
+        <button class="next-btn" id="nextBtn">Next &rarr;</button>
       </div>
     </div>
 
     <div class="final-screen" id="finalScreen">
       <h2>Done</h2>
-      <div class="final-score" id="finalScoreDisplay">0 / 12</div>
+      <div class="final-score" id="finalScoreDisplay">0 / 8</div>
       <p id="finalFeedbackText" style="color: var(--muted); margin-bottom: 1rem;"></p>
       <div class="checklist">
         <strong style="color: var(--text);">Before Tuesday:</strong><br>
@@ -280,7 +51,7 @@
         <em>Lab 1 assumes QGIS is already working on your own machine.</em>
       </div>
       <br>
-      <button class="restart-btn" onclick="restartQuiz()">Start over</button>
+      <button class="restart-btn" id="restartBtn">Start over</button>
     </div>
   </div>
 
@@ -291,277 +62,122 @@
   </footer>
 </div>
 
-<script>
-  const questions = [
+<script type="application/json" id="quizData">
+{
+  "messages": [
+    "Every one, on the first day. Now go install QGIS.",
+    "Solid. Read the explanations on the ones you missed — none of this is meant to be known in advance.",
+    "This is day one, so nothing here was supposed to be obvious. Read the explanations and run it again."
+  ],
+  "questions": [
     {
-      section: "Part 1 — What a GIS is",
-      prompt: "What is a GIS?",
-      setup: "",
-      options: [
+      "section": "Part 1 — What a GIS is",
+      "prompt": "What is a GIS?",
+      "setup": "",
+      "options": [
         "A collection of maps",
         "A database",
         "Hardware, software, and data working together",
-        "All of the above",
+        "All of the above"
       ],
-      correct: 3,
-      explanation: "A GIS is all of these at once: computer hardware and software that integrate spatial features, attribute data, and the analysis tools that work on them. A map is one thing a GIS can produce, not the thing itself."
+      "correct": 3,
+      "explanation": "A GIS is all of these at once: computer hardware and software that integrate spatial features, attribute data, and the analysis tools that work on them. A map is one thing a GIS can produce, not the thing itself."
     },
     {
-      section: "Part 1 — What a GIS is",
-      prompt: "Which of these would you NOT use a GIS for?",
-      setup: "",
-      options: [
+      "section": "Part 1 — What a GIS is",
+      "prompt": "Which of these would you NOT use a GIS for?",
+      "setup": "",
+      "options": [
         "Deciding where to put an airport",
         "Mapping flooding after a hurricane in North Carolina",
         "Designing a high-rise building",
-        "Managing a city's water and sewer infrastructure",
+        "Managing a city's water and sewer infrastructure"
       ],
-      correct: 2,
-      explanation: "Designing the building itself is CAD and BIM work, not GIS. A GIS still has plenty to say about the site around it — where to put it, what it floods, what it connects to — so the line is about the design work, not the project."
+      "correct": 2,
+      "explanation": "Designing the building itself is CAD and BIM work, not GIS. A GIS still has plenty to say about the site around it — where to put it, what it floods, what it connects to — so the line is about the design work, not the project."
     },
     {
-      section: "Part 1 — What a GIS is",
-      prompt: "Which GIS software does this course use?",
-      setup: "",
-      options: [
+      "section": "Part 1 — What a GIS is",
+      "prompt": "Which GIS software does this course use?",
+      "setup": "",
+      "options": [
         "ArcGIS Pro",
         "QGIS",
         "Civil 3D",
-        "AutoCAD",
+        "AutoCAD"
       ],
-      correct: 1,
-      explanation: "QGIS: free, open source, and it runs on both Mac and Windows, so you install it on your own machine and keep it after you graduate. If you guessed ArcGIS Pro, that is the software CCE 414 uses; Civil 3D and AutoCAD are design tools, not GIS."
+      "correct": 1,
+      "explanation": "QGIS: free, open source, and it runs on both Mac and Windows, so you install it on your own machine and keep it after you graduate. If you guessed ArcGIS Pro, that is the software CCE 414 uses; Civil 3D and AutoCAD are design tools, not GIS."
     },
     {
-      section: "Part 1 — What a GIS is",
-      prompt: "A GIS integrates three things. Which three?",
-      setup: "",
-      options: [
-        "Maps, photographs, and drawings",
-        "Spatial features, attribute data, and analysis tools",
-        "Points, polylines, and polygons",
-        "Hardware, software, and a license",
-      ],
-      correct: 1,
-      explanation: "Features are the shapes on the map, attributes are the table behind them, and the tools are what turn the two into an answer. Points, polylines, and polygons are only the first of the three."
-    },
-    {
-      section: "Part 2 — Features and the table behind them",
-      prompt: "Utah city boundaries, the road network, and city centers. Which feature type is each?",
-      setup: "",
-      options: [
+      "section": "Part 2 — Features and the table behind them",
+      "prompt": "Utah city boundaries, the road network, and city centers. Which feature type is each?",
+      "setup": "",
+      "options": [
         "Polygon, polyline, point",
         "Polyline, polygon, point",
         "Polygon, point, polyline",
-        "They are all polygons at different scales",
+        "They are all polygons at different scales"
       ],
-      correct: 0,
-      explanation: "A city boundary encloses an area, so it is a polygon. A road has length but no area, so it is a polyline. A city center is a single location, so it is a point. Those three are the vector feature types you will meet all semester."
+      "correct": 0,
+      "explanation": "A city boundary encloses an area, so it is a polygon. A road has length but no area, so it is a polyline. A city center is a single location, so it is a point. Those three are the vector feature types you will meet all semester."
     },
     {
-      section: "Part 2 — Features and the table behind them",
-      prompt: "How is an attribute table organized?",
-      setup: "",
-      options: [
+      "section": "Part 2 — Features and the table behind them",
+      "prompt": "How is an attribute table organized?",
+      "setup": "",
+      "options": [
         "One row per layer, one column per feature",
         "One row per feature, one column per attribute",
         "One row per attribute, one column per feature",
-        "One row per map, one column per layer",
+        "One row per map, one column per layer"
       ],
-      correct: 1,
-      explanation: "Every feature on the map owns exactly one row. Select a row and the feature lights up on the map; click the feature and its row is the one highlighted. That link is what makes it a GIS rather than a drawing."
+      "correct": 1,
+      "explanation": "Every feature on the map owns exactly one row. Select a row and the feature lights up on the map; click the feature and its row is the one highlighted. That link is what makes it a GIS rather than a drawing."
     },
     {
-      section: "Part 2 — Features and the table behind them",
-      prompt: "You replace a city's boundary polygon with a single point at its center. What have you thrown away?",
-      setup: "",
-      options: [
-        "The attribute table",
-        "Its area, its shape, and its boundary",
-        "Its coordinates",
-        "Nothing — a point carries the same information",
-      ],
-      correct: 1,
-      explanation: "The attributes come along; the geometry does not. A point keeps where the city is and loses how big it is, what shape it has, and where it ends. That is a fair trade for a dot on a national map and a bad one for a zoning question."
-    },
-    {
-      section: "Part 2 — Features and the table behind them",
-      prompt: "Is a river a polyline or a polygon?",
-      setup: "",
-      options: [
+      "section": "Part 2 — Features and the table behind them",
+      "prompt": "Is a river a polyline or a polygon?",
+      "setup": "",
+      "options": [
         "Always a polyline — rivers flow in one direction",
         "Always a polygon — rivers have width",
         "It depends on the scale you are working at",
-        "Neither; a river is a raster",
+        "Neither; a river is a raster"
       ],
-      correct: 2,
-      explanation: "On a map of the state, a river is a line and its width is beneath the resolution of the map. On a map of one reach for a flood study, the banks matter and it is a polygon. The feature type follows the question you are asking, not the object."
+      "correct": 2,
+      "explanation": "On a map of the state, a river is a line and its width is beneath the resolution of the map. On a map of one reach for a flood study, the banks matter and it is a polygon. The feature type follows the question you are asking, not the object."
     },
     {
-      section: "Part 2 — Features and the table behind them",
-      prompt: "You run Buffer from the Processing Toolbox. What question does it answer?",
-      setup: "",
-      options: [
-        "What is within a given distance of this feature?",
-        "What is the total area of this layer?",
-        "Which features overlap each other?",
-        "What does this layer look like in another coordinate system?",
-      ],
-      correct: 0,
-      explanation: "Buffer draws the zone within X of something — within 100 m of a stream, within a quarter mile of a bus stop. It is usually the first analysis tool anyone runs, and it is the start of most site-selection work."
-    },
-    {
-      section: "Part 3 — How this course works",
-      prompt: "What does your grade come from?",
-      setup: "",
-      options: [
+      "section": "Part 3 — How this course works",
+      "prompt": "What does your grade come from?",
+      "setup": "",
+      "options": [
         "A midterm and a final exam",
         "Weekly readings with open-book quizzes, weekly hands-on labs, and in-class discussion, attendance, and participation",
         "Lab reports only",
-        "A single semester project",
+        "A single semester project"
       ],
-      correct: 1,
-      explanation: "Three things, every week: read and take the open-book quiz, do the lab, and show up and take part. Attendance and participation are worth 25 points across the semester, and you mark your attendance each week."
+      "correct": 1,
+      "explanation": "Three things, every week: read and take the open-book quiz, do the lab, and show up and take part. Attendance and participation are worth 25 points across the semester, and you mark your attendance each week."
     },
     {
-      section: "Part 3 — How this course works",
-      prompt: "Which of these follows the course's AI policy?",
-      setup: "You are encouraged to use AI tools — responsibly.",
-      options: [
+      "section": "Part 3 — How this course works",
+      "prompt": "Which of these follows the course's AI policy?",
+      "setup": "You are encouraged to use AI tools — responsibly.",
+      "options": [
         "Have AI produce the maps and the analysis, then check them yourself",
         "Ask AI how to do something in QGIS or to explain a concept, do the GIS work yourself, and say so if AI helped with the writing",
         "Avoid AI entirely; it is not permitted in this course",
-        "Use AI however you like — there is nothing to report",
+        "Use AI however you like — there is nothing to report"
       ],
-      correct: 1,
-      explanation: "Use AI to learn, not to produce. Build your own maps, run your own analysis, and solve the problems with your own brain — then report it whenever AI helped with your writing or with working a problem out. The full policy is on the course site."
-    },
-    {
-      section: "Part 3 — How this course works",
-      prompt: "Your syllabus, the schedule page, and Learning Suite disagree about a due date. Which one wins?",
-      setup: "",
-      options: [
-        "The course site — it is updated most often",
-        "The syllabus — it is the contract",
-        "Learning Suite — scores, due dates, and course materials all live there",
-        "Whichever is latest",
-      ],
-      correct: 2,
-      explanation: "Learning Suite is where you submit, where your scores appear, and where the authoritative dates live. The course site is written by week number so it survives being taught again, which is exactly why it is not the place to settle a date."
-    },
-  ];
-  const LETTERS = ["A", "B", "C", "D", "E", "F"];
-
-  let currentIndex = 0;
-  let score = 0;
-  let answered = false;
-
-  const sectionBadge = document.getElementById("sectionBadge");
-  const promptText = document.getElementById("promptText");
-  const setupText = document.getElementById("setupText");
-  const optionsBox = document.getElementById("optionsBox");
-  const feedbackBox = document.getElementById("feedbackBox");
-  const nextBtn = document.getElementById("nextBtn");
-  const progressText = document.getElementById("progressText");
-  const scoreText = document.getElementById("scoreText");
-  const quizContent = document.getElementById("quizContent");
-  const finalScreen = document.getElementById("finalScreen");
-  const finalScoreDisplay = document.getElementById("finalScoreDisplay");
-  const finalFeedbackText = document.getElementById("finalFeedbackText");
-  const scoreBar = document.getElementById("scoreBar");
-
-  function loadQuestion() {
-    answered = false;
-    const q = questions[currentIndex];
-
-    sectionBadge.textContent = q.section;
-    promptText.textContent = q.prompt;
-    setupText.textContent = q.setup || "";
-    setupText.style.display = q.setup ? "block" : "none";
-
-    optionsBox.innerHTML = "";
-    q.options.forEach(function (text, i) {
-      const btn = document.createElement("button");
-      btn.className = "opt-btn";
-      btn.innerHTML = '<span class="opt-letter">' + LETTERS[i] + '</span><span></span>';
-      btn.lastChild.textContent = text;
-      btn.onclick = function () { checkAnswer(i); };
-      optionsBox.appendChild(btn);
-    });
-
-    feedbackBox.className = "feedback";
-    feedbackBox.innerHTML = "";
-    nextBtn.style.display = "none";
-
-    progressText.textContent = "Question " + (currentIndex + 1) + " of " + questions.length;
-  }
-
-  function checkAnswer(selected) {
-    if (answered) return;
-    answered = true;
-
-    const q = questions[currentIndex];
-    const isCorrect = selected === q.correct;
-    if (isCorrect) score++;
-
-    scoreText.textContent = "Score: " + score + " / " + (currentIndex + 1);
-
-    const btns = optionsBox.querySelectorAll("button.opt-btn");
-    btns.forEach(function (btn, i) {
-      btn.disabled = true;
-      if (i === q.correct) btn.classList.add("correct");
-      if (i === selected && !isCorrect) btn.classList.add("incorrect");
-    });
-
-    feedbackBox.classList.add("visible");
-    feedbackBox.classList.add(isCorrect ? "correct-box" : "incorrect-box");
-    const head = (isCorrect ? "✓ Correct" : "✗ Not quite") +
-                 " — " + LETTERS[q.correct] + ". " + q.options[q.correct];
-    feedbackBox.innerHTML = "<strong></strong>";
-    feedbackBox.firstChild.textContent = head;
-    feedbackBox.appendChild(document.createTextNode(q.explanation));
-
-    nextBtn.textContent = (currentIndex === questions.length - 1) ? "See how you did" : "Next →";
-    nextBtn.style.display = "inline-block";
-  }
-
-  function nextQuestion() {
-    currentIndex++;
-    if (currentIndex < questions.length) {
-      loadQuestion();
-    } else {
-      showResults();
+      "correct": 1,
+      "explanation": "Use AI to learn, not to produce. Build your own maps, run your own analysis, and solve the problems with your own brain — then report it whenever AI helped with your writing or with working a problem out. The full policy is on the course site."
     }
-  }
-
-  function showResults() {
-    quizContent.style.display = "none";
-    scoreBar.style.display = "none";
-    finalScreen.style.display = "block";
-
-    finalScoreDisplay.textContent = score + " / " + questions.length;
-
-    if (score === questions.length) {
-      finalFeedbackText.textContent = "Every one, on the first day. Now go install QGIS.";
-    } else if (score >= 9) {
-      finalFeedbackText.textContent = "Solid. Read the explanations on the ones you missed — none of this is meant to be known in advance.";
-    } else {
-      finalFeedbackText.textContent = "This is day one, so nothing here was supposed to be obvious. Read the explanations and run it again.";
-    }
-  }
-
-  function restartQuiz() {
-    currentIndex = 0;
-    score = 0;
-    scoreBar.style.display = "flex";
-    quizContent.style.display = "block";
-    finalScreen.style.display = "none";
-    scoreText.textContent = "Score: 0 / 0";
-    loadQuestion();
-  }
-
-  loadQuestion();
+  ]
+}
 </script>
+<script src="../assets/quiz.js"></script>
 
 </body>
 </html>

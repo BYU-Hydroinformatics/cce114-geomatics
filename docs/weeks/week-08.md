@@ -9,6 +9,12 @@ anything on another day says so.
 | Quiz 6 | [Map Projections and Coordinate Systems](../assignments/deliverables.md#reading-quizzes) — open book, on Learning Suite |
 | Lab 7 | [Projections and Coordinate Systems](../assignments/lab-07/README.md) |
 
+## Practice
+
+Not graded, and nothing to hand in — open it on a phone or a laptop as often as you like.
+
+- [Why Is Greenland So Big?](../quizzes/projections/index.html) — What every flat map gives up, how a projection is fitted to the ground, and the difference between declaring a CRS and reprojecting into one.
+
 ## Tuesday — Geodesy, Projections, and Coordinate Systems, Part 1
 
 **Lecture**{ .badge .badge-lecture } · *Day 14*

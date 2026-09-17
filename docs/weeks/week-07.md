@@ -9,6 +9,12 @@ anything on another day says so.
 | Lab 6 | [Spatial Data Web Services](../assignments/lab-06/README.md) |
 | Concepts Exam 1 | Testing Center, midweek — see [Exams](../policies/exams.md) |
 
+## Practice
+
+Not graded, and nothing to hand in — open it on a phone or a laptop as often as you like.
+
+- [Who Already Has This Data?](../quizzes/find-data/index.html) — Where spatial data actually comes from, the difference between a picture of the data and the features themselves, and getting Utah's data into QGIS.
+
 ## Tuesday — Finding Spatial Data and Web Services
 
 **Lecture**{ .badge .badge-lecture } · *Day 12*

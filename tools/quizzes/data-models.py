@@ -10,7 +10,7 @@ WEEK = 2
 TOPIC = "GIS Data Models and File Formats"
 DESCRIPTION = "CCE 114 in-class self-check: model versus reality versus file format, naming the vector, raster, and TIN data models, and what each one costs."
 
-BLURB = """Twelve questions in three parts: telling a <strong>model</strong> from reality and from the
+BLURB = """Eight questions in three parts: telling a <strong>model</strong> from reality and from the
       <strong>file format</strong> it is stored in, naming the model you are looking at, and what
       each one <strong>costs</strong> you."""
 
@@ -56,19 +56,6 @@ QUESTIONS = [
     ),
     dict(
         section="Part 1 — Model, format, or reality",
-        prompt="You export the roads layer from a shapefile to a GeoPackage. What changed?",
-        setup="",
-        options=[
-            "The data model — GeoPackage layers are stored differently, so they are no longer polylines",
-            "Only the storage. The roads are still polylines, and the coordinates are the same numbers",
-            "Nothing at all — GeoPackage is just a renamed shapefile",
-            "The geometry is simplified to fit the new format",
-        ],
-        correct=1,
-        explanation="One data model, many possible formats. Shapefile, GeoPackage, GeoJSON, and KML are four ways of writing down the same polylines; QGIS reads them all, and changing the format does not change the model.",
-    ),
-    dict(
-        section="Part 1 — Model, format, or reality",
         prompt="A classmate emails you one file, UtahCountyMajorRoads.shp, and nothing else. What happens when you open it?",
         setup="A shapefile is really a set of files that travel together.",
         options=[
@@ -108,32 +95,6 @@ QUESTIONS = [
     ),
     dict(
         section="Part 2 — Name the data model",
-        prompt="The cellular towers layer from the QGIS demo. What does the computer actually have to store for each tower?",
-        setup="",
-        options=[
-            "A coordinate pair, (x, y)",
-            "An ordered list of coordinate pairs",
-            "A grid of cells covering the county",
-            "A triangle mesh",
-        ],
-        correct=0,
-        explanation="One point, one coordinate pair — that is the whole geometry. Everything else about the tower (owner, height, carrier) lives in its row of the attribute table, one row per feature.",
-    ),
-    dict(
-        section="Part 2 — Name the data model",
-        prompt="Colorado has four corners, but the coordinate table for it has five rows. Why?",
-        setup="",
-        options=[
-            "One row stores the center of the state",
-            "The fifth row is the coordinate system",
-            "The last pair repeats the first, to close the ring",
-            "A rounding check, so the area computes correctly",
-        ],
-        correct=2,
-        explanation="A polygon has to close: the last vertex repeats the first. That is what separates the polygon data model from a polyline that happens to end near where it started, and it is true of nearly every spatial format you will meet.",
-    ),
-    dict(
-        section="Part 2 — Name the data model",
         prompt="Terrain drawn as a wireframe surface, where the mesh is a regular grid of equally spaced elevation values. Raster or TIN?",
         setup="",
         options=[
@@ -157,19 +118,6 @@ QUESTIONS = [
         ],
         correct=2,
         explanation="The extra bytes bought pixelated edges, not accuracy. Storage is not precision, and a finer grid only makes both numbers worse. A state boundary is a discrete line, so the vector model fits it.",
-    ),
-    dict(
-        section="Part 3 — Choosing a model, and what it costs",
-        prompt="Why does a TIN put small triangles in some places and large ones in others?",
-        setup="",
-        options=[
-            "The triangles shrink toward the edges of the dataset",
-            "Detail follows the surface — many small triangles where it bends, few large ones where it is flat",
-            "Triangle size is set by the coordinate system",
-            "Smaller triangles are drawn wherever the data are older",
-        ],
-        correct=1,
-        explanation="That is the whole point of a TIN, and why game engines and engineering surface models use them: spend vertices where the shape changes and none where it does not. A raster cannot do this — its grid is the same spacing everywhere.",
     ),
     dict(
         section="Part 3 — Choosing a model, and what it costs",

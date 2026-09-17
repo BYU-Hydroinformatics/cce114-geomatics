@@ -10,7 +10,7 @@ WEEK = 3
 TOPIC = "Maps, Symbology, and Cartography"
 DESCRIPTION = "CCE 114 in-class self-check: the required map elements, what makes a map ugly, and what a map does to the reader who looks at it."
 
-BLURB = """Twelve questions in three parts: the <strong>elements</strong> every map you turn in must carry,
+BLURB = """Eight questions in three parts: the <strong>elements</strong> every map you turn in must carry,
       what makes a map <strong>ugly</strong>, and what a map <strong>does to the reader</strong> looking at it."""
 
 CLOSING = """\
@@ -55,19 +55,6 @@ QUESTIONS = [
     ),
     dict(
         section="Part 1 — What goes in every map",
-        prompt="What is a neat line?",
-        setup="",
-        options=[
-            "The border that frames the map",
-            "The outline of the study-area polygon",
-            "The divider between the map and the legend",
-            "The line style used for roads and streams",
-        ],
-        correct=0,
-        explanation="A neat line is the frame around the map. It tells the reader where the map stops and the page begins — which matters most when the data run right to the edge.",
-    ),
-    dict(
-        section="Part 1 — What goes in every map",
         prompt="Which is the best title for a map figure in an engineering report?",
         setup="",
         options=[
@@ -78,19 +65,6 @@ QUESTIONS = [
         ],
         correct=2,
         explanation="A title answers “what is this a map of?” — subject, place, and when. “Utah County” names the place but not the subject; “Figure 3” and “Final Map” name neither.",
-    ),
-    dict(
-        section="Part 1 — What goes in every map",
-        prompt="In QGIS, where do you assemble the title, legend, scale bar, and north arrow?",
-        setup="You have your layers styled the way you want them in the map canvas.",
-        options=[
-            "Layer Properties › Symbology",
-            "The Print Layout",
-            "The attribute table",
-            "Project › Properties",
-        ],
-        correct=1,
-        explanation="Symbology decides how the data look; the Print Layout is where the map becomes a figure. Layout elements — map frame, title, legend, scale bar, north arrow, and a spatial reference block — are all added there.",
     ),
     dict(
         section="Part 1 — What goes in every map",
@@ -117,19 +91,6 @@ QUESTIONS = [
         ],
         correct=0,
         explanation="It does the hard part — a clear subject and a legend that explains the shading — and then skips the scale bar, the north arrow, and any statement of who made it, from what, and when. That last omission is the one that would sink it in a report.",
-    ),
-    dict(
-        section="Part 2 — Ugly maps",
-        prompt="You inherit a map with twelve layers switched on, a full-color street basemap under everything, labels colliding, and no obvious subject. What do you fix first?",
-        setup="",
-        options=[
-            "Increase the label font size",
-            "Switch to a different color ramp",
-            "Add the missing north arrow",
-            "Decide what the map is for, then turn off everything that does not serve it",
-        ],
-        correct=3,
-        explanation="Clutter is not a styling problem, it is a scoping problem. Ask what the map is for and who is reading it; the color, type, and layout decisions only have right answers once that is settled.",
     ),
     dict(
         section="Part 2 — Ugly maps",
@@ -169,18 +130,5 @@ QUESTIONS = [
         ],
         correct=2,
         explanation="The quantity is a difference, not a temperature, and a red-means-hot ramp on a difference map makes the argument before the reader gets to the legend. The ramp is a claim; choose it as deliberately as you choose the data.",
-    ),
-    dict(
-        section="Part 3 — What the map does to the reader",
-        prompt="“Camp 3” on a USGS quad map is really Camp David. Elsewhere, a block of imagery over part of Girona, Spain, is blacked out entirely. What is the difference?",
-        setup="Two ways a map can keep a secret.",
-        options=[
-            "Both are omission",
-            "Both are obfuscation",
-            "The first is obfuscation — drawn, but labeled so you cannot tell what it is; the second is omission — removed outright",
-            "The first is a scale problem; the second is a resolution problem",
-        ],
-        correct=2,
-        explanation="Obfuscation leaves the feature on the map and hides what it is. Omission takes it off. Both are editorial decisions, and both are worth asking about on any map you did not make yourself — what did the mapmaker decide to leave out?",
     ),
 ]
