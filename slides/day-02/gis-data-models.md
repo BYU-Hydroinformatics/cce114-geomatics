@@ -637,6 +637,35 @@ Each pixel (raster cell) is stored as a hexadecimal number that tells the screen
 
 <!-- _class: activity -->
 
+# Your Turn — Model, Format, or Reality?
+
+<div class="columns">
+<div>
+
+Twelve questions on your phone:
+
+- Telling a **model** from reality, and from the **file format** it is stored in
+- **Naming** the model in front of you
+- What each model **costs** you
+
+Not graded, and every answer explains itself. Good practice for this week's open-book quiz.
+
+<span style="font-size: 0.5em; color: #4a5568; white-space: nowrap;">byu-hydroinformatics.github.io/cce114-geomatics/quizzes/data-models/</span>
+
+</div>
+<div>
+
+![w:400 center](images/dm-quiz-data-models-qr.png)
+
+</div>
+</div>
+
+<!-- Five minutes, in pairs, then a show of hands on the two worth arguing about: whether the raft video is a model, and whether the 360-byte raster of Colorado is better than the 80-byte polygon. If the room has no signal, put the URL on the board or read the items aloud. The page is linked from the Week 2 page too, so anyone who misses the scan can find it after class. -->
+
+---
+
+<!-- _class: activity -->
+
 # Thursday: hands-on in QGIS
 
 ![bg right:40% w:90%](images/dm-demo-point.png)
@@ -657,7 +686,7 @@ Each pixel (raster cell) is stored as a hexadecimal number that tells the screen
 - Read Chapter 2, *Data Models*, in *GIS Fundamentals* (Bolstad & Manson)
 - Take the open-book quiz on Learning Suite
 - Bring your laptop with QGIS installed on Thursday, and download [UtahCountyData.zip](https://github.com/BYU-Hydroinformatics/cce114-geomatics/releases/download/course-data-2026/UtahCountyData.zip) beforehand
-- Current lab: see the [Assignments page](https://byu-hydroinformatics.github.io/cce114-geomatics/assignments/)
+- Current lab: see the [Schedule](https://byu-hydroinformatics.github.io/cce114-geomatics/schedule/)
 - Questions? Office hours: [calendly.com/dan-ames/office-hours](https://calendly.com/dan-ames/office-hours)
 
 <!-- Fill in the quiz due date and the current lab before class. -->

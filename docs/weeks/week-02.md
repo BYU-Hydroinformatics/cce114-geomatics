@@ -9,6 +9,12 @@ anything on another day says so.
 | Quiz 1 | [Intro to GIS & Map Design Fundamentals](../assignments/deliverables.md#reading-quizzes) — open book, on Learning Suite |
 | Lab 1 | [Getting Started with GIS](../assignments/lab-01/README.md) |
 
+## Practice
+
+Not graded, and nothing to hand in — open it on a phone or a laptop as often as you like.
+
+- [Model, Format, or Reality?](../quizzes/data-models/index.html) — Twelve questions on telling a data model from reality and from the file format it is stored in, naming vector, raster, and TIN, and what each one costs. The quiz behind the QR code on the Day 2 deck.
+
 ## Tuesday — GIS Data Models, Part 1
 
 **Lecture**{ .badge .badge-lecture } · *Day 2*

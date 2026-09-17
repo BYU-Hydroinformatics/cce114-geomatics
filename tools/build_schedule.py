@@ -239,6 +239,10 @@ TUESDAY_NOTES_DAYS = {2, 6, 10, 12, 14, 16, 20}
 # the QR code on that week's deck and from the week page afterward by anyone who missed the
 # scan. Nothing is graded and nothing is handed in.
 PRACTICE = {
+    2: [("data-models", "Model, Format, or Reality?",
+         "Twelve questions on telling a data model from reality and from the file format it is "
+         "stored in, naming vector, raster, and TIN, and what each one costs. The quiz behind the "
+         "QR code on the Day 2 deck.")],
     3: [("map-elements", "Does This Map Work?",
          "Twelve questions on the required map elements, what makes a map ugly, and what a map "
          "does to the reader looking at it. The quiz behind the QR code on the Day 4 deck.")],

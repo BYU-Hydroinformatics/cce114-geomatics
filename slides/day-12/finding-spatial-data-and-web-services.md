@@ -631,7 +631,7 @@ https://services1.arcgis.com/99lidPhWCzftIe9K/ArcGIS/rest/services
 - Take the open-book quiz on **Learning Suite**
 - **Concepts Exam 1** is this week in the **Testing Center** — check the closing time and do not leave it to the last hour
 - **Lab 6: [Spatial Data Web Services](https://byu-hydroinformatics.github.io/cce114-geomatics/assignments/lab-06/)** is due **Saturday**
-- All assignments: the [Assignments page](https://byu-hydroinformatics.github.io/cce114-geomatics/assignments/)
+- All assignments: the [Schedule](https://byu-hydroinformatics.github.io/cce114-geomatics/schedule/)
 - Questions? Office hours: [calendly.com/dan-ames/office-hours](https://calendly.com/dan-ames/office-hours)
 
 <!-- Confirm the Testing Center closing time and the quiz due date before class. Lab 6 builds directly on Thursday's activity, so students who do Thursday's map well are most of the way through the lab. -->
