@@ -1,5 +1,11 @@
 # Week 1 — Introduction
 
+**This week's reading.**
+
+| What | Details |
+| --- | --- |
+| Reading | GIS Fundamentals (Bolstad & Manson), Chapter 1 |
+
 ## Day 1 — Course Introduction and Introduction to GIS
 
 **Lecture**{ .badge .badge-lecture } · *Day 1*
@@ -22,7 +28,3 @@
 ### In-class activity
 
 Spatial identity getting-to-know-you activity; class activity sheet on uses of GIS in civil and construction engineering. Record your completion on Learning Suite.
-
-### Reading
-
-GIS Fundamentals (Bolstad & Manson), Chapter 1

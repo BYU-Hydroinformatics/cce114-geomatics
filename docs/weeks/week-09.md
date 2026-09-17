@@ -1,9 +1,12 @@
 # Week 9 — Metadata
 
-**Due this week (Saturday, 11:59 pm unless noted):**
+**Due this week.** Quizzes and lab reports are due **Saturday at 11:59 pm**;
+anything on another day says so.
 
-- [Quiz 7: Metadata](../assignments/deliverables.md#reading-quizzes)
-- [Lab 8: Metadata](../assignments/lab-08/README.md)
+| What | Details |
+| --- | --- |
+| Quiz 7 | [Metadata](../assignments/deliverables.md#reading-quizzes) — open book, on Learning Suite |
+| Lab 8 | [Metadata](../assignments/lab-08/README.md) |
 
 ## Tuesday — Metadata, Part 1
 

@@ -1,9 +1,11 @@
 # Week 15 — Presentations and Exam Review
 
-**Due this week (Saturday, 11:59 pm unless noted):**
+**Due this week.**
 
-- [Final Exam (finals week, university-scheduled slot)](../policies/exams.md)
-- [Course evaluation (extra credit)](../policies/grading.md)
+| What | Details |
+| --- | --- |
+| Final Exam | finals week, university-scheduled slot — see [Exams](../policies/exams.md) |
+| Course evaluation | extra credit — see [Grading](../policies/grading.md) |
 
 ## Tuesday — Final Project Presentations, Part 2, and Exam Review
 

@@ -1,8 +1,9 @@
 # Quizzes, Activities, and Experiences
 
-Besides the eleven [labs](README.md) and the [final project](final-project.md), the course has
-three other kinds of graded work. Exact due dates for the current semester are on Learning Suite;
-the week each item lands in is on the [schedule](../schedule.md).
+Besides the eleven labs and the [final project](final-project.md), the course has three other
+kinds of graded work. Each lab is linked from the week it is due; the week each item below lands in
+is on the [schedule](../schedule.md). Exact due dates for the current semester are on Learning
+Suite.
 
 ## Reading Quizzes
 

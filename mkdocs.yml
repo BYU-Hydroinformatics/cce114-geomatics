@@ -12,6 +12,7 @@ theme:
     - navigation.indexes       # a section's first bare entry is the section's own page
     - navigation.top
     - navigation.footer
+    - toc.integrate            # page headings fold into the left sidebar, no third column
     - content.code.copy
   palette:
     - media: "(prefers-color-scheme: light)"
@@ -29,6 +30,9 @@ theme:
 
 extra_css:
   - stylesheets/extra.css
+
+extra_javascript:
+  - javascripts/external-links.js
 
 plugins:
   - search
@@ -48,8 +52,14 @@ markdown_extensions:
       permalink: true
 
 nav:
-  - Home: index.md
-  - Course Overview: course.md
+  - Course:
+      - Overview: index.md
+      - Quizzes, Activities & Experiences: assignments/deliverables.md
+      - Grading: policies/grading.md
+      - Attendance & Participation: policies/attendance.md
+      - Exams: policies/exams.md
+      - AI Use Policy: policies/ai-policy.md
+      - University Policies: policies/university.md
   - Schedule:
       - Overview: schedule.md
       - "Week 1 — Introduction": weeks/week-01.md
@@ -80,25 +90,3 @@ nav:
       - "Week 10 — Cities Near Rivers": handson/week-10.md
       - "Week 11 — Georeferencing in QGIS, and the Web Mapping with AI Kickoff": handson/week-11.md
       - "Week 12 — Workflow Walkthrough, Final Project Kickoff, Exam 2 Kahoot": handson/week-12.md
-  - Assignments:
-      - assignments/README.md
-      - Lab 1 — Getting Started with GIS: assignments/lab-01/README.md
-      - Lab 2 — Map Symbology and Layouts: assignments/lab-02/README.md
-      - Lab 3 — GPS Data Collection: assignments/lab-03/README.md
-      - Lab 4 — Changing, Editing, Fixing Data: assignments/lab-04/README.md
-      - Lab 5 — Working with Raster Data: assignments/lab-05/README.md
-      - Lab 6 — Spatial Data Web Services: assignments/lab-06/README.md
-      - Lab 7 — Projections & Coordinate Systems: assignments/lab-07/README.md
-      - Lab 8 — Metadata: assignments/lab-08/README.md
-      - Lab 9 — The Yellowstone Disaster: assignments/lab-09/README.md
-      - Lab 10 — Domes for Mozambique: assignments/lab-10/README.md
-      - Lab 11 — Walmart Site Selection: assignments/lab-11/README.md
-      - Quizzes, Activities & Experiences: assignments/deliverables.md
-      - Web Mapping with AI Experience: assignments/web-mapping-with-ai.md
-      - Final Project: assignments/final-project.md
-  - Policies:
-      - Grading: policies/grading.md
-      - Attendance & Participation: policies/attendance.md
-      - Exams: policies/exams.md
-      - AI Use Policy: policies/ai-policy.md
-      - University Policies: policies/university.md

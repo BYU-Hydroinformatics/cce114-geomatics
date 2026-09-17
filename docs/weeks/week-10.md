@@ -1,10 +1,14 @@
 # Week 10 — Geoprocessing
 
-**Due this week (Saturday, 11:59 pm unless noted):**
+**Due this week.** Quizzes and lab reports are due **Saturday at 11:59 pm**;
+anything on another day says so.
 
-- [Quiz 8: Geoprocessing and Spatial Data Analysis](../assignments/deliverables.md#reading-quizzes)
-- [Lab 9: The Yellowstone Disaster](../assignments/lab-09/README.md)
-- [Community and Professional Map Experience (Wednesday)](../assignments/deliverables.md#experiences)
+| What | Details |
+| --- | --- |
+| Reading | GIS Fundamentals, Chapter 9 (Basic Spatial Analysis) |
+| Quiz 8 | [Geoprocessing and Spatial Data Analysis](../assignments/deliverables.md#reading-quizzes) — open book, on Learning Suite |
+| Lab 9 | [The Yellowstone Disaster](../assignments/lab-09/README.md) |
+| Community and Professional Map Experience | Wednesday — see [Experiences](../assignments/deliverables.md#experiences) |
 
 ## Tuesday — Geoprocessing, Part 1
 
@@ -23,10 +27,6 @@
 ### Materials
 
 - [Yellowstone movie clip](https://www.youtube.com/watch?v=JGEgTXsGOPk&t=346s)
-
-### Reading
-
-GIS Fundamentals, Chapter 9 (Basic Spatial Analysis)
 
 ## Thursday — Cities Near Rivers
 

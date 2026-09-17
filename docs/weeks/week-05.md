@@ -1,9 +1,13 @@
 # Week 5 — Working with Vector Data
 
-**Due this week (Saturday, 11:59 pm unless noted):**
+**Due this week.** Quizzes and lab reports are due **Saturday at 11:59 pm**;
+anything on another day says so.
 
-- [Quiz 4: GPS, Part 2](../assignments/deliverables.md#reading-quizzes)
-- [Lab 4: Changing, Editing, and Fixing GIS Data](../assignments/lab-04/README.md)
+| What | Details |
+| --- | --- |
+| Reading | GIS Fundamentals, Chapter 4 (Maps, Data Entry, and Editing) |
+| Quiz 4 | [GPS, Part 2](../assignments/deliverables.md#reading-quizzes) — open book, on Learning Suite |
+| Lab 4 | [Changing, Editing, and Fixing GIS Data](../assignments/lab-04/README.md) |
 
 ## Tuesday — Working with Vector Data, Part 1
 
@@ -19,10 +23,6 @@
 ### Slides
 
 - [Working with Vector Data](https://byu-hydroinformatics.github.io/cce114-geomatics/slides/day-08/working-with-vector-data.html)
-
-### Reading
-
-GIS Fundamentals, Chapter 4 (Maps, Data Entry, and Editing)
 
 ## Thursday — Digitize Your Home with Snapping and the Vertex Tool
 

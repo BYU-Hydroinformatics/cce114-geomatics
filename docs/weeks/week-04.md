@@ -1,9 +1,13 @@
 # Week 4 — The Global Positioning System
 
-**Due this week (Saturday, 11:59 pm unless noted):**
+**Due this week.** Quizzes and lab reports are due **Saturday at 11:59 pm**;
+anything on another day says so.
 
-- [Quiz 3: GPS, Part 1](../assignments/deliverables.md#reading-quizzes)
-- [Lab 3: GPS Data Collection and Importing Into QGIS](../assignments/lab-03/README.md)
+| What | Details |
+| --- | --- |
+| Reading | GIS Fundamentals, Chapter 5 (GNSS and Coordinate Surveying) |
+| Quiz 3 | [GPS, Part 1](../assignments/deliverables.md#reading-quizzes) — open book, on Learning Suite |
+| Lab 3 | [GPS Data Collection and Importing Into QGIS](../assignments/lab-03/README.md) |
 
 ## Tuesday — The Global Positioning System
 
@@ -24,10 +28,6 @@
 ### In-class activity
 
 Find Air Force One, then Where Am I: trilaterate Prague on paper from three signal delays and upload a photo of your solution. Record your completion on Learning Suite.
-
-### Reading
-
-GIS Fundamentals, Chapter 5 (GNSS and Coordinate Surveying)
 
 <!-- tuesday-notes -->
 *In the [Global Positioning System](https://byu-hydroinformatics.github.io/cce114-geomatics/slides/day-06/gps-part-1.html) deck, "Warm-up: find Air Force One." The deck opens with the two activities and then gives the short GPS explanation.*

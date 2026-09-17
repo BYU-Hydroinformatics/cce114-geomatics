@@ -1,9 +1,13 @@
 # Week 3 — Maps, Symbology, and Cartography
 
-**Due this week (Saturday, 11:59 pm unless noted):**
+**Due this week.** Quizzes and lab reports are due **Saturday at 11:59 pm**;
+anything on another day says so.
 
-- [Quiz 2: Spatial Data Models and File Types](../assignments/deliverables.md#reading-quizzes)
-- [Lab 2: Map Symbology and Layouts](../assignments/lab-02/README.md)
+| What | Details |
+| --- | --- |
+| Reading | GIS Fundamentals, Chapter 4 (Maps, Data Entry, and Editing) map design sections |
+| Quiz 2 | [Spatial Data Models and File Types](../assignments/deliverables.md#reading-quizzes) — open book, on Learning Suite |
+| Lab 2 | [Map Symbology and Layouts](../assignments/lab-02/README.md) |
 
 ## Tuesday — Maps, Symbology, and Cartography, Part 1
 
@@ -18,10 +22,6 @@
 ### Slides
 
 - [Maps, Symbology, and Cartography](https://byu-hydroinformatics.github.io/cce114-geomatics/slides/day-04/maps-and-cartography.html)
-
-### Reading
-
-GIS Fundamentals, Chapter 4 (Maps, Data Entry, and Editing) map design sections
 
 ## Thursday — Symbology, Labels, and a First Layout
 

@@ -263,6 +263,51 @@ def lab_link(text: str, prefix: str) -> str:
     return text
 
 
+# Where a non-lab, non-quiz due item is explained, for the "Due this week" table.
+DUE_TARGETS = [
+    ("Quiz", ("Quizzes", "assignments/deliverables.md#reading-quizzes")),
+    ("Exam", ("Exams", "policies/exams.md")),
+    ("Final Project", ("Final Project", "assignments/final-project.md")),
+    ("Web Mapping", ("Web Mapping with AI", "assignments/web-mapping-with-ai.md")),
+    ("presentations", ("Final Project", "assignments/final-project.md")),
+    ("Experience", ("Experiences", "assignments/deliverables.md#experiences")),
+    ("Belonging", ("Experiences", "assignments/deliverables.md#experiences")),
+    ("evaluation", ("Grading", "policies/grading.md")),
+]
+
+
+def due_row(text: str, prefix: str) -> tuple:
+    """Split one WEEKS["due"] entry into the (What, Details) cells of the week table.
+
+    Labs and quizzes carry their own title in Details; everything else keeps whatever
+    timing the entry states in parentheses and points at the page that explains it."""
+    m = re.match(r"Lab (\d+)$", text)
+    if m:
+        n = int(m.group(1))
+        return f"Lab {n}", f"[{LABS[n]}]({prefix}assignments/lab-{n:02d}/README.md)"
+    m = re.match(r"(Quiz \d+): (.+)$", text)
+    if m:
+        return m.group(1), (f"[{m.group(2)}]({prefix}assignments/deliverables.md#reading-quizzes)"
+                            " — open book, on Learning Suite")
+    m = re.match(r"(.+?) \((.+)\)$", text)
+    label, timing = (m.group(1), m.group(2)) if m else (text, "")
+    detail = [timing] if timing else []
+    for key, (name, url) in DUE_TARGETS:
+        if key in label:
+            detail.append(f"see [{name}]({prefix}{url})")
+            break
+    return label, " — ".join(detail) or "\u2014"
+
+
+def week_reading(w: int) -> str:
+    """The assigned reading for a week, gathered from that week's class meetings."""
+    seen = []
+    for d, _ in week_sessions(w):
+        if d.get("reading") and d["reading"] not in seen:
+            seen.append(d["reading"])
+    return "; ".join(seen)
+
+
 def slug(text: str) -> str:
     """Mirror python-markdown's default toc slugify so links can target a heading."""
     import unicodedata
@@ -306,8 +351,6 @@ def session_generated_body(d: dict, skip_topics_and_activity: bool = False) -> l
         out.append("")
     if not skip_topics_and_activity and d.get("activity"):
         out += ["### In-class activity", "", d["activity"] + ". Record your completion on Learning Suite.", ""]
-    if d.get("reading"):
-        out += ["### Reading", "", d["reading"], ""]
     return out
 
 
@@ -420,9 +463,21 @@ def handson_index() -> str:
 def week_page(w: int, existing_text: str) -> str:
     info = WEEKS[w]
     out = [f"# Week {w} — {info['theme']}", ""]
-    due = info["due"]
-    if due:
-        out += ["**Due this week (Saturday, 11:59 pm unless noted):**", ""] + [f"- {lab_link(x, '../')}" for x in due] + [""]
+    rows = []
+    reading = week_reading(w)
+    if reading:
+        rows.append(("Reading", reading))
+    rows += [due_row(x, "../") for x in info["due"]]
+    if rows:
+        graded = any(re.match(r"(Quiz \d+|Lab \d+)", x) for x in info["due"])
+        if graded:
+            out += ["**Due this week.** Quizzes and lab reports are due **Saturday at 11:59 pm**;",
+                    "anything on another day says so."]
+        else:
+            out += ["**Due this week.**" if info["due"] else "**This week's reading.**"]
+        out += ["", "| What | Details |", "| --- | --- |"]
+        out += [f"| {what} | {detail} |" for what, detail in rows]
+        out.append("")
     for d, weekday in week_sessions(w):
         out += session_section(d, weekday, existing_text)
     return "\n".join(out).rstrip("\n") + "\n"
@@ -460,9 +515,8 @@ def schedule_page() -> str:
 
 def update_nav(mkdocs_yml: Path) -> None:
     text = mkdocs_yml.read_text()
-    # Material's navigation.indexes only treats a file named index.md or README.md as a
-    # section's own page, and schedule.md keeps its URL for Learning Suite links, so the
-    # overview stays a labeled first child; the Schedule tab opens it as the first page.
+    # schedule.md keeps its URL so existing Learning Suite links still resolve, so the
+    # overview is a labeled first child of the Schedule section rather than its index.
     lines = ["  - Schedule:", "      - Overview: schedule.md"]
     for w, info in WEEKS.items():
         lines.append(f"      - \"Week {w} — {info['theme']}\": weeks/week-{w:02d}.md")

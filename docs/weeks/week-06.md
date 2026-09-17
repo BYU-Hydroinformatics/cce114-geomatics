@@ -1,10 +1,14 @@
 # Week 6 — Working with Raster Data
 
-**Due this week (Saturday, 11:59 pm unless noted):**
+**Due this week.** Quizzes and lab reports are due **Saturday at 11:59 pm**;
+anything on another day says so.
 
-- [Quiz 5: Getting Started with Raster Data](../assignments/deliverables.md#reading-quizzes)
-- [Lab 5: Working with Raster Data](../assignments/lab-05/README.md)
-- [BYU Belonging Map (Wednesday)](../assignments/deliverables.md#experiences)
+| What | Details |
+| --- | --- |
+| Reading | GIS Fundamentals, Chapter 2 raster sections and Chapter 10 (Raster Analysis) |
+| Quiz 5 | [Getting Started with Raster Data](../assignments/deliverables.md#reading-quizzes) — open book, on Learning Suite |
+| Lab 5 | [Working with Raster Data](../assignments/lab-05/README.md) |
+| BYU Belonging Map | Wednesday — see [Experiences](../assignments/deliverables.md#experiences) |
 
 ## Tuesday — Working with Raster Data, Part 1
 
@@ -23,10 +27,6 @@
 ### In-class activity
 
 Engineering Paper Raster Analysis: work a map algebra problem by hand and upload a photo. Record your completion on Learning Suite.
-
-### Reading
-
-GIS Fundamentals, Chapter 2 raster sections and Chapter 10 (Raster Analysis)
 
 <!-- tuesday-notes -->
 *In the [Raster Analysis and Map Algebra](https://byu-hydroinformatics.github.io/cce114-geomatics/slides/day-10/raster-analysis-and-map-algebra.html) deck, the eight activity slides after the title.*

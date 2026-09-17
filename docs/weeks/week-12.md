@@ -1,9 +1,12 @@
 # Week 12 — Project Site Selection
 
-**Due this week (Saturday, 11:59 pm unless noted):**
+**Due this week.** Quizzes and lab reports are due **Saturday at 11:59 pm**;
+anything on another day says so.
 
-- [Lab 11: Walmart Site Selection](../assignments/lab-11/README.md)
-- [Concepts Exam 2 (Testing Center)](../policies/exams.md)
+| What | Details |
+| --- | --- |
+| Lab 11 | [Walmart Site Selection](../assignments/lab-11/README.md) |
+| Concepts Exam 2 | Testing Center — see [Exams](../policies/exams.md) |
 
 ## Tuesday — Project Site Selection, Part 1
 

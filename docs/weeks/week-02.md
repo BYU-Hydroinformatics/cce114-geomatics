@@ -1,9 +1,13 @@
 # Week 2 — GIS Data Models
 
-**Due this week (Saturday, 11:59 pm unless noted):**
+**Due this week.** Quizzes and lab reports are due **Saturday at 11:59 pm**;
+anything on another day says so.
 
-- [Quiz 1: Intro to GIS & Map Design Fundamentals](../assignments/deliverables.md#reading-quizzes)
-- [Lab 1: Getting Started with GIS](../assignments/lab-01/README.md)
+| What | Details |
+| --- | --- |
+| Reading | GIS Fundamentals, Chapter 2 (Data Models) |
+| Quiz 1 | [Intro to GIS & Map Design Fundamentals](../assignments/deliverables.md#reading-quizzes) — open book, on Learning Suite |
+| Lab 1 | [Getting Started with GIS](../assignments/lab-01/README.md) |
 
 ## Tuesday — GIS Data Models, Part 1
 
@@ -28,10 +32,6 @@
 ### In-class activity
 
 Polygon data model activity: encode a state boundary using only numbers. Record your completion on Learning Suite.
-
-### Reading
-
-GIS Fundamentals, Chapter 2 (Data Models)
 
 <!-- tuesday-notes -->
 *In the [GIS Data Models](https://byu-hydroinformatics.github.io/cce114-geomatics/slides/day-02/gis-data-models.html) deck, "Polygon Data Model Activity."*

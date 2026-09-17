@@ -27,7 +27,7 @@ the original documents and are readable, though older QGIS versions show in some
 **Course structure (today).** The Fall 2026 Learning Suite syllabus was turned into
 semester-agnostic pages:
 
-- `docs/course.md`: description, instructors, prerequisites, textbook, learning outcomes, how the course works
+- `docs/index.md`: the course overview — description, instructors, prerequisites, textbook, software, learning outcomes, how the course works, and where everything lives
 - `docs/schedule.md`: the 15-week overview table, linking to the weekly pages below
 - `docs/weeks/week-NN.md`: 15 weekly lesson-plan pages (restructured 2026-09-09, see below), each with
   the Tuesday concepts session and the Thursday hands-on session together
@@ -85,6 +85,80 @@ generator's academic title, since both sessions share a page. `tools/build_sched
 to emit `docs/weeks/week-NN.md` instead of one page per day; see rule 3 in `CLAUDE.md` for the two
 marker names.
 
+**Aligned with the CE 414 site (2026-09-10).** The sibling
+[ce414-gis-applications](https://github.com/BYU-Hydroinformatics/ce414-gis-applications) site had
+converged on a two-section shape and this site now matches it. The nav has exactly two top-level
+sections, **Course** and **Schedule**, and `mkdocs.yml` is back on `navigation.sections` (plus
+`toc.integrate`, so page headings fold into the left sidebar instead of taking a third column).
+
+The labs left the nav entirely. There is no Assignments section and no standalone lab list: each
+lab is reached from the "Due this week" table on the week it is due, and from the Due column of the
+schedule table. `docs/assignments/README.md` was deleted and its two inbound links (from
+`deliverables.md` and `policies/ai-policy.md`) now point at the schedule. `docs/course.md` was
+merged into `docs/index.md`, matching how CE 414 folded its course overview into its home page.
+`mkdocs build --strict` passes; the eleven lab pages and the two project pages show up in mkdocs'
+"exist in the docs directory, but are not included in the nav" INFO line, which is the intended
+arrangement, not a warning.
+
+Week pages now open with a two-column **Due this week** table (What / Details) in place of the old
+bullet list, again matching CE 414. The week's reading moved into that table from the per-session
+`### Reading` block, so it appears once per page. `docs/javascripts/external-links.js` was copied
+over from CE 414: it opens external links and data downloads in a new tab so a student following a
+lab keeps their place.
+
+Not carried across: the `glightbox` click-to-zoom plugin (it needs `mkdocs-glightbox` added to the
+build in both `CLAUDE.md` and the GitHub Actions workflow) and a site favicon, which CE 414 has and
+this site does not.
+
+**Learning Suite links open in a new tab: done 2026-09-10.** Every link on Learning Suite that
+leaves Learning Suite now carries `target="_blank" rel="noopener"`, so a student following a lab or
+a deck keeps their place in the course.
+
+The external links (Google Sheets, YouTube, xkcd, The True Size, Jason Davies, the Walmart portal)
+and the four file downloads were already set that way; the course-site links were the ones that had
+been missed. On the Schedule, 59 of 60 course-site links opened in the same tab. All of them were
+fixed, across 27 day items. In the assignment descriptions, the eleven lab links were already fine;
+six were not, and were fixed: the five In Class Activity pointers (First Map, DEM Profile, Playing
+with Projections, AGRC Metadata, Georeference Your Neighborhood) and the Web Mapping with AI
+Experience. Verified after a clean reload: Schedule 63 course-site plus 4 downloads plus 12 external,
+all new-tab; assignment descriptions 17 of 17.
+
+How to do this again, because the UI fights you. Schedule day items are edited by clicking the text
+of the item itself, not the day title and not empty space (empty space opens *New Text Item*, and
+the title sometimes just collapses the week). The reliable aim is a point on the same line as the
+link but a few pixels left of it, inside the same paragraph. Programmatic `element.click()` and
+synthetic `MouseEvent`s do not open the editor at all, and when they appear to, they open a
+neighbouring item; only real clicks work. Once the dialog is open the edit itself is easy through
+the CKEditor API: `CKEDITOR.instances[<the one key>]`, `getData()`, add the attribute, `setData()`,
+`updateElement()`, then click Save. The rendered page does not always re-render after a save, so
+counts are only trustworthy after a full reload. Assignment descriptions are edited from the pencil
+in each row of the instructor Assignments page; the same CKEditor recipe applies.
+
+One thing to watch: the *Show Categories* filter panel, opened by the small triangle beside the
+Date column header, overlays the middle of the page and swallows clicks meant for the schedule. A
+stray click there switched *Practice Your Skills* off. It was switched back on and confirmed after
+a reload; the eight category checkboxes should read off, off, on, on, off, on, off, off.
+
+**Learning Suite links: re-audited 2026-09-10.** After the CE 414 alignment above, every link on
+Learning Suite that points at this site was checked again, in the Fall 2026 course. The restructure
+turned out to break nothing: comparing the full published URL set before and after, only
+`/course/` and `/assignments/` disappeared, and neither was linked from Learning Suite. Every `##`
+session heading on the fifteen week pages is byte-identical to before, so all the Tuesday and
+Thursday anchors placed in the 2026-09-09 pass still resolve.
+
+One link was broken, and had been since the September 9 restructure rather than by this one: the
+first class day's *Lecture materials* line still pointed at `lectures/day-01/`, a survivor of the
+old one-page-per-day structure. It now points at
+`weeks/week-01/#day-1-course-introduction-and-introduction-to-gis`. Fixed in place and confirmed
+after a reload.
+
+What was checked, all against a local `mkdocs build` of the new structure: the Schedule page's 34
+unique site links plus 16 deck links (every deck has a source file under `slides/`), and the
+descriptions of all 37 assignments, which hold 17 site links (the eleven labs, five In Class
+Activity pointers at week anchors, and the Web Mapping with AI Experience). Zero broken. Assignment
+descriptions are only reachable through Student View, where clicking a title expands its
+description.
+
 **Learning Suite links: done 2026-09-09.** The restructure broke every direct link on Learning
 Suite. All 43 on the Schedule page (26 `lectures/day-NN`, 11 `hands-on/week-NN`, 6
 `hands-on/tuesday-activities#...`) and 5 more inside In Class Activity descriptions on the
@@ -92,13 +166,7 @@ Assignments page now point at `weeks/week-NN` with the right Tuesday or Thursday
 target and anchor was checked against the live site. Slide and lab links were unaffected. If the
 week pages are ever retitled, those anchors go stale, because the `##` heading text is the slug.
 
-**Top tabs and the schedule table (2026-09-10).** Even with one page per week the left sidebar was
-still one 48-link column (Schedule, Assignments, Policies all expanded), with Assignments below the
-fold on every page. `mkdocs.yml` now uses Material's `navigation.tabs` plus `navigation.indexes`
-instead of `navigation.sections`: each top-level section is a tab across the top and the sidebar
-shows only the active section; `assignments/README.md` is its section's own page (Material only
-allows `index.md` or `README.md` there, so `schedule.md` stays a labeled "Overview" child to keep
-its URL). The schedule table got its Tuesday and Thursday columns back, each cell linking to the
+**Top tabs and the schedule table (2026-09-10).** The schedule table got its Tuesday and Thursday columns back, each cell linking to the
 session heading on the week page (`weeks/week-NN.md#tuesday-...` / `#thursday-...`); the generator
 computes those slugs with the same rule python-markdown uses, so they stay in step with the
 headings. The generator's nav rewrite also now replaces the whole existing `- Schedule:` block and

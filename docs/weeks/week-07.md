@@ -1,9 +1,13 @@
 # Week 7 — Finding Spatial Data and Web Services
 
-**Due this week (Saturday, 11:59 pm unless noted):**
+**Due this week.** Quizzes and lab reports are due **Saturday at 11:59 pm**;
+anything on another day says so.
 
-- [Lab 6: Spatial Data Web Services](../assignments/lab-06/README.md)
-- [Concepts Exam 1 (Testing Center, midweek)](../policies/exams.md)
+| What | Details |
+| --- | --- |
+| Reading | GIS Fundamentals, Chapter 7 (Digital Data) |
+| Lab 6 | [Spatial Data Web Services](../assignments/lab-06/README.md) |
+| Concepts Exam 1 | Testing Center, midweek — see [Exams](../policies/exams.md) |
 
 ## Tuesday — Finding Spatial Data and Web Services
 
@@ -18,10 +22,6 @@
 ### Slides
 
 - [Finding Spatial Data and Web Services](https://byu-hydroinformatics.github.io/cce114-geomatics/slides/day-12/finding-spatial-data-and-web-services.html)
-
-### Reading
-
-GIS Fundamentals, Chapter 7 (Digital Data)
 
 <!-- tuesday-notes -->
 *In the [Finding Spatial Data and Web Services](https://byu-hydroinformatics.github.io/cce114-geomatics/slides/day-12/finding-spatial-data-and-web-services.html) deck, "Data Source Scavenger Hunt."*

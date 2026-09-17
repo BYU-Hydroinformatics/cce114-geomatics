@@ -1,40 +1,86 @@
 # CCE 114 — Geomatics
 
-Welcome to the course site for **Civil and Construction Engineering 114 (Geomatics)** at Brigham Young University, taught by Dr. Dan Ames.
+Welcome to the course site for **Civil and Construction Engineering 114 (Geomatics)** at Brigham
+Young University. The course is taught every **Fall** (September to December) and **Winter**
+(January to April).
 
-Geomatics is the discipline of gathering, analyzing, and visualizing geographic and spatial data — surveying, GPS, GIS, remote sensing, and mapping. This course uses [QGIS](https://qgis.org/) (3.44 LTR) and public data sources such as the [Utah SGID](https://gis.utah.gov/products/sgid/).
-
-## Lab Assignments
-
-| Lab | Title |
+| | |
 | --- | --- |
-| [Lab 1](assignments/lab-01/README.md) | Getting Started with Geographic Information Systems |
-| [Lab 2](assignments/lab-02/README.md) | Map Symbology and Layouts |
-| [Lab 3](assignments/lab-03/README.md) | GPS Data Collection and Importing Into QGIS |
-| [Lab 4](assignments/lab-04/README.md) | Changing, Editing, and Fixing GIS Data |
-| [Lab 5](assignments/lab-05/README.md) | Working with Raster Data |
-| [Lab 6](assignments/lab-06/README.md) | Spatial Data Web Services |
-| [Lab 7](assignments/lab-07/README.md) | Projections and Coordinate Systems |
-| [Lab 8](assignments/lab-08/README.md) | Metadata |
-| [Lab 9](assignments/lab-09/README.md) | Geoprocessing — The Yellowstone Disaster |
-| [Lab 10](assignments/lab-10/README.md) | Geoplanning — Domes for Mozambique |
-| [Lab 11](assignments/lab-11/README.md) | Workflows — Walmart Site Selection |
+| **Dr. Dan Ames** | Tuesday concept lectures · 430N EB · [dan.ames@byu.edu](mailto:dan.ames@byu.edu) · [office hours](https://calendly.com/dan-ames/office-hours) |
+| **Dr. James Halgren** | Thursday demos and hands-on sessions · [james.halgren@byu.edu](mailto:james.halgren@byu.edu) |
+| **Teaching assistants** | Names, office hours, and contact details for the current semester are on Learning Suite |
 
-## Course Structure
+## Description
 
-- [Course Overview](course.md) — description, instructors, prerequisites, textbook, learning outcomes, and how the course works.
-- [Schedule](schedule.md) — one page per week. Each week page has both class sessions together:
-  the Tuesday lecture (topics, slides, reading) and the Thursday hands-on session in QGIS, plus
-  what is due that week.
-- [Hands-On Practice](handson/README.md) — one page per Thursday working session, Weeks 2 through
-  12. Each is a step-by-step QGIS guide with a practice run, the session plan, the walkthrough,
-  the graded upload, and the snags that usually come up.
-- [Quizzes, Activities & Experiences](assignments/deliverables.md) and the [Final Project](assignments/final-project.md).
+This course is an introduction to the world of surveying, remote sensing, spatial data, and
+geographic information systems (GIS). Students who take this class will learn the fundamental
+principles of geomatics including basic surveying measurements, earth surface models, spatial data
+types, map design, and spatial data analysis. Students will also gain technical skills in using
+surveying equipment and conducting GIS analysis. By completing this course, students will also be
+prepared to take Engineering Applications of GIS (CCE 414), which opens many doors for internships
+and research projects.
 
-## Policies
+## Prerequisites
 
-- [Grading](policies/grading.md) — categories, grading scale, late work.
-- [Attendance & Participation](policies/attendance.md) — showing up, participating, classroom procedures.
-- [Exams](policies/exams.md) — two Concepts Exams in the Testing Center and a hands-on Final Exam.
-- [AI Use Policy](policies/ai-policy.md) — how to use AI well in this course (short version: use it to learn, always disclose, own your work).
-- [University Policies](policies/university.md) — Honor Code, plagiarism, Title IX, accessibility, mental health.
+- CCE 170 — Computational Methods
+- CCE 101 — Introduction to Civil and Environmental Engineering
+
+## Textbook
+
+*GIS Fundamentals* by Paul Bolstad and Steven Manson, 7th edition, through the BYU Store. The
+access card is required: the reading quizzes are keyed to this book, and each week's reading is
+listed on that week's page.
+
+## Software
+
+[QGIS](https://qgis.org/download) — free and open source. The lab computers in 234 CB run **QGIS
+3.44 LTR**, and screenshots throughout this site are taken from that release. Install the current
+LTR release on your own laptop before Lab 1, and bring that laptop to Thursday sessions. Public
+data comes mostly from the [Utah SGID](https://gis.utah.gov/products/sgid/).
+
+## Learning Outcomes
+
+1. **Engineering measurements.** Use land surveying equipment to measure angles, distances, and areas.
+2. **Acquiring spatial data.** Locate, understand, and retrieve spatial data from government and
+   other repositories using metadata.
+3. **Data models.** Describe all common spatial data formats and data models and select an
+   appropriate data model for a specific use.
+4. **Projections and coordinate systems.** Select an appropriate geographic projection for
+   engineering-specific problems and describe the key characteristics of common coordinate and
+   projection systems.
+5. **Spatial data analysis.** Use GIS tools for spatial analysis, understanding, and design of
+   engineering systems.
+
+## How the Course Works
+
+- **Tuesday: concepts.** A lecture with discussion and short in-class activities.
+- **Thursday: demo and hands-on.** Working in QGIS on the week's topic. Bring your laptop.
+- **Each week** you read the assigned textbook pages, take an open-book online quiz, and complete a
+  lab. Quizzes and lab reports are due **Saturday at 11:59 pm**.
+- **Two Concepts Exams** in the Testing Center and a hands-on **Final Exam** in the regular classroom
+  during finals week. See [Exams](policies/exams.md).
+- **A final mapping project** in the last weeks of the semester. See
+  [Final Project](assignments/final-project.md).
+- Each class period starts with a brief mini-devotional: a prayer, a spiritual thought, and a
+  personal note offered by class members.
+
+The [Quizzes, Activities & Experiences](assignments/deliverables.md) page collects the graded work
+that is not a lab: the eight reading quizzes, the in-class activities, and the experiences.
+
+## Where Everything Lives
+
+Each week has its own page, and everything for that week is on it: the Tuesday concepts lecture
+with its topics and slides, the Thursday hands-on session in QGIS, the reading and quiz, and the
+lab that is due. Start from the [Schedule](schedule.md) or pick a week in the sidebar. **There are
+eleven labs, and each one is linked from the week it is due** — there is no separate lab list to
+keep in sync.
+
+Each Thursday session from Week 2 through Week 12 also has a [Hands-On](handson/README.md) page: a
+step-by-step QGIS guide with a practice run, the walkthrough, the graded upload, and the snags that
+usually come up.
+
+On any slide deck, navigate with the arrow keys; press <kbd>F</kbd> for fullscreen and <kbd>P</kbd>
+for presenter view with speaker notes.
+
+**Learning Suite** holds the current semester's dates, quizzes, submissions, grades, the attendance
+system, and TA contact information. Where this site and Learning Suite disagree, Learning Suite wins.

@@ -1,9 +1,13 @@
 # Week 8 — Geodesy, Projections, and Coordinate Systems
 
-**Due this week (Saturday, 11:59 pm unless noted):**
+**Due this week.** Quizzes and lab reports are due **Saturday at 11:59 pm**;
+anything on another day says so.
 
-- [Quiz 6: Map Projections and Coordinate Systems](../assignments/deliverables.md#reading-quizzes)
-- [Lab 7: Projections and Coordinate Systems](../assignments/lab-07/README.md)
+| What | Details |
+| --- | --- |
+| Reading | GIS Fundamentals, Chapter 3 (Geodesy, Datums, Map Projections, and Coordinate Systems) |
+| Quiz 6 | [Map Projections and Coordinate Systems](../assignments/deliverables.md#reading-quizzes) — open book, on Learning Suite |
+| Lab 7 | [Projections and Coordinate Systems](../assignments/lab-07/README.md) |
 
 ## Tuesday — Geodesy, Projections, and Coordinate Systems, Part 1
 
@@ -24,10 +28,6 @@
 - [XKCD on projections](https://xkcd.com/977/)
 - [The True Size](https://www.thetruesize.com/)
 - [Projection transitions (Jason Davies)](https://www.jasondavies.com/maps/transition/)
-
-### Reading
-
-GIS Fundamentals, Chapter 3 (Geodesy, Datums, Map Projections, and Coordinate Systems)
 
 <!-- tuesday-notes -->
 *In the [Geodesy, Projections, and Coordinate Systems](https://byu-hydroinformatics.github.io/cce114-geomatics/slides/day-14/coordinate-systems-and-projections.html) deck, "Globe Activity: The Great Circle."*

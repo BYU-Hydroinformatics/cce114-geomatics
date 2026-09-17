@@ -1,10 +1,12 @@
 # Week 14 — Final Project
 
-**Due this week (Saturday, 11:59 pm unless noted):**
+**Due this week.**
 
-- [Web Mapping with AI Experience (Wednesday)](../assignments/web-mapping-with-ai.md)
-- [Final project presentations (Thursday)](../assignments/final-project.md)
-- [Final Project (Saturday)](../assignments/final-project.md)
+| What | Details |
+| --- | --- |
+| Web Mapping with AI Experience | Wednesday — see [Web Mapping with AI](../assignments/web-mapping-with-ai.md) |
+| Final project presentations | Thursday — see [Final Project](../assignments/final-project.md) |
+| Final Project | Saturday — see [Final Project](../assignments/final-project.md) |
 
 ## Tuesday — Introduction to CCE 414 and Final Project Work Session
 

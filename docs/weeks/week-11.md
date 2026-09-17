@@ -1,8 +1,11 @@
 # Week 11 — Geoplanning and Georeferencing
 
-**Due this week (Saturday, 11:59 pm unless noted):**
+**Due this week.** Quizzes and lab reports are due **Saturday at 11:59 pm**;
+anything on another day says so.
 
-- [Lab 10: Domes for Mozambique](../assignments/lab-10/README.md)
+| What | Details |
+| --- | --- |
+| Lab 10 | [Domes for Mozambique](../assignments/lab-10/README.md) |
 
 ## Tuesday — Geoplanning and Georeferencing
 
