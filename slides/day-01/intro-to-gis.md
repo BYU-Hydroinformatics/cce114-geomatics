@@ -304,9 +304,9 @@ Not graded, and every answer explains itself. Nothing here was supposed to be ob
 ![bg right:35% w:88%](images/gis-before-next-class.png)
 
 - Read the assigned pages in *GIS Fundamentals* (Bolstad & Manson, 7th ed.)
-- Take the open-book quiz on Learning Suite — due Friday at midnight
+- Take the open-book quiz on Learning Suite — due **Saturday at 11:59 pm**
 - Install QGIS on your own computer (free: [qgis.org/download](https://qgis.org/download))
-- [Lab 1](https://byu-hydroinformatics.github.io/cce114-geomatics/assignments/lab-01/) is assigned Tuesday and due Saturday night
+- [Lab 1](https://byu-hydroinformatics.github.io/cce114-geomatics/assignments/lab-01/) is assigned Tuesday and due **Saturday at 11:59 pm**
 - Questions? Office hours: [calendly.com/dan-ames/office-hours](https://calendly.com/dan-ames/office-hours)
 
 <!-- Emphasise installing QGIS before Tuesday — Lab 1 assumes it's working on their own machine. -->

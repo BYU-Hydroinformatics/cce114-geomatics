@@ -90,7 +90,7 @@ Random sample Civil/Environmental/Construction jobs from Monster.com…
 
 - Each week, a reading will be assigned – generally from *GIS Fundamentals* by Bolstad & Manson, 7th Edition (Eider Press). Earlier editions are usable, but you're responsible for finding the right pages.
 - If you don't have the book yet, buy it now — you will need it. About $44 in print, $26.50 as an eBook. You will use it again in CCE 414.
-- Quizzes are open book. Read the assigned pages/materials, then take the quiz online on Learning Suite by Friday at midnight.
+- Quizzes are open book. Read the assigned pages/materials, then take the quiz online on Learning Suite by **Saturday at 11:59 pm**. Quizzes cannot be submitted late.
 
 ---
 
@@ -103,7 +103,7 @@ Random sample Civil/Environmental/Construction jobs from Monster.com…
 - New [lab assignment](https://byu-hydroinformatics.github.io/cce114-geomatics/assignments/lab-01/) each week
 - Assigned/introduced in class on Tuesday
 - You are responsible to work independently on your lab starting as soon as it is assigned.
-- Due Saturday night
+- Due **Saturday at 11:59 pm**
 - Submit online on Learning Suite
 - Use your lab session hours
 - Zoom office hours available with TA's
