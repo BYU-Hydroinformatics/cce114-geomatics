@@ -40,23 +40,13 @@ GIS Fundamentals, Chapter 3 (Geodesy, Datums, Map Projections, and Coordinate Sy
 
 **Hands-On Practice**{ .badge .badge-handson } · *Day 15*
 
-### Topics
-
-- Explore projections in QGIS: project CRS, layer CRS, on-the-fly reprojection
-- Reproject a layer for real and compare measured lengths and areas
-- Choosing a projection for an engineering problem
-
-### In-class activity
-
-Playing with Projections: upload a screenshot of the same data in two different projections. Record your completion on Learning Suite.
-
 <div class="handson-cta" markdown="1">
 
 **Hands-On Practice**{ .handson-cta__eyebrow }
 
 **Playing with Projections**{ .handson-cta__title }
 
-This session has its own step-by-step guide: what to have ready, a practice run to do beforehand, the 50-minute plan, the click-by-click QGIS walkthrough, the graded upload, and the snags that usually come up.
+This session has its own step-by-step guide: what you need, an overview, the click-by-click QGIS walkthrough, what to hand in, and the snags that usually come up.
 
 [Open the Week 8 hands-on guide →](../handson/week-08.md){ .handson-cta__button }
 

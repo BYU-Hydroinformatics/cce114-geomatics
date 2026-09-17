@@ -70,22 +70,13 @@ Five minutes after the melodrama. Students write down a couple of things they le
 
 **Hands-On Practice**{ .badge .badge-handson } · *Day 17*
 
-### Topics
-
-- Creating and editing metadata in QGIS
-- Finding and evaluating datasets on gis.utah.gov and data.gov
-
-### In-class activity
-
-AGRC Metadata: evaluate one published dataset and fill a row of the AGRC Metadata tab in the class sheet. Record your completion on Learning Suite.
-
 <div class="handson-cta" markdown="1">
 
 **Hands-On Practice**{ .handson-cta__eyebrow }
 
 **Writing and Evaluating Metadata**{ .handson-cta__title }
 
-This session has its own step-by-step guide: what to have ready, a practice run to do beforehand, the 50-minute plan, the click-by-click QGIS walkthrough, the graded upload, and the snags that usually come up.
+This session has its own step-by-step guide: what you need, an overview, the click-by-click QGIS walkthrough, what to hand in, and the snags that usually come up.
 
 [Open the Week 9 hands-on guide →](../handson/week-09.md){ .handson-cta__button }
 

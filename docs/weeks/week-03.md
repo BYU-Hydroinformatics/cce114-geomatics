@@ -27,28 +27,13 @@ GIS Fundamentals, Chapter 4 (Maps, Data Entry, and Editing) map design sections
 
 **Hands-On Practice**{ .badge .badge-handson } · *Day 5*
 
-### Topics
-
-- Follow along: make a map of the United States
-- Practice point, line, and polygon symbology
-- Explore the attribute table
-- Add labels
-
-### Materials
-
-- United States shapefiles (posted on Learning Suite)
-
-### In-class activity
-
-Playing with Symbology: make a colorful map in QGIS and upload a screenshot. Record your completion on Learning Suite.
-
 <div class="handson-cta" markdown="1">
 
 **Hands-On Practice**{ .handson-cta__eyebrow }
 
 **Symbology, Labels, and a First Layout**{ .handson-cta__title }
 
-This session has its own step-by-step guide: what to have ready, a practice run to do beforehand, the 50-minute plan, the click-by-click QGIS walkthrough, the graded upload, and the snags that usually come up.
+This session has its own step-by-step guide: what you need, an overview, the click-by-click QGIS walkthrough, what to hand in, and the snags that usually come up.
 
 [Open the Week 3 hands-on guide →](../handson/week-03.md){ .handson-cta__button }
 

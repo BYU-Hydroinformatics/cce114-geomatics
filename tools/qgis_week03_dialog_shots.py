@@ -167,7 +167,7 @@ def shot_graduated():
     # Precision label down to "ecision (".
     save(props(states, 'mOptsPage_Style', w=1760, h=860), 'w3-states-graduated')
 
-# ------------------------------------- 4. Cities graduated by SIZE, not colour
+# ------------------------------------- 4. Cities graduated by SIZE, not color
 def shot_cities_size():
     r = QgsGraduatedSymbolRenderer('POP1990')
     method = QgsClassificationJenks()

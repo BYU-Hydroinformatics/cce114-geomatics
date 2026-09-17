@@ -185,35 +185,36 @@ Collected from the conversion notes at the end of each deck (search for `Convers
   2:00 pm, 234 CB. The site now says finals week generically; Dec 8 is presentations part 2 and review.
   Learning Suite's Dec 8 entry, a new Dec 17 entry, and the Final Exam assignment date were updated the
   same night (see the session notes); re-check each semester.
-- **Two data bundles are not on the site (blocks rehearsal).** The Week 3 hands-on session needs
-  *United States Shapefiles.zip* and the Week 10 session needs *United States.zip*; both live only
-  on Learning Suite, so those two sessions cannot be practiced from the site the way the others can.
-  Both hands-on pages carry a `<!-- TODO -->` at the spot.
+- **Week 3's data bundle is now on the site; Week 10's is not (2026-09-17).** *United States
+  Shapefiles.zip* ships with the site as
+  `docs/handson/data/united-states-shapefiles.zip` (2.9 MB, byte-identical to the Learning Suite
+  attachment, sha256 `8e6625ad1adc4784d2124f88f20778c3714c04afd9fe6df8d306274731b503de`), linked
+  from the Week 3 Materials list and from walkthrough step 0. No GitHub Release was needed, the
+  same call made for the Lab 7, 8 and 10 data: under a few megabytes, ship it with the site.
 
-  **Groundwork done 2026-09-10, one manual step left.** Both files are attached to Schedule text
-  items, not to assignments: *United States Shapefiles.zip* on the Thursday of Week 3 ("Maps,
-  Symbology, and Cartography - Part 2") and *United States.zip* on the Thursday of Week 10
-  ("Geoprocessing - Part 2"). They are two distinct attachments that happen to share a byte size of
-  2,944,194, so check whether they are actually the same file before publishing both. The blocker
-  was mechanical: the Chrome extension would fetch the bytes but Chrome never wrote the downloads to
-  disk, and that browser connection was unstable all day. **To finish:** download both from the
-  Schedule page by hand, then
+  **Still open: the Week 10 session's *United States.zip*.** It lives only on the Thursday of
+  Week 10 Schedule entry ("Geoprocessing - Part 2") and `docs/handson/week-10.md` still carries a
+  `<!-- TODO -->` at the spot. It has the same byte size as the Week 3 zip, 2,944,194, so the
+  first thing to do is compare its sha256 against the one above: if they match, point Week 10 at
+  the file already committed and delete the TODO. Otherwise download it and add it beside the
+  other under `docs/handson/data/`.
 
-  ```bash
-  gh release upload course-data-2026 "United States Shapefiles.zip" "United States.zip"
-  ```
+- **Ten of the eleven hands-on pages still have no figures.** Week 3 was done on 2026-09-17:
+  fourteen QGIS 3.44 captures, shot against the real class zip by
+  `tools/qgis_week03_dialog_shots.py` (headless dialogs) and `tools/qgis_week03_window_shots.py`
+  (main window and Print Layout), with `tools/reshoot_week03.sh` running both passes and
+  normalizing to the repo's 2000 px ceiling. Those three files are the template for the other
+  ten; the gotchas that cost the most time are in their header comments. Roughly four to six
+  captures per session is enough for the shorter walkthroughs.
 
-  and replace the "from Learning Suite" wording plus the `<!-- TODO -->` comment in
-  `docs/handson/week-03.md` and `docs/handson/week-10.md` with links to the release assets. Those
-  two pages are hand-written prose and survive `tools/build_schedule.py` regeneration, so edit them
-  directly. Leave the Natural Earth fallback paragraph in Week 3 as it is.
-- **The hands-on pages have no figures.** All eleven walkthroughs are text only, while the labs are
-  heavily illustrated. Roughly four to six QGIS 3.44 captures per session would let a novice
-  confirm their screen matches. The scripted capture pipeline in `tools/` already does this kind of
-  work; see `tools/image-improvements-handoff.md`.
-- **Week 3, 7 and 11 run sheets name a specific TA** (Adriene, Isabel, Harrison) as the person who
-  gives a pitch. Those names go stale every semester and a substitute cannot act on them. Consider
-  rewording to the role.
+  Shooting Week 3 also showed why this is worth doing beyond illustration: the run sheet had
+  been telling readers to type field names (`POP`, `NAME`) that do not exist in the data, and
+  nobody had caught it because nobody had run the session from the page. **Expect the same kind
+  of drift in the other ten.**
+- **Weeks 7 and 11 run sheets name a specific TA** (Isabel, Harrison) as the person who gives a
+  pitch. Those names go stale every semester and a substitute cannot act on them. Consider
+  rewording to the role. Week 3's mention went on 2026-09-17 when that page was rewritten for
+  students to read during class.
 - **Day 21:** confirm what software CCE 414 uses now and whether its lab list is current; then
   decide whether to keep the ArcGIS 10 screenshots.
 - **Day 7:** the Air Force One activity distances are from the 2021 classroom; re-measure.
@@ -388,3 +389,22 @@ Collected from the conversion notes at the end of each deck (search for `Convers
 - UGRC data used for the QGIS example maps: county boundaries, cities and towns, municipal
   boundaries, and PreK-12 schools, fetched from `https://services1.arcgis.com/99lidPhWCzftIe9K/ArcGIS/rest/services`
   as GeoJSON (commands in `tools/image-improvements-handoff.md`).
+
+## Week 3 hands-on page: written for students, not the instructor (2026-09-17)
+
+`docs/handson/week-03.md` was the first hands-on page turned around to face students, on the
+expectation that they have it open and follow along. The instructor-only scaffolding came out —
+the "At a glance" table, the "Practice run before class" framing, the "Before class" checklist,
+the 50-minute plan, and the BYU Belonging Map pitch (which the TA had already given on the
+Tuesday, and which needs a home on Learning Suite or a page of its own). What is left is: what
+you need, an overview, the walkthrough with a new step 0 that downloads and loads the data, "Now
+You Do It", and the common snags. The prose is second person throughout.
+
+The week pages changed to match: a Thursday session now shows only its badge and the green
+callout, because Topics, Materials and the graded activity were a second copy of what the
+hands-on page already carries. That is a generator change in `tools/build_schedule.py`, so it
+applies to all eleven weeks that have a hands-on session.
+
+**If the other ten pages get the same treatment**, this is the shape to copy. Note the Belonging
+Map instructions are currently nowhere: they were deleted from Week 3 and have not been put
+anywhere else.

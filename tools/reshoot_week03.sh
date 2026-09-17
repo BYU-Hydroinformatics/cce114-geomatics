@@ -53,7 +53,7 @@ for s in map-single-symbols map-graduated map-labels attribute-table \
     2>&1 | grep '^\[week03\]' || true
 done
 
-echo "==> normalising to the repo's 2000 px ceiling"
+echo "==> normalizing to the repo's 2000 px ceiling"
 for f in "$OUT"/w3-*.png; do
   w=$(sips -g pixelWidth "$f" | awk '/pixelWidth/{print $2}')
   if [[ "$w" -gt 2000 ]]; then sips -Z 2000 "$f" --out "$f" >/dev/null; fi

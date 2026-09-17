@@ -11,5 +11,6 @@ docs/slides/
 .DS_Store
 __pycache__/
 
-# Local scratch: course data pulled from Learning Suite, published via GitHub Releases
-data/
+# Local scratch only: the raw Learning Suite download. Course data that ships with the
+# site lives under docs/ and is committed. Anchored so it cannot match docs/*/data/.
+/data/

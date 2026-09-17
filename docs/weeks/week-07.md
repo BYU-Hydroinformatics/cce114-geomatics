@@ -37,22 +37,13 @@ GIS Fundamentals, Chapter 7 (Digital Data)
 > [!NOTE]
 > Concepts Exam 1 is taken in the Testing Center this week.
 
-### Topics
-
-- Connect QGIS to online services
-- Build a layout from live web layers
-
-### In-class activity
-
-Build a map using three or more layers from the Utah ArcGIS REST services and upload a nice layout. Record your completion on Learning Suite.
-
 <div class="handson-cta" markdown="1">
 
 **Hands-On Practice**{ .handson-cta__eyebrow }
 
 **Web Services in QGIS**{ .handson-cta__title }
 
-This session has its own step-by-step guide: what to have ready, a practice run to do beforehand, the 50-minute plan, the click-by-click QGIS walkthrough, the graded upload, and the snags that usually come up.
+This session has its own step-by-step guide: what you need, an overview, the click-by-click QGIS walkthrough, what to hand in, and the snags that usually come up.
 
 [Open the Week 7 hands-on guide →](../handson/week-07.md){ .handson-cta__button }
 

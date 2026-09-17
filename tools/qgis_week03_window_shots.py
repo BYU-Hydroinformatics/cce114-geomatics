@@ -211,7 +211,7 @@ def make_layout(p, title):
     sb = QgsLayoutItemScaleBar(lay)
     sb.setLinkedMap(m)
     sb.setStyle('Single Box')
-    # Default units come out as metres, so a continental map reads "1,000,000 m".
+    # Default units come out as meters, so a continental map reads "1,000,000 m".
     sb.setUnits(QgsUnitTypes.DistanceKilometers)
     sb.setUnitLabel('km')
     sb.setUnitsPerSegment(500)

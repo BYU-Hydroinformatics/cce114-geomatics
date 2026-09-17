@@ -43,23 +43,13 @@ Twenty-five minutes. What they learn: a drawing has no coordinates until you giv
 
 **Hands-On Practice**{ .badge .badge-handson } · *Day 21*
 
-### Topics
-
-- Georeference a scanned historic map: ground control points, transformation types, residuals
-- What a site plan for the Domes for Mozambique project needs from georeferencing
-- Web Mapping with AI Experience kickoff: from a QGIS layer to a public web map with an AI assistant
-
-### Materials
-
-- [Web Mapping with AI Experience](../assignments/web-mapping-with-ai.md)
-
 <div class="handson-cta" markdown="1">
 
 **Hands-On Practice**{ .handson-cta__eyebrow }
 
 **Georeferencing in QGIS, and the Web Mapping with AI Kickoff**{ .handson-cta__title }
 
-This session has its own step-by-step guide: what to have ready, a practice run to do beforehand, the 50-minute plan, the click-by-click QGIS walkthrough, the graded upload, and the snags that usually come up.
+This session has its own step-by-step guide: what you need, an overview, the click-by-click QGIS walkthrough, what to hand in, and the snags that usually come up.
 
 [Open the Week 11 hands-on guide →](../handson/week-11.md){ .handson-cta__button }
 
