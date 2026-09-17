@@ -10,3 +10,6 @@ docs/slides/
 # Local scratch
 .DS_Store
 __pycache__/
+
+# Local scratch: course data pulled from Learning Suite, published via GitHub Releases
+data/
