@@ -183,7 +183,7 @@ Random sample Civil/Environmental/Construction jobs from Monster.com…
 
 <!-- _class: lead -->
 
-![bg brightness:0.55](images/ci-byu-group-trip.png)
+![bg brightness:0.55](images/ci-byu-group-trip.jpg)
 
 # Introductions
 
@@ -214,9 +214,9 @@ Dr. Dan Ames • Dr. James Halgren
 <img src="images/ci-dan-boat-flag.jpg" style="width:100%; height:150px; object-fit:cover;" />
 <img src="images/ci-dan-wakesurfing.jpg" style="width:100%; height:150px; object-fit:cover;" />
 <img src="images/ci-dan-family-wedding.jpg" style="width:100%; height:150px; object-fit:cover;" />
-<img src="images/ci-dan-minibike-baby.png" style="width:100%; height:150px; object-fit:cover;" />
+<img src="images/ci-dan-minibike-baby.jpg" style="width:100%; height:150px; object-fit:cover;" />
 <img src="images/ci-dan-atv-daughter.jpg" style="width:100%; height:150px; object-fit:cover;" />
-<img src="images/ci-dan-winter-selfie.png" style="width:100%; height:150px; object-fit:cover;" />
+<img src="images/ci-dan-winter-selfie.jpg" style="width:100%; height:150px; object-fit:cover;" />
 <img src="images/ci-dan-camp-dinner.jpg" style="width:100%; height:150px; object-fit:cover;" />
 <img src="images/ci-dan-boating-daughter.jpg" style="width:100%; height:150px; object-fit:cover;" />
 
@@ -350,7 +350,7 @@ C. It's complicated
 
 # Who are you?
 
-![bg right:45%](images/ci-cosmo-cougar.png)
+![bg right:45%](images/ci-cosmo-cougar.jpg)
 
 At BYU you're most likely to be found attending:
 

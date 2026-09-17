@@ -101,6 +101,22 @@ same day; the attribute table is a 256-colour palette PNG because it is flat chr
 LANCZOS in RGB made the file bigger than the original, not smaller. Nothing changed on screen: the
 slides display these between 740 and 910 px wide, so the source was always being downscaled.
 
+**Day 1 image weight (partly done 2026-09-17).** `slides/day-01/images/` was 39 MB against the
+~15 MB per-deck guideline. Four photographs that were stored as PNG became JPEG at quality 85:
+`ci-cosmo-cougar`, `ci-dan-winter-selfie`, `ci-dan-minibike-baby`, `ci-byu-group-trip`, together
+14.9 MB down to 1.4 MB. None carried real transparency, so flattening was safe, and the four
+references in `course-introduction.md` were repointed at `.jpg`.
+
+Three files stayed PNG on purpose and were only resized to 2000 px: `gis-river-land-tirol`,
+`gis-mangrove-biomass` and `ci-gis-fundamentals-cover`. All three carry fine text — map credits,
+axis labels, a legend, a book title — and the convention is PNG for anything with text. The
+mangrove figure is also speckled raster on black, which is the worst case for JPEG ringing.
+
+The folder is now 23 MB, not under 15. There is no single file left to blame: the rest is about
+fifty images of 0.2 to 1.1 MB each. Getting under the guideline means going after the tail, most
+obviously by resizing to something nearer the size the slides actually draw them at — the Dr. Ames
+photo grid renders each picture about 190 px wide from 1536 to 2048 px sources.
+
 **Lab 1–2 (lower priority):** UGRC website screenshots still match the live site's
 labels (verified Aug 2026) but predate its current look; QGIS window chrome in older
 shots shows pre-3.44 styling. Refresh opportunistically.
