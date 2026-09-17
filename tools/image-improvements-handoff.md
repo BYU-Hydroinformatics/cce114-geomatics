@@ -96,7 +96,10 @@ originals), as do the toolbars, the Layers panel and the status bar. The images 
 was wrong and has been corrected, and the deck now tells students to install the long-term release.
 Do not re-shoot these on version grounds. The script is kept for when they do go stale: its four
 map shots work, its attribute-table and buffer shots do not yet — each carries a note saying what
-to try next. They are also 3200 px wide, against the ~2000 px convention, if anyone is tidying.
+to try next. All six were 3200 px wide, against the ~2000 px convention, and were resized to 2000 px on the
+same day; the attribute table is a 256-colour palette PNG because it is flat chrome and text and
+LANCZOS in RGB made the file bigger than the original, not smaller. Nothing changed on screen: the
+slides display these between 740 and 910 px wide, so the source was always being downscaled.
 
 **Lab 1–2 (lower priority):** UGRC website screenshots still match the live site's
 labels (verified Aug 2026) but predate its current look; QGIS window chrome in older
