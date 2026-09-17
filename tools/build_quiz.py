@@ -31,6 +31,7 @@ To add a quiz to a deck:
 
 Keep the slug short: it decides the QR's density, and the code is read from the back row.
 """
+import hashlib
 import html
 import json
 import random
@@ -42,6 +43,7 @@ ROOT = Path(__file__).resolve().parent.parent
 TEMPLATE = ROOT / "tools" / "quiz_template.html"
 DATA_DIR = ROOT / "tools" / "quizzes"
 OUT_DIR = ROOT / "docs" / "quizzes"
+ASSETS = OUT_DIR / "assets"
 
 REQUIRED = ["SLUG", "TITLE", "DAY", "WEEK", "TOPIC", "BLURB", "DESCRIPTION",
             "CLOSING", "MESSAGES", "QUESTIONS"]
@@ -112,6 +114,18 @@ def balance(qs: list, slug: str) -> None:
         q["correct"] = new.index(answer)
 
 
+def asset_version() -> str:
+    """A short hash of the shared stylesheet and script, stamped onto their URLs.
+
+    The assets have no version in their names, so without this a browser that cached
+    quiz.css keeps serving the old one after a fix ships — which is exactly what happened
+    the first time the engine changed under a page that was already open."""
+    h = hashlib.sha256()
+    for name in ("quiz.css", "quiz.js"):
+        h.update((ASSETS / name).read_bytes())
+    return h.hexdigest()[:8]
+
+
 def render(ns: dict) -> str:
     """Fill the shell. The questions travel as a JSON block that docs/quizzes/assets/quiz.js
     reads — the page carries no logic and no styling of its own."""
@@ -144,6 +158,7 @@ def render(ns: dict) -> str:
         "WEEK2": f"{ns['WEEK']:02d}",
         "CLOSING": ns["CLOSING"].rstrip("\n"),
         "DATA": payload,
+        "ASSETV": asset_version(),
     }
     for key, val in values.items():
         t = t.replace(f"%%{key}%%", val)
