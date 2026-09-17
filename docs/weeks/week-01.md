@@ -6,6 +6,12 @@
 | --- | --- |
 | Reading | GIS Fundamentals (Bolstad & Manson), Chapter 1 |
 
+## Practice
+
+Not graded, and nothing to hand in — open it on a phone or a laptop as often as you like.
+
+- [What Is a GIS?](../quizzes/what-is-gis/index.html) — Twelve questions on what a GIS is and is not, the three vector feature types and the attribute table behind them, and how this course works. The quiz behind the QR code on the Day 1 deck.
+
 ## Day 1 — Course Introduction and Introduction to GIS
 
 **Lecture**{ .badge .badge-lecture } · *Day 1*

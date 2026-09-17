@@ -239,6 +239,10 @@ TUESDAY_NOTES_DAYS = {2, 6, 10, 12, 14, 16, 20}
 # the QR code on that week's deck and from the week page afterward by anyone who missed the
 # scan. Nothing is graded and nothing is handed in.
 PRACTICE = {
+    1: [("what-is-gis", "What Is a GIS?",
+         "Twelve questions on what a GIS is and is not, the three vector feature types and the "
+         "attribute table behind them, and how this course works. The quiz behind the QR code on "
+         "the Day 1 deck.")],
     2: [("data-models", "Model, Format, or Reality?",
          "Twelve questions on telling a data model from reality and from the file format it is "
          "stored in, naming vector, raster, and TIN, and what each one costs. The quiz behind the "

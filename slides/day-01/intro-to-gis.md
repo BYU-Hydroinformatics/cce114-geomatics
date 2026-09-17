@@ -270,6 +270,35 @@ As you go to different parts of the room/world, take a minute to get to know the
 
 ---
 
+<!-- _class: activity -->
+
+# Your Turn — What Is a GIS?
+
+<div class="columns">
+<div>
+
+Twelve questions on your phone:
+
+- What a GIS **is**, and is not
+- **Features**, and the table behind them
+- How this **course** works
+
+Not graded, and every answer explains itself. Nothing here was supposed to be obvious this morning.
+
+<span style="font-size: 0.5em; color: #4a5568; white-space: nowrap;">byu-hydroinformatics.github.io/cce114-geomatics/quizzes/what-is-gis/</span>
+
+</div>
+<div>
+
+![w:400 center](images/gis-quiz-what-is-gis-qr.png)
+
+</div>
+</div>
+
+<!-- Note this is a different code from the activity sheet two slides back; say so, because some of the room will still be looking at that one. Five minutes, then a show of hands on the two that are worth an argument: whether a river is a polyline or a polygon, and what you lose when a city becomes a point. Covers both of this morning's decks, the course introduction as well as this one. If the room has no signal, put the URL on the board. The page is linked from the Week 1 page too. -->
+
+---
+
 # Before Next Class
 
 ![bg right:35% w:88%](images/gis-before-next-class.png)
