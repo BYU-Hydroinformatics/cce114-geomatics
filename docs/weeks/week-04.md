@@ -55,7 +55,7 @@ Find Air Force One, then Where Am I: trilaterate Prague on paper from three sign
 
 Fifteen minutes. Circulate and check that they converted seconds to kilometers before drawing; the usual mistake is a circle in meters on a map scaled in kilometers.
 
-## Thursday — GPS Field Collection and Importing the Class Data
+## Thursday — Campus Field Trip
 
 **Hands-On Practice**{ .badge .badge-handson } · *Day 7*
 
@@ -63,7 +63,7 @@ Fifteen minutes. Circulate and check that they converted seconds to kilometers b
 
 **Hands-On Practice**{ .handson-cta__eyebrow }
 
-**GPS Field Collection and Importing the Class Data**{ .handson-cta__title }
+**Campus Field Trip**{ .handson-cta__title }
 
 This session has its own step-by-step guide: what you need, an overview, the click-by-click QGIS walkthrough, what to hand in, and the snags that usually come up.
 

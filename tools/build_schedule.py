@@ -76,10 +76,11 @@ DAYS = [
                  "Converting from latitude/longitude to meters, and why it is not straightforward"],
          activity="Find Air Force One, then Where Am I: trilaterate Prague on paper from three signal delays and upload a photo of your solution",
          reading="GIS Fundamentals, Chapter 5 (GNSS and Coordinate Surveying)"),
-    dict(n=7, week=4, kind="hands-on", title="GPS Field Data Collection and Importing Into QGIS", handson="week-04",
-         topics=["Twenty minutes on campus collecting positions with your phone",
-                 "Importing the class points into QGIS from a CSV, assigning the CRS, and reprojecting to UTM",
-                 "Comparing the spread of GPS readings taken at the same site"],
+    dict(n=7, week=4, kind="hands-on", title="Campus Field Trip", handson="week-04",
+         handson_heading="Week 4 Hands-On Campus Field Trip",
+         topics=["Collect phone GPS readings on campus",
+                 "Import them into QGIS and convert to UTM meters",
+                 "Compare readings from the same site"],
          activity="GPS Class Activity: enter three campus positions in the shared sheet and record the site names on Learning Suite"),
     dict(n=8, week=5, kind="concepts", title="Working with Vector Data, Part 1",
          slides=[("Working with Vector Data", f"{SITE}/slides/day-08/working-with-vector-data.html")],
@@ -218,7 +219,7 @@ def badge(kind: str) -> str:
 THURSDAY_TITLE = {
     3: "First Map in QGIS",
     5: "Symbology, Labels, and a First Layout",
-    7: "GPS Field Collection and Importing the Class Data",
+    7: "Campus Field Trip",
     9: "Digitize Your Home with Snapping and the Vertex Tool",
     11: "Raster Data in QGIS and an Elevation Profile",
     13: "Web Services in QGIS",
@@ -462,7 +463,8 @@ def handson_page(d: dict, existing_text: str) -> str:
     upload, common snags) is hand-written below the marker and is never touched, so it must
     start at "### " or deeper."""
     w, info = d["week"], WEEKS[d["week"]]
-    out = [f"# Week {w} Hands-On — {session_title(d)}", "",
+    heading = d.get("handson_heading", f"Week {w} Hands-On — {session_title(d)}")
+    out = [f"# {heading}", "",
            f"{badge('hands-on')} · *Day {d['n']} · Thursday of "
            f"[Week {w} — {info['theme']}](../weeks/week-{w:02d}.md)*", ""]
     if d.get("note"):

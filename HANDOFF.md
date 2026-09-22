@@ -497,3 +497,13 @@ QGIS profile, sets a light Qt palette, captures genuine widgets, and saves relat
 the project. It never needs to change the user's existing QGIS project. Site generation preserves
 the content below `<!-- runsheet -->`; the small topic wording correction is also in
 `tools/build_schedule.py`. Strict MkDocs build and browser visual review passed.
+
+## Week 4 campus field trip: shorter student guide (2026-09-21)
+
+At Dan's request, removed the entire instructor rehearsal/timing section and shortened the
+remaining Week 4 walkthrough. Kept the screenshots, practice files, essential QGIS settings,
+checkpoints, and submission requirements. The page is now titled **Week 4 Hands-On Campus Field
+Trip**; the generator, schedule, weekly link, and navigation use the new Campus Field Trip name.
+A BYU main-quad photograph by Ricardo630 appears near the top with its Wikimedia Commons source
+and CC BY-SA 3.0 attribution. `w4-byu-campus.jpg` is Wikimedia's 1280-pixel rendition, unaltered
+apart from resizing. The earlier instructor-section description above is superseded.
