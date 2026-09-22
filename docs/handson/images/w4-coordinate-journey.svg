@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 440" role="img" aria-labelledby="title desc">
+<title id="title">From a phone reading to a map in meters</title><desc id="desc">Collect decimal degrees, import longitude as X and latitude as Y using EPSG:4326, then export to EPSG:26912 to obtain meters.</desc>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0 0L6 3L0 6" fill="none" stroke="#24465b" stroke-width="2"/></marker></defs>
+<rect width="1200" height="440" rx="24" fill="#f2f6f5"/>
+<g font-family="Arial,sans-serif" fill="#17394c">
+<text x="35" y="49" font-size="29" font-weight="700">A little field trip for your coordinates</text>
+<text x="35" y="78" font-size="18">Same place on Earth. Different ways to describe it.</text>
+<g stroke="#d8e4e4" stroke-width="2" fill="white"><rect x="30" y="101" width="350" height="305" rx="20"/><rect x="425" y="101" width="350" height="305" rx="20"/><rect x="820" y="101" width="350" height="305" rx="20"/></g>
+<g fill="none" stroke="#24465b" stroke-width="3" marker-end="url(#arrow)"><path d="M388 247H417"/><path d="M783 247H812"/></g>
+<g transform="translate(66 126)"><rect x="0" y="0" width="83" height="127" rx="16" fill="#d6f0e9" stroke="#24465b" stroke-width="3"/><rect x="12" y="18" width="59" height="82" rx="6" fill="white"/><circle cx="32" cy="52" r="4"/><circle cx="52" cy="52" r="4"/><path d="M29 68Q42 81 56 68" fill="none" stroke="#24465b" stroke-width="3"/><circle cx="42" cy="112" r="5" fill="#148477"/><path d="M95 20q16 8 0 20m10-30q26 18 0 40" fill="none" stroke="#148477" stroke-width="3"/></g>
+<text x="191" y="172" font-size="23" font-weight="700">Hello, Earth!</text><text x="191" y="204" font-size="19">lat ≈ 40.25</text><text x="191" y="232" font-size="19">lon ≈ −111.65</text>
+<text x="52" y="292" font-size="23" font-weight="700">1 · COLLECT</text><text x="52" y="328" font-size="20">Keep every displayed digit.</text><text x="52" y="359" font-size="20">One row per reading.</text><text x="52" y="389" font-size="17" fill="#148477">West longitude needs a minus sign.</text>
+<g transform="translate(450 139)"><rect width="300" height="106" rx="10" fill="#e8f0fa"/><text x="20" y="34" font-size="22" font-weight="700">X ← longitude</text><text x="20" y="67" font-size="22" font-weight="700">Y ← latitude</text><text x="20" y="93" font-size="17">Source CRS: WGS 84 · EPSG:4326</text></g>
+<text x="447" y="292" font-size="23" font-weight="700">2 · IMPORT</text><text x="447" y="328" font-size="20">Tell QGIS what the</text><text x="447" y="357" font-size="20">original numbers mean.</text><text x="447" y="389" font-size="17" fill="#2e6297">These coordinates are still degrees.</text>
+<g transform="translate(861 131)"><path d="M0 20L75 0L150 20L225 0V111L150 130L75 110L0 130Z" fill="#fff1dc" stroke="#b9822e" stroke-width="2"/><path d="M75 0V110M150 20V130" stroke="#b9822e" stroke-width="2"/><path d="M30 80Q70 20 112 72T197 39" fill="none" stroke="#148477" stroke-width="4" stroke-dasharray="6 6"/><circle cx="112" cy="72" r="9" fill="#e57239" stroke="white" stroke-width="3"/></g>
+<text x="842" y="292" font-size="23" font-weight="700">3 · EXPORT</text><text x="842" y="328" font-size="20">NAD83 / UTM zone 12N</text><text x="842" y="358" font-size="20">EPSG:26912 · meters</text><text x="842" y="389" font-size="17" fill="#986421">Now calculate $x and $y.</text>
+</g></svg>

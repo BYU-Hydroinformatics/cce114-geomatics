@@ -476,3 +476,24 @@ applies to all eleven weeks that have a hands-on session.
 **If the other ten pages get the same treatment**, this is the shape to copy. Note the Belonging
 Map instructions are currently nowhere: they were deleted from Week 3 and have not been put
 anywhere else.
+
+## Week 4 GPS hands-on visual walkthrough (2026-09-21)
+
+`docs/handson/week-04.md` now follows students through field collection, CSV import, UTM export,
+field calculation, and comparing same-site readings. Six real QGIS 3.44.14 captures and two
+original SVG concept diagrams live under `docs/handson/images/w4-*`. The instructor rehearsal,
+50-minute timing, checkpoints, expected answers, and troubleshooting table support a first-time
+presenter. The grading requirement remains three real readings and three site names on Learning
+Suite. Raw phone CSV imports use EPSG:4326; Lab 3's already-converted CSV uses EPSG:26912.
+
+`docs/handson/data/week-04/` holds a clearly labeled synthetic CSV and a portable completed QGIS
+project ZIP. All nine features and their calculated coordinates were checked after extracting to
+a different folder; Demo_A A–B measures 10.0002 m in UTM. The checkpoint deliberately needs no
+online basemap. These are illustrative demo sites, not surveyed landmarks or collected student
+observations. Spread measures agreement, not absolute error without a reference position.
+
+Reproduce with `tools/qgis_week04_shots.py` (command in its header). It launches with a temporary
+QGIS profile, sets a light Qt palette, captures genuine widgets, and saves relative data paths in
+the project. It never needs to change the user's existing QGIS project. Site generation preserves
+the content below `<!-- runsheet -->`; the small topic wording correction is also in
+`tools/build_schedule.py`. Strict MkDocs build and browser visual review passed.

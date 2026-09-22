@@ -79,7 +79,7 @@ DAYS = [
     dict(n=7, week=4, kind="hands-on", title="GPS Field Data Collection and Importing Into QGIS", handson="week-04",
          topics=["Twenty minutes on campus collecting positions with your phone",
                  "Importing the class points into QGIS from a CSV, assigning the CRS, and reprojecting to UTM",
-                 "Seeing GPS error as the scatter between students at the same site"],
+                 "Comparing the spread of GPS readings taken at the same site"],
          activity="GPS Class Activity: enter three campus positions in the shared sheet and record the site names on Learning Suite"),
     dict(n=8, week=5, kind="concepts", title="Working with Vector Data, Part 1",
          slides=[("Working with Vector Data", f"{SITE}/slides/day-08/working-with-vector-data.html")],
