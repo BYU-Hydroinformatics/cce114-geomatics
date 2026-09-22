@@ -17,6 +17,8 @@ footer: "CCE 114 · Day 6 — The Global Positioning System"
 CCE 114 Geomatics
 Dr. Dan Ames
 
+![w:120 center](images/byu-medallion.svg)
+
 <!-- Tuesday concept lecture, Week 4, simplified for a 50-minute hour that also holds two activities. Order: Air Force One warm-up (5 min), the Prague "Where Am I" activity (15 min), then the short explanation of how GPS does the same thing (about 25 min). Thursday is field collection on campus and the QGIS import in the Thursday hands-on session. The longer version of this material (four-step position fix, error budget arithmetic, the meters demo) is in the extended deck linked from the Day 6 page. -->
 
 ---
@@ -42,21 +44,21 @@ By the end of class you should be able to:
 
 ![bg right:38% w:92%](images/gps-air-force-one.png)
 
-A photo of Air Force One is hidden somewhere in this room. Three "satellites" have been marked. Your ranges:
+Assume you are the U.S. Air Force and you need to keep track of Air Force One. You only have **three pieces of information** — its range from each of three known points in this room:
 
 - **___ inches** from Satellite 1
 - **___ inches** from Satellite 2
 - **___ inches** from Satellite 3
 
-Find it. You have five minutes.
+Find it.
 
-<!-- Instructor setup, before class: tape the Air Force One picture somewhere in the room, mark three fixed points as satellites 1, 2, and 3 (sticky notes on a light, a door frame, the lectern corner), measure the straight-line distance from each to the photo with a tape, and write the three numbers on this slide. The 2021 numbers (169, 216, 151 inches) belonged to a different room. Hand out tape measures or string and let them swing arcs. The point: three ranges from three known points fix a position. -->
+<!-- Instructor setup, before class: hide the Air Force One marker somewhere in the room, mark three fixed points as satellites 1, 2, and 3 (sticky notes on a light, a door frame, the lectern corner), measure the straight-line distance from each to the marker with a tape, and write the three numbers on this slide. The 2021 numbers (169, 216, 151 inches) belonged to a different room. Run it with volunteers: two or three students at the front with tape measures or string, swinging an arc from each satellite while the class calls out where the arcs cross. Let it take as long as it takes — no clock. The point: three ranges from three known points fix a position. -->
 
 ---
 
 <!-- _class: activity -->
 
-# Activity: "Where Am I?"
+# In-Class Activity
 
 <div class="columns" style="grid-template-columns: 1.15fr 1fr;">
 <div>
@@ -76,7 +78,7 @@ I heard three radio stations announcing the time, but each was off from the actu
 
 ![w:190 center](images/gps-lost-in-europe.jpg)
 
-**To turn in (graded, 5 points):**
+**You try it...**
 
 1. Convert each delay to a distance (**D = R × T**, R = 299,792 km/s)
 2. Draw the three circles on a map of Europe
@@ -86,7 +88,7 @@ I heard three radio stations announcing the time, but each was off from the actu
 </div>
 </div>
 
-<!-- Printed maps of Europe with a scale bar, one per student, or a web map with the measure tool. Compasses or string. Twelve to fifteen minutes. Circulate and check that they converted seconds to kilometers before drawing; the usual mistake is a circle in meters on a map scaled in kilometers. Reveal the answer only after they commit. -->
+<!-- Bring the printed maps of Europe with a scale bar, one per student (print them beforehand; do not count on a web map). Compasses or string. Twelve to fifteen minutes. Circulate and check that they converted seconds to kilometers before drawing; the usual mistake is a circle in meters on a map scaled in kilometers. Reveal the answer only after they commit. -->
 
 ---
 
@@ -113,19 +115,23 @@ I heard three radio stations announcing the time, but each was off from the actu
 
 # GPS is one of several GNSS constellations
 
-<div class="columns">
+<div class="columns" style="grid-template-columns: 1.25fr 1fr;">
 <div>
 
 - **GNSS** = Global Navigation Satellite System; **GPS** is the U.S. one
 - About **31** working satellites, **20,200 km** up, each circling the Earth twice a day
-- Other constellations: **GLONASS** (Russia), **Galileo** (EU), **BeiDou** (China)
-- Your phone listens to several at once, which is why it locks on so fast
+- Your phone listens to several constellations at once, which is why it locks on so fast
 - Every satellite does the same thing: **broadcast a coded time signal**
 
 </div>
 <div>
 
-![w:340 center](images/gps-satellite.png)
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1em 0.8em; text-align: center; font-size: 0.72em; line-height: 1.25;">
+<div><div style="height: 78px; display: flex; align-items: flex-end; justify-content: center;"><img src="images/flag-usa.svg" style="height: 72px; border: 1px solid #b9c2ce;" /></div><div style="margin-top: 0.35em;"><strong>GPS</strong><br/>United States</div></div>
+<div><div style="height: 78px; display: flex; align-items: flex-end; justify-content: center;"><img src="images/flag-russia.svg" style="height: 72px; border: 1px solid #b9c2ce;" /></div><div style="margin-top: 0.35em;"><strong>GLONASS</strong><br/>Russia</div></div>
+<div><div style="height: 78px; display: flex; align-items: flex-end; justify-content: center;"><img src="images/flag-eu.svg" style="height: 72px; border: 1px solid #b9c2ce;" /></div><div style="margin-top: 0.35em;"><strong>Galileo</strong><br/>European Union</div></div>
+<div><div style="height: 78px; display: flex; align-items: flex-end; justify-content: center;"><img src="images/flag-china.svg" style="height: 72px; border: 1px solid #b9c2ce;" /></div><div style="margin-top: 0.35em;"><strong>BeiDou</strong><br/>China</div></div>
+</div>
 
 </div>
 </div>

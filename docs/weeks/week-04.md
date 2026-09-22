@@ -40,11 +40,11 @@ Find Air Force One, then Where Am I: trilaterate Prague on paper from three sign
 
 **Setup, before class.** Tape a printed photo of Air Force One somewhere in the room, not in plain sight. Mark three fixed points in the room as satellites 1, 2, and 3 (a corner of the lectern, a door frame, a window sill; label them with sticky notes). Measure the straight-line distance from each satellite to the photo with a tape and type the three numbers into the blanks on the slide (the 2021 room's were 169, 216, and 151 inches; re-measure for 234 CB).
 
-**Run.** Show the slide, give five minutes, let them use string, a tape, or their arms. Whoever finds it says how. The point: three ranges from three known points fix a position. That is trilateration, and it is the whole GPS idea before the math.
+**Run.** Show the slide and call up two or three volunteers to do the measuring — string, a tape, or their arms — while the rest of the class calls out where the arcs cross. No clock; let it run as long as it takes. Whoever finds it says how. The point: three ranges from three known points fix a position. That is trilateration, and it is the whole GPS idea before the math.
 
-*Same deck, "Activity: Where Am I?" and "The answer: Prague"; the QGIS version by Harrison Stewart is in the Teaching folder under In class activities.*
+*Same deck, "In-Class Activity" and "The answer: Prague"; the QGIS version by Harrison Stewart is in the Teaching folder under In class activities.*
 
-**Setup.** Printed maps of Europe with a scale bar, one per student, or let them use a web map with the measure tool. Compasses or string.
+**Setup.** Printed maps of Europe with a scale bar, one per student — print them beforehand rather than counting on a web map. Compasses or string.
 
 **Run.**
 
