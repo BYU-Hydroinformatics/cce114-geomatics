@@ -46,13 +46,13 @@ By the end of class you should be able to:
 
 Assume you are the U.S. Air Force and you need to keep track of Air Force One. You only have **three pieces of information** — its range from each of three known points in this room:
 
-- **___ inches** from Satellite 1
-- **___ inches** from Satellite 2
-- **___ inches** from Satellite 3
+- **88 inches** from Satellite 1 — the north projector
+- **175 inches** from Satellite 2 — the south projector
+- **167 inches** from Satellite 3 — the camera lens at the front
 
 Find it.
 
-<!-- Instructor setup, before class: hide the Air Force One marker somewhere in the room, mark three fixed points as satellites 1, 2, and 3 (sticky notes on a light, a door frame, the lectern corner), measure the straight-line distance from each to the marker with a tape, and write the three numbers on this slide. The 2021 numbers (169, 216, 151 inches) belonged to a different room. Run it with volunteers: two or three students at the front with tape measures or string, swinging an arc from each satellite while the class calls out where the arcs cross. Let it take as long as it takes — no clock. The point: three ranges from three known points fix a position. -->
+<!-- Instructor setup, before class: hide the Air Force One marker somewhere in the room, mark three fixed points as satellites 1, 2, and 3 (sticky notes on a light, a door frame, the lectern corner), measure the straight-line distance from each to the marker with a tape, and write the three numbers on this slide. Today's numbers were measured in this room: 88 inches from the north projector, 175 from the south projector, 167 from the camera lens at the front. (The 2021 numbers, 169/216/151, belonged to a different room.) Re-measure whenever the room or the hiding place changes. Run it with volunteers: two or three students at the front with tape measures or string, swinging an arc from each satellite while the class calls out where the arcs cross. Let it take as long as it takes — no clock. The point: three ranges from three known points fix a position. -->
 
 ---
 

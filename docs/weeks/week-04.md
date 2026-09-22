@@ -38,7 +38,7 @@ Find Air Force One, then Where Am I: trilaterate Prague on paper from three sign
 <!-- tuesday-notes -->
 *In the [Global Positioning System](https://byu-hydroinformatics.github.io/cce114-geomatics/slides/day-06/gps-part-1.html) deck, "Warm-up: find Air Force One." The deck opens with the two activities and then gives the short GPS explanation.*
 
-**Setup, before class.** Tape a printed photo of Air Force One somewhere in the room, not in plain sight. Mark three fixed points in the room as satellites 1, 2, and 3 (a corner of the lectern, a door frame, a window sill; label them with sticky notes). Measure the straight-line distance from each satellite to the photo with a tape and type the three numbers into the blanks on the slide (the 2021 room's were 169, 216, and 151 inches; re-measure for 234 CB).
+**Setup, before class.** Tape a printed photo of Air Force One somewhere in the room, not in plain sight. Mark three fixed points in the room as satellites 1, 2, and 3 and label them with sticky notes. In Clyde 234 the three used are the north projector, the south projector, and the camera lens at the front. Measure the straight-line distance from each satellite to the photo with a tape and type the three numbers into the slide (Fall 2026: 88, 175, and 167 inches; the 2021 room's were 169, 216, and 151). Re-measure whenever the room or the hiding place changes.
 
 **Run.** Show the slide and call up two or three volunteers to do the measuring — string, a tape, or their arms — while the rest of the class calls out where the arcs cross. No clock; let it run as long as it takes. Whoever finds it says how. The point: three ranges from three known points fix a position. That is trilateration, and it is the whole GPS idea before the math.
 
