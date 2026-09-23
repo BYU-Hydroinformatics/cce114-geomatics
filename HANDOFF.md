@@ -32,7 +32,7 @@ semester-agnostic pages:
 - `docs/weeks/week-NN.md`: 15 weekly lesson-plan pages (restructured 2026-09-09, see below), each with
   the Tuesday concepts session and the Thursday hands-on session together
 - `docs/policies/`: grading, attendance and participation, exams, university policies, plus the existing AI policy
-- `docs/assignments/deliverables.md` (quizzes, in-class activities, experiences) and `docs/assignments/final-project.md`
+- `docs/assignments/deliverables.md` (the Assignments overview: labs, quizzes, in-class activities, experiences, final project) and `docs/assignments/final-project.md`
 
 Everything is expressed in week numbers and weekdays, never calendar dates, so the same site
 serves Fall (September to December) and Winter (January to April). The weekly rhythm is
@@ -198,7 +198,8 @@ links fixed on 2026-09-09 still resolve.
 The site has no sidebars: the left navigation and the table of contents are gone, and each
 top-level nav section becomes a dropdown in the header (`overrides/partials/header.html`,
 `docs/javascripts/menu.js`), so the nav is two sections, **Course Info** and **Schedule**. The
-Hands-On top tab is gone; its index is under Course Info and each guide is linked from its week.
+Hands-On top tab is gone; each guide is linked from its week, and the index is linked from the
+home page and the schedule overview.
 The palette is light only. `tools/cache_bust.py` appends a content hash to the CSS and JS links so
 a browser never pairs new markup with a cached stylesheet (it must also be listed in
 `mkdocs.preview.yml`, since `INHERIT` replaces the hooks list).
@@ -213,6 +214,14 @@ activity write-ups moved from under `<!-- tuesday-notes -->` on the week pages t
 The session `##` headings are gone from the week pages, but each page keeps invisible
 `<span id>` anchors with the old slugs, so the Learning Suite links fixed on 2026-09-09 still land
 on the right page.
+
+**Assignments overview (2026-09-23).** The Course Info menu lost its Hands-On Guides entry, and
+"Quizzes, Activities & Experiences" became **Assignments** (same file, `docs/assignments/deliverables.md`,
+so existing links hold). It is now an overview of each kind of graded work — lab exercises, reading
+quizzes, in-class activities, experiences, final project — without the per-quiz and per-activity
+tables or any week numbers, because those details keep changing on Learning Suite. The 6th-edition
+page-range note went with the quiz table. The Exams page likewise no longer ties the Concepts Exams
+to Weeks 7 and 12. Week-specific timing belongs on the week pages, which the generator keeps current.
 
 **Data.** `UtahCountyData.zip` (38 MB: county boundary, major roads, cellular towers, DEM) is
 attached to the **`course-data-2026` GitHub release** rather than committed, so clones stay small;
@@ -314,8 +323,6 @@ Collected from the conversion notes at the end of each deck (search for `Convers
 - **Day 4:** the two-part "which elements are required" poll has no answer key in the source.
 - **Day 20 (Geoplanning):** no source deck exists, so there are no slides.
 - **Surveying:** three archived Surveying decks are not in the current schedule and were not converted.
-- **Quiz readings** on the deliverables page cite 6th-edition page ranges; the required text is
-  now the 7th edition, and the mapping is noted as pending.
 - **Final project:** the site page is a placeholder that points to the Mapping Term Project
   document on Learning Suite; converting that document into the page is the natural next step.
 - **Lab headings: done for all eleven (2026-09-10).** Every lab now uses "Step by Step Instructions"

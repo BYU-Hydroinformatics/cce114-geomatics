@@ -3,18 +3,18 @@
 There are three exams. Dates and Testing Center windows for the current semester are on Learning
 Suite; their place in the sequence is on the [schedule](../schedule.md).
 
-## Concepts Exam 1 (about Week 7)
+## Concepts Exam 1
 
 A **Testing Center** exam covering all of the textbook quizzes and concepts lecture material
 covered in class up to that point: introduction to GIS, data models and file types, map design and
 symbology, GPS, vector data, and raster data.
 
-## Concepts Exam 2 (about Week 12)
+## Concepts Exam 2
 
 A **Testing Center** exam covering all of the textbook quizzes and concepts lecture material
 covered in class so far, with emphasis on the material since Exam 1: web services and finding
-data, geodesy and projections, metadata, geoprocessing, and site selection. The Thursday session
-of Week 12 includes a study session.
+data, geodesy and projections, metadata, geoprocessing, and site selection. A study session is held
+in class beforehand.
 
 ## Final Exam (finals week)
 

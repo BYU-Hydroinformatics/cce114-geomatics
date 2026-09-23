@@ -121,4 +121,4 @@ Due Wednesday of Week 10. The assignment: attend a real construction or engineer
 
 #### Links
 
-- [Community and Professional Map Experience](../assignments/deliverables.md#community-and-professional-map-experience-week-10)
+- [Community and Professional Map Experience](../assignments/deliverables.md#community-and-professional-map-experience)

@@ -9,7 +9,7 @@ Your grade comes from these categories. Point values for the current semester ar
 | **Reading quizzes** | Eight open-book, untimed online quizzes keyed to the textbook and lectures | Taken on Learning Suite; cannot be submitted late |
 | **Labs** | Eleven QGIS lab reports, submitted as a single PDF | Due Saturday 11:59 pm; late penalty applies |
 | **In-class activities** | Short activities during Tuesday and Thursday sessions, recorded on Learning Suite | Completed in class |
-| **Experiences** | BYU Belonging Map, Community and Professional Map Experience, Web Mapping with AI Experience | See [Deliverables](../assignments/deliverables.md#experiences) |
+| **Experiences** | BYU Belonging Map, Community and Professional Map Experience, Web Mapping with AI Experience | See [Assignments](../assignments/deliverables.md#experiences) |
 | **Concepts Exams** | Two Testing Center exams covering quizzes, readings, and lectures to date | See [Exams](exams.md) |
 | **Final Exam** | Hands-on practical exam in QGIS, given in class | See [Exams](exams.md) |
 | **Final Project** | A mapping term project submitted as a PDF report | See [Final Project](../assignments/final-project.md) |

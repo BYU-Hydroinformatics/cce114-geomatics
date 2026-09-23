@@ -64,8 +64,8 @@ data comes mostly from the [Utah SGID](https://gis.utah.gov/products/sgid/).
 - Each class period starts with a brief mini-devotional: a prayer, a spiritual thought, and a
   personal note offered by class members.
 
-The [Quizzes, Activities & Experiences](assignments/deliverables.md) page collects the graded work
-that is not a lab: the eight reading quizzes, the in-class activities, and the experiences.
+The [Assignments](assignments/deliverables.md) page gives an overview of every kind of graded work:
+labs, reading quizzes, in-class activities, experiences, and the final project.
 
 ## Where Everything Lives
 

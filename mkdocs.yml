@@ -51,8 +51,7 @@ markdown_extensions:
 nav:
   - Course Info:
       - Overview: index.md
-      - Hands-On Guides: handson/README.md
-      - Quizzes, Activities & Experiences: assignments/deliverables.md
+      - Assignments: assignments/deliverables.md
       - Grading: policies/grading.md
       - Attendance & Participation: policies/attendance.md
       - Exams: policies/exams.md

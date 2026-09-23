@@ -1,67 +1,47 @@
-# Quizzes, Activities, and Experiences
+# Assignments
 
-Besides the eleven labs and the [final project](final-project.md), the course has three other
-kinds of graded work. Each lab is linked from the week it is due; the week each item below lands in
-is on the [schedule](../schedule.md). Exact due dates for the current semester are on Learning
-Suite.
+An overview of the kinds of graded work in CCE 114. Each week's page on the
+[schedule](../schedule.md) links what is due that week, and exact due dates for the current
+semester are on Learning Suite. How each category counts toward your grade is on the
+[Grading](../policies/grading.md) page.
+
+## Lab Exercises
+
+The labs are the core of the course: hands-on projects in QGIS that take the week's concepts and
+apply them to a real engineering problem with real data, from making a first map to a full site
+selection analysis. The Thursday hands-on session prepares you for each one. Each lab has its own
+page with the data, step-by-step instructions, the deliverables and the grading rubric, linked from
+the week it is due. You submit a lab as a single PDF report on Learning Suite, due **Saturday at
+11:59 pm**; late labs lose points, as described on the [Grading](../policies/grading.md) page.
 
 ## Reading Quizzes
 
-Eight quizzes on Learning Suite. They are **open book and untimed**, meant to be done with your
-notes and *GIS Fundamentals* (Bolstad & Manson) in hand. Each quiz opens on Tuesday and closes
-**Saturday at 11:59 pm** of its week, and quizzes cannot be submitted late. The same concepts
-reappear on the [Concepts Exams](../policies/exams.md), where the book is not available, so treat
-the readings seriously.
-
-| Quiz | Topic | Week | Reading |
-| --- | --- | --- | --- |
-| 1 | Intro to GIS & Map Design Fundamentals | 2 | Part 1: pp. 1–23; Part 2: pp. 147–156 and 181–191 (6th ed.) |
-| 2 | Spatial Data Models and File Types | 3 | Chapter 2, pp. 27–71 (6th ed.), plus the data models lectures |
-| 3 | Global Positioning Systems, Part 1 | 4 | pp. 201–237 (6th ed.), plus the GPS lectures |
-| 4 | Global Positioning Systems, Part 2 | 5 | GPS lecture material |
-| 5 | Getting Started with Raster Data | 6 | Raster lecture material |
-| 6 | Map Projections and Coordinate Systems | 8 | pp. 116–136 (6th ed.), plus class material |
-| 7 | Metadata | 9 | Part 1: linked readings on what metadata is and metadata standards; Part 2: explore datasets at [gis.utah.gov/data](https://gis.utah.gov/data/) and [data.gov](https://www.data.gov) |
-| 8 | Geoprocessing and Spatial Data Analysis | 10 | pp. 373–393 and 394–428 (6th ed.), plus the geoprocessing lectures |
-
-> [!NOTE]
-> Page numbers above are for the 6th edition, which the quizzes were written against. The required
-> text is now the 7th edition; the chapter topics are the same, and 7th-edition page ranges will be
-> added here.
+Quizzes on Learning Suite over the week's reading in *GIS Fundamentals* (Bolstad & Manson) and the
+lecture material. They are **open book and untimed**, meant to be done with your notes and the book
+in hand. Each quiz opens on Tuesday and closes **Saturday at 11:59 pm** of its week, and quizzes
+cannot be submitted late. The same concepts reappear on the [Concepts Exams](../policies/exams.md),
+where the book is not available, so treat the readings seriously.
 
 ## In-Class Activities
 
-Short activities during class, worth 5 points each (10 for the vector editing week), recorded on
-Learning Suite the same day. Tuesday activities are part of Dr. Ames's lectures; Thursday
-activities are the hands-on QGIS work with Dr. Halgren. The full setup and instructions for each
-are on that week's [Schedule](../schedule.md) page.
-
-| Week | Tuesday (lecture) | Thursday (hands-on in QGIS) |
-| --- | --- | --- |
-| 2 | State Boundary Vector Data Model Activity | First Map: Utah County |
-| 3 | | Playing with Symbology |
-| 4 | Where Am I (trilaterate Prague on paper) | GPS Class Activity (collect and import campus positions) |
-| 5 | | Creating and Editing Vector Data (10 points) |
-| 6 | Engineering Paper Raster Analysis | DEM Profile |
-| 7 | | Getting Data through Web Mapping Services |
-| 8 | | Playing with Projections |
-| 9 | What I learned about metadata | AGRC Metadata |
-| 10 | | Cities Near Rivers |
-| 11 | Georeference Your Neighborhood Sketch | |
+Short activities done during class and recorded on Learning Suite the same day. On Tuesdays they
+are part of the concepts lecture; on Thursdays they are the hands-on work in QGIS. Each week's page
+describes that week's activities under **In-Class Practice**, with a link to the full guide where
+there is one.
 
 ## Experiences
 
-Three larger assignments that take you outside the classroom. Each is submitted as a PDF on
-Learning Suite and is a good place to use AI well; see the [AI Use Policy](../policies/ai-policy.md).
+Larger assignments that take you outside the classroom. Each is submitted as a PDF on Learning
+Suite and is a good place to use AI well; see the [AI Use Policy](../policies/ai-policy.md).
 
-### BYU Belonging Map (Week 6)
+### BYU Belonging Map
 
 Let us cultivate a Covenant Belonging community (see [belonging.byu.edu](https://belonging.byu.edu/)).
 Attend a cultural or sporting activity with at least two other BYU students, take a picture
 together, build a map in QGIS showing where your event was held along with any other relevant
 mappable information, save it as a PDF, and upload it.
 
-### Community and Professional Map Experience (Week 10)
+### Community and Professional Map Experience
 
 Let us expand your real-world professional experience. Attend a real professional construction or
 engineering event or presentation (an easy option is a city council meeting), take a picture at
@@ -73,12 +53,17 @@ discussed and what you learned about professional map-based communication. Answe
 2. What analysis did they do and show?
 3. What decision or question were they trying to inform or help answer with this map?
 
-### Web Mapping with AI Experience (Week 14)
+### Web Mapping with AI Experience
 
 Learn how to build a website with a map on it, with AI assistance from the start: a public web
 page with an interactive map showing a layer you exported from QGIS, plus a short note on how you
-used the AI. Full instructions: [Web Mapping with AI Experience](web-mapping-with-ai.md). It is
-introduced in class on Thursday of Week 11.
+used the AI. Full instructions: [Web Mapping with AI Experience](web-mapping-with-ai.md).
+
+## Final Project
+
+A mapping term project at the end of the semester that brings the skills from the labs together:
+finding data, building a workflow, running an analysis, and communicating the result with maps.
+See [Final Project](final-project.md).
 
 ## Attendance and Course Evaluation
 
