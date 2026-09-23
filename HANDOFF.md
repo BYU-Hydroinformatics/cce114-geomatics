@@ -194,6 +194,26 @@ The `<!-- thursday-notes -->` marker is gone; the run sheets now sit below `<!--
 the hands-on pages. Session `##` headings on the week pages did not change, so the Learning Suite
 links fixed on 2026-09-09 still resolve.
 
+**Four-card week pages, header menus, light mode (2026-09-23).** Brought in line with CE 414 again.
+The site has no sidebars: the left navigation and the table of contents are gone, and each
+top-level nav section becomes a dropdown in the header (`overrides/partials/header.html`,
+`docs/javascripts/menu.js`), so the nav is two sections, **Course Info** and **Schedule**. The
+Hands-On top tab is gone; its index is under Course Info and each guide is linked from its week.
+The palette is light only. `tools/cache_bust.py` appends a content hash to the CSS and JS links so
+a browser never pairs new markup with a cached stylesheet (it must also be listed in
+`mkdocs.preview.yml`, since `INHERIT` replaces the hooks list).
+
+Every week page is now four cards — Presentation Slides, In-Class Practice, Lab Assignment,
+Reading Quiz — under an optional "Also this week" callout. Tuesday topics became the description
+of the Tuesday deck; Tuesday materials sit under the slides; the Tuesday activity, the Thursday
+hands-on callout and the self-check quizzes share the In-Class Practice card. `WEEKS` lost its
+free-text `due` list in favor of `quiz=(n, title)`, `lab=n` and `also=[...]`. The seven Tuesday
+activity write-ups moved from under `<!-- tuesday-notes -->` on the week pages to their own pages,
+`docs/activities/week-NN.md`, below `<!-- notes -->`, linked as "Activity guide" from the card.
+The session `##` headings are gone from the week pages, but each page keeps invisible
+`<span id>` anchors with the old slugs, so the Learning Suite links fixed on 2026-09-09 still land
+on the right page.
+
 **Data.** `UtahCountyData.zip` (38 MB: county boundary, major roads, cellular towers, DEM) is
 attached to the **`course-data-2026` GitHub release** rather than committed, so clones stay small;
 the Day 2 deck, the week pages and the hands-on pages all link to that asset. Every lab's own data
@@ -209,10 +229,11 @@ Two files are the source of truth for structure; edit them rather than their out
 
 - **`tools/build_schedule.py`** holds the DAYS and WEEKS tables. Running
   `python3 tools/build_schedule.py` regenerates `docs/schedule.md`, all 15 `docs/weeks/week-NN.md`
-  pages, and the Schedule section of `mkdocs.yml`. To add a slide deck to a day, add it to that
-  day's `slides=` list and rerun. Hand-written text survives on a week page only below a
-  `<!-- tuesday-notes -->` or `<!-- thursday-notes -->` marker (see rule 3 in `CLAUDE.md`).
-- **`mkdocs.yml`** holds the rest of the navigation (labs, policies, course pages).
+  pages, the hands-on and activity-guide pages, and the Schedule section of `mkdocs.yml`. To add a
+  slide deck to a day, add it to that day's `slides=` list and rerun. Week pages are fully
+  generated; hand-written text survives only on the hands-on pages below `<!-- runsheet -->` and
+  on the activity guides below `<!-- notes -->` (see rule 3 in `CLAUDE.md`).
+- **`mkdocs.yml`** holds the Course Info menu; labs are reached from their week, not the nav.
 
 Slide decks are plain Markdown in `slides/day-NN/`, one folder per day with an `images/`
 subfolder, built by marp-cli in the workflow. `slides/theme/cce114.css` is the shared theme.

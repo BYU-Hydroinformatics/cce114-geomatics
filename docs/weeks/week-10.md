@@ -1,42 +1,25 @@
 # Week 10 — Geoprocessing
 
-**Due this week.** Quizzes and lab reports are due **Saturday at 11:59 pm**;
-anything on another day says so.
+<span id="tuesday-geoprocessing-part-1"></span> <span id="thursday-cities-near-rivers"></span>
 
-| What | Details |
-| --- | --- |
-| Reading | GIS Fundamentals, Chapter 9 (Basic Spatial Analysis) |
-| Quiz 8 | [Geoprocessing and Spatial Data Analysis](../assignments/deliverables.md#reading-quizzes) — open book, on Learning Suite |
-| Lab 9 | [The Yellowstone Disaster](../assignments/lab-09/README.md) |
-| Community and Professional Map Experience | Wednesday — see [Experiences](../assignments/deliverables.md#experiences) |
+> [!IMPORTANT] Also this week
+> - [Community and Professional Map Experience (Wednesday)](../assignments/deliverables.md#experiences)
 
-## Practice
+<div class="week-card week-card--slides" markdown>
 
-Not graded, and nothing to hand in — open it on a phone or a laptop as often as you like.
+## :material-presentation-play: Presentation Slides
 
-- [Which Tool Answers the Question?](../quizzes/geoprocessing/index.html) — Turning a question into a selection, what each overlay tool puts out, and the order to chain them in.
+- **Tuesday** — [Introduction to Geoprocessing](https://byu-hydroinformatics.github.io/cce114-geomatics/slides/day-18/introduction-to-geoprocessing.html) — Introduction to geoprocessing and spatial analysis; Buffer, clip, intersect, select by location; Introduction to the Yellowstone Disaster scenario
 
-## Tuesday — Geoprocessing, Part 1
+Press <kbd>F</kbd> for fullscreen and <kbd>P</kbd> for presenter view with speaker notes.
 
-**Lecture**{ .badge .badge-lecture } · *Day 18*
+**Materials:** [Yellowstone movie clip](https://www.youtube.com/watch?v=JGEgTXsGOPk&t=346s)
 
-### Topics
+</div>
 
-- Introduction to geoprocessing and spatial analysis
-- Buffer, clip, intersect, select by location
-- Introduction to the Yellowstone Disaster scenario
+<div class="week-card week-card--practice" markdown>
 
-### Slides
-
-- [Introduction to Geoprocessing](https://byu-hydroinformatics.github.io/cce114-geomatics/slides/day-18/introduction-to-geoprocessing.html)
-
-### Materials
-
-- [Yellowstone movie clip](https://www.youtube.com/watch?v=JGEgTXsGOPk&t=346s)
-
-## Thursday — Cities Near Rivers
-
-**Hands-On Practice**{ .badge .badge-handson } · *Day 19*
+## :material-account-group: In-Class Practice
 
 <div class="handson-cta" markdown="1">
 
@@ -49,3 +32,33 @@ This session has its own step-by-step guide: what you need, an overview, the cli
 [Open the Week 10 hands-on guide →](../handson/week-10.md){ .handson-cta__button }
 
 </div>
+
+
+Self-check quizzes — not graded; open them on a phone or laptop as often as you like:
+
+- [Which Tool Answers the Question?](../quizzes/geoprocessing/index.html) — Turning a question into a selection, what each overlay tool puts out, and the order to chain them in.
+
+</div>
+
+<div class="week-card week-card--lab" markdown>
+
+## :material-flask: Lab Assignment
+
+[Lab 9 — The Yellowstone Disaster](../assignments/lab-09/README.md)
+
+Due **Saturday at 11:59 pm** on Learning Suite.
+
+</div>
+
+<div class="week-card week-card--quiz" markdown>
+
+## :material-book-open-page-variant: Reading Quiz
+
+**This week's reading:** GIS Fundamentals, Chapter 9 (Basic Spatial Analysis).
+
+**Quiz 8 — Geoprocessing and Spatial Data Analysis** on Learning Suite: open book. Due **Saturday at 11:59 pm**. See [Reading Quizzes](../assignments/deliverables.md#reading-quizzes).
+
+</div>
+
+> [!NOTE]
+> If you see a discrepancy between Learning Suite and this page, please let us know so we can rectify it.

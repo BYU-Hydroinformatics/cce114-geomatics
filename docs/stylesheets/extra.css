@@ -1,4 +1,4 @@
-/* BYU navy as the primary color, in both schemes. */
+/* BYU navy as the primary color. The site is light-mode only (see palette in mkdocs.yml). */
 :root,
 [data-md-color-scheme="default"] {
   --md-primary-fg-color: #002e5d;
@@ -6,9 +6,79 @@
   --md-primary-fg-color--dark: #001f3f;
   --md-accent-fg-color: #0062b8;
 }
-[data-md-color-scheme="slate"] {
-  --md-primary-fg-color: #002e5d;
-  --md-accent-fg-color: #5a9bd8;
+
+/* No sidebars — no left-side navigation and no on-page table of contents. The header dropdowns
+   replace the navigation at every width. */
+.md-main__inner > .md-sidebar.md-sidebar--primary,
+.md-main__inner > .md-sidebar.md-sidebar--secondary {
+  display: none;
+}
+
+/* Header dropdowns, one per nav section (overrides/partials/header.html). */
+.ce-menu {
+  position: relative;
+  margin-left: 0.4rem;
+  flex-shrink: 0;
+}
+.ce-menu__button {
+  list-style: none;
+  cursor: pointer;
+  padding: 0.3rem 0.7rem;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 0.2rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+.ce-menu__button::-webkit-details-marker {
+  display: none;
+}
+.ce-menu__button::after {
+  content: " \25BE";
+}
+.ce-menu__button:hover,
+.ce-menu[open] .ce-menu__button {
+  background: rgba(255, 255, 255, 0.12);
+}
+.ce-menu__panel {
+  position: absolute;
+  left: 0;
+  top: calc(100% + 0.4rem);
+  margin: 0;
+  padding: 0.6rem 1rem;
+  list-style: none;
+  max-height: calc(100vh - 4rem);
+  overflow-y: auto;
+  background: #fff;
+  color: var(--md-default-fg-color);
+  border-radius: 0.2rem;
+  box-shadow: 0 0.2rem 1rem rgba(0, 0, 0, 0.25);
+  z-index: 10;
+}
+.ce-menu__panel a {
+  display: block;
+  padding: 0.15rem 0;
+  font-size: 0.7rem;
+  white-space: nowrap;
+  color: var(--md-default-fg-color);
+}
+.ce-menu__panel a:hover {
+  color: var(--md-accent-fg-color);
+}
+.ce-menu__panel a.ce-menu__active {
+  font-weight: 700;
+  color: var(--md-primary-fg-color);
+}
+@media screen and (max-width: 44.9375em) {
+  .ce-menu__panel {
+    position: fixed;
+    left: 0.8rem;
+    right: 0.8rem;
+    top: 3rem;
+  }
+  .ce-menu__panel a {
+    white-space: normal;
+  }
 }
 
 /* Lab figures: keep screenshots from towering over the text. */
@@ -42,12 +112,6 @@
 .md-typeset .badge-handson { background-color: #0f7b3f; }   /* green: do it yourself */
 .md-typeset .badge-lab     { background-color: #9a4a00; }   /* amber: graded work */
 .md-typeset .badge-session { background-color: #5a5a5a; }
-
-/* Slate needs lighter fills to stay legible against the dark page. */
-[data-md-color-scheme="slate"] .md-typeset .badge-lecture { background-color: #3f74ad; }
-[data-md-color-scheme="slate"] .md-typeset .badge-handson { background-color: #2f9e63; }
-[data-md-color-scheme="slate"] .md-typeset .badge-lab     { background-color: #c67c30; }
-[data-md-color-scheme="slate"] .md-typeset .badge-session { background-color: #8a8a8a; }
 
 /* The link from a week page out to that Thursday's hands-on guide. Deliberately loud: this is
    the one thing an instructor needs to find on the page. */
@@ -85,9 +149,45 @@
   font-weight: 700;
 }
 .md-typeset a.handson-cta__button:hover { background-color: #0a5c2f; }
-[data-md-color-scheme="slate"] .md-typeset .handson-cta {
-  border-color: #2f9e63;
-  background-color: rgba(47, 158, 99, 0.12);
+
+/* Week pages: four cards, each with its own icon and color (tools/build_schedule.py, CARDS). */
+.md-typeset .week-card {
+  --card-color: #002e5d;
+  margin: 1.2rem 0;
+  padding: 0.2rem 1.2rem 0.6rem;
+  border: 1px solid #dde3ea;
+  border-left: 0.3rem solid var(--card-color);
+  border-radius: 0.3rem;
+  background: #fff;
 }
-[data-md-color-scheme="slate"] .md-typeset .handson-cta__eyebrow { color: #56c489; }
-[data-md-color-scheme="slate"] .md-typeset a.handson-cta__button { background-color: #2f9e63; }
+.md-typeset .week-card--slides   { --card-color: #0062b8; }
+.md-typeset .week-card--practice { --card-color: #1b8a5a; }
+.md-typeset .week-card--lab      { --card-color: #c8641a; }
+.md-typeset .week-card--quiz     { --card-color: #7a3fa0; }
+.md-typeset .week-card h2 {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin: 0.8rem 0 0.6rem;
+  font-weight: 500;
+  color: var(--card-color);
+}
+.md-typeset .week-card h2 .twemoji {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 2.2rem;
+  height: 2.2rem;
+  border-radius: 50%;
+  background: var(--card-color);
+}
+.md-typeset .week-card h2 .twemoji svg {
+  width: 1.3rem;
+  height: 1.3rem;
+  max-height: none;
+  fill: #fff;
+}
+.md-typeset .week-card > p > em:only-child {
+  color: var(--md-default-fg-color--light);
+}

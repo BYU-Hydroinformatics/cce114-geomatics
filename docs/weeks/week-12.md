@@ -1,42 +1,27 @@
 # Week 12 — Project Site Selection
 
-**Due this week.** Quizzes and lab reports are due **Saturday at 11:59 pm**;
-anything on another day says so.
+<span id="tuesday-project-site-selection-part-1"></span> <span id="thursday-workflow-walkthrough-final-project-kickoff-exam-2-kahoot"></span>
 
-| What | Details |
-| --- | --- |
-| Lab 11 | [Walmart Site Selection](../assignments/lab-11/README.md) |
-| Concepts Exam 2 | Testing Center — see [Exams](../policies/exams.md) |
+> [!IMPORTANT] Also this week
+> - [Concepts Exam 2 (Testing Center)](../policies/exams.md)
 
-## Practice
+<div class="week-card week-card--slides" markdown>
 
-Not graded, and nothing to hand in — open it on a phone or a laptop as often as you like.
+## :material-presentation-play: Presentation Slides
 
-- [Where Would You Put It?](../quizzes/siting/index.html) — Reading a stated requirement as an operation, chaining the operations, and knowing what the surviving polygons do and do not tell you.
+- **Tuesday** — [Project Site Selection: the Walmart Problem](https://byu-hydroinformatics.github.io/cce114-geomatics/slides/day-22/walmart-site-selection.html) — Site selection as a process of elimination; Geoprocessing site selection example: Walmart
+- **Thursday** — [Final Mapping Project](https://byu-hydroinformatics.github.io/cce114-geomatics/slides/day-23/final-project.html)
+- **Thursday** — [Concepts Review](https://byu-hydroinformatics.github.io/cce114-geomatics/slides/day-23/concepts-review.html)
 
-## Tuesday — Project Site Selection, Part 1
+Press <kbd>F</kbd> for fullscreen and <kbd>P</kbd> for presenter view with speaker notes.
 
-**Lecture**{ .badge .badge-lecture } · *Day 22*
+**Materials:** [Walmart open data](https://walmart-open-data-walmarttech.opendata.arcgis.com/)
 
-### Topics
+</div>
 
-- Site selection as a process of elimination
-- Geoprocessing site selection example: Walmart
+<div class="week-card week-card--practice" markdown>
 
-### Slides
-
-- [Project Site Selection: the Walmart Problem](https://byu-hydroinformatics.github.io/cce114-geomatics/slides/day-22/walmart-site-selection.html)
-
-### Materials
-
-- [Walmart open data](https://walmart-open-data-walmarttech.opendata.arcgis.com/)
-
-## Thursday — Workflow Walkthrough, Final Project Kickoff, Exam 2 Kahoot
-
-**Hands-On Practice**{ .badge .badge-handson } · *Day 23*
-
-> [!NOTE]
-> Concepts Exam 2 is taken in the Testing Center this week.
+## :material-account-group: In-Class Practice
 
 <div class="handson-cta" markdown="1">
 
@@ -49,3 +34,31 @@ This session has its own step-by-step guide: what you need, an overview, the cli
 [Open the Week 12 hands-on guide →](../handson/week-12.md){ .handson-cta__button }
 
 </div>
+
+
+Self-check quizzes — not graded; open them on a phone or laptop as often as you like:
+
+- [Where Would You Put It?](../quizzes/siting/index.html) — Reading a stated requirement as an operation, chaining the operations, and knowing what the surviving polygons do and do not tell you.
+
+</div>
+
+<div class="week-card week-card--lab" markdown>
+
+## :material-flask: Lab Assignment
+
+[Lab 11 — Walmart Site Selection](../assignments/lab-11/README.md)
+
+Due **Saturday at 11:59 pm** on Learning Suite.
+
+</div>
+
+<div class="week-card week-card--quiz" markdown>
+
+## :material-book-open-page-variant: Reading Quiz
+
+*No reading quiz this week.*
+
+</div>
+
+> [!NOTE]
+> If you see a discrepancy between Learning Suite and this page, please let us know so we can rectify it.

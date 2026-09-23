@@ -4,7 +4,7 @@
 # a hook that rewrites the absolute production deck URLs to local ones.
 #
 # MkDocs INHERIT replaces list-valued keys rather than merging them, so `hooks:`
-# below must repeat tools/page_version.py from mkdocs.yml — otherwise the preview
+# below must repeat every hook in mkdocs.yml (page_version.py and cache_bust.py) — otherwise the preview
 # silently drops the version-stamp hook and every page loses its version footer.
 INHERIT: mkdocs.yml
 
@@ -12,4 +12,5 @@ site_url: http://localhost:8000/
 
 hooks:
   - tools/page_version.py
+  - tools/cache_bust.py
   - tools/preview_hooks.py

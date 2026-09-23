@@ -1,50 +1,24 @@
 # Week 8 — Geodesy, Projections, and Coordinate Systems
 
-**Due this week.** Quizzes and lab reports are due **Saturday at 11:59 pm**;
-anything on another day says so.
+<span id="tuesday-geodesy-projections-and-coordinate-systems-part-1"></span> <span id="thursday-playing-with-projections"></span>
 
-| What | Details |
-| --- | --- |
-| Reading | GIS Fundamentals, Chapter 3 (Geodesy, Datums, Map Projections, and Coordinate Systems) |
-| Quiz 6 | [Map Projections and Coordinate Systems](../assignments/deliverables.md#reading-quizzes) — open book, on Learning Suite |
-| Lab 7 | [Projections and Coordinate Systems](../assignments/lab-07/README.md) |
+<div class="week-card week-card--slides" markdown>
 
-## Practice
+## :material-presentation-play: Presentation Slides
 
-Not graded, and nothing to hand in — open it on a phone or a laptop as often as you like.
+- **Tuesday** — [Geodesy, Projections, and Coordinate Systems](https://byu-hydroinformatics.github.io/cce114-geomatics/slides/day-14/coordinate-systems-and-projections.html) — The shape of the Earth: geoid, ellipsoid, datums; Map projections and distortion; Geographic vs. projected coordinate systems; UTM and state plane
 
-- [Why Is Greenland So Big?](../quizzes/projections/index.html) — What every flat map gives up, how a projection is fitted to the ground, and the difference between declaring a CRS and reprojecting into one.
+Press <kbd>F</kbd> for fullscreen and <kbd>P</kbd> for presenter view with speaker notes.
 
-## Tuesday — Geodesy, Projections, and Coordinate Systems, Part 1
+**Materials:** [XKCD on projections](https://xkcd.com/977/) · [The True Size](https://www.thetruesize.com/) · [Projection transitions (Jason Davies)](https://www.jasondavies.com/maps/transition/)
 
-**Lecture**{ .badge .badge-lecture } · *Day 14*
+</div>
 
-### Topics
+<div class="week-card week-card--practice" markdown>
 
-- The shape of the Earth: geoid, ellipsoid, datums
-- Map projections and distortion
-- Geographic vs. projected coordinate systems; UTM and state plane
+## :material-account-group: In-Class Practice
 
-### Slides
-
-- [Geodesy, Projections, and Coordinate Systems](https://byu-hydroinformatics.github.io/cce114-geomatics/slides/day-14/coordinate-systems-and-projections.html)
-
-### Materials
-
-- [XKCD on projections](https://xkcd.com/977/)
-- [The True Size](https://www.thetruesize.com/)
-- [Projection transitions (Jason Davies)](https://www.jasondavies.com/maps/transition/)
-
-<!-- tuesday-notes -->
-*In the [Geodesy, Projections, and Coordinate Systems](https://byu-hydroinformatics.github.io/cce114-geomatics/slides/day-14/coordinate-systems-and-projections.html) deck, "Globe Activity: The Great Circle."*
-
-**Setup.** Globes, one per three students, and string. Borrow globes a week ahead; the department and the library map collection have them.
-
-**Run.** Before anyone touches a globe, each group writes down which states and countries a flight from Salt Lake City to a European city they choose will pass over. Then they stretch the string on the globe and check. The straight line on a flat map runs over Iowa and Maine; the string runs over Hudson Bay and Greenland. The rest of the lecture explains why. Eight minutes; not graded.
-
-## Thursday — Playing with Projections
-
-**Hands-On Practice**{ .badge .badge-handson } · *Day 15*
+- **Tuesday** — [Globe Activity: The Great Circle](../activities/week-08.md) (not graded).
 
 <div class="handson-cta" markdown="1">
 
@@ -57,3 +31,33 @@ This session has its own step-by-step guide: what you need, an overview, the cli
 [Open the Week 8 hands-on guide →](../handson/week-08.md){ .handson-cta__button }
 
 </div>
+
+
+Self-check quizzes — not graded; open them on a phone or laptop as often as you like:
+
+- [Why Is Greenland So Big?](../quizzes/projections/index.html) — What every flat map gives up, how a projection is fitted to the ground, and the difference between declaring a CRS and reprojecting into one.
+
+</div>
+
+<div class="week-card week-card--lab" markdown>
+
+## :material-flask: Lab Assignment
+
+[Lab 7 — Projections and Coordinate Systems](../assignments/lab-07/README.md)
+
+Due **Saturday at 11:59 pm** on Learning Suite.
+
+</div>
+
+<div class="week-card week-card--quiz" markdown>
+
+## :material-book-open-page-variant: Reading Quiz
+
+**This week's reading:** GIS Fundamentals, Chapter 3 (Geodesy, Datums, Map Projections, and Coordinate Systems).
+
+**Quiz 6 — Map Projections and Coordinate Systems** on Learning Suite: open book. Due **Saturday at 11:59 pm**. See [Reading Quizzes](../assignments/deliverables.md#reading-quizzes).
+
+</div>
+
+> [!NOTE]
+> If you see a discrepancy between Learning Suite and this page, please let us know so we can rectify it.

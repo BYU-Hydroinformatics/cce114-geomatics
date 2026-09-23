@@ -1,25 +1,39 @@
 # Week 13 — Final Project
 
-## Tuesday — Final Project Work Session
+<span id="tuesday-final-project-work-session"></span> <span id="thursday-final-project-work-session-or-holiday"></span>
 
-**Class Session**{ .badge .badge-session } · *Day 24*
+<div class="week-card week-card--slides" markdown>
 
-### Topics
+## :material-presentation-play: Presentation Slides
 
-- No formal lecture; come work on your final project with help from the instructors and TAs
+*No slides this week.*
 
-### Slides
+</div>
 
-*Slides for this day are not on the site yet. They will be added as the semester goes.*
+<div class="week-card week-card--practice" markdown>
 
-## Thursday — Final Project Work Session or Holiday
+## :material-account-group: In-Class Practice
 
-**Class Session**{ .badge .badge-session } · *Day 25*
+- **Tuesday** — **Final Project Work Session.** No formal lecture; come work on your final project with help from the instructors and TAs.
+- **Thursday** — **Final Project Work Session or Holiday.** In Fall this is Thanksgiving and there is no class; in Winter it is a work session.
 
-### Topics
+</div>
 
-- In Fall this is Thanksgiving and there is no class; in Winter it is a work session
+<div class="week-card week-card--lab" markdown>
 
-### Slides
+## :material-flask: Lab Assignment
 
-*Slides for this day are not on the site yet. They will be added as the semester goes.*
+*No lab this week.*
+
+</div>
+
+<div class="week-card week-card--quiz" markdown>
+
+## :material-book-open-page-variant: Reading Quiz
+
+*No reading quiz this week.*
+
+</div>
+
+> [!NOTE]
+> If you see a discrepancy between Learning Suite and this page, please let us know so we can rectify it.

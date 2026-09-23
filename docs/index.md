@@ -69,11 +69,12 @@ that is not a lab: the eight reading quizzes, the in-class activities, and the e
 
 ## Where Everything Lives
 
-Each week has its own page, and everything for that week is on it: the Tuesday concepts lecture
-with its topics and slides, the Thursday hands-on session in QGIS, the reading and quiz, and the
-lab that is due. Start from the [Schedule](schedule.md) or pick a week in the sidebar. **There are
-eleven labs, and each one is linked from the week it is due** — there is no separate lab list to
-keep in sync.
+Each week has its own page, and every week page has the same four sections: **Presentation
+Slides**, **In-Class Practice** (the Tuesday activity, the Thursday hands-on session in QGIS, and
+self-check quizzes), **Lab Assignment**, and **Reading Quiz**. Exams and other deadlines appear in a
+box at the top of the week they fall in. Start from the [Schedule](schedule.md) or pick a week from
+the Schedule menu at the top of the page. **There are eleven labs, and each one is linked from the
+week it is due** — there is no separate lab list to keep in sync.
 
 Each Thursday session from Week 2 through Week 12 also has a [Hands-On](handson/README.md) page: a
 step-by-step QGIS guide with a practice run, the walkthrough, the graded upload, and the snags that

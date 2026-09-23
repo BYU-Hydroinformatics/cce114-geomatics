@@ -1,23 +1,27 @@
 #!/usr/bin/env python3
-"""Generate the week-by-week schedule page and one page per week of the course.
+"""Generate the week-by-week schedule page, one page per week, and the pages they link to.
 
 The course runs every Fall (Sep-Dec) and Winter (Jan-Apr). Everything here is expressed
 as week numbers and weekdays, never calendar dates, so the site does not need a rewrite
-each semester: Tuesdays are concept lectures (Dr. Ames), Thursdays are demos and hands-on
-work (Dr. Halgren). Day numbers count class meetings from the first one.
+each semester: Tuesdays are concept lectures, Thursdays are demos and hands-on work in
+QGIS. Day numbers count class meetings from the first one.
 
 Edit the DAYS and WEEKS tables below, then run:  python3 tools/build_schedule.py
-It rewrites docs/schedule.md, docs/weeks/week-NN.md (one per week), and the Schedule
-section of mkdocs.yml.
+It rewrites docs/schedule.md, docs/weeks/week-NN.md (one per week), docs/handson/ (one page
+per Thursday session plus an index), docs/activities/ (one page per Tuesday activity guide),
+and the Schedule section of mkdocs.yml.
 
-Each week page has two generated parts (topics, slides, materials, one-line activity
-blurb, reading, due list) rebuilt from the tables below every run, plus up to two
-hand-written zones that survive a rerun: everything below a "<!-- tuesday-notes -->"
-marker (the fuller write-up of that week's in-class activity) and everything below a
-"<!-- thursday-notes -->" marker (the instructor run sheet: at-a-glance, prep, the
-50-minute plan, the walkthrough, the graded upload, and common snags). Add a marker by
-hand to a week page to start a preserved zone; re-running the script never touches
-content below a marker that is already there.
+Every week page has the same shape: an optional "Also this week" callout for exams,
+experiences and final-project deadlines, then four cards in a fixed order, each with its own
+icon: Presentation Slides, In-Class Practice, Lab Assignment, Reading Quiz. A card with
+nothing in it says so ("No lab this week") rather than vanishing. Week pages are fully
+generated; nothing hand-written survives on them.
+
+Two kinds of linked page keep a hand-written zone that survives a rerun, below a marker:
+docs/handson/week-NN.md below "<!-- runsheet -->" (the Thursday run sheet) and
+docs/activities/week-NN.md below "<!-- notes -->" (the fuller write-up of a Tuesday in-class
+activity: setup, how to run it, what goes on Learning Suite). Content below a marker must use
+"### " or deeper headings.
 """
 import re
 from pathlib import Path
@@ -27,6 +31,7 @@ ROOT = Path(__file__).resolve().parent.parent
 DOCS = ROOT / "docs"
 WEEKS_DIR = DOCS / "weeks"
 HANDSON_DIR = DOCS / "handson"
+ACTIVITIES_DIR = DOCS / "activities"
 SITE = "https://byu-hydroinformatics.github.io/cce114-geomatics"
 
 # ---------------------------------------------------------------------------------------
@@ -165,7 +170,7 @@ DAYS = [
     dict(n=26, week=14, kind="other", title="Introduction to CCE 414 and Final Project Work Session",
          slides=[("Introduction to CCE 414", f"{SITE}/slides/day-21/intro-to-cce-414.html")],
          topics=["A short introduction to CCE 414: Engineering Applications of GIS, the follow-on course",
-                 "Then work on your final project in class, and into the lab hour, with Dr. Ames' help"],
+                 "Then work on your final project in class, and into the lab hour, with the instructor's help"],
          links=[("Prior-year recording of the CCE 414 introduction", "https://youtu.be/RIzy0JRB8VI")]),
     dict(n=27, week=14, kind="other", title="Final Project Presentations",
          topics=["Groups present their final mapping projects; presentations continue on Tuesday of Week 15"]),
@@ -177,24 +182,39 @@ DAYS = [
          topics=["Final exam study session or wrap-up; in some semesters this is a university reading day with no class"]),
 ]
 
-# Saturday deadlines and other items by week (all times 11:59 pm unless noted).
+# What is due each week. quiz: (number, title); lab: number; both due Saturday 11:59 pm.
+# also: everything else (exams, experiences, final project), with its timing in parentheses;
+# shown in the "Also this week" callout above the four cards.
 WEEKS = {
-    1: dict(theme="Introduction", due=[]),
-    2: dict(theme="GIS Data Models", due=["Quiz 1: Intro to GIS & Map Design Fundamentals", "Lab 1"]),
-    3: dict(theme="Maps, Symbology, and Cartography", due=["Quiz 2: Spatial Data Models and File Types", "Lab 2"]),
-    4: dict(theme="The Global Positioning System", due=["Quiz 3: GPS, Part 1", "Lab 3"]),
-    5: dict(theme="Working with Vector Data", due=["Quiz 4: GPS, Part 2", "Lab 4"]),
-    6: dict(theme="Working with Raster Data", due=["Quiz 5: Getting Started with Raster Data", "Lab 5", "BYU Belonging Map (Wednesday)"]),
-    7: dict(theme="Finding Spatial Data and Web Services", due=["Lab 6", "Concepts Exam 1 (Testing Center, midweek)"]),
-    8: dict(theme="Geodesy, Projections, and Coordinate Systems", due=["Quiz 6: Map Projections and Coordinate Systems", "Lab 7"]),
-    9: dict(theme="Metadata", due=["Quiz 7: Metadata", "Lab 8"]),
-    10: dict(theme="Geoprocessing", due=["Quiz 8: Geoprocessing and Spatial Data Analysis", "Lab 9", "Community and Professional Map Experience (Wednesday)"]),
-    11: dict(theme="Geoplanning and Georeferencing", due=["Lab 10"]),
-    12: dict(theme="Project Site Selection", due=["Lab 11", "Concepts Exam 2 (Testing Center)"]),
-    13: dict(theme="Final Project", due=[]),
-    14: dict(theme="Final Project", due=["Web Mapping with AI Experience (Wednesday)", "Final project presentations (Thursday)", "Final Project (Saturday)"]),
-    15: dict(theme="Presentations and Exam Review", due=["Final Exam (finals week, university-scheduled slot)", "Course evaluation (extra credit)"]),
+    1: dict(theme="Introduction"),
+    2: dict(theme="GIS Data Models", quiz=(1, "Intro to GIS & Map Design Fundamentals"), lab=1),
+    3: dict(theme="Maps, Symbology, and Cartography", quiz=(2, "Spatial Data Models and File Types"), lab=2),
+    4: dict(theme="The Global Positioning System", quiz=(3, "GPS, Part 1"), lab=3),
+    5: dict(theme="Working with Vector Data", quiz=(4, "GPS, Part 2"), lab=4),
+    6: dict(theme="Working with Raster Data", quiz=(5, "Getting Started with Raster Data"), lab=5,
+            also=["BYU Belonging Map (Wednesday)"]),
+    7: dict(theme="Finding Spatial Data and Web Services", lab=6,
+            also=["Concepts Exam 1 (Testing Center, midweek)"]),
+    8: dict(theme="Geodesy, Projections, and Coordinate Systems", quiz=(6, "Map Projections and Coordinate Systems"), lab=7),
+    9: dict(theme="Metadata", quiz=(7, "Metadata"), lab=8),
+    10: dict(theme="Geoprocessing", quiz=(8, "Geoprocessing and Spatial Data Analysis"), lab=9,
+             also=["Community and Professional Map Experience (Wednesday)"]),
+    11: dict(theme="Geoplanning and Georeferencing", lab=10),
+    12: dict(theme="Project Site Selection", lab=11, also=["Concepts Exam 2 (Testing Center)"]),
+    13: dict(theme="Final Project"),
+    14: dict(theme="Final Project", also=["Web Mapping with AI Experience (Wednesday)",
+                                          "Final project presentations (Thursday)", "Final Project (Saturday)"]),
+    15: dict(theme="Presentations and Exam Review", also=["Final Exam (finals week, university-scheduled slot)",
+                                                          "Course evaluation (extra credit)"]),
 }
+
+
+def due_items(w: int) -> list:
+    """Everything due in week w as display strings, for the schedule overview's Due column."""
+    info = WEEKS[w]
+    items = [f"Quiz {info['quiz'][0]}: {info['quiz'][1]}"] if info.get("quiz") else []
+    items += [f"Lab {info['lab']}"] if info.get("lab") else []
+    return items + info.get("also", [])
 
 LABS = {1: "Getting Started with GIS", 2: "Map Symbology and Layouts", 3: "GPS Data Collection and Importing Into QGIS",
         4: "Changing, Editing, and Fixing GIS Data", 5: "Working with Raster Data", 6: "Spatial Data Web Services",
@@ -208,6 +228,8 @@ KIND_LABEL = {"concepts": "Lecture", "hands-on": "Hands-On Practice", "other": "
 KIND_CLASS = {"concepts": "badge-lecture", "hands-on": "badge-handson", "other": "badge-session"}
 # Emoji were tried here and render inconsistently in the theme's font stack (the mouse glyph
 # does not render at all on the lab machines), so session type is carried by the CSS badges.
+# The week-page card icons are different: pymdownx.emoji inlines them as SVG, so they do not
+# depend on any font.
 
 
 def badge(kind: str) -> str:
@@ -230,9 +252,27 @@ THURSDAY_TITLE = {
     23: "Workflow Walkthrough, Final Project Kickoff, Exam 2 Kahoot",
 }
 
-# Days whose Tuesday in-class activity has a fuller write-up preserved under a
-# "<!-- tuesday-notes -->" marker (migrated once from the old tuesday-activities.md).
-TUESDAY_NOTES_DAYS = {2, 6, 10, 12, 14, 16, 20}
+# Tuesday activities with a fuller write-up (setup, how to run it, what goes on Learning Suite),
+# each on its own page at docs/activities/week-NN.md, below a "<!-- notes -->" marker. Keyed by
+# day number; the value is the page title. The write-ups used to sit inline on the week pages.
+ACTIVITY_GUIDES = {
+    2: "State Boundary Data Model",
+    6: "Find Air Force One, and Where Am I?",
+    10: "Engineering Paper Raster Analysis",
+    12: "Data Source Scavenger Hunt",
+    14: "Globe Activity: The Great Circle",
+    16: "A Brief Metadata Melodrama",
+    20: "Georeference Your Neighborhood Sketch",
+}
+
+# The four cards every week page carries, in order: (key, heading, icon, text when empty).
+# Icons are Material Design icons inlined as SVG by pymdownx.emoji; colors are in extra.css.
+CARDS = [
+    ("slides",   "Presentation Slides", "material-presentation-play",      "No slides this week."),
+    ("practice", "In-Class Practice",   "material-account-group",          "No in-class practice this week."),
+    ("lab",      "Lab Assignment",      "material-flask",                  "No lab this week."),
+    ("quiz",     "Reading Quiz",        "material-book-open-page-variant", "No reading quiz this week."),
+]
 
 
 # Self-check quizzes, keyed by week. Each is a self-contained page at
@@ -306,42 +346,6 @@ def lab_link(text: str, prefix: str) -> str:
     return text
 
 
-# Where a non-lab, non-quiz due item is explained, for the "Due this week" table.
-DUE_TARGETS = [
-    ("Quiz", ("Quizzes", "assignments/deliverables.md#reading-quizzes")),
-    ("Exam", ("Exams", "policies/exams.md")),
-    ("Final Project", ("Final Project", "assignments/final-project.md")),
-    ("Web Mapping", ("Web Mapping with AI", "assignments/web-mapping-with-ai.md")),
-    ("presentations", ("Final Project", "assignments/final-project.md")),
-    ("Experience", ("Experiences", "assignments/deliverables.md#experiences")),
-    ("Belonging", ("Experiences", "assignments/deliverables.md#experiences")),
-    ("evaluation", ("Grading", "policies/grading.md")),
-]
-
-
-def due_row(text: str, prefix: str) -> tuple:
-    """Split one WEEKS["due"] entry into the (What, Details) cells of the week table.
-
-    Labs and quizzes carry their own title in Details; everything else keeps whatever
-    timing the entry states in parentheses and points at the page that explains it."""
-    m = re.match(r"Lab (\d+)$", text)
-    if m:
-        n = int(m.group(1))
-        return f"Lab {n}", f"[{LABS[n]}]({prefix}assignments/lab-{n:02d}/README.md)"
-    m = re.match(r"(Quiz \d+): (.+)$", text)
-    if m:
-        return m.group(1), (f"[{m.group(2)}]({prefix}assignments/deliverables.md#reading-quizzes)"
-                            " — open book, on Learning Suite")
-    m = re.match(r"(.+?) \((.+)\)$", text)
-    label, timing = (m.group(1), m.group(2)) if m else (text, "")
-    detail = [timing] if timing else []
-    for key, (name, url) in DUE_TARGETS:
-        if key in label:
-            detail.append(f"see [{name}]({prefix}{url})")
-            break
-    return label, " — ".join(detail) or "\u2014"
-
-
 def week_reading(w: int) -> str:
     """The assigned reading for a week, gathered from that week's class meetings."""
     seen = []
@@ -374,29 +378,6 @@ def session_title(d: dict) -> str:
     return THURSDAY_TITLE.get(d["n"], d["title"]) if d["kind"] == "hands-on" else d["title"]
 
 
-def session_generated_body(d: dict, skip_topics_and_activity: bool = False) -> list[str]:
-    """The part of a session that is always rebuilt from the tables."""
-    out = [f"{badge(d['kind'])} · *Day {d['n']}*", ""]
-    if d.get("note"):
-        out += ["> [!NOTE]", f"> {d['note']}", ""]
-    if not skip_topics_and_activity:
-        out += ["### Topics", ""] + [f"- {t}" for t in d["topics"]] + [""]
-    if d.get("slides"):
-        out += ["### Slides", ""] + [f"- [{t}]({u})" for t, u in d["slides"]] + [""]
-    elif not skip_topics_and_activity and d["kind"] != "hands-on":
-        out += ["### Slides", "", "*Slides for this day are not on the site yet. They will be added as the semester goes.*", ""]
-    if d.get("data") or d.get("links"):
-        out += ["### Materials", ""]
-        for t, u in d.get("data", []):
-            out.append(f"- {t}: [download]({u})" if u else f"- {t} (posted on Learning Suite)")
-        for t, u in d.get("links", []):
-            out.append(f"- [{t}]({u})")
-        out.append("")
-    if not skip_topics_and_activity and d.get("activity"):
-        out += ["### In-class activity", "", d["activity"] + ". Record your completion on Learning Suite.", ""]
-    return out
-
-
 def preserved_after(existing_text: str, marker: str) -> Optional[str]:
     """Hand-written content directly below `marker`, up to (not including) the next
     top-level "## " session heading. Content pasted below a marker must use "### " or
@@ -406,31 +387,6 @@ def preserved_after(existing_text: str, marker: str) -> Optional[str]:
     rest = existing_text[existing_text.index(marker) + len(marker):]
     end = re.search(r"\n## ", rest)
     return (rest[:end.start()] if end else rest).strip("\n")
-
-
-def session_section(d: dict, weekday: Optional[str], existing_text: str) -> list:
-    """One "## Tuesday — ..." or "## Thursday — ..." block on a week page.
-
-    A hands-on session's full run sheet lives on its own page under docs/handson/; the week
-    page carries the badge, topics, materials, the graded activity, and a callout linking out
-    to it. A Tuesday activity write-up still lives inline under its marker."""
-    out = [f"## {session_heading(d, weekday)}", ""]
-    if d["kind"] == "hands-on":
-        # Only the badge and the callout. Topics, materials and the graded activity are on the
-        # hands-on page itself, and carrying a second copy here meant two places to keep in step.
-        out += [f"{badge(d['kind'])} \u00b7 *Day {d['n']}*", ""]
-        if d.get("note"):
-            out += ["> [!NOTE]", f"> {d['note']}", ""]
-        out += handson_callout(d)
-        return out
-    out += session_generated_body(d)
-    if d["n"] in TUESDAY_NOTES_DAYS:
-        marker = "<!-- tuesday-notes -->"
-        out.append(marker)
-        preserved = preserved_after(existing_text, marker)
-        out.append(preserved if preserved else "")
-        out.append("")
-    return out
 
 
 def handson_callout(d: dict) -> list:
@@ -509,39 +465,107 @@ def handson_index() -> str:
     return "\n".join(out)
 
 
-def practice_section(w: int, prefix: str = "../") -> list:
-    """Links out to that week's self-check quizzes, so they outlive the QR code on the slide."""
-    if w not in PRACTICE:
-        return []
-    out = ["## Practice", "",
-           "Not graded, and nothing to hand in \u2014 open it on a phone or a laptop as often as you like.", ""]
-    out += [f"- [{title}]({prefix}quizzes/{s}/index.html) \u2014 {desc}" for s, title, desc in PRACTICE[w]]
-    out.append("")
-    return out
+def activity_page(w: int, d: dict, existing_text: str) -> str:
+    """A standalone page for one Tuesday in-class activity. Everything above "<!-- notes -->" is
+    regenerated; the write-up below it is hand-written and never touched."""
+    out = [f"# Week {w} Activity — {ACTIVITY_GUIDES[d['n']]}", "",
+           f"{badge('concepts')} · *Day {d['n']} · Tuesday of "
+           f"[Week {w} — {WEEKS[w]['theme']}](../weeks/week-{w:02d}.md)*", ""]
+    if d.get("activity"):
+        out += [f"**Graded in-class activity.** {d['activity']}. Record your completion on Learning Suite.", ""]
+    else:
+        out += ["Not graded.", ""]
+    out.append("<!-- notes -->")
+    preserved = preserved_after(existing_text, "<!-- notes -->")
+    out.append(preserved if preserved else "")
+    return "\n".join(out).rstrip("\n") + "\n"
 
 
-def week_page(w: int, existing_text: str) -> str:
+def when_label(d: dict, weekday: Optional[str]) -> str:
+    return f"**{weekday}**" if weekday else f"**Day {d['n']}**"
+
+
+def week_page(w: int) -> str:
+    """Four cards — slides, in-class practice, lab, reading quiz — under an optional callout."""
     info = WEEKS[w]
-    out = [f"# Week {w} — {info['theme']}", ""]
-    rows = []
+    sessions = week_sessions(w)
+    body = {k: [] for k, *_ in CARDS}
+
+    # Presentation Slides: every deck this week, Tuesday's with its topics as the description.
+    materials = []
+    for d, weekday in sessions:
+        when = when_label(d, weekday)
+        topics = "; ".join(d.get("topics", [])) if d["kind"] == "concepts" else ""
+        for i, (title, url) in enumerate(d.get("slides", [])):
+            desc = f" — {topics}" if topics and i == 0 else ""
+            body["slides"].append(f"- {when} — [{title}]({url}){desc}")
+        if d["kind"] == "concepts" and not d.get("slides"):
+            body["slides"].append(f"- {when} — {d['title']} (slides not posted yet) — {topics}")
+        if d["kind"] == "concepts":
+            materials += [f"[{a}]({b})" if b else f"{a} (on Learning Suite)" for a, b in d.get("data", [])]
+            materials += [f"[{a}]({b})" for a, b in d.get("links", [])]
+    if any(d.get("slides") for d, _ in sessions):
+        body["slides"] += ["", "Press <kbd>F</kbd> for fullscreen and <kbd>P</kbd> for presenter view with speaker notes."]
+    if materials:
+        body["slides"] += ["", "**Materials:** " + " · ".join(materials)]
+
+    # In-Class Practice: Tuesday's activity, Thursday's hands-on guide, or what happens in class.
+    for d, weekday in sessions:
+        when = when_label(d, weekday)
+        guide = f"../activities/week-{w:02d}.md" if d["n"] in ACTIVITY_GUIDES else None
+        if d["kind"] == "hands-on":
+            if body["practice"]:
+                body["practice"].append("")
+            body["practice"] += handson_callout(d)
+        elif d["kind"] == "concepts" and d.get("activity"):
+            line = f"- {when} — {d['activity']}. Record your completion on Learning Suite."
+            body["practice"].append(line + (f" [Activity guide]({guide})" if guide else ""))
+        elif d["kind"] == "concepts" and guide:
+            body["practice"].append(f"- {when} — [{ACTIVITY_GUIDES[d['n']]}]({guide}) (not graded).")
+        elif d["kind"] == "other":
+            body["practice"].append(f"- {when} — **{d['title']}.** " + " ".join(
+                x if x.endswith(".") else x + "." for x in d.get("topics", [])))
+    if w in PRACTICE:
+        if body["practice"]:
+            body["practice"].append("")
+        body["practice"] += ["Self-check quizzes — not graded; open them on a phone or laptop as often as you like:", ""]
+        body["practice"] += [f"- [{title}](../quizzes/{s}/index.html) — {desc}" for s, title, desc in PRACTICE[w]]
+
+    # Lab Assignment.
+    if info.get("lab"):
+        n = info["lab"]
+        body["lab"] += [f"[Lab {n} — {LABS[n]}](../assignments/lab-{n:02d}/README.md)", "",
+                        "Due **Saturday at 11:59 pm** on Learning Suite."]
+
+    # Reading Quiz: this week's reading, and the quiz due this week.
     reading = week_reading(w)
     if reading:
-        rows.append(("Reading", reading))
-    rows += [due_row(x, "../") for x in info["due"]]
-    if rows:
-        graded = any(re.match(r"(Quiz \d+|Lab \d+)", x) for x in info["due"])
-        if graded:
-            out += ["**Due this week.** Quizzes and lab reports are due **Saturday at 11:59 pm**;",
-                    "anything on another day says so."]
-        else:
-            out += ["**Due this week.**" if info["due"] else "**This week's reading.**"]
-        out += ["", "| What | Details |", "| --- | --- |"]
-        out += [f"| {what} | {detail} |" for what, detail in rows]
-        out.append("")
-    out += practice_section(w)
-    for d, weekday in week_sessions(w):
-        out += session_section(d, weekday, existing_text)
-    return "\n".join(out).rstrip("\n") + "\n"
+        body["quiz"].append(f"**This week's reading:** {reading}.")
+    if info.get("quiz"):
+        n, title = info["quiz"]
+        if body["quiz"]:
+            body["quiz"].append("")
+        body["quiz"].append(f"**Quiz {n} — {title}** on Learning Suite: open book. Due **Saturday at 11:59 pm**. "
+                            "See [Reading Quizzes](../assignments/deliverables.md#reading-quizzes).")
+    elif reading:
+        body["quiz"] += ["", "*No quiz due this week.*"]
+
+    out = [f"# Week {w} — {info['theme']}", ""]
+    # Anchors for the old per-session headings, which Learning Suite and the schedule link to.
+    out += [" ".join(f'<span id="{slug(session_heading(d, wd))}"></span>' for d, wd in sessions), ""]
+
+    also = [f"- {lab_link(x, '../')}" for x in info.get("also", [])]
+    also += [f"- {d['note']}" for d, _ in sessions if d.get("note") and d["kind"] != "hands-on"]
+    if also:
+        out += ["> [!IMPORTANT] Also this week"] + [f"> {x}" for x in also] + [""]
+
+    for key, heading, icon, empty in CARDS:
+        out += [f'<div class="week-card week-card--{key}" markdown>', "", f"## :{icon}: {heading}", ""]
+        out += body[key] or [f"*{empty}*"]
+        out += ["", "</div>", ""]
+    out += ["> [!NOTE]", "> If you see a discrepancy between Learning Suite and this page, please let us know so "
+            "we can rectify it.", ""]
+    return "\n".join(out)
 
 
 def schedule_page() -> str:
@@ -568,7 +592,7 @@ def schedule_page() -> str:
                       else f"{page}#{slug(session_heading(d, weekday))}")
             link = f"[{session_title(d)}]({target})"
             cells[weekday or "Thursday"] = link   # Week 1 meets only on Thursday
-        due = "<br>".join(lab_link(x, "") for x in info["due"]) or "—"
+        due = "<br>".join(lab_link(x, "") for x in due_items(w)) or "—"
         out.append(f"| [Week {w}: {info['theme']}]({page}) | {cells['Tuesday']} | {cells['Thursday']} | {due} |")
     out += ["", "Holidays and reading days shift between semesters; Week 13 and Week 15 absorb them.", ""]
     return "\n".join(out)
@@ -586,15 +610,6 @@ def update_nav(mkdocs_yml: Path) -> None:
     if n != 1:
         raise SystemExit("mkdocs.yml: expected exactly one '  - Schedule:' nav block")
 
-    # The Hands-On tab: its index page, then one page per Thursday that has a session.
-    hs = ["  - Hands-On:", "      - handson/README.md"]
-    for w in WEEKS:
-        d = handson_day(w)
-        if d:
-            hs.append(f"      - \"Week {w} — {session_title(d)}\": handson/week-{w:02d}.md")
-    text, n = re.subn(r"  - Hands-On:\n(?:      .*\n)*", "\n".join(hs) + "\n", text)
-    if n != 1:
-        raise SystemExit("mkdocs.yml: expected exactly one '  - Hands-On:' nav block")
     mkdocs_yml.write_text(text)
 
 
@@ -603,8 +618,13 @@ def main() -> None:
     WEEKS_DIR.mkdir(exist_ok=True)
     for w in WEEKS:
         path = WEEKS_DIR / f"week-{w:02d}.md"
-        existing = path.read_text() if path.exists() else ""
-        path.write_text(week_page(w, existing))
+        path.write_text(week_page(w))
+    ACTIVITIES_DIR.mkdir(exist_ok=True)
+    for d in DAYS:
+        if d["n"] in ACTIVITY_GUIDES:
+            path = ACTIVITIES_DIR / f"week-{d['week']:02d}.md"
+            existing = path.read_text() if path.exists() else ""
+            path.write_text(activity_page(d["week"], d, existing))
     HANDSON_DIR.mkdir(exist_ok=True)
     (HANDSON_DIR / "README.md").write_text(handson_index())
     n_handson = 0
@@ -618,7 +638,7 @@ def main() -> None:
         n_handson += 1
     update_nav(ROOT / "mkdocs.yml")
     print(f"wrote schedule.md, {len(WEEKS)} week pages, {n_handson} hands-on pages "
-          f"plus their index, and the mkdocs nav")
+          f"plus their index, {len(ACTIVITY_GUIDES)} activity guides, and the Schedule nav")
 
 
 if __name__ == "__main__":

@@ -1,38 +1,20 @@
 # Week 5 — Working with Vector Data
 
-**Due this week.** Quizzes and lab reports are due **Saturday at 11:59 pm**;
-anything on another day says so.
+<span id="tuesday-working-with-vector-data-part-1"></span> <span id="thursday-digitize-your-home-with-snapping-and-the-vertex-tool"></span>
 
-| What | Details |
-| --- | --- |
-| Reading | GIS Fundamentals, Chapter 4 (Maps, Data Entry, and Editing) |
-| Quiz 4 | [GPS, Part 2](../assignments/deliverables.md#reading-quizzes) — open book, on Learning Suite |
-| Lab 4 | [Changing, Editing, and Fixing GIS Data](../assignments/lab-04/README.md) |
+<div class="week-card week-card--slides" markdown>
 
-## Practice
+## :material-presentation-play: Presentation Slides
 
-Not graded, and nothing to hand in — open it on a phone or a laptop as often as you like.
+- **Tuesday** — [Working with Vector Data](https://byu-hydroinformatics.github.io/cce114-geomatics/slides/day-08/working-with-vector-data.html) — Creating vector data; Digitizing and editing; Attribute tables and schemas; Saving to disk: GeoPackage and shapefile
 
-- [Who Drew That Line?](../quizzes/vector/index.html) — Choosing a geometry type, digitizing at a scale the data can support, and what a field's type costs you later.
+Press <kbd>F</kbd> for fullscreen and <kbd>P</kbd> for presenter view with speaker notes.
 
-## Tuesday — Working with Vector Data, Part 1
+</div>
 
-**Lecture**{ .badge .badge-lecture } · *Day 8*
+<div class="week-card week-card--practice" markdown>
 
-### Topics
-
-- Creating vector data
-- Digitizing and editing
-- Attribute tables and schemas
-- Saving to disk: GeoPackage and shapefile
-
-### Slides
-
-- [Working with Vector Data](https://byu-hydroinformatics.github.io/cce114-geomatics/slides/day-08/working-with-vector-data.html)
-
-## Thursday — Digitize Your Home with Snapping and the Vertex Tool
-
-**Hands-On Practice**{ .badge .badge-handson } · *Day 9*
+## :material-account-group: In-Class Practice
 
 <div class="handson-cta" markdown="1">
 
@@ -45,3 +27,33 @@ This session has its own step-by-step guide: what you need, an overview, the cli
 [Open the Week 5 hands-on guide →](../handson/week-05.md){ .handson-cta__button }
 
 </div>
+
+
+Self-check quizzes — not graded; open them on a phone or laptop as often as you like:
+
+- [Who Drew That Line?](../quizzes/vector/index.html) — Choosing a geometry type, digitizing at a scale the data can support, and what a field's type costs you later.
+
+</div>
+
+<div class="week-card week-card--lab" markdown>
+
+## :material-flask: Lab Assignment
+
+[Lab 4 — Changing, Editing, and Fixing GIS Data](../assignments/lab-04/README.md)
+
+Due **Saturday at 11:59 pm** on Learning Suite.
+
+</div>
+
+<div class="week-card week-card--quiz" markdown>
+
+## :material-book-open-page-variant: Reading Quiz
+
+**This week's reading:** GIS Fundamentals, Chapter 4 (Maps, Data Entry, and Editing).
+
+**Quiz 4 — GPS, Part 2** on Learning Suite: open book. Due **Saturday at 11:59 pm**. See [Reading Quizzes](../assignments/deliverables.md#reading-quizzes).
+
+</div>
+
+> [!NOTE]
+> If you see a discrepancy between Learning Suite and this page, please let us know so we can rectify it.

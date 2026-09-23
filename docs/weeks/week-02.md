@@ -1,61 +1,24 @@
 # Week 2 — GIS Data Models
 
-**Due this week.** Quizzes and lab reports are due **Saturday at 11:59 pm**;
-anything on another day says so.
+<span id="tuesday-gis-data-models-part-1"></span> <span id="thursday-first-map-in-qgis"></span>
 
-| What | Details |
-| --- | --- |
-| Reading | GIS Fundamentals, Chapter 2 (Data Models) |
-| Quiz 1 | [Intro to GIS & Map Design Fundamentals](../assignments/deliverables.md#reading-quizzes) — open book, on Learning Suite |
-| Lab 1 | [Getting Started with GIS](../assignments/lab-01/README.md) |
+<div class="week-card week-card--slides" markdown>
 
-## Practice
+## :material-presentation-play: Presentation Slides
 
-Not graded, and nothing to hand in — open it on a phone or a laptop as often as you like.
+- **Tuesday** — [GIS Data Models & File Formats](https://byu-hydroinformatics.github.io/cce114-geomatics/slides/day-02/gis-data-models.html) — Model = abstraction of reality; Data model vs. file format; Vector data models: point, polyline, polygon; Raster and TIN data models; Encoding a state boundary with numbers: Cartesian, polar, TIN, raster
 
-- [Model, Format, or Reality?](../quizzes/data-models/index.html) — Telling a data model from reality and from the file format it is stored in, naming vector, raster, and TIN, and what each one costs.
+Press <kbd>F</kbd> for fullscreen and <kbd>P</kbd> for presenter view with speaker notes.
 
-## Tuesday — GIS Data Models, Part 1
+**Materials:** [UtahCountyData.zip](https://github.com/BYU-Hydroinformatics/cce114-geomatics/releases/download/course-data-2026/UtahCountyData.zip)
 
-**Lecture**{ .badge .badge-lecture } · *Day 2*
+</div>
 
-### Topics
+<div class="week-card week-card--practice" markdown>
 
-- Model = abstraction of reality
-- Data model vs. file format
-- Vector data models: point, polyline, polygon
-- Raster and TIN data models
-- Encoding a state boundary with numbers: Cartesian, polar, TIN, raster
+## :material-account-group: In-Class Practice
 
-### Slides
-
-- [GIS Data Models & File Formats](https://byu-hydroinformatics.github.io/cce114-geomatics/slides/day-02/gis-data-models.html)
-
-### Materials
-
-- UtahCountyData.zip: [download](https://github.com/BYU-Hydroinformatics/cce114-geomatics/releases/download/course-data-2026/UtahCountyData.zip)
-
-### In-class activity
-
-Polygon data model activity: encode a state boundary using only numbers. Record your completion on Learning Suite.
-
-<!-- tuesday-notes -->
-*In the [GIS Data Models](https://byu-hydroinformatics.github.io/cce114-geomatics/slides/day-02/gis-data-models.html) deck, "Polygon Data Model Activity."*
-
-**Setup.** Blank paper. Optionally a stack of printed state outlines with no names, one per pair.
-
-**Run.**
-
-1. Each pair picks a state (or is handed one). Their job: represent the state using **only numbers**. No letters, symbols, or colors.
-2. Five minutes. Most pairs invent a vertex list in some coordinate system they made up; some draw a grid and fill cells; a few triangulate. Those are vector, raster, and TIN, and they just reinvented them.
-3. Pairs trade papers with a neighboring pair who does not know the state and try to identify it from the numbers alone.
-4. Ask which model each pair used, and what they had to agree on for the trade to work (the origin, the units, the order of the numbers). That is a coordinate system, and it is Week 8's topic.
-
-**Learning Suite.** Students record the state they encoded and whether the other pair identified it, on *In Class Activity: State Boundary Vector Data Model Activity*.
-
-## Thursday — First Map in QGIS
-
-**Hands-On Practice**{ .badge .badge-handson } · *Day 3*
+- **Tuesday** — Polygon data model activity: encode a state boundary using only numbers. Record your completion on Learning Suite. [Activity guide](../activities/week-02.md)
 
 <div class="handson-cta" markdown="1">
 
@@ -68,3 +31,33 @@ This session has its own step-by-step guide: what you need, an overview, the cli
 [Open the Week 2 hands-on guide →](../handson/week-02.md){ .handson-cta__button }
 
 </div>
+
+
+Self-check quizzes — not graded; open them on a phone or laptop as often as you like:
+
+- [Model, Format, or Reality?](../quizzes/data-models/index.html) — Telling a data model from reality and from the file format it is stored in, naming vector, raster, and TIN, and what each one costs.
+
+</div>
+
+<div class="week-card week-card--lab" markdown>
+
+## :material-flask: Lab Assignment
+
+[Lab 1 — Getting Started with GIS](../assignments/lab-01/README.md)
+
+Due **Saturday at 11:59 pm** on Learning Suite.
+
+</div>
+
+<div class="week-card week-card--quiz" markdown>
+
+## :material-book-open-page-variant: Reading Quiz
+
+**This week's reading:** GIS Fundamentals, Chapter 2 (Data Models).
+
+**Quiz 1 — Intro to GIS & Map Design Fundamentals** on Learning Suite: open book. Due **Saturday at 11:59 pm**. See [Reading Quizzes](../assignments/deliverables.md#reading-quizzes).
+
+</div>
+
+> [!NOTE]
+> If you see a discrepancy between Learning Suite and this page, please let us know so we can rectify it.

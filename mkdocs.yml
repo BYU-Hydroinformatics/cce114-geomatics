@@ -6,25 +6,14 @@ repo_name: BYU-Hydroinformatics/cce114-geomatics
 
 theme:
   name: material
+  custom_dir: overrides
   features:
-    - navigation.tabs          # one tab per top-level section; the sidebar shows only that section
-    - navigation.tabs.sticky
-    - navigation.indexes       # a section's first bare entry is the section's own page
     - navigation.top
     - navigation.footer
-    - toc.integrate            # page headings fold into the left sidebar, no third column
     - content.code.copy
+  # Light mode only: a single palette entry means no toggle and no following the OS setting.
   palette:
-    - media: "(prefers-color-scheme: light)"
-      scheme: default
-      toggle:
-        icon: material/brightness-7
-        name: Switch to dark mode
-    - media: "(prefers-color-scheme: dark)"
-      scheme: slate
-      toggle:
-        icon: material/brightness-4
-        name: Switch to light mode
+    scheme: default
   icon:
     logo: material/map
 
@@ -33,6 +22,7 @@ extra_css:
 
 extra_javascript:
   - javascripts/external-links.js
+  - javascripts/menu.js
 
 plugins:
   - search
@@ -40,6 +30,7 @@ plugins:
 
 hooks:
   - tools/page_version.py
+  - tools/cache_bust.py
 
 markdown_extensions:
   - admonition
@@ -48,12 +39,19 @@ markdown_extensions:
   - tables
   - pymdownx.tilde
   - pymdownx.superfences
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
   - toc:
       permalink: true
 
+# There are no sidebars: each top-level section of this nav becomes a dropdown in the header
+# (overrides/partials/header.html). Labs and the individual hands-on and activity guides are absent:
+# each is linked from the week page it belongs to, so the menus stay short.
 nav:
-  - Course:
+  - Course Info:
       - Overview: index.md
+      - Hands-On Guides: handson/README.md
       - Quizzes, Activities & Experiences: assignments/deliverables.md
       - Grading: policies/grading.md
       - Attendance & Participation: policies/attendance.md
@@ -77,16 +75,3 @@ nav:
       - "Week 13 — Final Project": weeks/week-13.md
       - "Week 14 — Final Project": weeks/week-14.md
       - "Week 15 — Presentations and Exam Review": weeks/week-15.md
-  - Hands-On:
-      - handson/README.md
-      - "Week 2 — First Map in QGIS": handson/week-02.md
-      - "Week 3 — Symbology, Labels, and a First Layout": handson/week-03.md
-      - "Week 4 — Campus Field Trip": handson/week-04.md
-      - "Week 5 — Digitize Your Home with Snapping and the Vertex Tool": handson/week-05.md
-      - "Week 6 — Raster Data in QGIS and an Elevation Profile": handson/week-06.md
-      - "Week 7 — Web Services in QGIS": handson/week-07.md
-      - "Week 8 — Playing with Projections": handson/week-08.md
-      - "Week 9 — Writing and Evaluating Metadata": handson/week-09.md
-      - "Week 10 — Cities Near Rivers": handson/week-10.md
-      - "Week 11 — Georeferencing in QGIS, and the Web Mapping with AI Kickoff": handson/week-11.md
-      - "Week 12 — Workflow Walkthrough, Final Project Kickoff, Exam 2 Kahoot": handson/week-12.md

@@ -45,23 +45,32 @@ Two status documents, and you should read the relevant one before starting:
 
    | Marker | Lives in | Holds |
    | --- | --- | --- |
-   | `<!-- tuesday-notes -->` | `docs/weeks/week-NN.md` | the fuller write-up of that week's Tuesday in-class activity, where one exists |
+   | `<!-- notes -->` | `docs/activities/week-NN.md` | the fuller write-up of that week's Tuesday in-class activity, where one exists (listed in `ACTIVITY_GUIDES`) |
    | `<!-- runsheet -->` | `docs/handson/week-NN.md` | the Thursday run sheet: at a glance, the practice run, before class, the 50-minute plan, the walkthrough, the graded upload, common snags |
 
-   Content pasted below a marker must use `###` or deeper — a bare `##` heading is read as the
-   start of the next class session and everything after it is dropped on the next regeneration.
-   Everything above a marker is regenerated and a hand-edit there will vanish.
+   Content pasted below a marker must use `###` or deeper — a bare `##` heading ends the preserved
+   zone and everything after it is dropped on the next regeneration. Everything above a marker is
+   regenerated and a hand-edit there will vanish. **Week pages have no preserved zone at all.**
 
-   The Thursday run sheets used to sit inline on the week pages under a `<!-- thursday-notes -->`
-   marker. They moved to their own pages on 2026-09-10 so an instructor has one URL per session;
+   Every week page has the same shape: an optional "Also this week" callout (exams, experiences,
+   final-project deadlines, from `WEEKS[w]["also"]`), then four cards in a fixed order —
+   Presentation Slides, In-Class Practice, Lab Assignment, Reading Quiz — each with a Material
+   Design icon. A card with nothing in it says so ("No lab this week") rather than vanishing.
+   Invisible `<span id>` anchors keep the old `#tuesday-...` / `#thursday-...` links that Learning
+   Suite uses working.
+
+   The Tuesday write-ups moved off the week pages to `docs/activities/` on 2026-09-23, when the
+   week pages became four cards. The Thursday run sheets used to sit inline on the week pages under
+   a `<!-- thursday-notes -->` marker. They moved to their own pages on 2026-09-10 so an instructor has one URL per session;
    the week page now carries a `handson-cta` callout linking out to it. The old marker name is
    gone, so do not reintroduce it.
 
    Session type is shown with a badge, never an emoji: `**Lecture**{ .badge .badge-lecture }`,
    `.badge-handson`, and `.badge-lab`, styled in `docs/stylesheets/extra.css`. The generator emits
    the first two; the lab badges are written into each `docs/assignments/lab-NN/README.md` by hand.
-   Emoji were tried and are not reliable in the theme's font stack — the mouse glyph does not
-   render at all — so do not put emoji back.
+   Font emoji were tried and are not reliable in the theme's font stack — the mouse glyph does not
+   render at all — so do not put emoji back. The week-card icons (`:material-flask:` and friends)
+   are not font emoji: `pymdownx.emoji` inlines them as SVG, so they render everywhere.
 4. **Never fabricate a screenshot.** Captures come from a real QGIS session. If an image is needed
    and does not exist, leave a `<!-- TODO -->` and say so in your report.
 5. **Never invent a field name, tool setting, coordinate system, or data figure.** If you cannot
@@ -103,8 +112,9 @@ Full GUI automation of QGIS was evaluated and judged not worth the fiddle. Don't
 | Path | What |
 | --- | --- |
 | `docs/assignments/lab-NN/` | One folder per lab: `README.md` + `images/` |
-| `docs/weeks/` | One page per week (Tuesday + Thursday together) — **generated**, see rule 3 |
+| `docs/weeks/` | One page per week, four cards (Tuesday + Thursday together) — **fully generated**, see rule 3 |
 | `docs/handson/` | One page per Thursday hands-on session — **generated header**, run sheet preserved below `<!-- runsheet -->` |
+| `docs/activities/` | One page per Tuesday activity guide — **generated header**, write-up preserved below `<!-- notes -->` |
 | `docs/policies/` | Grading, attendance, exams, AI use, university policies |
 | `slides/day-NN/` | Marp deck source + its own `images/` |
 | `slides/theme/cce114.css` | The deck theme. Do not edit it for a one-off; use inline styles |

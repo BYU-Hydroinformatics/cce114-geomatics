@@ -1,38 +1,46 @@
 # Week 14 — Final Project
 
-**Due this week.**
+<span id="tuesday-introduction-to-cce-414-and-final-project-work-session"></span> <span id="thursday-final-project-presentations"></span>
 
-| What | Details |
-| --- | --- |
-| Web Mapping with AI Experience | Wednesday — see [Web Mapping with AI](../assignments/web-mapping-with-ai.md) |
-| Final project presentations | Thursday — see [Final Project](../assignments/final-project.md) |
-| Final Project | Saturday — see [Final Project](../assignments/final-project.md) |
+> [!IMPORTANT] Also this week
+> - [Web Mapping with AI Experience (Wednesday)](../assignments/web-mapping-with-ai.md)
+> - [Final project presentations (Thursday)](../assignments/final-project.md)
+> - [Final Project (Saturday)](../assignments/final-project.md)
 
-## Tuesday — Introduction to CCE 414 and Final Project Work Session
+<div class="week-card week-card--slides" markdown>
 
-**Class Session**{ .badge .badge-session } · *Day 26*
+## :material-presentation-play: Presentation Slides
 
-### Topics
+- **Tuesday** — [Introduction to CCE 414](https://byu-hydroinformatics.github.io/cce114-geomatics/slides/day-21/intro-to-cce-414.html)
 
-- A short introduction to CCE 414: Engineering Applications of GIS, the follow-on course
-- Then work on your final project in class, and into the lab hour, with Dr. Ames' help
+Press <kbd>F</kbd> for fullscreen and <kbd>P</kbd> for presenter view with speaker notes.
 
-### Slides
+</div>
 
-- [Introduction to CCE 414](https://byu-hydroinformatics.github.io/cce114-geomatics/slides/day-21/intro-to-cce-414.html)
+<div class="week-card week-card--practice" markdown>
 
-### Materials
+## :material-account-group: In-Class Practice
 
-- [Prior-year recording of the CCE 414 introduction](https://youtu.be/RIzy0JRB8VI)
+- **Tuesday** — **Introduction to CCE 414 and Final Project Work Session.** A short introduction to CCE 414: Engineering Applications of GIS, the follow-on course. Then work on your final project in class, and into the lab hour, with the instructor's help.
+- **Thursday** — **Final Project Presentations.** Groups present their final mapping projects; presentations continue on Tuesday of Week 15.
 
-## Thursday — Final Project Presentations
+</div>
 
-**Class Session**{ .badge .badge-session } · *Day 27*
+<div class="week-card week-card--lab" markdown>
 
-### Topics
+## :material-flask: Lab Assignment
 
-- Groups present their final mapping projects; presentations continue on Tuesday of Week 15
+*No lab this week.*
 
-### Slides
+</div>
 
-*Slides for this day are not on the site yet. They will be added as the semester goes.*
+<div class="week-card week-card--quiz" markdown>
+
+## :material-book-open-page-variant: Reading Quiz
+
+*No reading quiz this week.*
+
+</div>
+
+> [!NOTE]
+> If you see a discrepancy between Learning Suite and this page, please let us know so we can rectify it.

@@ -1,34 +1,43 @@
 # Week 15 — Presentations and Exam Review
 
-**Due this week.**
+<span id="tuesday-final-project-presentations-part-2-and-exam-review"></span> <span id="thursday-last-day-of-class"></span>
 
-| What | Details |
-| --- | --- |
-| Final Exam | finals week, university-scheduled slot — see [Exams](../policies/exams.md) |
-| Course evaluation | extra credit — see [Grading](../policies/grading.md) |
+> [!IMPORTANT] Also this week
+> - [Final Exam (finals week, university-scheduled slot)](../policies/exams.md)
+> - [Course evaluation (extra credit)](../policies/grading.md)
 
-## Tuesday — Final Project Presentations, Part 2, and Exam Review
+<div class="week-card week-card--slides" markdown>
 
-**Class Session**{ .badge .badge-session } · *Day 28*
+## :material-presentation-play: Presentation Slides
 
-### Topics
+*No slides this week.*
 
-- Remaining final project presentations
-- Final exam review; the exam itself is given during finals week in the university-scheduled slot for this class, in the regular classroom (exact date and time on Learning Suite)
-- The final is a practical, hands-on exam in QGIS; AI tools are not permitted
+</div>
 
-### Slides
+<div class="week-card week-card--practice" markdown>
 
-*Slides for this day are not on the site yet. They will be added as the semester goes.*
+## :material-account-group: In-Class Practice
 
-## Thursday — Last Day of Class
+- **Tuesday** — **Final Project Presentations, Part 2, and Exam Review.** Remaining final project presentations. Final exam review; the exam itself is given during finals week in the university-scheduled slot for this class, in the regular classroom (exact date and time on Learning Suite). The final is a practical, hands-on exam in QGIS; AI tools are not permitted.
+- **Thursday** — **Last Day of Class.** Final exam study session or wrap-up; in some semesters this is a university reading day with no class.
 
-**Class Session**{ .badge .badge-session } · *Day 29*
+</div>
 
-### Topics
+<div class="week-card week-card--lab" markdown>
 
-- Final exam study session or wrap-up; in some semesters this is a university reading day with no class
+## :material-flask: Lab Assignment
 
-### Slides
+*No lab this week.*
 
-*Slides for this day are not on the site yet. They will be added as the semester goes.*
+</div>
+
+<div class="week-card week-card--quiz" markdown>
+
+## :material-book-open-page-variant: Reading Quiz
+
+*No reading quiz this week.*
+
+</div>
+
+> [!NOTE]
+> If you see a discrepancy between Learning Suite and this page, please let us know so we can rectify it.
