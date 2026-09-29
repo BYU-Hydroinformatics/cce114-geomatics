@@ -106,28 +106,64 @@ section > ul:last-of-type li { background: #fff4e5; border-left: 6px solid #e07b
 
 ---
 
+<style scoped>
+.hot { color: #0062b8; font-weight: 700; }
+.warn { color: #c1272d; font-weight: 700; }
+.callout { background: #e07b00; color: #fff; font-weight: 700; padding: 0.35em 0.7em; border-radius: 0.3em; margin-top: 0.4em; }
+</style>
+
 # Three decisions before you draw anything
 
 <div class="columns">
 <div>
 
-1. **Geometry type** — point, line, or polygon. You cannot change it later without rebuilding the layer
-2. **Coordinate reference system** — normally match the project CRS. In our labs that is EPSG:26912, NAD83 / UTM zone 12N
-3. **Schema** — the columns of the attribute table, and the type of each one
+1. <span class="hot">Geometry type</span> — point, line, or polygon. You <span class="warn">cannot change it later</span> without rebuilding the layer
+2. <span class="hot">Coordinate reference system</span> — normally match the **project CRS**. In our labs that is **EPSG:26912**, NAD83 / UTM zone 12N
+3. <span class="hot">Schema</span> — the **columns** of the attribute table, and the **type** of each one
 
 </div>
 <div>
 
 ![w:340 center](images/vec-three-decisions.jpg)
 
-- All three are locked in when you click **OK**
-- Adding a field later is easy; changing geometry type is not
-- Ten seconds of thinking here saves a redraw of forty features
+- All three are <span class="warn">locked in</span> when you click **OK**
+- Adding a field later is **easy**; changing geometry type is **not**
+
+<div class="callout">Ten seconds of thinking here saves a redraw of forty features</div>
 
 </div>
 </div>
 
 <!-- Emphasize decision 2. If the layer CRS and the project CRS disagree, everything still draws, because QGIS reprojects on the fly, but area and length calculations will surprise them later. Pro tip from Lab 4: always make sure your project CRS matches your map. -->
+
+---
+
+<!-- _class: activity -->
+
+# In-Class Activity: Create or download?
+
+<div class="columns" style="grid-template-columns: 1.4fr 1fr;">
+<div>
+
+**Why would you need to *create* data instead of just downloading it?** Turn to your neighbor and discuss.
+
+Then, together, write down **three datasets you probably can't download** and would have to create yourself, **one of each type**:
+
+- a **point** layer, a **line** layer, a **polygon** layer
+- for each: the **projection** you would use, if you know it
+- for each: the **attribute fields** it would need
+
+</div>
+<div>
+
+![w:340 center](images/vec-create-vs-download.jpg)
+
+<p style="text-align:center;font-size:1.3em;font-weight:700;color:#e07b00;">6 minutes, with a partner</p>
+
+</div>
+</div>
+
+<!-- Six minutes in pairs, then a few minutes of whole-class discussion: take one dataset of each type from different pairs and put it on the board. Push on the why: nobody has digitized the thing you care about, at the accuracy you need, with the attributes you need, recently enough. Push on projection: in Utah the default answer is NAD83 / UTM zone 12N (EPSG:26912), and for a small site a state plane zone also works; "I don't know" is a fine answer today and is Week 8's topic. Push on attributes: the fields decide what questions the data can answer later. Not on the slide: each pair photographs their written results and uploads the photo to Learning Suite as this class's in-class activity item. -->
 
 ---
 
@@ -137,7 +173,10 @@ section > ul:last-of-type li { background: #fff4e5; border-left: 6px solid #e07b
 
 **Layer → Create Layer → New GeoPackage Layer…**
 
-<!-- Show the menu. Note the sibling entries: New Shapefile Layer, New Temporary Scratch Layer. A scratch layer lives only in memory and disappears when the project closes, which is fine for a quick sketch and a disaster if you forget. We use GeoPackage. -->
+- You will do this yourself for **Lab 4** this week. We won't do it together right now
+- More practice on **Thursday** in the hands-on session
+
+<!-- Show the menu. Note the sibling entries: New Shapefile Layer, New Temporary Scratch Layer. A scratch layer lives only in memory and disappears when the project closes, which is fine for a quick sketch and a disaster if you forget. We use GeoPackage. Do not demo this live: it is Lab 4's first step and Thursday's hands-on session practices it. -->
 
 ---
 
