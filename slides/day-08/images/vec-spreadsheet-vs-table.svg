@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 820" font-family="Avenir Next, Segoe UI, Helvetica, Arial, sans-serif">
+<text x="20" y="45" font-size="32" font-weight="700" fill="#002e5d">Spreadsheet</text>
+<text x="20" y="79" font-size="21" fill="#4a5566">type anything in any cell</text>
+<rect x="20" y="100" width="250" height="58" fill="#eef0f3" stroke="#9aa6b5" stroke-width="1.5"/>
+<text x="30" y="138" font-size="21" font-weight="700" fill="#002e5d">Name</text>
+<rect x="270" y="100" width="310" height="58" fill="#eef0f3" stroke="#9aa6b5" stroke-width="1.5"/>
+<text x="280" y="138" font-size="21" font-weight="700" fill="#002e5d">Voltage</text>
+<rect x="20" y="158" width="250" height="48" fill="#fff" stroke="#9aa6b5" stroke-width="1.5"/>
+<text x="30" y="190" font-size="21" fill="#22262e">Pole 1</text>
+<rect x="270" y="158" width="310" height="48" fill="#fff" stroke="#9aa6b5" stroke-width="1.5"/>
+<text x="280" y="190" font-size="21" fill="#22262e">240</text>
+<rect x="20" y="206" width="250" height="48" fill="#fff" stroke="#9aa6b5" stroke-width="1.5"/>
+<text x="30" y="238" font-size="21" fill="#22262e">Pole 2</text>
+<rect x="270" y="206" width="310" height="48" fill="#fde2e2" stroke="#9aa6b5" stroke-width="1.5"/>
+<text x="280" y="238" font-size="21" fill="#c1272d">240 V</text>
+<rect x="20" y="254" width="250" height="48" fill="#fff" stroke="#9aa6b5" stroke-width="1.5"/>
+<text x="30" y="286" font-size="21" fill="#22262e">Pole 3</text>
+<rect x="270" y="254" width="310" height="48" fill="#fde2e2" stroke="#9aa6b5" stroke-width="1.5"/>
+<text x="280" y="286" font-size="21" fill="#c1272d">high?</text>
+<rect x="20" y="302" width="250" height="48" fill="#fff" stroke="#9aa6b5" stroke-width="1.5"/>
+<text x="30" y="334" font-size="21" fill="#22262e">Pole 4</text>
+<rect x="270" y="302" width="310" height="48" fill="#fde2e2" stroke="#9aa6b5" stroke-width="1.5"/>
+<text x="280" y="334" font-size="21" fill="#c1272d">n/a</text>
+<text x="20" y="386" font-size="20" font-style="italic" fill="#c1272d">now try to add up the voltages</text>
+<text x="20" y="455" font-size="32" font-weight="700" fill="#002e5d">Attribute table</text>
+<text x="20" y="489" font-size="21" fill="#4a5566">each column is locked to one type</text>
+<rect x="20" y="510" width="250" height="58" fill="#dbe8f6" stroke="#9aa6b5" stroke-width="1.5"/>
+<text x="30" y="536" font-size="21" font-weight="700" fill="#002e5d">Name</text>
+<text x="30" y="560" font-size="18" font-weight="400" fill="#0062b8">Text</text>
+<rect x="270" y="510" width="310" height="58" fill="#dbe8f6" stroke="#9aa6b5" stroke-width="1.5"/>
+<text x="280" y="536" font-size="21" font-weight="700" fill="#002e5d">Voltage</text>
+<text x="280" y="560" font-size="18" font-weight="400" fill="#0062b8">Integer</text>
+<rect x="20" y="568" width="250" height="48" fill="#fff" stroke="#9aa6b5" stroke-width="1.5"/>
+<text x="30" y="600" font-size="21" fill="#22262e">Pole 1</text>
+<rect x="270" y="568" width="310" height="48" fill="#fff" stroke="#9aa6b5" stroke-width="1.5"/>
+<text x="280" y="600" font-size="21" fill="#22262e">240</text>
+<rect x="20" y="616" width="250" height="48" fill="#fff" stroke="#9aa6b5" stroke-width="1.5"/>
+<text x="30" y="648" font-size="21" fill="#22262e">Pole 2</text>
+<rect x="270" y="616" width="310" height="48" fill="#fff" stroke="#9aa6b5" stroke-width="1.5"/>
+<text x="280" y="648" font-size="21" fill="#22262e">240</text>
+<rect x="20" y="664" width="250" height="48" fill="#fff" stroke="#9aa6b5" stroke-width="1.5"/>
+<text x="30" y="696" font-size="21" fill="#22262e">Pole 3</text>
+<rect x="270" y="664" width="310" height="48" fill="#fff" stroke="#9aa6b5" stroke-width="1.5"/>
+<text x="280" y="696" font-size="21" fill="#22262e">480</text>
+<rect x="20" y="712" width="250" height="48" fill="#fff" stroke="#9aa6b5" stroke-width="1.5"/>
+<text x="30" y="744" font-size="21" fill="#22262e">Pole 4</text>
+<rect x="270" y="712" width="310" height="48" fill="#fff" stroke="#9aa6b5" stroke-width="1.5"/>
+<text x="280" y="744" font-size="21" fill="#22262e">NULL</text>
+<text x="20" y="796" font-size="20" font-style="italic" fill="#0062b8">only whole numbers get in</text>
+</svg>

@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 560" font-family="Avenir Next, Segoe UI, Helvetica, Arial, sans-serif">
+<rect x="10" y="10" width="560" height="540" rx="22" fill="#fff4e5" stroke="#e07b00" stroke-width="3"/>
+<text x="40" y="62" font-size="36" font-weight="700" fill="#002e5d">Shapefile</text>
+<text x="40" y="98" font-size="23" fill="#4a5566">one layer = a bundle of files</text>
+<path d="M40,130 h150 l20,24 h330 v352 h-500 z" fill="#fde7c7" stroke="#e07b00" stroke-width="3"/>
+<text x="60" y="190" font-size="24" font-weight="700" fill="#002e5d">roads/</text>
+<g><path d="M70,210 h172 l18,18 v32 h-190 z" fill="#fff" stroke="#e07b00" stroke-width="3"/>
+<path d="M242,210 v18 h18" fill="none" stroke="#e07b00" stroke-width="3"/>
+<text x="88" y="243" font-size="22" font-weight="700" fill="#e07b00">roads.shp</text></g>
+<text x="280" y="243" font-size="22" fill="#4a5566">geometry</text>
+<g><path d="M70,270 h172 l18,18 v32 h-190 z" fill="#fff" stroke="#e07b00" stroke-width="3"/>
+<path d="M242,270 v18 h18" fill="none" stroke="#e07b00" stroke-width="3"/>
+<text x="88" y="303" font-size="22" font-weight="700" fill="#e07b00">roads.shx</text></g>
+<text x="280" y="303" font-size="22" fill="#4a5566">index</text>
+<g><path d="M70,330 h172 l18,18 v32 h-190 z" fill="#fff" stroke="#e07b00" stroke-width="3"/>
+<path d="M242,330 v18 h18" fill="none" stroke="#e07b00" stroke-width="3"/>
+<text x="88" y="363" font-size="22" font-weight="700" fill="#e07b00">roads.dbf</text></g>
+<text x="280" y="363" font-size="22" fill="#4a5566">attributes</text>
+<g><path d="M70,390 h172 l18,18 v32 h-190 z" fill="#fff" stroke="#e07b00" stroke-width="3"/>
+<path d="M242,390 v18 h18" fill="none" stroke="#e07b00" stroke-width="3"/>
+<text x="88" y="423" font-size="22" font-weight="700" fill="#e07b00">roads.prj</text></g>
+<text x="280" y="423" font-size="22" fill="#4a5566">coordinate system</text>
+<g><path d="M70,450 h172 l18,18 v32 h-190 z" fill="#fff" stroke="#e07b00" stroke-width="3"/>
+<path d="M242,450 v18 h18" fill="none" stroke="#e07b00" stroke-width="3"/>
+<text x="88" y="483" font-size="22" font-weight="700" fill="#e07b00">roads.cpg</text></g>
+<text x="280" y="483" font-size="22" fill="#4a5566">text encoding</text>
+<text x="40" y="535" font-size="21" font-style="italic" fill="#c1272d">lose one file and the layer breaks</text>
+<rect x="630" y="10" width="560" height="540" rx="22" fill="#eef3f9" stroke="#0062b8" stroke-width="3"/>
+<text x="660" y="62" font-size="36" font-weight="700" fill="#002e5d">GeoPackage</text>
+<text x="660" y="98" font-size="23" fill="#4a5566">one file, many layers inside</text>
+<rect x="690" y="130" width="440" height="370" rx="16" fill="#fff" stroke="#0062b8" stroke-width="4"/>
+<text x="712" y="172" font-size="26" font-weight="700" fill="#0062b8">campus.gpkg</text>
+<rect x="715" y="195" width="390" height="54" rx="10" fill="#dbe8f6" stroke="#0062b8" stroke-width="2"/>
+<polyline points="730,232 740,214 752,228 762,212" fill="none" stroke="#002e5d" stroke-width="4" stroke-linejoin="round"/>
+<text x="780" y="231" font-size="24" fill="#002e5d">roads  (line)</text>
+<rect x="715" y="265" width="390" height="54" rx="10" fill="#dbe8f6" stroke="#0062b8" stroke-width="2"/>
+<polygon points="730,304 732,282 758,280 762,302" fill="#5aa0e0" stroke="#002e5d" stroke-width="3"/>
+<text x="780" y="301" font-size="24" fill="#002e5d">buildings  (polygon)</text>
+<rect x="715" y="335" width="390" height="54" rx="10" fill="#dbe8f6" stroke="#0062b8" stroke-width="2"/>
+<circle cx="745" cy="362" r="10" fill="#e07b00"/>
+<text x="780" y="371" font-size="24" fill="#002e5d">hydrants  (point)</text>
+<rect x="715" y="405" width="390" height="54" rx="10" fill="#dbe8f6" stroke="#0062b8" stroke-width="2"/>
+<rect x="730" y="421" width="32" height="22" rx="4" fill="none" stroke="#002e5d" stroke-width="3"/><circle cx="739" cy="432" r="4" fill="#e07b00"/><circle cx="752" cy="432" r="4" fill="#0062b8"/>
+<text x="780" y="441" font-size="24" fill="#002e5d">layer styles</text>
+<text x="660" y="535" font-size="21" font-style="italic" fill="#0062b8">copy, email, or zip one file and it all travels</text>
+</svg>

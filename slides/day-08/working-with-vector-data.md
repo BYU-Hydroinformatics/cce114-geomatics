@@ -180,6 +180,17 @@ Then, together, write down **three datasets you probably can't download** and wo
 
 ---
 
+# Shapefile or GeoPackage? You will see both
+
+![w:780 center](images/vec-shp-vs-gpkg-diagram.svg)
+
+- You will **download** plenty of <span style="color:#e07b00;font-weight:700;">shapefiles</span>: many portals still hand them out, and QGIS opens them fine
+- When you **create** a layer in this class, make a <span style="color:#0062b8;font-weight:700;">GeoPackage</span>
+
+<!-- Same data inside either one: geometry plus an attribute table. The difference is packaging. A shapefile is a bundle of sibling files with the same name, and every one of them has to travel together; the .prj is the one people lose, and with it the coordinate system. A GeoPackage is a single file that can hold many layers, plus their styles. That is why today's instructions say New GeoPackage Layer even though half the data they have downloaded so far arrived as shapefiles. Part 5 comes back to the details: 10-character field names, the size limit, true curves. -->
+
+---
+
 # The New GeoPackage Layer dialog
 
 <div class="columns" style="grid-template-columns: 1.05fr 1fr;">
@@ -203,9 +214,16 @@ Then, together, write down **three datasets you probably can't download** and wo
 
 ---
 
+<style scoped>
+table { font-size: 0.66em; }
+p.lead-in { margin: 0.1em 0 0.5em; font-size: 0.92em; }
+</style>
+
 # Field types you will actually use
 
-![bg right:34% w:94%](images/vec-field-types.jpg)
+![bg right:34% w:90%](images/vec-spreadsheet-vs-table.svg)
+
+<p class="lead-in">An attribute table looks like a <b>spreadsheet</b>: rows and columns. The difference: in a spreadsheet you can type <b>anything in any cell</b>. In an attribute table each column is <span style="color:#0062b8;font-weight:700;">hard-wired to one data type</span>.</p>
 
 | Type | Use it for | Example |
 | --- | --- | --- |
@@ -214,11 +232,17 @@ Then, together, write down **three datasets you probably can't download** and wo
 | Decimal number | measurements, areas, rates | `Area_sqft` = 31842.7 |
 | Date | when it was built or inspected | `Installed` = 2019-07-14 |
 
-<!-- Two rules worth saying out loud. One: an ID is a label, not a quantity, so never average it. Two: if you might ever want to add, average, or sort numerically, do not store the value as text. "240 V" as text cannot be summed. -->
+<!-- Two rules worth saying out loud. One: an ID is a label, not a quantity, so never average it. Two: if you might ever want to add, average, or sort numerically, do not store the value as text. "240 V" as text cannot be summed. The figure makes the spreadsheet point: in Excel, "240", "240 V", "high?" and "n/a" can all sit in one column, and SUM quietly skips the ones it cannot read. An Integer field refuses anything but a whole number, and an unknown value is NULL, not "n/a". That strictness is the point: the database guarantees every value in the column can be added, averaged, or sorted. -->
 
 ---
 
 <!-- _class: quiz -->
+
+<style scoped>
+ol { margin: 0.2em 0; line-height: 1.35; }
+section > ul:last-of-type { list-style: none; padding-left: 0; margin-top: 0.4em; }
+section > ul:last-of-type li { background: #fff4e5; border-left: 6px solid #e07b00; padding: 0.2em 0.6em; margin-top: 0.3em; font-size: 0.88em; }
+</style>
 
 # You are mapping a campus
 
@@ -234,7 +258,10 @@ Which geometry type for each, and why?
 <li>Fire hydrants and the water mains between them</li>
 </ol>
 
-<!-- A: point. B: line. C: polygon. D: polygon, one feature. E: two layers, points and lines, because a layer holds one geometry type. Push on E: students often want one "utilities" layer. Ask what the attribute table would look like if hydrants and mains shared it. Half the columns would be empty for every row. -->
+* **Is there a case where sidewalks should be *polygons*?**
+* **How about fire hydrants or call boxes?**
+
+<!-- A: point. B: line. C: polygon. D: polygon, one feature. E: two layers, points and lines, because a layer holds one geometry type. Push on E: students often want one "utilities" layer. Ask what the attribute table would look like if hydrants and mains shared it. Half the columns would be empty for every row. Then reveal the two follow-ups one at a time (arrow key); both are about scale. Sidewalks as polygons: yes, whenever the question is about area or width, such as resurfacing or snow-removal quantities (square feet of concrete), ADA width checks, or a site plan. As lines they only give length. Hydrants or call boxes as polygons: at a site-design or as-built scale, the pad, the bollards, and the clearance zone around a hydrant have real footprints that matter. On a campus-wide map they are points. The object did not change; the question and the scale did. -->
 
 ---
 
