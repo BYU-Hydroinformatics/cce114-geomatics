@@ -90,6 +90,16 @@ them will happen today if nobody says them first.
 
 #### 1. One GeoPackage, three layers
 
+Tour the dialog once before the first layer, field by field:
+
+- **File name**: click the **…** and save into your own folder. This is the actual file on disk; skip it and the layer has no home.
+- **Table name**: the layer name inside that file.
+- **Geometry type**: Point, LineString, or Polygon. It cannot be changed later.
+- **CRS**: leave it on *Project CRS*.
+- **New Field**: name, type, then **Add to Fields List**. Only what is in the Fields List becomes a column.
+
+[![The QGIS 3.44 New GeoPackage Layer dialog for the Lab 4 Street_Lights point layer, in EPSG:26912, with ID, Fixture_Type, and Voltage in the Fields List](images/w5-new-geopackage-dialog.png)](images/w5-new-geopackage-dialog.png)
+
 1. **Layer > Create Layer > New GeoPackage Layer...** Database: a new file `home.gpkg`. Table `buildings`, geometry **Polygon**, CRS **EPSG:26912**. Fields: `name` (text), `floors` (integer), `year_built` (integer). OK.
 2. Repeat, choosing the **same** database file (QGIS asks whether to add a table to it; say yes): table `paths`, geometry **LineString**, fields `name` (text), `surface` (text).
 3. Repeat: table `doors`, geometry **Point**, fields `name` (text), `kind` (text).

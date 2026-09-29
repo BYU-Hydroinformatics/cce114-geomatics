@@ -191,29 +191,6 @@ Then, together, write down **three datasets you probably can't download** and wo
 
 ---
 
-# The New GeoPackage Layer dialog
-
-<div class="columns" style="grid-template-columns: 1.05fr 1fr;">
-<div>
-
-- **File name** — click the **…** and save it into your own lab folder. This is the actual file on disk
-- **Table name** — the layer name inside that file
-- **Geometry type** — Point, LineString, Polygon
-- **CRS** — leave it on *Project CRS*
-- **New Field** — name, type, then **Add to Fields List**
-
-</div>
-<div>
-
-![w:520 center](images/vec-new-geopackage-dialog.png)
-
-</div>
-</div>
-
-<!-- The single most common Lab 4 mistake: not clicking the three dots next to File name, so the layer never gets a home on disk and the work is lost. Second most common: typing a field name and clicking OK without clicking Add to Fields List first. -->
-
----
-
 <style scoped>
 table { font-size: 0.66em; }
 p.lead-in { margin: 0.1em 0 0.5em; font-size: 0.92em; }
