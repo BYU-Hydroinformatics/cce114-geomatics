@@ -10,39 +10,51 @@ footer: "CCE 114 · Day 8 — Working with Vector Data"
 
 ![bg right:45% w:95%](images/vec-satellite-neighborhood.jpg)
 
+![w:130](images/byu-medallion.svg)
+
 # Working with Vector Data
 
 ## Part 1: Creating, Digitizing, and Editing
 
 CCE 114 Geomatics
+Brigham Young University
+Civil & Construction Engineering
+
 Dr. Dan Ames and Dr. James Halgren
 
 <!-- Tuesday concept lecture. Up to now students have only *added* data that somebody else made. Today they learn where vector data comes from and how it gets onto a disk. Thursday in the Thursday hands-on session they do it themselves in QGIS, digitizing their own home. -->
 
 ---
 
-# Today's Goals
+# This Week's Goals
 
 ![bg right:34% w:82%](images/vec-goals-bars.png)
 
-- By the end of class you should be able to:
-  - **Create** a new empty vector layer, and make the three decisions it needs
-  - **Digitize** points, lines, and polygons from imagery
-  - **Edit** features that are already wrong, with the Vertex Tool
-  - Design an **attribute table** and its schema
-  - **Save to disk**, and say when to use a **GeoPackage** and when a **shapefile**
-- Thursday, in the hands-on session, you do all five of these in QGIS
+Today, Thursday, and Lab 4 all build toward these. By the end of the week you should be able to:
 
-<!-- These five words are the shape of the whole hour: create, digitize, edit, attributes, save. Reading is Chapter 4, Maps, Data Entry, and Editing, in Bolstad & Manson. -->
+- **Understand** where vector data comes from, and why a layer holds only one **geometry type**
+- **Create** a new empty vector layer, and make the three decisions it needs
+- **Digitize** points, lines, and polygons from imagery
+- **Edit** features that are already wrong, with the Vertex Tool
+- Design an **attribute table** and its schema
+- **Save to disk**, and say when to use a **GeoPackage** and when a **shapefile**
+
+<!-- Today is the concepts: why each step exists and what goes wrong without it. Thursday, in the hands-on session, students do all of it in QGIS. Lab 4 is where they do it alone, on their own home. Reading is Chapter 4, Maps, Data Entry, and Editing, in Bolstad & Manson. -->
 
 ---
+
+<style scoped>
+.hot { color: #0062b8; font-weight: 700; }
+.key { color: #002e5d; font-weight: 700; font-style: italic; }
+.callout { background: #e07b00; color: #fff; font-weight: 700; padding: 0.05em 0.35em; border-radius: 0.25em; white-space: nowrap; }
+</style>
 
 # Where does vector data come from?
 
 <div class="columns">
 <div>
 
-- So far in this course you have **added** data somebody else made: Utah County roads, SGID streams, a DEM
+- So far in this course you have <span class="hot">added</span> data <span class="key">somebody else</span> made: Utah County roads, SGID streams, a DEM
 - Somebody had to make those. Sources:
   - **Digitizing** from imagery or scanned maps
   - **Field survey**: total station, GNSS, level loop
@@ -54,8 +66,8 @@ Dr. Dan Ames and Dr. James Halgren
 
 ![w:340 center](images/vec-data-sources.jpg)
 
-- Today is the first one: you are the somebody
-- The engineering question is always the same: *how good does this have to be, and how will anyone know?*
+- Today is the first one: <span class="callout">you are the somebody</span>
+- The engineering question is always the same: <span class="key">how good does this have to be, and how will anyone know?</span>
 
 </div>
 </div>
@@ -64,17 +76,25 @@ Dr. Dan Ames and Dr. James Halgren
 
 ---
 
+<style scoped>
+ul { margin-top: 0.2em; }
+section > ul:last-of-type { list-style: none; padding-left: 0; }
+section > ul:last-of-type li { background: #fff4e5; border-left: 6px solid #e07b00; padding: 0.25em 0.6em; margin-top: 0.35em; font-size: 0.9em; }
+</style>
+
 # Reminder: three geometry types
 
-![bg right:42% w:82%](images/vec-vector-types-card.png)
+![bg right:36% w:88%](images/vec-geometry-types.svg)
 
-- **Point**: one coordinate pair. A street light, a well, a culvert
-- **Line**: an ordered list of coordinate pairs. A curb, a canal, a road centerline
-- **Polygon**: an ordered list that closes back on itself. A building footprint, a parcel, a lake
-- One layer holds **one** geometry type. You cannot mix points and polygons in the same layer
-- Pick the type from the **question you are answering**, not from the shape of the object
+- **Point**: one coordinate pair. A well, a culvert, a street light
+- **Line**: an ordered list of coordinate pairs. A curb, a canal, a centerline. You will hear **line** and **polyline** used interchangeably
+- **Polygon**: a list that closes on itself. A parcel, a lake, a footprint
+- One layer holds **one** type. Pick it from the **question**, not the object
 
-<!-- A building is a polygon on a site plan and a point on a statewide map. The object did not change; the question did. This comes back in the quiz two slides from now. -->
+* **Name a feature a point represents *perfectly*, at any scale**
+* **Name a feature a line represents *perfectly*, at any scale**
+
+<!-- "Polyline" is the same thing as a line in almost every GIS; ArcGIS and shapefile documentation say polyline, QGIS says LineString or Line. The two callouts reveal one at a time (arrow key). Let students answer before revealing the next. Good answers for a point: something with no size at all, like the center point of a parking lot, a survey monument, or Four Corners, where four states meet at one point. Good answers for a line: something with no width, like the Utah–Idaho state line or a property line. A well, a hydrant, or a road is NOT perfect: each has a real size, and the point or line is a scale decision. That is the limitation of each type: most real things have area, so a point or line is a simplification that only works at some scales. A building is a polygon on a site plan and a point on a statewide map. The object did not change; the question did. This comes back in the quiz two slides from now. -->
 
 ---
 

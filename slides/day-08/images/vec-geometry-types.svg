@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 900" font-family="Avenir Next, Segoe UI, Helvetica, Arial, sans-serif">
+  <rect x="0" y="0" width="600" height="900" rx="24" fill="#eef3f9"/>
+  <!-- Point -->
+  <g>
+    <text x="40" y="70" font-size="40" font-weight="700" fill="#002e5d">Point</text>
+    <text x="40" y="108" font-size="24" fill="#4a5566">one x, y pair</text>
+    <g fill="#e07b00" stroke="#ffffff" stroke-width="3">
+      <circle cx="140" cy="200" r="13"/>
+      <circle cx="290" cy="160" r="13"/>
+      <circle cx="410" cy="225" r="13"/>
+      <circle cx="520" cy="150" r="13"/>
+    </g>
+  </g>
+  <line x1="40" y1="285" x2="560" y2="285" stroke="#c9d8ea" stroke-width="2"/>
+  <!-- Line -->
+  <g>
+    <text x="40" y="350" font-size="40" font-weight="700" fill="#002e5d">Line</text>
+    <text x="150" y="350" font-size="26" font-style="italic" fill="#0062b8">a.k.a. polyline</text>
+    <text x="40" y="388" font-size="24" fill="#4a5566">an ordered list of vertices</text>
+    <polyline points="70,520 170,440 290,500 400,430 540,480" fill="none" stroke="#0062b8" stroke-width="7" stroke-linejoin="round" stroke-linecap="round"/>
+    <g fill="#002e5d" stroke="#ffffff" stroke-width="3">
+      <circle cx="70" cy="520" r="11"/>
+      <circle cx="170" cy="440" r="11"/>
+      <circle cx="290" cy="500" r="11"/>
+      <circle cx="400" cy="430" r="11"/>
+      <circle cx="540" cy="480" r="11"/>
+    </g>
+  </g>
+  <line x1="40" y1="580" x2="560" y2="580" stroke="#c9d8ea" stroke-width="2"/>
+  <!-- Polygon -->
+  <g>
+    <text x="40" y="645" font-size="40" font-weight="700" fill="#002e5d">Polygon</text>
+    <text x="40" y="683" font-size="24" fill="#4a5566">a list that closes on itself</text>
+    <polygon points="120,860 90,760 230,715 420,740 510,820 360,870" fill="#5aa0e0" fill-opacity="0.55" stroke="#002e5d" stroke-width="6" stroke-linejoin="round"/>
+    <g fill="#002e5d" stroke="#ffffff" stroke-width="3">
+      <circle cx="120" cy="860" r="11"/>
+      <circle cx="90" cy="760" r="11"/>
+      <circle cx="230" cy="715" r="11"/>
+      <circle cx="420" cy="740" r="11"/>
+      <circle cx="510" cy="820" r="11"/>
+      <circle cx="360" cy="870" r="11"/>
+    </g>
+  </g>
+</svg>
