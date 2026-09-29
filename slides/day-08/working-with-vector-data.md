@@ -565,20 +565,6 @@ A student builds a `Buildings` polygon layer with:
 
 ---
 
-# Five ways to lose an afternoon
-
-![bg right:36% w:94%](images/vec-lost-afternoon.jpg)
-
-- Digitizing into a **temporary scratch layer**, then closing QGIS
-- Never clicking the **…** next to File name, so the layer has no home on disk
-- Typing a field name and clicking **OK** without **Add to Fields List**
-- Saving the **project** and assuming the **layer edits** were saved too
-- Drawing forty features with **snapping off**, then discovering nothing connects
-
-<!-- Read these out. Every one of them is a real thing that has happened in this class, and four of the five will happen Thursday if nobody says them first. -->
-
----
-
 <!-- _class: activity -->
 
 # Thursday: hands-on in QGIS

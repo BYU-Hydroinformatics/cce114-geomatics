@@ -68,12 +68,23 @@ project is not the same as **Save Layer Edits**, and students hit this every yea
 | Time | Segment |
 | --- | --- |
 | 0:00 | Mini-devotional |
-| 0:03 | One GeoPackage, three layers, a schema each |
+| 0:03 | Five ways to lose an afternoon (say them out loud), then one GeoPackage, three layers, a schema each |
 | 0:10 | Digitize: polygon (house), line (street or driveway), point (front door) |
 | 0:18 | Snapping on; redo the driveway so it meets the street and the house exactly |
 | 0:25 | Vertex Tool: move, add, delete; attribute edits; save |
 | 0:31 | Students digitize their own home |
 | 0:44 | Screenshot or export; upload; Lab 4 pointer |
+
+### Five ways to lose an afternoon
+
+Read these out before anyone opens a dialog. Every one has happened in this class, and most of
+them will happen today if nobody says them first.
+
+1. Digitizing into a **temporary scratch layer**, then closing QGIS. It never had a file.
+2. Never clicking the **…** next to File name, so the layer has no home on disk.
+3. Typing a field name and clicking **OK** without **Add to Fields List**, so the field was never created.
+4. Saving the **project** and assuming the **layer edits** were saved too. The `.qgz` holds where layers are and how they are drawn, not the features.
+5. Drawing forty features with **snapping off**, then discovering nothing connects.
 
 ### Walkthrough
 
