@@ -94,7 +94,7 @@ section > ul:last-of-type li { background: #fff4e5; border-left: 6px solid #e07b
 * **Name a feature a point represents *perfectly*, at any scale**
 * **Name a feature a line represents *perfectly*, at any scale**
 
-<!-- "Polyline" is the same thing as a line in almost every GIS; ArcGIS and shapefile documentation say polyline, QGIS says LineString or Line. The two callouts reveal one at a time (arrow key). Let students answer before revealing the next. Good answers for a point: something with no size at all, like the center point of a parking lot, a survey monument, or Four Corners, where four states meet at one point. Good answers for a line: something with no width, like the Utah–Idaho state line or a property line. A well, a hydrant, or a road is NOT perfect: each has a real size, and the point or line is a scale decision. That is the limitation of each type: most real things have area, so a point or line is a simplification that only works at some scales. A building is a polygon on a site plan and a point on a statewide map. The object did not change; the question did. This comes back in the quiz two slides from now. -->
+<!-- "Polyline" is the same thing as a line in almost every GIS; ArcGIS and shapefile documentation say polyline, QGIS says LineString or Line. The two callouts reveal one at a time (arrow key). Let students answer before revealing the next. Good answers for a point: something with no size at all, like the center point of a parking lot, a survey monument, or Four Corners, where four states meet at one point. Good answers for a line: something with no width, like the Utah–Idaho state line or a property line. A well, a hydrant, or a road is NOT perfect: each has a real size, and the point or line is a scale decision. That is the limitation of each type: most real things have area, so a point or line is a simplification that only works at some scales. A building is a polygon on a site plan and a point on a statewide map. The object did not change; the question did. This comes back in the campus quiz at the end of Part 1. -->
 
 ---
 
@@ -187,7 +187,7 @@ Then, together, write down **three datasets you probably can't download** and wo
 - You will **download** plenty of <span style="color:#e07b00;font-weight:700;">shapefiles</span>: many portals still hand them out, and QGIS opens them fine
 - When you **create** a layer in this class, make a <span style="color:#0062b8;font-weight:700;">GeoPackage</span>
 
-<!-- Same data inside either one: geometry plus an attribute table. The difference is packaging. A shapefile is a bundle of sibling files with the same name, and every one of them has to travel together; the .prj is the one people lose, and with it the coordinate system. A GeoPackage is a single file that can hold many layers, plus their styles. That is why today's instructions say New GeoPackage Layer even though half the data they have downloaded so far arrived as shapefiles. Part 5 comes back to the details: 10-character field names, the size limit, true curves. -->
+<!-- Same data inside either one: geometry plus an attribute table. The difference is packaging. A shapefile is a bundle of sibling files with the same name, and every one of them has to travel together; the .prj is the one people lose, and with it the coordinate system. A GeoPackage is a single file that can hold many layers, plus their styles. That is why today's instructions say New GeoPackage Layer even though half the data they have downloaded so far arrived as shapefiles. The details, if asked: a GeoPackage is an open SQLite database, holds many layers and their styles, allows long field names, handles large data, and stores true curves. A shapefile limits field names to 10 characters, holds one geometry type per file, has a historic 2 GB limit, and cannot store true curves. Need a shapefile for a client? Right-click the layer, Export, Save Features As. -->
 
 ---
 
@@ -279,19 +279,34 @@ Which geometry type for each, and why?
 <div>
 
 - **Digitizing** = tracing real-world features into coordinates the computer can store
-- Historically: a paper map taped to a **digitizing tablet**, a puck with crosshairs, one click per vertex
-- Today: **heads-up digitizing** — imagery on screen, you draw over the top of it
+- **Then:** a paper map taped to a **digitizing table**, a puck with crosshairs, one click per vertex
+- **Now:** **heads-up digitizing** — imagery on screen, you draw over the top of it
 - Same idea, same errors, better coffee
 
 </div>
 <div>
 
-![w:490 center](images/vec-imagery-detail.jpg)
+<div style="display:grid;grid-template-columns:0.75fr 1fr;gap:0.5em;align-items:end;text-align:center;font-size:0.6em;color:#4a5566;">
+<div>
+
+![w:230](images/vec-digitizing-table.jpg)
+**Then:** digitizing table, 1988
+
+</div>
+<div>
+
+![w:300](images/vec-imagery-detail.jpg)
+**Now:** imagery on screen
 
 </div>
 </div>
 
-<!-- The name "heads-up" comes from the contrast with tablet digitizing, where your head was down over the table. The skill did not change: you are still deciding, feature by feature, where the line goes. -->
+<p style="font-size:0.42em;color:#8a94a3;margin-top:0.6em;">Photo: W. M. Ciesla, USDA Forest Service, 1988. Public domain, via Wikimedia Commons.</p>
+
+</div>
+</div>
+
+<!-- The photo is a USDA Forest Service Forest Pest Management office in Portland, Oregon, in 1988: a paper survey map fastened to a tilted digitizing table, and a corded puck with crosshairs. Every GIS lab had one of these; the operator clicked a button on the puck at each vertex, and the table's grid of wires under the surface turned the puck position into coordinates. Source: https://commons.wikimedia.org/wiki/File:1988._Early_aerial_survey_data_digitizing._Forest_Pest_Management._Regional_Office,_Portland,_Oregon._(39715078922).jpg (PD-USGov-USDA). The name "heads-up" comes from the contrast with tablet digitizing, where your head was down over the table. The skill did not change: you are still deciding, feature by feature, where the line goes. -->
 
 ---
 
@@ -308,12 +323,12 @@ Which geometry type for each, and why?
 </div>
 <div>
 
-![w:480 center](images/vec-digitized-result.jpg)
+![w:430 center](images/vec-digitize-animation.svg)
 
 </div>
 </div>
 
-<!-- This is exactly the problem Lab 4 asks them to fix. The SGID canal lines were digitized years ago from smaller-scale USGS quads, so in high-resolution imagery they drift well off the real channel. The data are not "wrong"; they are being used at a scale they were never made for. -->
+<!-- This is exactly the problem Lab 4 asks them to fix. The SGID canal lines were digitized years ago from smaller-scale USGS quads, so in high-resolution imagery they drift well off the real channel. The data are not "wrong"; they are being used at a scale they were never made for. The animation on the right loops on its own: click, click, click at each roof corner, then right-click to close the polygon. Point out that nine vertices is enough for this roof at this zoom; ninety would not make it more accurate. -->
 
 ---
 
@@ -329,39 +344,18 @@ Which geometry type for each, and why?
 5. Fill in the attribute form, click **OK**
 6. **Save Layer Edits**, then toggle editing off
 
-</div>
-<div>
-
 - Nothing is on disk until step 6
-- The pencil is the switch for the whole layer: if a tool is greyed out, you almost certainly forgot step 2
-- Digitizing and Advanced Digitizing toolbars: right-click the toolbar area to turn them on
-
-</div>
-</div>
-
-<!-- Walk the loop out loud once. "The layer is not editable" is the error they will hit most, and it always means the pencil is off or the wrong layer is selected. -->
-
----
-
-# Three ways to draw a line
-
-<div class="columns">
-<div>
-
-![w:440 center](images/vec-digitizing-tools.png)
+- The pencil is the switch for the whole layer: if a tool is grayed out, you almost certainly forgot step 2
 
 </div>
 <div>
 
-- **Digitize with Segment** — straight segments, one click per vertex. The default
-- **Digitize with Curve** — true circular arcs, for cul-de-sacs and curved curbs
-- **Stream Digitizing** — vertices dropped automatically as you drag, at a set tolerance
-- Stream mode is fast and produces enormous files. Use it sparingly
+![w:470 center](images/vec-digitizing-loop.svg)
 
 </div>
 </div>
 
-<!-- Curves are worth showing: a cul-de-sac drawn as an arc is one geometry, drawn with segments it is twenty vertices that still look faceted. Note that not every format stores true curves; GeoPackage does, shapefile does not. -->
+<!-- Concept only today; Thursday they run this loop for real. Toolbars: the Digitizing and Advanced Digitizing toolbars are turned on by right-clicking the toolbar area. Walk the loop out loud once. "The layer is not editable" is the error they will hit most, and it always means the pencil is off or the wrong layer is selected. -->
 
 ---
 
@@ -391,18 +385,6 @@ Which geometry type for each, and why?
 
 ---
 
-# Snapping: making features actually meet
-
-![w:1000 center](images/vec-snapping-toolbar.png)
-
-- Two lines that *look* joined but are 30 cm apart are **not** joined, and no analysis will treat them as joined
-- **Snapping** forces new vertices onto existing ones within a **tolerance** (Lab 4 uses 12 pixels)
-- **Project → Snapping Options…**, or the snapping toolbar. Turn it on before you draw, not after
-
-<!-- Tolerance in pixels follows the zoom: the same 12 px is a big distance when zoomed out and a small one when zoomed in. Map units do not change with zoom. Neither is right; you just have to know which one you set. -->
-
----
-
 # Topology: when "close enough" is wrong
 
 <div class="columns">
@@ -419,14 +401,14 @@ Which geometry type for each, and why?
 ![w:280 center](images/vec-topology-gap.jpg)
 
 - QGIS tools that keep you honest:
-  - **Enable Snapping** before you draw
+  - **Enable Snapping** before you draw (Lab 4 uses a 12-pixel tolerance)
   - **Topological Editing** — move a shared vertex once, both features follow
   - **Avoid Overlap** — new polygons get clipped to their neighbors
 
 </div>
 </div>
 
-<!-- Snapping needs a sensible tolerance, as on the previous slide. Concrete stakes: an unsnapped culvert is invisible to a hydrologic model, so the model routes water over the road instead of under it, and the design storm comes out wrong. This is why Lab 4 makes them snap every culvert onto the waterway line. -->
+<!-- Snapping tolerance: in pixels it follows the zoom (the same 12 px is a big distance zoomed out and a small one zoomed in); in map units it does not. Neither is right; you just have to know which one you set. Concrete stakes: an unsnapped culvert is invisible to a hydrologic model, so the model routes water over the road instead of under it, and the design storm comes out wrong. This is why Lab 4 makes them snap every culvert onto the waterway line. -->
 
 ---
 
@@ -435,28 +417,6 @@ Which geometry type for each, and why?
 # Part 3 — Editing
 
 ## Most GIS work is fixing data, not making it
-
----
-
-# The Vertex Tool
-
-<div class="columns">
-<div>
-
-- Click a vertex to grab it, click again to drop it where it belongs
-- **Double-click a segment** to add a vertex
-- Select a vertex and press **Delete** to remove one
-- **Right-click to lock** onto a feature first, so you do not grab the neighbor by accident
-
-</div>
-<div>
-
-![w:430 center](images/vec-vertex-tool.png)
-
-</div>
-</div>
-
-<!-- Live-demo worthy if the projector cooperates. The lock-on-feature trick saves a lot of grief in dense data. Everything here is still inside Toggle Editing, and still not saved until Save Layer Edits. -->
 
 ---
 
@@ -469,7 +429,7 @@ Which geometry type for each, and why?
   1. Load authoritative data (UGRC SGID)
   2. Compare it against better imagery
   3. Screenshot the **before**
-  4. Move vertices onto what you can actually see
+  4. Move vertices onto what you can actually see, with the **Vertex Tool**
   5. Screenshot the **after**, and save
 - The before/after pair is the evidence that you changed something on purpose
 
@@ -552,20 +512,6 @@ Name (text) · area (decimal)
 
 ---
 
-# Filling and calculating attributes
-
-![bg right:40% w:92%](images/vec-field-calculator.png)
-
-- Type values in the **attribute form** as you digitize each feature — far faster than going back later
-- Or edit directly in the **attribute table**, in editing mode
-- The **Field Calculator** computes a whole column at once from an expression
-- Geometry is available to expressions: `$area`, `$length`, `$x`, `$y`
-- Lab 4 area in square feet: `$area * 10.7639`
-
-<!-- The Lab 4 expression is $area * 10.7639, because $area returns square meters in a projected CRS and the client wants square feet. Point out that $area is only meaningful because the layer is in UTM; in EPSG:4326 it would return square degrees, which is nonsense. -->
-
----
-
 <!-- _class: quiz -->
 
 # What is wrong with this schema?
@@ -616,48 +562,6 @@ A student builds a `Buildings` polygon layer with:
 </div>
 
 <!-- This slide is worth a full minute. The single most common way students lose an hour of work is assuming Ctrl+S on the project saved their digitizing. It did not. -->
-
----
-
-# GeoPackage vs. shapefile
-
-<div class="columns">
-<div>
-
-**GeoPackage** — `.gpkg`
-
-- One file, an open **SQLite** database
-- Many layers in one file, plus styles
-- Field names as long as you like
-- Handles large data and true curves
-- The QGIS default, and ours
-
-</div>
-<div>
-
-![w:280 center](images/vec-gpkg-vs-shp.jpg)
-
-**Shapefile** — `.shp` + friends
-
-- Really 3 to 6 files that must travel together: `.shp`, `.shx`, `.dbf`, `.prj`, `.cpg`
-- Field names limited to **10 characters**
-- One geometry type per file, historic 2 GB limit
-
-</div>
-</div>
-
-<!-- Shapefile is still everywhere, because it is 30 years old. The classic shapefile disaster: emailing somebody "the shapefile" meaning only the .shp, or losing the .prj and with it any record of the CRS. A GeoPackage is one file, so it cannot be half-sent. -->
-
----
-
-# The New Shapefile Layer dialog
-
-![w:700 center](images/vec-new-shapefile-dialog.png)
-
-- Same three decisions, plus **File encoding** and **Length** / **Precision** on every field — leftovers from the dBase table underneath
-- Need one for a client? Right-click a layer → **Export → Save Features As…**
-
-<!-- Worth saying plainly: shapefile is not wrong, it is old, and its age shows in every row of this dialog. Students will absolutely be handed shapefiles in industry, so they should be comfortable in both. -->
 
 ---
 

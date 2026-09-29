@@ -66,35 +66,37 @@ QUESTIONS = [
     ),
     dict(
         section="Part 1 — Before you draw anything",
-        prompt="In the New GeoPackage Layer dialog you type a field name, choose Text, and click OK. What did you just create?",
+        prompt="Your campus sidewalks layer is lines. When would sidewalks need to be polygons instead?",
         setup="",
         options=[
-            "A layer with that field, ready to fill in",
-            "A layer with that field, but with the wrong type",
-            "A layer with no such field — the name was never added to the fields list",
-            "Nothing; the dialog will not accept OK until the field is added",
+            "Never — a sidewalk is long and thin, so it is always a line",
+            "When the question is about area or width, such as how many square feet of concrete to resurface",
+            "Only when the sidewalks are curved",
+            "Whenever the map is printed at a large size",
         ],
-        correct=2,
-        explanation="The name and type sit in the New Field box until you click Add to Fields "
-                    "List, and only what is in the list becomes a column. This is one of the most "
-                    "common mistakes in Lab 4, and the dialog gives you no warning at all — you "
-                    "find out when you go to type a value and there is nowhere to put it.",
+        correct=1,
+        explanation="Pick the geometry type from the question you are answering, not from the "
+                    "shape of the object. A line gives you length and connections, which is fine "
+                    "for a walking-route map. A resurfacing estimate or an ADA width check needs "
+                    "area and width, and only a polygon has them. The same goes for a hydrant: a "
+                    "point on a campus map, a footprint with a clearance zone on a site plan.",
     ),
     dict(
-        section="Part 2 — Turning what you can see into coordinates",
-        prompt="How many vertices does a road need?",
-        setup="You are tracing a curving road from imagery.",
+        section="Part 1 — Before you draw anything",
+        prompt="A classmate emails you roads.shp, and only that one file. What happens when you open it?",
+        setup="The same layer saved as a GeoPackage would have been a single roads.gpkg.",
         options=[
-            "As few as possible",
-            "As many as possible",
-            "Enough that the line matches the imagery at the scale you will use it",
-            "One every 10 meters, evenly spaced",
+            "It opens normally — the .shp holds everything",
+            "It is broken or incomplete: a shapefile is a bundle of files (.shp, .shx, .dbf, .prj …) that must travel together",
+            "It opens, but in a GeoPackage instead",
+            "Nothing — QGIS cannot open shapefiles",
         ],
-        correct=2,
-        explanation="More vertices is not more accurate; it is only more data, and it costs you "
-                    "file size, drawing speed, and every analysis downstream. A straight road "
-                    "needs two. A cul-de-sac needs many — or one true arc, if you digitize it "
-                    "with the curve tool.",
+        correct=1,
+        explanation="A shapefile is one layer spread across sibling files: .shp holds the "
+                    "geometry, .dbf the attributes, .prj the coordinate system, and more. Lose one "
+                    "and the layer breaks or loses its CRS. A GeoPackage is one file that can hold "
+                    "many layers, so it cannot be half-sent. You will download plenty of shapefiles; "
+                    "when you create a layer in this class, make a GeoPackage.",
     ),
     dict(
         section="Part 2 — Turning what you can see into coordinates",
@@ -140,7 +142,9 @@ QUESTIONS = [
             "QGIS will refuse to draw the layer until the field is fixed",
         ],
         correct=2,
-        explanation="If you might ever want to add, average, or sort a value numerically, do not "
+        explanation="In a spreadsheet you can type anything in any cell; in an attribute table "
+                    "each column is locked to one type, and that is the point. If you might ever "
+                    "want to add, average, or sort a value numerically, do not "
                     "store it as text — “42 ft” has to be taken apart before it can be used as a "
                     "number. The same goes for a year, which is better still as a Date when you "
                     "know the day. And an ID is a label, not a quantity, so integer is right for "
