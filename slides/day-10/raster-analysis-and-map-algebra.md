@@ -259,33 +259,23 @@ Four criteria → **four grids** → one combined score.
 
 # The four things that define a raster
 
-<div class="columns" style="grid-template-columns: 1.15fr 1fr;">
-<div>
+<div class="columns" style="grid-template-columns: 0.72fr 1.28fr;">
+<div style="font-size:0.8em;">
 
 - **Cell size (resolution)** — how wide one cell is on the ground: 1 m, 30 m, 1 km. Nothing smaller than a cell exists in the data.
-- **Extent** — the rectangle the grid covers: min x, min y, max x, max y
+- **Extent** — the rectangle the grid covers, from its **origin**
 - **Rows and columns** — extent ÷ cell size
-- **No-data value** — the flag for "no measurement here", often −9999
+- **No-data value** — the flag for "no measurement here"
 
 </div>
 <div>
 
-<div style="font-size:0.62em;text-align:center;">
-<div style="color:#002e5d;font-weight:700;">← 6 columns × 30 m = 180 m extent →</div>
-<div style="display:flex;align-items:center;justify-content:center;gap:0.5em;margin-top:0.3em;">
-<div style="writing-mode:vertical-rl;color:#002e5d;font-weight:700;">4 rows × 30 m</div>
-<table style="border-collapse:collapse;">
-<tr><td style="border:1px solid #7a8698;width:52px;height:40px;">12</td><td style="border:1px solid #7a8698;width:52px;height:40px;">14</td><td style="border:1px solid #7a8698;width:52px;height:40px;">15</td><td style="border:1px solid #7a8698;width:52px;height:40px;">15</td><td style="border:1px solid #7a8698;width:52px;height:40px;background:#e6e9ee;color:#9aa3b0;">−9999</td><td style="border:1px solid #7a8698;width:52px;height:40px;background:#e6e9ee;color:#9aa3b0;">−9999</td></tr>
-<tr><td style="border:1px solid #7a8698;height:40px;">13</td><td style="border:1px solid #7a8698;">16</td><td style="border:1px solid #7a8698;">18</td><td style="border:1px solid #7a8698;">17</td><td style="border:1px solid #7a8698;">16</td><td style="border:1px solid #7a8698;background:#e6e9ee;color:#9aa3b0;">−9999</td></tr>
-<tr><td style="border:1px solid #7a8698;height:40px;">14</td><td style="border:1px solid #7a8698;">17</td><td style="border:2px solid #0062b8;background:#dbeafe;">21</td><td style="border:1px solid #7a8698;">19</td><td style="border:1px solid #7a8698;">17</td><td style="border:1px solid #7a8698;">15</td></tr>
-<tr><td style="border:1px solid #7a8698;height:40px;">14</td><td style="border:1px solid #7a8698;">15</td><td style="border:1px solid #7a8698;">18</td><td style="border:1px solid #7a8698;">18</td><td style="border:1px solid #7a8698;">16</td><td style="border:1px solid #7a8698;">14</td></tr>
-</table>
-</div>
-<div style="margin-top:0.4em;"><span style="color:#0062b8;font-weight:700;">one cell = 30 m × 30 m</span> · gray cells are no-data</div>
-</div>
+![w:720 center](images/ras-elevation-grid-anatomy.png)
 
 </div>
 </div>
+
+<!-- The figure: real 150 m elevation cells from the Timpanogos summit ridge (USGS 3DEP, NAD83 / UTM zone 12N), 6 rows by 8 columns, with the (X, Y) origin at the lower-left corner. 3DEP has no gaps there, so the three no-data cells in the corner are real cells masked to stand for cells outside a clip boundary. The right half makes the second point: the number in the cell is the elevation, and the color is only symbology applied to it; a new color scheme is a new picture of the same numbers. That is Thursday's symbology work. Figure carried over from the CE 414 Week 5 deck (built there by tools/week05_terrain_figures.py) on 2026-10-05, replacing a hand-built HTML table. -->
 
 <!-- Insist on the difference between a no-data cell and a cell whose value is zero. On the engineering paper, cells outside Utah were given a real 0 that means "unsuitable", which is a value; a no-data cell means the software should not compute with it at all. Mixing the two is the single most common raster bug students hit in the lab. In QGIS you can see all four of these on the Information tab of the layer properties, which is the first thing we look at on Thursday. -->
 
