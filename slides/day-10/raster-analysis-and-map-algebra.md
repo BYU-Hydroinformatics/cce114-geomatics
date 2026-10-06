@@ -360,7 +360,7 @@ Then: which one of them is **not** a good candidate for a raster at all?
 
 # Example discrete raster data
 
-<div class="columns" style="grid-template-columns: 0.8fr 1.2fr;">
+<div class="columns" style="grid-template-columns: 0.6fr 1.4fr;">
 <div>
 
 - Political boundaries
@@ -372,14 +372,16 @@ Then: which one of them is **not** a good candidate for a raster at all?
 </div>
 <div>
 
-![h:330 center](images/ras-features-to-raster.jpg)
+![w:560 center](images/ras-real-world-to-raster.svg)
 
-![w:520 center](images/ras-discrete-attribute-table.jpg)
+![w:560 center](images/ras-raster-value-table.svg)
 
 </div>
 </div>
 
-<!-- The right-hand figure is the key one: real world features, forest, road, water, house, get burned into a grid where every cell takes the code of whatever dominates it. Notice how much is lost. The road becomes a staircase, the house becomes a single cell. The small table shows that a discrete raster can carry an attribute table just like a vector layer: one row per value, with a count of cells and a code. -->
+<!-- The top figure is the key one: real world features, forest, road, water, house, get sampled into a grid where every cell takes the code of whatever dominates it. Notice how much is lost. The road becomes a staircase, a house becomes a single cell. The bottom figure shows that a discrete raster can carry a table just like a vector layer: one row per value, with a count of cells, and area is just count times cell area (30 m cells, so 900 square meters each). The gray no-data cells get no row at all: no-data is not a class and not a value. -->
+
+<!-- Figures carried over from the CE 414 Week 3 deck on 2026-10-05. They are redrawn SVGs, replacing ras-features-to-raster.jpg and ras-discrete-attribute-table.jpg, which came across in the migration with no recorded source. The counts in the table are the real counts of the grid drawn beside it. -->
 
 ---
 
@@ -410,22 +412,19 @@ Then: which one of them is **not** a good candidate for a raster at all?
 
 # A spatial data mantra?
 
-<div class="columns">
-<div>
+![bg right:46% w:98%](images/ras-raster-vector-banner-classroom.jpg)
 
-## "Raster is faster, but vector is better"
+## "Raster is faster, but vector is correcter"
 
-Is it true?
+**Is it true?**
 
-</div>
-<div>
+- Faster at *what*?
+- Correcter about *what*?
+- Would your engineering-paper water park have been easier with polygons?
 
-![w:340 center](images/ras-raster-or-vector.jpg)
+<!-- "Correcter" is how the saying is actually passed around in the GIS community, and it is what the banner in the photo says, so the slide matches it. If someone objects to the word, that is a fine way into the argument. Let them argue for two or three minutes. -->
 
-</div>
-</div>
-
-<!-- Half true and out of date. Raster really is faster, because it is array arithmetic with no topology to maintain. "Vector is better" only holds for discrete features with crisp boundaries: parcels, pipes, roads, wells. For a continuous surface, vector is not better, it is close to unusable. The honest version is that the data model should match the phenomenon, which is the Day 2 lesson again. -->
+<!-- Half true and out of date. Raster really is faster, because it is array arithmetic with no topology to maintain. "Vector is correcter" only holds for discrete features with crisp boundaries: parcels, pipes, roads, wells. For a continuous surface, vector is not more correct, it is close to unusable. The honest version is that the data model should match the phenomenon, which is the Day 2 lesson again. -->
 
 ---
 
@@ -492,6 +491,14 @@ Is it true?
 </div>
 
 <!-- Left panel (a) is unary: multiply every cell of one layer by 2. Right panel (b) is binary: add layer A to layer B, cell by cell, to get a sum layer. This is precisely what the class did when they stacked the four engineering-paper sheets. In QGIS the tool is the Raster Calculator, on the Raster menu, and there is a Processing-Toolbox version too. -->
+
+---
+
+# The rule: same cell in, same cell out
+
+![w:1000 center](images/ras-map-algebra-add.svg)
+
+<!-- Walk one cell: row 3, column 2 of A is 2, of B is 3, so the answer is 5, and nothing else on either grid was consulted. Then the hole: B has a no-data cell, so the answer has a no-data cell in the same place. This is the whole of local map algebra; everything else is which operation you put between the grids. It is also exactly what they did holding four sheets of engineering paper together, which is the next slide. Figure carried over from the CE 414 Week 3 deck. -->
 
 ---
 
@@ -596,6 +603,14 @@ A raster is just an **array**, which is why map algebra is fast. But the arrays 
 </div>
 
 <!-- The image is a shaded relief, which is itself a derived product, not the DEM. Make the DEM vs DSM distinction concrete: for a drainage study you want bare earth, for a viewshed or a solar study you want the surface with buildings on it. If they download the wrong one their culverts will drain through the trees. -->
+
+---
+
+# The same place, four cell sizes
+
+![w:1150 center](images/ras-dem-resolution-ladder.png)
+
+<!-- A 3 km square just east of campus: Rock Canyon, Y Mountain, the Y trail. Each panel is a real downloaded product at its own native cells, not one DEM resampled four ways: SRTM 3 arc-second, USGS 3DEP 1 arc-second and 1/3 arc-second, and 3DEP 1 m lidar. Ask the room which panel they could plan a trail from, and which one they could size a culvert from. At 90 m, Rock Canyon is a smudge; at 1 m you can see the trail switchbacks. Tie it back to the engineering paper: one square of their sheet was tens of kilometers, coarser than the left-hand panel. Nothing smaller than a cell exists in the data. Figure carried over from the CE 414 Week 5 deck (built there by tools/week05_dem_sources.py), downsized to 2000 px wide. -->
 
 ---
 
