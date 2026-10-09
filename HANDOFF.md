@@ -232,6 +232,19 @@ Release assets are public and unmetered. Note that removing the zip from the wor
 shrink `.git`, which still carries it in history; that would need a history rewrite, which nobody
 should do casually on a published repository.
 
+**Week 7 Thursday became a lecture (2026-10-09).** For Fall 2026 the instructor who usually
+teaches Thursday was away in Week 7, so the week became two lectures and no hands-on session.
+The old Day 12 deck was split in two: `slides/day-12/finding-spatial-data.md` (Tuesday: who
+makes data, national sources, UGRC and the SGID, download versus service) and
+`slides/day-13/web-services.md` (Thursday: a light introduction to the OGC services, XYZ and
+ArcGIS REST, and a live demo of Lab 6 Step 3). Each deck ends with its own self-check quiz:
+`find-data` was rewritten around data sources and a new `services` quiz took its web-services
+questions. The Scavenger Hunt slide now links the existing "Data Source Scavenger Hunt" tab of
+the CCE 114 Geomatics Master Spreadsheet, which closes that TODO. `docs/handson/week-07.md`
+(the "Web Services in QGIS" run sheet) was deleted; it is in git history if a later semester
+wants the hands-on session back, along with its `DAYS` entry (`kind="hands-on"`,
+`handson="week-07"`) and the Learning Suite in-class activity it graded.
+
 ## How things are generated
 
 Two files are the source of truth for structure; edit them rather than their outputs.
@@ -309,8 +322,8 @@ Collected from the conversion notes at the end of each deck (search for `Convers
   been telling readers to type field names (`POP`, `NAME`) that do not exist in the data, and
   nobody had caught it because nobody had run the session from the page. **Expect the same kind
   of drift in the other ten.**
-- **Weeks 7 and 11 run sheets name a specific TA** (Isabel, Harrison) as the person who gives a
-  pitch. Those names go stale every semester and a substitute cannot act on them. Consider
+- **The Week 11 run sheet names a specific TA** (Harrison) as the person who gives a
+  pitch; Week 7's run sheet, which named Isabel, was retired on 2026-10-09. Those names go stale every semester and a substitute cannot act on them. Consider
   rewording to the role. Week 3's mention went on 2026-09-17 when that page was rewritten for
   students to read during class.
 - **Day 21:** confirm what software CCE 414 uses now and whether its lab list is current; then

@@ -106,16 +106,25 @@ DAYS = [
                  "Raster symbology: render types, singleband pseudocolor, color ramps, classification",
                  "Elevation surfaces and cross-section profiles (View > Elevation Profile, or the Profile Tool plugin)",
                  "Exam 1 review Kahoot in the last fifteen minutes"]),
-    dict(n=12, week=7, kind="concepts", title="Finding Spatial Data and Web Services",
-         slides=[("Finding Spatial Data and Web Services", f"{SITE}/slides/day-12/finding-spatial-data-and-web-services.html")],
-         topics=["Where spatial data comes from: government repositories and data portals",
-                 "Online data sources and servers at the Utah Geospatial Resource Center (UGRC)",
-                 "Web map services: WMS, WMTS, ArcGIS REST, XYZ tiles"],
+    dict(n=12, week=7, kind="concepts", title="Finding Spatial Data",
+         slides=[("Finding Spatial Data", f"{SITE}/slides/day-12/finding-spatial-data.html")],
+         topics=["Where spatial data comes from, and who makes it",
+                 "National sources: data.gov, The National Map, EarthExplorer, and other federal portals",
+                 "Searching for data you can actually use",
+                 "Utah's data: the Utah Geospatial Resource Center (UGRC) and the SGID",
+                 "Downloading a file versus connecting to a web service"],
          reading="GIS Fundamentals, Chapter 7 (Digital Data)"),
-    dict(n=13, week=7, kind="hands-on", title="Getting Data through Web Mapping Services", handson="week-07",
-         topics=["Connect QGIS to online services", "Build a layout from live web layers"],
-         activity="Build a map using three or more layers from the Utah ArcGIS REST services and upload a nice layout",
-         note="Concepts Exam 1 is taken in the Testing Center this week."),
+    # Week 7's Thursday was a hands-on session ("Web Services in QGIS") until 2026-10-09, when it
+    # became a short lecture: no hands-on activity, and Lab 6 is where students connect QGIS to a
+    # service. The run sheet that used to live at docs/handson/week-07.md is in git history.
+    dict(n=13, week=7, kind="concepts", title="Web Services: Getting Data without Downloading It",
+         slides=[("Web Services: Getting Data without Downloading It", f"{SITE}/slides/day-13/web-services.html")],
+         topics=["What a web service is, and when to use one instead of a download",
+                 "The OGC standards: WMS and WMTS send a picture; WFS and WCS send the data",
+                 "Outside the standards: XYZ tiles, vector tiles, and ArcGIS REST",
+                 "Reading a service URL and a REST services directory",
+                 "A live demo of connecting QGIS to UGRC's services, which is Lab 6, Step 3",
+                 "A short pitch for the Community and Professional Map Experience"]),
     dict(n=14, week=8, kind="concepts", title="Geodesy, Projections, and Coordinate Systems, Part 1",
          slides=[("Geodesy, Projections, and Coordinate Systems", f"{SITE}/slides/day-14/coordinate-systems-and-projections.html")],
          topics=["The shape of the Earth: geoid, ellipsoid, datums", "Map projections and distortion",
@@ -244,7 +253,6 @@ THURSDAY_TITLE = {
     7: "Campus Field Trip",
     9: "Digitize Your Home with Snapping and the Vertex Tool",
     11: "Raster Data in QGIS and an Elevation Profile",
-    13: "Web Services in QGIS",
     15: "Playing with Projections",
     17: "Writing and Evaluating Metadata",
     19: "Cities Near Rivers",
@@ -299,8 +307,11 @@ PRACTICE = {
          "What a grid of cells really holds, map algebra one cell at a time, and what a DEM gives "
          "you for free.")],
     7: [("find-data", "Who Already Has This Data?",
-         "Where spatial data actually comes from, the difference between a picture of the data and "
-         "the features themselves, and getting Utah's data into QGIS.")],
+         "Tuesday: who makes public spatial data, the national sources worth knowing, and finding "
+         "Utah's data at the UGRC."),
+        ("services", "A Picture, or the Features?",
+         "Thursday: whether a web service sends you a picture or the features themselves, what QGIS "
+         "asks a server, and getting Utah's data into QGIS without a download.")],
     8: [("projections", "Why Is Greenland So Big?",
          "What every flat map gives up, how a projection is fitted to the ground, and the "
          "difference between declaring a CRS and reprojecting into one.")],
@@ -320,7 +331,7 @@ PRACTICE = {
 # index. Taken from the "Graded item" row of each run sheet; None where Thursday has no item.
 ACTIVITY_NAME = {3: "First Map: Utah County", 5: "Playing with Symbology", 7: "GPS Class Activity",
                  9: "Creating and Editing Vector Data", 11: "DEM Profile",
-                 13: "Getting Data through Web Mapping Services", 15: "Playing with Projections",
+                 15: "Playing with Projections",
                  17: "AGRC Metadata", 19: "Cities Near Rivers", 21: None, 23: None}
 
 
@@ -444,12 +455,14 @@ def handson_page(d: dict, existing_text: str) -> str:
 
 def handson_index() -> str:
     out = ["# Hands-On Practice", "",
-           "Every Thursday of Weeks 2 through 12 is a working session in QGIS 3.44. Each one has "
+           "Every Thursday of Weeks 2 through 12, except Week 7, is a working session in QGIS 3.44. Each one has "
            "its own page below: what the session is for, what to have ready, a practice run you "
            "can do on your own beforehand, a minute-by-minute plan, the click-by-click "
            "walkthrough, the graded upload, and the snags that usually come up.", "",
-           "Weeks 1, 13, 14 and 15 have no hands-on session. Week 1 meets once, Week 13 is a work "
-           "session or holiday, and Weeks 14 and 15 are final project presentations.", "",
+           "Weeks 1, 7, 13, 14 and 15 have no hands-on session. Week 1 meets once, Week 7's Thursday "
+           "is a short lecture on web services (Lab 6 is where students connect QGIS to a service), "
+           "Week 13 is a work session or holiday, and Weeks 14 and 15 are final project "
+           "presentations.", "",
            "| Week | Session | Feeds | Graded activity |",
            "| --- | --- | --- | --- |"]
     for w in WEEKS:
@@ -522,6 +535,11 @@ def week_page(w: int) -> str:
             body["practice"].append(line + (f" [Activity guide]({guide})" if guide else ""))
         elif d["kind"] == "concepts" and guide:
             body["practice"].append(f"- {when} — [{ACTIVITY_GUIDES[d['n']]}]({guide}) (not graded).")
+        elif d["kind"] == "concepts" and weekday == "Thursday":
+            lab = f" [Lab {info['lab']}](../assignments/lab-{info['lab']:02d}/README.md) is where you practice it yourself." if info.get("lab") else ""
+            body["practice"].append(f"- {when} — **No hands-on activity this week.** Thursday is a lecture, "
+                                    f"*{d['title']}*; the slides are above, and there is nothing to upload "
+                                    f"and no need to bring a laptop.{lab}")
         elif d["kind"] == "other":
             body["practice"].append(f"- {when} — **{d['title']}.** " + " ".join(
                 x if x.endswith(".") else x + "." for x in d.get("topics", [])))
@@ -578,7 +596,8 @@ def schedule_page() -> str:
            "activity.",
            f"- {badge('hands-on')} **Thursday.** Working in QGIS on the week's topic. Every "
            "session has its own step-by-step guide under [Hands-On Practice](handson/README.md), "
-           "written so it can be rehearsed alone beforehand.", "",
+           "written so it can be rehearsed alone beforehand. Week 7's Thursday is the exception: "
+           "a short lecture on web services, with no hands-on activity.", "",
            "Reading quizzes open on Tuesday and close **Saturday at 11:59 pm**; lab reports are also due **Saturday at 11:59 pm**.", "",
            "| Week | Tuesday (lecture) | Thursday (hands-on practice) | Due this week |",
            "| --- | --- | --- | --- |"]
@@ -591,6 +610,8 @@ def schedule_page() -> str:
             target = (f"handson/week-{w:02d}.md" if d["kind"] == "hands-on"
                       else f"{page}#{slug(session_heading(d, weekday))}")
             link = f"[{session_title(d)}]({target})"
+            if weekday == "Thursday" and d["kind"] == "concepts":
+                link += " *(lecture; no hands-on this week)*"
             cells[weekday or "Thursday"] = link   # Week 1 meets only on Thursday
         due = "<br>".join(lab_link(x, "") for x in due_items(w)) or "—"
         out.append(f"| [Week {w}: {info['theme']}]({page}) | {cells['Tuesday']} | {cells['Thursday']} | {due} |")

@@ -1,6 +1,6 @@
 # Lab 6: Spatial Data Web Services
 
-**Lab**{ .badge .badge-lab } · Due Saturday of Week 7, 11:59 pm · Prepared for by the [Week 7 hands-on session](../../handson/week-07.md)
+**Lab**{ .badge .badge-lab } · Due Saturday of Week 7, 11:59 pm · Prepared for by the [Week 7 lectures](../../weeks/week-07.md): Tuesday on finding data, Thursday on web services
 
 **Civil and Construction Engineering 114 — Geomatics**
 
@@ -125,7 +125,7 @@ Be creative, and if you want to do something ridiculous like answer the question
 13. Paste this UGRC services link into the URL field (this is the web service that hosts the SGID data you browsed in the index): [https://services1.arcgis.com/99lidPhWCzftIe9K/ArcGIS/rest/services](https://services1.arcgis.com/99lidPhWCzftIe9K/ArcGIS/rest/services)  
 14. In “Authentication,” select the “Basic” tab, and enter “ugrc” as both the username and password (these services are actually public, so if your connection fails later, try again leaving this set to “No Authentication”)  
 15. Click “OK” and then “Connect” (remember that sometimes the Data Source Manager can drop behind the main QGIS window, check there if it disappears)  
-16. You should now have a new item under ArcGIS Rest Servers in the Data Source Manager. Expand the dropdown to see the full list of datasets that you’ve connected to — 892 of them when this was last checked, all served live from UGRC’s servers.
+16. You should now have a new item under ArcGIS Rest Servers in the Data Source Manager. Expand the dropdown to see the full list of datasets that you’ve connected to — more than 900 of them when this was last checked, all served live from UGRC’s servers.
 
 ![Data Source Manager with the Utah SGID ArcGIS REST Server connection expanded, listing its datasets](images/anchored6.png)
 
