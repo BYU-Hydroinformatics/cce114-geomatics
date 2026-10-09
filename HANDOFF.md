@@ -233,17 +233,18 @@ shrink `.git`, which still carries it in history; that would need a history rewr
 should do casually on a published repository.
 
 **Week 7 Thursday became a lecture (2026-10-09).** For Fall 2026 the instructor who usually
-teaches Thursday was away in Week 7, so the week became two lectures and no hands-on session.
+teaches Thursday was away in Week 7, so the week became two lectures, with an easy follow-along at the end of Thursday in place of the full hands-on session.
 The old Day 12 deck was split in two: `slides/day-12/finding-spatial-data.md` (Tuesday: who
 makes data, national sources, UGRC and the SGID, download versus service) and
 `slides/day-13/web-services.md` (Thursday: a light introduction to the OGC services, XYZ and
-ArcGIS REST, and a live demo of Lab 6 Step 3). Each deck ends with its own self-check quiz:
+ArcGIS REST, then a follow-along of Lab 6 Step 3 that students upload as the graded in-class activity, *Getting Data through Web Mapping Services*). Each deck ends with its own self-check quiz:
 `find-data` was rewritten around data sources and a new `services` quiz took its web-services
 questions. The Scavenger Hunt slide now links the existing "Data Source Scavenger Hunt" tab of
 the CCE 114 Geomatics Master Spreadsheet, which closes that TODO. `docs/handson/week-07.md`
 (the "Web Services in QGIS" run sheet) was deleted; it is in git history if a later semester
-wants the hands-on session back, along with its `DAYS` entry (`kind="hands-on"`,
-`handson="week-07"`) and the Learning Suite in-class activity it graded.
+wants the full hands-on session back, along with its `DAYS` entry (`kind="hands-on"`,
+`handson="week-07"`). The Learning Suite in-class activity was kept: one student had already
+submitted it, and the follow-along is its replacement.
 
 ## How things are generated
 

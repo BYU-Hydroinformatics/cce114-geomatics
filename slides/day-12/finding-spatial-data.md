@@ -22,7 +22,7 @@ Civil & Construction Engineering
 
 Dr. Dan Ames and Dr. James Halgren
 
-<!-- Tuesday concept lecture. Today is about where spatial data comes from and how to find it: the national sources, Utah's UGRC and SGID, and how to search well. Thursday is a second, shorter lecture on web services, the way to pull that data straight off a server into QGIS without downloading it. There is no hands-on session this week; Lab 6 is where students do it themselves. -->
+<!-- Tuesday concept lecture. Today is about where spatial data comes from and how to find it: the national sources, Utah's UGRC and SGID, and how to search well. Thursday is a second, shorter lecture on web services, the way to pull that data straight off a server into QGIS without downloading it, followed by a short follow-along in QGIS that students upload as the in-class activity. -->
 
 ---
 
@@ -325,12 +325,12 @@ Today, Thursday, and Lab 6 all build toward these. By the end of the week you sh
 
 ![bg right:38% w:90%](images/web-wms-getmap.jpg)
 
-- Thursday is a **short lecture**, not a hands-on session: no laptop needed
+- A **short lecture**, then a **follow-along in QGIS**: bring your laptop
 - The right-hand column from today: **getting data without downloading it**
 - **WMS, WMTS, WFS, WCS, XYZ, ArcGIS REST**: which ones send you a *picture*, and which send the *features*
-- How QGIS connects to UGRC's services, shown live: everything **Lab 6** asks you to do
+- You will connect QGIS to UGRC's services, add three live layers, and upload a quick map: a running start on **Lab 6**
 
-<!-- Preview of Thursday. Say plainly that there is no hands-on activity and nothing to upload on Thursday, so nobody hauls a laptop in for nothing. The image is a real WMS response: the server drew that hillshade and sent back a picture. That distinction, picture against features, is the whole of Thursday. -->
+<!-- Preview of Thursday. Tell students to bring a laptop with QGIS 3.44: the in-class activity is a follow-along map built from three UGRC service layers, uploaded before they leave. The image is a real WMS response: the server drew that hillshade and sent back a picture. That distinction, picture against features, is the heart of Thursday. -->
 
 ---
 
@@ -349,7 +349,7 @@ Today, Thursday, and Lab 6 all build toward these. By the end of the week you sh
 <!-- Conversion notes (2026-09-02): sources were "Finding Spatial Data and Web Services.pptx" (2021, 5 slides) and "10 - Finding Spatial Data Part 2 - National Sources.pptx" (2017, 7 slides); the two overlap almost completely, and between them contained only a title slide, a meme, a national-sources link list, a scavenger-hunt activity, a search-terms slide, and the "value of today's lecture" hook. Everything about UGRC/SGID is new material for this deck, built from the Lab 6 assignment, from live captures of the current sites, and from the topic list for Day 12.
 Dropped: both title slides (replaced); the "Is there any data out there?" minion meme (image1.png in both sources) — the meme art carries a Pink Floyd lyric, so the slide is kept as a section-break question with no image; the duplicate second scavenger-hunt slide in the 2017 deck (merged into one activity slide).
 Stale URLs found and fixed: viewer.nationalmap.gov/basic and /advanced-viewer are dead (DNS failure) and were replaced with apps.nationalmap.gov/downloader, verified live; websoilsurvey.sc.egov.usda.gov still resolves but was updated to the current websoilsurvey.nrcs.usda.gov/app; the scavenger-hunt Google Doc links (tiny.cc/214minidevo and goo.gl/MkPk1a) both 404. On 2026-10-09 the activity was pointed at the "Data Source Scavenger Hunt" tab of the CCE 114 Geomatics Master Spreadsheet, which already existed with the right columns.
-Split 2026-10-09: this deck used to run straight on into web services. That half is now its own Thursday lecture, slides/day-13/web-services.md, because Week 7's Thursday became a lecture with no hands-on session. Live captures taken 2026-09-02 (headless Chrome): gis.utah.gov, gis.utah.gov/products/sgid, opendata.gis.utah.gov, data.gov, apps.nationalmap.gov/downloader, earthexplorer.usgs.gov. The data.gov dataset count (556,482 on the day of capture) will drift; re-check before quoting it. -->
+Split 2026-10-09: this deck used to run straight on into web services. That half is now its own Thursday lecture, slides/day-13/web-services.md, because Week 7's Thursday became a lecture with a short follow-along activity instead of a full hands-on session. Live captures taken 2026-09-02 (headless Chrome): gis.utah.gov, gis.utah.gov/products/sgid, opendata.gis.utah.gov, data.gov, apps.nationalmap.gov/downloader, earthexplorer.usgs.gov. The data.gov dataset count (556,482 on the day of capture) will drift; re-check before quoting it. -->
 
 ---
 

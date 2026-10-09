@@ -114,17 +114,18 @@ DAYS = [
                  "Utah's data: the Utah Geospatial Resource Center (UGRC) and the SGID",
                  "Downloading a file versus connecting to a web service"],
          reading="GIS Fundamentals, Chapter 7 (Digital Data)"),
-    # Week 7's Thursday was a hands-on session ("Web Services in QGIS") until 2026-10-09, when it
-    # became a short lecture: no hands-on activity, and Lab 6 is where students connect QGIS to a
-    # service. The run sheet that used to live at docs/handson/week-07.md is in git history.
+    # Week 7's Thursday was a full hands-on session ("Web Services in QGIS") until 2026-10-09, when it
+    # became a short lecture ending in an easy follow-along, which is still the graded in-class
+    # activity. The run sheet that used to live at docs/handson/week-07.md is in git history.
     dict(n=13, week=7, kind="concepts", title="Web Services: Getting Data without Downloading It",
          slides=[("Web Services: Getting Data without Downloading It", f"{SITE}/slides/day-13/web-services.html")],
          topics=["What a web service is, and when to use one instead of a download",
                  "The OGC standards: WMS and WMTS send a picture; WFS and WCS send the data",
                  "Outside the standards: XYZ tiles, vector tiles, and ArcGIS REST",
                  "Reading a service URL and a REST services directory",
-                 "A live demo of connecting QGIS to UGRC's services, which is Lab 6, Step 3",
-                 "A short pitch for the Community and Professional Map Experience"]),
+                 "Follow along: connect QGIS to UGRC's services, which is Lab 6, Step 3",
+                 "A short pitch for the Community and Professional Map Experience"],
+         activity="Follow along in QGIS: build a quick map from three or more layers of the Utah ArcGIS REST services and upload the layout. Bring your laptop"),
     dict(n=14, week=8, kind="concepts", title="Geodesy, Projections, and Coordinate Systems, Part 1",
          slides=[("Geodesy, Projections, and Coordinate Systems", f"{SITE}/slides/day-14/coordinate-systems-and-projections.html")],
          topics=["The shape of the Earth: geoid, ellipsoid, datums", "Map projections and distortion",
@@ -460,7 +461,7 @@ def handson_index() -> str:
            "can do on your own beforehand, a minute-by-minute plan, the click-by-click "
            "walkthrough, the graded upload, and the snags that usually come up.", "",
            "Weeks 1, 7, 13, 14 and 15 have no hands-on session. Week 1 meets once, Week 7's Thursday "
-           "is a short lecture on web services (Lab 6 is where students connect QGIS to a service), "
+           "is a short lecture on web services that ends in a follow-along (its steps are in the slides), "
            "Week 13 is a work session or holiday, and Weeks 14 and 15 are final project "
            "presentations.", "",
            "| Week | Session | Feeds | Graded activity |",
@@ -597,7 +598,7 @@ def schedule_page() -> str:
            f"- {badge('hands-on')} **Thursday.** Working in QGIS on the week's topic. Every "
            "session has its own step-by-step guide under [Hands-On Practice](handson/README.md), "
            "written so it can be rehearsed alone beforehand. Week 7's Thursday is the exception: "
-           "a short lecture on web services, with no hands-on activity.", "",
+           "a short lecture on web services that ends in a follow-along in QGIS.", "",
            "Reading quizzes open on Tuesday and close **Saturday at 11:59 pm**; lab reports are also due **Saturday at 11:59 pm**.", "",
            "| Week | Tuesday (lecture) | Thursday (hands-on practice) | Due this week |",
            "| --- | --- | --- | --- |"]
@@ -611,7 +612,7 @@ def schedule_page() -> str:
                       else f"{page}#{slug(session_heading(d, weekday))}")
             link = f"[{session_title(d)}]({target})"
             if weekday == "Thursday" and d["kind"] == "concepts":
-                link += " *(lecture; no hands-on this week)*"
+                link += " *(lecture and a short follow-along)*"
             cells[weekday or "Thursday"] = link   # Week 1 meets only on Thursday
         due = "<br>".join(lab_link(x, "") for x in due_items(w)) or "—"
         out.append(f"| [Week {w}: {info['theme']}]({page}) | {cells['Tuesday']} | {cells['Thursday']} | {due} |")

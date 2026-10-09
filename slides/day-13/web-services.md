@@ -22,7 +22,7 @@ Civil & Construction Engineering
 
 Dr. Dan Ames and Dr. James Halgren
 
-<!-- Thursday lecture. This week has no hands-on session: today is a short, light introduction to web services, and in particular the OGC standards, ending with a live demo of connecting QGIS to UGRC's services. Lab 6, due Saturday, is where students do that themselves. The map on the right was made entirely from web services: no downloads, no unzipping. Concepts Exam 1 closed yesterday, so expect a tired room. -->
+<!-- Thursday lecture plus a short follow-along. Today is a light introduction to web services, and in particular the OGC standards, then students follow along in QGIS: connect to UGRC's services, add three live layers, and upload a quick layout for the in-class activity. A rough budget for the 50 minutes: 20 to 25 minutes of slides, 15 to 20 minutes of follow-along, 10 minutes for the Map Experience pitch. The map on the right was made entirely from web services: no downloads, no unzipping. Concepts Exam 1 closed yesterday, so expect a tired room. -->
 
 ---
 
@@ -36,9 +36,9 @@ By the end of class you should be able to:
 - Tell **WMS, WMTS, WFS, WCS, XYZ** and **ArcGIS REST** apart
 - Answer the one question that matters for each: *do I get a **picture**, or the **features**?*
 - Read a service **URL** and a **REST services directory**
-- Connect **QGIS** to UGRC's services: everything **Lab 6** asks you to do
+- Connect **QGIS** to UGRC's services and make a quick map from **three live layers**: a running start on **Lab 6**
 
-<!-- No laptops needed today. The last third of the hour is a live QGIS demo of the Lab 6 workflow, so students who watch closely will find Lab 6 Step 3 familiar. -->
+<!-- Students need laptops with QGIS today: the second half of the hour is a follow-along of Lab 6, Step 3, ending in a quick layout they upload as the in-class activity. -->
 
 ---
 
@@ -273,9 +273,9 @@ https://services1.arcgis.com/99lidPhWCzftIe9K/ArcGIS/rest/services
 
 # Into QGIS
 
-## A live demo of Lab 6, Step 3
+## Follow along on your laptop
 
-<!-- Switch to QGIS here and do the next four slides live if the projector and network allow; the slides are the fallback. Connect to the UGRC endpoint, search for QuaternaryFaults, add it, add two more layers, and open the attribute table to show the features really came across. -->
+<!-- Switch to QGIS here and have everyone follow along; the next three slides are the fallback if the projector or network misbehaves. Connect to the UGRC endpoint, search for QuaternaryFaults, add it, add two more layers, and open the attribute table to show the features really came across. If the room's Wi-Fi struggles, the Clyde 234 lab machines are wired. -->
 
 ---
 
@@ -289,6 +289,8 @@ https://services1.arcgis.com/99lidPhWCzftIe9K/ArcGIS/rest/services
 3. Click **New**, name the connection, paste the service URL
 4. **OK**, then **Connect**
 5. Expand the connection, find your layer, click **Add**
+
+<span style="font-size:0.6em;">UGRC: <code>services1.arcgis.com/99lidPhWCzftIe9K/ArcGIS/rest/services</code></span>
 
 </div>
 <div>
@@ -332,11 +334,19 @@ https://services1.arcgis.com/99lidPhWCzftIe9K/ArcGIS/rest/services
 
 ---
 
-# From live layers to a finished map
+<!-- _class: activity -->
 
-![h:440 center](images/web-layout-example.jpg)
+# In-class activity: three live layers and a map
 
-<!-- The Lab 6 example layout: three web-service datasets, a basemap, and every cartographic element you learned in Lab 2 — title, legend, scale bar, north arrow, and a data citation. Note the citation block at the bottom left: when you use someone else's service you credit them. -->
+![bg right:40% w:92%](images/web-layout-example.jpg)
+
+1. Connect to **UGRC's ArcGIS REST services** (previous slides)
+2. Add **three or more layers** that interest you: a polygon, a line, and a point layer works well
+3. Style them so a reader can tell them apart
+4. **Project → New Print Layout**: map, legend, scale bar, north arrow, title, and a credit line naming **UGRC**
+5. Export a **PNG** and upload it to **In Class Activity: Getting Data through Web Mapping Services** on Learning Suite before you leave
+
+<!-- The example on the right is the Lab 6 layout: three web-service datasets over a basemap, with every element from Lab 2. Full credit for three service layers and a layout; a screenshot of the map canvas earns partial credit. Common snags: "Failed to connect" usually means a trailing space or a missing /rest/services in the URL; a huge layer such as statewide parcels draws slowly, so pick something smaller or zoom in first; if layers do not overlap, check each layer's CRS under Properties > Source. -->
 
 ---
 
@@ -370,13 +380,13 @@ https://services1.arcgis.com/99lidPhWCzftIe9K/ArcGIS/rest/services
 
 ![bg right:36% w:90%](images/web-lab06-hero.png)
 
-- No hands-on session this week, so **Lab 6** is where you do this yourself
+- Today's map was a running start on **Lab 6**; the lab asks for more
 - Write **one question** you can answer with **three** SGID datasets
 - Add all three to QGIS **as web services**, not downloads
 - Style them, build a **layout** with every required map element, and write a short conclusion
 - Due **Saturday at 11:59 pm**: [Lab 6 instructions](https://byu-hydroinformatics.github.io/cce114-geomatics/assignments/lab-06/)
 
-<!-- Steps 1 and 2 (explore the SGID, choose the datasets, write the question) were possible after Tuesday; Step 3 is what today's demo showed. Remind students that the Clyde 234 lab machines have QGIS 3.44 and a wired network if their laptop or the Wi-Fi gives them trouble. -->
+<!-- Steps 1 and 2 (explore the SGID, choose the datasets, write the question) were possible after Tuesday; Step 3 is what students just did in the follow-along. Remind students that the Clyde 234 lab machines have QGIS 3.44 and a wired network if their laptop or the Wi-Fi gives them trouble. -->
 
 ---
 
@@ -408,7 +418,7 @@ The **Community and Professional Map Experience**, due **Wednesday of Week 10**:
 
 <!-- Confirm the Quiz 6 dates on Learning Suite before class. -->
 
-<!-- Deck notes (2026-10-09): split out of the Day 12 deck "Finding Spatial Data and Web Services" when Week 7's Thursday became a short lecture with no hands-on session. Every slide from "Three ways to put data in a map" through "Cautions" is the second half of that deck, unchanged except for American spelling and the UGRC service count. New: the title and goals slides, the Tuesday recap, the "Into QGIS" divider, the Lab 6 slide, the Community and Professional Map Experience pitch (from the Week 7 hands-on run sheet), and Before Next Class. The QGIS screenshots are genuine QGIS 3.x captures reused from Lab 6. web-rest-directory.png and web-rest-featureserver.png show Esri's REST services directory as served by UGRC, in a browser; they are correct as they stand. The WMS hillshade on the OGC slide is a real GetMap response from the USGS 3DEP elevation service for the Wasatch Front, fetched with the URL on the "A web service is just a URL" slide. UGRC's REST endpoint listed 905 services on 2026-10-09 (891 on 2026-09-02); the slides say "more than 900", which will drift. -->
+<!-- Deck notes (2026-10-09): split out of the Day 12 deck "Finding Spatial Data and Web Services" when Week 7's Thursday became a short lecture with a follow-along activity in place of the full hands-on session. Every slide from "Three ways to put data in a map" through "Cautions" is the second half of that deck, unchanged except for American spelling, the UGRC service count, and the old layout-example slide, which became the in-class activity. New: the title and goals slides, the Tuesday recap, the "Into QGIS" divider, the Lab 6 slide, the Community and Professional Map Experience pitch (from the Week 7 hands-on run sheet), and Before Next Class. The QGIS screenshots are genuine QGIS 3.x captures reused from Lab 6. web-rest-directory.png and web-rest-featureserver.png show Esri's REST services directory as served by UGRC, in a browser; they are correct as they stand. The WMS hillshade on the OGC slide is a real GetMap response from the USGS 3DEP elevation service for the Wasatch Front, fetched with the URL on the "A web service is just a URL" slide. UGRC's REST endpoint listed 905 services on 2026-10-09 (891 on 2026-09-02); the slides say "more than 900", which will drift. -->
 
 ---
 

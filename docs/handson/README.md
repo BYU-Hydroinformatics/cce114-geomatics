@@ -2,7 +2,7 @@
 
 Every Thursday of Weeks 2 through 12, except Week 7, is a working session in QGIS 3.44. Each one has its own page below: what the session is for, what to have ready, a practice run you can do on your own beforehand, a minute-by-minute plan, the click-by-click walkthrough, the graded upload, and the snags that usually come up.
 
-Weeks 1, 7, 13, 14 and 15 have no hands-on session. Week 1 meets once, Week 7's Thursday is a short lecture on web services (Lab 6 is where students connect QGIS to a service), Week 13 is a work session or holiday, and Weeks 14 and 15 are final project presentations.
+Weeks 1, 7, 13, 14 and 15 have no hands-on session. Week 1 meets once, Week 7's Thursday is a short lecture on web services that ends in a follow-along (its steps are in the slides), Week 13 is a work session or holiday, and Weeks 14 and 15 are final project presentations.
 
 | Week | Session | Feeds | Graded activity |
 | --- | --- | --- | --- |
