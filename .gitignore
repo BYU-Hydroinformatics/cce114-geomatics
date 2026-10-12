@@ -23,3 +23,6 @@ __pycache__/
 *answer-key*
 *personal_lookup*
 tools/learning-suite-quizzes/
+
+# ChatGPT desktop copies CLAUDE.md to AGENTS.md whenever it opens; harmless, keep it out of git
+AGENTS.md
