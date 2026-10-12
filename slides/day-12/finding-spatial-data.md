@@ -38,7 +38,7 @@ Today, Thursday, and Lab 6 all build toward these. By the end of the week you sh
 - **Tell apart** WMS, WMTS, WFS, WCS, XYZ and ArcGIS REST, and say what each sends back *(Thursday)*
 - **Connect** QGIS to a live web service instead of downloading a file *(Thursday and Lab 6)*
 
-<!-- Set expectations. The first three are today; the last two are Thursday's lecture, and Lab 6 is where students actually connect QGIS to a service. Reading for this week is GIS Fundamentals Chapter 7, Digital Data, which surveys the major public data sources. Concepts Exam 1 is open in the Testing Center Monday through Wednesday, so some students will be tired; keep the pace easy. -->
+<!-- Set expectations. The first three are today; the last two are Thursday's lecture, and Lab 6 is where students actually connect QGIS to a service. There is no reading and no quiz this week; Chapter 7, Digital Data, is read in Week 9 with the metadata quiz. Concepts Exam 1 is open in the Testing Center Monday through Wednesday, so some students will be tired; keep the pace easy. -->
 
 ---
 
@@ -338,8 +338,7 @@ Today, Thursday, and Lab 6 all build toward these. By the end of the week you sh
 
 ![bg right:36% w:94%](images/web-before-next-class.jpg)
 
-- Read **Chapter 7, *Digital Data***, in *GIS Fundamentals* (Bolstad & Manson)
-- **No reading quiz this week**
+- **No reading and no reading quiz this week**; Chapter 7 comes in Week 9
 - **Concepts Exam 1** is in the **Testing Center** and closes **Wednesday**. Check the closing time and do not leave it to the last hour
 - **Lab 6: [Spatial Data Web Services](https://byu-hydroinformatics.github.io/cce114-geomatics/assignments/lab-06/)** is due **Saturday**. Steps 1 and 2, exploring the SGID and choosing your three datasets, use only what we did today, so start now
 - Questions? Office hours: [calendly.com/dan-ames/office-hours](https://calendly.com/dan-ames/office-hours)

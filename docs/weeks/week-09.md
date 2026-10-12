@@ -53,6 +53,8 @@ Due **Saturday at 11:59 pm** on Learning Suite.
 
 ## :material-book-open-page-variant: Reading Quiz
 
+**This week's reading:** GIS Fundamentals, Chapter 7 (Digital Data).
+
 **Quiz 7 — Metadata** on Learning Suite: open book. Due **Saturday at 11:59 pm**. See [Reading Quizzes](../assignments/deliverables.md#reading-quizzes).
 
 </div>

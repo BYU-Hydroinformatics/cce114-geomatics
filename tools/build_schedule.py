@@ -112,8 +112,7 @@ DAYS = [
                  "National sources: data.gov, The National Map, EarthExplorer, and other federal portals",
                  "Searching for data you can actually use",
                  "Utah's data: the Utah Geospatial Resource Center (UGRC) and the SGID",
-                 "Downloading a file versus connecting to a web service"],
-         reading="GIS Fundamentals, Chapter 7 (Digital Data)"),
+                 "Downloading a file versus connecting to a web service"]),
     # Week 7's Thursday was a full hands-on session ("Web Services in QGIS") until 2026-10-09, when it
     # became a short lecture ending in an easy follow-along, which is still the graded in-class
     # activity. The run sheet that used to live at docs/handson/week-07.md is in git history.
@@ -142,7 +141,8 @@ DAYS = [
          slides=[("Spatial Metadata", f"{SITE}/slides/day-16/metadata.html")],
          topics=["What metadata is and why it matters", "Metadata standards and styles", "Reading metadata to judge whether data is fit for use"],
          links=[("A brief metadata melodrama", "http://t.ly/rPYx")],
-         activity="What I learned about metadata: write down a couple of things you learned today"),
+         activity="What I learned about metadata: write down a couple of things you learned today",
+         reading="GIS Fundamentals, Chapter 7 (Digital Data)"),
     dict(n=17, week=9, kind="hands-on", title="Metadata, Part 2", handson="week-09",
          topics=["Creating and editing metadata in QGIS", "Finding and evaluating datasets on gis.utah.gov and data.gov"],
          activity="AGRC Metadata: evaluate one published dataset and fill a row of the AGRC Metadata tab in the class sheet"),

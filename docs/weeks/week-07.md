@@ -44,9 +44,7 @@ Due **Saturday at 11:59 pm** on Learning Suite.
 
 ## :material-book-open-page-variant: Reading Quiz
 
-**This week's reading:** GIS Fundamentals, Chapter 7 (Digital Data).
-
-*No quiz due this week.*
+*No reading quiz this week.*
 
 </div>
 
