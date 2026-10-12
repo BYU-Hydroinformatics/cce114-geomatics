@@ -165,3 +165,13 @@ maintainer commits.
 
 When you finish, say plainly what you changed, what you verified versus what you assumed, what you
 flagged, and what you deliberately did not do.
+
+## The private companion repository
+
+Exam questions and keys, reading-quiz answer keys, grading notes with answers students should not
+see, and plans that quote in-class-only answers live in the **private** sibling checkout
+`../cce114-private` (remote `danames/cce114-private`, on Dan's personal account, not the
+organization), not here. Everything in this repository, including HTML comments, speaker notes and
+git history, is public on GitHub; the site build strips comments, the repository does not. If a
+page needs an answer that lives there, the answer is not public: rewrite the page so it does not
+need it. Student grades, class lists and submissions go in neither repository.

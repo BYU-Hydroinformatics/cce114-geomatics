@@ -16,3 +16,10 @@ __pycache__/
 # Local scratch only: the raw Learning Suite download. Course data that ships with the
 # site lives under docs/ and is committed. Anchored so it cannot match docs/*/data/.
 /data/
+
+# Exam keys, quiz keys and grading answers live in the private companion repo (../cce114-private); never commit them here
+*KEY*.pdf
+*key*.md
+*answer-key*
+*personal_lookup*
+tools/learning-suite-quizzes/
