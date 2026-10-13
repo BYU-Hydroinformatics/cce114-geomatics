@@ -28,7 +28,7 @@ If this scenario sounds far-fetched, consider this: in June 2022, record floodin
 * Repeat skills from the previous labs  
 * Learn how to use the National Map system  
 * Learn how to use GIS processing tools  
-  * This lab uses the following tools: Reclassify by Table, Buffer, Reproject Layer, Select by Attribute, Clip, Fix Geometries, and Difference  
+    * This lab uses the following tools: Reclassify by Table, Buffer, Reproject Layer, Select by Attribute, Clip, Fix Geometries, and Difference  
 * Learn practical application of shapefiles and GIS methods
 
 **REVIEW THE deliverables section at the end of the document before continuing. You should always do this before starting any of your labs. It will help you make sense of the lab and not waste time.**

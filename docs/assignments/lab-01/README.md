@@ -59,6 +59,7 @@ This is an easy task in QGIS that you can accomplish by downloading an existing 
 3. If you don’t see this page, go to the “Products\>\>SGID” page at the top (State Geographic Info Datasource)  
 
 ![UGRC SGID page with Browse our data highlighted](images/anchored2.png)
+
 4. Click “Browse our data”  
 5. Find the Geoscience category  
 6. Scroll down to find “Utah Quaternary Faults”  
@@ -107,6 +108,7 @@ This is an easy task in QGIS that you can accomplish by downloading an existing 
 23. Review the listed default options in the large box and select one that is clearly visible over the satellite map. Increase the width if needed, and press OK. (Keep it simple this time, we’ll do more with symbology in the future)  
 
 ![Layer Properties window for Utah_Quaternary_Faults with the Symbology tab, the Width field, the list of default line styles, and the OK button highlighted](images/symbology-tab.png)
+
 24.  Follow the same steps for the Counties and Utah boundary layers. Find any “Project Style” that is an outline.   
 25. Add labels to the Counties layer. Double-click on the Counties layer and find “Labels” on the left side (It should be under “Symbology”). On the top, you’ll see a drop-down menu that says “No Labels”. Select “Single Label” then mess around with the settings until you get something you’re happy with.   
 26. Now the faults and boundaries should be easier to see, and your map should look something like this:
@@ -124,13 +126,13 @@ Submit a PDF file that contains:
 
 1. Your QGIS screenshot  
 2. The answer to these questions:  
-   1. What is GIS?  
-   2. What is QGIS?  
-   3. Do any fault lines run through the BYU campus? If so, where?  
+    1. What is GIS?  
+    2. What is QGIS?  
+    3. Do any fault lines run through the BYU campus? If so, where?  
 3. Search online for an article about a real-life engineering project/study that used GIS and that is interesting to you. Paste the link, then write a short paragraph explaining the project, how GIS was used, and why you found it interesting.  
-   1. [This page](https://www.esri.com/about/newsroom/esri-blog/all-articles/) at ESRI is a good place to look  
-   2. Or [this page](https://www.esri.com/en-us/arcgis/products/arcgis-storymaps/contest/gallery/2023-winners), also at ESRI (contest winners for their StoryMaps software)  
-   3. Or alternatively, research John Snow’s cholera map (John Snow, not Jon Snow from GoT). His work was one of the most significant uses of GIS-like methods before computers or GIS existed. Write a short paragraph to explain what he did and how it relates to GIS.  
+    1. [This page](https://www.esri.com/about/newsroom/esri-blog/all-articles/) at ESRI is a good place to look  
+    2. Or [this page](https://www.esri.com/en-us/arcgis/products/arcgis-storymaps/contest/gallery/2023-winners), also at ESRI (contest winners for their StoryMaps software)  
+    3. Or alternatively, research John Snow’s cholera map (John Snow, not Jon Snow from GoT). His work was one of the most significant uses of GIS-like methods before computers or GIS existed. Write a short paragraph to explain what he did and how it relates to GIS.  
 4. The grading rubric
 
 ## **Grading Rubric**

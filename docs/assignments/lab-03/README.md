@@ -56,21 +56,21 @@ Next, you will need to verify the accuracy of the coordinates you converted in t
 
 1. Form groups of 2-3. Each member needs either a handheld GPS unit or a cell phone with GPS capabilities and an appropriate GPS app that is not Google/Apple Maps. You can find many such apps in the Apple App Store or the Google Play Store.  
 2. Go to 7 of the places listed here and **collect** the Latitude and Longitude information using your phone/GPS. Each team member needs to collect their own Latitude and Longitude data at each location you visit (unless someone doesn’t have access to a GPS device or smartphone).  
-   1. JSB\_Joseph – Statue of Joseph in the JSB grove area.  
-   2. Tree\_Of\_Life – Tree of Life statue in front of the JSB.  
-   3. Pit\_Of\_Despair – The center of the bottom floor lobby of the Testing Center.  
-   4. BroMaeser – Statue in front of the Maeser building.  
-   5. TheBigPi – Tau Beta Pi statue in front of the Clyde.  
-   6. Crossing\_the\_Rubicon – The center of the bridge to the life science building.   
-   7. Pendulum – Pendulum in the ESC entrance.  
-   8. Buried\_Treasure – Underneath the X of the glass windows above the entrance to the library (on the stairs going down to the Periodicals).  
-   9. Pool\_Party – JFSB fountain.  
-   10. Bikes – Highest rated bike rack on campus, in between Talmage and JFSB.   
-   11. BroBrigham – Brigham Young statue south of the ASB.  
-   12. Busted – Bust in the 4th floor entrance to the TNRB.  
-   13. MOArt – Entrance to the MOA.  
-   14. Winner – Victory Bell south of the Marriott Center.  
-   15. Cosmo – The Cosmo statue inside the Bookstore by the bank.  
+    1. JSB\_Joseph – Statue of Joseph in the JSB grove area.  
+    2. Tree\_Of\_Life – Tree of Life statue in front of the JSB.  
+    3. Pit\_Of\_Despair – The center of the bottom floor lobby of the Testing Center.  
+    4. BroMaeser – Statue in front of the Maeser building.  
+    5. TheBigPi – Tau Beta Pi statue in front of the Clyde.  
+    6. Crossing\_the\_Rubicon – The center of the bridge to the life science building.   
+    7. Pendulum – Pendulum in the ESC entrance.  
+    8. Buried\_Treasure – Underneath the X of the glass windows above the entrance to the library (on the stairs going down to the Periodicals).  
+    9. Pool\_Party – JFSB fountain.  
+    10. Bikes – Highest rated bike rack on campus, in between Talmage and JFSB.   
+    11. BroBrigham – Brigham Young statue south of the ASB.  
+    12. Busted – Bust in the 4th floor entrance to the TNRB.  
+    13. MOArt – Entrance to the MOA.  
+    14. Winner – Victory Bell south of the Marriott Center.  
+    15. Cosmo – The Cosmo statue inside the Bookstore by the bank.  
 
 > [!IMPORTANT]
 > Use **every digit** that you get from the phone/GPS! You want to be as precise as possible with these measurements.
@@ -82,11 +82,11 @@ Next, you will need to verify the accuracy of the coordinates you converted in t
 
 5. This kind of treasure hunt is older than you might think — but not much older. The day after the GPS scrambling ended in May 2000, a GPS enthusiast named Dave Ulmer buried a bucket of prizes near Portland, Oregon, posted its coordinates online, and challenged people to find it. That first "stash" grew into geocaching, with millions of caches now hidden worldwide (https://www.geocaching.com/about/history.aspx). Today you get to do the same thing, minus the bucket.  
 6. Next, **go to** 3 of the following locations, record what/where each object is, and take a picture of your group at each place. These are either statues or large grates on the ground.  
-   1. 40°14'52.00"N, 111°38'55.36"W (a statue)  
-   2. 40°14'53.75"N, 111°38'59.34"W (a statue)  
-   3. 40°14'49.73"N, 111°39'3.05"W (a vent in the ground)  
-   4. 40°14'56.30"N, 111°38'54.70"W (a drain cover)  
-   5. 40°14'59.03"N, 111°38'57.34"W (center of a walkway)  
+    1. 40°14'52.00"N, 111°38'55.36"W (a statue)  
+    2. 40°14'53.75"N, 111°38'59.34"W (a statue)  
+    3. 40°14'49.73"N, 111°39'3.05"W (a vent in the ground)  
+    4. 40°14'56.30"N, 111°38'54.70"W (a drain cover)  
+    5. 40°14'59.03"N, 111°38'57.34"W (center of a walkway)  
 
 > [!NOTE]
 > You may be tempted to use Google Maps or a similar app to find these locations, but first try to find them manually by walking with your GPS or smartphone app.
@@ -107,10 +107,10 @@ Next, you will need to verify the accuracy of the coordinates you converted in t
 
 10. From the list of coordinates your group converted, and on your own, make a table with these three columns in Excel or Google Sheets, using the location names from Step 2:
 
-   | name | x | y |
-   | ----- | ----- | ----- |
-   | JSB\_Joseph | 444563.69 | 4455249.76 |
-   | … | … | … |
+    | name | x | y |
+    | ----- | ----- | ----- |
+    | JSB\_Joseph | 444563.69 | 4455249.76 |
+    | … | … | … |
 
 > [!WARNING]
 > Duplicate the layout only! The location x,y points in the examples are different from what you will have.
@@ -119,6 +119,7 @@ Next, you will need to verify the accuracy of the coordinates you converted in t
 
 > [!TIP]
 > How to save as a CSV file:
+>
 > 1. **Google Sheets**: *File\>\>Download\>\>Comma Separated Values (.csv)*
 > 2. **Excel**: *File\>\>Save As...* then in the Save As dialog box, choose CSV (Comma delimited) and save
 
@@ -127,11 +128,11 @@ Next, you will need to verify the accuracy of the coordinates you converted in t
 14. Click the ellipses “...” next to the File name field. Locate your “points.csv” file and click “Open.”  
 15. Leave all the defaults except for “Geometry CRS.” Make sure this is set to our usual “EPSG:26912 \- NAD83 / UTM zone 12N” and click “Add” and close the window.  
 
-   ![Data Source Manager Delimited Text tab with points.csv loaded and Geometry CRS set to EPSG:26912](images/dsm-delimited-text.png)
+    ![Data Source Manager Delimited Text tab with points.csv loaded and Geometry CRS set to EPSG:26912](images/dsm-delimited-text.png)
 
 16. If the “Select Transformation” window appears, simply ignore it and click OK.   
 
-   ![Select Transformation window with the OK button highlighted](images/select-transformation.png)
+    ![Select Transformation window with the OK button highlighted](images/select-transformation.png)
 
 17. **SAVE** your project\!  
 18. Add a “Google Satellite” basemap as taught in class and as shown in an earlier lab assignment.  
@@ -232,8 +233,8 @@ Although Part 1 is a group effort, please create and submit your OWN report that
 
 5. Your final map layout with the converted campus area value  
 6. Your responses to the following questions:  
-   1. Acceptability of Error: Is the level of error seen in your map acceptable for placing the corners of a building foundation? Establishing a fence line between neighbors? Identifying the flow path of a major river? Marking the centroid of a major city? Why might your answer be different in some of these cases?  
-   2. Error Reduction: Given the things we’ve learned in class and in this lab, what could you do to reduce the error in your data?  
+    1. Acceptability of Error: Is the level of error seen in your map acceptable for placing the corners of a building foundation? Establishing a fence line between neighbors? Identifying the flow path of a major river? Marking the centroid of a major city? Why might your answer be different in some of these cases?  
+    2. Error Reduction: Given the things we’ve learned in class and in this lab, what could you do to reduce the error in your data?  
 7. The grading rubric, filled in with your self-evaluation
 
 ## **Grading Rubric**

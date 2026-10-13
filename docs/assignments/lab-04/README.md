@@ -107,15 +107,15 @@ There are several different techniques and algorithms for doing what we are tryi
 ![New GeoPackage Layer dialog for Temple_Footprint with Polygon geometry type, Project CRS EPSG:26912, and a Name text field in the fields list](images/anchored5.png)
 
 18. Before you continue\!\!\! **Configure your snapping options following the steps below:**  
-   1. Navigate to **Project \> Snapping Options...** (or use the Snapping Toolbar).  
-   2. Click the **"Enable Snapping"** icon (magnet).  
-   3. Set the **Tolerance** to **12 Pixels**.  
+    1. Navigate to **Project \> Snapping Options...** (or use the Snapping Toolbar).  
+    2. Click the **"Enable Snapping"** icon (magnet).  
+    3. Set the **Tolerance** to **12 Pixels**.  
 
-      ![Project Snapping Settings toolbar with the Enable Snapping magnet icon and a 12 pixel tolerance](images/anchored6.png)
+        ![Project Snapping Settings toolbar with the Enable Snapping magnet icon and a 12 pixel tolerance](images/anchored6.png)
 
-   4. Set the **Mode** to **Advanced Configuration**.  
-   5. Ensure snapping is enabled for all of your vector layers.  
-   6. Crucially, make sure to check the **"Avoid Overlap"** box for the **Temple\_Footprint** layer.
+    4. Set the **Mode** to **Advanced Configuration**.  
+    5. Ensure snapping is enabled for all of your vector layers.  
+    6. Crucially, make sure to check the **"Avoid Overlap"** box for the **Temple\_Footprint** layer.
 
 ### **Step 4: Digitize the Curbs, Lights, Temple, and Parking Lot**
 

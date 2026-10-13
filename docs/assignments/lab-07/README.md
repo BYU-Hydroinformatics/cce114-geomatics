@@ -160,8 +160,8 @@ Submit a PDF file that contains:
 2. A screenshot of the QGIS window with the mystery coordinate points in different projections  
 3. A screenshot of your work on thetruesize.com and your answers to each of the questions  
 4. Answers to the following questions:  
-   1. What kind of distortion do you see in each different projection? (Area, shape, distances, etc.)  
-   2. WGS84 (EPSG:4326) is the default CRS for GPS receivers, Google Earth, and many other mapping tools. Why can’t we just use that CRS for everything everywhere?  
+    1. What kind of distortion do you see in each different projection? (Area, shape, distances, etc.)  
+    2. WGS84 (EPSG:4326) is the default CRS for GPS receivers, Google Earth, and many other mapping tools. Why can’t we just use that CRS for everything everywhere?  
 5. The grading rubric, filled in with your self-evaluation
 
 ## **Grading Rubric**

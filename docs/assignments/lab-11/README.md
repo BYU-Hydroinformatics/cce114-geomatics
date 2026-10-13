@@ -45,8 +45,8 @@ You’ll also save all of your data layers for this project in a GeoPackage.
 
 * For this lab we will use the GIS software application, QGIS (also known as Quantum GIS). This is a free/open source GIS package that runs on Windows, Mac, and Linux operating systems. The software is pre-installed in the Clyde Building 234 computer lab. You can also download it and install it on your own computer from this website: [https://www.qgis.org/](https://www.qgis.org/). We will be using this version throughout the course: *“Long Term Version 3.44 (LTR)”.*   
 * There are no custom data downloads for this lab. Follow the instructions to download data from  
-  * The State of Utah GIS web site: [https://gis.utah.gov/products/sgid/](https://gis.utah.gov/products/sgid/)  
-  * And the Walmart Open Data Hub on ArcGIS: [link](https://walmart-open-data-walmarttech.opendata.arcgis.com/datasets/39ce1c357bd2424ca481db84aed29464_0/explore?location=40.219229%2C-111.585158%2C10.61)  
+    * The State of Utah GIS web site: [https://gis.utah.gov/products/sgid/](https://gis.utah.gov/products/sgid/)  
+    * And the Walmart Open Data Hub on ArcGIS: [link](https://walmart-open-data-walmarttech.opendata.arcgis.com/datasets/39ce1c357bd2424ca481db84aed29464_0/explore?location=40.219229%2C-111.585158%2C10.61)  
 * Imagery from Google will also be used as a base layer. 
 
 **REVIEW THE deliverables section at the end of the document before continuing. You should always do this before starting any of your labs. It will help you make sense of the lab and not waste time.**
@@ -56,7 +56,7 @@ You’ll also save all of your data layers for this project in a GeoPackage.
 ### **Step 1: Start Your Workflow Diagram**
 
 1. As you work through this lab, create a workflow diagram that shows the exact steps you took to complete this lab. Your workflow should be detailed enough that someone else could replicate your work with just your workflow. This includes every dataset and every step (aka tool) that you use.  
-   1. You’re welcome to do this on paper or find a convenient computer program, as long as it is legible (no tiny unreadable text) when you turn it in with your lab.
+    1. You’re welcome to do this on paper or find a convenient computer program, as long as it is legible (no tiny unreadable text) when you turn it in with your lab.
 
 ### **Step 2: Add the Data**
 
@@ -64,20 +64,20 @@ You’ll also save all of your data layers for this project in a GeoPackage.
 3. Change the CRS to EPSG: 26912, our usual CRS for Utah  
 4. Use the Data Source Manager to connect to the Utah SGID web service via “ArcGIS REST Servers”. Look back at Lab 6, steps \#9-15 if you don’t remember how to do this. It may also still be connected if you are on the same computer that you used for Lab 6\.  
 5. Add the UtahCountyBoundaries layer (not the similarly named Utah\_County\_Boundaries) to the map, using the web service connection.   
-   1. If the ArcGIS REST servers aren't working, go to the Utah SGID website to download instead.  
+    1. If the ArcGIS REST servers aren't working, go to the Utah SGID website to download instead.  
 
 > [!WARNING]
 > **We will not be using the web service to access the larger datasets**, even though it is possible. There's over 400,000 lines in just the roads dataset, and **tools take much longer to run on files that aren't located locally** on your computer. If you're using tools on large datasets, sometimes it can be beneficial to download a large dataset and save the time.
 
 6. Go to the UGRC website (gis.utah.gov). Find and **download** the same “Utah Roads” dataset that we used in Lab 2 (see step 11), and another one in the Demographics category called “Census 2020 Blocks”  
-   1. If the shapefile download isn’t working, use the “File Geodatabase” instead and treat it like a shapefile  
+    1. If the shapefile download isn’t working, use the “File Geodatabase” instead and treat it like a shapefile  
 7. Follow this [link](https://walmart-open-data-walmarttech.opendata.arcgis.com/datasets/39ce1c357bd2424ca481db84aed29464_0/explore?location=40.218329%2C-111.585158%2C10.61) to the Walmart Open Data Hub and download the shapefile of their store locations. Add it to the map too. This is Walmart’s own public data \- every operating US store and Sam’s Club, about 5,200 points (5,209 when this was last checked), kept current by the company.
 
 ### **Step 3: Build the GeoPackage**
 
 8. Open the Processing Toolbox Panel and find the “Extract by Attribute” tool  
 9. Open it, and use this tool to extract the borders of Utah County to a new layer called, “UtahCounty”  
-   1. Under the “Extracted (attribute)” option, choose “Save to File…” and name the file “UtahCounty”  
+    1. Under the “Extracted (attribute)” option, choose “Save to File…” and name the file “UtahCounty”  
 
 ![Extract by Attribute dialog extracting the Counties layer where NAME equals UTAH and saving to UtahCounty.gpkg](images/anchored2.png)
 

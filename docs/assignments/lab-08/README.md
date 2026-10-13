@@ -51,7 +51,7 @@ In part two, you are part of a team responsible for designing a new highway runn
 > When you download the shapefile for this data, an **XML file** comes with it that contains the metadata that you can view as plain text.
 
 4. Use the metadata to fill out the following table. (In other files, you’ll see that the amount of information in the metadata can vary widely. This file in particular has everything you need to fill out 1-2 points on each row of the table.)  
-   1. Hint: Try using Ctrl+f to search the text for keywords: “UGRC” for who (check the keywords list and the use constraints paragraph), “pubdate” and “ModDate” for when (both are written as YYYYMMDD; `pubdate` is when the data was published and `ModDate` is when the file was last modified), and “bounding” for where. Different UGRC downloads tag their dates differently — some use `metd` instead — so if one search comes up empty, try the others before deciding the date is missing.
+    1. Hint: Try using Ctrl+f to search the text for keywords: “UGRC” for who (check the keywords list and the use constraints paragraph), “pubdate” and “ModDate” for when (both are written as YYYYMMDD; `pubdate` is when the data was published and `ModDate` is when the file was last modified), and “bounding” for where. Different UGRC downloads tag their dates differently — some use `metd` instead — so if one search comes up empty, try the others before deciding the date is missing.
 
 | Dataset name | Utah County Boundaries |
 | :---- | :---- |
@@ -62,7 +62,7 @@ In part two, you are part of a team responsible for designing a new highway runn
 | **Why**? (Purpose, if stated) |  |
 
 5. Now press Ctrl+f again in the metadata XML and search for “license”. This will take you to a paragraph that almost every professional dataset includes—the usage limits for the data. Say, for example, that your spouse is a digital artist. They get excited about the maps you’re making, and they want to create and sell cool map art on Etsy.com. This section of the metadata can tell you if they could legally use the dataset for that purpose.  
-   1. To avoid diving into copyright law, yes, the Utah County Boundaries dataset’s licensing allows people to make and sell art from it. If this interests you, research the license listed in the metadata.
+    1. To avoid diving into copyright law, yes, the Utah County Boundaries dataset’s licensing allows people to make and sell art from it. If this interests you, research the license listed in the metadata.
 
 ### **Step 2: Answer the Project Team's Questions**
 

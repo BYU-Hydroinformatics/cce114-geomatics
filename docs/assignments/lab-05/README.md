@@ -53,7 +53,8 @@ This scenario is less hypothetical than you might think. The 80 MW Elektron Sola
 ### **Step 1: Download the DEM Tiles and Add Them to QGIS**
 
 1. Using the Utah GIS website from past labs, find the “Elevation” category  
-   ![Elevation category tile on the UGRC SGID data page](images/image1.png)  
+    ![Elevation category tile on the UGRC SGID data page](images/image1.png)  
+
 2. Click on the “AUTO-CORRELATED DEMS” and follow the link under “Get the data”  
 3. You should see an interface with a map of Utah on it. Use the “Draw Polygon” tool on the left side (under “Step 2 \- Define Area of Interest”) to draw a shape encompassing Utah Lake, Provo, and Y Mountain, double-clicking to finish the shape. (Zoom to this area before drawing your polygon.)
 

@@ -59,11 +59,11 @@ Given these requirements, you think the project might be an action film. It coul
 
 5. **SAVE** your project  
 6. Use the UGRC website from last time to find the data you need for this lab. The Utah GIS website is here: [https://gis.utah.gov/products/sgid/categories/](https://gis.utah.gov/products/sgid/categories/)  
-   1. Download the “Utah Roads” data in the Transportation category, “Utah Airports” also in the Transportation category, and “Utah Municipal Boundaries” in the Boundaries category.  
-   2. **WARNING**: The Utah Roads dataset is very large (as you might imagine) — about 115 MB zipped and close to a gigabyte once unzipped, covering more than 400,000 road segments. It will likely take a LONG time to download over a slow dorm connection. If it doesn’t download completely, try doing it on a fast WIFI on campus.  
-   3. **NOTE:** If the shapefiles for these datasets won’t download (i.e., the Utah server sometimes fails, or tells you the download is still being prepared and to check back later), you can also choose the GeoPackage download, which can be loaded into QGIS without needing to be unzipped. **It’s just another file format for the same data\!**  
+    1. Download the “Utah Roads” data in the Transportation category, “Utah Airports” also in the Transportation category, and “Utah Municipal Boundaries” in the Boundaries category.  
+    2. **WARNING**: The Utah Roads dataset is very large (as you might imagine) — about 115 MB zipped and close to a gigabyte once unzipped, covering more than 400,000 road segments. It will likely take a LONG time to download over a slow dorm connection. If it doesn’t download completely, try doing it on a fast WIFI on campus.  
+    3. **NOTE:** If the shapefiles for these datasets won’t download (i.e., the Utah server sometimes fails, or tells you the download is still being prepared and to check back later), you can also choose the GeoPackage download, which can be loaded into QGIS without needing to be unzipped. **It’s just another file format for the same data\!**  
 7. Download and unzip the file for each, then drag and drop the folder for each onto your map.  
-   1. **NOTE:** If you downloaded GeoPackage files, then you can literally just drag and drop the file into your map, or you can use the “Add Data” button to browse to the file and double-click it to open it. GeoPackage files don’t need to be unzipped.  
+    1. **NOTE:** If you downloaded GeoPackage files, then you can literally just drag and drop the file into your map, or you can use the “Add Data” button to browse to the file and double-click it to open it. GeoPackage files don’t need to be unzipped.  
 8. You should see 4 layers in the Layers Panel now. Three vector datasets (point, polyline, polygon) and your raster (image) basemap.
 
 > [!NOTE]
@@ -243,9 +243,9 @@ Submit a PDF file that contains:
 2. Your map layout  
 3. The name of your chosen city location  
 4. Short answers to these three questions:  
-   1. In step 4 you set the project's coordinate reference system to EPSG:26912 instead of leaving it at the default. Why does a map of Utah use that one?  
-   2. You used categorized symbology for the roads and graduated symbology for the cities. What does graduated symbology show a reader that categorized symbology cannot, and why was each the right choice for its layer?  
-   3. Name one thing in this data that could have led you to a wrong answer, and say how a reader of your map would (or would not) be able to tell.  
+    1. In step 4 you set the project's coordinate reference system to EPSG:26912 instead of leaving it at the default. Why does a map of Utah use that one?  
+    2. You used categorized symbology for the roads and graduated symbology for the cities. What does graduated symbology show a reader that categorized symbology cannot, and why was each the right choice for its layer?  
+    3. Name one thing in this data that could have led you to a wrong answer, and say how a reader of your map would (or would not) be able to tell.  
 5. The grading rubric, filled in with your self-evaluation
 
 ## **Grading Rubric**

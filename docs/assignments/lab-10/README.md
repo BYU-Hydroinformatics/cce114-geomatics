@@ -96,7 +96,7 @@ Have you ever questioned how realistic these labs are? Well, here’s a project 
 **Figure 2\.** Satellite imagery showing where the flooding after Idai can be seen from space (areas in red are flooded), March 19, 2019 \- European Space Agency
 
 8. Open the following link and download the PDF by clicking on “Download Map”:  
-   1. [https://reliefweb.int/map/mozambique/mozambique-beira-city-chingussura-structural-damage-construction-typology-26-march](https://reliefweb.int/map/mozambique/mozambique-beira-city-chingussura-structural-damage-construction-typology-26-march)  
+    1. [https://reliefweb.int/map/mozambique/mozambique-beira-city-chingussura-structural-damage-construction-typology-26-march](https://reliefweb.int/map/mozambique/mozambique-beira-city-chingussura-structural-damage-construction-typology-26-march)  
 9. Open the PDF. Each red square on this map layout represents a structure that was damaged by Cyclone Idai in 2019\. The Manga chapel is located just left of the number “3” and you can see that parts of the roof are missing. Notice how this map layout includes all the cartographic elements that we require in this class? You’ll even do a locator map in this lab, like the ones they have on the right side.
 
 ### **Step 3: Map the Canals and the Flood Hazard Zone**
