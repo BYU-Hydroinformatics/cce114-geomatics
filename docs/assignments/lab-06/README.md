@@ -105,13 +105,30 @@ Be creative, and if you want to do something ridiculous like answer the question
 ### **Step 2: Choose Three Datasets and Write Your Question**
 
 6. Choose your 3 datasets and a question they help answer, and create a table with them  
-7. Include in your table:  
-   1. The name of the dataset  
-   2. The size of the file download  
-   3. The data type (point, line, polygon, or raster)  
-   4. The data’s source (usually an organization such as UGS, DWR, UDOT, etc.).  
-   5. The methods available for accessing the data  
+7. Give your table one row per dataset and these five columns:  
+    1. **Dataset name**: the title shown on its SGID page or in the Index (e.g., “Utah Quaternary Faults”).  
+    2. **Download size**: how large the file would be if you downloaded it instead of streaming it. Look on the dataset’s download page; you do not have to download anything to find it. Many pages don’t list a size. If yours doesn’t, write “not listed”. That is a full-credit answer.  
+    3. **Geometry type**: point, line, polygon, or raster. The Index result lists a type, and once the layer is in QGIS its icon in the Layers panel shows it too.  
+    4. **Source**: the organization that made the data, as listed in the Index (often a state agency such as UGS, DWR, or UDOT). This is not UGRC unless UGRC actually made the data.  
+    5. **Access methods**: every way the dataset is offered, such as file download (name the formats, e.g., shapefile, file geodatabase, CSV) and feature service. Also say which method you used. For this lab it should be the web service.  
+
+    | Dataset name | Download size | Geometry type | Source | Access methods (✓ = used) |
+    | --- | --- | --- | --- | --- |
+    | *your first dataset* | | | | |
+    | *your second dataset* | | | | |
+    | *your third dataset* | | | | |
+
 8. Write an introductory paragraph explaining your question and chosen datasets. What is the question you are trying to answer? How will you use each dataset in answering your question?
+
+> [!TIP]
+> **Write a question your map can actually answer.** A good Lab 6 question asks *where* something is, *how close* two things are, or *whether* two patterns line up, because a map can show all of those. Questions that start with “why” usually need data a map doesn’t carry.
+>
+> - Answerable: “Are Utah’s state parks within 10 kilometers of a lake or reservoir?”
+> - Answerable: “Which Utah cities sit within a few kilometers of a Quaternary fault?”
+> - Too vague: “What is interesting about Utah’s rivers?” (no comparison, so nothing to conclude)
+> - Not mappable: “Why do people like hiking in Utah?”
+>
+> Pick the question first and the datasets second. If you start from three datasets that look interesting, it is hard to write a conclusion, and the introduction and conclusion are worth 14 of the 30 points.
 
 ### **Step 3: Connect to the Web Service and Add the Data**
 
@@ -123,11 +140,16 @@ Be creative, and if you want to do something ridiculous like answer the question
 11. Select “ArcGIS REST Server” and click New  
 12. Name the connection “Utah SGID.”  
 13. Paste this UGRC services link into the URL field (this is the web service that hosts the SGID data you browsed in the index): [https://services1.arcgis.com/99lidPhWCzftIe9K/ArcGIS/rest/services](https://services1.arcgis.com/99lidPhWCzftIe9K/ArcGIS/rest/services)  
-14. In “Authentication,” select the “Basic” tab, and enter “ugrc” as both the username and password (these services are actually public, so if your connection fails later, try again leaving this set to “No Authentication”)  
+14. Leave “Authentication” set to “No Authentication”. These services are public and need no sign-in. (Older versions of this lab had you enter “ugrc” as the username and password on the “Basic” tab. Try that only if the connection fails without it.)  
 15. Click “OK” and then “Connect” (remember that sometimes the Data Source Manager can drop behind the main QGIS window, check there if it disappears)  
 16. You should now have a new item under ArcGIS Rest Servers in the Data Source Manager. Expand the dropdown to see the full list of datasets that you’ve connected to — more than 900 of them when this was last checked, all served live from UGRC’s servers.
 
 ![Data Source Manager with the Utah SGID ArcGIS REST Server connection expanded, listing its datasets](images/anchored6.png)
+
+> [!TIP]
+> **If “Connect” fails,** check the URL first. A space before or after it, or a missing `/rest/services` at the end, are the usual culprits. Paste it again straight from this page.
+>
+> **Don’t scroll through 900 names.** Type part of the name in the Data Source Manager’s search box, as in the figure under step 18. The list shows each dataset’s *service name*, which is written without spaces and rarely matches the friendly title in the Index exactly. Search for a short word like `fault`, `park`, or `river` rather than the full title.
 
 17. Find three useful datasets and add them to your map by using the “Add” button. I added data on oil/gas fields in Utah, quaternary faults, and quaternary volcanic vents.  
 
@@ -135,11 +157,28 @@ Be creative, and if you want to do something ridiculous like answer the question
 > Most of the data in the UGRC library will be under the first link, but it is not all stored under that connection. **If you have more trouble** with finding the data that you want through the web service connection, do not just download it, **ask a TA** or Dr. Ames for help instead\!
 
 18. If a dataset you found by searching the index is **not appearing in this list**, it may be stored in a different place (in testing this lab, this happened with the Utah Oil and Gas Fields data). To get around this, repeat steps 10-15 with this link ([https://services.arcgis.com/ZzrwjTRez6FJiOq4/ArcGIS/rest/services](https://services.arcgis.com/ZzrwjTRez6FJiOq4/ArcGIS/rest/services)) and a different connection name like “Utah SGID 2”. That second server carries a much larger catalog, over two thousand services, so if something is missing from the first connection it is very likely here.  
-19. Also, select a basemap that is useful to your project’s purpose. For this example, I chose the Google Satellite Hybrid.  
+
+> [!TIP]
+> **Read the dataset’s feature service URL to find its server.** Each dataset’s page on the UGRC site has a feature service link. The start of that link tells you which connection it lives on, and the part just before `/FeatureServer` is the name to search for:
+>
+> | The link starts with | Use connection |
+> | --- | --- |
+> | `services1.arcgis.com/99lidPhWCzftIe9K/...` | Utah SGID (step 13) |
+> | `services.arcgis.com/ZzrwjTRez6FJiOq4/...` | Utah SGID 2 (step 18) |
+>
+> For example, the Quaternary Faults page links to `services.arcgis.com/ZzrwjTRez6FJiOq4/.../Utah_Quaternary_Faults_20201207/FeatureServer`, so it is on the second connection under the name `Utah_Quaternary_Faults_20201207`. The second server also holds working copies and look-alikes that other agencies uploaded, so several services may match your search. Use the one the dataset page links to.
+
+> [!WARNING]
+> **Big statewide layers are slow over a web service.** The server sends features in batches, so a layer with hundreds of thousands of features takes many requests. Utah Roads, for example, has over 400,000 road segments and the server sends 2,000 at a time. Statewide roads, parcels, address points, and soils are all this large. Panning stalls, and the layout export can sit for minutes. Zoom the map to your study area *before* you add a big layer, or choose a smaller dataset that answers the same question (e.g., major highways instead of every road).
+
+19. Also, select a basemap that is useful to your project’s purpose. For this example, I chose the Google Satellite Hybrid. If it is not in your XYZ list (QGIS saves it on the computer where you set it up, so a different lab machine or a fresh install won’t have it), add it again as in [Lab 1, step 17](../lab-01/README.md#step-2-create-the-map).  
 
 ![Three stacked Data Source Manager windows searching the Utah SGID connections for fault, volcanic, and oil datasets, with QuaternaryFaults, QuaternaryVolcanicVents, and Utah Oil and Gas Fields highlighted](images/anchored7.png)
 
 20. You may add more layers, but only 3 are necessary to get full points. I ended up adding Utah’s state boundaries in the example (easily found by typing “bound” in the search bar). 
+
+> [!TIP]
+> **If your layers land in different places** (or one is nowhere to be seen), right-click it in the Layers panel and choose **Zoom to Layer(s)**. Then check each layer’s coordinate reference system under **Properties → Source**. Also, don’t download a dataset just because it is hard to find through the service. Ask a TA, as the warning above says. Using the web service is the point of the lab.
 
 ### **Step 4: Design the Map and Layout**
 
@@ -148,6 +187,9 @@ Be creative, and if you want to do something ridiculous like answer the question
 ![QGIS window with the example web-service layers styled: red volcanic vent triangles, yellow fault lines, and purple oil/gas field outlines over a satellite basemap](images/anchored8.png)
 
 22. Create a layout for your map and include all required map elements (e.g., map legend, scale bar, title).
+
+> [!TIP]
+> **Clean up the legend before you export.** Web-service layers arrive with service names like `Utah_Quaternary_Faults_20201207`, and the basemap shows up in the legend too. Rename each layer in the Layers panel (right-click → **Rename Layer**) to something a reader understands, such as “Quaternary faults”. In the layout, select the legend and, in its **Item Properties**, uncheck **Auto update**. You can then remove the basemap entry and any you don’t want. Add a credit line naming UGRC and each dataset’s source. If the export hangs, see the warning about big layers in Step 3.
 
 ![Example map layout titled Utah Oil/Gas Fields vs Quaternary Tectonic and Volcanic Activity, with legend, scale bar, north arrow, and citations](images/layout-example.png)
 
