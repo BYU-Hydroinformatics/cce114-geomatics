@@ -146,6 +146,10 @@ Be creative, and if you want to do something ridiculous like answer the question
 
 ![Data Source Manager with the Utah SGID ArcGIS REST Server connection expanded, listing its datasets](images/anchored6.png)
 
+> [!WARNING]
+> **If the connection fails, or a layer refuses to add, it is probably not your mistake.** QGIS 3.44 cannot add a UGRC layer whose published definition has no extent, and it reports this as *Could not retrieve layer extent*. When we checked in October 2026, about a third of the layers on this server had that problem (including the Quaternary Volcanic Vents used in the example below), and the server itself is sometimes slow to answer. If Connect spins, or a layer you need will not add, skip to the **[backup method](#backup-method-connect-to-the-open-sgid-database-instead)** at the end of this step. It reaches the same UGRC data through a different door and counts for full credit.
+
+
 > [!TIP]
 > **If “Connect” fails,** check the URL first. A space before or after it, or a missing `/rest/services` at the end, are the usual culprits. Paste it again straight from this page.
 >
@@ -179,6 +183,36 @@ Be creative, and if you want to do something ridiculous like answer the question
 
 > [!TIP]
 > **If your layers land in different places** (or one is nowhere to be seen), right-click it in the Layers panel and choose **Zoom to Layer(s)**. Then check each layer’s coordinate reference system under **Properties → Source**. Also, don’t download a dataset just because it is hard to find through the service. Ask a TA, as the warning above says. Using the web service is the point of the lab.
+
+#### **Backup Method: Connect to the Open SGID Database Instead**
+
+UGRC also publishes the whole SGID as a public **PostGIS database** called the [Open SGID](https://gis.utah.gov/documentation/sgid/open-sgid/). It holds the same curated datasets, organized under the same category names you browsed in Step 1, and QGIS reads it through its **PostgreSQL** connection instead of the ArcGIS REST one. In the terms of the Background section this is takeout rather than delivery, but nothing is downloaded or unzipped and the data stay current at the source, so it serves the purpose of this lab. If you use it, say so in your data table under "methods available for accessing the data."
+
+1. Open the Data Source Manager, choose **PostgreSQL** in the left-hand list, and click **New**.  
+2. Fill in the connection exactly as shown. Name: `opensgid.agrc.utah.gov` (any name works). Host: `opensgid.agrc.utah.gov`. Port: `5432`. Database: `opensgid`. SSL mode: **disable**. Under Authentication, on the **Basic** tab, user name `agrc` and password `agrc`, with both **Store** boxes checked. These are UGRC's published public credentials, not a secret. (UGRC's documentation now spells the host `opensgid.ugrc.utah.gov`; both names reach the same server.)
+
+![Create a New PostgreSQL Connection dialog filled in for the Open SGID: host opensgid.agrc.utah.gov, port 5432, database opensgid, SSL mode disable, user name and password agrc](images/opensgid-new-connection.png)
+
+3. Click **Test Connection**. A green check mark and "Connection to opensgid.agrc.utah.gov was successful" at the top means you typed everything correctly. If it fails, the usual causes are a typo in the host name or an SSL mode other than *disable*.
+
+![The same dialog after Test Connection, with the green success message across the top](images/opensgid-test-connection.png)
+
+4. Click **OK**, and OK again on anything that pops up. QGIS warns that the password will be stored in plain text, which is fine for a public password.  
+5. Back in the Data Source Manager, click **Connect**. The schemas appear, one per SGID category: boundaries, transportation, water, and so on. Expand a schema to see its tables, or type part of a name in the search box, the same way you searched the REST connection.
+
+![Data Source Manager, PostgreSQL tab, connected to the Open SGID with the category schemas listed](images/opensgid-browse.png)
+
+6. Select a table and click **Add**. It arrives as a normal layer, already in UTM Zone 12N (EPSG:26912), so it lines up with everything else in your project.  
+7. Continue with Step 4. The rest of the lab is the same whichever door you came through.
+
+> [!TIP]
+> **A second trick, for one stubborn layer.** Every SGID Index result has a *feature service* link that ends in `/FeatureServer/0`. Add this to the end of that link:
+>
+> ```
+> /query?where=1%3D1&outFields=*&f=json
+> ```
+>
+> Then give the whole URL to QGIS as a vector dataset: Data Source Manager > **Vector**, leave Source Type on *File*, paste the URL into the **Vector Dataset(s)** box in place of a file name, and click **Add**. QGIS hands the URL to GDAL, which reads the service's own JSON, pages through the whole layer, and does not care about the missing extent. We checked it with Utah County Boundaries (29 features, one of the layers the REST connection refuses) and with the 414,000-segment Utah Roads layer. Use the *File* box, not the *Protocol: HTTP(S)* option: that route reads only the first 2,000 features and stops without telling you. It is one layer at a time, so set up the Open SGID connection if you need several.
 
 ### **Step 4: Design the Map and Layout**
 

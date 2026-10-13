@@ -322,7 +322,7 @@ https://services1.arcgis.com/99lidPhWCzftIe9K/ArcGIS/rest/services
 </div>
 </div>
 
-<!-- The searching is the real skill here. Tell students to search a fragment: "fault", "bound", "oil". If a dataset they found in the SGID Index does not appear, it is probably on a different UGRC endpoint; Lab 6 gives a second URL for exactly this case. -->
+<!-- The searching is the real skill here. Tell students to search a fragment: "fault", "bound", "oil". If a dataset they found in the SGID Index does not appear, it is probably on a different UGRC endpoint; Lab 6 gives a second URL for exactly this case. Known problem since October 2026: about a third of the layers on UGRC's main server publish no extent, and QGIS 3.44 refuses to add those with "Could not retrieve layer extent". Lab 6 Step 3 now ends with a backup method, the Open SGID PostgreSQL connection (host opensgid.agrc.utah.gov, port 5432, database opensgid, user and password agrc, SSL disabled); have it set up on the projector machine before class and switch to it the moment the REST connection misbehaves. -->
 
 ---
 
