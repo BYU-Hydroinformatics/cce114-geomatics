@@ -158,7 +158,7 @@ Be creative, and if you want to do something ridiculous like answer the question
 17. Find three useful datasets and add them to your map by using the “Add” button. I added data on oil/gas fields in Utah, quaternary faults, and quaternary volcanic vents.  
 
 > [!WARNING]
-> Most of the data in the UGRC library will be under the first link, but it is not all stored under that connection. **If you have more trouble** with finding the data that you want through the web service connection, do not just download it, **ask a TA** or Dr. Ames for help instead\!
+> Most of the data in the UGRC library will be under the first link, but it is not all stored under that connection. **If you have more trouble** with finding the data that you want through the web service connection, do not just download it. Try the **[backup method](#backup-method-connect-to-the-open-sgid-database-instead)** at the end of this step, and if that fails too, **ask a TA** or Dr. Ames for help\!
 
 18. If a dataset you found by searching the index is **not appearing in this list**, it may be stored in a different place (in testing this lab, this happened with the Utah Oil and Gas Fields data). To get around this, repeat steps 10-15 with this link ([https://services.arcgis.com/ZzrwjTRez6FJiOq4/ArcGIS/rest/services](https://services.arcgis.com/ZzrwjTRez6FJiOq4/ArcGIS/rest/services)) and a different connection name like “Utah SGID 2”. That second server carries a much larger catalog, over two thousand services, so if something is missing from the first connection it is very likely here.  
 
@@ -170,7 +170,7 @@ Be creative, and if you want to do something ridiculous like answer the question
 > | `services1.arcgis.com/99lidPhWCzftIe9K/...` | Utah SGID (step 13) |
 > | `services.arcgis.com/ZzrwjTRez6FJiOq4/...` | Utah SGID 2 (step 18) |
 >
-> For example, the Quaternary Faults page links to `services.arcgis.com/ZzrwjTRez6FJiOq4/.../Utah_Quaternary_Faults_20201207/FeatureServer`, so it is on the second connection under the name `Utah_Quaternary_Faults_20201207`. The second server also holds working copies and look-alikes that other agencies uploaded, so several services may match your search. Use the one the dataset page links to.
+> For example, the Quaternary Faults page links to `services.arcgis.com/ZzrwjTRez6FJiOq4/.../Utah_Quaternary_Faults_20201207/FeatureServer`, so it is on the second connection under the name `Utah_Quaternary_Faults_20201207`. The second server also holds working copies and look-alikes that other agencies uploaded, so several services may match your search. Use the one the dataset page links to. If you find the right service but QGIS reports *Could not retrieve layer extent*, use the **[backup method](#backup-method-connect-to-the-open-sgid-database-instead)** at the end of this step.
 
 > [!WARNING]
 > **Big statewide layers are slow over a web service.** The server sends features in batches, so a layer with hundreds of thousands of features takes many requests. Utah Roads, for example, has over 400,000 road segments and the server sends 2,000 at a time. Statewide roads, parcels, address points, and soils are all this large. Panning stalls, and the layout export can sit for minutes. Zoom the map to your study area *before* you add a big layer, or choose a smaller dataset that answers the same question (e.g., major highways instead of every road).
@@ -182,7 +182,7 @@ Be creative, and if you want to do something ridiculous like answer the question
 20. You may add more layers, but only 3 are necessary to get full points. I ended up adding Utah’s state boundaries in the example (easily found by typing “bound” in the search bar). 
 
 > [!TIP]
-> **If your layers land in different places** (or one is nowhere to be seen), right-click it in the Layers panel and choose **Zoom to Layer(s)**. Then check each layer’s coordinate reference system under **Properties → Source**. Also, don’t download a dataset just because it is hard to find through the service. Ask a TA, as the warning above says. Using the web service is the point of the lab.
+> **If your layers land in different places** (or one is nowhere to be seen), right-click it in the Layers panel and choose **Zoom to Layer(s)**. Then check each layer’s coordinate reference system under **Properties → Source**. Also, don’t download a dataset just because it is hard to find through the service. Use the **[backup method](#backup-method-connect-to-the-open-sgid-database-instead)** below, or ask a TA. The point of the lab is to stream the data from UGRC rather than download a file.
 
 #### **Backup Method: Connect to the Open SGID Database Instead**
 
