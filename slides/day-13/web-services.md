@@ -26,6 +26,15 @@ Dr. Dan Ames and Dr. James Halgren
 
 ---
 
+<!-- _paginate: skip -->
+<!-- _footer: "" -->
+
+![bg](images/sioy-flyer.png)
+
+<!-- Announcement before we start. BYU's Student Innovator of the Year competition: students compete for part of $50k in prizes to make an idea real. Applications close November 1, at sioy.byu.edu (or scan the QR code). Worth a look for anyone who has a project idea, including a mapping or GIS one. -->
+
+---
+
 # Today's Goals
 
 ![bg right:34% w:88%](images/web-goals-services.jpg)
