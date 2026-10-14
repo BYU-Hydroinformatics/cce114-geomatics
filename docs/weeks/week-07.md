@@ -21,7 +21,7 @@ Press <kbd>F</kbd> for fullscreen and <kbd>P</kbd> for presenter view with speak
 ## :material-account-group: In-Class Practice
 
 - **Tuesday** — [Data Source Scavenger Hunt](../activities/week-07.md) (not graded).
-- **Thursday** — Follow along in QGIS: build a quick map from three or more layers of the Utah ArcGIS REST services and upload the layout. Bring your laptop. Record your completion on Learning Suite.
+- **Thursday** — Follow along in QGIS: build a quick map from three or more UGRC layers, through the ArcGIS REST connection or the Open SGID database connection (Lab 6, Step 3, backup method) if a layer will not add, and upload the layout. Bring your laptop. Record your completion on Learning Suite.
 
 Self-check quizzes — not graded; open them on a phone or laptop as often as you like:
 

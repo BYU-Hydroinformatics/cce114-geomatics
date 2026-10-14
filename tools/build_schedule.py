@@ -124,7 +124,7 @@ DAYS = [
                  "Reading a service URL and a REST services directory",
                  "Follow along: connect QGIS to UGRC's services, which is Lab 6, Step 3",
                  "A short pitch for the Community and Professional Map Experience"],
-         activity="Follow along in QGIS: build a quick map from three or more layers of the Utah ArcGIS REST services and upload the layout. Bring your laptop"),
+         activity="Follow along in QGIS: build a quick map from three or more UGRC layers, through the ArcGIS REST connection or the Open SGID database connection (Lab 6, Step 3, backup method) if a layer will not add, and upload the layout. Bring your laptop"),
     dict(n=14, week=8, kind="concepts", title="Geodesy, Projections, and Coordinate Systems, Part 1",
          slides=[("Geodesy, Projections, and Coordinate Systems", f"{SITE}/slides/day-14/coordinate-systems-and-projections.html")],
          topics=["The shape of the Earth: geoid, ellipsoid, datums", "Map projections and distortion",
