@@ -334,14 +334,33 @@ Today, Thursday, and Lab 6 all build toward these. By the end of the week you sh
 
 ---
 
-# Before Next Class
+<!-- _class: activity -->
 
-![bg right:36% w:94%](images/web-before-next-class.jpg)
+# Final Thoughts
+
+<div class="columns" style="grid-template-columns: 1.7fr 1fr; font-size: 0.82em;">
+<div>
+
+**Quiz: Who Already Has This Data?** Eight questions on your phone: where the **data** comes from, the **national** front doors, and **Utah's** data. **Scan the code**, or open the link under it.
+
+- Not graded, and every answer explains itself
+
+**Before next class**
 
 - **No reading and no reading quiz this week**; Chapter 7 comes in Week 9
 - **Concepts Exam 1** is in the **Testing Center** and closes **Wednesday**. Check the closing time and do not leave it to the last hour
 - **Lab 6: [Spatial Data Web Services](https://byu-hydroinformatics.github.io/cce114-geomatics/assignments/lab-06/)** is due **Saturday**. Steps 1 and 2, exploring the SGID and choosing your three datasets, use only what we did today, so start now
 - Questions? Office hours: [calendly.com/dan-ames/office-hours](https://calendly.com/dan-ames/office-hours)
+
+</div>
+<div>
+
+![w:300 center](images/web-quiz-find-data-qr.png)
+
+<span style="font-size: 0.45em; color: #4a5568;">byu-hydroinformatics.github.io/cce114-geomatics/quizzes/find-data/</span>
+
+</div>
+</div>
 
 <!-- Confirm the Testing Center closing time before class. Lab 6 Steps 1 and 2 are browsing the SGID, picking three datasets, writing a question, and filling in a table; nothing in them needs Thursday's lecture. Steps 3 onward connect QGIS to the services, which Thursday demonstrates. -->
 
@@ -349,32 +368,5 @@ Today, Thursday, and Lab 6 all build toward these. By the end of the week you sh
 Dropped: both title slides (replaced); the "Is there any data out there?" minion meme (image1.png in both sources) — the meme art carries a Pink Floyd lyric, so the slide is kept as a section-break question with no image; the duplicate second scavenger-hunt slide in the 2017 deck (merged into one activity slide).
 Stale URLs found and fixed: viewer.nationalmap.gov/basic and /advanced-viewer are dead (DNS failure) and were replaced with apps.nationalmap.gov/downloader, verified live; websoilsurvey.sc.egov.usda.gov still resolves but was updated to the current websoilsurvey.nrcs.usda.gov/app; the scavenger-hunt Google Doc links (tiny.cc/214minidevo and goo.gl/MkPk1a) both 404. On 2026-10-09 the activity was pointed at the "Data Source Scavenger Hunt" tab of the CCE 114 Geomatics Master Spreadsheet, which already existed with the right columns.
 Split 2026-10-09: this deck used to run straight on into web services. That half is now its own Thursday lecture, slides/day-13/web-services.md, because Week 7's Thursday became a lecture with a short follow-along activity instead of a full hands-on session. Live captures taken 2026-09-02 (headless Chrome): gis.utah.gov, gis.utah.gov/products/sgid, opendata.gis.utah.gov, data.gov, apps.nationalmap.gov/downloader, earthexplorer.usgs.gov. The data.gov dataset count (556,482 on the day of capture) will drift; re-check before quoting it. -->
-
----
-
-<!-- _class: activity -->
-
-# Your Turn — Who Already Has This Data?
-
-<div class="columns">
-<div>
-
-Eight questions on your phone:
-
-- Where the **data** comes from
-- The **national** front doors
-- **Utah's** data
-
-Not graded, and every answer explains itself.
-
-<span style="font-size: 0.5em; color: #4a5568; white-space: nowrap;">byu-hydroinformatics.github.io/cce114-geomatics/quizzes/find-data/</span>
-
-</div>
-<div>
-
-![w:400 center](images/web-quiz-find-data-qr.png)
-
-</div>
-</div>
 
 <!-- Five minutes, in pairs, then a show of hands on the two worth arguing about: where you would go for culverts, and when you would rather download a file than connect to a service. If the room has no signal, put the URL on the board. The page is linked from the Week 7 page too. -->

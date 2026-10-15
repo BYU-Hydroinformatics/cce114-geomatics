@@ -272,9 +272,19 @@ The **Community and Professional Map Experience**, due **Wednesday of Week 10**:
 
 ---
 
-# Before Next Class
+<!-- _class: activity -->
 
-![bg right:36% w:94%](images/web-before-thursday-next.jpg)
+# Final Thoughts
+
+<div class="columns" style="grid-template-columns: 1.7fr 1fr; font-size: 0.82em;">
+<div>
+
+**Quiz: A Picture, or the Features?** Seven questions on your phone: a **picture** or the features, a service is just a **URL**, and getting Utah's data **into QGIS**. **Scan the code**, or open the link under it.
+
+- Not graded, and every answer explains itself
+- Good practice for Lab 6
+
+**Before next class**
 
 - **Lab 6: [Spatial Data Web Services](https://byu-hydroinformatics.github.io/cce114-geomatics/assignments/lab-06/)** is due **Saturday at 11:59 pm**
 - Next week: **Geodesy, Projections, and Coordinate Systems**
@@ -283,37 +293,20 @@ The **Community and Professional Map Experience**, due **Wednesday of Week 10**:
 - Pick your **Community and Professional Map Experience** event
 - Questions? Office hours: [calendly.com/dan-ames/office-hours](https://calendly.com/dan-ames/office-hours)
 
+</div>
+<div>
+
+![w:300 center](images/web-quiz-services-qr.png)
+
+<span style="font-size: 0.45em; color: #4a5568;">byu-hydroinformatics.github.io/cce114-geomatics/quizzes/services/</span>
+
+</div>
+</div>
+
 <!-- Confirm the Quiz 6 dates on Learning Suite before class. -->
 
 <!-- Deck notes (2026-10-09): split out of the Day 12 deck "Finding Spatial Data and Web Services" when Week 7's Thursday became a short lecture with a follow-along activity in place of the full hands-on session. Every slide from "Three ways to put data in a map" through "Cautions" is the second half of that deck, unchanged except for American spelling, the UGRC service count, and the old layout-example slide, which became the in-class activity. New: the title and goals slides, the Tuesday recap, the "Into QGIS" divider, the Lab 6 slide, the Community and Professional Map Experience pitch (from the Week 7 hands-on run sheet), and Before Next Class. The QGIS screenshots are genuine QGIS 3.x captures reused from Lab 6. web-rest-directory.png and web-rest-featureserver.png show Esri's REST services directory as served by UGRC, in a browser; they are correct as they stand. The WMS hillshade on the OGC slide is a real GetMap response from the USGS 3DEP elevation service for the Wasatch Front, fetched with the URL on the "A web service is just a URL" slide. UGRC's REST endpoint listed 905 services on 2026-10-09 (891 on 2026-09-02); the slides say "more than 900", which will drift.
 
 Revised 2026-10-15 after the first teaching, which ran long and felt like too much: the food-delivery analogy (fridge, takeout, delivery; WFS as raw ingredients) did not land, and the acronym tour buried the one idea students need. Now: the recap uses download versus Spotify; the OGC, WFS/WCS, and "outside the standards" slides became one "A picture, or the features?" slide built on a screenshot-versus-spreadsheet comparison, using the real WMS hillshade and a QGIS attribute table (web-features-table.png, copied from the Day 22 deck); the URL, REST directory, and single-service slides became one; the "Three ways", "They behave like any other layer", "Cautions", and "Lab 6 update" slides were cut, with the Open SGID fallback moved onto "Finding your layer" and the export-early caution onto the Lab 6 slide. WCS, vector tiles, OGC, and GetCapabilities now live only in speaker notes. web-source-types.png, web-wfs-ingredients.png, web-btn-*.png, web-service-url.jpg, web-rest-featureserver.png, web-opensgid-browse.png, and web-cautions.jpg are no longer used. -->
-
----
-
-<!-- _class: activity -->
-
-# Your Turn — A Picture, or the Features?
-
-<div class="columns">
-<div>
-
-Seven questions on your phone:
-
-- A **picture**, or the features?
-- A service is just a **URL**
-- Utah's data, **into QGIS**
-
-Not graded, and every answer explains itself. Good practice for Lab 6.
-
-<span style="font-size: 0.5em; color: #4a5568; white-space: nowrap;">byu-hydroinformatics.github.io/cce114-geomatics/quizzes/services/</span>
-
-</div>
-<div>
-
-![w:400 center](images/web-quiz-services-qr.png)
-
-</div>
-</div>
 
 <!-- Five minutes, in pairs, then a show of hands on the two worth arguing about: what a WMS actually sends back, and which service you need before you can buffer anything. Those are the two that decide whether a Lab 6 map works. If the room has no signal, put the URL on the board. The page is linked from the Week 7 page too. -->

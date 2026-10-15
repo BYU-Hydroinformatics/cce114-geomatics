@@ -21,9 +21,10 @@ To add a quiz to a deck:
     needs an `explanation`: the explanation is the teaching, the score is not.
  2. `python3 tools/build_quiz.py <slug>`
  3. `python3 tools/make_quiz_qr.py <slug> slides/day-NN/images/<prefix>-quiz-<slug>-qr.png`
- 4. Add the activity slide as the deck's LAST slide, after "Before Next Class", with the QR
-    at `w:400` on the right and the URL in small text on the left as a fallback for a room
-    with no signal.
+ 4. Put the quiz on the deck's LAST slide, **Final Thoughts**, which also carries the
+    before-next-class items: quiz line and items on the left, the QR at `w:300` on the right
+    with the URL in small text under it as a fallback for a room with no signal. The exact
+    layout is in `tools/slide-conversion-guide.md`; copy it from any Tuesday deck.
  5. Add the quiz to `PRACTICE` in `tools/build_schedule.py` and re-run it, so the week page
     links it for anyone who misses the scan.
  6. Render the deck to PNG and decode the QR out of the rendered slide, not just the source

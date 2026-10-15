@@ -469,9 +469,19 @@ When you run an **Intersection** or a **Union**, the attribute tables of both la
 
 ---
 
-# Before Next Class
+<!-- _class: activity -->
 
-![bg right:36% w:94%](images/ws-before-next.jpg)
+# Final Thoughts
+
+<div class="columns" style="grid-template-columns: 1.7fr 1fr; font-size: 0.74em;">
+<div>
+
+**Quiz: Where Would You Put It?** Eight questions on your phone: from a **requirement** to a criterion, **chaining** it, and believing the answer. **Scan the code**, or open the link under it.
+
+- Not graded, and every answer explains itself
+- Good practice for the exam and for Lab 11
+
+**Before next class**
 
 - **Lab 11: Walmart Site Selection** is due **Saturday** — [Lab 11](https://byu-hydroinformatics.github.io/cce114-geomatics/assignments/lab-11/)
   - Store locations: [Walmart open data portal](https://walmart-open-data-walmarttech.opendata.arcgis.com/)
@@ -480,36 +490,20 @@ When you run an **Intersection** or a **Union**, the attribute tables of both la
 - Start reading the [final project description](https://byu-hydroinformatics.github.io/cce114-geomatics/assignments/final-project/) — it is introduced this week
 - Questions? Office hours: [calendly.com/dan-ames/office-hours](https://calendly.com/dan-ames/office-hours)
 
+</div>
+<div>
+
+![w:300 center](images/ws-quiz-siting-qr.png)
+
+<span style="font-size: 0.45em; color: #4a5568;">byu-hydroinformatics.github.io/cce114-geomatics/quizzes/siting/</span>
+
+</div>
+</div>
+
 <!-- Confirm the Testing Center closing time and the exact reading chapter before class. Remind students that the exam covers the geoprocessing tools from today, including the QGIS names. -->
 
 <!-- Conversion notes (2026-09-02): source deck "Geoprocessing - Walmart Site Selection.pptx" (2021, 30 slides, no speaker notes in the original; all notes here are new). Dropped: source slide 26 "Buffer? What next?" reused the identical Current Walmarts image, so it became a text-only class activity; source slide 28 repeated the same generic workflow diagram already shown on slide 19, so it was replaced with the "what to carry into the final project" summary. Software wording updated to QGIS throughout (Erase renamed Difference, ArcToolbox renamed Processing Toolbox, Select By Attributes renamed Select by Expression, ModelBuilder noted as the QGIS Graphical Modeler). Data sources updated: AGRC renamed UGRC, and the "digitize Walmart locations off Google Maps" step replaced with the Walmart open data portal. ArcGIS screenshots kept and flagged for a QGIS re-shoot: images/ws-udot-routes-table.png (ArcMap attribute table), images/ws-select-i15.png (ArcMap Select By Attributes dialog), images/ws-model-builder.png (ArcGIS ModelBuilder diagram); the small Utah County, buffer, Walmart-points and census-block maps are plain map renders with no visible ArcGIS chrome. TODO for the instructor: confirm the Bolstad & Manson chapter number and the Testing Center closing time on the Before Next Class slide, and confirm the Lab 11 Saturday due date. -->
 
 <!-- Update 2026-09-02: ArcGIS-era screenshots replaced with QGIS 3.44 captures made by tools/qgis_reshoot_screens.py: ws-roads-attribute-table-qgis.png, ws-select-i15-qgis.png, ws-graphical-modeler-qgis.png replace the ArcMap table, dialog, and ModelBuilder diagram. -->
-
----
-
-<!-- _class: activity -->
-
-# Your Turn — Where Would You Put It?
-
-<div class="columns">
-<div>
-
-Eight questions on your phone:
-
-- From a **requirement** to a criterion
-- **Chaining** it, and believing the answer
-
-Not graded, and every answer explains itself. Good practice for the exam and for Lab 11.
-
-<span style="font-size: 0.5em; color: #4a5568; white-space: nowrap;">byu-hydroinformatics.github.io/cce114-geomatics/quizzes/siting/</span>
-
-</div>
-<div>
-
-![w:400 center](images/ws-quiz-siting-qr.png)
-
-</div>
-</div>
 
 <!-- Five minutes, in pairs, then take a show of hands on the two worth arguing about: which pair of tools implements "at least 2 miles from an existing Walmart," and whether the order of the steps matters. The last question — candidate set, not the site — is the standard the final project maps are graded against, so do not skip it. If the room has no signal, put the URL on the board. -->

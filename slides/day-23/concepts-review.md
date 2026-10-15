@@ -770,7 +770,7 @@ Which statement is most accurate?
 
 ---
 
-# Before Next Class
+# Final Thoughts
 
 ![bg right:36% w:94%](images/cr-before-next-class.jpg)
 

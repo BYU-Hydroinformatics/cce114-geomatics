@@ -650,9 +650,19 @@ Each pixel (raster cell) is stored as a hexadecimal number that tells the screen
 
 ---
 
-# Before Next Class
+<!-- _class: activity -->
 
-![bg right:36% w:94%](images/dm-before-next-class.jpg)
+# Final Thoughts
+
+<div class="columns" style="grid-template-columns: 1.7fr 1fr; font-size: 0.82em;">
+<div>
+
+**Quiz: Model, Format, or Reality?** Eight questions on your phone: telling a **model** from reality and from its **file format**, **naming** the model in front of you, and what each model **costs** you. **Scan the code**, or open the link under it.
+
+- Not graded, and every answer explains itself
+- Good practice for this week's open-book quiz
+
+**Before next class**
 
 - Read Chapter 2, *Data Models*, in *GIS Fundamentals* (Bolstad & Manson)
 - Take the open-book quiz on Learning Suite
@@ -660,33 +670,16 @@ Each pixel (raster cell) is stored as a hexadecimal number that tells the screen
 - Current lab: see the [Schedule](https://byu-hydroinformatics.github.io/cce114-geomatics/schedule/)
 - Questions? Office hours: [calendly.com/dan-ames/office-hours](https://calendly.com/dan-ames/office-hours)
 
+</div>
+<div>
+
+![w:300 center](images/dm-quiz-data-models-qr.png)
+
+<span style="font-size: 0.45em; color: #4a5568;">byu-hydroinformatics.github.io/cce114-geomatics/quizzes/data-models/</span>
+
+</div>
+</div>
+
 <!-- Fill in the quiz due date and the current lab before class. -->
-
----
-
-<!-- _class: activity -->
-
-# Your Turn — Model, Format, or Reality?
-
-<div class="columns">
-<div>
-
-Eight questions on your phone:
-
-- Telling a **model** from reality, and from the **file format** it is stored in
-- **Naming** the model in front of you
-- What each model **costs** you
-
-Not graded, and every answer explains itself. Good practice for this week's open-book quiz.
-
-<span style="font-size: 0.5em; color: #4a5568; white-space: nowrap;">byu-hydroinformatics.github.io/cce114-geomatics/quizzes/data-models/</span>
-
-</div>
-<div>
-
-![w:400 center](images/dm-quiz-data-models-qr.png)
-
-</div>
-</div>
 
 <!-- Five minutes, in pairs, then a show of hands on the two worth arguing about: whether the raft video is a model, and whether the 360-byte raster of Colorado is better than the 80-byte polygon. If the room has no signal, put the URL on the board or read the items aloud. The page is linked from the Week 2 page too, so anyone who misses the scan can find it after class. -->

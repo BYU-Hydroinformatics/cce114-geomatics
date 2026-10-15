@@ -292,7 +292,7 @@ subfolder, built by marp-cli in the workflow. `slides/theme/cce114.css` is the s
 1. Update dates on Learning Suite (the site has none).
 2. Read `docs/schedule.md` against the Learning Suite calendar and fix any week where a
    holiday moves a session; Week 13 and Week 15 absorb the usual ones.
-3. Check every deck's Before Next Class slide reads correctly for the current lab and quiz.
+3. Check every deck's closing Final Thoughts slide reads correctly for the current lab and quiz.
 4. Update TA information on Learning Suite; the site does not list TAs.
 5. If QGIS LTR moves past 3.44 on the lab machines, re-shoot dialog screenshots with the
    drivers above.

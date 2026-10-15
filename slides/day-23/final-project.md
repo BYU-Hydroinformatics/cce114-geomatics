@@ -490,7 +490,7 @@ For whichever you pick: **What are the criteria? What data are required? What to
 
 ---
 
-# Before Next Class
+# Final Thoughts
 
 ![bg right:36% w:94%](images/fp-before-next-class.jpg)
 

@@ -454,7 +454,7 @@ The front half of the biofuel siting analysis — and this is only half of it
 
 ---
 
-# Before Next Class
+# Final Thoughts
 
 ![bg right:36% w:94%](images/ce414-before-next-class.jpg)
 

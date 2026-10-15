@@ -667,9 +667,19 @@ In **QGIS**:
 
 ---
 
-# Before Next Class
+<!-- _class: activity -->
 
-![bg right:36% w:94%](images/crs-before-next-class.jpg)
+# Final Thoughts
+
+<div class="columns" style="grid-template-columns: 1.7fr 1fr; font-size: 0.74em;">
+<div>
+
+**Quiz: Why Is Greenland So Big?** Eight questions on your phone: what every flat map **gives up**, fitting the **surface** to the ground, and the shape underneath and the **CRS box** in QGIS. **Scan the code**, or open the link under it.
+
+- Not graded, and every answer explains itself
+- Good practice for this week's open-book quiz
+
+**Before next class**
 
 - Read **Chapter 3, *Geodesy, Datums, Map Projections, and Coordinate Systems***, in *GIS Fundamentals*
 - Take **Quiz 6, Map Projections and Coordinate Systems**, open book, on Learning Suite — **due Saturday**
@@ -678,37 +688,20 @@ In **QGIS**:
 - Bring your laptop with QGIS on Thursday
 - Questions? Office hours: [calendly.com/dan-ames/office-hours](https://calendly.com/dan-ames/office-hours)
 
+</div>
+<div>
+
+![w:300 center](images/crs-quiz-projections-qr.png)
+
+<span style="font-size: 0.45em; color: #4a5568;">byu-hydroinformatics.github.io/cce114-geomatics/quizzes/projections/</span>
+
+</div>
+</div>
+
 <!-- Confirm the Saturday due dates against Learning Suite before class. Point students at The True Size and the Jason Davies transitions page again; they are the fastest way to build intuition before the lab. -->
 
 <!-- Conversion notes (2026-09-02): converted from "Coordinate Systems and Projections.pptx" (2021 archive, 51 slides). Dropped: source slide 8, a screenshot of the Flat Earth Society Facebook page showing the presenter's logged-in account, folded into a bullet on the Ferguson map slide; source slide 11, hidden in the original, an equal-area globe-drawing activity that could be restored if there is time. Added, not in the source: Today's Goals, geographic vs. projected coordinate systems, "every projection distorts something", the State Plane summary slide, "choosing a coordinate system", the Thursday preview, and Before Next Class. Software wording updated from ArcGIS to QGIS throughout. ArcGIS screenshots still in the deck: images/crs-arcgis-transformation-dialog.png on the "How to deal with it" slide, which needs a QGIS re-shoot. Open TODO: find a QGIS equivalent for the ArcGIS Pro Tissot-circle demo referenced on the "Things to play with" slide. -->
 
 <!-- Update 2026-09-02: ArcGIS-era screenshots replaced with QGIS 3.44 captures made by tools/qgis_reshoot_screens.py: crs-qgis-project-crs-dialog.png replaces the ArcMap transformation dialog; Tissot TODO resolved via map-projections.net. -->
-
----
-
-<!-- _class: activity -->
-
-# Your Turn — Why Is Greenland So Big?
-
-<div class="columns">
-<div>
-
-Eight questions on your phone:
-
-- What every flat map **gives up**
-- Fitting the **surface** to the ground
-- The shape underneath, and the **CRS box** in QGIS
-
-Not graded, and every answer explains itself. Good practice for this week's open-book quiz.
-
-<span style="font-size: 0.5em; color: #4a5568; white-space: nowrap;">byu-hydroinformatics.github.io/cce114-geomatics/quizzes/projections/</span>
-
-</div>
-<div>
-
-![w:400 center](images/crs-quiz-projections-qr.png)
-
-</div>
-</div>
 
 <!-- Five minutes, in pairs, then a show of hands on the two worth arguing about: why an area measured in Web Mercator is wrong even though it is in meters, and why the same benchmark has three NAD 83 coordinates. If the room has no signal, put the URL on the board. The page is linked from the Week 8 page too. -->

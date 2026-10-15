@@ -168,7 +168,7 @@ Original list, for the record:
 distances (re-measure for the actual classroom); Day 6 worked example keeps the source's
 non-GPS-scale numbers with a sanity-check callout; Day 12 and Day 23 class sign-up/scavenger
 sheet links (old Google links were dead); Day 4 poll answer key; Day 23 exam window; and the
-"due Saturday" lines on every Before Next Class slide should match Learning Suite each semester.
+"due Saturday" lines on every closing Final Thoughts slide should match Learning Suite each semester.
 
 **Not converted:** Day 20 Geoplanning (no source deck exists) and the Surveying decks (not in
 the current schedule).

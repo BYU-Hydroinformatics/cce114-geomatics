@@ -448,7 +448,7 @@ $$\Delta x \approx 111{,}320 \times \cos(\varphi)$$
 
 ---
 
-# Before Next Class
+# Final Thoughts
 
 ![bg right:36% w:94%](images/gps-before-next-class.jpg)
 

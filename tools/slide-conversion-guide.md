@@ -60,10 +60,13 @@ Specifically:
 
 - Start with a title slide (class `lead`, background image on the right) and a **Today's Goals**
   slide: "By the end of class you should be able to:" plus 3 to 5 outcomes.
-- End with a **Before Next Class** slide: the textbook reading, the open-book quiz on Learning
-  Suite, the current lab (link to the assignments page), and office hours
-  (`https://calendly.com/dan-ames/office-hours`). Where a concept deck leads into a Thursday
-  session, add a short **Thursday: hands-on in QGIS** preview slide before it.
+- End with **one** closing slide titled **Final Thoughts**: the self-check quiz (below) and the
+  before-next-class items together, so students read both while they pack up. The items are the
+  textbook reading, the open-book quiz on Learning Suite, the current lab (link to the
+  assignments page), and office hours (`https://calendly.com/dan-ames/office-hours`). A deck
+  with no quiz still ends on **Final Thoughts**, holding just the items. Where a concept deck
+  leads into a Thursday session, add a short **Thursday: hands-on in QGIS** preview slide before
+  it.
 - Keep every speaker note from the source as an HTML comment at the bottom of its slide
   (`<!-- ... -->`). Marp shows these in presenter view. Add a note where a slide would otherwise
   be a bare image so the presenter knows what to say.
@@ -73,9 +76,42 @@ Specifically:
   removed from the theme on 2026-09-17 at the instructor's request. Do not put it back, and do not
   type one into a title by hand.
 - **Every Tuesday deck ends with a scannable self-check quiz** (instructor's request,
-  2026-09-17, after the first three worked in class). The last content slide before "Before Next
-  Class" is an `<!-- _class: activity -->` slide: the three parts and the URL in small text on the
-  left, the QR code at `w:400` on the right. The quiz itself is generated —
+  2026-09-17, after the first three worked in class). It sits on the **Final Thoughts** slide,
+  which replaced the separate "Your Turn" and "Before Next Class" slides on 2026-10-15 (the same
+  change CE 414 made that day). The layout is fixed; copy it from any Tuesday deck:
+
+  ```markdown
+  <!-- _class: activity -->
+
+  # Final Thoughts
+
+  <div class="columns" style="grid-template-columns: 1.7fr 1fr; font-size: 0.82em;">
+  <div>
+
+  **Quiz: <title>** <one line saying what the quiz asks> **Scan the code**, or open the link under it.
+
+  - Not graded, and every answer explains itself
+  - <at most one plain line tying it to the open-book quiz or the lab>
+
+  **Before next class**
+
+  - <the before-next-class bullets>
+
+  </div>
+  <div>
+
+  ![w:300 center](images/<prefix>-quiz-<slug>-qr.png)
+
+  <span style="font-size: 0.45em; color: #4a5568;">byu-hydroinformatics.github.io/cce114-geomatics/quizzes/<slug>/</span>
+
+  </div>
+  </div>
+  ```
+
+  No background image on this slide. Speaker notes go below it. Render it and look: if the left
+  column reaches the footer, drop to `font-size: 0.74em`, then shorten bullets, but never cut a
+  due date. Write the tie-in line plainly ("Good practice for Lab 6"), not as a dramatic verdict.
+  The quiz itself is generated —
   `tools/quizzes/<slug>.py` holds the questions, `tools/build_quiz.py` renders it to
   `docs/quizzes/<slug>/index.html`, and the header of `build_quiz.py` is the step-by-step. Twelve
   questions in three parts runs about five minutes. Every question carries an explanation, because
