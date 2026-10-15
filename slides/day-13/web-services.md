@@ -22,7 +22,7 @@ Civil & Construction Engineering
 
 Dr. Dan Ames and Dr. James Halgren
 
-<!-- Thursday lecture plus a short follow-along. Today is a light introduction to web services, and in particular the OGC standards, then students follow along in QGIS: connect to UGRC's services, add three live layers, and upload a quick layout for the in-class activity. A rough budget for the 50 minutes: 20 to 25 minutes of slides, 15 to 20 minutes of follow-along, 10 minutes for the Map Experience pitch. The map on the right was made entirely from web services: no downloads, no unzipping. Concepts Exam 1 closed yesterday, so expect a tired room. -->
+<!-- Thursday lecture plus a short follow-along. Today is a light introduction to web services built around one question, whether a service sends a picture or the features, then students follow along in QGIS: connect to UGRC's services, add three live layers, and upload a quick layout for the in-class activity. A rough budget for the 50 minutes: 15 minutes of slides, 15 to 20 minutes of follow-along, 10 minutes for the Map Experience pitch. The map on the right was made entirely from web services: no downloads, no unzipping. Concepts Exam 1 closed yesterday, so expect a tired room. -->
 
 ---
 
@@ -35,43 +35,28 @@ Dr. Dan Ames and Dr. James Halgren
 
 ---
 
-# Lab 6 update: when a UGRC layer won't add
-
-![bg right:45% w:94%](images/web-opensgid-browse.png)
-
-- About **a third** of UGRC's REST layers have **no extent**, so QGIS 3.44 refuses them: *Could not retrieve layer extent*
-- **That isn't your mistake**
-- Thanks to **Isabel**, there's a way around it: the **Open SGID** database
-- Same data, **full credit**. See the end of **Lab&nbsp;6, Step&nbsp;3**
-
-<!-- Reminder before we start. Isabel showed the class the Open SGID PostGIS connection when the REST connection would not add a layer. Lab 6, Step 3 now has a warning callout and a backup method built from her captures: PostgreSQL connection to opensgid.agrc.utah.gov, port 5432, database opensgid, SSL mode disable, user and password agrc (UGRC's published public credentials). There is also a tip for pulling one stubborn layer through its feature-service query URL. Have the connection ready for today's follow-along; students who hit the extent error can switch to it and keep going. If they use it, they say so in their data table. -->
-
----
-
 # Today's Goals
 
 ![bg right:34% w:88%](images/web-goals-services.jpg)
 
 By the end of class you should be able to:
 
-- Say what a **web service** is, and when you would use one instead of a download
-- Tell **WMS, WMTS, WFS, WCS, XYZ** and **ArcGIS REST** apart
-- Answer the one question that matters for each: *do I get a **picture**, or the **features**?*
-- Read a service **URL** and a **REST services directory**
-- Connect **QGIS** to UGRC's services and make a quick map from **three live layers**: a running start on **Lab 6**
+- Say what a **web service** is, and when you would stream data instead of downloading it
+- Answer the one question that matters for any service: *do I get a **picture**, or the **features**?*
+- Connect **QGIS** to UGRC and make a quick map from **three live layers**: a running start on **Lab 6**
 
 <!-- Students need laptops with QGIS today: the second half of the hour is a follow-along of Lab 6, Step 3, ending in a quick layout they upload as the in-class activity. -->
 
 ---
 
-# On Tuesday: two ways to get any of it
+# Download or stream?
 
 ![h:150 center](images/web-download-vs-service.png)
 
 <div class="columns">
 <div>
 
-**Download**
+**Download** — like a song you saved to your phone
 - A file lands on your disk
 - Yours forever, works offline
 - Frozen the moment you downloaded it
@@ -79,7 +64,7 @@ By the end of class you should be able to:
 </div>
 <div>
 
-**Web service** ← *today*
+**Web service** — like Spotify ← *today*
 - QGIS reads it from the server, live
 - Always current, nothing to store
 - Needs a network, and the server must be up
@@ -87,29 +72,7 @@ By the end of class you should be able to:
 </div>
 </div>
 
-<!-- A one-minute recap of Tuesday's last slide. Almost every SGID dataset offers both a download and a feature service link; today is entirely about the right-hand column. -->
-
----
-
-# Three ways to put data in a map
-
-![h:330 center](images/web-source-types.png)
-
-<div class="columns">
-<div>
-
-- A **local file** is the food already in your fridge
-- A **database** is takeout you go and pick up
-
-</div>
-<div>
-
-- A **web service** is delivery: someone else stores it, keeps it fresh, and brings you exactly the portion you asked for
-
-</div>
-</div>
-
-<!-- This analogy is from Lab 6, so students will see it again. The engineering point behind the joke: with a web service you are not responsible for storage, updates, or backups, and you always get the current version. The cost is that you are dependent on someone else's server being up. -->
+<!-- A one-minute recap of Tuesday's last slide. Almost every SGID dataset offers both a download and a feature service link; today is entirely about the right-hand column. The Spotify comparison carries the whole trade-off: nothing to store and always the current version, but no signal, no music. If someone asks about databases (Lab 6's Open SGID backup is one), they sit in between: also live, also someone else's server, just a different kind of connection. -->
 
 ---
 
@@ -135,83 +98,34 @@ By the end of class you should be able to:
 
 ---
 
-# The OGC standards
-
-<div class="columns" style="grid-template-columns: 1fr 1.15fr;">
-<div>
-
-![w:280](images/web-btn-wms.png)
-
-![h:350 center](images/web-wms-getmap.jpg)
-
-</div>
-<div>
-
-- The **Open Geospatial Consortium** publishes the standards that let any GIS talk to any server — like a standard USB connector
-- **WMS** (Web Map Service): the server draws the map and sends back a **picture**
-- **WMTS** (Web Map Tile Service): the same idea, but pre-drawn **tiles**, so it is much faster
-- You see the map; you cannot query the underlying features
-
-</div>
-</div>
-
-<!-- The hillshade on the left is a real WMS response: it came from the USGS 3DEP elevation service, and that is the Wasatch Front with Utah Lake on the left. The server rendered it and sent back a PNG. Nothing about the elevation values came with it, just the picture. -->
-
----
-
-# WFS and WCS: the raw ingredients
-
-<div class="columns" style="grid-template-columns: 1.35fr 1fr;">
-<div>
-
-![w:260](images/web-btn-wfs.png)
-
-- **Web Feature Service**: returns actual **vector features**, with their attributes
-- Slower than a picture, but you can query, select, and **analyze** it
-- Successor: **OGC API - Features**, rebuilt on plain URLs and GeoJSON
-
-![w:260](images/web-btn-wcs.png)
-
-- **Web Coverage Service**: the raster equivalent — **cell values**, not a picture
-
-</div>
-<div>
-
-![w:290 center](images/web-wfs-ingredients.png)
-
-</div>
-</div>
-
-<!-- WFS is a Web Feature Service; WCS is a Web Coverage Service. Back to the food analogy: WMS is a cooked meal, WFS is raw ingredients. If you only need to look at it, take the picture, it is faster. If you need to run a buffer, a clip, or an attribute query, you need the features. This distinction is worth a quiz question. -->
-
----
-
-# Outside the OGC standards
+# A picture, or the features?
 
 <div class="columns">
 <div>
 
-![w:280](images/web-btn-xyz.png)
+**A picture** — a screenshot of the spreadsheet
 
-- **XYZ tiles**: a looser, wildly popular version of WMTS. A URL template with `{z}/{x}/{y}` in it. This is how Google, OpenStreetMap, and almost every basemap works
+![h:250 center](images/web-wms-getmap.jpg)
 
-![w:280](images/web-btn-vectortile.png)
-
-- **Vector Tile**: tiles, but containing features instead of pictures, so you can restyle them
+- The server draws the map and sends an image
+- Fast, but you can only **look** at it
+- **WMS**, **WMTS**, **XYZ tiles**: every basemap
 
 </div>
 <div>
 
-![w:280](images/web-btn-arcgis-rest.png)
+**The features** — the spreadsheet itself
 
-- **ArcGIS REST Server**: Esri's own web service. Serves vector *or* raster
-- A **feature service** on an Esri server is reached this way
-- Not an open standard, but so widely deployed that QGIS supports it natively — and it is what **UGRC uses**
+![h:250 center](images/web-features-table.png)
+
+- Real geometry and attributes arrive
+- You can select, query, and **buffer** them
+- **WFS**, and an Esri **feature service**: what **UGRC** uses
 
 </div>
 </div>
 
-<!-- All six of these buttons live at the bottom of the QGIS Data Source Manager list. The takeaway is not the acronyms but the question they answer: am I getting a picture, or am I getting features? -->
+<!-- This is the one idea of the day. A screenshot of a spreadsheet looks exactly like the spreadsheet, but you cannot sort it, sum it, or fix a typo in it. A WMS layer is the same: the hillshade on the left is a real WMS response from the USGS 3DEP elevation service, the Wasatch Front with Utah Lake, and nothing about the elevation values came with it. The table on the right is what a feature service gives you: every road segment with its attributes. All of these buttons sit at the bottom of the QGIS Data Source Manager list. If asked: WCS is the feature-style service for rasters (cell values, not a picture), vector tiles are tiles that carry features, and OGC is the standards body that defines WMS and WFS, like a USB standard for maps. None of that is on the lab; the picture-or-features question is. -->
 
 ---
 
@@ -245,49 +159,11 @@ By the end of class you should be able to:
 
 # A web service is just a URL
 
-![bg right:33% w:94%](images/web-service-url.jpg)
+![h:400 center](images/web-rest-directory.png)
 
-<div style="font-size:0.72em;">
+<p style="text-align:center;font-size:0.75em;margin-top:0;"><code>services1.arcgis.com/99lidPhWCzftIe9K/ArcGIS/rest/services</code> — UGRC, <strong>more than 900 services</strong>. This is the URL you paste into QGIS.</p>
 
-**A WMS request** — asks the server to draw a picture:
-
-```
-https://elevation.nationalmap.gov/arcgis/services/3DEPElevation/ImageServer/WMSServer
-  ?SERVICE=WMS&REQUEST=GetMap&LAYERS=3DEPElevation
-  &CRS=EPSG:3857&BBOX=-12470000,4860000,-12380000,4950000
-  &WIDTH=800&HEIGHT=800&FORMAT=image/png
-```
-
-**An ArcGIS REST query** — asks the server for features:
-
-```
-https://services1.arcgis.com/99lidPhWCzftIe9K/ArcGIS/rest/services
-  /QuaternaryFaults/FeatureServer/0/query?where=1=1&outFields=*&f=json
-```
-
-</div>
-
-- Every service also answers **`?request=GetCapabilities`**: *what layers do you have?*
-
-<!-- Paste one of these into a browser during class. The first returns the hillshade image from two slides ago; the second returns a wall of JSON with fault geometry and attributes. That is all QGIS is doing when you add a web layer: building URLs like these and drawing what comes back. GetCapabilities is what QGIS calls first when you hit Connect. -->
-
----
-
-# What a REST services directory looks like
-
-![h:460 center](images/web-rest-directory.png)
-
-<p style="text-align:center;font-size:0.7em;margin-top:0;">services1.arcgis.com/99lidPhWCzftIe9K/ArcGIS/rest/services — <strong>more than 900 services</strong></p>
-
-<!-- This is UGRC's ArcGIS REST endpoint, opened in a browser. Every one of those links is a dataset you can add to QGIS. It is a directory, in the plain old web sense; you can click your way down it. This exact URL is the one Lab 6 asks you to paste into QGIS. -->
-
----
-
-# And one service inside it
-
-![h:470 center](images/web-rest-featureserver.png)
-
-<!-- Drill into QuaternaryFaults and the server tells you everything QGIS needs: the geometry type, the spatial reference (102100 / EPSG:3857 Web Mercator), the extent, the layers, the max record count, and the supported operations. This page is metadata, which is exactly what we spend a whole week on later. -->
+<!-- This is UGRC's ArcGIS REST endpoint, opened in a browser. Every link is a dataset you can add to QGIS, and you can click your way down it like any web directory. When you hit Connect, QGIS's first question to the server is "what layers do you have?" (for WMS and WFS that request is called GetCapabilities), and the answer fills the list in the Data Source Manager. After that QGIS just builds URLs and draws what comes back. If there is time, paste the URL into a browser live; if not, skip straight to QGIS. -->
 
 ---
 
@@ -297,7 +173,7 @@ https://services1.arcgis.com/99lidPhWCzftIe9K/ArcGIS/rest/services
 
 ## Follow along on your laptop
 
-<!-- Switch to QGIS here and have everyone follow along; the next three slides are the fallback if the projector or network misbehaves. Connect to the UGRC endpoint, search for QuaternaryFaults, add it, add two more layers, and open the attribute table to show the features really came across. If the room's Wi-Fi struggles, the Clyde 234 lab machines are wired. -->
+<!-- Switch to QGIS here and have everyone follow along; the next two slides are the fallback if the projector or network misbehaves. Connect to the UGRC endpoint, search for QuaternaryFaults, add it, add two more layers, and open the attribute table to show the features really came across. If the room's Wi-Fi struggles, the Clyde 234 lab machines are wired. -->
 
 ---
 
@@ -331,10 +207,10 @@ https://services1.arcgis.com/99lidPhWCzftIe9K/ArcGIS/rest/services
 <div class="columns" style="grid-template-columns: 1fr 1.2fr;">
 <div>
 
-- Use the **search box** in the Data Source Manager, not your eyes
-- Layer names are the **database names**, not the friendly ones: `QuaternaryFaults`, not "Quaternary Faults"
-- Not everything lives under one endpoint — UGRC has more than one server
-- Nothing showing up? Check the connection URL first, then ask a TA
+- Use the **search box**, not your eyes: `fault`, `bound`, `oil`
+- Names are **database names**: `QuaternaryFaults`, not "Quaternary Faults"
+- Not there? UGRC has a **second server** (Lab 6, step 18)
+- *Could not retrieve layer extent*? **Not your mistake.** Use **Isabel's** Open SGID fix at the end of **Lab&nbsp;6, Step&nbsp;3**
 
 </div>
 <div>
@@ -345,14 +221,6 @@ https://services1.arcgis.com/99lidPhWCzftIe9K/ArcGIS/rest/services
 </div>
 
 <!-- The searching is the real skill here. Tell students to search a fragment: "fault", "bound", "oil". If a dataset they found in the SGID Index does not appear, it is probably on a different UGRC endpoint; Lab 6 gives a second URL for exactly this case. Known problem since October 2026: about a third of the layers on UGRC's main server publish no extent, and QGIS 3.44 refuses to add those with "Could not retrieve layer extent". Lab 6 Step 3 now ends with a backup method, the Open SGID PostgreSQL connection (host opensgid.agrc.utah.gov, port 5432, database opensgid, user and password agrc, SSL disabled); have it set up on the projector machine before class and switch to it the moment the REST connection misbehaves. -->
-
----
-
-# They behave like any other layer
-
-![h:465 center](images/web-qgis-styled-layers.jpg)
-
-<!-- Once added, a web-service layer sits in the Layers panel like a shapefile: you style it, label it, open its attribute table, and run analysis on it. Here: red volcanic vent triangles, yellow Quaternary faults, and purple oil and gas fields over a satellite basemap. Not one of these was downloaded. -->
 
 ---
 
@@ -372,30 +240,6 @@ https://services1.arcgis.com/99lidPhWCzftIe9K/ArcGIS/rest/services
 
 ---
 
-# Cautions when you build on someone else's server
-
-<div class="columns">
-<div>
-
-- **The server can go down**, or be slow, or change its URL. Download a copy before a deadline or a field trip
-- **You need a network.** Web layers are blank when you are offline
-- **Projections**: services publish in a fixed CRS, often Web Mercator. QGIS reprojects on the fly, but check before you measure anything
-
-</div>
-<div>
-
-![w:300 center](images/web-cautions.jpg)
-
-- **A picture is not data.** You cannot analyze a WMS layer, only look at it
-- **License and attribution**: public agency data is usually free to use with credit. Read the terms, and cite the source on your map
-
-</div>
-</div>
-
-<!-- One more caution worth saying aloud: rendering can be slow with big vector services, so limit the extent. The professional point: a live service is a dependency. On a real project you decide deliberately which layers are live, because they change, and which are cached locally, because you cannot afford them to vanish the night before a submittal. -->
-
----
-
 <!-- _class: activity -->
 
 # Lab 6: your turn
@@ -406,9 +250,10 @@ https://services1.arcgis.com/99lidPhWCzftIe9K/ArcGIS/rest/services
 - Write **one question** you can answer with **three** SGID datasets
 - Add all three to QGIS **as web services**, not downloads
 - Style them, build a **layout** with every required map element, and write a short conclusion
+- Live layers need the server: **export your layout early**, not at 11:58 on Saturday
 - Due **Saturday at 11:59 pm**: [Lab 6 instructions](https://byu-hydroinformatics.github.io/cce114-geomatics/assignments/lab-06/)
 
-<!-- Steps 1 and 2 (explore the SGID, choose the datasets, write the question) were possible after Tuesday; Step 3 is what students just did in the follow-along. Remind students that the Clyde 234 lab machines have QGIS 3.44 and a wired network if their laptop or the Wi-Fi gives them trouble. -->
+<!-- Steps 1 and 2 (explore the SGID, choose the datasets, write the question) were possible after Tuesday; Step 3 is what students just did in the follow-along. Remind students that the Clyde 234 lab machines have QGIS 3.44 and a wired network if their laptop or the Wi-Fi gives them trouble. The professional version of the export-early bullet: a live service is a dependency, so on a real project you decide deliberately which layers stay live and which you keep a local copy of, because you cannot afford them to vanish the night before a submittal. Services usually publish in Web Mercator and QGIS reprojects on the fly, so check the CRS before measuring anything. -->
 
 ---
 
@@ -440,7 +285,9 @@ The **Community and Professional Map Experience**, due **Wednesday of Week 10**:
 
 <!-- Confirm the Quiz 6 dates on Learning Suite before class. -->
 
-<!-- Deck notes (2026-10-09): split out of the Day 12 deck "Finding Spatial Data and Web Services" when Week 7's Thursday became a short lecture with a follow-along activity in place of the full hands-on session. Every slide from "Three ways to put data in a map" through "Cautions" is the second half of that deck, unchanged except for American spelling, the UGRC service count, and the old layout-example slide, which became the in-class activity. New: the title and goals slides, the Tuesday recap, the "Into QGIS" divider, the Lab 6 slide, the Community and Professional Map Experience pitch (from the Week 7 hands-on run sheet), and Before Next Class. The QGIS screenshots are genuine QGIS 3.x captures reused from Lab 6. web-rest-directory.png and web-rest-featureserver.png show Esri's REST services directory as served by UGRC, in a browser; they are correct as they stand. The WMS hillshade on the OGC slide is a real GetMap response from the USGS 3DEP elevation service for the Wasatch Front, fetched with the URL on the "A web service is just a URL" slide. UGRC's REST endpoint listed 905 services on 2026-10-09 (891 on 2026-09-02); the slides say "more than 900", which will drift. -->
+<!-- Deck notes (2026-10-09): split out of the Day 12 deck "Finding Spatial Data and Web Services" when Week 7's Thursday became a short lecture with a follow-along activity in place of the full hands-on session. Every slide from "Three ways to put data in a map" through "Cautions" is the second half of that deck, unchanged except for American spelling, the UGRC service count, and the old layout-example slide, which became the in-class activity. New: the title and goals slides, the Tuesday recap, the "Into QGIS" divider, the Lab 6 slide, the Community and Professional Map Experience pitch (from the Week 7 hands-on run sheet), and Before Next Class. The QGIS screenshots are genuine QGIS 3.x captures reused from Lab 6. web-rest-directory.png and web-rest-featureserver.png show Esri's REST services directory as served by UGRC, in a browser; they are correct as they stand. The WMS hillshade on the OGC slide is a real GetMap response from the USGS 3DEP elevation service for the Wasatch Front, fetched with the URL on the "A web service is just a URL" slide. UGRC's REST endpoint listed 905 services on 2026-10-09 (891 on 2026-09-02); the slides say "more than 900", which will drift.
+
+Revised 2026-10-15 after the first teaching, which ran long and felt like too much: the food-delivery analogy (fridge, takeout, delivery; WFS as raw ingredients) did not land, and the acronym tour buried the one idea students need. Now: the recap uses download versus Spotify; the OGC, WFS/WCS, and "outside the standards" slides became one "A picture, or the features?" slide built on a screenshot-versus-spreadsheet comparison, using the real WMS hillshade and a QGIS attribute table (web-features-table.png, copied from the Day 22 deck); the URL, REST directory, and single-service slides became one; the "Three ways", "They behave like any other layer", "Cautions", and "Lab 6 update" slides were cut, with the Open SGID fallback moved onto "Finding your layer" and the export-early caution onto the Lab 6 slide. WCS, vector tiles, OGC, and GetCapabilities now live only in speaker notes. web-source-types.png, web-wfs-ingredients.png, web-btn-*.png, web-service-url.jpg, web-rest-featureserver.png, web-opensgid-browse.png, and web-cautions.jpg are no longer used. -->
 
 ---
 

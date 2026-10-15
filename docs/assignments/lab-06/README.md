@@ -14,25 +14,21 @@ Dr. Dan Ames · Brigham Young University
 
 ### **Data Source Types**
 
-We’ve used the Data Source Manager several times now in QGIS. It’s the interface that allows you to add data to your projects, and as you’ve seen on the left side of the manager window, there are many ways to do that. They all fall into 3 categories:
+We’ve used the Data Source Manager several times now in QGIS. It’s the interface that allows you to add data to your projects, and as you’ve seen on the left side of the manager window, there are many ways to do that. Every one of them is a version of two choices:
 
-1. Local Files  
-2. Databases  
-3. Web Services
+1. **Download** a file and open it from your own disk. That is what you’ve done in every lab so far.  
+2. **Stream** the data from someone else’s server while you work, through a **web service**.
 
-So far, we’ve used many **files** to insert data. Most of those files came from **databases** that you can link to directly by using methods like the PostgreSQL option. You can also use a **web service** that will retrieve the data for you from a database. Databases and web services look similar on our end, but think of it this way:
+It’s the difference between a song you’ve saved to your phone and the same song on Spotify. The saved song is yours, plays with no signal, and never changes. The streamed one takes up no space and is always the current version, but it needs a network, and it needs Spotify’s servers to be up. GIS data works the same way: a web service saves you storing large datasets, and every time you open the project you get the agency’s latest copy instead of a file that went stale the day you downloaded it.
 
-1. Using a local file is like eating the food in your fridge.  
-2. Using a database is like getting takeout at a restaurant.  
-3. Web services are like DoorDash, Uber Eats, and other delivery services.
-
-Both **databases** and **web services** are great solutions for handling large amounts of data without using up your computer storage (fridge space). They also both allow data to be updated frequently without the need for re-downloading files with each update (fresh food, the moment it’s ready). On top of the convenience of data ready to go, **web services** offer better security and are easier on database servers (no crowded restaurant, many orders picked up by one delivery person).
-
-![Local files, databases, and web services illustrated as a refrigerator, a drive-thru, and a food-delivery app](images/anchored2.png)
+(There is a middle option you’ll meet at the end of Step 3: connecting straight to someone else’s **database**, such as UGRC’s Open SGID. It is also live and also on someone else’s server; it just uses a different kind of connection.)
 
 Web services also matter when the data itself won’t hold still. During wildfire season, the National Interagency Fire Center publishes live fire perimeters as a public ArcGIS feature service that refreshes as often as every five minutes, and it’s the same feed behind the fire maps you see in the news. Nobody is downloading and unzipping a shapefile while the fire is still moving (https://data-nifc.opendata.arcgis.com/).
 
 ### **Web Services in QGIS**
+
+> [!TIP]
+> **The one question that matters for any web service: does it send you a picture, or the features?** A picture service draws the map on the server and sends an image, like a screenshot of a spreadsheet. It looks right, but you can’t select, measure, or buffer anything in it. A feature service sends the actual points, lines, and polygons with their attributes, like the spreadsheet itself. Basemaps only need to look right, so pictures are fine for them. Your three Lab 6 layers need to be features. Read the list below with that question in mind.
 
 The Open Geospatial Consortium (OGC) has published several standards for sharing GIS data on the web. Just as a standard USB cord enables various types of connections, an OGC standard allows different map and GIS applications to connect to the same data sources. QGIS uses some of these OGC standards, and you can find them near the bottom of the list in the Data Source Manager:  
 ![WMS/WMTS button](images/image1.png)
@@ -42,10 +38,8 @@ The Open Geospatial Consortium (OGC) has published several standards for sharing
 
 ![WFS / OGC API - Features button](images/image2.png)![WCS button](images/image3.png)
 
-* Web Feature Service (**WFS**): Instead of returning images, a WFS provides *vector data* (points, lines, and polygons) that your computer creates images from. To continue the food analogy, it’s like getting raw ingredients rather than a prepared meal. WFS is much slower, but more analysis can be done because you have raw data, not just an image. WFS also has a modern successor called OGC API \- Features (it started life as “WFS 3.0” before being renamed): the same idea rebuilt on plain web URLs and GeoJSON, so even your web browser can read the data directly. QGIS handles both through the same “WFS / OGC API \- Features” entry in the Data Source Manager.  
+* Web Feature Service (**WFS**): Instead of returning images, a WFS provides *vector data* (points, lines, and polygons) that your computer creates images from. WFS is slower, but more analysis can be done because you have raw data, not just an image. WFS also has a modern successor called OGC API \- Features (it started life as “WFS 3.0” before being renamed): the same idea rebuilt on plain web URLs and GeoJSON, so even your web browser can read the data directly. QGIS handles both through the same “WFS / OGC API \- Features” entry in the Data Source Manager.  
 * Web Coverage Service (**WCS**): Similar to a WFS, but provides *raster data* rather than discrete geometries/features.
-
-![Raw grocery ingredients icon labeled WFS, continuing the food analogy: a WFS delivers raw data instead of a prepared image](images/anchored1.png)
 
 ![XYZ button](images/image4.png)![Vector Tile button](images/image5.png)![ArcGIS REST Server button](images/image6.png)  
 There are a couple of other web services in the Data Source Manager that exist outside the OGC standards:
@@ -186,7 +180,7 @@ Be creative, and if you want to do something ridiculous like answer the question
 
 #### **Backup Method: Connect to the Open SGID Database Instead**
 
-UGRC also publishes the whole SGID as a public **PostGIS database** called the [Open SGID](https://gis.utah.gov/documentation/sgid/open-sgid/). It holds the same curated datasets, organized under the same category names you browsed in Step 1, and QGIS reads it through its **PostgreSQL** connection instead of the ArcGIS REST one. In the terms of the Background section this is takeout rather than delivery, but nothing is downloaded or unzipped and the data stay current at the source, so it serves the purpose of this lab. If you use it, say so in your data table under "methods available for accessing the data."
+UGRC also publishes the whole SGID as a public **PostGIS database** called the [Open SGID](https://gis.utah.gov/documentation/sgid/open-sgid/). It holds the same curated datasets, organized under the same category names you browsed in Step 1, and QGIS reads it through its **PostgreSQL** connection instead of the ArcGIS REST one. In the terms of the Background section this is the middle option, a database connection rather than a web service, but nothing is downloaded or unzipped and the data stay current at the source, so it serves the purpose of this lab. If you use it, say so in the Access methods column of your data table.
 
 1. Open the Data Source Manager, choose **PostgreSQL** in the left-hand list, and click **New**.  
 2. Fill in the connection exactly as shown. Name: `opensgid.agrc.utah.gov` (any name works). Host: `opensgid.agrc.utah.gov`. Port: `5432`. Database: `opensgid`. SSL mode: **disable**. Under Authentication, on the **Basic** tab, user name `agrc` and password `agrc`, with both **Store** boxes checked. These are UGRC's published public credentials, not a secret. (UGRC's documentation now spells the host `opensgid.ugrc.utah.gov`; both names reach the same server.)

@@ -232,6 +232,15 @@ Release assets are public and unmetered. Note that removing the zip from the wor
 shrink `.git`, which still carries it in history; that would need a history rewrite, which nobody
 should do casually on a published repository.
 
+**Day 13 trimmed after its first teaching (2026-10-15).** The Thursday deck ran long and felt
+like too much, and the food-delivery analogy (fridge, takeout, delivery; WFS as raw ingredients)
+did not land. The deck went from 24 slides to 16, built around one question: does a service send a
+*picture* or the *features*? The analogies are now download versus Spotify, and a screenshot of a
+spreadsheet versus the spreadsheet itself. WCS, vector tiles, OGC and GetCapabilities survive only
+in speaker notes. Lab 6's Background got the same treatment, and its two food images were deleted.
+The `services` self-check quiz was left as it was; its GetCapabilities question now goes beyond
+the slides, but the speaker note covers it.
+
 **Week 7 Thursday became a lecture (2026-10-09).** For Fall 2026 the instructor who usually
 teaches Thursday was away in Week 7, so the week became two lectures, with an easy follow-along at the end of Thursday in place of the full hands-on session.
 The old Day 12 deck was split in two: `slides/day-12/finding-spatial-data.md` (Tuesday: who
