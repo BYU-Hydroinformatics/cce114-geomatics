@@ -22,16 +22,7 @@ Civil & Construction Engineering
 
 Dr. Dan Ames and Dr. James Halgren
 
-<!-- Thursday lecture plus a short follow-along. Today is a light introduction to web services built around one question, whether a service sends a picture or the features, then students follow along in QGIS: connect to UGRC's services, add three live layers, and upload a quick layout for the in-class activity. A rough budget for the 50 minutes: 15 minutes of slides, 15 to 20 minutes of follow-along, 10 minutes for the Map Experience pitch. The map on the right was made entirely from web services: no downloads, no unzipping. Concepts Exam 1 closed yesterday, so expect a tired room. -->
-
----
-
-<!-- _paginate: skip -->
-<!-- _footer: "" -->
-
-![bg](images/sioy-flyer.png)
-
-<!-- Announcement before we start. BYU's Student Innovator of the Year competition: students compete for part of $50k in prizes to make an idea real. Applications close November 1, at sioy.byu.edu (or scan the QR code). Worth a look for anyone who has a project idea, including a mapping or GIS one. -->
+<!-- Thursday lecture plus a short follow-along. Today is a light introduction to web services built around one question, whether a service sends a picture or the features, then students follow along in QGIS: connect to UGRC's services, add three live layers, and upload a quick layout for the in-class activity. A rough budget for the 50 minutes: 15 minutes of slides, a 5-minute live demo of a WMS and a WFS, 15 minutes of follow-along, 10 minutes for the Map Experience pitch. The map on the right was made entirely from web services: no downloads, no unzipping. Concepts Exam 1 closed yesterday, so expect a tired room. -->
 
 ---
 
@@ -173,7 +164,36 @@ By the end of class you should be able to:
 
 ## Follow along on your laptop
 
-<!-- Switch to QGIS here and have everyone follow along; the next two slides are the fallback if the projector or network misbehaves. Connect to the UGRC endpoint, search for QuaternaryFaults, add it, add two more layers, and open the attribute table to show the features really came across. If the room's Wi-Fi struggles, the Clyde 234 lab machines are wired. -->
+<!-- Switch to QGIS here. First the two-part instructor demo on the next two slides (a WMS, then a WFS, from USGS servers that work reliably in QGIS 3.44), then everyone follows along with UGRC; the two slides after the demo are the fallback if the projector or network misbehaves. Connect to the UGRC endpoint, search for QuaternaryFaults, add it, add two more layers, and open the attribute table to show the features really came across. If the room's Wi-Fi struggles, the Clyde 234 lab machines are wired. -->
+
+---
+
+# Live demo: a picture (WMS)
+
+![bg right:38% w:92%](images/web-demo-wms.jpg)
+
+1. **Data Source Manager** → **WMS/WMTS** → **New**
+2. Name `USGS 3DEP`, and paste this URL:
+<span style="font-size:0.47em;white-space:nowrap;"><code>https://elevation.nationalmap.gov/arcgis/services/3DEPElevation/ImageServer/WMSServer</code></span>
+3. **OK** → **Connect** → pick `3DEPElevation:Hillshade Gray` → **Add**
+4. Right-click the layer: there is **no attribute table**. It is a picture
+
+<!-- Instructor demo, about three minutes; students watch. Zoom to the Wasatch Front first. The hillshade arrives in a second or two because the server is only sending an image. Then make the point of the day: right-click the layer and show there is no Open Attribute Table, because QGIS treats a WMS layer as a raster image; the Identify tool gets you at most a pixel value. A second WMS worth having if there is time, and the basemap behind the next slide: USGS Topo, https://basemap.nationalmap.gov/arcgis/services/USGSTopo/MapServer/WMSServer, layer USGSTopo. For a live-data wow, Iowa State's NEXRAD radar mosaic, refreshed every five minutes: https://mesonet.agron.iastate.edu/cgi-bin/wms/nexrad/n0q.cgi, layer nexrad-n0q-900913. All three were tested in QGIS 3.44 on 2026-10-15. -->
+
+---
+
+# Live demo: the features (WFS)
+
+![bg right:38% w:92%](images/web-demo-wfs.jpg)
+
+1. **Zoom to the Wasatch Front first**
+2. **Data Source Manager** → **WFS / OGC API - Features** → **New**
+3. Name `USGS Mineral Resources`, URL:
+<span style="font-size:0.6em;"><code>https://mrdata.usgs.gov/services/mrds</code></span>
+4. **Connect** → pick **Mineral Resources Data System** (`ms:mrds-high`), check **Only request features overlapping the view extent** → **Add**
+5. **Open Attribute Table**: every mine and prospect, with its name
+
+<!-- Instructor demo, about three minutes. This is the USGS Mineral Resources Data System, a classic OGC WFS. Without the view-extent box QGIS pages through the whole national layer, so zoom in first and tick it. Along the Wasatch Front it returned 1,408 sites in about five seconds in testing. Then open the attribute table (site_name, dev_stat for producer or prospect, a url to the USGS record) and select a few rows to show they highlight on the map: these are features, not a picture. The clusters are worth naming: the Oquirrh Mountains and Bingham Canyon on the left, Park City and Alta up Little Cottonwood on the right. Bonus if there is time, the modern successor: same button, New, URL https://api.waterdata.usgs.gov/ogcapi/v0, and QGIS lists it as OGC API - Features; add Monitoring locations for every USGS stream gage and well (4,992 in the same view, about ten seconds). Both tested in QGIS 3.44 on 2026-10-15. Then hand over to the students: "Now you do the same thing with Utah's data." -->
 
 ---
 
@@ -307,6 +327,8 @@ The **Community and Professional Map Experience**, due **Wednesday of Week 10**:
 
 <!-- Deck notes (2026-10-09): split out of the Day 12 deck "Finding Spatial Data and Web Services" when Week 7's Thursday became a short lecture with a follow-along activity in place of the full hands-on session. Every slide from "Three ways to put data in a map" through "Cautions" is the second half of that deck, unchanged except for American spelling, the UGRC service count, and the old layout-example slide, which became the in-class activity. New: the title and goals slides, the Tuesday recap, the "Into QGIS" divider, the Lab 6 slide, the Community and Professional Map Experience pitch (from the Week 7 hands-on run sheet), and Before Next Class. The QGIS screenshots are genuine QGIS 3.x captures reused from Lab 6. web-rest-directory.png and web-rest-featureserver.png show Esri's REST services directory as served by UGRC, in a browser; they are correct as they stand. The WMS hillshade on the OGC slide is a real GetMap response from the USGS 3DEP elevation service for the Wasatch Front, fetched with the URL on the "A web service is just a URL" slide. UGRC's REST endpoint listed 905 services on 2026-10-09 (891 on 2026-09-02); the slides say "more than 900", which will drift.
 
-Revised 2026-10-15 after the first teaching, which ran long and felt like too much: the food-delivery analogy (fridge, takeout, delivery; WFS as raw ingredients) did not land, and the acronym tour buried the one idea students need. Now: the recap uses download versus Spotify; the OGC, WFS/WCS, and "outside the standards" slides became one "A picture, or the features?" slide built on a screenshot-versus-spreadsheet comparison, using the real WMS hillshade and a QGIS attribute table (web-features-table.png, copied from the Day 22 deck); the URL, REST directory, and single-service slides became one; the "Three ways", "They behave like any other layer", "Cautions", and "Lab 6 update" slides were cut, with the Open SGID fallback moved onto "Finding your layer" and the export-early caution onto the Lab 6 slide. WCS, vector tiles, OGC, and GetCapabilities now live only in speaker notes. web-source-types.png, web-wfs-ingredients.png, web-btn-*.png, web-service-url.jpg, web-rest-featureserver.png, web-opensgid-browse.png, and web-cautions.jpg are no longer used. -->
+Revised 2026-10-15 after the first teaching, which ran long and felt like too much: the food-delivery analogy (fridge, takeout, delivery; WFS as raw ingredients) did not land, and the acronym tour buried the one idea students need. Now: the recap uses download versus Spotify; the OGC, WFS/WCS, and "outside the standards" slides became one "A picture, or the features?" slide built on a screenshot-versus-spreadsheet comparison, using the real WMS hillshade and a QGIS attribute table (web-features-table.png, copied from the Day 22 deck); the URL, REST directory, and single-service slides became one; the "Three ways", "They behave like any other layer", "Cautions", and "Lab 6 update" slides were cut, with the Open SGID fallback moved onto "Finding your layer" and the export-early caution onto the Lab 6 slide. WCS, vector tiles, OGC, and GetCapabilities now live only in speaker notes. web-source-types.png, web-wfs-ingredients.png, web-btn-*.png, web-service-url.jpg, web-rest-featureserver.png, web-opensgid-browse.png, and web-cautions.jpg are no longer used.
+
+Revised again 2026-10-15: the Student Innovator of the Year flyer was removed (a Fall 2026 announcement), and two "Live demo" slides open the Into QGIS section, because several UGRC layers fail in QGIS 3.44. They use a USGS 3DEP WMS and the USGS Mineral Resources Data System WFS, with USGS Topo, NEXRAD radar, and the USGS OGC API gages as extras in the notes. All were tested in QGIS 3.44.14 that day. Rerun tools/check_demo_services.py before teaching. web-demo-wms.jpg and web-demo-wfs.jpg are genuine QGIS 3.44 renders of those live services (the hillshade, and MRDS sites over the USGS Topo WMS), made headless with the same layer definitions as the check script. -->
 
 <!-- Five minutes, in pairs, then a show of hands on the two worth arguing about: what a WMS actually sends back, and which service you need before you can buffer anything. Those are the two that decide whether a Lab 6 map works. If the room has no signal, put the URL on the board. The page is linked from the Week 7 page too. -->

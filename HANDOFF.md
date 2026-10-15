@@ -240,6 +240,10 @@ spreadsheet versus the spreadsheet itself. WCS, vector tiles, OGC and GetCapabil
 in speaker notes. Lab 6's Background got the same treatment, and its two food images were deleted.
 The `services` self-check quiz was left as it was; its GetCapabilities question now goes beyond
 the slides, but the speaker note covers it.
+Later the same day the SIOY flyer came out, and two **Live demo** slides were added (a USGS
+3DEP WMS, then the USGS Mineral Resources WFS), because several UGRC layers do not load in QGIS
+3.44. **Before teaching Day 13, run `tools/check_demo_services.py`** with QGIS's Python (the
+command is in its docstring) to confirm the demo services still answer.
 
 **Week 7 Thursday became a lecture (2026-10-09).** For Fall 2026 the instructor who usually
 teaches Thursday was away in Week 7, so the week became two lectures, with an easy follow-along at the end of Thursday in place of the full hands-on session.
