@@ -35,6 +35,19 @@ Dr. Dan Ames and Dr. James Halgren
 
 ---
 
+# Lab 6 update: when a UGRC layer won't add
+
+![bg right:45% w:94%](images/web-opensgid-browse.png)
+
+- About **a third** of UGRC's REST layers have **no extent**, so QGIS 3.44 refuses them: *Could not retrieve layer extent*
+- **That isn't your mistake**
+- Thanks to **Isabel**, there's a way around it: the **Open SGID** database
+- Same data, **full credit**. See the end of **Lab&nbsp;6, Step&nbsp;3**
+
+<!-- Reminder before we start. Isabel showed the class the Open SGID PostGIS connection when the REST connection would not add a layer. Lab 6, Step 3 now has a warning callout and a backup method built from her captures: PostgreSQL connection to opensgid.agrc.utah.gov, port 5432, database opensgid, SSL mode disable, user and password agrc (UGRC's published public credentials). There is also a tip for pulling one stubborn layer through its feature-service query URL. Have the connection ready for today's follow-along; students who hit the extent error can switch to it and keep going. If they use it, they say so in their data table. -->
+
+---
+
 # Today's Goals
 
 ![bg right:34% w:88%](images/web-goals-services.jpg)
