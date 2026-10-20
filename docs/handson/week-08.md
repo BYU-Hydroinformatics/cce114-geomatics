@@ -63,7 +63,7 @@ export silently keeps the old projection. Choose the target explicitly.
 ### Before class
 
 - [ ] QGIS open with the Tissot indicatrix layer (or the Week 3 US states) loaded in a project whose CRS is **EPSG:4326**.
-- [ ] Four CRS codes on a slide or sticky note: **4326** (WGS 84, degrees), **3857** (Web Mercator), **5070** (NAD83 CONUS Albers, equal area), **26912** (NAD83 UTM 12N), and **3566** (NAD83 Utah Central, US feet).
+- [ ] Five CRS codes on a slide or sticky note: **4326** (WGS 84, degrees), **3857** (Web Mercator), **5070** (NAD83 CONUS Albers, equal area), **26912** (NAD83 UTM 12N), and **3566** (NAD83 Utah Central, US feet).
 - [ ] **Project > Properties > General**: measurements set to **Ellipsoidal**, so the Measure tool gives true ground distances regardless of the projection.
 - [ ] Learning Suite open to the *Playing with Projections* activity.
 
@@ -123,4 +123,4 @@ Lab 7's mystery points CSV has coordinates with no CRS given. The method: look a
 - **`$area` is a tiny decimal.** Project measurements are planimetric and the layer is in degrees. Switch to ellipsoidal, or reproject.
 - **Export keeps the old CRS.** The CRS dropdown in Save Features As was left on "Layer CRS." Choose the target explicitly.
 - **The CRS search finds nothing.** They typed the name with a typo; search by the EPSG number.
-- **Utah Central comes in meters, not feet.** There are two: EPSG:3566 is US feet, EPSG:26912-style meter versions exist too. Read the CRS description.
+- **Utah Central comes in meters, not feet.** Searching "Utah Central" lists several: EPSG:3566 is *NAD83 / Utah Central (ftUS)*, EPSG:32143 is the meter version, and EPSG:2281 is international feet. Search by number, or read the units in the CRS name.

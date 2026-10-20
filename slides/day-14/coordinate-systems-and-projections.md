@@ -261,7 +261,7 @@ Let's compare some place sizes: [thetruesize.com](https://www.thetruesize.com/)
 
 ![h:420 center](images/crs-transverse-oblique-mercator.png)
 
-<!-- Two other cylindrical variants: transverse (the cylinder is rotated 90 degrees, so it touches along a meridian) and oblique (rotated to any angle). In each case there is a ring around the globe where distortion is minimised. Now ask the key question: what if you could re-center that line over your area of interest? What if you rotated the transverse cylinder all the way around, stopping every 6 degrees? -->
+<!-- Two other cylindrical variants: transverse (the cylinder is rotated 90 degrees, so it touches along a meridian) and oblique (rotated to any angle). In each case there is a ring around the globe where distortion is minimized. Now ask the key question: what if you could re-center that line over your area of interest? What if you rotated the transverse cylinder all the way around, stopping every 6 degrees? -->
 
 ---
 
@@ -293,13 +293,13 @@ Let's compare some place sizes: [thetruesize.com](https://www.thetruesize.com/)
 
 ![h:430 center](images/crs-lambert-conic-tangent.png)
 
-<!-- Lambert conformal conic, tangent or secant, is the other big family you will meet. Ask: which parts of the globe have distortion minimised here? The band along the standard parallel. Conformal means shape and angle are preserved locally, which is what you want for surveying and engineering drawings. -->
+<!-- Lambert conformal conic, tangent or secant, is the other big family you will meet. Ask: which parts of the globe have distortion minimized here? The band along the standard parallel. Conformal means shape and angle are preserved locally, which is what you want for surveying and engineering drawings. -->
 
 ---
 
 ![bg contain](images/crs-surface-tangent-cylindrical.jpg)
 
-<!-- Tangential, cylindrical. Ask before revealing: is the surface a cylinder or a cone, is it upright or rotated, does it touch along one line or cut through along two? -->
+<!-- Tangential, cylindrical. The answer label is printed on each of these eight images, so there is no reveal: ask the room to call it out from the picture before anyone reads the label. Three questions every time: is the surface a cylinder or a cone, is it upright or rotated, does it touch along one line or cut through along two? -->
 
 ---
 
@@ -422,9 +422,9 @@ Let's compare some place sizes: [thetruesize.com](https://www.thetruesize.com/)
 
 ![bg right:40% w:92%](images/crs-quiz-utm-zone.jpg)
 
-- UTM minimises distortion **along a line of longitude at the middle of a particular zone** — the zone's **central meridian**
+- UTM minimizes distortion **along a line of longitude at the middle of a particular zone** — the zone's **central meridian**
 - Distortion grows toward the **edges** of the zone, so a project straddling a zone boundary is a problem
-- Nothing about UTM favours one hemisphere; the equator is not special except in Zone-specific false northings
+- Nothing about UTM favors one hemisphere; the equator is not special except in Zone-specific false northings
 
 <!-- If a site spans two zones you either pick one zone and accept the error at the far edge, or move to a State Plane zone or a custom projection. This comes up on real projects, particularly along the Utah-Colorado line. -->
 
@@ -621,7 +621,7 @@ In **QGIS**:
 </div>
 </div>
 
-<!-- The screenshot is the QGIS 3.44 Project Properties, CRS page, filtered to 26912 with NAD83 / UTM zone 12N selected, the same dialog students use in Lab 4. Datum transformation choices live on the Transformations page just below it. Emphasise the distinction between declaring a CRS and reprojecting, because it is the single most common student mistake in Lab 7. -->
+<!-- The screenshot is the QGIS 3.44 Project Properties, CRS page, filtered to 26912 with NAD83 / UTM zone 12N selected, the same dialog students use in Lab 4. Datum transformation choices live on the Transformations page just below it. Emphasize the distinction between declaring a CRS and reprojecting, because it is the single most common student mistake in Lab 7. -->
 
 ---
 
