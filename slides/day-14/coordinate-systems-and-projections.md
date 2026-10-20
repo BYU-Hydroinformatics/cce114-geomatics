@@ -8,7 +8,7 @@ footer: "CCE 114 · Day 14 — Geodesy, Projections, and Coordinate Systems"
 <!-- _class: lead -->
 <!-- _paginate: skip -->
 
-![bg right:45% w:95%](images/crs-globe-to-flat-map.jpg)
+![bg right:52%](images/crs-tater-mercator-shirt.jpg)
 
 # Geodesy, Projections, and Coordinate Systems
 
@@ -17,7 +17,7 @@ Part 1
 CCE 114 Geomatics
 Dr. Dan Ames and Dr. James Halgren
 
-<!-- Tuesday concept lecture, week 8. Thursday is the hands-on session, where students set project and layer CRSs in QGIS and reproject data. This is the lecture that Quiz 6 and Lab 7 are built on, so flag both early. -->
+<!-- Tuesday concept lecture, week 8. Thursday is the hands-on session, where students set project and layer CRSs in QGIS and reproject data. This is the lecture that Quiz 6 and Lab 7 are built on, so flag both early. The hero image is the "Loyal to the Tater Mercator" T-shirt that students gave the instructor, photographed October 2026. -->
 
 ---
 
@@ -83,7 +83,7 @@ Saturday night, LaVell Edwards Stadium
 ![bg right:32% w:88%](images/crs-sphere-vs-ellipsoid.jpg)
 
 - By the end of class you should be able to:
-  - Say what **geodesy** is, and why the shape of the Earth is a hard problem
+  - Say what **geodesy** is (the science of measuring the shape of the Earth and positions on it), and why that is a hard problem
   - Distinguish the **geoid**, the **ellipsoid**, and a **datum**
   - Explain why every flat map **distorts** something, and name what a given projection preserves
   - Tell a **geographic** coordinate system from a **projected** one
@@ -91,6 +91,56 @@ Saturday night, LaVell Edwards Stadium
 - Thursday, in the hands-on session, you do all of this in QGIS
 
 <!-- Set expectations. Today is concepts; Thursday is the software. Reading is GIS Fundamentals chapter 3, which this lecture follows. -->
+
+---
+
+# How far is it from BYU to the University of Utah?
+
+<div class="columns" style="grid-template-columns: 1fr 1.25fr; align-items: center;">
+<div>
+
+| | Latitude | Longitude |
+| --- | --- | --- |
+| **BYU** | 40.2518° N | 111.6493° W |
+| **U of U** | 40.7649° N | 111.8421° W |
+
+- Work it out on paper, in kilometers
+- Two minutes, no phones
+
+</div>
+<div>
+
+![w:640](images/crs-byu-to-utah-map.jpg)
+
+</div>
+</div>
+
+<!-- Let them try before you say anything. Most will subtract and run Pythagoras on the degrees, which gives about 0.55, of no unit at all. The catch is that a degree is not a fixed distance: a degree of latitude is about 111 km, but at 40 degrees north a degree of longitude is only about 85 km (111 times the cosine of the latitude). Degrees are angles, not lengths. Hold the answer for the next slide. -->
+
+---
+
+# Same question, in UTM Zone 12N
+
+<div class="columns" style="grid-template-columns: 1fr 1.25fr; align-items: center;">
+<div>
+
+| | Easting (m) | Northing (m) |
+| --- | --- | --- |
+| **BYU** | 444,780 | 4,455,907 |
+| **U of U** | 428,927 | 4,513,000 |
+
+- Now it is a right triangle in **meters**
+- This is what a **projected** coordinate system buys you
+
+</div>
+<div>
+
+![w:640](images/crs-byu-to-utah-map.jpg)
+
+</div>
+</div>
+
+<!-- Same two points in NAD 83 / UTM zone 12N (EPSG:26912), computed from the latitudes and longitudes on the previous slide with pyproj (treating them as NAD 83; the WGS 84 difference is about a meter). Difference in easting 15,853 m, in northing 57,093 m, so the straight-line distance is about 59.3 km. The geodesic distance on the GRS 80 ellipsoid is 59.27 km, so the flat answer is off by about 20 m over 59 km: that is what UTM costs you. Come back to this on the geographic vs. projected slide. The Fall 2024 deck printed slightly different UTM values for these points and labeled the easting "W"; these are recomputed. The map is a Google Maps screenshot from that deck, cropped. -->
 
 ---
 
@@ -136,23 +186,6 @@ Saturday night, LaVell Edwards Stadium
 
 ---
 
-<!-- _class: quiz -->
-
-# What is Geodesy?
-
-![bg right:40% w:92%](images/crs-what-is-geodesy.jpg)
-
-<ol type="A">
-<li>The science of measuring the shape of the Earth</li>
-<li>The science of studying rocks and minerals</li>
-<li>The science of finding positions based on satellites</li>
-<li>The science of the distributions of populations and resources on the Earth</li>
-</ol>
-
-<!-- Answer: A. Geodesy is the science of measuring the shape of the Earth, and the positions of points on it. B is geology, C is roughly GNSS/surveying, D is closer to geography. Everything today follows from the fact that this is genuinely hard. -->
-
----
-
 # Problem 1: humans perceive the Earth's surface as flat
 
 ![bg right:42% w:92%](images/crs-blind-men-elephant.jpg)
@@ -173,14 +206,6 @@ Saturday night, LaVell Edwards Stadium
 - And it is still a thing: the Flat Earth Society has an active social-media following
 
 <!-- Fun fact: some have argued the Earth is flat to validate biblical language such as "the four corners of the earth." The point for us is not to mock it, it is that flatness is the intuitive model, and geodesy is the work of getting past intuition. -->
-
----
-
-# A round Earth on flat paper
-
-![h:440 center](images/crs-globe-to-flat-map.jpg)
-
-<!-- You cannot flatten a sphere without tearing or stretching it. Try it with an orange peel. Every world map you have ever seen is the result of a decision about where to put the stretching. -->
 
 ---
 
@@ -248,34 +273,17 @@ Saturday night, LaVell Edwards Stadium
 - So the real question is never "which projection is right?" but **"what am I willing to distort?"**
 - Distortion is smallest near where the projection surface touches the globe, and grows with distance from it
 
-<!-- Write the four words on the board and leave them up. Every quiz question for the rest of the hour is an application of the last bullet: find where the surface touches, and ask how far your area of interest is from it. -->
+<!-- Write the four words on the board and leave them up. The rest of the hour is an application of the last bullet: find where the surface touches, and ask how far your area of interest is from it. -->
 
 ---
 
 # The world you have been looking at
 
-![h:450 center](images/crs-world-political-mercator.jpg)
+![h:400 center](images/crs-world-political-mercator.jpg)
 
-<!-- Here is a typical classroom map of the world. What is the dominant feature? Why is Greenland so huge? Look at your globes. This map makes Russia, Canada, and Greenland look like the dominant countries on Earth. -->
+Greenland looks about the size of Africa. Is it? [thetruesize.com](https://www.thetruesize.com/)
 
----
-
-<!-- _class: quiz -->
-
-# Greenland is approximately the same size as…
-
-![bg right:42% w:92%](images/crs-world-political-mercator.jpg)
-
-<ol type="A">
-<li>Africa</li>
-<li>Delaware</li>
-<li>Russia</li>
-<li>Mexico</li>
-</ol>
-
-Let's compare some place sizes: [thetruesize.com](https://www.thetruesize.com/)
-
-<!-- Answer: D, Mexico. Greenland is about 2.2 million km2, Mexico about 2.0 million. On a Mercator map Greenland looks the size of Africa, which is fourteen times larger. Open thetruesize.com and drag Greenland down to the equator; then drag Africa up to the Arctic. -->
+<!-- A typical classroom map of the world, in Mercator. What is the dominant feature? Russia, Canada, and Greenland look like the dominant countries on Earth. Ask what Greenland is closest in size to (Africa, Delaware, Russia, Mexico): it is Mexico, about 2.2 million km2 to Mexico's 2.0 million, while Africa is fourteen times larger. Open thetruesize.com and drag Greenland down to the equator, then drag Africa up to the Arctic. Mercator's virtue is that a line of constant compass bearing is a straight line, which is why it won the age of sail and why it is still the default for web maps. -->
 
 ---
 
@@ -287,11 +295,11 @@ Let's compare some place sizes: [thetruesize.com](https://www.thetruesize.com/)
 
 ---
 
-# The Mercator projection
+# How do projections work?
 
-![h:430 center](images/crs-mercator-projection.png)
+![h:450 center](images/crs-globe-in-tube.jpg)
 
-<!-- This is a Mercator projection, not a Transverse Mercator. How would you make it? Wrap the projection surface into a cylinder around the equator and project outward from a light source at the center of the Earth. Mercator's virtue is that a line of constant compass bearing is a straight line, which is why it won the age of sail and why it is still the default for web maps. -->
+<!-- AI-generated image from the Fall 2024 deck. Put the globe in a tube: if a light at the center cast the coastlines out onto the paper, where would the picture be true, and where stretched? True where the paper touches the globe, worse the farther away it gets. Unroll the tube and you have a cylindrical projection. The next slide is the textbook version of the same picture. -->
 
 ---
 
@@ -322,11 +330,19 @@ Let's compare some place sizes: [thetruesize.com](https://www.thetruesize.com/)
 
 ---
 
-# Universal Transverse Mercator projection zones
+# UTM zones: 60 of them, 6° wide
 
-![h:440 center](images/crs-utm-zones-conus.png)
+![h:440 center](images/crs-utm-zones-world.jpg)
 
-<!-- That is exactly what UTM is. Each zone is 6 degrees of longitude wide, with the cylinder tangent (technically secant) along the zone's central meridian. How many zones go around the globe? Sixty. These are the zones over the continental United States; Utah is mostly Zone 12. -->
+<!-- Sixty zones, each 6 degrees of longitude wide, numbered eastward from the antimeridian. Each zone is its own projection with its own central meridian, which is why UTM coordinates are meaningless until you say which zone. -->
+
+---
+
+# Line of least distortion for UTM Zone 12
+
+![h:440 center](images/crs-utm-zone-12-line.jpg)
+
+<!-- The red line is the central meridian of Zone 12, at 111 degrees west. That is the line of least distortion, and it runs right down the middle of Utah, which is why UTM Zone 12N is a perfectly good working CRS for most of this state. Distortion grows toward the zone edges, and nothing about UTM favors one hemisphere. A site that straddles two zones, which happens along the Utah-Colorado line, means picking one zone and accepting the error at the far edge, or moving to State Plane or a custom projection. -->
 
 ---
 
@@ -342,79 +358,7 @@ Let's compare some place sizes: [thetruesize.com](https://www.thetruesize.com/)
 
 ![h:430 center](images/crs-conic-standard-parallels.png)
 
-<!-- The parallels where the cone touches are the standard parallels: those are the lines of true scale. The central meridian is the line of symmetry. When you pick a conic CRS in QGIS these are the numbers in its definition, and they are chosen to bracket the area you care about. -->
-
----
-
-# Lambert conformal conic (tangent)
-
-![h:430 center](images/crs-lambert-conic-tangent.png)
-
-<!-- Lambert conformal conic, tangent or secant, is the other big family you will meet. Ask: which parts of the globe have distortion minimized here? The band along the standard parallel. Conformal means shape and angle are preserved locally, which is what you want for surveying and engineering drawings. -->
-
----
-
-![bg contain](images/crs-surface-tangent-cylindrical.jpg)
-
-<!-- Tangential, cylindrical. The answer label is printed on each of these eight images, so there is no reveal: ask the room to call it out from the picture before anyone reads the label. Three questions every time: is the surface a cylinder or a cone, is it upright or rotated, does it touch along one line or cut through along two? -->
-
----
-
-![bg contain](images/crs-surface-tangent-oblique-cylindrical.jpg)
-
-<!-- Tangential, oblique, cylindrical. Still a cylinder, still touching one line, but rotated off the poles. -->
-
----
-
-![bg contain](images/crs-surface-tangent-transverse-cylindrical.jpg)
-
-<!-- Tangential, transverse, cylindrical, also known as Transverse Mercator. The cylinder has been rotated a full 90 degrees so it touches along a meridian. This is the parent of every UTM zone. -->
-
----
-
-![bg contain](images/crs-surface-secant-cylindrical.jpg)
-
-<!-- Secant, cylindrical. The cylinder is smaller than the globe now: it cuts through and touches along two lines. -->
-
----
-
-![bg contain](images/crs-surface-secant-oblique-cylindrical.jpg)
-
-<!-- Secant, oblique, cylindrical. -->
-
----
-
-![bg contain](images/crs-surface-secant-transverse-cylindrical.jpg)
-
-<!-- Secant, transverse, cylindrical. This is what UTM actually is: a secant transverse cylinder with a scale factor of 0.9996 on the central meridian, so the two lines of true scale sit either side of it. -->
-
----
-
-![bg contain](images/crs-surface-tangent-conic.jpg)
-
-<!-- Tangential, conic. -->
-
----
-
-![bg contain](images/crs-surface-secant-oblique-conic.jpg)
-
-<!-- Secant, oblique, conic, also known as Lambert conformal conic. By now they should be reading these off automatically: shape of the surface, orientation, tangent or secant. -->
-
----
-
-<!-- _class: quiz -->
-
-# Which statement is most accurate?
-
-![bg right:40% w:92%](images/crs-quiz-conic-conus.jpg)
-
-<ol type="A">
-<li>Considering map distortion, this projection is equally suitable for every state in a straight line between Utah and Kentucky</li>
-<li>Considering map distortion, this projection is equally suitable for southeastern Florida and northeastern Washington state</li>
-<li>Considering map distortion, this projection is equally suitable for north, central, and south Texas</li>
-</ol>
-
-<!-- Do not answer yet. Show them the scale-error map on the next slide and let them reason from it. The projection here is a conic centered on the continental United States. -->
+<!-- The parallels where the cone touches are the standard parallels: those are the lines of true scale. The central meridian is the line of symmetry. When you pick a conic CRS in QGIS these are the numbers in its definition, and they are chosen to bracket the area you care about. Lambert conformal conic, tangent or secant, is the conic you will meet most; conformal means shape and angle are preserved locally, which is what you want for surveying and engineering drawings. -->
 
 ---
 
@@ -422,114 +366,32 @@ Let's compare some place sizes: [thetruesize.com](https://www.thetruesize.com/)
 
 ![h:450 center](images/crs-scale-error-circles.png)
 
-<!-- The solid circle is the standard circle, the line of true scale. The dashed contours are 0.5%, 1%, and 2% scale error. Distortion depends only on distance from that circle, so any two places sitting on the same contour are equally distorted, no matter which direction they lie in. -->
+<!-- The solid circle is the standard circle, the line of true scale. The dashed contours are 0.5%, 1%, and 2% scale error. Distortion depends only on distance from that circle, so any two places sitting on the same contour are equally distorted, no matter which direction they lie in. Southeastern Florida and northeastern Washington sit on about the same contour, so they carry about the same distortion; a line from Utah to Kentucky crosses the standard circle, so the error along it varies a lot. What matters is not the compass direction from the center, it is the distance from the line of true scale. -->
 
 ---
 
-<!-- _class: quiz -->
+# Match the surface to the shape: Tennessee
 
-# Answer: B
+<div class="columns">
+<div>
 
-![bg right:40% w:92%](images/crs-quiz-conic-conus.jpg)
+**UTM Zone 16**: true scale runs north–south, across the narrow width
 
-- **Southeastern Florida and northeastern Washington state** sit at roughly the **same distance from the line of true scale**, so they carry roughly the same distortion
-- A: Utah to Kentucky crosses the standard circle, so the error varies a lot along that line
-- C: north and south Texas are at very different distances from the standard circle
+![w:520](images/crs-state-plane-utm16-line.jpg)
 
-<!-- Drive the general rule home: with a projection, what matters is not the compass direction from the center, it is the distance from the line or lines of true scale. -->
+</div>
+<div>
 
----
+**Lambert conformal conic**: true scale runs east–west, along the long axis
 
-<!-- _class: quiz -->
+![w:520](images/crs-state-plane-lambert-line.jpg)
 
-# Which statement is most accurate?
+</div>
+</div>
 
-![bg right:34% w:94%](images/crs-quiz-utm-zone.jpg)
+- Long **east–west** → **conic**; long **north–south** → **transverse cylindrical**, such as UTM
 
-<ol type="A">
-<li>UTM projections minimize distortion in distance, shape, and area equally well for all areas within a single UTM zone</li>
-<li>UTM projections minimize distortion in distance, shape, and area along the equator</li>
-<li>UTM projections minimize distortion in distance, shape, and area along a line of longitude at the middle of a particular UTM zone</li>
-<li>UTM projections minimize distortion in distance, shape, and area in the northern hemisphere but not in the southern hemisphere</li>
-</ol>
-
-<!-- Again, hold the answer. Look at the next two slides first. -->
-
----
-
-# UTM zones: 60 of them, 6° wide
-
-![h:440 center](images/crs-utm-zones-world.jpg)
-
-<!-- Sixty zones, each 6 degrees of longitude wide, numbered eastward from the antimeridian. Each zone is its own projection with its own central meridian, which is why UTM coordinates are meaningless until you say which zone. -->
-
----
-
-# Line of least distortion for UTM Zone 12
-
-![h:440 center](images/crs-utm-zone-12-line.jpg)
-
-<!-- The red line is the central meridian of Zone 12, at 111 degrees west. That is the line of least distortion, and it runs right down the middle of Utah, which is why UTM Zone 12N is a perfectly good working CRS for most of this state. -->
-
----
-
-<!-- _class: quiz -->
-
-# Answer: C
-
-![bg right:40% w:92%](images/crs-quiz-utm-zone.jpg)
-
-- UTM minimizes distortion **along a line of longitude at the middle of a particular zone** — the zone's **central meridian**
-- Distortion grows toward the **edges** of the zone, so a project straddling a zone boundary is a problem
-- Nothing about UTM favors one hemisphere; the equator is not special except in Zone-specific false northings
-
-<!-- If a site spans two zones you either pick one zone and accept the error at the far edge, or move to a State Plane zone or a custom projection. This comes up on real projects, particularly along the Utah-Colorado line. -->
-
----
-
-<!-- _class: quiz -->
-
-# Which projection best minimizes distortion in the state of Tennessee?
-
-![bg right:40% w:92%](images/crs-quiz-tennessee.jpg)
-
-<ol type="A">
-<li>Lambert Conformal Conic</li>
-<li>Universal Transverse Mercator</li>
-</ol>
-
-<!-- Tennessee is a long, thin, east-west state. Hold the answer and show them the two maps. -->
-
----
-
-# UTM Zone 16 across Tennessee
-
-![h:430 center](images/crs-state-plane-utm16-line.jpg)
-
-<!-- The line of least distortion for UTM Zone 16 runs north-south straight through the middle of the state, so it touches Tennessee for about eighty miles and leaves the rest of that long east-west state a long way from true scale. -->
-
----
-
-# A Lambert conformal conic line… much better
-
-![h:430 center](images/crs-state-plane-lambert-line.jpg)
-
-<!-- A conic projection with standard parallels chosen to run east-west puts the line of least distortion along the long axis of the state. That is exactly what the Tennessee State Plane zone does, and why the background of these two slides is the State Plane zone map. -->
-
----
-
-<!-- _class: quiz -->
-
-# Answer: A — Lambert Conformal Conic
-
-![bg right:40% w:92%](images/crs-quiz-tennessee.jpg)
-
-- Match the **shape of the projection surface to the shape of the area**
-- Long **east-west** regions → **conic**, with standard parallels along the long axis
-- Long **north-south** regions → **transverse cylindrical**, such as a UTM zone
-- This is exactly the reasoning behind the **State Plane** zones
-
-<!-- The state plane zone map on the previous two slides is the punchline: someone already did this analysis for every state, and the answer is baked into the zone definitions. -->
+<!-- Tennessee is a long, thin, east-west state. Ask which they would pick before you point at the lines. The UTM Zone 16 central meridian touches the state for about eighty miles and leaves the rest of it a long way from true scale; a conic with standard parallels running east-west puts the line of least distortion along the long axis. That is exactly what the Tennessee State Plane zone does, and why the background of both maps is the State Plane zone map: someone already did this analysis for every state. -->
 
 ---
 
@@ -556,22 +418,6 @@ Let's compare some place sizes: [thetruesize.com](https://www.thetruesize.com/)
 
 ---
 
-<!-- _class: quiz -->
-
-# Why is coordinate transformation also referred to as *registration*?
-
-![bg right:40% w:92%](images/crs-quiz-registration.jpg)
-
-<ol type="A">
-<li>Because it is necessary to register your map online before it can be published</li>
-<li>Because it registers the layers to a map coordinate system</li>
-<li>Because one must register to obtain coordinate information</li>
-</ol>
-
-<!-- Answer: B. Registration lines layers up with each other and with a known coordinate system, the same sense as registration marks in printing. Georeferencing a scanned plan sheet is the case they will meet in the lab. -->
-
----
-
 <!-- _class: lead -->
 
 # Part 3
@@ -588,23 +434,6 @@ Let's compare some place sizes: [thetruesize.com](https://www.thetruesize.com/)
 
 ---
 
-<!-- _class: quiz -->
-
-# Which of the following is the closest mathematical approximation of the shape of the Earth?
-
-![bg right:42% w:92%](images/crs-sphere-vs-ellipsoid.jpg)
-
-<ol type="A">
-<li>Geoid</li>
-<li>Ellipsoid</li>
-<li>Spheroid</li>
-<li>Tetraploid</li>
-</ol>
-
-<!-- Answer: B, ellipsoid. Careful with the wording: the geoid is the closest description of the physical Earth, but it is not a mathematical figure you can compute coordinates on. Of the mathematical approximations, an ellipsoid (semi-major axis a, semi-minor axis b, flattening (a-b)/a) fits better than a sphere. "Tetraploid" is a genetics term and is there as a joke. -->
-
----
-
 # So then… what is the "geoid"?
 
 <div class="columns" style="grid-template-columns: 1.1fr 1fr;">
@@ -614,6 +443,7 @@ Let's compare some place sizes: [thetruesize.com](https://www.thetruesize.com/)
 - An imaginary surface of the Earth based on the **expected sea surface level everywhere**
 - Sea surface level varies because **gravity** varies
 - Gravity varies because **earth density** varies
+- The geoid is the closest description of the real Earth; the **ellipsoid** is the closest *mathematical* one, and the one coordinates are computed on
 
 </div>
 <div>
@@ -624,14 +454,6 @@ Let's compare some place sizes: [thetruesize.com](https://www.thetruesize.com/)
 </div>
 
 <!-- The Earth is not really shaped like this: the relief in the picture is exaggerated enormously to make the geoid visible. The real departures from an ellipsoid are on the order of a hundred meters. This is the surface your elevations are measured from, which is why orthometric height and ellipsoid height are different numbers for the same point. -->
-
----
-
-# Problem: our ability to measure shape and position is… not great
-
-![h:430 center](images/crs-surveyor-cliff.jpg)
-
-<!-- Even with good instruments in good hands, positions carry error, and the reference surfaces themselves get revised as measurements improve. -->
 
 ---
 
@@ -646,14 +468,6 @@ Let's compare some place sizes: [thetruesize.com](https://www.thetruesize.com/)
 ![h:440 center](images/crs-nad83-horizontal-change.jpg)
 
 <!-- Horizontal coordinate change across 79,061 CONUS stations between the two realisations. Most of the country moved 0 to 4 cm; the west coast moved much more. Same datum name, different numbers. -->
-
----
-
-# NAD 83 (2007) versus NAD 83 (2011): ellipsoid height
-
-![h:440 center](images/crs-nad83-ellipsoid-height.jpg)
-
-<!-- The same comparison for ellipsoid height. If your survey control is on one realisation and your GIS data is on another, you have a systematic offset that no amount of careful drafting will fix. Ask which realisation before you accept a control point. -->
 
 ---
 
@@ -758,6 +572,8 @@ In **QGIS**:
 <!-- Confirm the Saturday due dates against Learning Suite before class. Point students at The True Size and the Jason Davies transitions page again; they are the fastest way to build intuition before the lab. -->
 
 <!-- Conversion notes (2026-09-02): converted from "Coordinate Systems and Projections.pptx" (2021 archive, 51 slides). Dropped: source slide 8, a screenshot of the Flat Earth Society Facebook page showing the presenter's logged-in account, folded into a bullet on the Ferguson map slide; source slide 11, hidden in the original, an equal-area globe-drawing activity that could be restored if there is time. Added, not in the source: Today's Goals, geographic vs. projected coordinate systems, "every projection distorts something", the State Plane summary slide, "choosing a coordinate system", the Thursday preview, and Before Next Class. Software wording updated from ArcGIS to QGIS throughout. ArcGIS screenshots still in the deck: images/crs-arcgis-transformation-dialog.png on the "How to deal with it" slide, which needs a QGIS re-shoot. Open TODO: find a QGIS equivalent for the ArcGIS Pro Tissot-circle demo referenced on the "Things to play with" slide. -->
+
+<!-- Update 2026-10-20: cut from 58 lecture slides to 36. Dropped the in-deck multiple-choice quizzes (geodesy, Greenland, conic, UTM, Tennessee, registration, ellipsoid) and the eight full-screen projection-surface identification slides; their teaching points moved into the notes of the slides they relied on, and the Final Thoughts self-check quiz carries the practice. Also dropped as duplicates: A round Earth on flat paper, the plain Mercator slide, the CONUS UTM zones map, Lambert conformal conic (tangent), the surveyor-on-a-cliff slide, and the NAD 83 ellipsoid-height map. Restored from the Fall 2024 deck (Past Years/2024 Fall), which this conversion had missed: the BYU to University of Utah distance exercise and the globe-in-a-tube image. -->
 
 <!-- Update 2026-09-02: ArcGIS-era screenshots replaced with QGIS 3.44 captures made by tools/qgis_reshoot_screens.py: crs-qgis-project-crs-dialog.png replaces the ArcMap transformation dialog; Tissot TODO resolved via map-projections.net. -->
 
