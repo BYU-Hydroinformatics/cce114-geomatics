@@ -289,6 +289,35 @@ Negative longitude = west. Negative latitude = south.
 
 <!-- _class: quiz -->
 
+# How far apart are the pins?
+
+![bg right:40% w:92%](images/gps-quiz-two-pins.svg)
+
+Two classmates drop pins on their phones and read off the coordinates. About how far apart are they?
+
+<ol type="A">
+<li>About 1.1 m</li>
+<li>About 11 m</li>
+<li>About 111 m</li>
+<li>About 1.1 km</li>
+</ol>
+
+<!-- Answer D. Give them thirty seconds and a show of fingers before the next slide. The longitudes are identical, so this is a pure latitude question. The method is the point, not the number: line the two latitudes up digit by digit, find the first digit that differs, and read what one step in that place is worth from the 111 km rule. Here it is the second decimal place, 0.01 degree, about 1.1 km. The usual wrong answers: 1.1 m (counting the five decimals and reading off the bottom of the table) and 111 m (miscounting by one place). -->
+
+---
+
+# Find the first digit that differs
+
+![w:1080 center](images/gps-digit-ladder.svg)
+
+Start at **111 km** for 1°, and divide by 10 for each place to the right.
+
+<!-- Walk the ladder left to right: tens and ones of degrees are the same, the first decimal is the same, the second differs by one step. One step in the second decimal is 0.01 degree, which is 1.1 km. The digits after it (132 in both) add nothing. This is latitude only; a step in longitude is shorter by cos(latitude), about 0.76 here in Provo, which comes back in a few slides. -->
+
+---
+
+<!-- _class: quiz -->
+
 # Precision or accuracy?
 
 ![bg right:40% w:96%](images/gps-precision-accuracy.jpg)
