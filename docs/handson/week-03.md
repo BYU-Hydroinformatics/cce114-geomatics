@@ -79,7 +79,7 @@ Right-click the states layer > **Properties > Symbology**. The default is **Sing
 #### 2. Polygons that carry data
 
 1. Switch states to **Categorized**, Value = **`SUB_REGION`**, click **Classify**. The nine values are terse (`E N Cen`, `Mtn`, `Pacific`, `S Atl`…), so rename them in the legend if you want them readable. Pick a color ramp. Every distinct value gets a color; delete the "all other values" row if it is empty.
-2. Switch to **Graduated**, Value = `POP1990`, Mode = **Natural Breaks (Jenks)**, 5 classes, a sequential ramp (light to dark). Show the class boundaries in the legend and change the **Legend format** to `%1 – %2`.
+2. Switch to **Graduated**, Value = `POP1990`, Mode = **Natural Breaks (Jenks)**, 5 classes, a sequential ramp (light to dark). Show the class boundaries in the legend and change the **Legend format** to `%1 – %2`. You have just made a **choropleth** map: whole areas shaded by a value. QGIS calls the renderer *Graduated*; cartographers call the map a choropleth.
 3. Compare the two: which map answers "where are people?" and which answers "where is the South?" Same layer, same data, different question — the symbology is what changed.
 
 ![Categorized symbology on SUB_REGION after clicking Classify, showing the nine region categories and the all other values row QGIS adds](images/w3-states-categorized.png)

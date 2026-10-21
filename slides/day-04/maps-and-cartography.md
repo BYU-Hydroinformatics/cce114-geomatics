@@ -315,6 +315,7 @@ Also, for the record:
 
 - **Rasters** — color ramp, stretch, shading, transparency
 - **Labels / annotation** — font, size, color, halo, placement
+- **Choropleth** — whole areas shaded by a value (QGIS calls it **Graduated**)
 
 </div>
 </div>

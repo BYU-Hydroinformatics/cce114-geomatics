@@ -145,7 +145,8 @@ different formula: how fast elevation changes across those nine cells.
 
 Now run it: **Raster > Analysis > Slope**. Input the DEM; leave **Ratio of vertical units to
 horizontal** at 1, because both the elevations and the cell size are in meters. Run. Style the
-result pseudocolor. Lab 5 asks for exactly this. Point at the outermost ring of cells: the window
+result pseudocolor. Click a cell with **Identify Features** on both layers: the DEM says meters, the
+slope layer says degrees. Same grid, different quantity. Lab 5 asks for exactly this. Point at the outermost ring of cells: the window
 hangs off the edge there, as in the figure.
 
 ### Student activity

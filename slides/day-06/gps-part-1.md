@@ -122,6 +122,7 @@ I heard three radio stations announcing the time, but each was off from the actu
 - About **31** working satellites, **20,200 km** up, each circling the Earth twice a day
 - Your phone listens to several constellations at once, which is why it locks on so fast
 - Every satellite does the same thing: **broadcast a coded time signal**
+- It is **one-way**: your phone only listens and sends nothing back
 
 </div>
 <div>
@@ -144,7 +145,7 @@ I heard three radio stations announcing the time, but each was off from the actu
 
 ![h:400 center](images/gps-prn-travel-time.png)
 
-The satellite and your receiver generate the **same code at the same time**. The receiver slides its copy until it lines up with the copy from space. **How far it had to slide is the travel time.**
+The satellite and your receiver generate the **same pseudorandom (PRN) code at the same time**. The receiver slides its copy until it lines up with the copy from space. **How far it had to slide is the travel time.** That is the code's job: timing.
 
 <!-- This is the clever trick at the heart of GPS. No atomic clock needed in the receiver, only a code generator. The radio stations in the Prague problem did the same job by announcing the time. -->
 
@@ -175,9 +176,9 @@ A GPS satellite's code arrives **0.067 seconds** after it was sent. The speed of
 <div>
 
 - One range puts you somewhere on a **sphere** around that satellite
-- Two ranges narrow it to a **circle**
+- Two spheres intersect in a **circle**
 - Three narrow it to **two points**, one of them absurd
-- A **fourth** solves for your receiver's clock error
+- A **fourth** solves for your receiver's clock error: your phone has an ordinary **quartz** clock, not an atomic one
 - Four unknowns (latitude, longitude, height, time), four satellites
 
 </div>
@@ -272,8 +273,9 @@ Negative longitude = west. Negative latitude = south.
 </div>
 <div>
 
-![w:360 center](images/gps-decimal-places.jpg)
+![w:270 center](images/gps-decimal-places.jpg)
 
+- **Rule:** start at **111 km** for 1°; each decimal place divides by 10
 - Rounding is **throwing away accuracy you paid for**
 - A phone fix is good to a few meters, so it deserves **five decimal places**
 - **Record every digit your phone gives you** on Thursday

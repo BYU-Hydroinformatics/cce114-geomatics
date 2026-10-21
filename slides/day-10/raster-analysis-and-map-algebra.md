@@ -611,11 +611,11 @@ A raster is just an **array**, which is why map algebra is fast. But the arrays 
 
 Each is **map algebra on a neighborhood** of cells:
 
-- **Slope** — rate of change of elevation, in degrees or percent
+- **Slope** — steepness of each cell in degrees or percent, **not** its elevation
 - **Aspect** — the compass direction the slope faces
 - **Hillshade** — shaded relief, for looking at, not measuring
 - **Contours** — the vector product, drawn from the grid
-- **Flow direction** and **flow accumulation** — which give **stream networks** and **watersheds**
+- **Flow direction** and **accumulation** — give **streams** and **watersheds**
 
 </div>
 <div>
