@@ -21,7 +21,9 @@ Dr. Dan Ames and Dr. James Halgren
 
 # Today's Goals
 
-![bg right:32% w:80%](images/md-metadata-cartoon.png)
+![bg right:40% w:88%](images/md-metadata-cartoon.png)
+
+<div style="font-size:1.12em">
 
 By the end of class you should be able to:
 
@@ -29,44 +31,43 @@ By the end of class you should be able to:
 - Answer the six metadata questions: *what, where, when, why, how, who*
 - Explain why good data can still be the **wrong data for your job**
 
+</div>
+
 <!-- Set expectations. This is the concepts day. Quiz 7 Part 1 covers the linked readings on what metadata is and on metadata standards; the standards half is Thursday's opening slides. -->
+
 
 ---
 
 # Where does your spatial data come from?
 
-<div class="columns" style="align-items:start;">
+<div class="columns" style="grid-template-columns: 1.1fr 1fr;">
 <div>
 
-- **Digitize** — click on the map to draw your own features
-  - How good can it be?
-- **Download** — take someone else's data
-  - Where do you get it?
-  - **What *is* it?**
-- **DGPS** — differential GPS field collection
-  - Why differential?
+- **Digitize** — click on the map to draw your own features. How good can it be?
+- **Download** — take someone else's data. Where do you get it? **What *is* it?**
+- **DGPS** — differential GPS field collection. Why differential?
+- You digitized or surveyed the first and third yourself, so you know how they were made
+- The middle one is a stranger's work: today is about answering **"what is it?"** first
 
 </div>
 <div>
 
-![w:340 center](images/md-three-sources.jpg)
-
-- The first and third options, you did yourself, so you know how they were made
-- The middle one is a stranger's work
-- Today is about answering **"what is it?"** before you build anything on top of it
+![w:540 center](images/md-three-sources.jpg)
 
 </div>
 </div>
 
 <!-- The three D's of acquiring vector data. Point out that when you digitize or survey, you carry the knowledge of how the data were made in your head. The moment you download somebody else's file, that knowledge has to travel with the file, and metadata is how it travels. -->
 
+
 ---
 
 # Metadata: data about the data
 
-![h:455 center](images/md-metadata-cartoon.png)
+![h:495 center](images/md-metadata-cartoon.png)
 
 <!-- Cartoon: "I liked it better before big data and metadata when we just had good old regular data." The joke works because metadata feels like paperwork right up until you need it. Andertoons cartoon from the original deck. -->
+
 
 ---
 
@@ -74,7 +75,9 @@ By the end of class you should be able to:
 
 # Would you drink it?
 
-![bg right:45% w:55%](images/md-bottle-unlabeled.jpg)
+![bg right:45% h:88%](images/md-bottle-unlabeled.jpg)
+
+<div style="font-size:1.4em">
 
 Poll:
 
@@ -83,14 +86,17 @@ Poll:
 <li>No</li>
 </ol>
 
+</div>
+
 <!-- Show the unlabeled brown bottle. Take a quick show of hands. Almost nobody says yes. Ask why not - it might be perfectly good. You have no way to know. -->
+
 
 ---
 
 # Would you drink it *now*?
 
-<div class="columns">
-<div>
+<div class="columns" style="grid-template-columns: 1.2fr 1fr;">
+<div style="font-size:1.15em">
 
 - What's different?
 - **Metadata!**
@@ -99,18 +105,21 @@ Poll:
 </div>
 <div>
 
-![h:420 center](images/md-bottle-labeled.png)
+![h:470 center](images/md-bottle-labeled.png)
 
 </div>
 </div>
 
 <!-- Same bottle, now with a label. The label is metadata: brand, ingredients, contents, serving instructions. The bottle did not change; your ability to decide about it did. The original speaker note quoted the manufacturer's marketing copy at length; the short version is that the label lists the ingredients, the brewing method, and how to serve it, which is exactly what a metadata record does for a dataset. -->
 
+
 ---
 
 # A label is a metadata record
 
-<div class="columns" style="align-items:start;">
+![bg right:32% w:92%](images/md-label-record.jpg)
+
+<div class="columns" style="align-items:start; font-size:1.05em;">
 <div>
 
 **On the bottle**
@@ -123,8 +132,6 @@ Poll:
 
 </div>
 <div>
-
-![w:270 center](images/md-label-record.jpg)
 
 **On a dataset**
 
@@ -139,13 +146,14 @@ Poll:
 
 <!-- Draw the parallel line by line. Every field on the right exists for the same reason as the field on the left: so a stranger can decide whether to consume it. Ask which of the right-hand items would worry them most if it were missing. -->
 
+
 ---
 
 # Why metadata?
 
 <a href="https://youtu.be/N2zK3sAtr-4" target="_blank">
 
-![h:400 center](images/md-video-panda.png)
+![h:465 center](images/md-video-panda.png)
 
 </a>
 
@@ -153,46 +161,49 @@ Poll:
 
 <!-- Short animated video, about 4:40. Click the thumbnail to open it in a new tab. A researcher asks a colleague for data and gets a file that nobody can interpret. -->
 
+
 ---
 
 <!-- _class: quiz -->
 
 # Discussion
 
-![bg right:38% w:95%](images/md-video-panda.png)
+![bg right:42% w:94%](images/md-video-panda.png)
+
+<div style="font-size:1.15em">
 
 - Why can't the panda use the data?
 - What kind of metadata would make the file useful?
 - Why do scientists, researchers, students, and engineers so often *not* write metadata?
 
+</div>
+
 <!-- Let the third question run. Usual answers: no time, the project is over, "I know what it means," nobody asked, it was never budgeted. Then point out that in every one of those cases the person who suffers is the next engineer, who is often you six months later. -->
+
 
 ---
 
 # When metadata is missing: Mars Climate Orbiter
 
-<div class="columns" style="align-items:start;">
+<div class="columns" style="grid-template-columns: 1.1fr 1fr;">
 <div>
 
 - 1999: NASA lost a **$125 million** spacecraft
-- Ground software delivered thruster data in **English units**
-- The onboard software expected **metric**
+- Ground software delivered thruster data in **English units**; the onboard software expected **metric**
 - Nobody wrote down which
+- The numbers were not wrong. They were **undocumented**
+- One missing line of metadata, one lost mission. Your freeway alignment has the same failure mode
 
 </div>
 <div>
 
-![w:340 center](images/md-mars-orbiter.jpg)
-
-- The numbers were not wrong
-- The numbers were **undocumented**
-- One missing line of metadata, one lost mission
-- Your freeway alignment has the same failure mode
+![w:540 center](images/md-mars-orbiter.jpg)
 
 </div>
 </div>
 
 <!-- This example also appears in the Lab 8 background reading. The point is not that engineers are careless; the point is that units, datums, and coordinate systems are exactly the kind of thing that is obvious to the person who made the file and invisible to everyone else. -->
+
 
 ---
 
@@ -204,8 +215,8 @@ Poll:
 
 # A brief metadata melodrama
 
-<div class="columns">
-<div>
+<div class="columns" style="grid-template-columns: 1.1fr 1fr;">
+<div style="font-size:1.12em">
 
 - A short, silly story about what happens when data has no documentation
 - Read it here: <a href="http://t.ly/rPYx" target="_blank">t.ly/rPYx</a>
@@ -214,81 +225,47 @@ Poll:
 </div>
 <div>
 
-![h:400 center](images/md-melodrama.jpg)
+![h:470 center](images/md-melodrama.jpg)
 
 </div>
 </div>
 
 <!-- "A brief metadata melodrama" is linked from the Day 16 page on the course site: http://t.ly/rPYx. Walk through a few slides of it live if there is time, or assign it as a two-minute read. The illustration is the hero, Metadata, tied to the tracks by the villain. -->
 
+
 ---
 
 # The six questions: what, where, when
 
-<div class="columns" style="align-items:start;">
-<div>
+![bg right:33% w:92%](images/md-what-where-when.jpg)
 
-**What?**
+<div style="font-size:1.05em">
 
-- What do the data represent?
-- What is the file format?
-- What do the attribute columns mean?
+- **What?** What do the data represent, in what file format, and what do the attribute columns mean?
+- **Where?** Where were the data collected, what area do they cover, and in what coordinate system and units?
+- **When?** When were the data collected, when were they last updated, and how often are they revised?
 
-**Where?**
-
-- Where were the data collected?
-- What area do they cover?
-- What coordinate system and units?
-
-</div>
-<div>
-
-![w:340 center](images/md-what-where-when.jpg)
-
-**When?**
-
-- When were the data collected?
-- When were they last updated?
-- How often are they revised?
-
-</div>
 </div>
 
 <!-- Have students call out a dataset from Lab 7 and answer these three for it out loud. Most will stall on "what do the attribute columns mean," which is the single most common gap in real-world metadata. -->
+
 
 ---
 
 # The six questions: why, how, who
 
-<div class="columns" style="align-items:start;">
-<div>
+![bg right:33% w:92%](images/md-why-how-who.jpg)
 
-**Why?**
+<div style="font-size:1.05em">
 
-- What was the intended purpose?
-- Why was the dataset created in the first place?
+- **Why?** What was the intended purpose? Why was the dataset created in the first place?
+- **How?** How were the data created, by what collection method, and what geoprocessing steps came after?
+- **Who?** Which organization and which individuals collected the data, and who do you email when something looks wrong?
 
-**How?**
-
-- How were the data created?
-- What collection method?
-- What geoprocessing steps came after?
-
-</div>
-<div>
-
-![w:340 center](images/md-why-how-who.jpg)
-
-**Who?**
-
-- Which organization collected the data?
-- Which individuals?
-- Who do you email when something looks wrong?
-
-</div>
 </div>
 
 <!-- "Why" is the field students skip and professionals read first: data collected for a statewide overview map is not automatically valid for a site-scale design. "How" is the lineage, and it is what lets you decide whether you trust the numbers. -->
+
 
 ---
 
@@ -296,13 +273,18 @@ Poll:
 
 ![bg right:36% w:94%](images/md-right-data-wrong-job.jpg)
 
+<div style="font-size:1.08em">
+
 - A parcel layer digitized for **tax assessment** is not a survey boundary
 - A statewide roads layer at **1:100,000** will not place a curb
 - A land-cover raster from **2011** will not show last year's subdivision
 - Nothing here is wrong data. It is **right data, wrong job**
 - The metadata is what lets you catch that before you design against it
 
+</div>
+
 <!-- This is the sentence to repeat all semester. Almost no engineering GIS disaster comes from data that was wrong; most come from good data used outside its intended purpose, scale, or era. -->
+
 
 ---
 
@@ -310,22 +292,18 @@ Poll:
 
 # In-class activity: What I learned about metadata
 
-<div class="columns" style="align-items:start;">
+<div class="columns" style="grid-template-columns: 1.1fr 1fr;">
 <div>
 
 - Write down **a couple of things you learned about metadata today**
 - One of them should be something you will actually check the next time you download data
 - Record your completion on **Learning Suite**
+- Stuck? Which question do you skip most? What do you check before using a stranger's file? Which "wrong job" example surprised you?
 
 </div>
 <div>
 
-![w:340 center](images/md-activity-notes.jpg)
-
-- Prompts if you are stuck:
-  - Which question do you skip most?
-  - What do you check before using a stranger's file?
-  - Which "wrong job" example surprised you?
+![w:540 center](images/md-activity-notes.jpg)
 
 </div>
 </div>
@@ -337,7 +315,7 @@ Poll:
 
 # Thursday: hands-on in QGIS
 
-![bg right:36% w:94%](images/md-thursday-qgis.jpg)
+![bg right:40% w:94%](images/md-thursday-qgis.jpg)
 
 - **Metadata standards**: FGDC CSDGM and ISO 19115, and where the record lives in a download
 - A **fitness-for-use checklist** for deciding whether to trust a dataset
@@ -346,6 +324,7 @@ Poll:
 - Bring your laptop with QGIS 3.44 LTR installed
 
 <!-- Preview of Day 17: a short set of slides on standards and fitness for use, then students write metadata rather than just read it. -->
+
 
 ---
 

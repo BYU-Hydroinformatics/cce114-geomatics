@@ -15,13 +15,15 @@ footer: "CCE 114 · Day 17 — Metadata Standards"
 CCE 114 Geomatics
 Dr. Dan Ames and Dr. James Halgren
 
-<!-- Thursday lead-in, Week 9. About fifteen minutes of slides, then the hands-on session in QGIS (the Week 9 hands-on guide). Tuesday covered what metadata is, why it matters, and the six questions; today covers the standards those questions are written in, where the record sits in a download, and how to read one to decide whether the data are fit for your use. The last slide is the QGIS Metadata dialog, which is where the hands-on picks up. -->
+<!-- Thursday, Week 9. The deck runs the whole session and follows the Week 9 hands-on guide. About twelve minutes of slides up to the "Now in QGIS" divider: the standards, where the record sits in a download, and reading one for fitness for use. After the divider, each slide is one segment of the run sheet's 50-minute plan, to leave up while you demo. Tuesday covered what metadata is, why it matters, and the six questions. -->
 
 ---
 
 # Today's Goals
 
-![bg right:32% w:80%](images/md-label-record.jpg)
+![bg right:40% w:90%](images/md-label-record.jpg)
+
+<div style="font-size:1.08em">
 
 By the end of class you should be able to:
 
@@ -30,7 +32,10 @@ By the end of class you should be able to:
 - Read a metadata record and judge whether the data are **fit for your use**
 - **Write** metadata for a layer in QGIS and save it so it travels with the data
 
+</div>
+
 <!-- Recap Tuesday in one breath: a label is a metadata record, and every record answers what, where, when, why, how, and who. Today is the formal version of that label, then you write one yourself. -->
+
 
 ---
 
@@ -42,35 +47,33 @@ By the end of class you should be able to:
 
 # Why standardize metadata at all?
 
-<div class="columns" style="align-items:start;">
+<div class="columns" style="grid-template-columns: 1.1fr 1fr;">
 <div>
 
 - If everyone invents their own fields, nothing is **searchable**
-- A standard fixes the **field names**, so software can index them
-- It fixes the **expected content**, so a "date" is a date
+- A standard fixes the **field names** and the **expected content**, so software can index them and a "date" is a date
 - It makes records **portable** between agencies and software
+- A **standard** says what has to be there; a **style** or **profile** says how one organization fills it in
+- Same idea as a survey report template: fixed headings, local content
 
 </div>
 <div>
 
-![w:340 center](images/md-card-catalog.jpg)
-
-- A **standard** says what has to be there
-- A **style** or **profile** says how one organization fills it in
-- Same idea as a survey report template: fixed headings, local content
+![w:540 center](images/md-card-catalog.jpg)
 
 </div>
 </div>
 
 <!-- The library-catalog analogy works well: a card catalog is only useful because every card has the same fields in the same places. A metadata standard is a card catalog for data. -->
 
+
 ---
 
-# FGDC CSDGM: the U.S. federal standard
+# FGDC: the U.S. federal standard
 
 ![bg right:36% w:94%](images/md-fgdc-federal.jpg)
 
-- **Content Standard for Digital Geospatial Metadata**, from the Federal Geographic Data Committee
+- **Content Standard for Digital Geospatial Metadata** (CSDGM), from the Federal Geographic Data Committee
 - Executive Order 12906 (1994) told federal agencies to document geospatial data this way as part of the National Spatial Data Infrastructure
 - Current version is FGDC-STD-001-1998
 - Usually travels as a sidecar **`.xml`** file next to the shapefile
@@ -78,37 +81,35 @@ By the end of class you should be able to:
 
 <!-- This is the standard the students will actually meet in Lab 8: the Utah County Boundaries download ships an FGDC XML file alongside the shapefile. Since 2010 the FGDC has endorsed the ISO standards and encouraged agencies to migrate, but the installed base of FGDC records is enormous, so you still have to be able to read one. -->
 
+
 ---
 
-# The seven sections of an FGDC record
+# The seven sections of FGDC
 
-<div class="columns" style="align-items:start;">
-<div>
+![bg right:29% w:92%](images/md-seven-sections.jpg)
 
-1. **Identification** — title, abstract, purpose, keywords, bounding coordinates
-2. **Data Quality** — accuracy, completeness, **lineage**
-3. **Spatial Data Organization** — points, vectors, or raster cells
-4. **Spatial Reference** — projection, datum, units
-
-</div>
-<div>
-
-![w:340 center](images/md-seven-sections.jpg)
-
-5. **Entity and Attribute** — what each column and code means
-6. **Distribution** — where to get it, format, constraints
-7. **Metadata Reference** — who wrote *the metadata*, and when
-
-</div>
-</div>
+<ol style="font-size:0.98em">
+<li><strong>Identification</strong> — title, abstract, purpose, keywords, bounding coordinates</li>
+<li><strong>Data Quality</strong> — accuracy, completeness, <strong>lineage</strong></li>
+<li><strong>Spatial Data Organization</strong> — points, vectors, or raster cells</li>
+<li><strong>Spatial Reference</strong> — projection, datum, units</li>
+<li><strong>Entity and Attribute</strong> — what each column and code means</li>
+<li><strong>Distribution</strong> — where to get it, format, constraints</li>
+<li><strong>Metadata Reference</strong> — who wrote <em>the metadata</em>, and when</li>
+</ol>
 
 <!-- Section 5 is the one nobody fills in and everybody needs. Section 7 matters more than it looks: a 1998 metadata record attached to a 2024 dataset is a warning sign. -->
+
 
 ---
 
 # What an FGDC record looks like inside
 
-![bg right:30% w:94%](images/md-xml-inside.jpg)
+![bg right:27% w:92%](images/md-xml-inside.jpg)
+
+<style scoped>pre, pre code { font-size: 21px; line-height: 1.25; }</style>
+
+<div>
 
 ```xml
 <metadata>
@@ -118,20 +119,28 @@ By the end of class you should be able to:
       <pubdate>20240115</pubdate>
       <title>Utah County Boundaries</title>
     </citeinfo></citation>
-    <descript><abstract>...</abstract><purpose>...</purpose></descript>
-    <spdom><bounding><westbc>...</westbc><eastbc>...</eastbc></bounding></spdom>
+    <descript>
+      <abstract>...</abstract>
+      <purpose>...</purpose>
+    </descript>
+    <spdom><bounding>
+      <westbc>...</westbc><eastbc>...</eastbc>
+    </bounding></spdom>
   </idinfo>
   <metainfo><metd>20240115</metd></metainfo>
 </metadata>
 ```
 
+</div>
+
 <!-- Generic skeleton, not a real record: the point is the shape, not the values. Tell students the search terms from Lab 8: Ctrl+F for "metd" to find the metadata date, and "bounding" to find the extent. XML is verbose but it is plain text, so you can always read it in a browser or a text editor. -->
+
 
 ---
 
 # ISO 19115: the international standard
 
-![bg right:32% w:94%](images/md-iso-global.jpg)
+![bg right:33% w:94%](images/md-iso-global.jpg)
 
 - **ISO 19115, *Geographic information — Metadata***, is the international equivalent
 - Richer and more structured than FGDC, but organized the same way: identification, quality, spatial representation, reference system, distribution
@@ -140,53 +149,54 @@ By the end of class you should be able to:
 
 <!-- Current revision is ISO 19115-1; the XML encodings are ISO 19139 and ISO 19115-3 (mention in passing, not on the slide). The practical takeaway for this class: FGDC and ISO ask the same six questions with different tag names. If you can read one you can read the other. QGIS chose ISO, which is one reason FGDC .xml files do not import cleanly into QGIS. -->
 
+
 ---
 
 # Other styles you will meet
 
-<div class="columns" style="align-items:start;">
+<div class="columns" style="grid-template-columns: 1.1fr 1fr;">
 <div>
 
 - **Dublin Core** — 15 general-purpose elements (title, creator, date, rights…). Not spatial, but it underlies a lot of catalogs
 - **DCAT / Project Open Data** — the schema behind [data.gov](https://www.data.gov)
+- **STAC** — SpatioTemporal Asset Catalog, for satellite and drone imagery collections
+- **Esri metadata styles** — ArcGIS can write FGDC, ISO, or its own style; the same record, different export
 
 </div>
 <div>
 
-![w:340 center](images/md-other-styles.jpg)
-
-- **STAC** — SpatioTemporal Asset Catalog, used for satellite and drone imagery collections
-- **Esri metadata styles** — ArcGIS can write FGDC, ISO, or its own style; the same record, different export
+![w:540 center](images/md-other-styles.jpg)
 
 </div>
 </div>
 
 <!-- Do not memorize this list. Recognize the names so that when a download says "ISO 19139 metadata" or "STAC catalog" you know it is the same six questions in a different wrapper. -->
 
+
 ---
 
 # Where does the metadata actually live?
 
-<div class="columns" style="align-items:start;">
-<div>
+<div class="columns" style="grid-template-columns: 1.25fr 1fr;">
+<div style="font-size:0.95em">
 
 - **Shapefile** — sidecar `.xml` beside the `.shp`, plus the `.prj` that holds the coordinate system
 - **GeoPackage** — stored *inside* the `.gpkg` file
 - **QGIS layer** — a `.qmd` sidecar file, or inside the project file
+- **Web service** — in the service's `GetCapabilities` or item page
+- **Data portal** — on the download page itself
+- Unzip a download and open only the `.shp`, and you threw the metadata away
 
 </div>
 <div>
 
-![w:250 center](images/md-where-it-lives.jpg)
-
-- **Web service** — returned in the service's `GetCapabilities` or item page
-- **Data portal** — on the download page itself
-- If you unzip a download and never open anything but the `.shp`, you threw the metadata away
+![w:500 center](images/md-where-it-lives.jpg)
 
 </div>
 </div>
 
 <!-- Practical and worth emphasizing: the metadata is usually already in the folder they downloaded. Lab 8 has them open the XML in a browser. Also flag the format mismatch: an FGDC .xml from Utah's portal does not import automatically into QGIS the way it does into ArcGIS Pro, which is why Lab 8 has them create metadata by hand. -->
+
 
 ---
 
@@ -198,28 +208,21 @@ By the end of class you should be able to:
 
 # A fitness-for-use checklist
 
-<div class="columns" style="align-items:start;">
-<div>
+![bg right:34% w:92%](images/md-fitness-checklist.jpg)
 
-1. **Scale / resolution** — what is the smallest thing this can represent?
-2. **Date** — when collected, when updated?
-3. **CRS and units** — projection, datum, feet or meters?
-4. **Completeness** — is anything missing or unmapped?
-
-</div>
-<div>
-
-![w:340 center](images/md-fitness-checklist.jpg)
-
-5. **Accuracy and lineage** — how was it made, and from what?
-6. **Attributes** — is every column defined?
-7. **Constraints** — license, restrictions, required credit
-8. **Contact** — who answers questions?
-
-</div>
-</div>
+<ol style="font-size:0.98em">
+<li><strong>Scale / resolution</strong> — what is the smallest thing this can represent?</li>
+<li><strong>Date</strong> — when collected, when updated?</li>
+<li><strong>CRS and units</strong> — projection, datum, feet or meters?</li>
+<li><strong>Completeness</strong> — is anything missing or unmapped?</li>
+<li><strong>Accuracy and lineage</strong> — how was it made, and from what?</li>
+<li><strong>Attributes</strong> — is every column defined?</li>
+<li><strong>Constraints</strong> — license, restrictions, required credit</li>
+<li><strong>Contact</strong> — who answers questions?</li>
+</ol>
 
 <!-- Tell them to run this list on the datasets in Lab 8 and again on every dataset in the site-selection project later in the semester. Anything you cannot answer from the metadata is a risk you are carrying into your design. -->
+
 
 ---
 
@@ -254,24 +257,23 @@ Collected 2024, from 6-inch imagery, lineage documented, county GIS contact list
 
 ---
 
-# Worked example: Utah County Boundaries
+# Worked example: county boundaries
 
-<div class="columns" style="align-items:start;">
+![bg right:29% w:92%](images/md-utah-county.jpg)
+
+<div class="columns" style="align-items:start; font-size:0.95em;">
 <div>
 
 - Download the shapefile from the Utah portal
 - Unzip it and open the `.xml` in a browser: it is plain text
 - Search for **`UGRC`** to find *who*
-- Search for **`metd`** to find *when* — the metadata date, written `YYYYMMDD`
+- Search for **`metd`** to find *when*, written `YYYYMMDD`
 
 </div>
 <div>
 
-![w:340 center](images/md-utah-county.jpg)
-
 - Search for **`bounding`** to find *where*
-- Read the abstract and keywords for *what*
-- Read the purpose for *why*
+- Read the abstract and keywords for *what*, the purpose for *why*
 - The coordinate system is **not** in the XML — it is in the `.prj` file in the same folder
 
 </div>
@@ -279,9 +281,12 @@ Collected 2024, from 6-inch imagery, lineage documented, county GIS contact list
 
 <!-- This is Part 1 of Lab 8, so treat it as a preview and let them follow along if they have laptops open. The .prj point catches almost everyone: the CRS lives in a separate file from the rest of the metadata. -->
 
+
 ---
 
 # Where to find data *with* metadata
+
+![bg right:36% w:92%](images/md-data-portals.jpg)
 
 <div class="columns" style="align-items:start;">
 <div>
@@ -289,13 +294,11 @@ Collected 2024, from 6-inch imagery, lineage documented, county GIS contact list
 **[gis.utah.gov/data](https://gis.utah.gov/data/)**
 
 - Utah Geospatial Resource Center (UGRC, formerly AGRC)
-- The state's official clearinghouse for spatial data, and one of the oldest in the country
+- The state's official clearinghouse, and one of the oldest in the country
 - Nearly everything ships with a metadata record
 
 </div>
 <div>
-
-![w:340 center](images/md-data-portals.jpg)
 
 **[data.gov](https://www.data.gov)**
 
@@ -306,15 +309,109 @@ Collected 2024, from 6-inch imagery, lineage documented, county GIS contact list
 </div>
 </div>
 
-<!-- Quiz 7 Part 2 sends students to both of these. Do not browse them live here: the hands-on session opens a UGRC product page and a thin data.gov page right after the slides, so finish the deck and switch to the browser. -->
+<!-- Quiz 7 Part 2 sends students to both of these. Do not browse them yet: the next section opens a UGRC product page and then a thin data.gov page live. -->
+
 
 ---
 
-# Metadata in QGIS: Layer Properties > Metadata
+<!-- _class: lead -->
 
-![h:490 center](images/md-qgis-metadata-panel.png)
+# Now in QGIS
 
-<!-- QGIS 3.44 Layer Properties, Metadata page, for the UGRC Utah County Boundaries layer with the identification fields filled in. Right-click a layer, Properties, Metadata, and you get the ISO-style tabs: identification, categories, keywords, access, extent, contact, links, history, validation. This is the hand-off slide: leave it up, switch to QGIS, and start the hands-on walkthrough from this dialog. -->
+<!-- Hand-off. Everything from here on is the hands-on session in the Week 9 hands-on guide; each slide below is one segment of its 50-minute plan, so leave each one up while you demo. -->
+
+
+---
+
+# Read a real record first
+
+![bg right:40% w:94%](images/md-read-a-record.jpg)
+
+Open a UGRC product page on [gis.utah.gov](https://gis.utah.gov/products/sgid/) and find, out loud:
+
+- **What** the data are, and **who** stewards them
+- **Where**: the coordinate system, usually NAD83 UTM 12N
+- **When** it was last updated, and how often
+- **Why** it exists, and **how** it was made
+- Then the **license**
+
+<!-- Run sheet walkthrough step 1, about four minutes. Use the Utah County Boundaries or Roads page picked before class. If any of the six is missing you are guessing, and Tuesday's melodrama was about what happens when you guess. -->
+
+
+---
+
+# Write it in QGIS
+
+![bg right:44% w:96%](images/md-qgis-metadata-panel.png)
+
+<ol style="font-size:0.9em">
+<li><strong>Identification</strong>: title, type, language, a two-sentence abstract</li>
+<li><strong>Categories</strong>: one ISO category</li>
+<li><strong>Keywords</strong>: three terms</li>
+<li><strong>Access</strong>: fees, license, a rights line</li>
+<li><strong>Extent</strong>: <strong>Set from layer</strong></li>
+<li><strong>Contacts</strong>: you, as <code>pointOfContact</code></li>
+<li><strong>History</strong>: one line per processing step</li>
+<li><strong>Validation</strong>: what is still empty</li>
+</ol>
+
+<!-- Run sheet walkthrough step 2, about eight minutes. QGIS 3.44 Layer Properties, Metadata page, for the UGRC Utah County Boundaries layer with the identification fields filled in. Right-click the layer, Properties, Metadata, and walk the left-hand pages in this order with the county boundary from the Week 2 data. Validation needs Identifier, Title, Type, Language, Abstract, a Contact, and a License before it stops complaining. -->
+
+
+---
+
+# Save it so it survives
+
+![bg right:40% w:94%](images/md-save-it.jpg)
+
+- Clicking **OK** saves nothing durable: the metadata lives only in the project file
+- **Metadata > Save metadata to file** writes a `.qmd` beside the layer
+- For a GeoPackage, **Save to database** stores it *inside* the `.gpkg`. Copy the file to a new folder, open it in a fresh project: it is still there
+- **Layer Properties > Information** now shows your abstract and contacts. That is what a colleague sees first
+
+<!-- Run sheet walkthrough step 3, about three minutes. Show the .qmd in the Browser panel, then open it in a text editor: it is only XML. Metadata that lives in a Word file on someone's laptop is not metadata. -->
+
+
+---
+
+<!-- _class: quiz -->
+
+# Bad metadata, on purpose
+
+![bg right:38% h:88%](images/md-bottle-unlabeled.jpg)
+
+<div style="font-size:1.08em">
+
+Open the thin [data.gov](https://www.data.gov) page. From the page alone:
+
+- Which of the six questions **can't** you answer?
+- What would you have to **assume** to use it in a design?
+- What happens when that assumption is **wrong**?
+
+</div>
+
+<!-- Run sheet walkthrough step 4, about three minutes, on the thin data.gov page found before class. Usually two or three of the six are impossible. Tuesday's unlabeled bottle is back on purpose. This is the Quiz 7 Part 2 exercise in miniature. -->
+
+
+---
+
+<!-- _class: activity -->
+
+# In-class activity: AGRC Metadata
+
+![bg right:38% w:94%](images/md-agrc-activity.jpg)
+
+<div style="font-size:0.92em">
+
+- Pick one dataset on [gis.utah.gov](https://gis.utah.gov/data/) or [data.gov](https://www.data.gov), not the one your neighbor took
+- Read its metadata and add **one row at the bottom** of the **AGRC Metadata** tab in the class sheet, your name first
+- Fill the six answers, plus spatial reference and key attributes. Where the record does not say, write **"not stated"**
+- Mark **In Class Activity: AGRC Metadata** complete on Learning Suite, with the dataset name
+
+</div>
+
+<!-- Run sheet "Student activity", about thirteen minutes. Full credit for a complete row. Rows added in the middle overwrite each other, which is why it is the bottom and name first. -->
+
 
 ---
 
@@ -332,7 +429,7 @@ Collected 2024, from 6-inch imagery, lineage documented, county GIS contact list
 
 **Before next class**
 
-- **Quiz 7: Metadata** and **[Lab 8: Metadata](https://byu-hydroinformatics.github.io/cce114-geomatics/assignments/lab-08/)** are due **Saturday, 11:59 pm**
+- **Quiz 7: Metadata** and **[Lab 8: Metadata](https://byu-hydroinformatics.github.io/cce114-geomatics/assignments/lab-08/)** are due **Saturday, 11:59 pm**. Lab 8 Part 1 is today's QGIS metadata on the county boundary and roads; Part 2 is a Lehi wetland layer whose metadata is deliberately incomplete
 - **Quiz 8: Geoprocessing** opens today on Learning Suite and is due **Saturday of next week**
 - Reading for next week: *GIS Fundamentals*, Chapter 9 (Basic Spatial Analysis)
 - Record today's activity on Learning Suite
@@ -348,6 +445,6 @@ Collected 2024, from 6-inch imagery, lineage documented, county GIS contact list
 </div>
 </div>
 
-<!-- Show this at the end of the hands-on session, not after the slides. Lab 8 Part 1 is the metadata they just wrote in QGIS, so it should go quickly. -->
+<!-- Run sheet 0:46: the Lab 8 pointer and the quiz reminders. Everything Lab 8 needs is in the Metadata dialog they just used. -->
 
-<!-- Split notes (2026-10-26): this deck is the second half of the original Day 16 "Spatial Metadata" deck, moved to Thursday because Tuesday ran long. The break is the "Metadata standards and styles" divider. The QGIS Metadata dialog slide moved from the middle of the standards section to the end so the deck hands off into QGIS. Due dates checked against Learning Suite 2026-10-26. -->
+<!-- Split notes (2026-10-26): this deck is the second half of the original Day 16 "Spatial Metadata" deck, moved to Thursday because Tuesday ran long. The break is the "Metadata standards and styles" divider. The QGIS Metadata dialog slide moved from the middle of the standards section to the end so the deck hands off into QGIS. On 2026-10-26 the hand-off became its own section ("Now in QGIS"), one slide per run-sheet segment: read a UGRC record, write it, save it, bad metadata on purpose, and the AGRC Metadata activity. md-read-a-record, md-save-it and md-agrc-activity were generated with gpt-image-1 in the deck's style; md-bottle-unlabeled is Tuesday's bottle, reused as a callback. Due dates checked against Learning Suite 2026-10-26. -->

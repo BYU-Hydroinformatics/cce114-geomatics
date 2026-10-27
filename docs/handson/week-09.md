@@ -64,7 +64,7 @@ metadata to file** or **Save to database**, it lives only in the project file.
 
 ### Before class
 
-- [ ] The [Metadata Standards and Fitness for Use](https://byu-hydroinformatics.github.io/cce114-geomatics/slides/day-17/metadata-standards.html) deck open in presenter view (press <kbd>P</kbd>). It ends on the QGIS Metadata dialog, which is where the walkthrough starts.
+- [ ] The [Metadata Standards and Fitness for Use](https://byu-hydroinformatics.github.io/cce114-geomatics/slides/day-17/metadata-standards.html) deck open in presenter view (press <kbd>P</kbd>). It runs the whole session: the slide for each segment is in the plan below, and the speaker notes point back to the walkthrough step.
 - [ ] The class Google Sheet open at the **AGRC Metadata** tab. Its columns are: Name, Name of the Dataset, Link to download, What does the data represent, Who created it and who maintains it, Spatial Reference, Why (purpose), How was it created, When created or updated, Where, Key attributes. Clear old rows.
 - [ ] A UGRC product page open, for example the Utah County Boundaries or Roads page on [gis.utah.gov/products/sgid](https://gis.utah.gov/products/sgid/), and one [data.gov](https://www.data.gov) dataset page with thin metadata for contrast.
 - [ ] QGIS open with the county boundary loaded.
@@ -72,16 +72,19 @@ metadata to file** or **Save to database**, it lives only in the project file.
 
 ### Plan (50 minutes)
 
-| Time | Segment |
-| --- | --- |
-| 0:00 | Mini-devotional |
-| 0:03 | Slides: metadata standards, where metadata lives, fitness for use (keep to about twelve minutes) |
-| 0:15 | Read metadata on a UGRC product page: find the six answers |
-| 0:19 | QGIS Layer Properties > Metadata: fill the Identification, Categories, Keywords, Access, Extent, Contacts, and History pages |
-| 0:27 | Save it: to a `.qmd` sidecar and into the GeoPackage; show it travel with the data |
-| 0:30 | A dataset with bad metadata: what you cannot tell, and what could go wrong |
-| 0:33 | Students: evaluate one dataset, fill a row in the sheet |
-| 0:46 | Final Thoughts slide: Lab 8 pointer; Quiz 7 and Quiz 8 reminders |
+The deck runs the whole session. Slides 1 to 15 are the lead-in; from the **Now in QGIS** divider
+(slide 16) on, each slide is one segment below, so leave it up while you demo.
+
+| Time | Slide | Segment |
+| --- | --- | --- |
+| 0:00 | — | Mini-devotional |
+| 0:03 | 1–15 | Slides: metadata standards, where metadata lives, fitness for use (keep to about twelve minutes) |
+| 0:15 | 17 *Read a real record first* | Read metadata on a UGRC product page: find the six answers (walkthrough step 1) |
+| 0:19 | 18 *Write it in QGIS* | QGIS Layer Properties > Metadata: fill the Identification, Categories, Keywords, Access, Extent, Contacts, and History pages (step 2) |
+| 0:27 | 19 *Save it so it survives* | Save it: to a `.qmd` sidecar and into the GeoPackage; show it travel with the data (step 3) |
+| 0:30 | 20 *Bad metadata, on purpose* | A dataset with bad metadata: what you cannot tell, and what could go wrong (step 4) |
+| 0:33 | 21 *In-class activity* | Students: evaluate one dataset, fill a row in the sheet (Student activity) |
+| 0:46 | 22 *Final Thoughts* | Lab 8 pointer; Quiz 7 and Quiz 8 reminders; the self-check quiz QR |
 
 ### Walkthrough
 
