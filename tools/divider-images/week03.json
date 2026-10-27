@@ -1,0 +1,24 @@
+[
+  {
+    "id": "mc-divider-fun",
+    "file": "mc-divider-fun.jpg",
+    "prompt": "Three young anime friends laugh together on a couch over a giant whimsical illustrated fantasy map spread across their laps, pointing at sea monsters and tiny castles drawn on it \u2014 Japanese anime illustration style, clean cel shading, expressive large eyes, gentle pastel-leaning colors with a few warm accents, soft lighting, calm uncluttered composition. Absolutely no text, words, letters or numbers anywhere in the image.",
+    "size": "1024x1024",
+    "quality": "medium",
+    "model": "gpt-image-2.5-flare",
+    "sha256": "b076d9ebe860",
+    "usage": {
+      "input_tokens": 86,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 86
+      },
+      "output_tokens": 439,
+      "output_tokens_details": {
+        "image_tokens": 439,
+        "text_tokens": 0
+      },
+      "total_tokens": 525
+    }
+  }
+]

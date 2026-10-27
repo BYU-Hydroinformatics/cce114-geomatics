@@ -455,9 +455,13 @@ Greenland looks about the size of Africa. Is it? [thetruesize.com](https://www.t
 
 <!-- _class: lead -->
 
+![bg right:50%](images/crs-divider-potato.jpg)
+
 # Part 3
 
 ## The shape of the Earth: geoid, ellipsoid, datum
+
+<!-- Anime-style cartoon generated with gpt-image-2.5-flare, October 2026; prompt in tools/divider-images/week08.json. -->
 
 ---
 

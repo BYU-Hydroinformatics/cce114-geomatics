@@ -8,6 +8,8 @@ footer: "CCE 114 · Day 23 — Concepts Review"
 <!-- _class: lead -->
 <!-- _paginate: skip -->
 
+![bg right:45% w:95%](images/cr-title-scrapbook.jpg)
+
 ![w:110](images/byu-medallion.svg)
 
 # Concepts Review
@@ -20,6 +22,9 @@ Brigham Young University
 Dr. James Halgren and Dr. Dan Ames
 
 <!-- Second half of Thursday. This is a study session, not new material: we work through questions in the same style as the textbook quizzes, and the answers are in these speaker notes. Put a question up, let the room answer, then reveal. Do not rush; the discussion after a wrong answer is where the learning happens. -->
+
+
+<!-- Anime-style cartoon generated with gpt-image-2.5-flare, October 2026; prompt in tools/divider-images/week12.json. -->
 
 <!-- stamp:begin -->
 <!-- _footer: '<span>CCE 114 · Day 23 — Concepts Review<span class="updated">Last Updated: 2026-10-27</span></span><span>© 2026 Daniel P. Ames · <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></span>' -->
@@ -93,9 +98,13 @@ By the end of this session you should be able to:
 
 <!-- _class: lead -->
 
+![bg right:50%](images/cr-divider-exam1.jpg)
+
 # Part 1
 
 ## Carried over from Exam 1
+
+<!-- Anime-style cartoon generated with gpt-image-2.5-flare, October 2026; prompt in tools/divider-images/week12.json. -->
 
 ---
 
@@ -477,9 +486,13 @@ By the end of this session you should be able to:
 
 <!-- _class: lead -->
 
+![bg right:50%](images/cr-divider-new.jpg)
+
 # Part 2
 
 ## New since Exam 1
+
+<!-- Anime-style cartoon generated with gpt-image-2.5-flare, October 2026; prompt in tools/divider-images/week12.json. -->
 
 ---
 

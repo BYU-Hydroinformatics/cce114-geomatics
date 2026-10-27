@@ -1,0 +1,24 @@
+[
+  {
+    "id": "crs-divider-potato",
+    "file": "crs-divider-potato.jpg",
+    "prompt": "A cute lumpy potato-shaped Earth character with continents painted on it and big embarrassed eyes stands next to a perfectly smooth shiny globe that looks smug, a young anime student holding a measuring tape between them looking puzzled \u2014 Japanese anime illustration style, clean cel shading, expressive large eyes, gentle pastel-leaning colors with a few warm accents, soft lighting, calm uncluttered composition. Absolutely no text, words, letters or numbers anywhere in the image.",
+    "size": "1024x1024",
+    "quality": "medium",
+    "model": "gpt-image-2.5-flare",
+    "sha256": "b7b421b90241",
+    "usage": {
+      "input_tokens": 96,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 96
+      },
+      "output_tokens": 439,
+      "output_tokens_details": {
+        "image_tokens": 439,
+        "text_tokens": 0
+      },
+      "total_tokens": 535
+    }
+  }
+]

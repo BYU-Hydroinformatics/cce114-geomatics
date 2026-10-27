@@ -1,0 +1,46 @@
+[
+  {
+    "id": "vec-divider-digitizing",
+    "file": "vec-divider-digitizing.jpg",
+    "prompt": "A young anime student carefully traces the roads and buildings of an aerial photograph onto a clear sheet with a glowing stylus, clean bright lines appearing where the pen goes, desk lamp light \u2014 Japanese anime illustration style, clean cel shading, expressive large eyes, gentle pastel-leaning colors with a few warm accents, soft lighting, calm uncluttered composition. Absolutely no text, words, letters or numbers anywhere in the image.",
+    "size": "1024x1024",
+    "quality": "medium",
+    "model": "gpt-image-2.5-flare",
+    "sha256": "376abf100bda",
+    "usage": {
+      "input_tokens": 91,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 91
+      },
+      "output_tokens": 439,
+      "output_tokens_details": {
+        "image_tokens": 439,
+        "text_tokens": 0
+      },
+      "total_tokens": 530
+    }
+  },
+  {
+    "id": "vec-divider-editing",
+    "file": "vec-divider-editing.jpg",
+    "prompt": "A young anime student in work gloves with a pencil and a big eraser cheerfully fixes a crooked, broken map line, while Data, a cute chibi mascot shaped like a folded paper map with big expressive eyes and tiny arms and legs sits patiently with a small bandage on its corner \u2014 Japanese anime illustration style, clean cel shading, expressive large eyes, gentle pastel-leaning colors with a few warm accents, soft lighting, calm uncluttered composition. Absolutely no text, words, letters or numbers anywhere in the image.",
+    "size": "1024x1024",
+    "quality": "medium",
+    "model": "gpt-image-2.5-flare",
+    "sha256": "5cd3f7738310",
+    "usage": {
+      "input_tokens": 113,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 113
+      },
+      "output_tokens": 439,
+      "output_tokens_details": {
+        "image_tokens": 439,
+        "text_tokens": 0
+      },
+      "total_tokens": 552
+    }
+  }
+]

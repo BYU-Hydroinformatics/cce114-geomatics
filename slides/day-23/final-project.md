@@ -45,11 +45,15 @@ By the end of class you should be able to:
 
 <!-- _class: lead -->
 
+![bg right:50%](images/fp-divider-workflow.jpg)
+
 # Warm-up: the Lab 11 workflow
 
 ## What are the criteria? What data? What tools? In what order?
 
 <!-- Lab 11 (Walmart Site Selection) is the closest model for what the final project asks for. Walk it once more, out loud, before handing out the project. -->
+
+<!-- Anime-style cartoon generated with gpt-image-2.5-flare, October 2026; prompt in tools/divider-images/week12.json. -->
 
 ---
 
@@ -150,9 +154,13 @@ To find land at least 2 miles from an existing Walmart, inside Utah County, and 
 
 <!-- _class: lead -->
 
+![bg right:50%](images/fp-divider-cookie.jpg)
+
 # Geoprocessing is cookie cutting
 
 <!-- The next seven slides are one long analogy. Run them quickly, one click each. Students remember this. -->
+
+<!-- Anime-style cartoon generated with gpt-image-2.5-flare, October 2026; prompt in tools/divider-images/week12.json. -->
 
 ---
 
@@ -261,9 +269,13 @@ What to notice:
 
 <!-- _class: lead -->
 
+![bg right:50%](images/fp-divider-project.jpg)
+
 # Your Final Mapping Project
 
 ## Same workflow, your problem, your county
+
+<!-- Anime-style cartoon generated with gpt-image-2.5-flare, October 2026; prompt in tools/divider-images/week12.json. -->
 
 ---
 

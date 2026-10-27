@@ -72,11 +72,15 @@ By the end of class you should be able to:
 
 <!-- _class: lead -->
 
+![bg right:50%](images/gp-divider-analyze.jpg)
+
 # Map it. Query it. **Analyze it.**
 
 ## Geoprocessing is the third one
 
 <!-- The source deck used three logos here: "Map it", "query-it" and "Analyze It". Making a map is display. Querying is asking about what is already in the table. Geoprocessing is analysis: it makes brand new data that did not exist before you ran the tool. -->
+
+<!-- Anime-style cartoon generated with gpt-image-2.5-flare, October 2026; prompt in tools/divider-images/week10.json. -->
 
 ---
 
@@ -191,9 +195,13 @@ Every polygon is a row. To find Utah County, we need the row where the county na
 
 <!-- _class: lead -->
 
+![bg right:50%](images/gp-divider-boolean.jpg)
+
 # Part 2
 
 ## Common spatial analyses and Boolean operations
+
+<!-- Anime-style cartoon generated with gpt-image-2.5-flare, October 2026; prompt in tools/divider-images/week10.json. -->
 
 ---
 
@@ -428,9 +436,13 @@ The old ArcGIS name is on the left; what QGIS calls it is on the right.
 
 <!-- _class: lead -->
 
+![bg right:50%](images/gp-divider-workflow.jpg)
+
 # Part 3
 
 ## Geoprocessing workflows
+
+<!-- Anime-style cartoon generated with gpt-image-2.5-flare, October 2026; prompt in tools/divider-images/week10.json. -->
 
 ---
 

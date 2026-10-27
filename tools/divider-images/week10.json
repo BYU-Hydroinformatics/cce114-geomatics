@@ -1,0 +1,68 @@
+[
+  {
+    "id": "gp-divider-analyze",
+    "file": "gp-divider-analyze.jpg",
+    "prompt": "Three-step progression from left to right: Data, a cute chibi mascot shaped like a folded paper map with big expressive eyes and tiny arms and legs first unfolds itself proudly, then peers through a big magnifying glass, then confidently holds up a glowing toolbox of tools, each step brighter than the last, like leveling up in a video game \u2014 Japanese anime illustration style, clean cel shading, expressive large eyes, gentle pastel-leaning colors with a few warm accents, soft lighting, calm uncluttered composition. Absolutely no text, words, letters or numbers anywhere in the image.",
+    "size": "1024x1024",
+    "quality": "medium",
+    "model": "gpt-image-2.5-flare",
+    "sha256": "f07cc7baaafe",
+    "usage": {
+      "input_tokens": 123,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 123
+      },
+      "output_tokens": 439,
+      "output_tokens_details": {
+        "image_tokens": 439,
+        "text_tokens": 0
+      },
+      "total_tokens": 562
+    }
+  },
+  {
+    "id": "gp-divider-boolean",
+    "file": "gp-divider-boolean.jpg",
+    "prompt": "Two cute chibi map-sheet characters, one blue-tinted and one orange-tinted, happily overlap each other like a Venn diagram; the overlapping area glows bright green and sparkles; clean simple pastel background \u2014 Japanese anime illustration style, clean cel shading, expressive large eyes, gentle pastel-leaning colors with a few warm accents, soft lighting, calm uncluttered composition. Absolutely no text, words, letters or numbers anywhere in the image.",
+    "size": "1024x1024",
+    "quality": "medium",
+    "model": "gpt-image-2.5-flare",
+    "sha256": "12c790a413f8",
+    "usage": {
+      "input_tokens": 98,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 98
+      },
+      "output_tokens": 439,
+      "output_tokens_details": {
+        "image_tokens": 439,
+        "text_tokens": 0
+      },
+      "total_tokens": 537
+    }
+  },
+  {
+    "id": "gp-divider-workflow",
+    "file": "gp-divider-workflow.jpg",
+    "prompt": "A cheerful anime map factory: small paper maps ride a conveyor belt through a row of whimsical machines that clip, stamp, stack and color them, a young anime engineer in a hard hat supervises with a clipboard, finished colorful maps come out the far end \u2014 Japanese anime illustration style, clean cel shading, expressive large eyes, gentle pastel-leaning colors with a few warm accents, soft lighting, calm uncluttered composition. Absolutely no text, words, letters or numbers anywhere in the image.",
+    "size": "1024x1024",
+    "quality": "medium",
+    "model": "gpt-image-2.5-flare",
+    "sha256": "21ad63fff011",
+    "usage": {
+      "input_tokens": 106,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 106
+      },
+      "output_tokens": 439,
+      "output_tokens_details": {
+        "image_tokens": 439,
+        "text_tokens": 0
+      },
+      "total_tokens": 545
+    }
+  }
+]

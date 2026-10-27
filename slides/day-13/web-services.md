@@ -163,11 +163,15 @@ By the end of class you should be able to:
 
 <!-- _class: lead -->
 
+![bg right:50%](images/web-divider-into-qgis.jpg)
+
 # Into QGIS
 
 ## Follow along in QGIS
 
 <!-- Switch to QGIS here. First the two-part instructor demo on the next two slides (a WMS, then a WFS, from USGS servers that work reliably in QGIS 3.44), then everyone follows along with UGRC; the two slides after the demo are the fallback if the projector or network misbehaves. Connect to the UGRC endpoint, search for QuaternaryFaults, add it, add two more layers, and open the attribute table to show the features really came across. If the room's Wi-Fi struggles, the Clyde 234 lab machines are wired. -->
+
+<!-- Anime-style cartoon generated with gpt-image-2.5-flare, October 2026; prompt in tools/divider-images/week07.json. -->
 
 ---
 

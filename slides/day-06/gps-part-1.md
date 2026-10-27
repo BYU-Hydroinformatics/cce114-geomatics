@@ -113,9 +113,13 @@ I heard three radio stations announcing the time, but each was off from the actu
 
 <!-- _class: lead -->
 
+![bg right:50%](images/gps-divider-receiver.jpg)
+
 # So how does the receiver in your pocket do that?
 
 ## Three questions: how long ago, how far, where
+
+<!-- Anime-style cartoon generated with gpt-image-2.5-flare, October 2026; prompt in tools/divider-images/week04.json. -->
 
 ---
 
@@ -372,9 +376,13 @@ Thursday, we will do exactly this with the points you collect.
 
 <!-- _class: lead -->
 
+![bg right:50%](images/gps-divider-errors.jpg)
+
 # GPS measurements have errors in them
 
 ## Where they come from, and which one is yours
+
+<!-- Anime-style cartoon generated with gpt-image-2.5-flare, October 2026; prompt in tools/divider-images/week04.json. -->
 
 ---
 

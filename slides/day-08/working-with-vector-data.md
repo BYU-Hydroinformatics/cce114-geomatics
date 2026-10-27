@@ -247,9 +247,13 @@ Which geometry type for each, and why?
 
 <!-- _class: lead -->
 
+![bg right:50%](images/vec-divider-digitizing.jpg)
+
 # Part 2 — Digitizing
 
 ## Turning what you can see into coordinates
+
+<!-- Anime-style cartoon generated with gpt-image-2.5-flare, October 2026; prompt in tools/divider-images/week05.json. -->
 
 ---
 
@@ -394,9 +398,13 @@ Which geometry type for each, and why?
 
 <!-- _class: lead -->
 
+![bg right:50%](images/vec-divider-editing.jpg)
+
 # Part 3 — Editing
 
 ## Most GIS work is fixing data, not making it
+
+<!-- Anime-style cartoon generated with gpt-image-2.5-flare, October 2026; prompt in tools/divider-images/week05.json. -->
 
 ---
 

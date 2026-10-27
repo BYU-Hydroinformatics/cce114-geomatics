@@ -24,33 +24,33 @@
   {
     "id": "md-divider-card-catalog",
     "file": "md-divider-card-catalog.jpg",
-    "prompt": "A frazzled librarian with glasses askew and hair sticking up tries to cram wildly mismatched books into a neat wooden card catalog: a round book, a triangle book, a floppy noodle-shaped book, a giant book, while a row of tidy identical rectangular books with smiling faces sits calmly on the shelf beside her looking smug \u2014 \u2014 Bold, colorful cartoon illustration in the style of a funny internet meme comic, thick clean outlines, exaggerated expressions, bright saturated colors, simple background. Absolutely no text, words, letters or numbers anywhere in the image.",
+    "prompt": "A calm, cheerful young anime librarian neatly files a row of matching labeled books into a tidy wooden card catalog, while a heap of odd-shaped books (round, floppy, triangular) piles up beside her looking sheepish; a sunny library with tall shelves \u2014 Japanese anime illustration style, clean cel shading, expressive large eyes, gentle pastel-leaning colors with a few warm accents, soft lighting, calm uncluttered composition. Absolutely no text, words, letters or numbers anywhere in the image.",
     "size": "1024x1024",
     "quality": "medium",
     "model": "gpt-image-2.5-flare",
-    "sha256": "8a7124477ec1",
+    "sha256": "18f10ec42669",
     "usage": {
-      "input_tokens": 116,
+      "input_tokens": 105,
       "input_tokens_details": {
         "image_tokens": 0,
-        "text_tokens": 116
+        "text_tokens": 105
       },
       "output_tokens": 439,
       "output_tokens_details": {
         "image_tokens": 439,
         "text_tokens": 0
       },
-      "total_tokens": 555
+      "total_tokens": 544
     }
   },
   {
     "id": "md-divider-fitting-room",
     "file": "md-divider-fitting-room.jpg",
-    "prompt": "A construction engineer in a hard hat and safety vest stands in a clothing store fitting room in front of a mirror, wearing a suit made out of a folded paper map that is comically far too big, sleeves flopping past his hands, while a tailor with a tape measure around his neck and pins in his mouth squints at him doubtfully \u2014 \u2014 Bold, colorful cartoon illustration in the style of a funny internet meme comic, thick clean outlines, exaggerated expressions, bright saturated colors, simple background. Absolutely no text, words, letters or numbers anywhere in the image.",
+    "prompt": "A young anime construction engineer in a hard hat and safety vest stands in a boutique fitting room in front of a tall mirror, wearing a suit made of a folded paper map that is comically far too big, sleeves flopping past the hands, while a stylish anime tailor with a tape measure around the neck squints doubtfully \u2014 Japanese anime illustration style, clean cel shading, expressive large eyes, gentle pastel-leaning colors with a few warm accents, soft lighting, calm uncluttered composition. Absolutely no text, words, letters or numbers anywhere in the image.",
     "size": "1024x1024",
     "quality": "medium",
     "model": "gpt-image-2.5-flare",
-    "sha256": "4481e12bcc08",
+    "sha256": "d7b58e712363",
     "usage": {
       "input_tokens": 120,
       "input_tokens_details": {
@@ -68,23 +68,23 @@
   {
     "id": "md-divider-sleeves",
     "file": "md-divider-sleeves.jpg",
-    "prompt": "An excited college student rolling up their sleeves in front of a giant laptop whose screen shows a colorful map with layers, a small cartoon file folder character with a face proudly wearing a brand-new blank paper luggage tag on a string stands on the desk beside the laptop, coffee mug and snacks nearby, ready-to-go energy \u2014 \u2014 Bold, colorful cartoon illustration in the style of a funny internet meme comic, thick clean outlines, exaggerated expressions, bright saturated colors, simple background. Absolutely no text, words, letters or numbers anywhere in the image.",
+    "prompt": "An excited young anime college student in a green hoodie rolls up their sleeves in front of a laptop showing a colorful map with a layers panel, a mug of coffee and a bowl of snacks on the desk, while a cute chibi yellow file-folder mascot with big shining eyes and tiny arms and legs wearing a small blank tag cheers beside the laptop \u2014 Japanese anime illustration style, clean cel shading, expressive large eyes, gentle pastel-leaning colors with a few warm accents, soft lighting, calm uncluttered composition. Absolutely no text, words, letters or numbers anywhere in the image.",
     "size": "1024x1024",
     "quality": "medium",
     "model": "gpt-image-2.5-flare",
-    "sha256": "8f466f1467d1",
+    "sha256": "46fa4f7cb97a",
     "usage": {
-      "input_tokens": 113,
+      "input_tokens": 123,
       "input_tokens_details": {
         "image_tokens": 0,
-        "text_tokens": 113
+        "text_tokens": 123
       },
       "output_tokens": 439,
       "output_tokens_details": {
         "image_tokens": 439,
         "text_tokens": 0
       },
-      "total_tokens": 552
+      "total_tokens": 562
     }
   },
   {
@@ -173,6 +173,28 @@
         "text_tokens": 0
       },
       "total_tokens": 613
+    }
+  },
+  {
+    "id": "md-thursday-qgis",
+    "file": "md-thursday-qgis.jpg",
+    "prompt": "A focused young anime college student works at a laptop in a bright computer lab, the screen showing a colorful map, while Data, a cute chibi mascot shaped like a folded paper map with big expressive eyes and tiny arms and legs sits on the desk beside the laptop pointing helpfully at the screen \u2014 Japanese anime illustration style, clean cel shading, expressive large eyes, gentle pastel-leaning colors with a few warm accents, soft lighting, calm uncluttered composition. Absolutely no text, words, letters or numbers anywhere in the image.",
+    "size": "1024x1024",
+    "quality": "medium",
+    "model": "gpt-image-2.5-flare",
+    "sha256": "3c8c1e42d084",
+    "usage": {
+      "input_tokens": 114,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 114
+      },
+      "output_tokens": 439,
+      "output_tokens_details": {
+        "image_tokens": 439,
+        "text_tokens": 0
+      },
+      "total_tokens": 553
     }
   }
 ]

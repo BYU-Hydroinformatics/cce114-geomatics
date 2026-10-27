@@ -69,11 +69,15 @@ Dr. Dan Ames
 
 <!-- _class: lead -->
 
+![bg right:50%](images/ce414-divider-tour.jpg)
+
 # The rest of today
 
 ## A tour of what you would actually build in CCE 414
 
 <!-- Everything that follows is real student work or a real lab from CCE 414. Move quickly: the point is breadth, not detail. Invite questions as you go. -->
+
+<!-- Anime-style cartoon generated with gpt-image-2.5-flare, October 2026; prompt in tools/divider-images/week14.json. -->
 
 ---
 
@@ -158,11 +162,15 @@ Dr. Dan Ames
 
 <!-- _class: lead -->
 
+![bg right:50%](images/ce414-divider-modeling.jpg)
+
 # Modeling
 
 ## Doing the analysis once, then doing it a hundred times
 
 <!-- Transition slide. Up to now in CCE 114 you have run tools one at a time. The next few slides are about capturing the whole chain so it can be re-run, audited, and handed to someone else. -->
+
+<!-- Anime-style cartoon generated with gpt-image-2.5-flare, October 2026; prompt in tools/divider-images/week14.json. -->
 
 ---
 
@@ -218,11 +226,15 @@ The front half of the biofuel siting analysis — and this is only half of it
 
 <!-- _class: lead -->
 
+![bg right:50%](images/ce414-divider-programming.jpg)
+
 # GIS Programming
 
 ## When the flow chart is not enough
 
 <!-- Second half of the automation story. Models are great until you need a loop, a condition, or a report — then you write code. -->
+
+<!-- Anime-style cartoon generated with gpt-image-2.5-flare, October 2026; prompt in tools/divider-images/week14.json. -->
 
 ---
 
@@ -306,9 +318,13 @@ The front half of the biofuel siting analysis — and this is only half of it
 
 <!-- _class: lead -->
 
+![bg right:50%](images/ce414-divider-imagery.jpg)
+
 # Imagery and Remote Sensing
 
 <!-- Third theme: getting information out of pictures of the earth. -->
+
+<!-- Anime-style cartoon generated with gpt-image-2.5-flare, October 2026; prompt in tools/divider-images/week14.json. -->
 
 ---
 
@@ -350,11 +366,15 @@ The front half of the biofuel siting analysis — and this is only half of it
 
 <!-- _class: lead -->
 
+![bg right:50%](images/ce414-divider-terrain.jpg)
+
 # Terrain Analysis
 
 ## Everything you can get from a DEM
 
 <!-- Fourth theme, and the one closest to civil engineering practice: elevation data, and the derived surfaces that come out of it. -->
+
+<!-- Anime-style cartoon generated with gpt-image-2.5-flare, October 2026; prompt in tools/divider-images/week14.json. -->
 
 ---
 

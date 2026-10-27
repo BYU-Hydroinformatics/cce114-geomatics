@@ -45,11 +45,15 @@ By the end of class you should be able to:
 
 <!-- _class: lead -->
 
+![bg right:50%](images/ras-divider-by-hand.jpg)
+
 # First we do it by hand
 
 ## Then we name what we did
 
 <!-- Same pattern as Day 2: see it first, then name it. Students spend the next 25 to 30 minutes doing a full raster suitability analysis on engineering paper with a pencil. Every term in the second half of the lecture (cell, resolution, reclassify, map algebra, weighted overlay) will point back at what they drew. -->
+
+<!-- Anime-style cartoon generated with gpt-image-2.5-flare, October 2026; prompt in tools/divider-images/week06.json. -->
 
 ---
 

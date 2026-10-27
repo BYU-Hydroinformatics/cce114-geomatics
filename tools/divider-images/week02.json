@@ -1,0 +1,46 @@
+[
+  {
+    "id": "dm-divider-airplane",
+    "file": "dm-divider-airplane.jpg",
+    "prompt": "A young anime kid holds up a small model airplane against the sky, comparing it to a real airliner flying overhead in the same pose, bright blue sky with fluffy clouds \u2014 Japanese anime illustration style, clean cel shading, expressive large eyes, gentle pastel-leaning colors with a few warm accents, soft lighting, calm uncluttered composition. Absolutely no text, words, letters or numbers anywhere in the image.",
+    "size": "1024x1024",
+    "quality": "medium",
+    "model": "gpt-image-2.5-flare",
+    "sha256": "a6a540920085",
+    "usage": {
+      "input_tokens": 89,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 89
+      },
+      "output_tokens": 439,
+      "output_tokens_details": {
+        "image_tokens": 439,
+        "text_tokens": 0
+      },
+      "total_tokens": 528
+    }
+  },
+  {
+    "id": "dm-divider-river",
+    "file": "dm-divider-river.jpg",
+    "prompt": "A winding river in a green valley shown three ways side by side: on the left as a real sparkling river, in the middle as a clean blue line, on the right as a grid of blue pixel squares; a young anime student on the bank looks between them curiously \u2014 Japanese anime illustration style, clean cel shading, expressive large eyes, gentle pastel-leaning colors with a few warm accents, soft lighting, calm uncluttered composition. Absolutely no text, words, letters or numbers anywhere in the image.",
+    "size": "1024x1024",
+    "quality": "medium",
+    "model": "gpt-image-2.5-flare",
+    "sha256": "1052e1ebdf13",
+    "usage": {
+      "input_tokens": 110,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 110
+      },
+      "output_tokens": 439,
+      "output_tokens_details": {
+        "image_tokens": 439,
+        "text_tokens": 0
+      },
+      "total_tokens": 549
+    }
+  }
+]

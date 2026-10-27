@@ -406,9 +406,13 @@ Also, for the record:
 
 <!-- _class: lead -->
 
+![bg right:50%](images/mc-divider-fun.jpg)
+
 # Fun with maps
 
 <!-- Lighten up for the last few minutes. These are here to make the point that a map is an argument, and sometimes a joke. -->
+
+<!-- Anime-style cartoon generated with gpt-image-2.5-flare, October 2026; prompt in tools/divider-images/week03.json. -->
 
 ---
 

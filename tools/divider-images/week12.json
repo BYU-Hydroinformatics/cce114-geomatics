@@ -1,0 +1,178 @@
+[
+  {
+    "id": "ws-divider-review",
+    "file": "ws-divider-review.jpg",
+    "prompt": "A small anime study group of three college students around a table playfully handle translucent colored overlay sheets of maps and glowing concentric buffer rings, one holding a ruler, papers and snacks on the table \u2014 Japanese anime illustration style, clean cel shading, expressive large eyes, gentle pastel-leaning colors with a few warm accents, soft lighting, calm uncluttered composition. Absolutely no text, words, letters or numbers anywhere in the image.",
+    "size": "1024x1024",
+    "quality": "medium",
+    "model": "gpt-image-2.5-flare",
+    "sha256": "268434bb7edb",
+    "usage": {
+      "input_tokens": 94,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 94
+      },
+      "output_tokens": 439,
+      "output_tokens_details": {
+        "image_tokens": 439,
+        "text_tokens": 0
+      },
+      "total_tokens": 533
+    }
+  },
+  {
+    "id": "ws-divider-walmart",
+    "file": "ws-divider-walmart.jpg",
+    "prompt": "A team of three young anime engineers in hard hats and safety vests scouts an empty grassy lot at the edge of town with a tripod surveying instrument and a tablet, a generic big-box retail store with no logo and no signage in the background, sunny day \u2014 Japanese anime illustration style, clean cel shading, expressive large eyes, gentle pastel-leaning colors with a few warm accents, soft lighting, calm uncluttered composition. Absolutely no text, words, letters or numbers anywhere in the image.",
+    "size": "1024x1024",
+    "quality": "medium",
+    "model": "gpt-image-2.5-flare",
+    "sha256": "9712e9892adc",
+    "usage": {
+      "input_tokens": 106,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 106
+      },
+      "output_tokens": 439,
+      "output_tokens_details": {
+        "image_tokens": 439,
+        "text_tokens": 0
+      },
+      "total_tokens": 545
+    }
+  },
+  {
+    "id": "cr-title-scrapbook",
+    "file": "cr-title-scrapbook.jpg",
+    "prompt": "A young anime college student sits cross-legged on a bed happily flipping through a big scrapbook filled with colorful maps from the semester, with Data, a cute chibi mascot shaped like a folded paper map with big expressive eyes and tiny arms and legs and a cute chibi yellow file-folder mascot with big shining eyes and tiny arms and legs peeking over the pages, warm cozy evening light \u2014 Japanese anime illustration style, clean cel shading, expressive large eyes, gentle pastel-leaning colors with a few warm accents, soft lighting, calm uncluttered composition. Absolutely no text, words, letters or numbers anywhere in the image.",
+    "size": "1024x1024",
+    "quality": "medium",
+    "model": "gpt-image-2.5-flare",
+    "sha256": "159ece12e9f4",
+    "usage": {
+      "input_tokens": 131,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 131
+      },
+      "output_tokens": 439,
+      "output_tokens_details": {
+        "image_tokens": 439,
+        "text_tokens": 0
+      },
+      "total_tokens": 570
+    }
+  },
+  {
+    "id": "cr-divider-exam1",
+    "file": "cr-divider-exam1.jpg",
+    "prompt": "A young anime student closes their eyes and smiles as familiar things float up around them like memories in soft bubbles: a GPS satellite, a map with a legend, a grid of colored raster cells, a globe with latitude lines \u2014 Japanese anime illustration style, clean cel shading, expressive large eyes, gentle pastel-leaning colors with a few warm accents, soft lighting, calm uncluttered composition. Absolutely no text, words, letters or numbers anywhere in the image.",
+    "size": "1024x1024",
+    "quality": "medium",
+    "model": "gpt-image-2.5-flare",
+    "sha256": "647c79f3a85b",
+    "usage": {
+      "input_tokens": 99,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 99
+      },
+      "output_tokens": 439,
+      "output_tokens_details": {
+        "image_tokens": 439,
+        "text_tokens": 0
+      },
+      "total_tokens": 538
+    }
+  },
+  {
+    "id": "cr-divider-new",
+    "file": "cr-divider-new.jpg",
+    "prompt": "The same young anime student powers up with a bright glowing aura in a dramatic heroic pose, a new chapter opening behind them, Data, a cute chibi mascot shaped like a folded paper map with big expressive eyes and tiny arms and legs and a cute chibi yellow file-folder mascot with big shining eyes and tiny arms and legs cheering on either side \u2014 Japanese anime illustration style, clean cel shading, expressive large eyes, gentle pastel-leaning colors with a few warm accents, soft lighting, calm uncluttered composition. Absolutely no text, words, letters or numbers anywhere in the image.",
+    "size": "1024x1024",
+    "quality": "medium",
+    "model": "gpt-image-2.5-flare",
+    "sha256": "51d45aacd791",
+    "usage": {
+      "input_tokens": 124,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 124
+      },
+      "output_tokens": 439,
+      "output_tokens_details": {
+        "image_tokens": 439,
+        "text_tokens": 0
+      },
+      "total_tokens": 563
+    }
+  },
+  {
+    "id": "fp-divider-workflow",
+    "file": "fp-divider-workflow.jpg",
+    "prompt": "Three young anime students lay out a flowchart of blank cards connected by arrows across a big table, pointing and discussing, one placing the final card, maps and a laptop nearby \u2014 Japanese anime illustration style, clean cel shading, expressive large eyes, gentle pastel-leaning colors with a few warm accents, soft lighting, calm uncluttered composition. Absolutely no text, words, letters or numbers anywhere in the image.",
+    "size": "1024x1024",
+    "quality": "medium",
+    "model": "gpt-image-2.5-flare",
+    "sha256": "9bc46a25f079",
+    "usage": {
+      "input_tokens": 90,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 90
+      },
+      "output_tokens": 439,
+      "output_tokens_details": {
+        "image_tokens": 439,
+        "text_tokens": 0
+      },
+      "total_tokens": 529
+    }
+  },
+  {
+    "id": "fp-divider-cookie",
+    "file": "fp-divider-cookie.jpg",
+    "prompt": "A cheerful young anime baker in an apron presses a cookie cutter into a sheet of dough printed with a colorful map pattern, neatly cut map-shaped cookies on a tray beside her, flour dusting the counter \u2014 Japanese anime illustration style, clean cel shading, expressive large eyes, gentle pastel-leaning colors with a few warm accents, soft lighting, calm uncluttered composition. Absolutely no text, words, letters or numbers anywhere in the image.",
+    "size": "1024x1024",
+    "quality": "medium",
+    "model": "gpt-image-2.5-flare",
+    "sha256": "56497de5ce0d",
+    "usage": {
+      "input_tokens": 95,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 95
+      },
+      "output_tokens": 439,
+      "output_tokens_details": {
+        "image_tokens": 439,
+        "text_tokens": 0
+      },
+      "total_tokens": 534
+    }
+  },
+  {
+    "id": "fp-divider-project",
+    "file": "fp-divider-project.jpg",
+    "prompt": "A young anime hero with a short cape stands on a hilltop at sunrise holding an open map, looking out over a valley of farms, roads and a small town, with Data, a cute chibi mascot shaped like a folded paper map with big expressive eyes and tiny arms and legs riding on their shoulder, hopeful mood \u2014 Japanese anime illustration style, clean cel shading, expressive large eyes, gentle pastel-leaning colors with a few warm accents, soft lighting, calm uncluttered composition. Absolutely no text, words, letters or numbers anywhere in the image.",
+    "size": "1024x1024",
+    "quality": "medium",
+    "model": "gpt-image-2.5-flare",
+    "sha256": "7cf1aca47d7d",
+    "usage": {
+      "input_tokens": 119,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 119
+      },
+      "output_tokens": 439,
+      "output_tokens_details": {
+        "image_tokens": 439,
+        "text_tokens": 0
+      },
+      "total_tokens": 558
+    }
+  }
+]

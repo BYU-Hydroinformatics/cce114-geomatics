@@ -221,7 +221,11 @@ What are the **geometry characteristics** of each of these feature types?
 
 <!-- _class: lead -->
 
+![bg right:50%](images/dm-divider-airplane.jpg)
+
 # Consider a model airplane
+
+<!-- Anime-style cartoon generated with gpt-image-2.5-flare, October 2026; prompt in tools/divider-images/week02.json. -->
 
 ---
 
@@ -291,7 +295,11 @@ What are the **geometry characteristics** of each of these feature types?
 
 <!-- _class: lead -->
 
+![bg right:50%](images/dm-divider-river.jpg)
+
 # What "models" can we use to represent a river?
+
+<!-- Anime-style cartoon generated with gpt-image-2.5-flare, October 2026; prompt in tools/divider-images/week02.json. -->
 
 ---
 

@@ -65,9 +65,13 @@ Today, Thursday, and Lab 6 all build toward these. By the end of the week you sh
 
 <!-- _class: lead -->
 
+![bg right:50%](images/fd-divider-explorer.jpg)
+
 # Is there any data out there?
 
 <!-- The framing question for the first half. Before you collect anything yourself, with a total station, a GPS unit, or a drone, ask whether someone has already collected it and published it. For most of the United States, someone has. -->
+
+<!-- Anime-style cartoon generated with gpt-image-2.5-flare, October 2026; prompt in tools/divider-images/week07.json. -->
 
 ---
 

@@ -1,0 +1,112 @@
+[
+  {
+    "id": "ce414-divider-tour",
+    "file": "ce414-divider-tour.jpg",
+    "prompt": "A young anime college student with a backpack stands at the start of a winding trail at sunrise, holding a folded map, with Data, a cute chibi mascot shaped like a folded paper map with big expressive eyes and tiny arms and legs riding on their shoulder; the trail leads past a satellite dish, a laptop on a rock, and a mountain peak in the distance, sense of adventure \u2014 Japanese anime illustration style, clean cel shading, expressive large eyes, gentle pastel-leaning colors with a few warm accents, soft lighting, calm uncluttered composition. Absolutely no text, words, letters or numbers anywhere in the image.",
+    "size": "1024x1024",
+    "quality": "medium",
+    "model": "gpt-image-2.5-flare",
+    "sha256": "b359983bce17",
+    "usage": {
+      "input_tokens": 132,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 132
+      },
+      "output_tokens": 439,
+      "output_tokens_details": {
+        "image_tokens": 439,
+        "text_tokens": 0
+      },
+      "total_tokens": 571
+    }
+  },
+  {
+    "id": "ce414-divider-modeling",
+    "file": "ce414-divider-modeling.jpg",
+    "prompt": "A friendly round anime helper robot sits at a desk running the same map analysis over and over, a tall tidy stack of identical finished maps growing beside it, while a young anime student relaxes with a cup of cocoa and gives a thumbs up \u2014 Japanese anime illustration style, clean cel shading, expressive large eyes, gentle pastel-leaning colors with a few warm accents, soft lighting, calm uncluttered composition. Absolutely no text, words, letters or numbers anywhere in the image.",
+    "size": "1024x1024",
+    "quality": "medium",
+    "model": "gpt-image-2.5-flare",
+    "sha256": "477ce105b029",
+    "usage": {
+      "input_tokens": 103,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 103
+      },
+      "output_tokens": 439,
+      "output_tokens_details": {
+        "image_tokens": 439,
+        "text_tokens": 0
+      },
+      "total_tokens": 542
+    }
+  },
+  {
+    "id": "ce414-divider-programming",
+    "file": "ce414-divider-programming.jpg",
+    "prompt": "A young anime programmer in a hoodie types at a glowing monitor in a cozy dim room, abstract colorful code-like shapes and map shapes floating in the air around them, while Data, a cute chibi mascot shaped like a folded paper map with big expressive eyes and tiny arms and legs cheers and waves little pom-poms beside the keyboard \u2014 Japanese anime illustration style, clean cel shading, expressive large eyes, gentle pastel-leaning colors with a few warm accents, soft lighting, calm uncluttered composition. Absolutely no text, words, letters or numbers anywhere in the image.",
+    "size": "1024x1024",
+    "quality": "medium",
+    "model": "gpt-image-2.5-flare",
+    "sha256": "47194474522d",
+    "usage": {
+      "input_tokens": 121,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 121
+      },
+      "output_tokens": 439,
+      "output_tokens_details": {
+        "image_tokens": 439,
+        "text_tokens": 0
+      },
+      "total_tokens": 560
+    }
+  },
+  {
+    "id": "ce414-divider-imagery",
+    "file": "ce414-divider-imagery.jpg",
+    "prompt": "A cute chibi satellite character with solar-panel wings and big eyes floats in orbit holding a camera, happily taking a photo of the blue and green Earth below, stars sparkling in the background \u2014 Japanese anime illustration style, clean cel shading, expressive large eyes, gentle pastel-leaning colors with a few warm accents, soft lighting, calm uncluttered composition. Absolutely no text, words, letters or numbers anywhere in the image.",
+    "size": "1024x1024",
+    "quality": "medium",
+    "model": "gpt-image-2.5-flare",
+    "sha256": "797db099f6ad",
+    "usage": {
+      "input_tokens": 92,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 92
+      },
+      "output_tokens": 439,
+      "output_tokens_details": {
+        "image_tokens": 439,
+        "text_tokens": 0
+      },
+      "total_tokens": 531
+    }
+  },
+  {
+    "id": "ce414-divider-terrain",
+    "file": "ce414-divider-terrain.jpg",
+    "prompt": "A young anime hiker stands on a mountain made of neat stepped terraces like a 3D elevation model, faint contour lines on the slopes, a little stream of water flowing down the valley to a lake, golden afternoon light \u2014 Japanese anime illustration style, clean cel shading, expressive large eyes, gentle pastel-leaning colors with a few warm accents, soft lighting, calm uncluttered composition. Absolutely no text, words, letters or numbers anywhere in the image.",
+    "size": "1024x1024",
+    "quality": "medium",
+    "model": "gpt-image-2.5-flare",
+    "sha256": "840c2de9f0f1",
+    "usage": {
+      "input_tokens": 100,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 100
+      },
+      "output_tokens": 439,
+      "output_tokens_details": {
+        "image_tokens": 439,
+        "text_tokens": 0
+      },
+      "total_tokens": 539
+    }
+  }
+]

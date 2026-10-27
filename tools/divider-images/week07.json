@@ -1,0 +1,46 @@
+[
+  {
+    "id": "fd-divider-explorer",
+    "file": "fd-divider-explorer.jpg",
+    "prompt": "A young anime explorer in a captain's coat stands at the bow of a small ship looking through a brass telescope over a sea made of glowing floating map tiles and folders, islands of data on the horizon \u2014 Japanese anime illustration style, clean cel shading, expressive large eyes, gentle pastel-leaning colors with a few warm accents, soft lighting, calm uncluttered composition. Absolutely no text, words, letters or numbers anywhere in the image.",
+    "size": "1024x1024",
+    "quality": "medium",
+    "model": "gpt-image-2.5-flare",
+    "sha256": "c7b8fcf885df",
+    "usage": {
+      "input_tokens": 95,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 95
+      },
+      "output_tokens": 439,
+      "output_tokens_details": {
+        "image_tokens": 439,
+        "text_tokens": 0
+      },
+      "total_tokens": 534
+    }
+  },
+  {
+    "id": "web-divider-into-qgis",
+    "file": "web-divider-into-qgis.jpg",
+    "prompt": "A young anime student dives headfirst like a swimmer into a laptop screen that opens into a bright colorful map world, with Data, a cute chibi mascot shaped like a folded paper map with big expressive eyes and tiny arms and legs diving in right behind them \u2014 Japanese anime illustration style, clean cel shading, expressive large eyes, gentle pastel-leaning colors with a few warm accents, soft lighting, calm uncluttered composition. Absolutely no text, words, letters or numbers anywhere in the image.",
+    "size": "1024x1024",
+    "quality": "medium",
+    "model": "gpt-image-2.5-flare",
+    "sha256": "1f1536a54de4",
+    "usage": {
+      "input_tokens": 106,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 106
+      },
+      "output_tokens": 439,
+      "output_tokens_details": {
+        "image_tokens": 439,
+        "text_tokens": 0
+      },
+      "total_tokens": 545
+    }
+  }
+]

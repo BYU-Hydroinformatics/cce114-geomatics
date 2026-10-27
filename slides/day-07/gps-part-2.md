@@ -218,9 +218,13 @@ Note the scale: a millisecond of error here is **300 km**. GPS needs nanoseconds
 
 <!-- _class: lead -->
 
+![bg right:50%](images/gps-divider-how-wrong.jpg)
+
 # How wrong is your position?
 
 ## Putting a number on GPS error
+
+<!-- Anime-style cartoon generated with gpt-image-2.5-flare, October 2026; prompt in tools/divider-images/week04.json. -->
 
 ---
 

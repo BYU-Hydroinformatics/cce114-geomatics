@@ -70,9 +70,13 @@ Dr. Dan Ames and Dr. James Halgren
 
 <!-- _class: lead -->
 
+![bg right:50%](images/ws-divider-review.jpg)
+
 # Part 1
 
 ## Review: the common spatial analyses
+
+<!-- Anime-style cartoon generated with gpt-image-2.5-flare, October 2026; prompt in tools/divider-images/week12.json. -->
 
 ---
 
@@ -214,9 +218,13 @@ When you run an **Intersection** or a **Union**, the attribute tables of both la
 
 <!-- _class: lead -->
 
+![bg right:50%](images/ws-divider-walmart.jpg)
+
 # Part 2
 
 ## The Walmart problem
+
+<!-- Anime-style cartoon generated with gpt-image-2.5-flare, October 2026; prompt in tools/divider-images/week12.json. -->
 
 ---
 

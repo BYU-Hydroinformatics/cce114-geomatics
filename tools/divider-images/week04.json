@@ -1,0 +1,68 @@
+[
+  {
+    "id": "gps-divider-receiver",
+    "file": "gps-divider-receiver.jpg",
+    "prompt": "A young anime college student on a campus lawn looks at their phone while several cute chibi satellite characters in the sky above shout and wave toward the phone with little dotted signal lines, playful and bright \u2014 Japanese anime illustration style, clean cel shading, expressive large eyes, gentle pastel-leaning colors with a few warm accents, soft lighting, calm uncluttered composition. Absolutely no text, words, letters or numbers anywhere in the image.",
+    "size": "1024x1024",
+    "quality": "medium",
+    "model": "gpt-image-2.5-flare",
+    "sha256": "4603a75f41ba",
+    "usage": {
+      "input_tokens": 94,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 94
+      },
+      "output_tokens": 439,
+      "output_tokens_details": {
+        "image_tokens": 439,
+        "text_tokens": 0
+      },
+      "total_tokens": 533
+    }
+  },
+  {
+    "id": "gps-divider-errors",
+    "file": "gps-divider-errors.jpg",
+    "prompt": "A cute chibi satellite character in the sky sends a signal that bounces comically off the glass walls of tall city buildings before reaching a confused young anime student holding a phone on the street below \u2014 Japanese anime illustration style, clean cel shading, expressive large eyes, gentle pastel-leaning colors with a few warm accents, soft lighting, calm uncluttered composition. Absolutely no text, words, letters or numbers anywhere in the image.",
+    "size": "1024x1024",
+    "quality": "medium",
+    "model": "gpt-image-2.5-flare",
+    "sha256": "5e17eb51b432",
+    "usage": {
+      "input_tokens": 94,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 94
+      },
+      "output_tokens": 439,
+      "output_tokens_details": {
+        "image_tokens": 439,
+        "text_tokens": 0
+      },
+      "total_tokens": 533
+    }
+  },
+  {
+    "id": "gps-divider-how-wrong",
+    "file": "gps-divider-how-wrong.jpg",
+    "prompt": "A young anime student throws darts at a dartboard target, the darts scattered in a loose cluster around the bullseye rather than in it, the student scratching their head with a sheepish grin \u2014 Japanese anime illustration style, clean cel shading, expressive large eyes, gentle pastel-leaning colors with a few warm accents, soft lighting, calm uncluttered composition. Absolutely no text, words, letters or numbers anywhere in the image.",
+    "size": "1024x1024",
+    "quality": "medium",
+    "model": "gpt-image-2.5-flare",
+    "sha256": "48eae7b8828b",
+    "usage": {
+      "input_tokens": 94,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 94
+      },
+      "output_tokens": 439,
+      "output_tokens_details": {
+        "image_tokens": 439,
+        "text_tokens": 0
+      },
+      "total_tokens": 533
+    }
+  }
+]
