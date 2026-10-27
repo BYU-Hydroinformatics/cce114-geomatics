@@ -2,23 +2,23 @@
   {
     "id": "md-divider-interrogation",
     "file": "md-divider-interrogation.jpg",
-    "prompt": "A hard-boiled newspaper reporter in a fedora with a notepad and pencil leans across a small table under a single hanging lamp, intensely questioning a nervous cartoon file folder character with a face, tiny arms and legs, who is sweating and clutching a stack of papers; a coffee cup and a tape recorder sit on the table, interrogation-room meme energy \u2014 \u2014 Bold, colorful cartoon illustration in the style of a funny internet meme comic, thick clean outlines, exaggerated expressions, bright saturated colors, simple background. Absolutely no text, words, letters or numbers anywhere in the image.",
+    "prompt": "A sharp young anime detective in a trench coat and fedora with a notepad and pencil leans across a small table under a single hanging lamp, intensely questioning a nervous chibi file-folder mascot with big sweaty eyes and tiny arms and legs, who clutches a stack of papers; a coffee cup and a small tape recorder sit on the table, dramatic but comedic interrogation-room mood \u2014 Japanese anime illustration style, clean cel shading, expressive large eyes, gentle pastel-leaning colors with a few warm accents, soft lighting, calm uncluttered composition. Absolutely no text, words, letters or numbers anywhere in the image.",
     "size": "1024x1024",
     "quality": "medium",
     "model": "gpt-image-2.5-flare",
-    "sha256": "860155792ab8",
+    "sha256": "cd3ab1dd0ef9",
     "usage": {
-      "input_tokens": 123,
+      "input_tokens": 131,
       "input_tokens_details": {
         "image_tokens": 0,
-        "text_tokens": 123
+        "text_tokens": 131
       },
       "output_tokens": 439,
       "output_tokens_details": {
         "image_tokens": 439,
         "text_tokens": 0
       },
-      "total_tokens": 562
+      "total_tokens": 570
     }
   },
   {
@@ -151,6 +151,28 @@
         "text_tokens": 0
       },
       "total_tokens": 475
+    }
+  },
+  {
+    "id": "md-melodrama",
+    "file": "md-melodrama.jpg",
+    "prompt": "An old-fashioned stage melodrama scene on a frontier railroad: a smirking anime villain with a curled black mustache, top hat and long cape twirls his mustache beside the tracks, where a cute chibi mascot shaped like a folded paper map, with big worried eyes and tiny arms and legs, is loosely tied to the rail with a single comical loop of rope; a confident young anime hero in a cowboy hat and cape strikes a heroic pose as she rushes in to the rescue; a steam locomotive puffs in the far distance under a warm sunset sky, playful theatrical mood \u2014 Japanese anime illustration style, clean cel shading, expressive large eyes, gentle pastel-leaning colors with a few warm accents, soft lighting, calm uncluttered composition. Absolutely no text, words, letters or numbers anywhere in the image.",
+    "size": "1024x1024",
+    "quality": "medium",
+    "model": "gpt-image-2.5-flare",
+    "sha256": "e854ca882ce1",
+    "usage": {
+      "input_tokens": 174,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 174
+      },
+      "output_tokens": 439,
+      "output_tokens_details": {
+        "image_tokens": 439,
+        "text_tokens": 0
+      },
+      "total_tokens": 613
     }
   }
 ]

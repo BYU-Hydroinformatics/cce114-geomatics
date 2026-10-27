@@ -4,6 +4,7 @@ theme: cce114
 paginate: true
 footer: "CCE 114 · Day 16 — Metadata"
 style: |
+  section:not(.lead) { align-content: start; }
   .sub { color: #6b7a90; font-size: 0.78em; font-style: italic; margin: -0.55em 0 0.6em; }
   .six { color: #c8102e; font-weight: 800; }
   .ask { font-size: 1.15em; font-weight: 700; color: #002e5d; }
@@ -154,7 +155,7 @@ By the end of class you should be able to:
 
 - What's different?
 - **Metadata!**
-- Same bottle. The label says it is root beer, not beer: what is in it, who brewed it, and enough to know it fits the Word of Wisdom
+- Same bottle. The label says it is root beer, not beer: what is in it, who brewed it, and enough to know if it's going to send you to the Honor Code Office
 
 </div>
 </div>
@@ -306,7 +307,7 @@ By the end of class you should be able to:
 </div>
 </div>
 
-<!-- At this point gather nine volunteers and hand out the papers. The spatial data actor gets all of the "spatial data" sheets; everyone else gets just one sheet. The cast is Data, the villains Unreliability and Irrelevance, and the six heroes What, Where, When, Why, How, and Who; the full script and run notes are on the Week 9 activity page (docs/activities/week-09.md). The rest of the class follows along at t.ly/rPYx. Lead the applause. The melodrama introduces the six questions; the divider that follows names them formally. Quiz 7 has a question on the melodrama. The illustration is the hero, Metadata, tied to the tracks by the villain. -->
+<!-- At this point gather nine volunteers and hand out the papers. The spatial data actor gets all of the "spatial data" sheets; everyone else gets just one sheet. The cast is Data, the villains Unreliability and Irrelevance, and the six heroes What, Where, When, Why, How, and Who; the full script and run notes are on the Week 9 activity page (docs/activities/week-09.md). The rest of the class follows along at t.ly/rPYx. Lead the applause. The melodrama introduces the six questions; the divider that follows names them formally. Quiz 7 has a question on the melodrama. The anime-style illustration (gpt-image-2.5-flare, October 2026; prompt in tools/divider-images/week09.json) shows Data, the map, tied to the tracks by the villain while a hero rushes in. -->
 
 
 ---
