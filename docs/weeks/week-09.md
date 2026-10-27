@@ -6,7 +6,8 @@
 
 ## :material-presentation-play: Presentation Slides
 
-- **Tuesday** — [Spatial Metadata](https://byu-hydroinformatics.github.io/cce114-geomatics/slides/day-16/metadata.html) — What metadata is and why it matters; Metadata standards and styles; Reading metadata to judge whether data is fit for use
+- **Tuesday** — [Spatial Metadata](https://byu-hydroinformatics.github.io/cce114-geomatics/slides/day-16/metadata.html) — What metadata is and why it matters; The six questions every record answers; Right data, wrong job
+- **Thursday** — [Metadata Standards and Fitness for Use](https://byu-hydroinformatics.github.io/cce114-geomatics/slides/day-17/metadata-standards.html)
 
 Press <kbd>F</kbd> for fullscreen and <kbd>P</kbd> for presenter view with speaker notes.
 

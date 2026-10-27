@@ -4,8 +4,14 @@
 
 ### Topics
 
+- Metadata standards (FGDC CSDGM, ISO 19115) and where metadata lives in a download
+- Reading metadata to judge whether data is fit for use
 - Creating and editing metadata in QGIS
 - Finding and evaluating datasets on gis.utah.gov and data.gov
+
+### Slides
+
+- [Metadata Standards and Fitness for Use](https://byu-hydroinformatics.github.io/cce114-geomatics/slides/day-17/metadata-standards.html)
 
 <!-- runsheet -->
 **Feeds** [Lab 8](../assignments/lab-08/README.md).
@@ -15,7 +21,7 @@
 | | |
 | --- | --- |
 | **Goal** | Students write metadata for a layer in QGIS, save it with the data, and evaluate a published dataset against the six questions (what, who, where, when, why, how). |
-| **Why this week** | Tuesday was the what and why of metadata, with the melodrama. Today students produce it rather than read it. Lab 8 asks for metadata on Utah County layers and a wetland dataset, and Quiz 7 sends them to gis.utah.gov and data.gov. |
+| **Why this week** | Tuesday was the what and why of metadata, with the melodrama. Today opens with about twelve minutes of slides on the standards, where metadata lives, and fitness for use, then students produce metadata rather than read it. Lab 8 asks for metadata on Utah County layers and a wetland dataset, and Quiz 7 sends them to gis.utah.gov and data.gov. |
 | **Students bring** | Laptop with QGIS 3.44. Any layer they already have (the Week 2 Utah County boundary is ideal). |
 | **Graded item** | *In Class Activity: AGRC Metadata* (5 points). Each student fills one row of the **AGRC Metadata** tab in the class Google Sheet for a dataset they evaluated. |
 | **Feeds** | Lab 8: Metadata. Due Saturday. Quiz 7 closes Saturday; Quiz 8 opens today. |
@@ -58,6 +64,7 @@ metadata to file** or **Save to database**, it lives only in the project file.
 
 ### Before class
 
+- [ ] The [Metadata Standards and Fitness for Use](https://byu-hydroinformatics.github.io/cce114-geomatics/slides/day-17/metadata-standards.html) deck open in presenter view (press <kbd>P</kbd>). It ends on the QGIS Metadata dialog, which is where the walkthrough starts.
 - [ ] The class Google Sheet open at the **AGRC Metadata** tab. Its columns are: Name, Name of the Dataset, Link to download, What does the data represent, Who created it and who maintains it, Spatial Reference, Why (purpose), How was it created, When created or updated, Where, Key attributes. Clear old rows.
 - [ ] A UGRC product page open, for example the Utah County Boundaries or Roads page on [gis.utah.gov/products/sgid](https://gis.utah.gov/products/sgid/), and one [data.gov](https://www.data.gov) dataset page with thin metadata for contrast.
 - [ ] QGIS open with the county boundary loaded.
@@ -68,12 +75,13 @@ metadata to file** or **Save to database**, it lives only in the project file.
 | Time | Segment |
 | --- | --- |
 | 0:00 | Mini-devotional |
-| 0:03 | Read metadata on a UGRC product page: find the six answers |
-| 0:09 | QGIS Layer Properties > Metadata: fill the Identification, Categories, Keywords, Access, Extent, Contacts, and History pages |
-| 0:19 | Save it: to a `.qmd` sidecar and into the GeoPackage; show it travel with the data |
-| 0:24 | A dataset with bad metadata: what you cannot tell, and what could go wrong |
-| 0:29 | Students: evaluate one dataset, fill a row in the sheet |
-| 0:43 | Lab 8 pointer; Quiz 7 and Quiz 8 reminders |
+| 0:03 | Slides: metadata standards, where metadata lives, fitness for use (keep to about twelve minutes) |
+| 0:15 | Read metadata on a UGRC product page: find the six answers |
+| 0:19 | QGIS Layer Properties > Metadata: fill the Identification, Categories, Keywords, Access, Extent, Contacts, and History pages |
+| 0:27 | Save it: to a `.qmd` sidecar and into the GeoPackage; show it travel with the data |
+| 0:30 | A dataset with bad metadata: what you cannot tell, and what could go wrong |
+| 0:33 | Students: evaluate one dataset, fill a row in the sheet |
+| 0:46 | Final Thoughts slide: Lab 8 pointer; Quiz 7 and Quiz 8 reminders |
 
 ### Walkthrough
 
