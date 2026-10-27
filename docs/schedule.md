@@ -9,7 +9,7 @@ Each week has two class meetings, presented together on that week's page:
 - **Lecture**{ .badge .badge-lecture } **Tuesday.** Concepts, discussion, and a short in-class activity.
 - **Hands-On Practice**{ .badge .badge-handson } **Thursday.** Working in QGIS on the week's topic. Every session has its own step-by-step guide under [Hands-On Practice](handson/README.md), written so it can be rehearsed alone beforehand. Week 7's Thursday is the exception: a short lecture on web services that ends in a follow-along in QGIS.
 
-Reading quizzes open on Tuesday and close **Saturday at 11:59 pm**; lab reports are also due **Saturday at 11:59 pm**.
+Reading quizzes open on Tuesday (Quiz 8 opens early, on Thursday of Week 9) and close **Saturday at 11:59 pm**; lab reports are also due **Saturday at 11:59 pm**.
 
 | Week | Tuesday (lecture) | Thursday (hands-on practice) | Due this week |
 | --- | --- | --- | --- |

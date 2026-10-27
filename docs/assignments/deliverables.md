@@ -18,7 +18,7 @@ the week it is due. You submit a lab as a single PDF report on Learning Suite, d
 
 Quizzes on Learning Suite over the week's reading in *GIS Fundamentals* (Bolstad & Manson) and the
 lecture material. They are **open book and untimed**, meant to be done with your notes and the book
-in hand. Each quiz opens on Tuesday and closes **Saturday at 11:59 pm** of its week, and quizzes
+in hand. Each quiz opens on Tuesday (Quiz 8 opens early, on Thursday of Week 9) and closes **Saturday at 11:59 pm** of its week, and quizzes
 cannot be submitted late. The same concepts reappear on the [Concepts Exams](../policies/exams.md),
 where the book is not available, so treat the readings seriously.
 

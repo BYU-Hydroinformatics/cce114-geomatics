@@ -193,6 +193,7 @@ DAYS = [
 ]
 
 # What is due each week. quiz: (number, title); lab: number; both due Saturday 11:59 pm.
+# quiz_opens: set only when the quiz does not open on Tuesday of its own week.
 # also: everything else (exams, experiences, final project), with its timing in parentheses;
 # shown in the "Also this week" callout above the four cards.
 WEEKS = {
@@ -208,6 +209,7 @@ WEEKS = {
     8: dict(theme="Geodesy, Projections, and Coordinate Systems", quiz=(6, "Map Projections and Coordinate Systems"), lab=7),
     9: dict(theme="Metadata", quiz=(7, "Metadata"), lab=8),
     10: dict(theme="Geoprocessing", quiz=(8, "Geoprocessing and Spatial Data Analysis"), lab=9,
+             quiz_opens="Thursday of Week 9",
              also=["Community and Professional Map Experience (Wednesday)"]),
     11: dict(theme="Geoplanning and Georeferencing", lab=10),
     12: dict(theme="Project Site Selection", lab=11, also=["Concepts Exam 2 (Testing Center)"]),
@@ -564,7 +566,8 @@ def week_page(w: int) -> str:
         n, title = info["quiz"]
         if body["quiz"]:
             body["quiz"].append("")
-        body["quiz"].append(f"**Quiz {n} — {title}** on Learning Suite: open book. Due **Saturday at 11:59 pm**. "
+        opens = f"Opens {info['quiz_opens']}. " if info.get("quiz_opens") else ""
+        body["quiz"].append(f"**Quiz {n} — {title}** on Learning Suite: open book. {opens}Due **Saturday at 11:59 pm**. "
                             "See [Reading Quizzes](../assignments/deliverables.md#reading-quizzes).")
     elif reading:
         body["quiz"] += ["", "*No quiz due this week.*"]
@@ -599,7 +602,7 @@ def schedule_page() -> str:
            "session has its own step-by-step guide under [Hands-On Practice](handson/README.md), "
            "written so it can be rehearsed alone beforehand. Week 7's Thursday is the exception: "
            "a short lecture on web services that ends in a follow-along in QGIS.", "",
-           "Reading quizzes open on Tuesday and close **Saturday at 11:59 pm**; lab reports are also due **Saturday at 11:59 pm**.", "",
+           "Reading quizzes open on Tuesday (Quiz 8 opens early, on Thursday of Week 9) and close **Saturday at 11:59 pm**; lab reports are also due **Saturday at 11:59 pm**.", "",
            "| Week | Tuesday (lecture) | Thursday (hands-on practice) | Due this week |",
            "| --- | --- | --- | --- |"]
     for w, info in WEEKS.items():

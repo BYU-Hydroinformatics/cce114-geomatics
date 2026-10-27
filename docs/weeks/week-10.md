@@ -56,7 +56,7 @@ Due **Saturday at 11:59 pm** on Learning Suite.
 
 **This week's reading:** GIS Fundamentals, Chapter 9 (Basic Spatial Analysis).
 
-**Quiz 8 — Geoprocessing and Spatial Data Analysis** on Learning Suite: open book. Due **Saturday at 11:59 pm**. See [Reading Quizzes](../assignments/deliverables.md#reading-quizzes).
+**Quiz 8 — Geoprocessing and Spatial Data Analysis** on Learning Suite: open book. Opens Thursday of Week 9. Due **Saturday at 11:59 pm**. See [Reading Quizzes](../assignments/deliverables.md#reading-quizzes).
 
 </div>
 
