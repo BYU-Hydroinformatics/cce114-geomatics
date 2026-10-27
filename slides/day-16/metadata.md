@@ -69,8 +69,8 @@ By the end of class you should be able to:
 <div class="columns" style="grid-template-columns: 1fr 1.15fr;">
 <div style="font-size:0.95em">
 
-- **DGPS**: you stood on the spot with a differential GPS receiver. Why differential?
-- **Digitize**: you clicked on the map to draw your own features. How good can it be?
+- **DGPS**: you stood on the spot with a differential GPS receiver
+- **Digitize**: you clicked on the map to draw your own features
 - **Download**: you take someone else's data. Where do you get it? **What *is* it?**
 - You collected the first two yourself, so you know how they were made
 - The last one is a stranger's work: today is about answering **"what is it?"** first
