@@ -21,9 +21,9 @@ Dr. Dan Ames and Dr. James Halgren
 
 # Today's Goals
 
-![bg right:40% w:88%](images/md-metadata-cartoon.png)
+![bg right:40% w:92%](images/md-metadata-cartoon.png)
 
-<div style="font-size:1.12em">
+<div style="font-size:1.25em">
 
 By the end of class you should be able to:
 
@@ -52,7 +52,7 @@ By the end of class you should be able to:
 </div>
 <div>
 
-![w:540 center](images/md-three-sources.jpg)
+![w:600 center](images/md-three-sources.jpg)
 
 </div>
 </div>
@@ -96,7 +96,7 @@ Poll:
 # Would you drink it *now*?
 
 <div class="columns" style="grid-template-columns: 1.2fr 1fr;">
-<div style="font-size:1.15em">
+<div style="font-size:1.45em">
 
 - What's different?
 - **Metadata!**
@@ -105,7 +105,7 @@ Poll:
 </div>
 <div>
 
-![h:470 center](images/md-bottle-labeled.png)
+![h:540 center](images/md-bottle-labeled.png)
 
 </div>
 </div>
@@ -117,9 +117,9 @@ Poll:
 
 # A label is a metadata record
 
-![bg right:32% w:92%](images/md-label-record.jpg)
+![bg right:36% w:95%](images/md-label-record.jpg)
 
-<div class="columns" style="align-items:start; font-size:1.05em;">
+<div class="columns" style="align-items:start; font-size:1.1em;">
 <div>
 
 **On the bottle**
@@ -170,7 +170,7 @@ Poll:
 
 ![bg right:42% w:94%](images/md-video-panda.png)
 
-<div style="font-size:1.15em">
+<div style="font-size:1.35em">
 
 - Why can't the panda use the data?
 - What kind of metadata would make the file useful?
@@ -185,8 +185,8 @@ Poll:
 
 # When metadata is missing: Mars Climate Orbiter
 
-<div class="columns" style="grid-template-columns: 1.1fr 1fr;">
-<div>
+<div class="columns" style="grid-template-columns: 1fr 1fr;">
+<div style="font-size:1.05em">
 
 - 1999: NASA lost a **$125 million** spacecraft
 - Ground software delivered thruster data in **English units**; the onboard software expected **metric**
@@ -197,7 +197,7 @@ Poll:
 </div>
 <div>
 
-![w:540 center](images/md-mars-orbiter.jpg)
+![w:620 center](images/md-mars-orbiter.jpg)
 
 </div>
 </div>
@@ -209,14 +209,18 @@ Poll:
 
 <!-- _class: lead -->
 
+![bg right:55%](images/md-divider-interrogation.jpg)
+
 # What goes into a metadata record?
+
+## Six questions every dataset should be able to answer
 
 ---
 
 # A brief metadata melodrama
 
 <div class="columns" style="grid-template-columns: 1.1fr 1fr;">
-<div style="font-size:1.12em">
+<div style="font-size:1.35em">
 
 - A short, silly story about what happens when data has no documentation
 - Read it here: <a href="http://t.ly/rPYx" target="_blank">t.ly/rPYx</a>
@@ -225,7 +229,7 @@ Poll:
 </div>
 <div>
 
-![h:470 center](images/md-melodrama.jpg)
+![h:540 center](images/md-melodrama.jpg)
 
 </div>
 </div>
@@ -237,9 +241,9 @@ Poll:
 
 # The six questions: what, where, when
 
-![bg right:33% w:92%](images/md-what-where-when.jpg)
+![bg right:35% w:95%](images/md-what-where-when.jpg)
 
-<div style="font-size:1.05em">
+<div style="font-size:1.12em">
 
 - **What?** What do the data represent, in what file format, and what do the attribute columns mean?
 - **Where?** Where were the data collected, what area do they cover, and in what coordinate system and units?
@@ -254,9 +258,9 @@ Poll:
 
 # The six questions: why, how, who
 
-![bg right:33% w:92%](images/md-why-how-who.jpg)
+![bg right:38% w:95%](images/md-why-how-who.jpg)
 
-<div style="font-size:1.05em">
+<div style="font-size:1.12em">
 
 - **Why?** What was the intended purpose? Why was the dataset created in the first place?
 - **How?** How were the data created, by what collection method, and what geoprocessing steps came after?
@@ -271,7 +275,7 @@ Poll:
 
 # Fit for *its* purpose is not fit for *yours*
 
-![bg right:36% w:94%](images/md-right-data-wrong-job.jpg)
+![bg right:35% w:95%](images/md-right-data-wrong-job.jpg)
 
 <div style="font-size:1.08em">
 
@@ -303,7 +307,7 @@ Poll:
 </div>
 <div>
 
-![w:540 center](images/md-activity-notes.jpg)
+![w:600 center](images/md-activity-notes.jpg)
 
 </div>
 </div>
@@ -367,3 +371,5 @@ Poll:
 <!-- Update 2026-09-02: ArcGIS-era screenshots replaced with QGIS 3.44 captures made by tools/qgis_reshoot_screens.py: md-qgis-metadata-panel.png re-shot in QGIS 3.44 (now in the Day 17 deck). -->
 
 <!-- Five minutes, in pairs. The two worth arguing about out loud are the 1:100,000 roads layer and the Lehi footprints question, where the better-documented dataset is still not the right answer. If the room has no signal, put the URL on the board. The page is linked from the Week 9 page too. -->
+
+<!-- Update 2026-10-27: divider cartoons added (prompts in tools/divider-images/week09.json, gpt-image-2.5-flare, same meme-comic style as the CE 414 dividers), and the side-panel illustrations and text enlarged to fill white space. -->

@@ -41,14 +41,18 @@ By the end of class you should be able to:
 
 <!-- _class: lead -->
 
+![bg right:55%](images/md-divider-card-catalog.jpg)
+
 # Metadata standards and styles
+
+## Same fields, same places, so anyone can find them
 
 ---
 
 # Why standardize metadata at all?
 
-<div class="columns" style="grid-template-columns: 1.1fr 1fr;">
-<div>
+<div class="columns" style="grid-template-columns: 1fr 1fr;">
+<div style="font-size:1.02em">
 
 - If everyone invents their own fields, nothing is **searchable**
 - A standard fixes the **field names** and the **expected content**, so software can index them and a "date" is a date
@@ -59,7 +63,7 @@ By the end of class you should be able to:
 </div>
 <div>
 
-![w:540 center](images/md-card-catalog.jpg)
+![w:600 center](images/md-card-catalog.jpg)
 
 </div>
 </div>
@@ -71,7 +75,7 @@ By the end of class you should be able to:
 
 # FGDC: the U.S. federal standard
 
-![bg right:36% w:94%](images/md-fgdc-federal.jpg)
+![bg right:38% w:95%](images/md-fgdc-federal.jpg)
 
 - **Content Standard for Digital Geospatial Metadata** (CSDGM), from the Federal Geographic Data Committee
 - Executive Order 12906 (1994) told federal agencies to document geospatial data this way as part of the National Spatial Data Infrastructure
@@ -86,9 +90,9 @@ By the end of class you should be able to:
 
 # The seven sections of FGDC
 
-![bg right:29% w:92%](images/md-seven-sections.jpg)
+![bg right:34% w:95%](images/md-seven-sections.jpg)
 
-<ol style="font-size:0.98em">
+<ol style="font-size:1.0em">
 <li><strong>Identification</strong> — title, abstract, purpose, keywords, bounding coordinates</li>
 <li><strong>Data Quality</strong> — accuracy, completeness, <strong>lineage</strong></li>
 <li><strong>Spatial Data Organization</strong> — points, vectors, or raster cells</li>
@@ -105,9 +109,9 @@ By the end of class you should be able to:
 
 # What an FGDC record looks like inside
 
-![bg right:27% w:92%](images/md-xml-inside.jpg)
+![bg right:30% w:95%](images/md-xml-inside.jpg)
 
-<style scoped>pre, pre code { font-size: 21px; line-height: 1.25; }</style>
+<style scoped>pre, pre code { font-size: 23px; line-height: 1.25; }</style>
 
 <div>
 
@@ -140,7 +144,7 @@ By the end of class you should be able to:
 
 # ISO 19115: the international standard
 
-![bg right:33% w:94%](images/md-iso-global.jpg)
+![bg right:33% w:95%](images/md-iso-global.jpg)
 
 - **ISO 19115, *Geographic information — Metadata***, is the international equivalent
 - Richer and more structured than FGDC, but organized the same way: identification, quality, spatial representation, reference system, distribution
@@ -154,8 +158,8 @@ By the end of class you should be able to:
 
 # Other styles you will meet
 
-<div class="columns" style="grid-template-columns: 1.1fr 1fr;">
-<div>
+<div class="columns" style="grid-template-columns: 1fr 1fr;">
+<div style="font-size:1.05em">
 
 - **Dublin Core** — 15 general-purpose elements (title, creator, date, rights…). Not spatial, but it underlies a lot of catalogs
 - **DCAT / Project Open Data** — the schema behind [data.gov](https://www.data.gov)
@@ -165,7 +169,7 @@ By the end of class you should be able to:
 </div>
 <div>
 
-![w:540 center](images/md-other-styles.jpg)
+![w:600 center](images/md-other-styles.jpg)
 
 </div>
 </div>
@@ -177,8 +181,8 @@ By the end of class you should be able to:
 
 # Where does the metadata actually live?
 
-<div class="columns" style="grid-template-columns: 1.25fr 1fr;">
-<div style="font-size:0.95em">
+<div class="columns" style="grid-template-columns: 1.1fr 1fr;">
+<div style="font-size:1.02em">
 
 - **Shapefile** — sidecar `.xml` beside the `.shp`, plus the `.prj` that holds the coordinate system
 - **GeoPackage** — stored *inside* the `.gpkg` file
@@ -190,7 +194,7 @@ By the end of class you should be able to:
 </div>
 <div>
 
-![w:500 center](images/md-where-it-lives.jpg)
+![w:580 center](images/md-where-it-lives.jpg)
 
 </div>
 </div>
@@ -202,13 +206,17 @@ By the end of class you should be able to:
 
 <!-- _class: lead -->
 
+![bg right:55%](images/md-divider-fitting-room.jpg)
+
 # Reading metadata: is this data fit for use?
+
+## Good data that was made for someone else's job
 
 ---
 
 # A fitness-for-use checklist
 
-![bg right:34% w:92%](images/md-fitness-checklist.jpg)
+![bg right:36% w:95%](images/md-fitness-checklist.jpg)
 
 <ol style="font-size:0.98em">
 <li><strong>Scale / resolution</strong> — what is the smallest thing this can represent?</li>
@@ -259,24 +267,18 @@ Collected 2024, from 6-inch imagery, lineage documented, county GIS contact list
 
 # Worked example: county boundaries
 
-![bg right:29% w:92%](images/md-utah-county.jpg)
+![bg right:33% w:95%](images/md-utah-county.jpg)
 
-<div class="columns" style="align-items:start; font-size:0.95em;">
-<div>
+<div style="font-size:1.0em">
 
 - Download the shapefile from the Utah portal
 - Unzip it and open the `.xml` in a browser: it is plain text
 - Search for **`UGRC`** to find *who*
 - Search for **`metd`** to find *when*, written `YYYYMMDD`
-
-</div>
-<div>
-
 - Search for **`bounding`** to find *where*
 - Read the abstract and keywords for *what*, the purpose for *why*
 - The coordinate system is **not** in the XML — it is in the `.prj` file in the same folder
 
-</div>
 </div>
 
 <!-- This is Part 1 of Lab 8, so treat it as a preview and let them follow along if they have laptops open. The .prj point catches almost everyone: the CRS lives in a separate file from the rest of the metadata. -->
@@ -286,7 +288,7 @@ Collected 2024, from 6-inch imagery, lineage documented, county GIS contact list
 
 # Where to find data *with* metadata
 
-![bg right:36% w:92%](images/md-data-portals.jpg)
+![bg right:36% w:95%](images/md-data-portals.jpg)
 
 <div class="columns" style="align-items:start;">
 <div>
@@ -316,7 +318,11 @@ Collected 2024, from 6-inch imagery, lineage documented, county GIS contact list
 
 <!-- _class: lead -->
 
+![bg right:55%](images/md-divider-sleeves.jpg)
+
 # Now in QGIS
+
+## Read a record, then write one that travels with the data
 
 <!-- Hand-off. Everything from here on is the hands-on session in the Week 9 hands-on guide; each slide below is one segment of its 50-minute plan, so leave each one up while you demo. -->
 
@@ -380,7 +386,7 @@ Open a UGRC product page on [gis.utah.gov](https://gis.utah.gov/products/sgid/) 
 
 ![bg right:38% h:88%](images/md-bottle-unlabeled.jpg)
 
-<div style="font-size:1.08em">
+<div style="font-size:1.3em">
 
 Open the thin [data.gov](https://www.data.gov) page. From the page alone:
 
@@ -448,3 +454,5 @@ Open the thin [data.gov](https://www.data.gov) page. From the page alone:
 <!-- Run sheet 0:46: the Lab 8 pointer and the quiz reminders. Everything Lab 8 needs is in the Metadata dialog they just used. -->
 
 <!-- Split notes (2026-10-26): this deck is the second half of the original Day 16 "Spatial Metadata" deck, moved to Thursday because Tuesday ran long. The break is the "Metadata standards and styles" divider. The QGIS Metadata dialog slide moved from the middle of the standards section to the end so the deck hands off into QGIS. On 2026-10-26 the hand-off became its own section ("Now in QGIS"), one slide per run-sheet segment: read a UGRC record, write it, save it, bad metadata on purpose, and the AGRC Metadata activity. md-read-a-record, md-save-it and md-agrc-activity were generated with gpt-image-1 in the deck's style; md-bottle-unlabeled is Tuesday's bottle, reused as a callback. Due dates checked against Learning Suite 2026-10-26. -->
+
+<!-- Update 2026-10-27: divider cartoons added (prompts in tools/divider-images/week09.json, gpt-image-2.5-flare, same meme-comic style as the CE 414 dividers), and the side-panel illustrations and text enlarged to fill white space. -->

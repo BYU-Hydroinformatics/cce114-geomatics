@@ -1,0 +1,90 @@
+[
+  {
+    "id": "md-divider-interrogation",
+    "file": "md-divider-interrogation.jpg",
+    "prompt": "A hard-boiled newspaper reporter in a fedora with a notepad and pencil leans across a small table under a single hanging lamp, intensely questioning a nervous cartoon file folder character with a face, tiny arms and legs, who is sweating and clutching a stack of papers; a coffee cup and a tape recorder sit on the table, interrogation-room meme energy \u2014 \u2014 Bold, colorful cartoon illustration in the style of a funny internet meme comic, thick clean outlines, exaggerated expressions, bright saturated colors, simple background. Absolutely no text, words, letters or numbers anywhere in the image.",
+    "size": "1024x1024",
+    "quality": "medium",
+    "model": "gpt-image-2.5-flare",
+    "sha256": "860155792ab8",
+    "usage": {
+      "input_tokens": 123,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 123
+      },
+      "output_tokens": 439,
+      "output_tokens_details": {
+        "image_tokens": 439,
+        "text_tokens": 0
+      },
+      "total_tokens": 562
+    }
+  },
+  {
+    "id": "md-divider-card-catalog",
+    "file": "md-divider-card-catalog.jpg",
+    "prompt": "A frazzled librarian with glasses askew and hair sticking up tries to cram wildly mismatched books into a neat wooden card catalog: a round book, a triangle book, a floppy noodle-shaped book, a giant book, while a row of tidy identical rectangular books with smiling faces sits calmly on the shelf beside her looking smug \u2014 \u2014 Bold, colorful cartoon illustration in the style of a funny internet meme comic, thick clean outlines, exaggerated expressions, bright saturated colors, simple background. Absolutely no text, words, letters or numbers anywhere in the image.",
+    "size": "1024x1024",
+    "quality": "medium",
+    "model": "gpt-image-2.5-flare",
+    "sha256": "8a7124477ec1",
+    "usage": {
+      "input_tokens": 116,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 116
+      },
+      "output_tokens": 439,
+      "output_tokens_details": {
+        "image_tokens": 439,
+        "text_tokens": 0
+      },
+      "total_tokens": 555
+    }
+  },
+  {
+    "id": "md-divider-fitting-room",
+    "file": "md-divider-fitting-room.jpg",
+    "prompt": "A construction engineer in a hard hat and safety vest stands in a clothing store fitting room in front of a mirror, wearing a suit made out of a folded paper map that is comically far too big, sleeves flopping past his hands, while a tailor with a tape measure around his neck and pins in his mouth squints at him doubtfully \u2014 \u2014 Bold, colorful cartoon illustration in the style of a funny internet meme comic, thick clean outlines, exaggerated expressions, bright saturated colors, simple background. Absolutely no text, words, letters or numbers anywhere in the image.",
+    "size": "1024x1024",
+    "quality": "medium",
+    "model": "gpt-image-2.5-flare",
+    "sha256": "4481e12bcc08",
+    "usage": {
+      "input_tokens": 120,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 120
+      },
+      "output_tokens": 439,
+      "output_tokens_details": {
+        "image_tokens": 439,
+        "text_tokens": 0
+      },
+      "total_tokens": 559
+    }
+  },
+  {
+    "id": "md-divider-sleeves",
+    "file": "md-divider-sleeves.jpg",
+    "prompt": "An excited college student rolling up their sleeves in front of a giant laptop whose screen shows a colorful map with layers, a small cartoon file folder character with a face proudly wearing a brand-new blank paper luggage tag on a string stands on the desk beside the laptop, coffee mug and snacks nearby, ready-to-go energy \u2014 \u2014 Bold, colorful cartoon illustration in the style of a funny internet meme comic, thick clean outlines, exaggerated expressions, bright saturated colors, simple background. Absolutely no text, words, letters or numbers anywhere in the image.",
+    "size": "1024x1024",
+    "quality": "medium",
+    "model": "gpt-image-2.5-flare",
+    "sha256": "8f466f1467d1",
+    "usage": {
+      "input_tokens": 113,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 113
+      },
+      "output_tokens": 439,
+      "output_tokens_details": {
+        "image_tokens": 439,
+        "text_tokens": 0
+      },
+      "total_tokens": 552
+    }
+  }
+]
