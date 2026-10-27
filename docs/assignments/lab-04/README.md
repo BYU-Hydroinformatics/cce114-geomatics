@@ -204,7 +204,7 @@ Work down the whole stretch until your blue line follows the real canal, then ta
 41. First, create one last GeoPackage point layer named "Culverts" (Layer \> Create Layer \> New GeoPackage Layer..., Geometry Type: Point) with two fields: Waterway (Text) and Road (Text). Then open Project \> Snapping Options and make sure snapping to the Waterways layer is turned on — every culvert point should land exactly on the waterway line it belongs to. Finally, toggle editing on the Culverts layer.  
 42. Now it is up to you to figure out where the culverts should go. To add a point, toggle this button (Add Point Feature). Everywhere you click, there will be a new point — and thanks to snapping, points placed near a waterway will lock right onto the line. Fill in the Waterway and Road attributes for each culvert as you go.   
 43. When you click, there will be a pop-up. Hit ok or enter if you want to keep that point, or cancel if you want to delete it.  
-44. You should map a minimum of 10 culverts. (Hint: look at where canals and streams cross under roads — every crossing without a visible bridge needs a culvert.)
+44. You should map a minimum of 10 culverts. (Hint: look at where canals and streams cross under roads — every crossing without a visible bridge needs a culvert.) When you are done, right-click the Culverts layer and choose Open Attribute Table. Check that every row has both Waterway and Road filled in, then take a screenshot of the whole table window, including its title bar, which shows the layer's total feature count. You will need this screenshot for your deliverables.
 
 > [!IMPORTANT]
 > Do not stay zoomed in on the temple site looking for ten crossings, because they are not there.
@@ -235,7 +235,7 @@ To complete this lab, you must submit a **PDF file** that contains the following
 1. Your name, date, class section, and lab assignment number  
 2. Your final, polished map layout exported as a PDF, showing the corrected municipal assets  
 3. Your BEFORE and AFTER screenshots of the canal stretch you realigned with the Vertex Tool  
-4. The name of the road and waterway for one culvert you mapped, and one sentence on how you knew a culvert belonged there rather than a bridge  
+4. A screenshot of your Culverts attribute table showing every row, with the Waterway and Road columns filled in and the feature count visible in the window's title bar. Below it, name the road and waterway for one culvert you mapped, and write one sentence on how you knew a culvert belonged there rather than a bridge  
 5. The grading rubric below, filled in with your self-evaluation
 
 ## **Grading Rubric**
@@ -248,7 +248,7 @@ Copy the rubric and paste it into your lab report. Fill in your self-evaluation 
 | ----- | ----- |
 | Data you created: Satellite imagery base layer is clearly visible *(2 pts)* Custom symbology for all five created layers plus Waterways *(5 pts)* Temple and parking lot footprints are semi-transparent, hit the target areas, and do not overlap *(4 pts)* | /11 |
 | Correcting the canal: BEFORE and AFTER screenshots of the stretch you realigned, taken at the same zoom *(5 pts)* The AFTER line follows the canal in the imagery for at least 300 meters *(2 pts)* | /7 |
-| Culverts: At least 10 points, each snapped onto a waterway where it crosses a road *(4 pts)* Waterway and Road attributes filled in *(1 pt)* Your written explanation of one culvert *(1 pt)* | /6 |
+| Culverts: At least 10 points, each snapped onto a waterway where it crosses a road, with the count shown in your attribute table screenshot *(4 pts)* Waterway and Road attributes filled in for every row, visible in the screenshot *(1 pt)* Your written explanation of one culvert *(1 pt)* | /6 |
 | Cartographic elements: Descriptive title *(1 pt)* Labels on the building footprints *(1 pt)* Neatline, legend, north arrow, scale bar, and citations with name, section and lab number *(4 pts)* | /6 |
 | **Total** | **/30** |
 
