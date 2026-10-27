@@ -2,12 +2,12 @@
 
 **Lecture**{ .badge .badge-lecture } · *Day 16 · Tuesday of [Week 9 — Metadata](../weeks/week-09.md)*
 
-**Graded in-class activity.** What I learned about metadata: write down a couple of things you learned today. Record your completion on Learning Suite.
+Not graded.
 
 <!-- notes -->
 *In the [Spatial Metadata](https://byu-hydroinformatics.github.io/cce114-geomatics/slides/day-16/metadata.html) deck, "A brief metadata melodrama." The script is below; the original is "Metadata Football Data.docx" in the Lectures/Archived folder.*
 
-**Setup.** Nine volunteers, each handed one role card printed from the script. Props are optional; a cape for Data helps.
+**Setup.** Nine volunteers. The spatial data actor (Data) gets all of the "spatial data" sheets; everyone else gets one sheet, printed from the script. Props are optional; a cape for Data helps.
 
 **Cast.** Data; the villains Unreliability and Irrelevance; the six heroes What, Where, When, Why, How, Who.
 
@@ -38,7 +38,3 @@
 **Who:** Have no fear, Data! I am here to save you! I am the metadata element of "Who"! I will tell the world who created you! No longer will you wonder who brought you into being! The world will know! The world must know! I am about to tell you right now! The words are about to come out of my mouth! Here it comes! I am about to say it! Your... creator... was...
 
 **Data:** Well, that was strange, but I feel so much safer and happier now! I have meaning! I have purpose! I... AM... DATA! (shouting)
-
-*Same deck, "In-class activity: What I learned about metadata."*
-
-Five minutes after the melodrama. Students write down a couple of things they learned, one of which they will actually check the next time they download data, and enter them on *In Class Activity: What I learned about metadata*. Collect two or three answers out loud.

@@ -19,7 +19,7 @@ Press <kbd>F</kbd> for fullscreen and <kbd>P</kbd> for presenter view with speak
 
 ## :material-account-group: In-Class Practice
 
-- **Tuesday** — What I learned about metadata: write down a couple of things you learned today. Record your completion on Learning Suite. [Activity guide](../activities/week-09.md)
+- **Tuesday** — [A Brief Metadata Melodrama](../activities/week-09.md) (not graded).
 
 <div class="handson-cta" markdown="1">
 

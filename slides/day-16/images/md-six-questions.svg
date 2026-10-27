@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 660" font-family="Avenir Next, Segoe UI, Helvetica, Arial, sans-serif">
+<rect x="0" y="0" width="600" height="660" fill="#ffffff"/>
+<g stroke="#002e5d" stroke-width="4" stroke-linejoin="round" stroke-linecap="round">
+<path d="M150 180 L452 186 L448 432 L146 426 Z" fill="#fbf6ea"/>
+<path d="M170 250 L260 240 L268 320 L176 330 Z" fill="#f2b37a" stroke-width="3"/>
+<path d="M268 240 L330 236 L336 300 L270 306 Z" fill="#f6cf9e" stroke-width="3"/>
+<path d="M180 345 L262 336 L268 410 L184 414 Z" fill="#f6cf9e" stroke-width="3"/>
+<path d="M160 205 C 230 230, 300 200, 360 260 S 420 380, 440 420" fill="none" stroke="#3a86d4" stroke-width="9"/>
+<path d="M150 330 L448 318" fill="none" stroke="#8a94a3" stroke-width="7"/>
+</g>
+<circle cx="370" cy="215" r="8" fill="#002e5d"/>
+<circle cx="395" cy="350" r="8" fill="#002e5d"/>
+<circle cx="300" cy="395" r="8" fill="#002e5d"/>
+<circle cx="415" cy="250" r="8" fill="#002e5d"/>
+<circle cx="345" cy="395" r="8" fill="#002e5d"/>
+<g stroke="#002e5d" stroke-width="2.5" fill="#ffffff"><rect x="196" y="446" width="210" height="72" rx="4"/><line x1="196" y1="470" x2="406" y2="470"/><line x1="196" y1="494" x2="406" y2="494"/><line x1="266" y1="446" x2="266" y2="518"/><line x1="336" y1="446" x2="336" y2="518"/></g>
+<rect x="197.5" y="447.5" width="207" height="21" fill="#dfe8f3"/>
+<line x1="205" y1="482" x2="253" y2="482" stroke="#8a94a3" stroke-width="3" stroke-linecap="round"/>
+<line x1="275" y1="482" x2="323" y2="482" stroke="#8a94a3" stroke-width="3" stroke-linecap="round"/>
+<line x1="345" y1="482" x2="393" y2="482" stroke="#8a94a3" stroke-width="3" stroke-linecap="round"/>
+<line x1="205" y1="506" x2="253" y2="506" stroke="#8a94a3" stroke-width="3" stroke-linecap="round"/>
+<line x1="275" y1="506" x2="323" y2="506" stroke="#8a94a3" stroke-width="3" stroke-linecap="round"/>
+<line x1="345" y1="506" x2="393" y2="506" stroke="#8a94a3" stroke-width="3" stroke-linecap="round"/>
+<path d="M103 99 L181 175 L128 79 Z" fill="#fff4f4" stroke="#c8102e" stroke-width="3" stroke-linejoin="round"/>
+<rect x="30" y="30" width="130" height="64" rx="30" fill="#fff4f4" stroke="#c8102e" stroke-width="3"/>
+<rect x="65" y="57" width="60" height="22" fill="#fff4f4"/>
+<text x="95" y="73" text-anchor="middle" font-size="31" font-weight="800" fill="#c8102e">What?</text>
+<path d="M284 78 L300 164 L316 78 Z" fill="#fff4f4" stroke="#c8102e" stroke-width="3" stroke-linejoin="round"/>
+<rect x="235" y="12" width="130" height="64" rx="30" fill="#fff4f4" stroke="#c8102e" stroke-width="3"/>
+<rect x="270" y="39" width="60" height="22" fill="#fff4f4"/>
+<text x="300" y="55" text-anchor="middle" font-size="31" font-weight="800" fill="#c8102e">Where?</text>
+<path d="M472 79 L419 175 L497 99 Z" fill="#fff4f4" stroke="#c8102e" stroke-width="3" stroke-linejoin="round"/>
+<rect x="440" y="30" width="130" height="64" rx="30" fill="#fff4f4" stroke="#c8102e" stroke-width="3"/>
+<rect x="475" y="57" width="60" height="22" fill="#fff4f4"/>
+<text x="505" y="73" text-anchor="middle" font-size="31" font-weight="800" fill="#c8102e">When?</text>
+<path d="M129 575 L181 482 L103 555 Z" fill="#fff4f4" stroke="#c8102e" stroke-width="3" stroke-linejoin="round"/>
+<rect x="30" y="560" width="130" height="64" rx="30" fill="#fff4f4" stroke="#c8102e" stroke-width="3"/>
+<rect x="65" y="587" width="60" height="22" fill="#fff4f4"/>
+<text x="95" y="603" text-anchor="middle" font-size="31" font-weight="800" fill="#c8102e">Why?</text>
+<path d="M316 578 L300 494 L284 578 Z" fill="#fff4f4" stroke="#c8102e" stroke-width="3" stroke-linejoin="round"/>
+<rect x="235" y="580" width="130" height="64" rx="30" fill="#fff4f4" stroke="#c8102e" stroke-width="3"/>
+<rect x="270" y="607" width="60" height="22" fill="#fff4f4"/>
+<text x="300" y="623" text-anchor="middle" font-size="31" font-weight="800" fill="#c8102e">How?</text>
+<path d="M497 555 L419 482 L471 575 Z" fill="#fff4f4" stroke="#c8102e" stroke-width="3" stroke-linejoin="round"/>
+<rect x="440" y="560" width="130" height="64" rx="30" fill="#fff4f4" stroke="#c8102e" stroke-width="3"/>
+<rect x="475" y="587" width="60" height="22" fill="#fff4f4"/>
+<text x="505" y="603" text-anchor="middle" font-size="31" font-weight="800" fill="#c8102e">Who?</text>
+</svg>

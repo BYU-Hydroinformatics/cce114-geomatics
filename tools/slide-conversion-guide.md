@@ -58,7 +58,12 @@ Three standing rules (set 2026-09-03) apply to every deck:
 
 Specifically:
 
-- Start with a title slide (class `lead`, background image on the right) and a **Today's Goals**
+- Start with a title slide (class `lead`, background image on the right) built like every other
+  deck's: `![w:110](images/byu-medallion.svg)` under the background image, the `#` title, an
+  optional `##` subtitle, then four lines: `CCE 114 Geomatics`, `Civil & Construction Engineering`,
+  `Brigham Young University`, and the byline. Copy the medallion SVG into the deck's own `images/`.
+  Run `python3 tools/stamp_decks.py` before committing; it writes the last-updated date and
+  copyright line into the title slide's footer. Then a **Today's Goals**
   slide: "By the end of class you should be able to:" plus 3 to 5 outcomes.
 - End with **one** closing slide titled **Final Thoughts**: the self-check quiz (below) and the
   before-next-class items together, so students read both while they pack up. The items are the

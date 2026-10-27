@@ -10,12 +10,20 @@ footer: "CCE 114 · Day 17 — Metadata Standards"
 
 ![bg right:45% w:95%](images/md-thursday-qgis.jpg)
 
+![w:110](images/byu-medallion.svg)
+
 # Metadata Standards and Fitness for Use
 
 CCE 114 Geomatics
+Civil & Construction Engineering
+Brigham Young University
 Dr. Dan Ames and Dr. James Halgren
 
 <!-- Thursday, Week 9. The deck runs the whole session and follows the Week 9 hands-on guide. About twelve minutes of slides up to the "Now in QGIS" divider: the standards, where the record sits in a download, and reading one for fitness for use. After the divider, each slide is one segment of the run sheet's 50-minute plan, to leave up while you demo. Tuesday covered what metadata is, why it matters, and the six questions. -->
+
+<!-- stamp:begin -->
+<!-- _footer: '<span>CCE 114 · Day 17 — Metadata Standards<span class="updated">Last Updated: 2026-10-27</span></span><span>© 2026 Daniel P. Ames · <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></span>' -->
+<!-- stamp:end -->
 
 ---
 

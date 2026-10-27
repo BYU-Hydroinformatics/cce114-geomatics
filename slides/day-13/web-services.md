@@ -10,19 +10,22 @@ footer: "CCE 114 · Day 13 — Web Services"
 
 ![bg right:45% w:95%](images/web-qgis-styled-layers.jpg)
 
-![w:130](images/byu-medallion.svg)
+![w:110](images/byu-medallion.svg)
 
 # Web Services
 
 ## Getting data without downloading it
 
 CCE 114 Geomatics
-Brigham Young University
 Civil & Construction Engineering
-
+Brigham Young University
 Dr. Dan Ames and Dr. James Halgren
 
 <!-- Thursday lecture plus a short follow-along. Today is a light introduction to web services built around one question, whether a service sends a picture or the features, then students follow along in QGIS: connect to UGRC's services, add three live layers, and upload a quick layout for the in-class activity. A rough budget for the 50 minutes: 15 minutes of slides, a 5-minute live demo of a WMS and a WFS, 15 minutes of follow-along, 10 minutes for the Map Experience pitch. The map on the right was made entirely from web services: no downloads, no unzipping. Concepts Exam 1 closed yesterday, so expect a tired room. -->
+
+<!-- stamp:begin -->
+<!-- _footer: '<span>CCE 114 · Day 13 — Web Services<span class="updated">Last Updated: 2026-10-27</span></span><span>© 2026 Daniel P. Ames · <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></span>' -->
+<!-- stamp:end -->
 
 ---
 
@@ -36,7 +39,7 @@ By the end of class you should be able to:
 - Answer the one question that matters for any service: *do I get a **picture**, or the **features**?*
 - Connect **QGIS** to UGRC and make a quick map from **three live layers**: a running start on **Lab 6**
 
-<!-- Students need laptops with QGIS today: the second half of the hour is a follow-along of Lab 6, Step 3, ending in a quick layout they upload as the in-class activity. -->
+<!-- Students need QGIS today, on the lab computers: the second half of the hour is a follow-along of Lab 6, Step 3, ending in a quick layout they upload as the in-class activity. -->
 
 ---
 
@@ -162,7 +165,7 @@ By the end of class you should be able to:
 
 # Into QGIS
 
-## Follow along on your laptop
+## Follow along in QGIS
 
 <!-- Switch to QGIS here. First the two-part instructor demo on the next two slides (a WMS, then a WFS, from USGS servers that work reliably in QGIS 3.44), then everyone follows along with UGRC; the two slides after the demo are the fallback if the projector or network misbehaves. Connect to the UGRC endpoint, search for QuaternaryFaults, add it, add two more layers, and open the attribute table to show the features really came across. If the room's Wi-Fi struggles, the Clyde 234 lab machines are wired. -->
 

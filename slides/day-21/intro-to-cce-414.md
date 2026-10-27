@@ -10,14 +10,22 @@ footer: "CCE 114 · Day 21 — Introduction to CCE 414"
 
 ![bg right:45% w:95%](images/ce414-map-collage.jpg)
 
+![w:110](images/byu-medallion.svg)
+
 # Introduction to CCE 414
 
 ## Engineering Applications of GIS
 
 CCE 114 Geomatics
+Civil & Construction Engineering
+Brigham Young University
 Dr. Dan Ames
 
 <!-- This is a preview lecture, not a hands-on session: no laptop needed today. The whole hour is a tour of the follow-on course, CCE 414, and of the engineering problems it solves with GIS. Lab 10, Domes for Mozambique, is still due Saturday. -->
+
+<!-- stamp:begin -->
+<!-- _footer: '<span>CCE 114 · Day 21 — Introduction to CCE 414<span class="updated">Last Updated: 2026-10-27</span></span><span>© 2026 Daniel P. Ames · <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></span>' -->
+<!-- stamp:end -->
 
 ---
 

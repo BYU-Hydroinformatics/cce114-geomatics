@@ -10,19 +10,22 @@ footer: "CCE 114 · Day 12 — Finding Spatial Data"
 
 ![bg right:45% w:95%](images/web-national-map.jpg)
 
-![w:130](images/byu-medallion.svg)
+![w:110](images/byu-medallion.svg)
 
 # Finding Spatial Data
 
 ## Who already has it, and how to find it
 
 CCE 114 Geomatics
-Brigham Young University
 Civil & Construction Engineering
-
+Brigham Young University
 Dr. Dan Ames and Dr. James Halgren
 
 <!-- Tuesday concept lecture. Today is about where spatial data comes from and how to find it: the national sources, Utah's UGRC and SGID, and how to search well. Thursday is a second, shorter lecture on web services, the way to pull that data straight off a server into QGIS without downloading it, followed by a short follow-along in QGIS that students upload as the in-class activity. -->
+
+<!-- stamp:begin -->
+<!-- _footer: '<span>CCE 114 · Day 12 — Finding Spatial Data<span class="updated">Last Updated: 2026-10-27</span></span><span>© 2026 Daniel P. Ames · <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></span>' -->
+<!-- stamp:end -->
 
 ---
 
@@ -325,12 +328,12 @@ Today, Thursday, and Lab 6 all build toward these. By the end of the week you sh
 
 ![bg right:38% w:90%](images/web-wms-getmap.jpg)
 
-- A **short lecture**, then a **follow-along in QGIS**: bring your laptop
+- A **short lecture**, then a **follow-along in QGIS**
 - The right-hand column from today: **getting data without downloading it**
 - **WMS, WMTS, WFS, WCS, XYZ, ArcGIS REST**: which ones send you a *picture*, and which send the *features*
 - You will connect QGIS to UGRC's services, add three live layers, and upload a quick map: a running start on **Lab 6**
 
-<!-- Preview of Thursday. Tell students to bring a laptop with QGIS 3.44: the in-class activity is a follow-along map built from three UGRC service layers, uploaded before they leave. The image is a real WMS response: the server drew that hillshade and sent back a picture. That distinction, picture against features, is the heart of Thursday. -->
+<!-- Preview of Thursday. The in-class activity is a follow-along map built from three UGRC service layers, uploaded before they leave. The image is a real WMS response: the server drew that hillshade and sent back a picture. That distinction, picture against features, is the heart of Thursday. -->
 
 ---
 

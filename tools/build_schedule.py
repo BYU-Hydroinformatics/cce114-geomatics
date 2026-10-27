@@ -141,7 +141,8 @@ DAYS = [
          slides=[("Spatial Metadata", f"{SITE}/slides/day-16/metadata.html")],
          topics=["What metadata is and why it matters", "The six questions every record answers", "Right data, wrong job"],
          links=[("A brief metadata melodrama", "http://t.ly/rPYx")],
-         activity="What I learned about metadata: write down a couple of things you learned today",
+         # The "What I learned about metadata" activity was dropped 2026-10-27: Thursday's AGRC
+         # Metadata activity is the week's graded in-class item.
          reading="GIS Fundamentals, Chapter 7 (Digital Data)"),
     # Day 17 got its own lead-in deck on 2026-10-26: the standards and fitness-for-use half of
     # the Day 16 deck, moved to Thursday because Tuesday ran long.

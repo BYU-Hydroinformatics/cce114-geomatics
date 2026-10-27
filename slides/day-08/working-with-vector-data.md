@@ -10,19 +10,22 @@ footer: "CCE 114 · Day 8 — Working with Vector Data"
 
 ![bg right:45% w:95%](images/vec-satellite-neighborhood.jpg)
 
-![w:130](images/byu-medallion.svg)
+![w:110](images/byu-medallion.svg)
 
 # Working with Vector Data
 
 ## Part 1: Creating, Digitizing, and Editing
 
 CCE 114 Geomatics
-Brigham Young University
 Civil & Construction Engineering
-
+Brigham Young University
 Dr. Dan Ames and Dr. James Halgren
 
 <!-- Tuesday concept lecture. Up to now students have only *added* data that somebody else made. Today they learn where vector data comes from and how it gets onto a disk. Thursday in the Thursday hands-on session they do it themselves in QGIS, digitizing their own home. -->
+
+<!-- stamp:begin -->
+<!-- _footer: '<span>CCE 114 · Day 8 — Working with Vector Data<span class="updated">Last Updated: 2026-10-27</span></span><span>© 2026 Daniel P. Ames · <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></span>' -->
+<!-- stamp:end -->
 
 ---
 
@@ -549,7 +552,6 @@ A student builds a `Buildings` polygon layer with:
 ![bg right:38% w:92%](images/vec-neighborhood-closeup.jpg)
 
 - **In-class activity: Creating and Editing Vector Data**
-- Bring your laptop with **QGIS 3.44** installed
 - Load a satellite basemap and zoom to **your own home**
 - Create point, line, and polygon layers and digitize your house and your street
 - Practise **snapping** and topology so your lines actually meet
@@ -577,7 +579,6 @@ A student builds a `Buildings` polygon layer with:
 - **Quiz 4 (GPS Part 2)** — open book, on Learning Suite, due **Saturday**
 - **Lab 4: Changing, Editing, and Fixing GIS Data** — due **Saturday**
   [byu-hydroinformatics.github.io/cce114-geomatics/assignments/lab-04/](https://byu-hydroinformatics.github.io/cce114-geomatics/assignments/lab-04/)
-- Bring your laptop with QGIS installed on Thursday
 - Questions? Office hours: [calendly.com/dan-ames/office-hours](https://calendly.com/dan-ames/office-hours)
 
 </div>

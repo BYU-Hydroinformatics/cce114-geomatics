@@ -10,14 +10,22 @@ footer: "CCE 114 · Day 4 — Maps, Symbology, and Cartography"
 
 ![bg right:45% w:110%](images/mc-map-collage.jpg)
 
+![w:110](images/byu-medallion.svg)
+
 # Maps, Symbology, and Cartography
 
 ## Part 1
 
 CCE 114 Geomatics
+Civil & Construction Engineering
+Brigham Young University
 Dr. Dan Ames and Dr. James Halgren
 
 <!-- Tuesday concept lecture. Thursday is the hands-on session, where students build a map of the United States in QGIS and change symbology themselves. -->
+
+<!-- stamp:begin -->
+<!-- _footer: '<span>CCE 114 · Day 4 — Maps, Symbology, and Cartography<span class="updated">Last Updated: 2026-10-27</span></span><span>© 2026 Daniel P. Ames · <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></span>' -->
+<!-- stamp:end -->
 
 ---
 
@@ -498,7 +506,7 @@ Also, for the record:
 - **Add labels** to your features
 - In-class activity: make a colorful map and upload a screenshot
 
-<!-- Preview of Thursday. The Thursday session Students bring laptops with QGIS installed. The "Playing with Symbology" activity is graded on participation: make a colorful map and upload a screenshot. -->
+<!-- Preview of Thursday. The "Playing with Symbology" activity is graded on participation: make a colorful map and upload a screenshot. -->
 
 ---
 
@@ -519,7 +527,6 @@ Also, for the record:
 - Read the **map design** sections of Chapter 4 in *GIS Fundamentals* (Bolstad & Manson)
 - **Quiz 2 — Spatial Data Models and File Types**, open book on Learning Suite, due **Saturday**
 - **Lab 2 — Map Symbology and Layouts**, due **Saturday**: [assignments/lab-02](https://byu-hydroinformatics.github.io/cce114-geomatics/assignments/lab-02/)
-- Bring your laptop with QGIS installed on Thursday
 - Questions? Office hours: [calendly.com/dan-ames/office-hours](https://calendly.com/dan-ames/office-hours)
 
 </div>

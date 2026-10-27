@@ -10,12 +10,20 @@ footer: "CCE 114 · Day 23 — Final Mapping Project"
 
 ![bg right:45% w:95%](images/fp-title-supply.jpg)
 
+![w:110](images/byu-medallion.svg)
+
 # Final Mapping Project
 
 CCE 114 Geomatics
+Civil & Construction Engineering
+Brigham Young University
 Dr. James Halgren and Dr. Dan Ames
 
 <!-- Thursday working session. Today has two halves: this deck, where we walk the site-selection workflow one more time and hand out the final project, and the concepts review deck for Exam 2. Have the final project instructions open on Learning Suite before class so students can follow along. -->
+
+<!-- stamp:begin -->
+<!-- _footer: '<span>CCE 114 · Day 23 — Final Mapping Project<span class="updated">Last Updated: 2026-10-27</span></span><span>© 2026 Daniel P. Ames · <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></span>' -->
+<!-- stamp:end -->
 
 ---
 
@@ -482,7 +490,7 @@ For whichever you pick: **What are the criteria? What data are required? What to
 
 ![bg right:36% w:94%](images/fp-work-session.jpg)
 
-- **Week 13 and Week 14 class sessions are work sessions.** Bring your laptop and your data; both instructors are in the room to help
+- **Week 13 and Week 14 class sessions are work sessions.** Bring your data; both instructors are in the room to help
 - Come with a specific question: a tool that will not run, a projection mismatch, a layer you cannot find
 - Use the work sessions for the hard parts and do the writing and map layout on your own time
 

@@ -10,16 +10,22 @@ footer: "CCE 114 · Day 6 — The Global Positioning System"
 
 ![bg right:42% w:80%](images/gps-satellite.png)
 
+![w:110](images/byu-medallion.svg)
+
 # The Global Positioning System
 
 ## How the receiver in your pocket knows where it is
 
 CCE 114 Geomatics
+Civil & Construction Engineering
+Brigham Young University
 Dr. Dan Ames
 
-![w:120 center](images/byu-medallion.svg)
-
 <!-- Tuesday concept lecture, Week 4, simplified for a 50-minute hour that also holds two activities. Order: Air Force One warm-up (5 min), the Prague "Where Am I" activity (15 min), then the short explanation of how GPS does the same thing (about 25 min). Thursday is field collection on campus and the QGIS import in the Thursday hands-on session. The longer version of this material (four-step position fix, error budget arithmetic, the meters demo) is in the extended deck linked from the Day 6 page. -->
+
+<!-- stamp:begin -->
+<!-- _footer: '<span>CCE 114 · Day 6 — The Global Positioning System<span class="updated">Last Updated: 2026-10-27</span></span><span>© 2026 Daniel P. Ames · <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></span>' -->
+<!-- stamp:end -->
 
 ---
 
@@ -441,7 +447,7 @@ Satellites bunched together → a **large** area of uncertainty. Satellites spre
 - **Twenty minutes on campus:** collect three positions with your phone, full precision, into the shared **"GPS activity"** sheet
 - **Live demo:** the class points imported into QGIS from a CSV, given a CRS, and reprojected to UTM meters
 - **See the error:** how far apart two phones put the same statue
-- Bring a **phone with a GPS app** that shows five decimal places, and a **laptop with QGIS**
+- Bring a **phone with a GPS app** that shows five decimal places
 
 <!-- Preview of Thursday. The Thursday session field collection first, then the import demo. The "GPS Class Activity" item on Learning Suite is recorded that day. Run sheet: byu-hydroinformatics.github.io/cce114-geomatics/weeks/week-04/ -->
 
@@ -465,7 +471,7 @@ Satellites bunched together → a **large** area of uncertainty. Satellites spre
 - Read **Chapter 5, GNSS and Coordinate Surveying**, in *GIS Fundamentals* (Bolstad & Manson)
 - Take **Quiz 3 (GPS Part 1)**, open book, on Learning Suite — **due Saturday**
 - **Lab 3: GPS Data Collection and Importing Into QGIS** — [assignments page](https://byu-hydroinformatics.github.io/cce114-geomatics/assignments/lab-03/) — **due Saturday**
-- Bring your phone with a GPS app and your laptop with QGIS on Thursday
+- Bring your phone with a GPS app on Thursday
 - Questions? Office hours: [calendly.com/dan-ames/office-hours](https://calendly.com/dan-ames/office-hours)
 
 </div>

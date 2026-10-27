@@ -135,6 +135,9 @@ npx -y @marp-team/marp-cli@latest --no-stdin --theme slides/theme/cce114.css --h
   slides/day-NN/<slug>.md -o /tmp/check.html
 ```
 
+Before committing a deck, run `python3 tools/stamp_decks.py` so its title slide carries the right
+"Last Updated" date (`--check` reports stale stamps without writing).
+
 `--no-stdin` matters — without it marp hangs waiting on stdin. To render slides as images for
 visual QA add `--allow-local-files --images png`; without `--allow-local-files` every image
 renders as a broken icon.

@@ -86,5 +86,71 @@
       },
       "total_tokens": 552
     }
+  },
+  {
+    "id": "md-title-melodrama",
+    "file": "md-title-melodrama.jpg",
+    "prompt": "A tiny community theater stage with red velvet curtains and a bright spotlight, mid-performance of a silly melodrama. Center stage, a cute cartoon map-sheet character named Data (a folded paper map with a face, tiny arms and legs) clutches its cheeks in dramatic despair. On the left two hammy villains twirl their mustaches and cackle: one in a black top hat and cape, one in a dark hooded cloak with a sneer. Swooping in from the right, six small eager superheroes in matching capes and masks strike heroic poses, one down on one knee proposing with a flower, one beating his chest, one pointing a giant magnifying glass, one holding a compass and a globe. Cardboard props, a cardboard moon on a string, audience silhouettes cheering in the foreground \u2014 \u2014 Bold, colorful cartoon illustration in the style of a funny internet meme comic, thick clean outlines, exaggerated expressions, bright saturated colors, simple background. Absolutely no text, words, letters or numbers anywhere in the image.",
+    "size": "1024x1024",
+    "quality": "medium",
+    "model": "gpt-image-2.5-flare",
+    "sha256": "712bd12c3401",
+    "usage": {
+      "input_tokens": 213,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 213
+      },
+      "output_tokens": 439,
+      "output_tokens_details": {
+        "image_tokens": 439,
+        "text_tokens": 0
+      },
+      "total_tokens": 652
+    }
+  },
+  {
+    "id": "md-divider-fun",
+    "file": "md-divider-fun.jpg",
+    "prompt": "A dull gray stack of boring paperwork forms with a yawning face is being zapped by a sparkly magic wand held by a cheerful cartoon wizard in a starry robe; the forms burst into colorful confetti, party streamers and balloons, while a cute little file folder character with a face wearing a party hat and blowing a party horn dances on top of a globe, disco ball overhead, celebratory meme energy \u2014 \u2014 Bold, colorful cartoon illustration in the style of a funny internet meme comic, thick clean outlines, exaggerated expressions, bright saturated colors, simple background. Absolutely no text, words, letters or numbers anywhere in the image.",
+    "size": "1024x1024",
+    "quality": "medium",
+    "model": "gpt-image-2.5-flare",
+    "sha256": "671556b1e9dd",
+    "usage": {
+      "input_tokens": 134,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 134
+      },
+      "output_tokens": 439,
+      "output_tokens_details": {
+        "image_tokens": 439,
+        "text_tokens": 0
+      },
+      "total_tokens": 573
+    }
+  },
+  {
+    "id": "md-why-how-who",
+    "file": "md-why-how-who.jpg",
+    "prompt": "A friendly young engineer sits at a dark navy desk, drawn with exactly two arms and two hands: the left hand holds an old-style telephone handset to the ear, the right hand writes with a pen in an open notebook on the desk. A paper map with wavy lines is propped upright on a small stand on the desk in front of the person. Beside the desk stands a surveying total station on an orange wooden tripod. Clean flat vector illustration, thick navy outlines, palette of navy blue, warm orange and cream, plain cream background, anatomically correct with only two arms, no text labels, no letters or numbers",
+    "size": "1536x1024",
+    "quality": "medium",
+    "model": "gpt-image-2.5-flare",
+    "sha256": "cb6ea7bdf061",
+    "usage": {
+      "input_tokens": 132,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 132
+      },
+      "output_tokens": 343,
+      "output_tokens_details": {
+        "image_tokens": 343,
+        "text_tokens": 0
+      },
+      "total_tokens": 475
+    }
   }
 ]

@@ -8,14 +8,22 @@ footer: "CCE 114 · Day 23 — Concepts Review"
 <!-- _class: lead -->
 <!-- _paginate: skip -->
 
+![w:110](images/byu-medallion.svg)
+
 # Concepts Review
 
 ## Studying for Concepts Exam 2
 
 CCE 114 Geomatics
+Civil & Construction Engineering
+Brigham Young University
 Dr. James Halgren and Dr. Dan Ames
 
 <!-- Second half of Thursday. This is a study session, not new material: we work through questions in the same style as the textbook quizzes, and the answers are in these speaker notes. Put a question up, let the room answer, then reveal. Do not rush; the discussion after a wrong answer is where the learning happens. -->
+
+<!-- stamp:begin -->
+<!-- _footer: '<span>CCE 114 · Day 23 — Concepts Review<span class="updated">Last Updated: 2026-10-27</span></span><span>© 2026 Daniel P. Ames · <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></span>' -->
+<!-- stamp:end -->
 
 ---
 
@@ -775,7 +783,7 @@ Which statement is most accurate?
 ![bg right:36% w:94%](images/cr-before-next-class.jpg)
 
 - Take **Concepts Exam 2** in the Testing Center — closed book, closed notes, **no AI tools**
-- **Week 13 and Week 14 classes are final project work sessions** — bring your laptop, your data, and a specific question
+- **Week 13 and Week 14 classes are final project work sessions** — bring your data and a specific question
 - **Web Mapping with AI Experience** is due in **Week 14**
 - The **final project PDF** is due the **Saturday of Week 14**
 - Questions? Office hours: [calendly.com/dan-ames/office-hours](https://calendly.com/dan-ames/office-hours)

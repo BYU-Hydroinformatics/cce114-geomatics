@@ -8,12 +8,20 @@ footer: "CCE 114 · Day 1 — Course Introduction"
 <!-- _class: lead -->
 <!-- _paginate: false -->
 
+![w:110](images/byu-medallion.svg)
+
 # Introduction to Geomatics
 
-**CCE 114 Geomatics**
-Dr. Dan Ames • Dr. James Halgren
+CCE 114 Geomatics
+Civil & Construction Engineering
+Brigham Young University
+Dr. Dan Ames and Dr. James Halgren
 
-![w:880](images/ci-geomatics-overview.svg)
+![w:640](images/ci-geomatics-overview.svg)
+
+<!-- stamp:begin -->
+<!-- _footer: '<span>CCE 114 · Day 1 — Course Introduction<span class="updated">Last Updated: 2026-10-27</span></span><span>© 2026 Daniel P. Ames · <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></span>' -->
+<!-- stamp:end -->
 
 ---
 

@@ -10,12 +10,20 @@ footer: "CCE 114 · Day 2 — GIS Data Models & File Formats"
 
 ![bg right:45% w:95%](images/dm-demo-all-five.png)
 
+![w:110](images/byu-medallion.svg)
+
 # GIS Data Models & File Formats
 
 CCE 114 Geomatics
+Civil & Construction Engineering
+Brigham Young University
 Dr. Dan Ames and Dr. James Halgren
 
 <!-- Tuesday concept lecture. Thursday is the hands-on session, where students build and edit these layers themselves in QGIS. -->
+
+<!-- stamp:begin -->
+<!-- _footer: '<span>CCE 114 · Day 2 — GIS Data Models & File Formats<span class="updated">Last Updated: 2026-10-27</span></span><span>© 2026 Daniel P. Ames · <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></span>' -->
+<!-- stamp:end -->
 
 ---
 
@@ -666,7 +674,7 @@ Each pixel (raster cell) is stored as a hexadecimal number that tells the screen
 
 - Read Chapter 2, *Data Models*, in *GIS Fundamentals* (Bolstad & Manson)
 - Take the open-book quiz on Learning Suite
-- Bring your laptop with QGIS installed on Thursday, and download [UtahCountyData.zip](https://github.com/BYU-Hydroinformatics/cce114-geomatics/releases/download/course-data-2026/UtahCountyData.zip) beforehand
+- Download [UtahCountyData.zip](https://github.com/BYU-Hydroinformatics/cce114-geomatics/releases/download/course-data-2026/UtahCountyData.zip) before Thursday
 - Current lab: see the [Schedule](https://byu-hydroinformatics.github.io/cce114-geomatics/schedule/)
 - Questions? Office hours: [calendly.com/dan-ames/office-hours](https://calendly.com/dan-ames/office-hours)
 

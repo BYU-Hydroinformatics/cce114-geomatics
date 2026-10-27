@@ -16,9 +16,9 @@ DESCRIPTION = ("CCE 114 in-class self-check: why an undocumented dataset is a ri
                "questions every metadata record answers, and why good data can still be the "
                "wrong data for your job.")
 
-BLURB = """Eight questions in two parts: why an undocumented dataset is a
-      <strong>risk</strong>, and the <strong>six questions</strong> every record has to answer
-      before you trust the data."""
+BLURB = """Nine questions in two parts: why an undocumented dataset is a
+      <strong>risk</strong>, the <strong>six questions</strong> every record has to answer
+      before you trust the data, and <strong>right data, wrong job</strong>."""
 
 CLOSING = """\
         <strong style="color: var(--text);">Before you build anything on a download:</strong><br>
@@ -28,7 +28,7 @@ CLOSING = """\
         were right data, wrong job.</em>"""
 
 MESSAGES = [
-    "Every one. Thursday you write a record yourself, so bring a layer and your laptop.",
+    "Every one. Thursday you write a record yourself in QGIS.",
     "Solid. Reread the explanations you missed — the six questions are what Lab 8 grades.",
     "Worth a second run. Metadata is the cheapest hour in this course and the most expensive one to skip.",
 ]
@@ -36,16 +36,17 @@ MESSAGES = [
 QUESTIONS = [
     dict(
         section="Part 1 — What is missing, and what it costs",
-        prompt="You can get vector data three ways: digitize it yourself, download someone else's, or collect it in the field with differential GPS. Which one leaves you most in need of metadata?",
+        prompt="You can get vector data three ways: collect it in the field with differential GPS, digitize it yourself, or download someone else's. Which one leaves you most in need of metadata?",
         setup="",
         options=[
+            "Differential GPS, because the corrections have to be recorded",
             "Digitizing, because hand-drawn lines are the least accurate",
             "Downloading, because it is a stranger's work and you were not there when it was made",
-            "Differential GPS, because the corrections have to be recorded",
             "All three equally",
         ],
-        correct=1,
-        explanation="When you digitize or survey, you carry the knowledge of how the data were "
+        correct=2,
+        explanation="The three run from most to least personally connected to the data. When you "
+                    "survey or digitize, you carry the knowledge of how the data were "
                     "made in your head. The moment you download somebody else's file, that "
                     "knowledge has to travel with the file, and metadata is how it travels. That "
                     "is the \"what is it?\" question from the start of class.",
@@ -157,5 +158,21 @@ QUESTIONS = [
                     "because it is drawn from coordinates rather than pixels. Nothing on screen "
                     "warns you it was made for a statewide overview. The data are not wrong; it is "
                     "right data, wrong job, and only the metadata tells you so.",
+    ),
+    dict(
+        section="Part 2 — The six questions, and the wrong job",
+        prompt="A land-cover raster's metadata says the imagery behind it was collected in 2011. You want to map the subdivision that was built last year. Which of the six questions just saved you, and what did it tell you?",
+        setup="",
+        options=[
+            "Where — the raster does not cover the subdivision",
+            "When — the data predate the subdivision, so it cannot be in them",
+            "Who — the agency that made it does not map subdivisions",
+            "How — satellites cannot see houses",
+        ],
+        correct=1,
+        explanation="\"When\" covers when the data were collected and last updated. Nothing is "
+                    "wrong with a 2011 land-cover raster; it simply cannot show anything built "
+                    "after 2011. Right data, wrong job, and the date in the record is how you "
+                    "find out before you design against it.",
     ),
 ]

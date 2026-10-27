@@ -10,14 +10,22 @@ footer: "CCE 114 · Day 14 — Geodesy, Projections, and Coordinate Systems"
 
 ![bg right:45%](images/crs-hero-globe-peeled.jpg)
 
+![w:110](images/byu-medallion.svg)
+
 # Geodesy, Projections, and Coordinate Systems
 
 Part 1
 
 CCE 114 Geomatics
+Civil & Construction Engineering
+Brigham Young University
 Dr. Dan Ames and Dr. James Halgren
 
 <!-- Tuesday concept lecture, week 8. Thursday is the hands-on session, where students set project and layer CRSs in QGIS and reproject data. This is the lecture that Quiz 6 and Lab 7 are built on, so flag both early. The hero image is generated (gpt-image-1, October 2026): a globe peeling onto a gridded flat map, cylinder and cone projection surfaces, and a surveyor's tripod and benchmark disc, the three threads of the lecture. The Tater Mercator shirt now lives on the Idaho UTM slide. -->
+
+<!-- stamp:begin -->
+<!-- _footer: '<span>CCE 114 · Day 14 — Geodesy, Projections, and Coordinate Systems<span class="updated">Last Updated: 2026-10-27</span></span><span>© 2026 Daniel P. Ames · <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></span>' -->
+<!-- stamp:end -->
 
 ---
 
@@ -578,7 +586,7 @@ In **QGIS**:
   - **Reproject** a layer for real, and compare measured lengths and areas before and after
 - Then **choose a projection for an engineering problem** and justify it
 
-<!-- Preview of Thursday. Bring a laptop with QGIS. The choose-a-projection exercise is the bridge into Lab 7. -->
+<!-- Preview of Thursday. The choose-a-projection exercise is the bridge into Lab 7. -->
 
 ---
 
@@ -600,7 +608,6 @@ In **QGIS**:
 - Take **Quiz 6, Map Projections and Coordinate Systems**, open book, on Learning Suite — **due Saturday**
 - **Lab 7: Projections and Coordinate Systems** — also **due Saturday**:
   [Lab 7 instructions](https://byu-hydroinformatics.github.io/cce114-geomatics/assignments/lab-07/)
-- Bring your laptop with QGIS on Thursday
 - Questions? Office hours: [calendly.com/dan-ames/office-hours](https://calendly.com/dan-ames/office-hours)
 
 </div>

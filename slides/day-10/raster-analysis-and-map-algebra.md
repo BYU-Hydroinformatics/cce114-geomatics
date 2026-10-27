@@ -10,12 +10,20 @@ footer: "CCE 114 · Day 10 — Raster Analysis and Map Algebra"
 
 ![bg right:42% w:78%](images/ras-paper-heatmap.jpg)
 
+![w:110](images/byu-medallion.svg)
+
 # Raster Analysis and Map Algebra
 
 CCE 114 Geomatics
+Civil & Construction Engineering
+Brigham Young University
 Dr. Dan Ames and Dr. James Halgren
 
 <!-- Tuesday concept lecture, Week 6. Today is raster: what a grid of cells actually is, and what you can do by adding grids together. The image on the right is a student's finished engineering-paper suitability map from Winter 2025 (credit: Rachel Partington). We build one of those in the first half of class. Thursday is the QGIS session in the Thursday hands-on session. -->
+
+<!-- stamp:begin -->
+<!-- _footer: '<span>CCE 114 · Day 10 — Raster Analysis and Map Algebra<span class="updated">Last Updated: 2026-10-27</span></span><span>© 2026 Daniel P. Ames · <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></span>' -->
+<!-- stamp:end -->
 
 ---
 
@@ -652,7 +660,6 @@ Each is **map algebra on a neighborhood** of cells:
 - Load a **GeoTIFF** in QGIS and read the **Information** and **Source** tabs: data type, rows and columns, cell size, units, projection
 - **Raster symbology**: render types, singleband pseudocolor, color ramps, classification
 - **Elevation surfaces** and **cross-section profiles**: *View > Elevation Profile*, or the **Profile Tool** plugin
-- Bring your laptop with QGIS installed
 
 <!-- Preview of Thursday. The Thursday session The Information tab is where today's four defining properties, cell size, extent, rows and columns, and no-data, stop being abstract. -->
 

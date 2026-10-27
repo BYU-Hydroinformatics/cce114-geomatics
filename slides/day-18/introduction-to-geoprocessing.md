@@ -10,12 +10,20 @@ footer: "CCE 114 · Day 18 — Introduction to Geoprocessing"
 
 ![bg right:45% w:95%](images/gp-intersect-counties.jpg)
 
+![w:110](images/byu-medallion.svg)
+
 # Solving Spatial Problems with Geoprocessing
 
 CCE 114 Geomatics
+Civil & Construction Engineering
+Brigham Young University
 Dr. Dan Ames and Dr. James Halgren
 
 <!-- Tuesday concept lecture, Week 10. Today is the vocabulary and the logic of geoprocessing: what the common tools do and how you chain them together. Thursday runs the same ideas as a hands-on QGIS session, and Lab 9 (The Yellowstone Disaster) is the graded version. -->
+
+<!-- stamp:begin -->
+<!-- _footer: '<span>CCE 114 · Day 18 — Introduction to Geoprocessing<span class="updated">Last Updated: 2026-10-27</span></span><span>© 2026 Daniel P. Ames · <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></span>' -->
+<!-- stamp:end -->
 
 ---
 
@@ -551,7 +559,7 @@ Every one of those is a buffer, a select by location, or a difference.
 - The U.S. cities and rivers data is posted on **Learning Suite**
 - **In-class activity — Cities Near Rivers:** upload a screenshot of your map showing all U.S. cities within 10 km of a major river, and record completion on Learning Suite
 
-<!-- Preview of Thursday. The Thursday session Tell students to bring the same laptop and QGIS install they have been using; the activity is a screenshot upload, so nobody leaves without a finished map. The next slide is the version of the workflow diagram to walk through before they start. -->
+<!-- Preview of Thursday. The activity is a screenshot upload, so nobody leaves without a finished map. The next slide is the version of the workflow diagram to walk through before they start. -->
 
 ---
 
@@ -579,7 +587,6 @@ Every one of those is a buffer, a select by location, or a difference.
 - Take **Quiz 8: Geoprocessing and Spatial Data Analysis** (open book, on Learning Suite)
 - Start [**Lab 9: The Yellowstone Disaster**](https://byu-hydroinformatics.github.io/cce114-geomatics/assignments/lab-09/) — due Saturday, 11:59 pm
 - The **Community and Professional Map Experience** is due Wednesday
-- Bring your laptop with QGIS on Thursday
 - Questions? Office hours: [calendly.com/dan-ames/office-hours](https://calendly.com/dan-ames/office-hours)
 
 </div>

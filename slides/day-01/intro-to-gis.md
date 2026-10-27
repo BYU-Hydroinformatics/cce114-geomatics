@@ -10,10 +10,18 @@ footer: "CCE 114 · Day 1 — Introduction to GIS"
 
 ![bg right:42% w:90%](images/gis-map-layers-illustration.png)
 
+![w:110](images/byu-medallion.svg)
+
 # Introduction to Geographic Information Systems
 
 CCE 114 Geomatics
+Civil & Construction Engineering
+Brigham Young University
 Dr. Dan Ames and Dr. James Halgren
+
+<!-- stamp:begin -->
+<!-- _footer: '<span>CCE 114 · Day 1 — Introduction to GIS<span class="updated">Last Updated: 2026-10-27</span></span><span>© 2026 Daniel P. Ames · <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></span>' -->
+<!-- stamp:end -->
 
 ---
 

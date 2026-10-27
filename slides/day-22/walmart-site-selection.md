@@ -10,14 +10,22 @@ footer: "CCE 114 · Day 22 — Project Site Selection"
 
 ![bg right:45% w:95%](images/ws-walmart-storefront.jpg)
 
+![w:110](images/byu-medallion.svg)
+
 # Project Site Selection, Part 1
 
 ## Geoprocessing and the Walmart problem
 
 CCE 114 Geomatics
+Civil & Construction Engineering
+Brigham Young University
 Dr. Dan Ames and Dr. James Halgren
 
 <!-- Tuesday concept lecture, Week 12. This is the lecture behind Lab 11 and the pattern students will reuse in the final project. Thursday, we walk through the workflow diagrams and the final project description. -->
+
+<!-- stamp:begin -->
+<!-- _footer: '<span>CCE 114 · Day 22 — Project Site Selection<span class="updated">Last Updated: 2026-10-27</span></span><span>© 2026 Daniel P. Ames · <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></span>' -->
+<!-- stamp:end -->
 
 ---
 
