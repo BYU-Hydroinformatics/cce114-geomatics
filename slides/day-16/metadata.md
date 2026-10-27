@@ -124,7 +124,7 @@ Poll:
 </div>
 <div>
 
-![w:340 center](images/md-label-record.jpg)
+![w:270 center](images/md-label-record.jpg)
 
 **On a dataset**
 
@@ -323,9 +323,9 @@ Poll:
 ![w:340 center](images/md-activity-notes.jpg)
 
 - Prompts if you are stuck:
-  - Which of the six questions do you most often skip?
-  - What would you want to know before using a stranger's file?
-  - Which "right data, wrong job" example surprised you?
+  - Which question do you skip most?
+  - What do you check before using a stranger's file?
+  - Which "wrong job" example surprised you?
 
 </div>
 </div>

@@ -177,7 +177,7 @@ By the end of class you should be able to:
 </div>
 <div>
 
-![w:340 center](images/md-where-it-lives.jpg)
+![w:250 center](images/md-where-it-lives.jpg)
 
 - **Web service** — returned in the service's `GetCapabilities` or item page
 - **Data portal** — on the download page itself
@@ -322,7 +322,7 @@ Collected 2024, from 6-inch imagery, lineage documented, county GIS contact list
 
 # Final Thoughts
 
-<div class="columns" style="grid-template-columns: 1.7fr 1fr; font-size: 0.82em;">
+<div class="columns" style="grid-template-columns: 1.7fr 1fr; font-size: 0.74em;">
 <div>
 
 **Quiz: Would You Drink It?** Eight questions on your phone: why an undocumented dataset is a **risk**, and reading a record and **deciding**. **Scan the code**, or open the link under it.
