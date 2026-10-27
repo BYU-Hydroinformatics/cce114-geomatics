@@ -325,7 +325,7 @@ Collected 2024, from 6-inch imagery, lineage documented, county GIS contact list
 <div class="columns" style="grid-template-columns: 1.7fr 1fr; font-size: 0.74em;">
 <div>
 
-**Quiz: Would You Drink It?** Eight questions on your phone: why an undocumented dataset is a **risk**, and reading a record and **deciding**. **Scan the code**, or open the link under it.
+**Quiz: Fit for Your Use?** Eight questions on your phone: the **standards** and where the record **lives**, then reading a record and **deciding**. **Scan the code**, or open the link under it.
 
 - Not graded, and every answer explains itself
 - Good practice for Quiz 7 and Lab 8
@@ -341,9 +341,9 @@ Collected 2024, from 6-inch imagery, lineage documented, county GIS contact list
 </div>
 <div>
 
-![w:300 center](images/md-quiz-metadata-qr.png)
+![w:300 center](images/md-quiz-fitness-qr.png)
 
-<span style="font-size: 0.45em; color: #4a5568;">byu-hydroinformatics.github.io/cce114-geomatics/quizzes/metadata/</span>
+<span style="font-size: 0.45em; color: #4a5568;">byu-hydroinformatics.github.io/cce114-geomatics/quizzes/fitness/</span>
 
 </div>
 </div>

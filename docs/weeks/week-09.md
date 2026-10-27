@@ -36,7 +36,8 @@ This session has its own step-by-step guide: what you need, an overview, the cli
 
 Self-check quizzes — not graded; open them on a phone or laptop as often as you like:
 
-- [Would You Drink It?](../quizzes/metadata/index.html) — What a dataset with no documentation costs you, and how to read a metadata record and decide whether to trust the data.
+- [Would You Drink It?](../quizzes/metadata/index.html) — Tuesday: what a dataset with no documentation costs you, the six questions every metadata record answers, and right data, wrong job.
+- [Fit for Your Use?](../quizzes/fitness/index.html) — Thursday: the FGDC and ISO 19115 standards, where the metadata lives in a download, and reading a record to decide whether the data are fit for your use.
 
 </div>
 

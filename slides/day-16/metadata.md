@@ -356,7 +356,7 @@ Poll:
 <div class="columns" style="grid-template-columns: 1.7fr 1fr; font-size: 0.82em;">
 <div>
 
-**Quiz: Would You Drink It?** Eight questions on your phone: why an undocumented dataset is a **risk**, and reading a record and **deciding**. **Scan the code**, or open the link under it.
+**Quiz: Would You Drink It?** Eight questions on your phone: why an undocumented dataset is a **risk**, and the **six questions** every record answers. **Scan the code**, or open the link under it.
 
 - Not graded, and every answer explains itself
 - Good practice for Quiz 7 and Lab 8

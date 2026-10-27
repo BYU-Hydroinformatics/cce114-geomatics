@@ -324,8 +324,11 @@ PRACTICE = {
          "What every flat map gives up, how a projection is fitted to the ground, and the "
          "difference between declaring a CRS and reprojecting into one.")],
     9: [("metadata", "Would You Drink It?",
-         "What a dataset with no documentation costs you, and how to read a metadata record and "
-         "decide whether to trust the data.")],
+         "Tuesday: what a dataset with no documentation costs you, the six questions every "
+         "metadata record answers, and right data, wrong job."),
+        ("fitness", "Fit for Your Use?",
+         "Thursday: the FGDC and ISO 19115 standards, where the metadata lives in a download, and "
+         "reading a record to decide whether the data are fit for your use.")],
     10: [("geoprocessing", "Which Tool Answers the Question?",
           "Turning a question into a selection, what each overlay tool puts out, and the order to "
           "chain them in.")],
