@@ -90,33 +90,33 @@
   {
     "id": "md-title-melodrama",
     "file": "md-title-melodrama.jpg",
-    "prompt": "A tiny community theater stage with red velvet curtains and a bright spotlight, mid-performance of a silly melodrama. Center stage, a cute cartoon map-sheet character named Data (a folded paper map with a face, tiny arms and legs) clutches its cheeks in dramatic despair. On the left two hammy villains twirl their mustaches and cackle: one in a black top hat and cape, one in a dark hooded cloak with a sneer. Swooping in from the right, six small eager superheroes in matching capes and masks strike heroic poses, one down on one knee proposing with a flower, one beating his chest, one pointing a giant magnifying glass, one holding a compass and a globe. Cardboard props, a cardboard moon on a string, audience silhouettes cheering in the foreground \u2014 \u2014 Bold, colorful cartoon illustration in the style of a funny internet meme comic, thick clean outlines, exaggerated expressions, bright saturated colors, simple background. Absolutely no text, words, letters or numbers anywhere in the image.",
+    "prompt": "A small theater stage with red velvet curtains and a soft spotlight, mid-performance of a lighthearted melodrama. Center stage, a cute chibi mascot character named Data (a folded paper map with big expressive eyes, tiny arms and legs) holds its cheeks in dramatic worry, a single sparkling tear. On the left two stylish anime villains smirk: one in a black top hat and long cape, one in a dark hooded cloak. Leaping in from the right, six young anime heroes in matching capes and masks strike dynamic poses with speed lines, one kneeling and offering a flower, one holding a magnifying glass, one holding a compass, one holding a globe. A painted cardboard moon hangs on a string; audience silhouettes in the foreground \u2014 Japanese anime illustration style, clean cel shading, expressive large eyes, gentle pastel-leaning colors with a few warm accents, soft lighting, calm uncluttered composition. Absolutely no text, words, letters or numbers anywhere in the image.",
     "size": "1024x1024",
     "quality": "medium",
     "model": "gpt-image-2.5-flare",
-    "sha256": "712bd12c3401",
+    "sha256": "0f033b39fe65",
     "usage": {
-      "input_tokens": 213,
+      "input_tokens": 206,
       "input_tokens_details": {
         "image_tokens": 0,
-        "text_tokens": 213
+        "text_tokens": 206
       },
       "output_tokens": 439,
       "output_tokens_details": {
         "image_tokens": 439,
         "text_tokens": 0
       },
-      "total_tokens": 652
+      "total_tokens": 645
     }
   },
   {
     "id": "md-divider-fun",
     "file": "md-divider-fun.jpg",
-    "prompt": "A dull gray stack of boring paperwork forms with a yawning face is being zapped by a sparkly magic wand held by a cheerful cartoon wizard in a starry robe; the forms burst into colorful confetti, party streamers and balloons, while a cute little file folder character with a face wearing a party hat and blowing a party horn dances on top of a globe, disco ball overhead, celebratory meme energy \u2014 \u2014 Bold, colorful cartoon illustration in the style of a funny internet meme comic, thick clean outlines, exaggerated expressions, bright saturated colors, simple background. Absolutely no text, words, letters or numbers anywhere in the image.",
+    "prompt": "A cheerful young anime mage with a starry cloak and a sparkling wand casts a spell at a gray stack of boring paperwork forms that has a sleepy, yawning chibi face; the forms transform into drifting cherry-blossom petals, ribbons and soft confetti, while a cute chibi file-folder mascot with big shining eyes, wearing a little party hat, dances happily on top of a globe \u2014 Japanese anime illustration style, clean cel shading, expressive large eyes, gentle pastel-leaning colors with a few warm accents, soft lighting, calm uncluttered composition. Absolutely no text, words, letters or numbers anywhere in the image.",
     "size": "1024x1024",
     "quality": "medium",
     "model": "gpt-image-2.5-flare",
-    "sha256": "671556b1e9dd",
+    "sha256": "94d0424ca106",
     "usage": {
       "input_tokens": 134,
       "input_tokens_details": {

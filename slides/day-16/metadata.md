@@ -37,7 +37,7 @@ Civil & Construction Engineering
 Brigham Young University
 Dr. Dan Ames and Dr. James Halgren
 
-<!-- Tuesday concept lecture, Week 9. Today is the "what and why" of metadata: what it is, why data without it is a risk, the six questions every record answers, and why good data can still be wrong for your job. Thursday opens with the second half of this material (standards, where metadata lives, fitness for use; the Day 17 deck), then goes hands-on in QGIS. The title cartoon is generated (gpt-image-2.5-flare, October 2026; prompt in tools/divider-images/week09.json): today's melodrama on stage, Data the map in the spotlight, the villains Unreliability and Irrelevance on the left, the six metadata heroes swooping in on the right. -->
+<!-- Tuesday concept lecture, Week 9. Today is the "what and why" of metadata: what it is, why data without it is a risk, the six questions every record answers, and why good data can still be wrong for your job. Thursday opens with the second half of this material (standards, where metadata lives, fitness for use; the Day 17 deck), then goes hands-on in QGIS. The title cartoon is generated in an anime style (gpt-image-2.5-flare, October 2026; prompt in tools/divider-images/week09.json): today's melodrama on stage, Data the map in the spotlight, the villains Unreliability and Irrelevance on the left, the six metadata heroes swooping in on the right. -->
 
 <!-- stamp:begin -->
 <!-- _footer: '<span>CCE 114 · Day 16 — Metadata<span class="updated">Last Updated: 2026-10-27</span></span><span>© 2026 Daniel P. Ames · <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></span>' -->
@@ -102,7 +102,7 @@ By the end of class you should be able to:
 
 ## "I swear in my wrath that I will make metadata less boring." — Dr. Ames
 
-<!-- A little lightheartedness. Say it out loud: yes, metadata is a dry, boring topic, and everyone in the room knows it. We are going to try to liven it up a bit. The next few slides count the efforts, one by one. Divider cartoon generated with gpt-image-2.5-flare (prompt in tools/divider-images/week09.json): a wizard zapping a yawning stack of paperwork into confetti while a file folder in a party hat dances on the globe. -->
+<!-- A little lightheartedness. Say it out loud: yes, metadata is a dry, boring topic, and everyone in the room knows it. We are going to try to liven it up a bit. The next few slides count the efforts, one by one. Anime-style divider cartoon generated with gpt-image-2.5-flare (prompt in tools/divider-images/week09.json): a young mage turning a yawning stack of paperwork into cherry-blossom petals while a file folder in a party hat dances on the globe. -->
 
 ---
 
