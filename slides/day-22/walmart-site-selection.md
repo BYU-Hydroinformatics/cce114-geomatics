@@ -404,7 +404,7 @@ When you run an **Intersection** or a **Union**, the attribute tables of both la
 
 ![h:440 center](images/ws-current-walmarts.png)
 
-<!-- Nine existing stores, strung along the I-15 corridor because that is where the people are. Ask why the stores are already clustered where our "close to roads" criterion says to build: the criteria are not independent, and the competitor layer will be doing most of the eliminating. -->
+<!-- Eleven existing stores from Walmart's own open data (Sam's Club left out, as Lab 11 does), strung along the I-15 corridor because that is where the people are. Ask why the stores are already clustered where our "close to roads" criterion says to build: the criteria are not independent, and the competitor layer will be doing most of the eliminating. -->
 
 ---
 
@@ -430,7 +430,7 @@ When you run an **Intersection** or a **Union**, the attribute tables of both la
 
 ![h:465 center](images/ws-census-blocks.png)
 
-<!-- Census blocks clipped to Utah County (this capture is from the 2010 blocks; Lab 11 now uses the 2020 blocks), with the Walmart points on top. Blocks are tiny downtown and huge in the mountains, which is exactly why we need density, population divided by area, rather than raw population counts. That is a Field Calculator job. -->
+<!-- UGRC's Census 2020 Blocks for Utah County, the same layer students download in Lab 11 (10,092 blocks, 659,399 people), with the 11 existing Walmart stores from Walmart's own open data on top, Sam's Club left out as the lab does. The pale blue blocks are water: Utah Lake is census blocks too, with nobody living in them. Blocks are tiny downtown and huge in the mountains, which is exactly why we need density, population divided by area, rather than raw population counts. That is a Field Calculator job. -->
 
 ---
 
