@@ -35,7 +35,7 @@ By the end of class you should be able to:
 
 - Say what **geoprocessing** is: input data in, a tool, new data out
 - Explain what **buffer**, **clip**, **intersect**, **union**, **difference** and **select by location** each do
-- Match each overlay tool to its **Boolean operation** (AND, OR, NOT)
+- Match each overlay tool to the question it answers: in **both**, in **either**, or in one **but not** the other
 - Chain three tools into a **workflow** that answers a real question
 - Find these tools in the QGIS **Processing Toolbox**
 
@@ -89,7 +89,7 @@ By the end of class you should be able to:
 
 # Part 1
 
-## Common spatial analyses and Boolean operations
+## Common spatial analysis tools
 
 <!-- Anime-style cartoon generated with gpt-image-2.5-flare, October 2026; prompt in tools/divider-images/gap-fill-2026-10.json. -->
 
@@ -147,57 +147,17 @@ A buffer takes **points, lines or polygons** and returns **polygons**: everythin
 
 ---
 
-<!-- _class: quiz -->
-
-# Boolean Operations
-
-![bg right:52% w:95%](images/gp-boolean-four.png)
-
-Four shaded regions, four Boolean expressions. Match them up:
-
-<ol type="A">
-<li>B or C</li>
-<li>A and B</li>
-<li>(A and B) not C</li>
-<li>(B or C) not (B and C)</li>
-</ol>
-
-<!-- Work left to right across the panels and let the class call out the expressions. Answers, clockwise from top left: a) B or C, b) A and B, d) (B or C) not (B and C), c) (A and B) not C. The vocabulary matters because the overlay tools are these operations with geometry attached. -->
-
----
-
-<!-- _class: quiz -->
-
-# Boolean Operations, Continued
-
-![bg right:52% w:95%](images/gp-boolean-five.png)
-
-Five panels this time. Which expression goes with which shaded region?
-
-<ol type="A">
-<li>A and B and C</li>
-<li>A and B</li>
-<li>C</li>
-<li>(A or B or C) not (A and B and C)</li>
-</ol>
-
-<!-- Same drill, harder set. Note that "C" on its own is a legitimate answer: not every operation involves two layers. Keep this diagram in mind; we come back to it at the end of Part 2 with the tool names written on top. -->
-
----
-
-<!-- _class: quiz -->
-
-# Erase
+# Difference: In This but Not That
 
 ![bg right:46% w:88%](images/gp-erase-counties.jpg)
 
-Erase the catchment from the counties layer: keep everything that is **NOT** in the overlay.
+Cut the catchment out of the counties layer: keep only the parts of the counties that are **not** inside it.
 
-**Which Boolean operation is like "Erase"?**
+**The question it answers:** *what is in the counties but not in the catchment?*
 
-*(Counties NOT Catchment)*
+ArcGIS calls this tool **Erase**; QGIS calls it **Difference**.
 
-<!-- Answer: NOT. The counties layer comes out with a hole in it exactly the shape of the catchment. In QGIS this tool is called Difference, not Erase: Processing Toolbox ▸ Vector overlay ▸ Difference. Lab 9 Part 3 uses it to cut the ground crew's 5 km road buffer out of the park polygon, leaving the helicopter search area. -->
+<!-- The counties layer comes out with a hole in it exactly the shape of the catchment. In QGIS this tool is called Difference, not Erase: Processing Toolbox ▸ Vector overlay ▸ Difference. Lab 9 Part 3 uses it to cut the ground crew's 5 km road buffer out of the park polygon, leaving the helicopter search area. -->
 
 ---
 
@@ -211,19 +171,15 @@ Two input layers in, one output layer of just the shared area — carrying the *
 
 ---
 
-<!-- _class: quiz -->
-
-# Intersect
+# Intersection: In Both
 
 ![bg right:50% w:92%](images/gp-intersect-counties.jpg)
 
 Intersect the catchments with the counties: every output polygon knows **which county** and **which catchment** it belongs to.
 
-**Which Boolean operation is like "Intersect"?**
+**The question it answers:** *what is in a county and in a catchment, and which ones?*
 
-*(Counties AND Catchments)*
-
-<!-- Answer: AND. Point at the output: Anoka County and the Rum River watershed becomes its own polygon, and the table has both names on that row. That is what makes intersect useful for "how much of this is in that" questions. -->
+<!-- Point at the output: Anoka County and the Rum River watershed becomes its own polygon, and the table has both names on that row. That is what makes intersect useful for "how much of this is in that" questions. -->
 
 ---
 
@@ -268,25 +224,50 @@ Both layers in, and **everything** comes out — the overlap and both non-overla
 
 ---
 
-<!-- _class: quiz -->
-
-# Union
+# Union: In Either
 
 ![bg right:48% w:92%](images/gp-union-counties.png)
 
-**Which Boolean operation is like "Union"?**
+Union the circle with the counties: **nothing** is thrown away, but every polygon is split wherever the other layer's boundary crosses it.
 
-*(Circle OR Counties)*
+**The question it answers:** *what is in the circle or in a county, and which of the two?*
 
-<!-- Answer: OR. Look at the output table on the right: every county is there, plus a ClipPolyID column that is 31 where the circle overlapped and 0 where it did not. Nothing was deleted; the layers were merged and the boundaries were cut into each other. -->
+<!-- Look at the output table on the right: every county is there, plus a ClipPolyID column that is 31 where the circle overlapped and 0 where it did not. Nothing was deleted; the layers were merged and the boundaries were cut into each other. -->
 
 ---
 
-# The Three Operations, Named
+# Three Overlay Tools, Three Questions
 
-![h:430 center](images/gp-boolean-summary.png)
+<div class="columns" style="grid-template-columns: 1fr 1fr 1fr; text-align:center;">
+<div>
 
-<!-- The payoff slide for Part 2. AND is intersect, OR is union, NOT is erase (called Difference in QGIS). If students remember only one slide from today, this is a good candidate. Everything in Part 3 is these three plus buffer, run in the right order. -->
+![h:240 center](images/gp-intersect-counties.jpg)
+
+**In both?**
+**Intersection**
+
+</div>
+<div>
+
+![h:240 center](images/gp-union-counties.png)
+
+**In either?**
+**Union**
+
+</div>
+<div>
+
+![h:240 center](images/gp-erase-counties.jpg)
+
+**In this but not that?**
+**Difference**
+
+</div>
+</div>
+
+<p style="text-align:center;font-size:0.8em;">If you have met logic before: that is AND, OR and NOT.</p>
+
+<!-- The payoff slide for Part 1. Read the three questions out loud and have the class name the tool. The AND/OR/NOT line is for students who have seen logic in a math or programming class; do not dwell on it, but the reading quiz does ask which tool goes with which word. Everything in Part 2 is these three plus buffer, run in the right order. -->
 
 ---
 
@@ -507,6 +488,6 @@ Every one of those is a buffer, a select by location, or a difference.
 
 <!-- Update 2026-09-02: ArcGIS-era screenshots replaced with QGIS 3.44 captures made by tools/qgis_reshoot_screens.py: gp-attribute-table-qgis.png, gp-select-by-expression-qgis.png, gp-select-by-location-qgis.png replace the four ArcMap screenshots. -->
 
-<!-- Update 2026-10-28: at Dan's request the whole "geographic approach" section (its divider, the five-step table, the four worked-example steps, and the attribute-table, Select by Expression and Select by Location slides) was removed. The compass-girl divider art moved to the former Part 2 divider, replacing the blue-and-orange overlay twins, and the parts were renumbered 1 and 2. -->
+<!-- Update 2026-10-28: at Dan's request the whole "geographic approach" section (its divider, the five-step table, the four worked-example steps, and the attribute-table, Select by Expression and Select by Location slides) was removed. The compass-girl divider art moved to the former Part 2 divider, replacing the blue-and-orange overlay twins, and the parts were renumbered 1 and 2. --> Same day, also at Dan's request: the Boolean framing was replaced with plain questions. The two A/B/C Venn drills were cut; Difference, Intersection and Union are now titled by the question each answers (in this but not that, in both, in either); and the Venn summary slide became "Three Overlay Tools, Three Questions", built from the three county overlay maps, with AND/OR/NOT kept as one line so the reading quiz still matches.
 
 <!-- Five minutes, in pairs, then a show of hands on the two worth arguing about: clip against intersect, and the order of the cities-near-rivers chain. Both come back on Thursday and in Lab 9. If the room has no signal, put the URL on the board. -->
