@@ -9,7 +9,7 @@
 
 ## :material-presentation-play: Presentation Slides
 
-- **Tuesday** — [Introduction to Geoprocessing](https://byu-hydroinformatics.github.io/cce114-geomatics/slides/day-18/introduction-to-geoprocessing.html) — Introduction to geoprocessing and spatial analysis; Buffer, clip, intersect, select by location; Introduction to the Yellowstone Disaster scenario
+- **Tuesday** — [Introduction to Geoprocessing](https://byu-hydroinformatics.github.io/cce114-geomatics/slides/day-18/introduction-to-geoprocessing.html) — Introduction to geoprocessing and spatial analysis; The Lab 9 toolkit: reclassify, buffer, reproject, select, clip, difference; Intersection and union: in both, in either; Introduction to the Yellowstone Disaster scenario
 
 Press <kbd>F</kbd> for fullscreen and <kbd>P</kbd> for presenter view with speaker notes.
 
@@ -36,7 +36,7 @@ This session has its own step-by-step guide: what you need, an overview, the cli
 
 Self-check quizzes — not graded; open them on a phone or laptop as often as you like:
 
-- [Which Tool Answers the Question?](../quizzes/geoprocessing/index.html) — Turning a question into a selection, what each overlay tool puts out, and the order to chain them in.
+- [Which Tool Answers the Question?](../quizzes/geoprocessing/index.html) — Reclassify, reprojecting before a buffer, select versus extract, what each overlay tool puts out, and the order to chain them in.
 
 </div>
 

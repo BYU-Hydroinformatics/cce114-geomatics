@@ -153,12 +153,14 @@ DAYS = [
          activity="AGRC Metadata: evaluate one published dataset and fill a row of the AGRC Metadata tab in the class sheet"),
     dict(n=18, week=10, kind="concepts", title="Geoprocessing, Part 1",
          slides=[("Introduction to Geoprocessing", f"{SITE}/slides/day-18/introduction-to-geoprocessing.html")],
-         topics=["Introduction to geoprocessing and spatial analysis", "Buffer, clip, intersect, select by location",
-                 "Introduction to the Yellowstone Disaster scenario"],
+         topics=["Introduction to geoprocessing and spatial analysis",
+                 "The Lab 9 toolkit: reclassify, buffer, reproject, select, clip, difference",
+                 "Intersection and union: in both, in either", "Introduction to the Yellowstone Disaster scenario"],
          links=[("Yellowstone movie clip", "https://www.youtube.com/watch?v=JGEgTXsGOPk&t=346s")],
          reading="GIS Fundamentals, Chapter 9 (Basic Spatial Analysis)"),
     dict(n=19, week=10, kind="hands-on", title="Geoprocessing, Part 2", handson="week-10",
-         topics=["Cities near rivers analysis in QGIS", "Chaining tools into a workflow"],
+         topics=["Cities near rivers in QGIS: select, reproject, buffer, intersect",
+                 "Lab 9 rehearsal: Difference and Fix Geometries"],
          data=[("United States data for the cities-near-rivers analysis", "")],
          activity="Cities Near Rivers: upload a screenshot of your map showing all U.S. cities within 10 km of a major river"),
     dict(n=20, week=11, kind="concepts", title="Geoplanning and Georeferencing",
@@ -330,8 +332,8 @@ PRACTICE = {
          "Thursday: the FGDC and ISO 19115 standards, where the metadata lives in a download, and "
          "reading a record to decide whether the data are fit for your use.")],
     10: [("geoprocessing", "Which Tool Answers the Question?",
-          "Turning a question into a selection, what each overlay tool puts out, and the order to "
-          "chain them in.")],
+          "Reclassify, reprojecting before a buffer, select versus extract, what each overlay tool "
+          "puts out, and the order to chain them in.")],
     12: [("siting", "Where Would You Put It?",
           "Reading a stated requirement as an operation, chaining the operations, and knowing what "
           "the surviving polygons do and do not tell you.")],

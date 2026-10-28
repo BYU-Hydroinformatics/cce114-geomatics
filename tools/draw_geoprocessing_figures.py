@@ -403,6 +403,30 @@ def fig_summary():
     return fig
 
 
+def fig_units():
+    """The same 10 typed into Buffer, for a layer in degrees and for one in meters."""
+    reg = scale(region(), 0.6, 0.6, origin=(0, 0))         # about 6 x 4 degrees, roughly a state
+    town = Point(2.6, 2.1)
+    fig = plt.figure(figsize=(10, 3.9))
+    a1 = fig.add_axes([0.03, 0.04, 0.42, 0.8])
+    a2 = fig.add_axes([0.55, 0.04, 0.42, 0.8])
+    for a in (a1, a2):
+        draw(a, reg, L1_FILL, L1_EDGE, lw=1.2)
+    draw(a1, town.buffer(10, quad_segs=64), L2_FILL, L2_EDGE, lw=1.5, alpha=0.55, z=2)
+    # 10 km at roughly 111 km per degree
+    draw(a2, town.buffer(10 / 111, quad_segs=64).buffer(0.0), L2_FILL, L2_EDGE, lw=1.5, z=2)
+    for a in (a1, a2):
+        draw(a, town, "none", NAVY, z=4)
+    a2.annotate("10 km", (town.x + 0.05, town.y + 0.05), (town.x + 0.9, town.y + 0.9), fontsize=13,
+                color=L2_EDGE, fontweight="bold", arrowprops=dict(arrowstyle="-", color=L2_EDGE))
+    a1.text(2.6, -5.5, "the whole state, and far beyond", ha="center", fontsize=12, color=L2_EDGE,
+            fontweight="bold", zorder=5)
+    a1.text(3.0, 3.1, "state", ha="center", va="center", fontsize=11, color=L1_EDGE, zorder=5)
+    frame(a1, "Layer in degrees: 10 means 10°", (-7.6, -8.0, 12.8, 12.2))
+    frame(a2, "Reprojected to meters: 10 km", (-0.2, -0.3, 6.2, 4.5))
+    return fig
+
+
 def fig_title():
     """The intersection output on its own, square, for the title slide."""
     reg = region()
@@ -436,8 +460,7 @@ if __name__ == "__main__":
     save(fig_intersection(), "gp-intersection-counties.png", [D18])
     save(fig_intersection(), "ws-intersect-catchments.png", [D22])
     save(fig_union(), "gp-union-counties.png", [D18])
-    save(fig_simple("intersection"), "gp-intersection-simple.png", [D18])
     save(fig_simple("intersection"), "ws-intersect-simple.png", [D22])
-    save(fig_simple("union"), "gp-union-simple.png", [D18])
     save(fig_summary(), "gp-overlay-summary.png", [D18])
     save(fig_title(), "gp-title-overlay.png", [D18])
+    save(fig_units(), "gp-reproject-units.png", [D18])

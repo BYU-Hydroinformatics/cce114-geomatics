@@ -45,9 +45,9 @@
       <p id="finalFeedbackText" style="color: var(--muted); margin-bottom: 1rem;"></p>
       <div class="checklist">
         <strong style="color: var(--text);">For Thursday and Lab 9:</strong><br>
-        Check the <strong>CRS</strong> before you buffer &mdash; meters, not degrees<br>
+        <strong>Reproject</strong> before you buffer &mdash; the tool follows the layer, not the project<br>
         <strong>Clip</strong> for the outline; <strong>Intersection</strong> when you need both tables<br>
-        AND &middot; OR &middot; NOT &rarr; Intersection &middot; Union &middot; Difference<br>
+        In both &middot; in either &middot; in this but not that &rarr; Intersection &middot; Union &middot; Difference<br>
         <em>Save every intermediate layer to a file. A temporary scratch layer is gone when you close QGIS.</em>
       </div>
       <div class="review" id="review"></div>
@@ -69,25 +69,25 @@
 {
   "messages": [
     "Every one. Now go build the chain in QGIS.",
-    "Solid. Reread the explanations on the ones you missed — clip against intersect is the one that costs points in Lab 9.",
+    "Solid. Reread the explanations on the ones you missed — clip against Intersection, and reprojecting before the buffer, are the ones that cost points in Lab 9.",
     "Worth a second run. Choosing the tool is the whole skill; running it is three clicks."
   ],
   "questions": [
     {
-      "section": "Part 1 — From a question to a selection",
-      "prompt": "You download a road layer and go straight to buffering it by 5 km. Which step of the geographic approach did you skip, and what does it usually cost you?",
-      "setup": "Ask · Acquire · Examine · Analyze · Act.",
+      "section": "Part 1 — From a question to a tool",
+      "prompt": "Lab 9, Part 1: you have an elevation raster (DEM) of Yellowstone, and you need a map of everything lower than the lake surface at 2,356 m. Which tool?",
+      "setup": "One raster in, one raster out.",
       "options": [
-        "Ask — you never framed the question in terms of location",
-        "Act — you skipped the map layout at the end",
-        "Examine — you never looked at the coordinate system, and a layer in degrees cannot be buffered by kilometers",
-        "Acquire — there was a better dataset on the portal"
+        "Buffer the lake by 2,356 m",
+        "Reclassify by table: values below 2,356 become one class, everything else the other",
+        "Clip the DEM to the outline of the lake",
+        "Difference: cut the lake out of the DEM"
       ],
-      "correct": 2,
-      "explanation": "Examine is the step everybody wants to skip, and it is the one that wastes the afternoon: read the metadata, open the attribute table, check the extents and the currency, and check the CRS. Lab 9 makes you reproject a road layer for exactly this reason."
+      "correct": 1,
+      "explanation": "Reclassify turns a measurement into a yes or no. Nothing moves; only the values change, from thousands of distinct elevations to two classes, below the lake and above it. That throws information away on purpose, because \u201cbelow the lake\u201d is the thing you can act on. Buffer measures distance, not height, and Clip and Difference are vector overlay tools. In QGIS: Processing Toolbox \u25b8 Raster analysis \u25b8 Reclassify by table."
     },
     {
-      "section": "Part 1 — From a question to a selection",
+      "section": "Part 1 — From a question to a tool",
       "prompt": "“How many schools are in Utah County?” You have a statewide schools point layer and a counties polygon layer. Which pair of operations answers it?",
       "setup": "",
       "options": [
@@ -110,7 +110,7 @@
         "Polygons, and the distance is always in meters"
       ],
       "correct": 0,
-      "explanation": "Buffer always returns polygons, whatever goes in: points give circles, lines give ribbons, polygons come out fattened. The distance is read in whatever the layer's coordinate system measures in, so a layer in geographic coordinates has to be reprojected before the number 10,000 means anything."
+      "explanation": "Buffer always returns polygons, whatever goes in: points give circles, lines give ribbons, polygons come out fattened. The distance is read in whatever the layer's coordinate system measures in, so a layer in geographic coordinates has to be run through Reproject Layer before the number 10 km means anything. Changing the project CRS does not help: the Buffer dialog follows the layer, and warns \u201cDistance is in geographic degrees\u201d when it is wrong."
     },
     {
       "section": "Part 2 — What each tool puts out",
@@ -123,7 +123,7 @@
         "Select by location — it tags the roads with the park they fall in"
       ],
       "correct": 2,
-      "explanation": "Clip and intersect give you the same picture and a different table. Clip is a cookie cutter: it keeps the input's geometry and the input's attributes, and the overlay is only a shape to cut with. If you wanted just “the roads inside the park,” clip is right. The moment you need to know what came from where, you need intersect — so ask which one you are after before you pick."
+      "explanation": "Clip and Intersection give you the same picture and a different table. Clip is a cookie cutter: it keeps the input's geometry and the input's attributes, and the overlay is only a shape to cut with. If you wanted just “the roads inside the park,” clip is right. The moment you need to know what came from where, you need Intersection — so ask which one you are after before you pick."
     },
     {
       "section": "Part 2 — What each tool puts out",
@@ -136,20 +136,20 @@
         "Everything — the overlap and both remainders, with every feature cut wherever the other layer's boundary crossed it"
       ],
       "correct": 3,
-      "explanation": "Union is the greedy one: no geometry is thrown away. The first option describes intersect and the second describes difference, which is why they are tempting. Expect empty cells in the output table wherever a feature only existed in one of the two inputs — that is not a bug, it is what OR looks like in a table."
+      "explanation": "Union is the greedy one: no geometry is thrown away. The first option describes Intersection and the third describes Difference, which is why they are tempting; the second is closer to a spatial join. Expect empty cells in the output table wherever a feature only existed in one of the two inputs — that is not a bug, it is what \u201cin either\u201d looks like in a table."
     },
     {
       "section": "Part 3 — Chaining the tools",
-      "prompt": "AND, OR and NOT. Which set of tools are they?",
-      "setup": "",
+      "prompt": "Three questions: what is in both layers? What is in either? What is in this one but not that one? Which tools answer them, in that order?",
+      "setup": "All three are in Processing Toolbox \u25b8 Vector overlay.",
       "options": [
-        "AND is union, OR is intersect, NOT is clip",
-        "AND is intersect, OR is union, NOT is erase — which QGIS calls Difference",
-        "AND is intersect, OR is difference, NOT is union",
-        "AND is clip, OR is union, NOT is difference"
+        "Union, Intersection, Clip",
+        "Intersection, Union, Difference",
+        "Intersection, Difference, Union",
+        "Clip, Union, Difference"
       ],
       "correct": 1,
-      "explanation": "If you remember one slide from today, this is a good candidate: the three overlay tools are Boolean operations with geometry attached. Watch the names in the Processing Toolbox — under Vector overlay, QGIS calls intersect Intersection and calls erase Difference. Clip is not one of the three; it is a cookie cutter, not a Boolean overlay."
+      "explanation": "In both is Intersection, in either is Union, in this but not that is Difference. If you have met logic before, that is AND, OR and NOT. Watch the names: ArcGIS calls Difference \u201cErase\u201d and Intersection \u201cIntersect\u201d. Clip is not one of the three; it is a cookie cutter that keeps only the input layer's attributes."
     },
     {
       "section": "Part 3 — Chaining the tools",
@@ -162,7 +162,7 @@
         "Intersect the cities with the rivers, then buffer the result by 10 km"
       ],
       "correct": 0,
-      "explanation": "Select, buffer, intersect — and notice the cities layer does not enter until the last step. The first option gets the same answer and takes far longer, because you compute a buffer around every creek in the country and then throw most of them away. Watch the data model change down the chain: polyline, polyline, polygon, point."
+      "explanation": "Select, buffer, intersect — and notice the cities layer does not enter until the last step. Reproject both layers into meters before the buffer, too. The third option gets the same answer and takes far longer, because you compute a buffer around every creek in the country and then throw most of them away. Watch the data model change down the chain: polyline, polyline, polygon, point."
     },
     {
       "section": "Part 3 — Chaining the tools",
@@ -175,7 +175,7 @@
         "Difference — cut the road buffer out of the park polygon"
       ],
       "correct": 3,
-      "explanation": "“More than 5 km from a road” is NOT, so it is Difference: the park polygon comes out with holes in it the shape of the buffer, and what is left is the helicopter's search area. Intersection and clip both hand you the exact opposite — the ground crew's ribbon along the roads. If QGIS stops with an invalid geometry error partway through this chain, run Fix Geometries and carry on."
+      "explanation": "“In the park but not within 5 km of a road” is in this but not that, so it is Difference: the park polygon comes out with holes in it the shape of the buffer, and what is left is the helicopter's search area. Intersection and clip both hand you the exact opposite — the ground crew's ribbon along the roads. If QGIS stops with an invalid geometry error partway through this chain, run Fix Geometries and carry on."
     }
   ]
 }
