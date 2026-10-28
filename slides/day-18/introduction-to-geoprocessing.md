@@ -128,11 +128,11 @@ A buffer takes **points, lines or polygons** and returns **polygons**: everythin
 
 # Reproject Before You Buffer
 
-![w:1000 center](images/gp-reproject-units.png)
+![w:900 center](images/gp-reproject-units.png)
 
-Buffer measures distance in the **layer's** units, not the map's. A layer in latitude and longitude buffers in **degrees**. Run **Reproject Layer** to a CRS in meters first.
+Buffer measures in the **layer's** units, not the map's. **Reproject Layer** to meters first.
 
-<!-- This is the step students skip, and it is the first step of Lab 9 Part 3: the roads arrive in EPSG:4269 (degrees) and get reprojected to EPSG:26912, UTM zone 12N, in meters. Setting the project CRS does not fix it; the Buffer dialog follows the layer, and warns "Distance is in geographic degrees" when it is wrong. Checked in QGIS 3.44.13: buffering a point layer in EPSG:4326 by 10 produces a buffer 10 degrees wide. In QGIS: Vector ▸ Data Management Tools ▸ Reproject Layer, or Processing Toolbox ▸ Vector general ▸ Reproject layer. -->
+<!-- This is the step students skip, and it is the first step of Lab 9 Part 3: the roads arrive in EPSG:4269 (degrees) and get reprojected to EPSG:26912, UTM zone 12N, in meters. Setting the project CRS does not fix it; the Buffer dialog follows the layer, and warns "Distance is in geographic degrees" when it is wrong. Checked in QGIS 3.44.13: buffering a layer in EPSG:4326 by 10 produces a buffer 10 degrees wide. Walk the figure: same river, same towns, same number typed. On the left every town counts as near the river; on the right, four do. The figure is synthetic (tools/draw_geoprocessing_figures.py). In QGIS: Vector ▸ Data Management Tools ▸ Reproject Layer, or Processing Toolbox ▸ Vector general ▸ Reproject layer. -->
 
 ---
 
@@ -332,18 +332,48 @@ One tool rarely answers a real question. The **output of one tool becomes the in
 
 **What is the workflow?**
 
-Sketch the boxes and ovals before you look at the next slide.
+Sketch the data and the tools, in order, before you look at the next slide.
 
 </div>
 </div>
 
-<!-- Give the class three or four minutes in pairs to draw the flowchart on paper. The hard part is not knowing the tools, it is ordering them and noticing that the cities layer does not enter until the last step. Watch for groups who buffer all the rivers before selecting: it works, but it takes far longer to run. The diagram on the next slide was drawn before the Reproject step was added; say it out loud: reproject the rivers and the cities before the buffer, exactly as Thursday does. -->
+<!-- Give the class three or four minutes in pairs to draw the flowchart on paper. The hard part is not knowing the tools, it is ordering them and noticing that the cities layer does not enter until the last step. Watch for groups who buffer all the rivers before selecting: it works, but it takes far longer to run. The next slide is the answer, reproject step included. -->
 
 ---
 
-![bg contain](images/gp-cities-rivers-workflow.jpg)
+# Workflow Example: Cities Within 10 km of a Major River
 
-<!-- The answer. Rivers (polyline) go into Select Major Rivers, producing Major Rivers (polyline). Those go into Buffer the Rivers, producing River Areas (polygon). Those, plus the Cities (point) layer, go into Intersect, producing Cities Near Rivers (point). Three tools, two intermediate layers, one answer. Point out that the data model changes at every step: polyline, polyline, polygon, point. -->
+![w:1150 center](images/gp-cities-rivers-workflow.png)
+
+<!-- The answer. White cards are data, navy chips are tools, and the pill on each card is its data model: line, line, polygon, point. Rivers go through Select to keep the major ones, then Reproject so 10 km means 10 km, then Buffer with Dissolve to make the river zones. The cities are reprojected too, and Intersection keeps the cities inside a zone. Point out that the cities layer does not enter until the last tool. This is exactly Thursday's session. Redrawn October 2026 with synthetic data by tools/draw_geoprocessing_figures.py. -->
+
+---
+
+<!-- _class: activity -->
+
+# Thursday: hands-on in QGIS
+
+![bg right:36% w:94%](images/gp-thursday-qgis.jpg)
+
+- We build the **cities near rivers** analysis for real, in QGIS: select, reproject, buffer, intersect
+- Then a dress rehearsal for Lab 9 Part 3: **Difference**, and **Fix Geometries** when QGIS complains
+- Every tool's output is a layer you save to disk and feed to the next one
+- The U.S. cities and rivers data is posted on **Learning Suite**
+- **In-class activity — Cities Near Rivers:** upload a screenshot of your map showing all U.S. cities within 10 km of a major river, and record completion on Learning Suite
+
+<!-- Preview of Thursday. The activity is a screenshot upload, so nobody leaves without a finished map. The workflow example two slides back is the one to walk through before they start. -->
+
+---
+
+<!-- _class: lead -->
+
+![bg right:50%](images/gp-divider-lab9.jpg)
+
+# Part 3
+
+## Introducing Lab 9: The Yellowstone Disaster
+
+<!-- Anime-style cartoon generated with gpt-image-2.5-flare, October 2026; prompt in tools/divider-images/gap-fill-2026-10.json. -->
 
 ---
 
@@ -414,28 +444,6 @@ Every one of those is a reclassify, a buffer, a clip or a difference.
 
 <!-- _class: activity -->
 
-# Thursday: hands-on in QGIS
-
-![bg right:36% w:94%](images/gp-thursday-qgis.jpg)
-
-- We build the **cities near rivers** analysis for real, in QGIS: select, reproject, buffer, intersect
-- Then a dress rehearsal for Lab 9 Part 3: **Difference**, and **Fix Geometries** when QGIS complains
-- Every tool's output is a layer you save to disk and feed to the next one
-- The U.S. cities and rivers data is posted on **Learning Suite**
-- **In-class activity — Cities Near Rivers:** upload a screenshot of your map showing all U.S. cities within 10 km of a major river, and record completion on Learning Suite
-
-<!-- Preview of Thursday. The activity is a screenshot upload, so nobody leaves without a finished map. The next slide is the version of the workflow diagram to walk through before they start. -->
-
----
-
-![bg contain](images/gp-cities-rivers-diagram.png)
-
-<!-- The Thursday workflow, annotated. Green boxes are tools, blue ellipses are layers, and every layer is labelled with its file type and its data model: rivers come in as polyline shapefiles, Select keeps a subset of polylines, Buffer turns those into polygons, and Intersect combines the polygons with the cities points to give points back out. That bookkeeping is what students lose track of once they have five layers in the panel. Note this example buffers by 1 mile; Thursday's activity uses 10 km. It also predates the Reproject step; Thursday reprojects both layers first. -->
-
----
-
-<!-- _class: activity -->
-
 # Final Thoughts
 
 <div class="columns" style="grid-template-columns: 1.7fr 1fr; font-size: 0.74em;">
@@ -473,6 +481,8 @@ Every one of those is a reclassify, a buffer, a clip or a difference.
 <!-- Update 2026-10-28 (figures): the reclassify, buffer, difference, intersection and union figures came from Bolstad's GIS Fundamentals and the Esri tool help. All were replaced with original synthetic figures drawn by tools/draw_geoprocessing_figures.py; no real places or data are shown. -->
 
 <!-- Update 2026-10-28: at Dan's request the whole "geographic approach" section (its divider, the five-step table, the four worked-example steps, and the attribute-table, Select by Expression and Select by Location slides) was removed. The compass-girl divider art moved to the former Part 2 divider, replacing the blue-and-orange overlay twins, and the parts were renumbered 1 and 2. Same day, also at Dan's request: the Boolean framing was replaced with plain questions. The two A/B/C Venn drills were cut; Difference, Intersection and Union are now titled by the question each answers (in this but not that, in both, in either); and the Venn summary slide became "Three Overlay Tools, Three Questions", built from the three county overlay maps, with AND/OR/NOT kept as one line so the reading quiz still matches. -->
+
+<!-- Update 2026-10-28 (later): "Reproject Before You Buffer" got a clearer figure (same river and towns, buffer 10 in degrees vs 10 km). The cities-near-rivers answer slide was rebuilt as "Workflow Example: Cities Within 10 km of a Major River" with a new synthetic diagram, replacing gp-cities-rivers-workflow.jpg from the source deck. The old annotated Thursday diagram (gp-cities-rivers-diagram.png, 1 mile, no reproject step) was dropped as a duplicate. The Thursday preview moved up beside the workflow, and a new Part 3 divider introduces Lab 9. -->
 
 <!-- Update 2026-10-28 (Week 10 alignment): Part 1 now runs in Lab 9's order. Added "Reproject Before You Buffer" (new synthetic figure), "Select: by Attribute or by Location" (restoring the two QGIS 3.44 captures cut earlier the same day) and "Clip: A Cookie Cutter". The two simple Intersect/Union diagram slides were dropped as duplicates of the county versions. The tools table now follows Lab 9 and adds Reproject Layer, Select by Attribute, Extract by Attribute and Fix Geometries. The cities-near-rivers chain is Select, Reproject, Buffer, Intersection everywhere: this deck, the Thursday run sheet and the self-check quiz. Lab 9 uses eight tools, not seven. -->
 

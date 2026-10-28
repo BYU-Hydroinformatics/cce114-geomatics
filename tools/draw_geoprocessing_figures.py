@@ -17,6 +17,7 @@ because nothing references an image outside its own folder).
 from pathlib import Path
 
 import matplotlib
+import matplotlib.lines
 
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
@@ -403,27 +404,153 @@ def fig_summary():
     return fig
 
 
+def chip(ax, x, y, text, fc=NAVY, tc="white", size=11, pad=0.35, z=6):
+    ax.text(x, y, text, ha="center", va="center", fontsize=size, color=tc, fontweight="bold", zorder=z,
+            bbox=dict(boxstyle=f"round,pad={pad},rounding_size=0.6", fc=fc, ec="none"))
+
+
+def units_scene():
+    """A state (about 5 x 4 degrees), one river across it, and some towns."""
+    reg = scale(region(), 0.5, 0.55, origin=(0, 0))
+    river = LineString([(-0.1, 2.6), (0.9, 2.3), (1.7, 2.6), (2.6, 2.0), (3.4, 1.7), (4.2, 1.9), (5.1, 1.4)])
+    rng = np.random.default_rng(12)
+    towns = []
+    while len(towns) < 26:
+        p = Point(rng.uniform(0.2, 4.8), rng.uniform(0.4, 3.6))
+        if reg.contains(p) and river.distance(p) > 0.06:
+            towns.append(p)
+    for t in (0.15, 0.4, 0.62, 0.85):                      # a few towns right on the river
+        q = river.interpolate(t, normalized=True)
+        towns.append(Point(q.x + 0.03, q.y + 0.04))
+    return reg.intersection(box(0, 0.1, 5, 3.85)), river.intersection(box(0, 0, 5, 4)), towns
+
+
 def fig_units():
-    """The same 10 typed into Buffer, for a layer in degrees and for one in meters."""
-    reg = scale(region(), 0.6, 0.6, origin=(0, 0))         # about 6 x 4 degrees, roughly a state
-    town = Point(2.6, 2.1)
-    fig = plt.figure(figsize=(10, 3.9))
-    a1 = fig.add_axes([0.03, 0.04, 0.42, 0.8])
-    a2 = fig.add_axes([0.55, 0.04, 0.42, 0.8])
-    for a in (a1, a2):
-        draw(a, reg, L1_FILL, L1_EDGE, lw=1.2)
-    draw(a1, town.buffer(10, quad_segs=64), L2_FILL, L2_EDGE, lw=1.5, alpha=0.55, z=2)
-    # 10 km at roughly 111 km per degree
-    draw(a2, town.buffer(10 / 111, quad_segs=64).buffer(0.0), L2_FILL, L2_EDGE, lw=1.5, z=2)
-    for a in (a1, a2):
-        draw(a, town, "none", NAVY, z=4)
-    a2.annotate("10 km", (town.x + 0.05, town.y + 0.05), (town.x + 0.9, town.y + 0.9), fontsize=13,
-                color=L2_EDGE, fontweight="bold", arrowprops=dict(arrowstyle="-", color=L2_EDGE))
-    a1.text(2.6, -5.5, "the whole state, and far beyond", ha="center", fontsize=12, color=L2_EDGE,
-            fontweight="bold", zorder=5)
-    a1.text(3.0, 3.1, "state", ha="center", va="center", fontsize=11, color=L1_EDGE, zorder=5)
-    frame(a1, "Layer in degrees: 10 means 10°", (-7.6, -8.0, 12.8, 12.2))
-    frame(a2, "Reprojected to meters: 10 km", (-0.2, -0.3, 6.2, 4.5))
+    """The same 10 typed into Buffer, for a rivers layer in degrees and for one in meters."""
+    reg, river, towns = units_scene()
+    km = 1 / 111                                            # about one kilometer in degrees of latitude
+    fig = plt.figure(figsize=(11, 5.0))
+    a1 = fig.add_axes([0.01, 0.13, 0.47, 0.66])
+    a2 = fig.add_axes([0.52, 0.13, 0.47, 0.66])
+    view = (-0.15, -0.15, 5.15, 4.0)
+    cases = [(a1, river.buffer(10), "Rivers layer in EPSG:4326: units are degrees",
+              "Buffer distance 10  →  10 degrees, about 1,100 km"),
+             (a2, river.buffer(10 * km, quad_segs=16), "Rivers layer reprojected to meters",
+              "Buffer distance 10 km  →  10 km")]
+    for ax, buf, head, sub in cases:
+        draw(ax, reg, "#eef2f7", L1_EDGE, lw=1.2)
+        clip = buf.intersection(box(*view))
+        draw(ax, clip, L2_FILL, L2_EDGE, lw=1.2, alpha=0.8, z=2)
+        draw(ax, river, "none", "#2b6cb0", lw=2.2, z=3)
+        near = [t for t in towns if buf.contains(t)]
+        far = [t for t in towns if not buf.contains(t)]
+        for t in far:
+            ax.plot(t.x, t.y, "o", ms=6, mfc="white", mec="#666666", mew=1.2, zorder=5)
+        for t in near:
+            ax.plot(t.x, t.y, "o", ms=7, mfc="#c0392b", mec="white", mew=1.0, zorder=5)
+        frame(ax, None, view)
+        ax.set_xlim(view[0], view[2]); ax.set_ylim(view[1], view[3])
+        x0 = ax.get_position().x0 + ax.get_position().width / 2
+        fig.text(x0, 0.93, head, ha="center", fontsize=14, fontweight="bold", color=NAVY)
+        fig.text(x0, 0.855, sub, ha="center", fontsize=12.5, color=L2_EDGE, fontweight="bold")
+        fig.text(x0, 0.05, f"{len(near)} of {len(towns)} towns count as \u201cnear the river\u201d",
+                 ha="center", fontsize=13, color=INK, fontweight="bold")
+    chip(a1, 2.5, 3.55, "QGIS warns: \u201cDistance is in geographic degrees\u201d", fc="#fdecea", tc="#a33", size=10.5)
+    chip(a1, 2.5, 0.35, "the buffer runs off the map in every direction", fc="white", tc=L2_EDGE, size=10.5)
+    # 100 km scale bar on the right panel
+    a2.plot([3.6, 3.6 + 100 * km], [0.05, 0.05], color=INK, lw=3, zorder=6, solid_capstyle="butt")
+    a2.text(3.6 + 50 * km, 0.13, "100 km", ha="center", fontsize=10, color=INK, zorder=6)
+    return fig
+
+
+def card(fig, x, y, w, h, title, kind, draw_fn):
+    """A data layer: a rounded card with a small map and a geometry-type pill."""
+    from matplotlib.patches import FancyBboxPatch
+    fig.patches.append(FancyBboxPatch((x, y), w, h, boxstyle="round,pad=0.004,rounding_size=0.018",
+                                      transform=fig.transFigure, fc="white", ec="#c9d3df", lw=1.4, zorder=-1))
+    ax = fig.add_axes([x + 0.01, y + 0.075, w - 0.02, h - 0.14])
+    draw_fn(ax)
+    ax.set_aspect("equal"); ax.axis("off")
+    fig.text(x + w / 2, y + h - 0.045, title, ha="center", va="center", fontsize=13, fontweight="bold", color=NAVY)
+    colors = {"line": "#2b6cb0", "polygon": L2_EDGE, "point": "#c0392b"}
+    fig.text(x + w / 2, y + 0.035, kind, ha="center", va="center", fontsize=10, color="white", fontweight="bold",
+             bbox=dict(boxstyle="round,pad=0.3,rounding_size=0.8", fc=colors[kind], ec="none"))
+
+
+def tool(fig, x0, x1, y, label):
+    fig.patches.append(FancyArrowPatch((x0, y), (x1, y), transform=fig.transFigure, arrowstyle="-|>",
+                                       mutation_scale=18, lw=2, color="#7a8aa0"))
+    fig.text((x0 + x1) / 2, y, label, ha="center", va="center", fontsize=11, color="white", fontweight="bold",
+             bbox=dict(boxstyle="round,pad=0.45,rounding_size=0.5", fc=NAVY, ec="none"), zorder=5)
+
+
+def fig_workflow():
+    """Cities within 10 km of a major river, as data cards and tool chips."""
+    rng = np.random.default_rng(4)
+    land = scale(region(), 1, 0.62, origin=(0, 0))
+    v = (-0.3, -0.5, 10.3, 4.8)
+    major = [LineString([(0.2, 3.6), (2.0, 2.9), (3.6, 3.1), (5.0, 2.0), (6.0, 1.2), (6.6, -0.1)]),
+             LineString([(9.8, 3.9), (8.2, 2.8), (6.8, 2.4), (5.0, 2.0)]),
+             LineString([(3.0, 4.2), (3.6, 3.1)])]
+    minor = []
+    for _ in range(26):
+        x, y = rng.uniform(0.3, 9.7), rng.uniform(0.3, 4.0)
+        ang = rng.uniform(0, 2 * np.pi)
+        minor.append(LineString([(x, y), (x + 0.9 * np.cos(ang), y + 0.9 * np.sin(ang))]).intersection(land))
+    zones = unary_union([m.buffer(0.35) for m in major]).intersection(land)
+    cities = [Point(rng.uniform(0.2, 9.8), rng.uniform(0.2, 4.1)) for _ in range(90)]
+    cities = [c for c in cities if land.contains(c)]
+    near = [c for c in cities if zones.contains(c)]
+
+    def base(ax):
+        draw(ax, land, "#f3f5f8", "#b8c2cf", lw=0.8)
+        ax.set_xlim(v[0], v[2]); ax.set_ylim(v[1], v[3])
+
+    def d_rivers(ax):
+        base(ax)
+        for m in minor: draw(ax, m, "none", "#7fa7d9", lw=1)
+        for m in major: draw(ax, m, "none", "#2b6cb0", lw=1.8)
+
+    def d_major(ax):
+        base(ax)
+        for m in major: draw(ax, m, "none", "#2b6cb0", lw=2)
+
+    def d_zones(ax):
+        base(ax)
+        draw(ax, zones, L2_FILL, L2_EDGE, lw=1)
+        for m in major: draw(ax, m, "none", "#2b6cb0", lw=1.2, z=3)
+
+    def d_cities(ax):
+        base(ax)
+        for c in cities: ax.plot(c.x, c.y, "o", ms=3, color="#666666", zorder=4)
+
+    def d_result(ax):
+        base(ax)
+        draw(ax, zones, "#fbe3c8", "#e6b98a", lw=0.6)
+        for c in near: ax.plot(c.x, c.y, "o", ms=4.5, color="#c0392b", zorder=4)
+
+    fig = plt.figure(figsize=(13, 6.2))
+    W, H = 0.19, 0.38
+    top, bot = 0.56, 0.08
+    card(fig, 0.02, top, W, H, "Rivers", "line", d_rivers)
+    tool(fig, 0.215, 0.315, top + H / 2, "Select\nmajor rivers")
+    card(fig, 0.32, top, W, H, "Major rivers", "line", d_major)
+    tool(fig, 0.515, 0.615, top + H / 2, "Reproject\nto meters")
+    tool(fig, 0.62, 0.79, top + H / 2, "Buffer 10 km\n(dissolve)")
+    card(fig, 0.795, top, W, H, "River zones", "polygon", d_zones)
+    card(fig, 0.02, bot, W, H, "Cities", "point", d_cities)
+    tool(fig, 0.215, 0.43, bot + H / 2, "Reproject to meters")
+    # river zones come down into the Intersection
+    mid = (top + bot + H) / 2
+    fig.lines.append(matplotlib.lines.Line2D([0.885, 0.885, 0.50], [top - 0.005, mid, mid], transform=fig.transFigure,
+                                             color="#7a8aa0", lw=2, solid_joinstyle="round"))
+    fig.patches.append(FancyArrowPatch((0.50, mid), (0.50, bot + H / 2 + 0.045), transform=fig.transFigure,
+                                       arrowstyle="-|>", mutation_scale=18, lw=2, color="#7a8aa0"))
+    fig.text(0.50, bot + H / 2, "Intersection", ha="center", va="center", fontsize=13, color="white",
+             fontweight="bold", bbox=dict(boxstyle="round,pad=0.6,rounding_size=0.6", fc=L2_EDGE, ec="none"), zorder=6)
+    fig.patches.append(FancyArrowPatch((0.565, bot + H / 2), (0.69, bot + H / 2), transform=fig.transFigure,
+                                       arrowstyle="-|>", mutation_scale=18, lw=2, color="#7a8aa0"))
+    card(fig, 0.695, bot, 0.29, H, "Cities near major rivers", "point", d_result)
     return fig
 
 
@@ -464,3 +591,4 @@ if __name__ == "__main__":
     save(fig_summary(), "gp-overlay-summary.png", [D18])
     save(fig_title(), "gp-title-overlay.png", [D18])
     save(fig_units(), "gp-reproject-units.png", [D18])
+    save(fig_workflow(), "gp-cities-rivers-workflow.png", [D18])
