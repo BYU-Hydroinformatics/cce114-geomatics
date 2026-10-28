@@ -52,9 +52,11 @@ Three standing rules (set 2026-09-03) apply to every deck:
 2. **American English**: meters, kilometers, center, color, catalog, gray. Not metres, centre,
    colour. Journal and product names keep their own spelling.
 3. **Nearly every slide carries a graphic.** Section-divider (`lead`) slides are the exception. If
-   a slide has none, generate one with the OpenAI image skill (gpt-image-1, a shared style suffix
-   across the deck, no text in the image) and save it in the deck's `images/` folder. Quiz and
-   table slides get a supporting illustration; do not add decoration for its own sake.
+   a slide has none, generate one with the OpenAI image skill (`gpt-image-2.5-flare`, a shared style
+   suffix across the deck, no text in the image) and save it in the deck's `images/` folder. Quiz
+   and table slides get a supporting illustration; do not add decoration for its own sake.
+   Section-divider art follows [`tools/divider-images/README.md`](divider-images/README.md): the
+   markup, the chibi style suffix, model and quality, and the prompt rules.
 
 Specifically:
 
