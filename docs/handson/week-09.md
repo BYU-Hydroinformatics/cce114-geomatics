@@ -29,8 +29,8 @@
 ### Practice run before class
 
 > [!TIP]
-> Twenty minutes, mostly filling in a dialog. The value is knowing where each of the eight
-> metadata pages lives before you are standing at the projector.
+> Twenty minutes, mostly filling in a dialog. The value is knowing where each of the nine
+> metadata tabs lives before you are standing at the projector.
 
 **What you need.** QGIS 3.44 LTR, the county boundary from [UtahCountyData.zip](https://github.com/BYU-Hydroinformatics/cce114-geomatics/releases/download/course-data-2026/UtahCountyData.zip), a UGRC
 product page open at [gis.utah.gov/products/sgid](https://gis.utah.gov/products/sgid/), and one
@@ -42,13 +42,13 @@ hunting for a bad example live wastes five minutes.
 1. On the UGRC page, locate the six answers out loud: what the data is, who stewards it, where it
    sits (usually NAD83 UTM 12N), when it was last updated, why it exists, and how it was made.
    Then find the license.
-2. In QGIS, right-click the layer > **Properties > Metadata** and walk all eight pages in order:
-   **Identification**, **Categories**, **Keywords**, **Access**, **Extent**, **Contacts**,
-   **History**, **Validation**.
+2. In QGIS, right-click the layer > **Properties > Metadata** and walk all nine tabs across the top in order:
+   **Identification**, **Categories**, **Keywords**, **Access**, **Extent**, **Contact**,
+   **Links**, **History**, **Validation**.
 3. Write a real two-sentence abstract, pick an ISO category, add three keywords, set the license,
    click **Set from layer** for the extent, add yourself as `pointOfContact`, and write three
    history lines.
-4. Open the **Validation** page and watch the remaining gaps disappear as you fill them.
+4. Open the **Validation** tab and watch the remaining gaps disappear as you fill them.
 5. **Metadata > Save metadata to file** to write a `.qmd` next to the layer, and find it in the
    Browser panel. For a GeoPackage layer use **Save to database** instead, then copy the
    GeoPackage to a new folder, open it in a fresh project, and confirm the metadata came along.
@@ -56,7 +56,7 @@ hunting for a bad example live wastes five minutes.
 7. Now try answering the same six questions from the thin data.gov page. Two or three will be
    impossible, which is the point of the exercise.
 
-**You are ready when** you can reach any of the eight pages without hunting, and you have a `.qmd`
+**You are ready when** you can reach any of the nine tabs without hunting, and you have a `.qmd`
 on disk you can open in a text editor to show it is only XML.
 
 **The one that bites.** Editing metadata and clicking OK saves nothing durable. Without **Save
@@ -80,7 +80,7 @@ The deck runs the whole session. Slides 1 to 15 are the lead-in; from the **Now 
 | 0:00 | — | Mini-devotional |
 | 0:03 | 1–15 | Slides: metadata standards, where metadata lives, fitness for use (keep to about twelve minutes) |
 | 0:15 | 17 *Read a real record first* | Read metadata on a UGRC product page: find the six answers (walkthrough step 1) |
-| 0:19 | 18 *Write it in QGIS* | QGIS Layer Properties > Metadata: fill the Identification, Categories, Keywords, Access, Extent, Contacts, and History pages (step 2) |
+| 0:19 | 18 *Write it in QGIS* | QGIS Layer Properties > Metadata: fill the Identification, Categories, Keywords, Access, Extent, Contact, and History tabs (step 2) |
 | 0:27 | 19 *Save it so it survives* | Save it: to a `.qmd` sidecar and into the GeoPackage; show it travel with the data (step 3) |
 | 0:30 | 20 *Bad metadata, on purpose* | A dataset with bad metadata: what you cannot tell, and what could go wrong (step 4) |
 | 0:33 | 21 *In-class activity* | Students: evaluate one dataset, fill a row in the sheet (Student activity) |
@@ -94,16 +94,17 @@ On the UGRC product page, find and read aloud: the description (what), the stewa
 
 #### 2. Writing it in QGIS
 
-Right-click the layer > **Properties > Metadata**. Walk the left-hand pages:
+Right-click the layer > **Properties > Metadata**. Walk the tabs across the top of the page:
 
 1. **Identification**: Identifier (a stable name), Title, Type `dataset`, Language, Abstract. Write a real abstract in two sentences: what the features are and what they are for.
 2. **Categories**: pick an ISO category (Boundaries, Transportation, Inland Waters).
 3. **Keywords**: a vocabulary of `GCMD` or just `Free` and three terms.
 4. **Access**: Fees `none`, License `CC BY 4.0` or the UGRC license, a Rights line naming the source.
 5. **Extent**: **Set from layer** for the spatial extent and CRS; add a temporal extent if the data has a date.
-6. **Contacts**: name, organization, email, role `pointOfContact`.
-7. **History**: one line per processing step: `Downloaded from UGRC SGID 2026-10-29`, `Reprojected to EPSG:26912`, `Clipped to Utah County`.
-8. **Validation** page: click it; it lists what is still empty.
+6. **Contact**: name, organization, email, role `pointOfContact`.
+7. **Links**: optional; add the UGRC product page as a link if you have it.
+8. **History**: one line per processing step: `Downloaded from UGRC SGID 2026-10-29`, `Reprojected to EPSG:26912`, `Clipped to Utah County`.
+9. **Validation** tab: click it; it lists what is still empty.
 
 #### 3. Save it so it survives
 

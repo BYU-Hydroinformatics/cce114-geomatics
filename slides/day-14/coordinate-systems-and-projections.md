@@ -281,7 +281,7 @@ Saturday night, LaVell Edwards Stadium
 </div>
 </div>
 
-<!-- Every projected coordinate system is built on a geographic one; you need both halves to place a point. This is the slide students should photograph. In QGIS the CRS chooser shows both kinds in one list, which is exactly why people mix them up. If you ask QGIS for the area of a polygon while the project is in EPSG:4326, you get square degrees, which mean nothing. -->
+<!-- Every projected coordinate system is built on a geographic one; you need both halves to place a point. This is the slide students should photograph. In QGIS the CRS chooser shows both kinds in one list, which is exactly why people mix them up. QGIS measures on the ellipsoid by default, so area in EPSG:4326 still comes out right; switch the project to Planimetric measurement and a layer in degrees gives square degrees, which mean nothing. Thursday's hands-on shows both. -->
 
 ---
 

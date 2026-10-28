@@ -22,7 +22,7 @@ Dr. James Halgren and Dr. Dan Ames
 <!-- Thursday working session. Today has two halves: this deck, where we walk the site-selection workflow one more time and hand out the final project, and the concepts review deck for Exam 2. Have the final project instructions open on Learning Suite before class so students can follow along. -->
 
 <!-- stamp:begin -->
-<!-- _footer: '<span>CCE 114 · Day 23 — Final Mapping Project<span class="updated">Last Updated: 2026-10-27</span></span><span>© 2026 Daniel P. Ames · <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></span>' -->
+<!-- _footer: '<span>CCE 114 · Day 23 — Final Mapping Project<span class="updated">Last Updated: 2026-10-28</span></span><span>© 2026 Daniel P. Ames · <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></span>' -->
 <!-- stamp:end -->
 
 ---
@@ -105,7 +105,8 @@ By the end of class you should be able to:
 
 - **Select by Expression / Extract by Attribute** — pull out the features that match a rule, e.g. roads named "I-15", or blocks over a density threshold
 - **Buffer** — the area within a set distance of a feature
-- **Intersect / Clip** — the cookie-cutter: keep only what falls inside the other layer
+- **Clip** — the cookie cutter: keep the part of the input inside the other layer, with only the input's attributes
+- **Intersection** — the overlay: keep the overlap, with the attributes of **both** layers
 
 </div>
 <div>

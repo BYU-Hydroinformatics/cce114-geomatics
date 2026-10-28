@@ -38,7 +38,7 @@ Today, Thursday, and Lab 6 all build toward these. By the end of the week you sh
 - **Name** the main public repositories for spatial data, national and state
 - **Search** for data well, starting with *who needs it for their own job?*
 - **Explain** what the **UGRC** and the **SGID** are, and find a dataset in them
-- **Tell apart** WMS, WMTS, WFS, WCS, XYZ and ArcGIS REST, and say what each sends back *(Thursday)*
+- **Tell** whether a web service sends you a **picture** or the **features** *(Thursday)*
 - **Connect** QGIS to a live web service instead of downloading a file *(Thursday and Lab 6)*
 
 <!-- Set expectations. The first three are today; the last two are Thursday's lecture, and Lab 6 is where students actually connect QGIS to a service. There is no reading and no quiz this week; Chapter 7, Digital Data, is read in Week 9 with the metadata quiz. Concepts Exam 1 is open in the Testing Center Monday through Wednesday, so some students will be tired; keep the pace easy. -->
@@ -342,7 +342,7 @@ Today, Thursday, and Lab 6 all build toward these. By the end of the week you sh
 
 - A **short lecture**, then a **follow-along in QGIS**
 - The right-hand column from today: **getting data without downloading it**
-- **WMS, WMTS, WFS, WCS, XYZ, ArcGIS REST**: which ones send you a *picture*, and which send the *features*
+- One question for any service: does it send you a *picture*, or the *features*?
 - You will connect QGIS to UGRC's services, add three live layers, and upload a quick map: a running start on **Lab 6**
 
 <!-- Preview of Thursday. The in-class activity is a follow-along map built from three UGRC service layers, uploaded before they leave. The image is a real WMS response: the server drew that hillshade and sent back a picture. That distinction, picture against features, is the heart of Thursday. -->

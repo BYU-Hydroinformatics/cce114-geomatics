@@ -10,7 +10,7 @@
 ## :material-presentation-play: Presentation Slides
 
 - **Tuesday** — [Finding Spatial Data](https://byu-hydroinformatics.github.io/cce114-geomatics/slides/day-12/finding-spatial-data.html) — Where spatial data comes from, and who makes it; National sources: data.gov, The National Map, EarthExplorer, and other federal portals; Searching for data you can actually use; Utah's data: the Utah Geospatial Resource Center (UGRC) and the SGID; Downloading a file versus connecting to a web service
-- **Thursday** — [Web Services: Getting Data without Downloading It](https://byu-hydroinformatics.github.io/cce114-geomatics/slides/day-13/web-services.html) — What a web service is, and when to use one instead of a download; The OGC standards: WMS and WMTS send a picture; WFS and WCS send the data; Outside the standards: XYZ tiles, vector tiles, and ArcGIS REST; Reading a service URL and a REST services directory; Follow along: connect QGIS to UGRC's services, which is Lab 6, Step 3; A short pitch for the Community and Professional Map Experience
+- **Thursday** — [Web Services: Getting Data without Downloading It](https://byu-hydroinformatics.github.io/cce114-geomatics/slides/day-13/web-services.html) — What a web service is, and when to use one instead of a download; A picture or the features? WMS, WMTS and XYZ tiles send a picture; WFS and an ArcGIS feature service send the features; A web service is just a URL: UGRC's ArcGIS REST services directory; Follow along: connect QGIS to UGRC's services, which is Lab 6, Step 3; A short pitch for the Community and Professional Map Experience
 
 Press <kbd>F</kbd> for fullscreen and <kbd>P</kbd> for presenter view with speaker notes.
 

@@ -16,8 +16,8 @@
 | | |
 | --- | --- |
 | **Goal** | Students see the difference between the project CRS and a layer's CRS, watch on-the-fly reprojection, reproject a layer for real, and measure how length and area change with the projection. |
-| **Why this week** | Tuesday was geodesy, datums, projections, and the globe-and-string activity. Lab 7 uses a Tissot indicatrix layer, a state boundary, and a set of mystery points in an unknown CRS. Today is the toolkit for all of it. |
-| **Students bring** | Laptop with QGIS 3.44. The **Lab 7 data** from Learning Suite (Tissot indicatrix and state boundary shapefiles, mystery points CSV), unzipped. |
+| **Why this week** | Tuesday was geodesy, datums, projections, and the globe-and-string activity. Lab 7 uses a Tissot indicatrix layer, a state boundary, and a set of mystery points read in the wrong UTM zone. Today is the toolkit for all of it. |
+| **Students bring** | Laptop with QGIS 3.44. The **Lab 7 data**, downloaded from the Lab 7 page on the course site: `lab7_projections.gpkg` (a GeoPackage holding the StateBoundary and TissotIndicatrix layers, nothing to unzip) and `mystery_points.csv`. |
 | **Graded item** | *In Class Activity: Playing with Projections* (5 points). Upload a screenshot of the same data in two different projections. |
 | **Feeds** | Lab 7: Projections and Coordinate Systems. Due Saturday. |
 
@@ -77,7 +77,7 @@ export silently keeps the old projection. Choose the target explicitly.
 | 0:18 | Reproject for real: Export with a new CRS; compare $area and $length before and after |
 | 0:27 | Choose a projection for an engineering problem, and justify it |
 | 0:32 | Students: two projections, screenshot, upload |
-| 0:44 | Lab 7 pointer: mystery points and how to identify an unknown CRS |
+| 0:44 | Lab 7 pointer: the same coordinates read in the right and the wrong UTM zone |
 
 ### Walkthrough
 
@@ -115,7 +115,7 @@ Students load the Tissot indicatrix layer (or the US states), set the project CR
 
 ### Lab 7 pointer
 
-Lab 7's mystery points CSV has coordinates with no CRS given. The method: look at the magnitude of the numbers (degrees are small, UTM eastings are six digits, State Plane feet are seven), try a candidate CRS in the delimited-text import, and check whether the points land where the accompanying description says. Show one wrong guess so they know what wrong looks like.
+Lab 7's mystery points CSV holds UTM coordinates. Students add it with the Delimited Text tab twice: once with the Geometry CRS set to the course's usual EPSG:26912 (UTM 12N), where the points land in Utah, and again as EPSG:26911 (UTM 11N), where the same numbers land in Nevada. Then they make a one-line `origin.csv` at (0,0) and add it in both zones to find each zone's origin on the equator. Show the 11N version live: the numbers in the file never changed, only what QGIS was told they mean. While you are there, point out how the magnitude of the numbers hints at the kind of CRS (degrees are small, UTM eastings are six digits, State Plane feet are seven).
 
 ### Common snags
 

@@ -101,16 +101,16 @@
     },
     {
       "section": "Part 1 — A picture, or the features?",
-      "prompt": "You want the actual elevation numbers for a study area, to work with them rather than look at a shaded image of them. Which service?",
+      "prompt": "A roads layer from a web service draws perfectly, but QGIS lists it as a raster and offers no attribute table. What kind of service did you connect to?",
       "setup": "",
       "options": [
-        "WMS",
         "WFS",
-        "WCS",
-        "XYZ tiles"
+        "WMS",
+        "An ArcGIS feature service",
+        "A GeoPackage on your own disk"
       ],
-      "correct": 2,
-      "explanation": "Web Coverage Service is to rasters what WFS is to vectors: it hands back cell values instead of a picture of them. WFS is the tempting miss — the instinct is right, raw ingredients rather than a cooked meal — but WFS carries vector features, and elevation is a raster coverage."
+      "correct": 1,
+      "explanation": "A picture service sends an image of the roads, so in QGIS it is a raster layer: there are no road features to put in a table, select, or buffer. It looks exactly like the real thing, the way a screenshot of a spreadsheet looks like the spreadsheet. If you need the attributes, go back to the Data Source Manager and connect to the features instead: WFS, or for UGRC an ArcGIS feature service."
     },
     {
       "section": "Part 1 — A picture, or the features?",
@@ -118,8 +118,8 @@
       "setup": "",
       "options": [
         "XYZ tiles or WMTS",
-        "WCS",
         "WFS",
+        "An OGC API - Features endpoint",
         "An ArcGIS feature service"
       ],
       "correct": 0,

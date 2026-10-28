@@ -145,7 +145,7 @@ By the end of class you should be able to:
 
 </div>
 
-<!-- Generic skeleton, not a real record: the point is the shape, not the values. Tell students the search terms from Lab 8: Ctrl+F for "metd" to find the metadata date, and "bounding" to find the extent. XML is verbose but it is plain text, so you can always read it in a browser or a text editor. -->
+<!-- Generic skeleton, not a real record: the point is the shape, not the values. Tell students the search terms from Lab 8: Ctrl+F for "pubdate" (when the data was published) and "ModDate" (when the file was last modified), and "bounding" to find the extent. Not every UGRC download tags its dates the same way; some carry "metd", the date the metadata record itself was written, so if one search comes up empty, try the others. XML is verbose but it is plain text, so you can always read it in a browser or a text editor. -->
 
 
 ---
@@ -157,7 +157,7 @@ By the end of class you should be able to:
 - **ISO 19115, *Geographic information — Metadata***, is the international equivalent
 - Richer and more structured than FGDC, but organized the same way: identification, quality, spatial representation, reference system, distribution
 - Used across Europe, Australia, Canada, and increasingly by U.S. federal agencies
-- **QGIS layer metadata follows the ISO 19115 model**, which is why the panel you will use in a few minutes has fields like *Identification, Extent, Access, Fields, History*
+- **QGIS layer metadata follows the ISO 19115 model**, which is why the panel you will use in a few minutes has tabs like *Identification, Access, Extent, Contact, History*
 
 <!-- Current revision is ISO 19115-1; the XML encodings are ISO 19139 and ISO 19115-3 (mention in passing, not on the slide). The practical takeaway for this class: FGDC and ISO ask the same six questions with different tag names. If you can read one you can read the other. QGIS chose ISO, which is one reason FGDC .xml files do not import cleanly into QGIS. -->
 
@@ -282,7 +282,7 @@ Collected 2024, from 6-inch imagery, lineage documented, county GIS contact list
 - Download the shapefile from the Utah portal
 - Unzip it and open the `.xml` in a browser: it is plain text
 - Search for **`UGRC`** to find *who*
-- Search for **`metd`** to find *when*, written `YYYYMMDD`
+- Search for **`pubdate`** and **`ModDate`** to find *when*, written `YYYYMMDD` (some files use **`metd`** instead)
 - Search for **`bounding`** to find *where*
 - Read the abstract and keywords for *what*, the purpose for *why*
 - The coordinate system is **not** in the XML — it is in the `.prj` file in the same folder
@@ -364,12 +364,13 @@ Open a UGRC product page on [gis.utah.gov](https://gis.utah.gov/products/sgid/) 
 <li><strong>Keywords</strong>: three terms</li>
 <li><strong>Access</strong>: fees, license, a rights line</li>
 <li><strong>Extent</strong>: <strong>Set from layer</strong></li>
-<li><strong>Contacts</strong>: you, as <code>pointOfContact</code></li>
+<li><strong>Contact</strong>: you, as <code>pointOfContact</code></li>
+<li><strong>Links</strong>: the source page, if you have one</li>
 <li><strong>History</strong>: one line per processing step</li>
 <li><strong>Validation</strong>: what is still empty</li>
 </ol>
 
-<!-- Run sheet walkthrough step 2, about eight minutes. QGIS 3.44 Layer Properties, Metadata page, for the UGRC Utah County Boundaries layer with the identification fields filled in. Right-click the layer, Properties, Metadata, and walk the left-hand pages in this order with the county boundary from the Week 2 data. Validation needs Identifier, Title, Type, Language, Abstract, a Contact, and a License before it stops complaining. -->
+<!-- Run sheet walkthrough step 2, about eight minutes. QGIS 3.44 Layer Properties, Metadata page, for the UGRC Utah County Boundaries layer with the identification fields filled in. Right-click the layer, Properties, Metadata, and walk the tabs across the top in this order with the county boundary from the Week 2 data. Validation needs Identifier, Title, Type, Language, Abstract, a Contact, and a License before it stops complaining. -->
 
 
 ---
