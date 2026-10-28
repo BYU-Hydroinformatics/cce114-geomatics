@@ -20,7 +20,7 @@ Brigham Young University
 Dr. Dan Ames and Dr. James Halgren
 
 <!-- stamp:begin -->
-<!-- _footer: '<span>CCE 114 · Day 1 — Introduction to GIS<span class="updated">Last Updated: 2026-10-27</span></span><span>© 2026 Daniel P. Ames · <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></span>' -->
+<!-- _footer: '<span>CCE 114 · Day 1 — Introduction to GIS<span class="updated">Last Updated: 2026-10-28</span></span><span>© 2026 Daniel P. Ames · <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></span>' -->
 <!-- stamp:end -->
 
 ---
@@ -37,6 +37,16 @@ Dr. Dan Ames and Dr. James Halgren
 - Software for this course: **QGIS**, the **long-term release** — free, open source, runs on Mac and Windows
 
 <!-- Set expectations for the hour. Note the software change: this course now uses QGIS, not ArcGIS Pro. QGIS is free and cross-platform, so students install it themselves rather than relying on a lab license. -->
+
+---
+
+<!-- _class: lead -->
+
+![bg right:50%](images/gis-divider-what.jpg)
+
+# Part 1 — Getting to know GIS
+
+<!-- Part 1 — Getting to know GIS covers what a GIS is, the software we use, and your own spatial identity. Anime-style cartoon generated with gpt-image-2.5-flare, October 2026; prompt in tools/divider-images/gap-fill-2026-10.json. -->
 
 ---
 
@@ -137,6 +147,16 @@ As you go to different parts of the room/world, take a minute to get to know the
 
 ---
 
+<!-- _class: lead -->
+
+![bg right:50%](images/gis-divider-sees.jpg)
+
+# Part 2 — How a GIS sees the world
+
+<!-- Part 2 — How a GIS sees the world covers points, lines, polygons and the attribute table, and how they fit together. Anime-style cartoon generated with gpt-image-2.5-flare, October 2026; prompt in tools/divider-images/gap-fill-2026-10.json. -->
+
+---
+
 # What is a Geographic Information System?
 
 <div class="columns">
@@ -202,6 +222,16 @@ As you go to different parts of the room/world, take a minute to get to know the
 - QGIS live demo…
 
 <!-- All three feature types plus the attribute table. This is the payoff slide — everything they'll do in Lab 1 is visible here. -->
+
+---
+
+<!-- _class: lead -->
+
+![bg right:50%](images/gis-divider-at-work.jpg)
+
+# Part 3 — GIS at work
+
+<!-- Part 3 — GIS at work covers analysis tools, a live QGIS demo, and why engineers use spatial information. Anime-style cartoon generated with gpt-image-2.5-flare, October 2026; prompt in tools/divider-images/gap-fill-2026-10.json. -->
 
 ---
 

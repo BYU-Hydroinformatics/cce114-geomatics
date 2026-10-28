@@ -102,6 +102,18 @@ Saturday night, LaVell Edwards Stadium
 
 ---
 
+<!-- _class: lead -->
+
+![bg right:50%](images/crs-divider-distance.jpg)
+
+# Part 1
+
+## Distance on a round Earth
+
+<!-- Part 1 covers measuring distance on a curved Earth, great circles, and why a flat-Earth view misleads. Anime-style cartoon generated with gpt-image-2.5-flare, October 2026; prompt in tools/divider-images/gap-fill-2026-10.json. -->
+
+---
+
 # How far is it from BYU to the University of Utah?
 
 <div class="columns" style="grid-template-columns: 1fr 1.25fr; align-items: center;">

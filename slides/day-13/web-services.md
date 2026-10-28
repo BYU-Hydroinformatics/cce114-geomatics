@@ -24,7 +24,7 @@ Dr. Dan Ames and Dr. James Halgren
 <!-- Thursday lecture plus a short follow-along. Today is a light introduction to web services built around one question, whether a service sends a picture or the features, then students follow along in QGIS: connect to UGRC's services, add three live layers, and upload a quick layout for the in-class activity. A rough budget for the 50 minutes: 15 minutes of slides, a 5-minute live demo of a WMS and a WFS, 15 minutes of follow-along, 10 minutes for the Map Experience pitch. The map on the right was made entirely from web services: no downloads, no unzipping. Concepts Exam 1 closed yesterday, so expect a tired room. -->
 
 <!-- stamp:begin -->
-<!-- _footer: '<span>CCE 114 · Day 13 — Web Services<span class="updated">Last Updated: 2026-10-27</span></span><span>© 2026 Daniel P. Ames · <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></span>' -->
+<!-- _footer: '<span>CCE 114 · Day 13 — Web Services<span class="updated">Last Updated: 2026-10-28</span></span><span>© 2026 Daniel P. Ames · <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></span>' -->
 <!-- stamp:end -->
 
 ---
@@ -40,6 +40,16 @@ By the end of class you should be able to:
 - Connect **QGIS** to UGRC and make a quick map from **three live layers**: a running start on **Lab 6**
 
 <!-- Students need QGIS today, on the lab computers: the second half of the hour is a follow-along of Lab 6, Step 3, ending in a quick layout they upload as the in-class activity. -->
+
+---
+
+<!-- _class: lead -->
+
+![bg right:50%](images/web-divider-stream.jpg)
+
+# Part 1 — Data from the web
+
+<!-- Part 1 — Data from the web covers downloading versus streaming, map pictures versus features, and why a web service is just a URL. Anime-style cartoon generated with gpt-image-2.5-flare, October 2026; prompt in tools/divider-images/gap-fill-2026-10.json. -->
 
 ---
 

@@ -1,5 +1,49 @@
 [
   {
+    "id": "gis-divider-what",
+    "file": "gis-divider-what.jpg",
+    "deck": "slides/day-01/intro-to-gis.md",
+    "divider": "Part 1 — What is GIS?",
+    "new_divider": true,
+    "prompt": "A young man student lies on the grass under a tree on a sunny college campus, holding up a stack of transparent colored sheets toward the sky, one showing blue rivers, one showing gray roads, one showing small building outlines, so they line up over the campus behind them",
+    "model": "gpt-image-2.5-flare",
+    "quality": "medium",
+    "size": "1024x1024"
+  },
+  {
+    "id": "gis-divider-sees",
+    "file": "gis-divider-sees.jpg",
+    "deck": "slides/day-01/intro-to-gis.md",
+    "divider": "Part 2 — How a GIS sees the world",
+    "new_divider": true,
+    "prompt": "Three cute chibi mascots playing together on top of a large unfolded paper map: a round little dot character, a long ribbon-shaped line character, and a soft square patch-shaped character, all waving happily, small hills and a river drawn on the map beneath them",
+    "model": "gpt-image-2.5-flare",
+    "quality": "medium",
+    "size": "1024x1024"
+  },
+  {
+    "id": "gis-divider-at-work",
+    "file": "gis-divider-at-work.jpg",
+    "deck": "slides/day-01/intro-to-gis.md",
+    "divider": "Part 3 — GIS at work",
+    "new_divider": true,
+    "prompt": "A young woman civil engineer in a white hard hat and orange safety vest stands at a sunny construction site holding a tablet with a glowing map on the screen, cranes and a half-built bridge over a river in the background",
+    "model": "gpt-image-2.5-flare",
+    "quality": "medium",
+    "size": "1024x1024"
+  },
+  {
+    "id": "dm-divider-models",
+    "file": "dm-divider-models.jpg",
+    "deck": "slides/day-02/gis-data-models.md",
+    "divider": "Part 1 — What is a data model?",
+    "new_divider": true,
+    "prompt": "A young woman student stands on a campus lawn holding a small globe in one hand and a folded paper map in the other, comparing them thoughtfully against the real mountains rising behind her",
+    "model": "gpt-image-2.5-flare",
+    "quality": "medium",
+    "size": "1024x1024"
+  },
+  {
     "id": "dm-divider-encoding",
     "file": "dm-divider-encoding.jpg",
     "deck": "slides/day-02/gis-data-models.md",
@@ -149,6 +193,28 @@
     "divider": "Utah's data: the UGRC",
     "new_divider": false,
     "prompt": "A young woman student sits on a red-rock ledge at golden hour with a laptop showing a glowing map on the screen, overlooking red sandstone canyons and distant snowy mountains",
+    "model": "gpt-image-2.5-flare",
+    "quality": "medium",
+    "size": "1024x1024"
+  },
+  {
+    "id": "web-divider-stream",
+    "file": "web-divider-stream.jpg",
+    "deck": "slides/day-13/web-services.md",
+    "divider": "Part 1 — Download or stream?",
+    "new_divider": true,
+    "prompt": "A young man student sits cross-legged on a dorm bed with a laptop showing a glowing map on the screen; a gentle ribbon of small glowing map tiles streams in through the open window from a fluffy cloud and flows into the laptop",
+    "model": "gpt-image-2.5-flare",
+    "quality": "medium",
+    "size": "1024x1024"
+  },
+  {
+    "id": "crs-divider-distance",
+    "file": "crs-divider-distance.jpg",
+    "deck": "slides/day-14/coordinate-systems-and-projections.md",
+    "divider": "Part 1 — Distance on a round Earth",
+    "new_divider": true,
+    "prompt": "Two college students lean over a large classroom globe, each holding one end of a red string pulled tight across its surface between two places, smiling at how the string curves over the globe",
     "model": "gpt-image-2.5-flare",
     "quality": "medium",
     "size": "1024x1024"

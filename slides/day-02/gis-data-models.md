@@ -138,6 +138,18 @@ Dr. Dan Ames and Dr. James Halgren
 
 ---
 
+<!-- _class: lead -->
+
+![bg right:50%](images/dm-divider-models.jpg)
+
+# Part 1
+
+## What is a data model?
+
+<!-- Part 1 covers data models versus file formats, and what makes a model good, from the model airplane to the Lochsa River. Anime-style cartoon generated with gpt-image-2.5-flare, October 2026; prompt in tools/divider-images/gap-fill-2026-10.json. -->
+
+---
+
 <!-- _class: quiz -->
 
 # Data Models
