@@ -24,7 +24,7 @@ Dr. Dan Ames and Dr. James Halgren
 <!-- Tuesday concept lecture, Week 12. This is the lecture behind Lab 11 and the pattern students will reuse in the final project. Thursday, we walk through the workflow diagrams and the final project description. -->
 
 <!-- stamp:begin -->
-<!-- _footer: '<span>CCE 114 · Day 22 — Project Site Selection<span class="updated">Last Updated: 2026-10-27</span></span><span>© 2026 Daniel P. Ames · <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></span>' -->
+<!-- _footer: '<span>CCE 114 · Day 22 — Project Site Selection<span class="updated">Last Updated: 2026-10-28</span></span><span>© 2026 Daniel P. Ames · <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></span>' -->
 <!-- stamp:end -->
 
 ---
@@ -165,7 +165,7 @@ When you run an **Intersection** or a **Union**, the attribute tables of both la
 
 ![h:465 center](images/ws-reclassify-population.png)
 
-<!-- Same operation on census data: population density becomes population classes. This is exactly the criterion we will use for the Walmart problem, over 2000 people per square kilometer. Note that here we will do it with an attribute query on polygons rather than on a raster, but the thinking is identical. -->
+<!-- Same operation on census data: population density becomes population classes. This is exactly the criterion we will use for the Walmart problem, over 5000 people per square mile. Note that here we will do it with an attribute query on polygons rather than on a raster, but the thinking is identical. -->
 
 ---
 
@@ -314,7 +314,7 @@ When you run an **Intersection** or a **Union**, the attribute tables of both la
 
 - **Proximity to other Walmarts:** find locations at least **2 miles** from any existing Walmart
 - **Proximity to major roads:** find locations **within 2 miles** of I-15 or a highway
-- **Population density:** using 2010 Census data, find areas with over **2000 people per square kilometer**
+- **Population density:** using 2020 Census data, find areas with over **5000 people per square mile**
 - **Adequate space:** Walmart stores run 51,000–224,000 ft², averaging about **102,000 ft²**. Find locations where an average store would fit without demolishing large areas of existing buildings.
 
 <!-- This is the difference between a wish and a criterion: a number and a unit. "Not near a Walmart" is a wish; "at least 2 miles from any existing Walmart" is something Buffer can execute. The last criterion, adequate space, is the hard one, and it is where students have to make and defend a judgement call. -->
@@ -326,7 +326,7 @@ When you run an **Intersection** or a **Union**, the attribute tables of both la
 ![bg right:36% w:94%](images/ws-data-layers.jpg)
 
 - **Utah County boundary** and **roads and freeways**: [Utah Geospatial Resource Center (UGRC)](https://gis.utah.gov/), formerly AGRC
-- **Census blocks:** the Utah Census Block 2010 demographic data package from UGRC
+- **Census blocks:** the "Census 2020 Blocks" dataset in UGRC's Demographics category
   - Download the Census redistricting file README too — it explains the column headers
 - **Existing Walmart locations:** the [Walmart open data portal](https://walmart-open-data-walmarttech.opendata.arcgis.com/) publishes store locations as a downloadable point layer
 - Everything lands in QGIS as a **layer**: a shapefile, a GeoPackage, or a downloaded GeoJSON
@@ -419,7 +419,7 @@ When you run an **Intersection** or a **Union**, the attribute tables of both la
   - Keep only what is inside Utah County
   - Remove everything within 2 miles of an existing store
   - Keep only what is within 2 miles of I-15 or a highway
-  - Keep only the census blocks over 2000 people per km²
+  - Keep only the census blocks over 5000 people per mi²
 - **Does the order matter?** Where would you put the slowest step?
 
 <!-- Five minutes in pairs, then take answers. The order does not change the final geometry, because intersection and difference commute here, but it changes the run time a lot: clip to the county first and every later step works on a fraction of the data. That is a real lesson for the final project. -->
@@ -430,7 +430,7 @@ When you run an **Intersection** or a **Union**, the attribute tables of both la
 
 ![h:465 center](images/ws-census-blocks.png)
 
-<!-- 2010 census blocks clipped to Utah County, with the Walmart points on top. Blocks are tiny downtown and huge in the mountains, which is exactly why we need density, population divided by area, rather than raw population counts. That is a Field Calculator job. -->
+<!-- Census blocks clipped to Utah County (this capture is from the 2010 blocks; Lab 11 now uses the 2020 blocks), with the Walmart points on top. Blocks are tiny downtown and huge in the mountains, which is exactly why we need density, population divided by area, rather than raw population counts. That is a Field Calculator job. -->
 
 ---
 
