@@ -33,7 +33,6 @@ Dr. Dan Ames and Dr. James Halgren
 
 By the end of class you should be able to:
 
-- Describe the **geographic approach** to solving a problem, from question to action
 - Say what **geoprocessing** is: input data in, a tool, new data out
 - Explain what **buffer**, **clip**, **intersect**, **union**, **difference** and **select by location** each do
 - Match each overlay tool to its **Boolean operation** (AND, OR, NOT)
@@ -90,122 +89,9 @@ By the end of class you should be able to:
 
 # Part 1
 
-## The geographic approach to problem solving
-
-<!-- Anime-style cartoon generated with gpt-image-2.5-flare, October 2026; prompt in tools/divider-images/gap-fill-2026-10.json. -->
-
----
-
-# The Geographic Approach
-
-<table style="font-size:0.62em;">
-<tr style="background:#002e5d;color:#fff;"><th style="width:20%;">Step</th><th>What it means</th><th style="width:32%;">Example</th></tr>
-<tr><td><strong>1. Ask</strong> a geographic question</td><td>Frame the problem from a location-based perspective: how does where something is affect its relationship to other features?</td><td>Where is the best location for a new store? Which facilities are at risk from storm surge?</td></tr>
-<tr><td><strong>2. Acquire</strong> geographic data</td><td>Get the data you need to support the analysis.</td><td>Capture with GPS, buy it, download it, or digitize new data yourself in QGIS.</td></tr>
-<tr><td><strong>3. Examine</strong> the data</td><td>Decide whether the data you found will actually support the analysis.</td><td>Is the CRS right for this area and this measurement? Are the attributes you need in the table?</td></tr>
-<tr><td><strong>4. Analyze</strong> the information</td><td>Choose an approach and run it. Geoprocessing tools read data and create <em>new</em> data.</td><td>Select by location, buffer, clip, intersect.</td></tr>
-<tr><td><strong>5. Act</strong> on the knowledge</td><td>Present or share the result. Acting often raises the next question.</td><td>Build a map layout, export a PDF, share the layers, refine the criteria and run it again.</td></tr>
-</table>
-
-<!-- Rebuilt from the Esri "geographic approach" table in the source deck, with the ArcGIS/ArcMap references changed to QGIS. Walk the five steps quickly; the next four slides are one worked example of steps 1 through 4. Notice step 3 is the one students skip, and it is the one that wastes their afternoon when the CRS is in degrees and the buffer tool wants meters. -->
-
----
-
-# Step 1: Ask a Geographic Question
-
-![bg right:45% w:95%](images/gp-provo-high-school.jpg)
-
-## How many schools are in Utah County?
-
-- Simple to say, and it has a **location** in it: *in Utah County*
-- That phrase is the whole analysis. A computer cannot read "in"
-- We have to turn "in Utah County" into an operation on geometry
-
-<!-- Provo High School. Start with a question a normal person would ask. The GIS work is entirely about translating the little preposition "in" into something a computer can execute, which turns out to be select by location. -->
-
----
-
-# Step 2: Acquire Geographic Data
-
-![bg right:52% w:96%](images/gp-ugrc-data-portal.jpg)
-
-What datasets should we be looking for?
-
-- **Utah schools** — points
-- **Utah counties** — polygons
-- Anything else?
-
-Utah's data lives at the **Utah Geospatial Resource Center** (gis.utah.gov), the same portal you used in earlier labs.
-
-<!-- Ask the class to name the layers before you show them. Two layers is the whole answer here: the things you are counting, and the area you are counting them inside. Nearly every spatial question decomposes that way. -->
-
----
-
-# Step 3: Will the Data Support the Analysis?
-
-![bg right:35% w:80%](images/gp-data-analysis-icon.png)
-
-- Read the **metadata**
-- View the **attribute table**
-- Check the **extents** — does it cover your study area?
-- Are there **data use limits**?
-- Is the dataset **current**?
-- What else?
-
-<!-- This is the step everyone wants to skip. Add one more to the list out loud: what coordinate reference system is it in? A layer in geographic coordinates is measured in degrees, and you cannot buffer degrees by 10 kilometers. Lab 9 makes students reproject a road layer for exactly this reason. -->
-
----
-
-# View the Attribute Table
-
-![h:430 center](images/gp-attribute-table-qgis.png)
-
-Every polygon is a row. To find Utah County, we need the row where the county name is `UTAH`.
-
-<!-- The UGRC Utah county boundaries attribute table in QGIS 3.44, with the Utah row selected and moved to the top. The point of the screenshot is that the geometry and the table are the same object seen two ways: highlight a row and the polygon lights up. -->
-
----
-
-# Select by Attribute: Find Utah County
-
-<div class="columns" style="grid-template-columns: 1.3fr 1fr;">
-<div>
-
-![w:640 center](images/gp-select-by-expression-qgis.png)
-
-</div>
-<div>
-
-- A query on the **table**, not on the map: `"NAME" = 'UTAH'`
-- In QGIS: **Select by Expression**, or *Processing Toolbox ▸ Vector selection ▸ Select by attribute*
-- The result is one selected polygon
-
-</div>
-</div>
-
-<!-- An attribute query knows nothing about geography; it is a database WHERE clause that happens to select shapes. This is the QGIS 3.44 Select by Expression dialog with "NAME" = 'UTAH' typed in; Select Features at the bottom right runs it. -->
-
----
-
-# Select by Location: Schools in Utah County
-
-![h:440 center](images/gp-select-by-location-qgis.png)
-
-**Select by location** uses geometry, not attributes: give it a target layer, a source layer, and a spatial relationship — *intersects*, *within*, *touches*, *contains*.
-
-<!-- Here is the answer to "how many schools are in Utah County": select the schools whose points fall within the selected county polygon, then read the count at the bottom of the attribute table. This is the first genuinely spatial operation of the day. This is the QGIS 3.44 Select by Location dialog (Vector ▸ Research Tools), set to select the PreK-12 schools that intersect the selected Utah County feature; point out the Selected features only checkbox. -->
-
----
-
-<!-- _class: lead -->
-
-![bg right:50%](images/gp-divider-boolean.jpg)
-
-# Part 2
-
 ## Common spatial analyses and Boolean operations
 
-<!-- Anime-style cartoon generated with gpt-image-2.5-flare, October 2026; prompt in tools/divider-images/week10.json. -->
+<!-- Anime-style cartoon generated with gpt-image-2.5-flare, October 2026; prompt in tools/divider-images/gap-fill-2026-10.json. -->
 
 ---
 
@@ -442,7 +328,7 @@ The old ArcGIS name is on the left; what QGIS calls it is on the right.
 
 ![bg right:50%](images/gp-divider-workflow.jpg)
 
-# Part 3
+# Part 2
 
 ## Geoprocessing workflows
 
@@ -507,7 +393,7 @@ Sketch the boxes and ovals before you look at the next slide.
 - Three scenarios, seven tools, **no data provided** — you find it on the National Map yourself
 - Not as far-fetched as it sounds: in June 2022 record flooding closed every park entrance and forced about 10,000 visitors out in a single day
 
-<!-- Lab 9 is the graded version of today's lecture. The scenario is deliberately over the top, but every step is a real geoprocessing workflow, and the 2022 flood really did happen (nps.gov/articles/000/yell-flooding.htm). Emphasise the "no data provided" part: finding and vetting the data is half the assignment, and it is step 2 and step 3 of the geographic approach. -->
+<!-- Lab 9 is the graded version of today's lecture. The scenario is deliberately over the top, but every step is a real geoprocessing workflow, and the 2022 flood really did happen (nps.gov/articles/000/yell-flooding.htm). Emphasize the "no data provided" part: finding and vetting the data is half the assignment. -->
 
 ---
 
@@ -620,5 +506,7 @@ Every one of those is a buffer, a select by location, or a difference.
 <!-- Conversion notes (2026-09-02): source deck "Introduction to geoprocessing.pptx" (2021, 27 slides), plus "example cities near rivers workflow diagram.pptx" for the Thursday preview slide (rendered at 200 dpi from shapes). No slides were dropped for content; source slide 3 (the "Map it / query-it / Analyze It" logo slide) became a text-only section break because the three vendor logos added nothing at slide size. Source slide 5 (the Esri "geographic approach" table image) was rebuilt as HTML so the ArcGIS/ArcMap wording could be changed to QGIS. Seven slides are new: "Clip vs. Intersect", "Finding the Tools in QGIS", the three Yellowstone/Lab 9 slides, and the two Thursday preview slides. 36 slides total. ArcGIS screenshots that still need a QGIS re-shoot: gp-attribute-table-arcmap.jpg (attribute table), gp-select-by-query-arcmap.jpg + gp-select-by-query-sql.png (select by attribute), gp-select-by-location-arcmap.jpg (select by location) — all four are ArcMap 10.x and are flagged in their speaker notes. TODO: confirm the title of the Yellowstone movie clip and where to stop playing it. The three Yellowstone images are reused from docs/assignments/lab-09/images. -->
 
 <!-- Update 2026-09-02: ArcGIS-era screenshots replaced with QGIS 3.44 captures made by tools/qgis_reshoot_screens.py: gp-attribute-table-qgis.png, gp-select-by-expression-qgis.png, gp-select-by-location-qgis.png replace the four ArcMap screenshots. -->
+
+<!-- Update 2026-10-28: at Dan's request the whole "geographic approach" section (its divider, the five-step table, the four worked-example steps, and the attribute-table, Select by Expression and Select by Location slides) was removed. The compass-girl divider art moved to the former Part 2 divider, replacing the blue-and-orange overlay twins, and the parts were renumbered 1 and 2. -->
 
 <!-- Five minutes, in pairs, then a show of hands on the two worth arguing about: clip against intersect, and the order of the cities-near-rivers chain. Both come back on Thursday and in Lab 9. If the room has no signal, put the URL on the board. -->
