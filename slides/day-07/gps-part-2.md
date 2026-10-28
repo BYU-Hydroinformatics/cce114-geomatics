@@ -24,7 +24,7 @@ Dr. Dan Ames
 <!-- Reference deck. The Tuesday lecture uses the simplified "The Global Positioning System" deck, which already contains the Air Force One warm-up and the Prague activity. This deck keeps the longer material: the four-step position-fixing build, the error budget and PDOP arithmetic, and the latitude/longitude-to-meters demo, for anyone who wants the full story or for a semester with more time. -->
 
 <!-- stamp:begin -->
-<!-- _footer: '<span>CCE 114 · Day 7 — The Global Positioning System, Part 2<span class="updated">Last Updated: 2026-10-27</span></span><span>© 2026 Daniel P. Ames · <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></span>' -->
+<!-- _footer: '<span>CCE 114 · Day 7 — The Global Positioning System, Part 2<span class="updated">Last Updated: 2026-10-28</span></span><span>© 2026 Daniel P. Ames · <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></span>' -->
 <!-- stamp:end -->
 
 ---
@@ -349,7 +349,11 @@ Two readings of the same point, one minute apart:
 
 <!-- _class: lead -->
 
+![bg right:50%](images/gps-divider-meters.jpg)
+
 # Demo: from latitude/longitude to meters
+
+<!-- Anime-style cartoon generated with gpt-image-2.5-flare, October 2026; prompt in tools/divider-images/gap-fill-2026-10.json. -->
 
 ---
 

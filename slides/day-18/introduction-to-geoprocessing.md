@@ -22,7 +22,7 @@ Dr. Dan Ames and Dr. James Halgren
 <!-- Tuesday concept lecture, Week 10. Today is the vocabulary and the logic of geoprocessing: what the common tools do and how you chain them together. Thursday runs the same ideas as a hands-on QGIS session, and Lab 9 (The Yellowstone Disaster) is the graded version. -->
 
 <!-- stamp:begin -->
-<!-- _footer: '<span>CCE 114 · Day 18 — Introduction to Geoprocessing<span class="updated">Last Updated: 2026-10-27</span></span><span>© 2026 Daniel P. Ames · <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></span>' -->
+<!-- _footer: '<span>CCE 114 · Day 18 — Introduction to Geoprocessing<span class="updated">Last Updated: 2026-10-28</span></span><span>© 2026 Daniel P. Ames · <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></span>' -->
 <!-- stamp:end -->
 
 ---
@@ -86,9 +86,13 @@ By the end of class you should be able to:
 
 <!-- _class: lead -->
 
+![bg right:50%](images/gp-divider-approach.jpg)
+
 # Part 1
 
 ## The geographic approach to problem solving
+
+<!-- Anime-style cartoon generated with gpt-image-2.5-flare, October 2026; prompt in tools/divider-images/gap-fill-2026-10.json. -->
 
 ---
 

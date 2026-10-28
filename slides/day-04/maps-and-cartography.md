@@ -24,7 +24,7 @@ Dr. Dan Ames and Dr. James Halgren
 <!-- Tuesday concept lecture. Thursday is the hands-on session, where students build a map of the United States in QGIS and change symbology themselves. -->
 
 <!-- stamp:begin -->
-<!-- _footer: '<span>CCE 114 · Day 4 — Maps, Symbology, and Cartography<span class="updated">Last Updated: 2026-10-27</span></span><span>© 2026 Daniel P. Ames · <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></span>' -->
+<!-- _footer: '<span>CCE 114 · Day 4 — Maps, Symbology, and Cartography<span class="updated">Last Updated: 2026-10-28</span></span><span>© 2026 Daniel P. Ames · <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></span>' -->
 <!-- stamp:end -->
 
 ---
@@ -136,11 +136,15 @@ Dr. Dan Ames and Dr. James Halgren
 
 <!-- _class: lead -->
 
+![bg right:50%](images/mc-divider-every-map.jpg)
+
 # What goes in every map?
 
 ## For this course we will not grade the aesthetics, but every map must be readable and complete
 
 <!-- We will not judge your work on the aesthetics of your maps, but we will expect every map to be readable and to include some specific components that we will discuss now. -->
+
+<!-- Anime-style cartoon generated with gpt-image-2.5-flare, October 2026; prompt in tools/divider-images/gap-fill-2026-10.json. -->
 
 ---
 
@@ -267,11 +271,15 @@ Also, for the record:
 
 <!-- _class: lead -->
 
+![bg right:50%](images/mc-divider-symbology.jpg)
+
 # Using symbology to tell a story
 
 ## Symbology is the fill and outline colors, the line and fill patterns, and the icons you choose
 
 <!-- Think about how to use symbology to tell a story. Symbology includes the fill and outline colors you choose, the line and fill patterns, and also icons, or in the next case emoji, that you use to identify features on a map. -->
+
+<!-- Anime-style cartoon generated with gpt-image-2.5-flare, October 2026; prompt in tools/divider-images/gap-fill-2026-10.json. -->
 
 ---
 

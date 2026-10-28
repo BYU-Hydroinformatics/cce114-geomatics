@@ -1,0 +1,178 @@
+[
+  {
+    "id": "dm-divider-encoding",
+    "file": "dm-divider-encoding.jpg",
+    "deck": "slides/day-02/gis-data-models.md",
+    "divider": "Part 2 — Encoding the world with numbers",
+    "new_divider": false,
+    "prompt": "A young woman student sits on a grassy hill overlooking a mountain valley; in front of her three floating translucent panels show the same mountain three ways: as an outline of connected dots, as a mosaic of small colored squares, and as a mesh of triangles",
+    "model": "gpt-image-2.5-flare",
+    "quality": "medium",
+    "size": "1024x1024"
+  },
+  {
+    "id": "dm-divider-state",
+    "file": "dm-divider-state.jpg",
+    "deck": "slides/day-02/gis-data-models.md",
+    "divider": "Consider a U.S. State",
+    "new_divider": false,
+    "prompt": "A young man student on a high grassy plateau holds up a large plain paper cutout shaped like a simple rectangle against a wide western landscape of mountains and plains, squinting to compare it with the view, a cute chibi survey tripod standing beside him",
+    "model": "gpt-image-2.5-flare",
+    "quality": "medium",
+    "size": "1024x1024"
+  },
+  {
+    "id": "mc-divider-every-map",
+    "file": "mc-divider-every-map.jpg",
+    "deck": "slides/day-04/maps-and-cartography.md",
+    "divider": "What goes in every map?",
+    "new_divider": false,
+    "prompt": "A young woman student pins a finished paper map to a corkboard and checks it over, a tiny chibi compass-rose helper on her shoulder; the map has a north arrow, a striped scale bar, and a legend box with three colored swatches and no writing",
+    "model": "gpt-image-2.5-flare",
+    "quality": "medium",
+    "size": "1024x1024"
+  },
+  {
+    "id": "mc-divider-symbology",
+    "file": "mc-divider-symbology.jpg",
+    "deck": "slides/day-04/maps-and-cartography.md",
+    "divider": "Using symbology to tell a story",
+    "new_divider": false,
+    "prompt": "A cheerful young man student paints a map spread across a wooden table with watercolors, choosing from little pots of paint; small round icons of trees, houses and water drops float up from his palette and settle onto the map",
+    "model": "gpt-image-2.5-flare",
+    "quality": "medium",
+    "size": "1024x1024"
+  },
+  {
+    "id": "gps-divider-numbers",
+    "file": "gps-divider-numbers.jpg",
+    "deck": "slides/day-06/gps-part-1.md",
+    "divider": "What are those numbers on your phone?",
+    "new_divider": false,
+    "prompt": "A young woman hiker on a mountain trail kneels to push a small flag pin into the ground while glancing at her phone, which shows a glowing map with a single pin on the screen; faint curved latitude and longitude lines arc across the sky like the net of a globe",
+    "model": "gpt-image-2.5-flare",
+    "quality": "medium",
+    "size": "1024x1024"
+  },
+  {
+    "id": "gps-divider-meters",
+    "file": "gps-divider-meters.jpg",
+    "deck": "slides/day-07/gps-part-2.md",
+    "divider": "Demo: from latitude/longitude to meters",
+    "new_divider": false,
+    "prompt": "Two college students on a campus lawn stretch a long measuring tape between two small flags, smiling, while a cute chibi handheld GPS receiver mascot with a tiny antenna watches excitedly; faint curved grid lines like a globe's net are drawn across the grass",
+    "model": "gpt-image-2.5-flare",
+    "quality": "medium",
+    "size": "1024x1024"
+  },
+  {
+    "id": "vec-divider-create-layer",
+    "file": "vec-divider-create-layer.jpg",
+    "deck": "slides/day-08/working-with-vector-data.md",
+    "divider": "Part 1 — Creating a layer",
+    "new_divider": false,
+    "prompt": "A young man student at a library table opens a brand-new empty glass display case with three small compartments shaped like a dot, a line and a polygon, ready to be filled, while a cute chibi file folder mascot peeks inside curiously",
+    "model": "gpt-image-2.5-flare",
+    "quality": "medium",
+    "size": "1024x1024"
+  },
+  {
+    "id": "vec-divider-attributes",
+    "file": "vec-divider-attributes.jpg",
+    "deck": "slides/day-08/working-with-vector-data.md",
+    "divider": "Part 4 — Attribute tables and schemas",
+    "new_divider": false,
+    "prompt": "A young woman student at a sunny desk sorts blank index cards into neat rows in a wooden card tray; each card has a tiny colored map shape clipped to it, a house, a river, a park, and the cards have no writing on them",
+    "model": "gpt-image-2.5-flare",
+    "quality": "medium",
+    "size": "1024x1024"
+  },
+  {
+    "id": "vec-divider-saving",
+    "file": "vec-divider-saving.jpg",
+    "deck": "slides/day-08/working-with-vector-data.md",
+    "divider": "Part 5 — Saving to disk",
+    "new_divider": false,
+    "prompt": "A young man student carefully places a small glowing map folded into a neat cube into the drawer of a tall wooden filing cabinet, while a cute chibi file folder mascot holds the drawer open and waves",
+    "model": "gpt-image-2.5-flare",
+    "quality": "medium",
+    "size": "1024x1024"
+  },
+  {
+    "id": "ras-divider-recap",
+    "file": "ras-divider-recap.jpg",
+    "deck": "slides/day-10/raster-analysis-and-map-algebra.md",
+    "divider": "You just did raster analysis",
+    "new_divider": false,
+    "prompt": "A young woman student holds up her sheet of graph paper with colored-in squares toward a classroom window, and the same pattern of colored squares glows softly over the real valley landscape outside",
+    "model": "gpt-image-2.5-flare",
+    "quality": "medium",
+    "size": "1024x1024"
+  },
+  {
+    "id": "ras-divider-algebra",
+    "file": "ras-divider-algebra.jpg",
+    "deck": "slides/day-10/raster-analysis-and-map-algebra.md",
+    "divider": "Part 2 — Raster manipulation and map algebra",
+    "new_divider": false,
+    "prompt": "A cheerful young man student at a desk slides one transparent sheet of colored grid squares on top of another; where they overlap the squares blend into new colors with small sparkles",
+    "model": "gpt-image-2.5-flare",
+    "quality": "medium",
+    "size": "1024x1024"
+  },
+  {
+    "id": "ras-divider-dem",
+    "file": "ras-divider-dem.jpg",
+    "deck": "slides/day-10/raster-analysis-and-map-algebra.md",
+    "divider": "Part 3 — Digital elevation models and derived surfaces",
+    "new_divider": false,
+    "prompt": "A young woman student kneels beside a tabletop model of a mountain built from square wooden blocks stacked to different heights, while the real snowy mountain stands in the distance through the window behind her",
+    "model": "gpt-image-2.5-flare",
+    "quality": "medium",
+    "size": "1024x1024"
+  },
+  {
+    "id": "fd-divider-national",
+    "file": "fd-divider-national.jpg",
+    "deck": "slides/day-12/finding-spatial-data.md",
+    "divider": "National sources",
+    "new_divider": false,
+    "prompt": "A young man student on a rolling ladder in a vast library hall pulls a rolled map from a tall shelf full of rolled maps and globes, while a cute chibi satellite helper floats beside him carrying another rolled map",
+    "model": "gpt-image-2.5-flare",
+    "quality": "medium",
+    "size": "1024x1024"
+  },
+  {
+    "id": "fd-divider-utah",
+    "file": "fd-divider-utah.jpg",
+    "deck": "slides/day-12/finding-spatial-data.md",
+    "divider": "Utah's data: the UGRC",
+    "new_divider": false,
+    "prompt": "A young woman student sits on a red-rock ledge at golden hour with a laptop showing a glowing map on the screen, overlooking red sandstone canyons and distant snowy mountains",
+    "model": "gpt-image-2.5-flare",
+    "quality": "medium",
+    "size": "1024x1024"
+  },
+  {
+    "id": "crs-divider-projections",
+    "file": "crs-divider-projections.jpg",
+    "deck": "slides/day-14/coordinate-systems-and-projections.md",
+    "divider": "Part 2 — Map projections and distortion",
+    "new_divider": false,
+    "prompt": "A cheerful young man student tries to flatten an orange peel onto a table next to a small globe; the peel splits and stretches into odd shapes and he laughs at the result",
+    "model": "gpt-image-2.5-flare",
+    "quality": "medium",
+    "size": "1024x1024"
+  },
+  {
+    "id": "gp-divider-approach",
+    "file": "gp-divider-approach.jpg",
+    "deck": "slides/day-18/introduction-to-geoprocessing.md",
+    "divider": "Part 1 — The geographic approach to problem solving",
+    "new_divider": false,
+    "prompt": "A young woman student stands on a hilltop above a small valley town holding a paper map in one hand and pointing to a spot below, while a cute chibi compass mascot on her shoulder points the same way",
+    "model": "gpt-image-2.5-flare",
+    "quality": "medium",
+    "size": "1024x1024"
+  }
+]

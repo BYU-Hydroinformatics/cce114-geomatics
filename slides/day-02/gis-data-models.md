@@ -22,7 +22,7 @@ Dr. Dan Ames and Dr. James Halgren
 <!-- Tuesday concept lecture. Thursday is the hands-on session, where students build and edit these layers themselves in QGIS. -->
 
 <!-- stamp:begin -->
-<!-- _footer: '<span>CCE 114 · Day 2 — GIS Data Models & File Formats<span class="updated">Last Updated: 2026-10-27</span></span><span>© 2026 Daniel P. Ames · <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></span>' -->
+<!-- _footer: '<span>CCE 114 · Day 2 — GIS Data Models & File Formats<span class="updated">Last Updated: 2026-10-28</span></span><span>© 2026 Daniel P. Ames · <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></span>' -->
 <!-- stamp:end -->
 
 ---
@@ -404,15 +404,23 @@ Lochsa River, northern Idaho
 
 <!-- _class: lead -->
 
+![bg right:50%](images/dm-divider-encoding.jpg)
+
 # Part 2
 
 ## Encoding the world with numbers: vector, raster, TIN
+
+<!-- Anime-style cartoon generated with gpt-image-2.5-flare, October 2026; prompt in tools/divider-images/gap-fill-2026-10.json. -->
 
 ---
 
 <!-- _class: lead -->
 
+![bg right:50%](images/dm-divider-state.jpg)
+
 # Consider a U.S. State
+
+<!-- Anime-style cartoon generated with gpt-image-2.5-flare, October 2026; prompt in tools/divider-images/gap-fill-2026-10.json. -->
 
 ---
 

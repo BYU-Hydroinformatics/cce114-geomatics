@@ -24,7 +24,7 @@ Dr. Dan Ames and Dr. James Halgren
 <!-- Tuesday concept lecture, week 8. Thursday is the hands-on session, where students set project and layer CRSs in QGIS and reproject data. This is the lecture that Quiz 6 and Lab 7 are built on, so flag both early. The hero image is generated (gpt-image-1, October 2026): a globe peeling onto a gridded flat map, cylinder and cone projection surfaces, and a surveyor's tripod and benchmark disc, the three threads of the lecture. The Tater Mercator shirt now lives on the Idaho UTM slide. -->
 
 <!-- stamp:begin -->
-<!-- _footer: '<span>CCE 114 · Day 14 — Geodesy, Projections, and Coordinate Systems<span class="updated">Last Updated: 2026-10-27</span></span><span>© 2026 Daniel P. Ames · <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></span>' -->
+<!-- _footer: '<span>CCE 114 · Day 14 — Geodesy, Projections, and Coordinate Systems<span class="updated">Last Updated: 2026-10-28</span></span><span>© 2026 Daniel P. Ames · <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></span>' -->
 <!-- stamp:end -->
 
 ---
@@ -219,9 +219,13 @@ Saturday night, LaVell Edwards Stadium
 
 <!-- _class: lead -->
 
+![bg right:50%](images/crs-divider-projections.jpg)
+
 # Part 2
 
 ## Map projections and distortion
+
+<!-- Anime-style cartoon generated with gpt-image-2.5-flare, October 2026; prompt in tools/divider-images/gap-fill-2026-10.json. -->
 
 ---
 

@@ -24,7 +24,7 @@ Dr. Dan Ames and Dr. James Halgren
 <!-- Tuesday concept lecture. Up to now students have only *added* data that somebody else made. Today they learn where vector data comes from and how it gets onto a disk. Thursday in the Thursday hands-on session they do it themselves in QGIS, digitizing their own home. -->
 
 <!-- stamp:begin -->
-<!-- _footer: '<span>CCE 114 · Day 8 — Working with Vector Data<span class="updated">Last Updated: 2026-10-27</span></span><span>© 2026 Daniel P. Ames · <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></span>' -->
+<!-- _footer: '<span>CCE 114 · Day 8 — Working with Vector Data<span class="updated">Last Updated: 2026-10-28</span></span><span>© 2026 Daniel P. Ames · <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></span>' -->
 <!-- stamp:end -->
 
 ---
@@ -103,9 +103,13 @@ section > ul:last-of-type li { background: #fff4e5; border-left: 6px solid #e07b
 
 <!-- _class: lead -->
 
+![bg right:50%](images/vec-divider-create-layer.jpg)
+
 # Part 1 — Creating a layer
 
 ## An empty container, made on purpose
+
+<!-- Anime-style cartoon generated with gpt-image-2.5-flare, October 2026; prompt in tools/divider-images/gap-fill-2026-10.json. -->
 
 ---
 
@@ -435,9 +439,13 @@ Which geometry type for each, and why?
 
 <!-- _class: lead -->
 
+![bg right:50%](images/vec-divider-attributes.jpg)
+
 # Part 4 — Attribute tables and schemas
 
 ## The other half of every vector layer
+
+<!-- Anime-style cartoon generated with gpt-image-2.5-flare, October 2026; prompt in tools/divider-images/gap-fill-2026-10.json. -->
 
 ---
 
@@ -522,9 +530,13 @@ A student builds a `Buildings` polygon layer with:
 
 <!-- _class: lead -->
 
+![bg right:50%](images/vec-divider-saving.jpg)
+
 # Part 5 — Saving to disk
 
 ## Where does the data actually live?
+
+<!-- Anime-style cartoon generated with gpt-image-2.5-flare, October 2026; prompt in tools/divider-images/gap-fill-2026-10.json. -->
 
 ---
 

@@ -24,7 +24,7 @@ Dr. Dan Ames
 <!-- Tuesday concept lecture, Week 4, simplified for a 50-minute hour that also holds two activities. Order: Air Force One warm-up (5 min), the Prague "Where Am I" activity (15 min), then the short explanation of how GPS does the same thing (about 25 min). Thursday is field collection on campus and the QGIS import in the Thursday hands-on session. The longer version of this material (four-step position fix, error budget arithmetic, the meters demo) is in the extended deck linked from the Day 6 page. -->
 
 <!-- stamp:begin -->
-<!-- _footer: '<span>CCE 114 · Day 6 — The Global Positioning System<span class="updated">Last Updated: 2026-10-27</span></span><span>© 2026 Daniel P. Ames · <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></span>' -->
+<!-- _footer: '<span>CCE 114 · Day 6 — The Global Positioning System<span class="updated">Last Updated: 2026-10-28</span></span><span>© 2026 Daniel P. Ames · <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></span>' -->
 <!-- stamp:end -->
 
 ---
@@ -205,9 +205,13 @@ A GPS satellite's code arrives **0.067 seconds** after it was sent. The speed of
 
 <!-- _class: lead -->
 
+![bg right:50%](images/gps-divider-numbers.jpg)
+
 # What are those numbers on your phone?
 
 ## Latitude, longitude, and precision
+
+<!-- Anime-style cartoon generated with gpt-image-2.5-flare, October 2026; prompt in tools/divider-images/gap-fill-2026-10.json. -->
 
 ---
 

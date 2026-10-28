@@ -22,7 +22,7 @@ Dr. Dan Ames and Dr. James Halgren
 <!-- Tuesday concept lecture, Week 6. Today is raster: what a grid of cells actually is, and what you can do by adding grids together. The image on the right is a student's finished engineering-paper suitability map from Winter 2025 (credit: Rachel Partington). We build one of those in the first half of class. Thursday is the QGIS session in the Thursday hands-on session. -->
 
 <!-- stamp:begin -->
-<!-- _footer: '<span>CCE 114 · Day 10 — Raster Analysis and Map Algebra<span class="updated">Last Updated: 2026-10-27</span></span><span>© 2026 Daniel P. Ames · <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></span>' -->
+<!-- _footer: '<span>CCE 114 · Day 10 — Raster Analysis and Map Algebra<span class="updated">Last Updated: 2026-10-28</span></span><span>© 2026 Daniel P. Ames · <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></span>' -->
 <!-- stamp:end -->
 
 ---
@@ -235,11 +235,15 @@ Four criteria → **four grids** → one combined score.
 
 <!-- _class: lead -->
 
+![bg right:50%](images/ras-divider-recap.jpg)
+
 # You just did raster analysis
 
 ## Every term for the rest of the hour is a name for something you already drew
 
 <!-- Recap out loud before moving on: the squares are cells, the sheet is the extent, the width of one square is the resolution, "outside the state" was your no-data area, turning temperature into 1 to 5 was reclassification, and adding or multiplying the four sheets was map algebra. -->
+
+<!-- Anime-style cartoon generated with gpt-image-2.5-flare, October 2026; prompt in tools/divider-images/gap-fill-2026-10.json. -->
 
 ---
 
@@ -432,9 +436,13 @@ Then: which one of them is **not** a good candidate for a raster at all?
 
 <!-- _class: lead -->
 
+![bg right:50%](images/ras-divider-algebra.jpg)
+
 # Part 2
 
 ## Raster manipulation and map algebra
+
+<!-- Anime-style cartoon generated with gpt-image-2.5-flare, October 2026; prompt in tools/divider-images/gap-fill-2026-10.json. -->
 
 ---
 
@@ -578,9 +586,13 @@ A raster is just an **array**, which is why map algebra is fast. But the arrays 
 
 <!-- _class: lead -->
 
+![bg right:50%](images/ras-divider-dem.jpg)
+
 # Part 3
 
 ## Digital elevation models and derived surfaces
+
+<!-- Anime-style cartoon generated with gpt-image-2.5-flare, October 2026; prompt in tools/divider-images/gap-fill-2026-10.json. -->
 
 ---
 
