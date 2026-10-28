@@ -372,7 +372,7 @@ When you run an **Intersection** or a **Union**, the attribute tables of both la
 
 ![h:440 center](images/ws-udot-routes.png)
 
-<!-- Every UDOT route in and around the county. Too much: we only want I-15 and the highways. The next two slides show how to narrow it. -->
+<!-- Every UDOT route in and around the county, from UDOT's route system on UGRC, mainlines and ramps. Too much: we only want I-15 and the highways. The next two slides show how to narrow it. -->
 
 ---
 
@@ -396,7 +396,7 @@ When you run an **Intersection** or a **Union**, the attribute tables of both la
 
 ![h:460 center](images/ws-buffer-i15.png)
 
-<!-- Two miles either side of the interstate. Ask what went wrong here: the buffer is drawn around each road segment separately, so the overlapping circles show the segments. Dissolve the buffer, or check "dissolve result" in the Buffer dialog, and you get one clean corridor polygon. Also check the units: 2 miles is about 3219 meters. -->
+<!-- Two miles either side of the interstate, the same Buffer run twice in QGIS 3.44. Ask what went wrong on the left: I-15 inside the county is 180 separate line features, the buffer is drawn around each one, and the overlapping shapes show the segments. Check "Dissolve result" in the Buffer dialog, as Lab 11 step 25 says, and you get the one clean corridor polygon on the right. Also check the units: 2 miles is about 3219 meters. -->
 
 ---
 
@@ -447,11 +447,11 @@ When you run an **Intersection** or a **Union**, the attribute tables of both la
 ![bg right:46% h:86%](images/ws-final-map.jpg)
 
 - Everything that survived every criterion
-- Two clusters: **Spanish Fork** and **west of Utah Lake**
+- Biggest clusters: **Orem–Provo**, **Lehi**, **Eagle Mountain–Saratoga Springs**
 - Not "the site" — a shortlist for a human to argue about
 - Now go back and ask: which criterion did the most eliminating? What would change if 2 miles became 3?
 
-<!-- The payoff. Magenta is "requirements met," and the two insets zoom into the surviving clusters. Push the sensitivity question: a site selection result is only as good as the thresholds, and a good analyst reports how sensitive the answer is to them. This is the standard the final project maps will be graded against. -->
+<!-- The payoff: Lab 11 run exactly as written, in QGIS 3.44 with the data students download. 2,006 census blocks, about 175,600 people, pass every criterion. Magenta is "requirements met," and the insets zoom into Orem and Eagle Mountain on Google Satellite, the lab's basemap. Students will have to pick two sites inside clusters like these. Push the sensitivity question: a site selection result is only as good as the thresholds, and a good analyst reports how sensitive the answer is to them. This is the standard the final project maps will be graded against. -->
 
 ---
 

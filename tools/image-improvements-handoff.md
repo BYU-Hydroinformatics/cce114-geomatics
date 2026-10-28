@@ -164,15 +164,14 @@ Original list, for the record:
 - Day 23: `fp-example-map.jpg` (past student's ArcMap final map; a QGIS example would be better).
 - Day 21: thirteen ArcGIS 10 screenshots are kept on purpose because the deck describes CCE 414; confirm which software CCE 414 uses now before deciding.
 
-**Day 22 map figures: three DONE 2026-10-28, three still ArcMap-era.** `ws-census-blocks.png`
-(was the 2010 blocks), `ws-utah-county.png` and `ws-current-walmarts.png` are QGIS 3.44 Print
-Layout exports from `tools/qgis_day22_shots.py`, with UGRC's Census 2020 Blocks and county
-boundaries from Open SGID and the stores from the Walmart Open Data Hub service Lab 11 links to;
-the data commands are in the script header. Still ArcMap captures: `ws-udot-routes.png` and
-`ws-buffer-i15.png` (UDOT routes, and an undissolved I-15 buffer whose overlapping circles the
-speaker note teaches from, so a re-shoot has to show the same artifact in QGIS), and
-`ws-final-map.jpg` (a 2013 ArcMap student layout on an Esri basemap; needs a full Lab 11 run to
-replace with a QGIS example).
+**Day 22 map figures: all six DONE 2026-10-28.** `ws-census-blocks.png` (was the 2010 blocks),
+`ws-utah-county.png`, `ws-current-walmarts.png`, `ws-udot-routes.png`, `ws-buffer-i15.png` and
+`ws-final-map.jpg` are QGIS 3.44 Print Layout exports from `tools/qgis_day22_shots.py`, with
+UGRC data from Open SGID and the stores from the Walmart Open Data Hub service Lab 11 links to;
+the data commands are in the script header. The buffer figure shows Dissolve result off and on
+side by side. The final map is a real result: `tools/lab11_run_analysis.py` runs Lab 11 steps 9
+to 28 with the lab's own algorithms and settings, and the slide's cluster names were checked
+against UGRC municipal boundaries. Rerun both if the lab's thresholds change.
 
 **Instructor confirmations left as TODO comments in the decks:** Day 7 Air Force One room
 distances (re-measure for the actual classroom); Day 6 worked example keeps the source's
