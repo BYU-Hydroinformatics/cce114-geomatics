@@ -157,7 +157,7 @@ When you run an **Intersection** or a **Union**, the attribute tables of both la
 
 ![h:465 center](images/ws-reclassify-wind.png)
 
-<!-- Reclassify is the raster version of elimination. Continuous wind speed becomes two classes, low and high, using a rule: wind < 4 is low, wind > 4 is high. In QGIS this is Raster analysis, Reclassify by table. The lesson is that a criterion is a threshold, and a threshold turns a measurement into a yes or no. -->
+<!-- Reclassify is the raster version of elimination. Continuous wind speed becomes two classes, low and high, using a rule: wind below 4 is low, 4 or more is high. In QGIS this is Raster analysis, Reclassify by table. The lesson is that a criterion is a threshold, and a threshold turns a measurement into a yes or no. -->
 
 ---
 
@@ -171,7 +171,7 @@ When you run an **Intersection** or a **Union**, the attribute tables of both la
 
 # Buffer: everything within a distance
 
-![h:430 center](images/ws-buffer-types.jpg)
+![h:430 center](images/ws-buffer-types.png)
 
 <!-- Buffer works on points, lines and polygons, and always returns polygons. Ask what a buffer of a polygon looks like: the polygon plus a collar around it. In QGIS: Processing Toolbox, Vector geometry, Buffer. Watch the units, which come from the layer's CRS, so a projected CRS in meters or feet, never degrees. -->
 
@@ -191,7 +191,7 @@ When you run an **Intersection** or a **Union**, the attribute tables of both la
 </div>
 <div>
 
-![h:430 center](images/ws-erase-catchment.jpg)
+![h:430 center](images/ws-erase-catchment.png)
 
 </div>
 </div>
@@ -210,9 +210,9 @@ When you run an **Intersection** or a **Union**, the attribute tables of both la
 
 # Intersection with real layers
 
-![h:450 center](images/ws-intersect-catchments.jpg)
+![h:450 center](images/ws-intersect-catchments.png)
 
-<!-- Catchments intersected with counties. The output has one polygon for every place a catchment and a county overlap, and its table carries both sets of attributes, for example Anoka County and the Rum River. Point out how many more features come out than went in: overlay tools split geometry. -->
+<!-- Catchments intersected with counties. The output has one polygon for every place a catchment and a county overlap, and its table carries both sets of attributes, for example County 19 and Catchment C. Point out how many more features come out than went in: overlay tools split geometry. -->
 
 ---
 
@@ -519,6 +519,8 @@ When you run an **Intersection** or a **Union**, the attribute tables of both la
 <!-- Confirm the Testing Center closing time and the exact reading chapter before class. Remind students that the exam covers the geoprocessing tools from today, including the QGIS names. -->
 
 <!-- Conversion notes (2026-09-02): source deck "Geoprocessing - Walmart Site Selection.pptx" (2021, 30 slides, no speaker notes in the original; all notes here are new). Dropped: source slide 26 "Buffer? What next?" reused the identical Current Walmarts image, so it became a text-only class activity; source slide 28 repeated the same generic workflow diagram already shown on slide 19, so it was replaced with the "what to carry into the final project" summary. Software wording updated to QGIS throughout (Erase renamed Difference, ArcToolbox renamed Processing Toolbox, Select By Attributes renamed Select by Expression, ModelBuilder noted as the QGIS Graphical Modeler). Data sources updated: AGRC renamed UGRC, and the "digitize Walmart locations off Google Maps" step replaced with the Walmart open data portal. ArcGIS screenshots kept and flagged for a QGIS re-shoot: images/ws-udot-routes-table.png (ArcMap attribute table), images/ws-select-i15.png (ArcMap Select By Attributes dialog), images/ws-model-builder.png (ArcGIS ModelBuilder diagram); the small Utah County, buffer, Walmart-points and census-block maps are plain map renders with no visible ArcGIS chrome. TODO for the instructor: confirm the Bolstad & Manson chapter number and the Testing Center closing time on the Before Next Class slide, and confirm the Lab 11 Saturday due date. -->
+
+<!-- Update 2026-10-28: the reclassify, buffer, difference and intersection figures came from Bolstad's GIS Fundamentals and the Esri tool help. All were replaced with original synthetic figures drawn by tools/draw_geoprocessing_figures.py; no real places or data are shown. -->
 
 <!-- Update 2026-09-02: ArcGIS-era screenshots replaced with QGIS 3.44 captures made by tools/qgis_reshoot_screens.py: ws-roads-attribute-table-qgis.png, ws-select-i15-qgis.png, ws-graphical-modeler-qgis.png replace the ArcMap table, dialog, and ModelBuilder diagram. -->
 

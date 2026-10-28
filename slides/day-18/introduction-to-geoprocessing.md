@@ -8,7 +8,7 @@ footer: "CCE 114 · Day 18 — Introduction to Geoprocessing"
 <!-- _class: lead -->
 <!-- _paginate: skip -->
 
-![bg right:45% w:95%](images/gp-intersect-counties.jpg)
+![bg right:45% w:90%](images/gp-title-overlay.png)
 
 ![w:110](images/byu-medallion.svg)
 
@@ -29,7 +29,7 @@ Dr. Dan Ames and Dr. James Halgren
 
 # Today's Goals
 
-![bg right:32% w:88%](images/gp-buffer-vector.jpg)
+![bg right:32% w:88%](images/gp-buffer-vector.png)
 
 By the end of class you should be able to:
 
@@ -97,18 +97,7 @@ By the end of class you should be able to:
 
 # Reclassify: Continuous Values to Classes
 
-<div class="columns" style="grid-template-columns: 1fr 2fr;">
-<div>
-
-![w:250 center](images/gp-reclassify-wind-flow.jpg)
-
-</div>
-<div>
-
-![w:620 center](images/gp-reclassify-wind-maps.jpg)
-
-</div>
-</div>
+![w:1100 center](images/gp-reclassify-wind.png)
 
 Windspeed values 1–7 become two classes: **low** (< 4) and **high** (≥ 4).
 
@@ -118,18 +107,7 @@ Windspeed values 1–7 become two classes: **low** (< 4) and **high** (≥ 4).
 
 # Reclassify: Population Density
 
-<div class="columns" style="grid-template-columns: 1fr 2fr;">
-<div>
-
-![w:250 center](images/gp-reclassify-pop-flow.jpg)
-
-</div>
-<div>
-
-![w:620 center](images/gp-reclassify-pop-maps.jpg)
-
-</div>
-</div>
+![w:1100 center](images/gp-reclassify-pop.png)
 
 Census population density becomes **sparse** and **dense**, using a threshold of 10 people per unit area.
 
@@ -139,7 +117,7 @@ Census population density becomes **sparse** and **dense**, using a threshold of
 
 # Buffer: A Zone of Influence
 
-![h:400 center](images/gp-buffer-vector.jpg)
+![h:400 center](images/gp-buffer-vector.png)
 
 A buffer takes **points, lines or polygons** and returns **polygons**: everything within a given distance of the input.
 
@@ -149,13 +127,13 @@ A buffer takes **points, lines or polygons** and returns **polygons**: everythin
 
 # Difference: In This but Not That
 
-![bg right:46% w:88%](images/gp-erase-counties.jpg)
-
 Cut the catchment out of the counties layer: keep only the parts of the counties that are **not** inside it.
 
 **The question it answers:** *what is in the counties but not in the catchment?*
 
 ArcGIS calls this tool **Erase**; QGIS calls it **Difference**.
+
+![w:950 center](images/gp-difference-counties.png)
 
 <!-- The counties layer comes out with a hole in it exactly the shape of the catchment. In QGIS this tool is called Difference, not Erase: Processing Toolbox ▸ Vector overlay ▸ Difference. Lab 9 Part 3 uses it to cut the ground crew's 5 km road buffer out of the park polygon, leaving the helicopter search area. -->
 
@@ -163,7 +141,7 @@ ArcGIS calls this tool **Erase**; QGIS calls it **Difference**.
 
 # Intersect: Keep Only the Overlap
 
-![h:330 center](images/gp-intersect-diagram.png)
+![h:330 center](images/gp-intersection-simple.png)
 
 Two input layers in, one output layer of just the shared area — carrying the **attributes of both** inputs.
 
@@ -173,13 +151,13 @@ Two input layers in, one output layer of just the shared area — carrying the *
 
 # Intersection: In Both
 
-![bg right:50% w:92%](images/gp-intersect-counties.jpg)
-
 Intersect the catchments with the counties: every output polygon knows **which county** and **which catchment** it belongs to.
 
 **The question it answers:** *what is in a county and in a catchment, and which ones?*
 
-<!-- Point at the output: Anoka County and the Rum River watershed becomes its own polygon, and the table has both names on that row. That is what makes intersect useful for "how much of this is in that" questions. -->
+![h:330 center](images/gp-intersection-counties.png)
+
+<!-- Point at the output: each numbered piece is one county and one catchment, and the table underneath has both names on that row. That is what makes intersect useful for "how much of this is in that" questions. -->
 
 ---
 
@@ -216,7 +194,7 @@ Same picture, different table. Ask yourself: *do I need the second layer's attri
 
 # Union: Keep Everything
 
-![h:320 center](images/gp-union-diagram.png)
+![h:320 center](images/gp-union-simple.png)
 
 Both layers in, and **everything** comes out — the overlap and both non-overlapping remainders, split along every boundary.
 
@@ -226,44 +204,19 @@ Both layers in, and **everything** comes out — the overlap and both non-overla
 
 # Union: In Either
 
-![bg right:48% w:92%](images/gp-union-counties.png)
-
 Union the circle with the counties: **nothing** is thrown away, but every polygon is split wherever the other layer's boundary crosses it.
 
 **The question it answers:** *what is in the circle or in a county, and which of the two?*
 
-<!-- Look at the output table on the right: every county is there, plus a ClipPolyID column that is 31 where the circle overlapped and 0 where it did not. Nothing was deleted; the layers were merged and the boundaries were cut into each other. -->
+![h:340 center](images/gp-union-counties.png)
+
+<!-- Walk the legend: green pieces are in both layers, blue are county only, and the orange sliver is circle only, the part of the circle that hangs off the edge of the state. Nothing was deleted; the layers were merged and the boundaries were cut into each other. -->
 
 ---
 
 # Three Overlay Tools, Three Questions
 
-<div class="columns" style="grid-template-columns: 1fr 1fr 1fr; text-align:center;">
-<div>
-
-![h:240 center](images/gp-intersect-counties.jpg)
-
-**In both?**
-**Intersection**
-
-</div>
-<div>
-
-![h:240 center](images/gp-union-counties.png)
-
-**In either?**
-**Union**
-
-</div>
-<div>
-
-![h:240 center](images/gp-erase-counties.jpg)
-
-**In this but not that?**
-**Difference**
-
-</div>
-</div>
+![w:1050 center](images/gp-overlay-summary.png)
 
 <p style="text-align:center;font-size:0.8em;">If you have met logic before: that is AND, OR and NOT.</p>
 
@@ -488,6 +441,8 @@ Every one of those is a buffer, a select by location, or a difference.
 
 <!-- Update 2026-09-02: ArcGIS-era screenshots replaced with QGIS 3.44 captures made by tools/qgis_reshoot_screens.py: gp-attribute-table-qgis.png, gp-select-by-expression-qgis.png, gp-select-by-location-qgis.png replace the four ArcMap screenshots. -->
 
-<!-- Update 2026-10-28: at Dan's request the whole "geographic approach" section (its divider, the five-step table, the four worked-example steps, and the attribute-table, Select by Expression and Select by Location slides) was removed. The compass-girl divider art moved to the former Part 2 divider, replacing the blue-and-orange overlay twins, and the parts were renumbered 1 and 2. --> Same day, also at Dan's request: the Boolean framing was replaced with plain questions. The two A/B/C Venn drills were cut; Difference, Intersection and Union are now titled by the question each answers (in this but not that, in both, in either); and the Venn summary slide became "Three Overlay Tools, Three Questions", built from the three county overlay maps, with AND/OR/NOT kept as one line so the reading quiz still matches.
+<!-- Update 2026-10-28 (figures): the reclassify, buffer, difference, intersection and union figures came from Bolstad's GIS Fundamentals and the Esri tool help. All were replaced with original synthetic figures drawn by tools/draw_geoprocessing_figures.py; no real places or data are shown. -->
+
+<!-- Update 2026-10-28: at Dan's request the whole "geographic approach" section (its divider, the five-step table, the four worked-example steps, and the attribute-table, Select by Expression and Select by Location slides) was removed. The compass-girl divider art moved to the former Part 2 divider, replacing the blue-and-orange overlay twins, and the parts were renumbered 1 and 2. Same day, also at Dan's request: the Boolean framing was replaced with plain questions. The two A/B/C Venn drills were cut; Difference, Intersection and Union are now titled by the question each answers (in this but not that, in both, in either); and the Venn summary slide became "Three Overlay Tools, Three Questions", built from the three county overlay maps, with AND/OR/NOT kept as one line so the reading quiz still matches. -->
 
 <!-- Five minutes, in pairs, then a show of hands on the two worth arguing about: clip against intersect, and the order of the cities-near-rivers chain. Both come back on Thursday and in Lab 9. If the room has no signal, put the URL on the board. -->
