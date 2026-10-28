@@ -22,7 +22,7 @@ Dr. Dan Ames and Dr. James Halgren
 <!-- Thursday, Week 9. The deck runs the whole session and follows the Week 9 hands-on guide. About twelve minutes of slides up to the "Now in QGIS" divider: the standards, where the record sits in a download, and reading one for fitness for use. After the divider, each slide is one segment of the run sheet's 50-minute plan, to leave up while you demo. Tuesday covered what metadata is, why it matters, and the six questions. -->
 
 <!-- stamp:begin -->
-<!-- _footer: '<span>CCE 114 · Day 17 — Metadata Standards<span class="updated">Last Updated: 2026-10-27</span></span><span>© 2026 Daniel P. Ames · <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></span>' -->
+<!-- _footer: '<span>CCE 114 · Day 17 — Metadata Standards<span class="updated">Last Updated: 2026-10-28</span></span><span>© 2026 Daniel P. Ames · <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></span>' -->
 <!-- stamp:end -->
 
 ---
@@ -289,7 +289,7 @@ Collected 2024, from 6-inch imagery, lineage documented, county GIS contact list
 
 </div>
 
-<!-- This is Part 1 of Lab 8, so treat it as a preview and let them follow along if they have laptops open. The .prj point catches almost everyone: the CRS lives in a separate file from the rest of the metadata. -->
+<!-- This is Part 1 of Lab 8, so treat it as a preview and let them follow along on the lab computers. The .prj point catches almost everyone: the CRS lives in a separate file from the rest of the metadata. -->
 
 
 ---
@@ -418,7 +418,7 @@ Open the thin [data.gov](https://www.data.gov) page. From the page alone:
 <div style="font-size:0.92em">
 
 - Pick one dataset on [gis.utah.gov](https://gis.utah.gov/data/) or [data.gov](https://www.data.gov), not the one your neighbor took
-- Read its metadata and add **one row at the bottom** of the **AGRC Metadata** tab in the class sheet, your name first
+- Read its metadata and add **one row at the bottom** of the **AGRC Metadata** tab in the [class sheet](https://docs.google.com/spreadsheets/d/10iZbtJUzaYkuCjv5yFtgScF_5OhBdTR1zj0nerKwEVg/edit#gid=998057245), your name first
 - Fill the six answers, plus spatial reference and key attributes. Where the record does not say, write **"not stated"**
 - Mark **In Class Activity: AGRC Metadata** complete on Learning Suite, with the dataset name
 
@@ -443,7 +443,7 @@ Open the thin [data.gov](https://www.data.gov) page. From the page alone:
 
 **Before next class**
 
-- **Quiz 7: Metadata** and **[Lab 8: Metadata](https://byu-hydroinformatics.github.io/cce114-geomatics/assignments/lab-08/)** are due **Saturday, 11:59 pm**. Lab 8 Part 1 is today's QGIS metadata on the county boundary and roads; Part 2 is a Lehi wetland layer whose metadata is deliberately incomplete
+- **Quiz 7: Metadata** and **[Lab 8: Metadata](https://byu-hydroinformatics.github.io/cce114-geomatics/assignments/lab-08/)** are due **Saturday, 11:59 pm**. Part 1 reads the Utah County Boundaries metadata; Part 2 answers questions from UGRC metadata and writes metadata in QGIS for a Lehi wetland layer
 - **Quiz 8: Geoprocessing** opens today on Learning Suite and is due **Saturday of next week**
 - Reading for next week: *GIS Fundamentals*, Chapter 9 (Basic Spatial Analysis)
 - Record today's activity on Learning Suite

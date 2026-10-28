@@ -21,9 +21,9 @@
 | | |
 | --- | --- |
 | **Goal** | Students write metadata for a layer in QGIS, save it with the data, and evaluate a published dataset against the six questions (what, who, where, when, why, how). |
-| **Why this week** | Tuesday was the what and why of metadata, with the melodrama. Today opens with about twelve minutes of slides on the standards, where metadata lives, and fitness for use, then students produce metadata rather than read it. Lab 8 asks for metadata on Utah County layers and a wetland dataset, and Quiz 7 sends them to gis.utah.gov and data.gov. |
-| **Students bring** | Laptop with QGIS 3.44. Any layer they already have (the Week 2 Utah County boundary is ideal). |
-| **Graded item** | *In Class Activity: AGRC Metadata* (5 points). Each student fills one row of the **AGRC Metadata** tab in the class Google Sheet for a dataset they evaluated. |
+| **Why this week** | Tuesday was the what and why of metadata, with the melodrama. Today opens with about twelve minutes of slides on the standards, where metadata lives, and fitness for use, then students produce metadata rather than read it. Lab 8 has them read the Utah County Boundaries metadata XML, answer six questions from UGRC metadata, and write QGIS metadata for a surveyed wetland, and Quiz 7 sends them to gis.utah.gov and data.gov. |
+| **Students bring** | Nothing: they work on the lab computers in 234 CB (QGIS 3.44). Any layer they already have will do (the Week 2 Utah County boundary is ideal). |
+| **Graded item** | *In Class Activity: AGRC Metadata* (5 points). Each student fills one row of the **AGRC Metadata** tab in the [class Google Sheet](https://docs.google.com/spreadsheets/d/10iZbtJUzaYkuCjv5yFtgScF_5OhBdTR1zj0nerKwEVg/edit#gid=998057245) for a dataset they evaluated. |
 | **Feeds** | Lab 8: Metadata. Due Saturday. Quiz 7 closes Saturday; Quiz 8 opens today. |
 
 ### Practice run before class
@@ -65,7 +65,7 @@ metadata to file** or **Save to database**, it lives only in the project file.
 ### Before class
 
 - [ ] The [Metadata Standards and Fitness for Use](https://byu-hydroinformatics.github.io/cce114-geomatics/slides/day-17/metadata-standards.html) deck open in presenter view (press <kbd>P</kbd>). It runs the whole session: the slide for each segment is in the plan below, and the speaker notes point back to the walkthrough step.
-- [ ] The class Google Sheet open at the **AGRC Metadata** tab. Its columns are: Name, Name of the Dataset, Link to download, What does the data represent, Who created it and who maintains it, Spatial Reference, Why (purpose), How was it created, When created or updated, Where, Key attributes. Clear old rows.
+- [ ] The [class Google Sheet](https://docs.google.com/spreadsheets/d/10iZbtJUzaYkuCjv5yFtgScF_5OhBdTR1zj0nerKwEVg/edit#gid=998057245) (CCE 114 Geomatics Master Spreadsheet) open at the **AGRC Metadata** tab. Its columns are: Name, Name of the Dataset, Link to download, What does the data represent, Who created it and who maintains it, Spatial Reference, Why (purpose), How was it created, When created or updated, Where, Key attributes. Clear old rows.
 - [ ] A UGRC product page open, for example the Utah County Boundaries or Roads page on [gis.utah.gov/products/sgid](https://gis.utah.gov/products/sgid/), and one [data.gov](https://www.data.gov) dataset page with thin metadata for contrast.
 - [ ] QGIS open with the county boundary loaded.
 - [ ] Learning Suite open to the *AGRC Metadata* activity.
@@ -117,11 +117,11 @@ Open the thin data.gov dataset. Ask the room to answer the six questions from th
 
 ### Student activity
 
-Each student picks one dataset from gis.utah.gov or data.gov (not one already taken by the person next to them), reads its metadata, and fills one row in the **AGRC Metadata** tab of the class sheet: name, dataset, link, and the six answers plus spatial reference and key attributes. Where the metadata does not say, they write "not stated." Then they mark **In Class Activity: AGRC Metadata** complete on Learning Suite with the dataset name. Full credit for a complete row.
+Each student picks one dataset from gis.utah.gov or data.gov (not one already taken by the person next to them), reads its metadata, and fills one row in the **AGRC Metadata** tab of the [class sheet](https://docs.google.com/spreadsheets/d/10iZbtJUzaYkuCjv5yFtgScF_5OhBdTR1zj0nerKwEVg/edit#gid=998057245): name, dataset, link, and the six answers plus spatial reference and key attributes. Where the metadata does not say, they write "not stated." Then they mark **In Class Activity: AGRC Metadata** complete on Learning Suite with the dataset name. Full credit for a complete row.
 
 ### Lab 8 pointer
 
-Lab 8 Part 1 is today's QGIS metadata on the Utah County boundary and roads layers; Part 2 evaluates the Lehi wetland shapefile, whose metadata is deliberately incomplete. Everything they need is in the Metadata dialog they just used.
+Lab 8 Part 1 reads the FGDC XML that comes with the Utah County Boundaries download and fills a who, what, when, where, why table. Part 2 answers six project questions from the metadata of other UGRC datasets (Utah Buildings, Land Ownership, Utah Major Lakes, Utah Roads), then writes metadata in QGIS for the surveyed Lehi wetland shapefile, which arrives with none, and saves it to a file. That last step is the Metadata dialog they just used.
 
 ### Common snags
 
