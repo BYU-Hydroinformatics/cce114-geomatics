@@ -23,7 +23,7 @@ And the approach works: about 90% of Americans now live within 10 miles of a Wal
 ## **Problem Statement**
 
 As a site selection specialist at Walmart, you're tasked with finding the optimal location for a new store in Utah County, Utah. This decision plays a crucial role in Walmart's mission of providing convenient access to affordable products for its customers.  
-Utah County is a good place to practice. Utah was the fastest-growing state in the nation from 2010 to 2020 (https://www.census.gov/library/stories/state-by-state/utah.html), and Utah County leads the state's growth, with 659,399 residents counted in the 2020 Census. Fun fact: the census blocks you download in this lab add up to exactly that number — 10,092 blocks summing to 659,399 people — so you can check the count yourself with the Statistics panel once the data is loaded.
+Utah County is a good place to practice. Utah was the fastest-growing state in the nation from 2010 to 2020 (https://www.census.gov/library/stories/state-by-state/utah.html), and Utah County leads the state's growth, with 659,399 residents counted in the 2020 Census. Fun fact: you can check that number yourself with the Statistics panel on the PP\_TOTAL field. After step 18 your census block layer will hold 10,267 blocks totaling 663,780 people, a little more than the county. That is because "intersect" also keeps the 175 blocks just across the county line that touch it. Select only the blocks with COUNTYFP20 = '049', Utah County's code, and you get exactly 10,092 blocks summing to 659,399.
 
 For the purposes of this exercise, we will arbitrarily limit the factors with which you are concerned to the following:
 
