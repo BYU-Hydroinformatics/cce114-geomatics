@@ -114,7 +114,7 @@ Experts from the state of Idaho have requested assistance. Since only a small po
 
 *Retrieving the Shapefiles*
 
-29. Go to this page: https://irma.nps.gov/DataStore/Reference/Profile/2224545?lnv=True and download the file labeled “Geodatabase” (Administrative\_Boundaries\_of\_National\_Park\_System\_Units.gdb.zip, about 13 MB). The NPS now publishes this dataset as a geodatabase instead of a shapefile, so don’t panic when you don’t see a .shp file.  
+29. Go to this page: [https://irma.nps.gov/DataStore/Reference/Profile/2224545?lnv=True](https://irma.nps.gov/DataStore/Reference/Profile/2224545?lnv=True) and download the file labeled “Geodatabase” (Administrative\_Boundaries\_of\_National\_Park\_System\_Units.gdb.zip, about 13 MB). The NPS now publishes this dataset as a geodatabase instead of a shapefile, so don’t panic when you don’t see a .shp file.  
 30. Unzip it, then drag the folder ending in “.gdb” onto your QGIS map. It holds a single layer called nps\_boundary with every national park unit in the country, and QGIS reads it just like a shapefile.  
 31. Now search the National Map’s “Boundaries” category for a shapefile of the state of Idaho. To do this, use the same method as steps 1-4 but place a point in Idaho before clicking “Search Products.” (You should find “USGS National Boundary Dataset (NBD) in Idaho State or Territory” offered in a few formats — download the Shapefile one.)  
 32. Within the downloaded zip folder, find the “Shape” folder and the “GU\_StateOrTerritory.shp” file within it. Add that file to your project.  
