@@ -213,14 +213,14 @@ Today, Thursday, and Lab 6 all build toward these. By the end of the week you sh
 - Pick a **U.S. state** someone in your group has a connection to
 - In **five minutes**, find that state's **statewide GIS portal**
 - On the class sheet, enter your **names**, the **state**, and the portal's **URL**
-- Then tick off every dataset you can find there: boundaries, counties, cities, highways, rivers, lakes, elevation…
+- Tick each dataset the portal has: boundaries, roads, rivers, elevation… **Blanks are fine**; no state has them all
 
 <span style="font-size:0.6em;">Class sheet: <a href="https://docs.google.com/spreadsheets/d/10iZbtJUzaYkuCjv5yFtgScF_5OhBdTR1zj0nerKwEVg/edit#gid=343004808" target="_blank">CCE 114 Geomatics Master Spreadsheet</a>, tab <strong>Data Source Scavenger Hunt</strong></span>
 
 </div>
 <div>
 
-![w:280 center](images/web-scavenger-teams.jpg)
+![w:220 center](images/web-scavenger-teams.jpg)
 
 - While you look, notice:
   - The **format** each one comes in (shapefile, GeoPackage, GeoTIFF, feature service)
