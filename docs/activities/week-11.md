@@ -17,9 +17,6 @@
 2. **Then the program, in blue** (5 minutes). Fit a cut-down version of the Lab 10 program into what is left: **20 homes**, **one school**, **one market**, and a **road** that reaches all of them from the entry point. Use the scale bar: at this print size a home 8 meters across is barely a dot, and that surprise is part of the point.
 3. **Name the operation** (5 minutes, report out). Each group holds up its plan and names the GIS operation behind three of its marks: the shaded band is a **buffer**, the homes are **points buffered by half their diameter**, the road is a **centerline buffered by half its width**, the land left over is the site **minus** the constraints, and the market is a **polygon** checked with the area tool.
 
-Fifteen minutes. Collect one plan per group, or have one person upload a phone photo of it to *In Class Activity: Paper Site Plan* on Learning Suite for the 5 points.
+Fifteen minutes. Everyone in the group uploads the same phone photo of the group's plan to *In Class Activity - Paper Site Plan* on Learning Suite for the 5 points, so each student has a submission to grade.
 
 What they learn: a site plan is drawn constraints first, the program only fits what the constraints leave behind, and every pencil mark they made is a tool they will run in Lab 10.
-
-> [!NOTE]
-> Learning Suite may still list the old *Georeference Your Neighborhood Sketch* item for this day. Rename it to *Paper Site Plan* before class.

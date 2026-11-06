@@ -234,7 +234,7 @@ Groups of three. One printed aerial of the Lab 10 site, tracing paper, red and b
 2. **Blue, 5 minutes**: fit **20 homes**, **a school**, **a market**, and a **road** that reaches them all. Use the scale bar.
 3. **Report out**: name the GIS operation behind three of your marks.
 
-Upload a photo of your plan to Learning Suite: *In Class Activity: Paper Site Plan*.
+Everyone uploads the same photo of your group's plan: *In Class Activity - Paper Site Plan*.
 
 <!-- Fifteen minutes. The handout is on the Week 11 activity page (docs/activities/week-11.md): print one per group, fit to letter. At the handout's scale an 8 m home is barely a dot; let them discover that. In the report-out, push for the operation names from the previous slide: buffer, difference, point plus buffer, centerline plus buffer, measure. -->
 
