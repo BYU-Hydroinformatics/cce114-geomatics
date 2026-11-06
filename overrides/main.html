@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block footer %}
+  {{ super() }}
+  {% set repo = config.repo_url %}
+  {% set pg = page.canonical_url if page and page.canonical_url else config.site_url %}
+  {% set ttl = page.title if page and page.title else "Home" %}
+  {% set mail = (config.extra.instructor_email or "").split("@") %}
+  <details class="feedback-tab">
+    <summary aria-label="Feedback menu">Feedback</summary>
+    <nav class="feedback-tab__menu">
+      <a target="_blank" rel="noopener"
+         href="{{ repo }}/issues/new?template=bug-report.yml&title={{ ('[Bug] ' ~ ttl) | urlencode }}&page={{ pg | urlencode }}"><span class="feedback-tab__label">Something is broken...</span><span class="feedback-tab__icon">{% include ".icons/material/bug-outline.svg" %}</span></a>
+      <a target="_blank" rel="noopener"
+         href="{{ repo }}/issues/new?template=feature-request.yml&title={{ ('[Idea] ' ~ ttl) | urlencode }}&page={{ pg | urlencode }}"><span class="feedback-tab__label">I have an idea...</span><span class="feedback-tab__icon">{% include ".icons/material/lightbulb-on-outline.svg" %}</span></a>
+      {% if mail | length == 2 %}
+      <a href="#" data-u="{{ mail[0] }}" data-d="{{ mail[1] }}" data-s="{{ ('CCE 114: ' ~ ttl) | urlencode }}" class="feedback-tab__mail"><span class="feedback-tab__label">Email the professor...</span><span class="feedback-tab__icon">{% include ".icons/material/school-outline.svg" %}</span></a>
+      {% endif %}
+    </nav>
+  </details>
+{% endblock %}

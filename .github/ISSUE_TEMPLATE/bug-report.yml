@@ -1,0 +1,21 @@
+name: Bug report
+description: Something on the course site is wrong, broken, or confusing (typo, dead link, wrong step, bad image).
+labels: ["bug"]
+body:
+  - type: input
+    id: page
+    attributes:
+      label: Page
+      description: The page you were on. The feedback button fills this in.
+    validations:
+      required: true
+  - type: textarea
+    id: what
+    attributes:
+      label: What is wrong?
+      description: Include the step number, and what you expected to see instead.
+    validations:
+      required: true
+  - type: markdown
+    attributes:
+      value: Please do not include grades, student ID numbers, or other private information. This issue is public.
