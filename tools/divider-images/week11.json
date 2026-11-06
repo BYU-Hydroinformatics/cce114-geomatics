@@ -1,0 +1,68 @@
+[
+  {
+    "id": "pl-divider-scales",
+    "file": "pl-divider-scales.jpg",
+    "prompt": "A young woman planner stands on a gentle hill at sunset holding a large unrolled map, looking down at an empty green parcel of flat farmland bordered by a small canal, with a tiny chibi folded-map mascot with big expressive eyes perched on her shoulder pointing at the parcel; a few survey stakes with orange flags mark the corners of the field \u2014 \u2014 Japanese anime illustration style, clean cel shading, expressive large eyes, gentle pastel-leaning colors with a few warm accents, soft lighting, calm uncluttered composition. Absolutely no text, words, letters or numbers anywhere in the image.",
+    "size": "1024x1024",
+    "quality": "medium",
+    "model": "gpt-image-2.5-flare",
+    "sha256": "acd22517141e",
+    "usage": {
+      "input_tokens": 124,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 124
+      },
+      "output_tokens": 439,
+      "output_tokens_details": {
+        "image_tokens": 439,
+        "text_tokens": 0
+      },
+      "total_tokens": 563
+    }
+  },
+  {
+    "id": "pl-divider-operations",
+    "file": "pl-divider-operations.jpg",
+    "prompt": "A cute chibi survey total-station instrument with big expressive eyes and tiny arms happily lays down a glowing ring around a small round dome house on a flat green field, while a chibi folded-map mascot unrolls a soft glowing band along a winding canal, playful and calm \u2014 \u2014 Japanese anime illustration style, clean cel shading, expressive large eyes, gentle pastel-leaning colors with a few warm accents, soft lighting, calm uncluttered composition. Absolutely no text, words, letters or numbers anywhere in the image.",
+    "size": "1024x1024",
+    "quality": "medium",
+    "model": "gpt-image-2.5-flare",
+    "sha256": "e18dad8f4855",
+    "usage": {
+      "input_tokens": 112,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 112
+      },
+      "output_tokens": 439,
+      "output_tokens_details": {
+        "image_tokens": 439,
+        "text_tokens": 0
+      },
+      "total_tokens": 551
+    }
+  },
+  {
+    "id": "pl-divider-people",
+    "file": "pl-divider-people.jpg",
+    "prompt": "A friendly village scene on the coast of southern Mozambique: a young Black African woman engineer in a sun hat kneels beside a small boy and an older man, all three smiling at a little model of a white dome house set on a low wooden table under a mango tree, with a few finished dome homes and palm trees in the soft background \u2014 \u2014 Japanese anime illustration style, clean cel shading, expressive large eyes, gentle pastel-leaning colors with a few warm accents, soft lighting, calm uncluttered composition. Absolutely no text, words, letters or numbers anywhere in the image.",
+    "size": "1024x1024",
+    "quality": "medium",
+    "model": "gpt-image-2.5-flare",
+    "sha256": "3ddd40240604",
+    "usage": {
+      "input_tokens": 124,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 124
+      },
+      "output_tokens": 439,
+      "output_tokens_details": {
+        "image_tokens": 439,
+        "text_tokens": 0
+      },
+      "total_tokens": 563
+    }
+  }
+]

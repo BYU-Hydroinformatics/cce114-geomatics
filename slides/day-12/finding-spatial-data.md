@@ -24,7 +24,7 @@ Dr. Dan Ames and Dr. James Halgren
 <!-- Tuesday concept lecture. Today is about where spatial data comes from and how to find it: the national sources, Utah's UGRC and SGID, and how to search well. Thursday is a second, shorter lecture on web services, the way to pull that data straight off a server into QGIS without downloading it, followed by a short follow-along in QGIS that students upload as the in-class activity. -->
 
 <!-- stamp:begin -->
-<!-- _footer: '<span>CCE 114 · Day 12 — Finding Spatial Data<span class="updated">Last Updated: 2026-10-28</span></span><span>© 2026 Daniel P. Ames · <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></span>' -->
+<!-- _footer: '<span>CCE 114 · Day 12 — Finding Spatial Data<span class="updated">Last Updated: 2026-11-06</span></span><span>© 2026 Daniel P. Ames · <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></span>' -->
 <!-- stamp:end -->
 
 ---

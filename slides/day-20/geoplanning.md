@@ -10,14 +10,22 @@ footer: "CCE 114 · Day 20 — Geoplanning: Site Layout and Design"
 
 ![bg right:45% w:95%](images/pl-title-dome-village.jpg)
 
+![w:110](images/byu-medallion.svg)
+
 # Geoplanning
 
 ## What goes where? Site layout and design with GIS
 
 CCE 114 Geomatics
+Civil & Construction Engineering
+Brigham Young University
 Dr. Dan Ames and Dr. James Halgren
 
 <!-- Tuesday concept lecture, Week 11. This is the thinking behind Lab 10, Domes for Mozambique. Next week's lecture is site selection (where in a county should something go); today is one step smaller: you already have the site, so how do you arrange things on it? -->
+
+<!-- stamp:begin -->
+<!-- _footer: '<span>CCE 114 · Day 20 — Geoplanning: Site Layout and Design<span class="updated">Last Updated: 2026-11-06</span></span><span>© 2026 Daniel P. Ames · <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></span>' -->
+<!-- stamp:end -->
 
 ---
 
@@ -49,9 +57,13 @@ Dr. Dan Ames and Dr. James Halgren
 
 <!-- _class: lead -->
 
+![bg right:50%](images/pl-divider-scales.jpg)
+
 # Part 1
 
 ## Three scales, and the two lists every site plan starts from
+
+<!-- Anime-style cartoon generated with gpt-image-2.5-flare, November 2026; prompt in tools/divider-images/week11.json. -->
 
 ---
 
@@ -143,9 +155,13 @@ Dr. Dan Ames and Dr. James Halgren
 
 <!-- _class: lead -->
 
+![bg right:50%](images/pl-divider-operations.jpg)
+
 # Part 2
 
 ## From a plan to GIS operations
+
+<!-- Anime-style cartoon generated with gpt-image-2.5-flare, November 2026; prompt in tools/divider-images/week11.json. -->
 
 ---
 
@@ -226,9 +242,13 @@ Upload a photo of your plan to Learning Suite: *In Class Activity: Paper Site Pl
 
 <!-- _class: lead -->
 
+![bg right:50%](images/pl-divider-people.jpg)
+
 # Part 3
 
 ## Why this site, and who it is for
+
+<!-- Anime-style cartoon generated with gpt-image-2.5-flare, November 2026; prompt in tools/divider-images/week11.json. -->
 
 ---
 
