@@ -20,8 +20,8 @@
 | | |
 | --- | --- |
 | **Goal** | Students georeference an image that has no coordinates of its own, understand ground control points, transformation types, and residuals, and see what a good registration looks like. Then they get the Web Mapping with AI assignment launched with a live example. |
-| **Why this week** | Tuesday Dr. Ames presented georeferencing and students georeferenced their own pencil sketch of their neighborhood. Today upgrades that to a real plan sheet or historic map with quality control, which is what a site plan for Lab 10's Domes for Mozambique project needs. The Web Mapping experience is due Wednesday of Week 14, so three weeks of lead time start now. |
-| **Students bring** | Laptop with QGIS 3.44. Their georeferenced sketch from Tuesday, if they finished it. |
+| **Why this week** | Tuesday's geoplanning lecture laid out a site over imagery that already had coordinates. Today is the case where the image has none: a historic map or plan sheet registered with ground control points and checked with residuals, which is how an old site drawing becomes a layer for a project like Lab 10's. The Web Mapping experience is due Wednesday of Week 14, so three weeks of lead time start now. |
+| **Students bring** | Laptop with QGIS 3.44. |
 | **Graded item** | None on Thursday. Tuesday's graded item is the *Paper Site Plan* activity. |
 | **Feeds** | Lab 10: Geoplanning, Domes for Mozambique. Due Saturday. Web Mapping with AI Experience, due Wednesday of Week 14. |
 
@@ -75,7 +75,7 @@ silently. Serve the folder over `http://localhost:8000` instead, or test it on G
 | Time | Segment |
 | --- | --- |
 | 0:00 | Mini-devotional |
-| 0:03 | Why georeference: plan sheets, old maps, drone photos, your sketch |
+| 0:03 | Why georeference: plan sheets, old maps, drone photos, site sketches |
 | 0:06 | Georeferencer: open image, place four GCPs from the map canvas |
 | 0:14 | Transformation settings: linear, Helmert, polynomial, thin plate spline; residuals and RMS |
 | 0:20 | Run, overlay with transparency, judge it; add two more GCPs and rerun |
