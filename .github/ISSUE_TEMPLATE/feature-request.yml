@@ -1,0 +1,20 @@
+name: Feature request
+description: Suggest an improvement to the course site or materials.
+labels: ["enhancement"]
+body:
+  - type: input
+    id: page
+    attributes:
+      label: Page
+      description: The page you were on. The feedback button fills this in.
+    validations:
+      required: true
+  - type: textarea
+    id: idea
+    attributes:
+      label: What would you like to see?
+    validations:
+      required: true
+  - type: markdown
+    attributes:
+      value: Please do not include grades, student ID numbers, or other private information. This issue is public.
