@@ -1,22 +1,25 @@
-# Week 11 Activity — Georeference Your Neighborhood Sketch
+# Week 11 Activity — Paper Site Plan
 
 **Lecture**{ .badge .badge-lecture } · *Day 20 · Tuesday of [Week 11 — Geoplanning and Georeferencing](../weeks/week-11.md)*
 
-**Graded in-class activity.** Georeference Your Neighborhood Sketch: draw your neighborhood in pencil, photograph it, email it to yourself, and georeference it in QGIS. Record your completion on Learning Suite.
+**Graded in-class activity.** Paper Site Plan: in groups, mark the constraints on a printed aerial of the Lab 10 site, fit a small program around them, and name the GIS operation behind every mark. Record your completion on Learning Suite.
 
 <!-- notes -->
-*New in Fall 2026, paired with the Tuesday georeferencing presentation. Thursday of the same week, the hands-on session runs the advanced version with a real scanned map; see the [Week 11 hands-on guide](../handson/week-11.md).*
+*New in Fall 2026, replacing a georeferencing sketch activity that belonged to CE 414. It sits two-thirds of the way through the [Geoplanning deck](https://byu-hydroinformatics.github.io/cce114-geomatics/slides/day-20/geoplanning.html), right after the slide that turns each planning idea into a GIS operation, and it previews Lab 10 without doing it for them.*
 
-**Setup.** Pencils and paper. Every student needs a laptop with QGIS 3.44 today, so announce it the Thursday before. The Google satellite XYZ basemap connection from Week 2.
+**Setup.** One printed handout per group of three: the Lab 10 site on recent imagery, with the project boundary, a scale bar, and a north arrow ([download the handout](images/week-11-site-handout.jpg); print it on letter paper, fit to page). A sheet of tracing paper on top of each, taped at the corners, and two colored pencils (red and blue) per group. No laptops.
+
+![Lab 10 site on satellite imagery with the project boundary in yellow, a 200 meter scale bar, and a north arrow](images/week-11-site-handout.jpg)
 
 **Run.**
 
-1. **Draw** (7 minutes). On paper, in pencil, draw the neighborhood around your home or apartment from memory: your building, the streets on all four sides, and at least four things you could find on a satellite image (intersections, a park corner, a church, a parking lot). Label nothing; north up.
-2. **Photograph** it with your phone and **email it to yourself**. Save the image to your laptop in a folder without spaces in the path.
-3. **QGIS.** Open a project with the satellite basemap, set the project CRS to EPSG:26912, and zoom to your neighborhood.
-4. **Layer > Georeferencer...** Open Raster, choose the photo. **Add Point** on an intersection in the sketch, then **From Map Canvas** and click the same intersection on the satellite image. Repeat for four points spread to the corners of the sketch.
-5. **Settings > Transformation Settings**: Transformation type **Helmert** (it can rotate and scale a hand drawing but will not warp it), Resampling Nearest neighbor, Target CRS EPSG:26912, an output file next to the photo, tick **Load in project when done**. Then **Start Georeferencing**.
-6. The sketch lands on the satellite image. Set its opacity to 50 percent. Which of your streets are in the right place? Which are not? Try **Polynomial 1** and compare; with six or more points, try **Polynomial 2** and notice it starts bending the drawing to fit.
-7. Take a screenshot with the sketch over the imagery and upload it to *In Class Activity: Georeference Your Neighborhood Sketch* on Learning Suite.
+1. **Constraints first, in red** (5 minutes). Trace the canals along the edges and the one across the middle, and shade a band along each one as a flood setback. Circle any stand of trees worth keeping. Mark where a road could come in from outside the site. Nothing goes in the shaded areas.
+2. **Then the program, in blue** (5 minutes). Fit a cut-down version of the Lab 10 program into what is left: **20 homes**, **one school**, **one market**, and a **road** that reaches all of them from the entry point. Use the scale bar: at this print size a home 8 meters across is barely a dot, and that surprise is part of the point.
+3. **Name the operation** (5 minutes, report out). Each group holds up its plan and names the GIS operation behind three of its marks: the shaded band is a **buffer**, the homes are **points buffered by half their diameter**, the road is a **centerline buffered by half its width**, the land left over is the site **minus** the constraints, and the market is a **polygon** checked with the area tool.
 
-Twenty-five minutes. What they learn: a drawing has no coordinates until you give it some, four good control points are worth more than ten bad ones, and memory is a poor surveying instrument.
+Fifteen minutes. Collect one plan per group, or have one person upload a phone photo of it to *In Class Activity: Paper Site Plan* on Learning Suite for the 5 points.
+
+What they learn: a site plan is drawn constraints first, the program only fits what the constraints leave behind, and every pencil mark they made is a tool they will run in Lab 10.
+
+> [!NOTE]
+> Learning Suite may still list the old *Georeference Your Neighborhood Sketch* item for this day. Rename it to *Paper Site Plan* before class.

@@ -1,12 +1,14 @@
 # Week 11 — Geoplanning and Georeferencing
 
-<span id="tuesday-geoplanning-and-georeferencing"></span> <span id="thursday-georeferencing-in-qgis-and-the-web-mapping-with-ai-kickoff"></span>
+<span id="tuesday-geoplanning-site-layout-and-design"></span> <span id="thursday-georeferencing-in-qgis-and-the-web-mapping-with-ai-kickoff"></span>
 
 <div class="week-card week-card--slides" markdown>
 
 ## :material-presentation-play: Presentation Slides
 
-- **Tuesday** — Geoplanning and Georeferencing (slides not posted yet) — Introduction to geoplanning; Domes for the World and the Mozambique project; Georeferencing: attaching real-world coordinates to an image that has none
+- **Tuesday** — [Geoplanning: What Goes Where?](https://byu-hydroinformatics.github.io/cce114-geomatics/slides/day-20/geoplanning.html) — Site selection, site layout, and site design: three scales of geoplanning; The program and the constraints, and how each becomes a GIS layer; Domes for the World and the Mozambique project
+
+Press <kbd>F</kbd> for fullscreen and <kbd>P</kbd> for presenter view with speaker notes.
 
 </div>
 
@@ -14,7 +16,7 @@
 
 ## :material-account-group: In-Class Practice
 
-- **Tuesday** — Georeference Your Neighborhood Sketch: draw your neighborhood in pencil, photograph it, email it to yourself, and georeference it in QGIS. Record your completion on Learning Suite. [Activity guide](../activities/week-11.md)
+- **Tuesday** — Paper Site Plan: in groups, mark the constraints on a printed aerial of the Lab 10 site, fit a small program around them, and name the GIS operation behind every mark. Record your completion on Learning Suite. [Activity guide](../activities/week-11.md)
 
 <div class="handson-cta" markdown="1">
 
@@ -28,6 +30,10 @@ This session has its own step-by-step guide: what you need, an overview, the cli
 
 </div>
 
+
+Self-check quizzes — not graded; open them on a phone or laptop as often as you like:
+
+- [What Goes Where?](../quizzes/layout/index.html) — Telling the program from the constraints, turning each constraint into a layer, and the buffer arithmetic behind footprints, roads, and setbacks.
 
 </div>
 

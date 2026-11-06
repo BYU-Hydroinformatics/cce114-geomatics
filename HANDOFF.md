@@ -67,12 +67,14 @@ under the `<!-- tuesday-notes -->` and `<!-- thursday-notes -->` markers on the 
 `docs/assignments/web-mapping-with-ai.md` is the spec for the Web Mapping with AI Experience (kicked
 off Week 11 Thursday). Structural decisions made with Dan that day: both GPS decks are given on
 Tuesday of Week 4 and Thursday is field collection plus the CSV import; Week 11 became "Geoplanning
-and Georeferencing" (Tuesday: georeference a pencil sketch of your neighborhood; Thursday: a real
-scan with GCPs and residuals) because no georeferencing lecture or lab existed; the CCE 414 intro
+and Georeferencing" (Thursday: a real scan with GCPs and residuals) because no georeferencing
+lecture or lab existed. The Tuesday was first a neighborhood-sketch georeferencing activity, which
+belonged to CE 414; on 2026-11-05 it became a geoplanning (site layout and design) lecture, Day 20,
+with a Paper Site Plan activity; the CCE 414 intro
 moved to Tuesday of Week 14, followed by project work; final project presentations are Thursday of
 Week 14 and Tuesday of Week 15. Graded in-class activities are one per class meeting, 5 points each;
 new ones are First Map: Utah County (Week 2 Thu), DEM Profile (Week 6 Thu), Playing with Projections
-(Week 8 Thu), AGRC Metadata (Week 9 Thu), and Georeference Your Neighborhood Sketch (Week 11 Tue).
+(Week 8 Thu), AGRC Metadata (Week 9 Thu), and Paper Site Plan (Week 11 Tue).
 
 **Restructuring to one page per week (2026-09-09).** The site originally spread each week across
 three menus: `docs/lectures/day-NN.md` (Tuesday, generated), `docs/hands-on/week-NN.md` (Thursday,
@@ -348,7 +350,9 @@ Collected from the conversion notes at the end of each deck (search for `Convers
 - **Day 12 and Day 23:** class sign-up and scavenger-hunt Google links were dead and are marked
   TODO; create new sheets if you want them back.
 - **Day 4:** the two-part "which elements are required" poll has no answer key in the source.
-- **Day 20 (Geoplanning):** no source deck exists, so there are no slides.
+- **Day 20 (Geoplanning):** no source deck existed; `slides/day-20/geoplanning.md` was written new on
+  2026-11-05 (site layout and design, built around Lab 10), with the `layout` self-check quiz and
+  the Paper Site Plan activity and its printable handout.
 - **Surveying:** three archived Surveying decks are not in the current schedule and were not converted.
 - **Final project:** the site page is a placeholder that points to the Mapping Term Project
   document on Learning Suite; converting that document into the page is the natural next step.

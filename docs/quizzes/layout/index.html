@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CCE 114 — What Goes Where?</title>
+  <meta name="theme-color" content="#002e5d">
+  <meta name="description" content="CCE 114 in-class self-check: telling the program from the constraints, turning each constraint into a layer, and the buffer arithmetic behind footprints, roads, and setbacks.">
+  <link rel="stylesheet" href="../assets/quiz.css?v=b1ad25cf">
+</head>
+<body>
+
+<div class="container">
+  <header>
+    <h1>What Goes Where?</h1>
+    <p class="subtitle">CCE 114 &middot; Day 20 &mdash; Geoplanning: Site Layout and Design<br>
+      Eight questions in three parts: the <strong>program</strong> and the
+      <strong>constraints</strong>, turning a plan into <strong>layers and tools</strong>, and the
+      <strong>buffer arithmetic</strong> that trips people up in Lab 10.</p>
+  </header>
+
+  <div class="score-bar" id="scoreBar">
+    <span id="progressText">Question 1 of 8</span>
+    <span id="scoreText">Score: 0 / 0</span>
+  </div>
+
+  <div class="quiz-card" id="quizCard">
+    <div id="quizContent">
+      <div class="section-badge" id="sectionBadge">Part 1</div>
+      <div class="prompt" id="promptText">Question</div>
+      <div class="setup" id="setupText"></div>
+
+      <div class="options" id="optionsBox"></div>
+
+      <div class="feedback" id="feedbackBox" role="status" aria-live="polite"></div>
+
+      <div class="controls">
+        <button class="next-btn" id="nextBtn">Next &rarr;</button>
+      </div>
+    </div>
+
+    <div class="final-screen" id="finalScreen">
+      <h2>Done</h2>
+      <div class="final-score" id="finalScoreDisplay">0 / 8</div>
+      <p id="finalFeedbackText" style="color: var(--muted); margin-bottom: 1rem;"></p>
+      <div class="checklist">
+        <strong style="color: var(--text);">Before you lay out a site:</strong><br>
+        Map the <strong>constraints first</strong>, then fit the program into what is left<br>
+        Work in a <strong>projected CRS in meters</strong> before any buffer<br>
+        A buffer distance is a <strong>radius</strong>: half the diameter, half the width<br>
+        <em>GIS lays out the concept. The engineering design comes after.</em>
+      </div>
+      <div class="review" id="review"></div>
+      <br>
+      <button class="restart-btn" id="restartBtn">Start over</button>
+    </div>
+  </div>
+
+  <p class="hint">On a laptop: press <strong>A</strong>&ndash;<strong>D</strong> to answer, <strong>Enter</strong> for the next question.</p>
+
+  <footer class="page-foot">
+    CCE 114 Geomatics &middot;
+    <a href="../../">Course site</a> &middot;
+    <a href="../../weeks/week-11/">Week 11</a>
+  </footer>
+</div>
+
+<script type="application/json" id="quizData">
+{
+  "messages": [
+    "Every one. You are ready to lay out the Lab 10 site.",
+    "Solid. Reread the explanations you missed, especially the buffer ones, before Lab 10.",
+    "Worth a second run. The buffer questions are exactly what Lab 10 asks you to do."
+  ],
+  "questions": [
+    {
+      "section": "Part 1 — Program and constraints",
+      "prompt": "In site design, what is the program?",
+      "setup": "",
+      "options": [
+        "The list of things the site has to hold: buildings, roads, open space, and their sizes",
+        "The list of places on the site where nothing can be built",
+        "The order in which the geoprocessing tools are run",
+        "The GIS software used to draw the plan"
+      ],
+      "correct": 0,
+      "explanation": "The program is what has to fit: in Lab 10, 80 homes, a church, a mosque, a school, a market, and a recreation area. The places where nothing can go are the constraints. A site plan is the program fitted inside the constraints."
+    },
+    {
+      "section": "Part 1 — Program and constraints",
+      "prompt": "Which of these is a constraint rather than part of the program?",
+      "setup": "",
+      "options": [
+        "Eighty homes",
+        "A market of at least 4,000 m²",
+        "A 25 m flood setback along a canal",
+        "A school 20 meters across"
+      ],
+      "correct": 2,
+      "explanation": "The setback says where things cannot go. The school, the market, and the homes are things that must be placed. Constraints get mapped first, because the program can only use the land they leave."
+    },
+    {
+      "section": "Part 1 — Program and constraints",
+      "prompt": "Why map the constraints before placing anything?",
+      "setup": "",
+      "options": [
+        "Constraints are always smaller than the program, so they are faster to draw",
+        "The program only fits in the land the constraints leave behind, so you need to know where that is first",
+        "So the legend lists them first",
+        "QGIS will not let you add points until a polygon layer exists"
+      ],
+      "correct": 1,
+      "explanation": "Placing homes and then discovering half of them sit in the flood band means starting over. Site minus constraints is the buildable area, and the buildable area is where the design happens."
+    },
+    {
+      "section": "Part 2 — From plan to layers",
+      "prompt": "You want to show the land left for building after removing the flood setbacks and the protected tree buffers. Which operation does that?",
+      "setup": "You have the site boundary as one polygon layer and the merged setbacks as another.",
+      "options": [
+        "Union of the site and the setbacks",
+        "Intersection of the site and the setbacks",
+        "Clip the setbacks to the site",
+        "Difference: the site minus the setbacks"
+      ],
+      "correct": 3,
+      "explanation": "Difference keeps the part of the site outside the setbacks, which is exactly the buildable area. Intersection and Clip would return the setbacks inside the site: the land you cannot use, which is the opposite of what you want."
+    },
+    {
+      "section": "Part 2 — From plan to layers",
+      "prompt": "Before running a buffer in meters on the Mozambique site, what has to be true?",
+      "setup": "",
+      "options": [
+        "The layer is saved as a shapefile",
+        "The layer has an attribute field for the distance",
+        "The layers are in a projected CRS whose units are meters, such as a UTM zone",
+        "The basemap is turned off"
+      ],
+      "correct": 2,
+      "explanation": "A buffer distance is measured in the layer's units. In WGS 84 those are degrees, and a \"25\" buffer would reach thousands of kilometers. That is why Lab 10 starts by setting a UTM CRS for Mozambique: the Week 8 lesson put to work."
+    },
+    {
+      "section": "Part 3 — Buffer arithmetic",
+      "prompt": "A water tank is 10 m across. You placed its center as a point. What buffer distance draws its footprint?",
+      "setup": "",
+      "options": [
+        "5 m",
+        "10 m",
+        "2.5 m",
+        "20 m"
+      ],
+      "correct": 0,
+      "explanation": "A buffer extends the same distance in every direction from the point, so the distance is the radius. Ten meters across means 5 m. Buffering by 10 m draws a tank 20 m across, four times the area you meant."
+    },
+    {
+      "section": "Part 3 — Buffer arithmetic",
+      "prompt": "A lane is 8 m wide and you digitized its centerline. What buffer distance draws the lane?",
+      "setup": "",
+      "options": [
+        "2 m",
+        "4 m",
+        "8 m",
+        "16 m"
+      ],
+      "correct": 1,
+      "explanation": "The buffer goes out on both sides of the line, so half the width on each side: 4 m. The same rule as the tank: a buffer distance is always measured from the feature outward."
+    },
+    {
+      "section": "Part 3 — Buffer arithmetic",
+      "prompt": "What does the GIS layout give you, and what still comes after it?",
+      "setup": "",
+      "options": [
+        "The cost estimate; the layout comes after",
+        "Only a pretty map; the real layout is done by hand",
+        "It is the final construction drawing; nothing comes after",
+        "A concept plan that fits the program inside the constraints; grading, drainage, and detailed engineering design come after, usually in CAD"
+      ],
+      "correct": 3,
+      "explanation": "GIS is where you test whether the program fits and where it should go. The engineering design that gets built, with grades, pipe sizes, and dimensions, is drawn next in CAD and civil design software, starting from that layout."
+    }
+  ]
+}
+</script>
+<script src="../assets/quiz.js?v=b1ad25cf"></script>
+
+</body>
+</html>

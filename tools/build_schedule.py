@@ -163,10 +163,12 @@ DAYS = [
                  "Lab 9 rehearsal: Difference and Fix Geometries"],
          data=[("United States data for the cities-near-rivers analysis", "")],
          activity="Cities Near Rivers: upload a screenshot of your map showing all U.S. cities within 10 km of a major river"),
-    dict(n=20, week=11, kind="concepts", title="Geoplanning and Georeferencing",
-         topics=["Introduction to geoplanning", "Domes for the World and the Mozambique project",
-                 "Georeferencing: attaching real-world coordinates to an image that has none"],
-         activity="Georeference Your Neighborhood Sketch: draw your neighborhood in pencil, photograph it, email it to yourself, and georeference it in QGIS"),
+    dict(n=20, week=11, kind="concepts", title="Geoplanning: Site Layout and Design",
+         slides=[("Geoplanning: What Goes Where?", f"{SITE}/slides/day-20/geoplanning.html")],
+         topics=["Site selection, site layout, and site design: three scales of geoplanning",
+                 "The program and the constraints, and how each becomes a GIS layer",
+                 "Domes for the World and the Mozambique project"],
+         activity="Paper Site Plan: in groups, mark the constraints on a printed aerial of the Lab 10 site, fit a small program around them, and name the GIS operation behind every mark"),
     dict(n=21, week=11, kind="hands-on", title="Georeferencing in QGIS and the Web Mapping with AI Kickoff", handson="week-11",
          topics=["Georeference a scanned historic map: ground control points, transformation types, residuals",
                  "What a site plan for the Domes for Mozambique project needs from georeferencing",
@@ -280,7 +282,7 @@ ACTIVITY_GUIDES = {
     12: "Data Source Scavenger Hunt",
     14: "Globe Activity: The Great Circle",
     16: "A Brief Metadata Melodrama",
-    20: "Georeference Your Neighborhood Sketch",
+    20: "Paper Site Plan",
 }
 
 # The four cards every week page carries, in order: (key, heading, icon, text when empty).
@@ -334,6 +336,9 @@ PRACTICE = {
     10: [("geoprocessing", "Which Tool Answers the Question?",
           "Reclassify, reprojecting before a buffer, select versus extract, what each overlay tool "
           "puts out, and the order to chain them in.")],
+    11: [("layout", "What Goes Where?",
+          "Telling the program from the constraints, turning each constraint into a layer, and "
+          "the buffer arithmetic behind footprints, roads, and setbacks.")],
     12: [("siting", "Where Would You Put It?",
           "Reading a stated requirement as an operation, chaining the operations, and knowing what "
           "the surviving polygons do and do not tell you.")],
