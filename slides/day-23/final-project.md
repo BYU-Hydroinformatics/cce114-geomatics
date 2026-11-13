@@ -78,7 +78,7 @@ By the end of class you should be able to:
 
 - **Proximity to other Walmarts:** at least **2 miles** from any existing store
 - **Proximity to major roads:** within **2 miles** of I-15 or a highway
-- **Population density:** over **2000 people per km²** (Census block data)
+- **Population density:** over **5000 people per square mile** (Census 2020 blocks)
 - **Adequate space:** stores run 51,000–224,000 ft², average about **102,000 ft²** — find places where that fits without demolishing a neighborhood
 
 <!-- The jump from "near a highway" to "within 2 miles of I-15 or a highway" is the whole trick. Every criterion needs a number and a layer before you can run a single tool. Their final project criteria have to be written this way too. -->
@@ -91,10 +91,11 @@ By the end of class you should be able to:
 
 - **Utah County boundary** — Utah Geospatial Resource Center (UGRC, formerly AGRC), [gis.utah.gov](https://gis.utah.gov)
 - **Roads and freeways** — UGRC
-- **Census blocks with demographics** — UGRC Census block package, plus the redistricting README that explains the column names
-- **Existing Walmart locations** — find them in a web map, then **digitize** them into a new point layer of your own
+- **Census blocks with demographics** — UGRC "Census 2020 Blocks", plus the redistricting README that explains the column names
+- **Existing Walmart locations** — Walmart's own public ArcGIS REST service, streamed in like the SGID in Lab 6
+- All four arrive in **Web Mercator**: reproject before you buffer
 
-<!-- Point out that three of the four are downloads and the fourth they make themselves. Digitizing your own layer is a legitimate data source as long as you say so in the report. Note the agency renamed from AGRC to UGRC; older lab handouts and slides still say AGRC. -->
+<!-- Three of the four come from UGRC and the fourth from Walmart itself; Walmart retired its Open Data Hub download in 2026, so Lab 11 step 7 connects to the Walmart_Facilities_(Public) feature service instead. For the final project, if a layer they need does not exist, digitizing their own is a legitimate data source as long as they say so in the report. The last bullet is the lesson from Tuesday's reproject slide: every one of these layers is EPSG:3857, so a 2-mile buffer is only about 1.5 miles unless they reproject to EPSG:26912 first. Note the agency renamed from AGRC to UGRC; older lab handouts and slides still say AGRC. -->
 
 ---
 
@@ -115,6 +116,7 @@ By the end of class you should be able to:
 
 - **Difference** (ArcGIS calls it *Erase*) — cut the input features out of the target
 - **Dissolve** — merge like features into one
+- **Reproject Layer** — into a projected CRS before any Buffer
 - **Digitize** — build a new layer by drawing features yourself
 
 </div>
@@ -149,7 +151,7 @@ To find land at least 2 miles from an existing Walmart, inside Utah County, and 
 <li>Any order works — you get the same answer</li>
 </ol>
 
-<!-- A and C both work and give the same result; D is the trap. Order matters whenever an operation changes the extent that a later operation sees, and clipping early is usually faster because every later step runs on less data. Ask them to defend an answer before you say which. This is the same idea as the Figure 9-1 true/false question that shows up on the concepts exam. -->
+<!-- A and C both work and give the same result; D is the trap, because B cannot run at all: Difference needs the buffers, and they do not exist yet. So the rule is: an operation can only run after the layers it eats exist, and among the orders that respect that, the surviving geometry is the same (Tuesday's "Buffer? What next?" activity). Clipping early is the better of A and C because every later step runs on less data. Ask them to defend an answer before you say which. This is the same idea as the Figure 9-1 true/false question that shows up on the concepts exam. -->
 
 ---
 

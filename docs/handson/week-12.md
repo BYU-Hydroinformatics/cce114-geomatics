@@ -24,7 +24,7 @@
 | | |
 | --- | --- |
 | **Goal** | Students see the Walmart site-selection workflow as a diagram and then as a Model Designer model, choose a county and a site-selection problem for their final project, and review for Concepts Exam 2. |
-| **Why this week** | Tuesday Dr. Ames presented site selection as a process of elimination. Lab 11 asks for a workflow diagram and a GeoPackage-based analysis; the final project is the same pattern on a county and problem of their choosing. Concepts Exam 2 closes in the Testing Center Saturday. |
+| **Why this week** | Tuesday's lecture presented site selection as a process of elimination, and showed why every layer must be reprojected out of Web Mercator before it is buffered. Lab 11 asks for a workflow diagram and a GeoPackage-based analysis; the final project is the same pattern on a county and problem of their choosing. Concepts Exam 2 closes in the Testing Center Saturday. |
 | **Students bring** | Laptop with QGIS 3.44. A phone for Kahoot. A group of two or three for the final project. |
 | **Graded item** | None. The final project is the deliverable (due Saturday of Week 14). |
 | **Feeds** | Lab 11: Walmart Site Selection, due Saturday. Final Project. Concepts Exam 2. |
@@ -41,9 +41,11 @@
 
 1. Work Lab 11 through once yourself if you have not. You cannot narrate the model without having
    run the analysis by hand.
-2. **Processing > Model Designer**. Build the Lab 11 chain as a model: the input layers on the
-   left, buffer, clip, intersect and select in the middle, the suitable-sites layer on the right.
-   Save it as `walmart.model3`.
+2. **Processing > Model Designer**. Build the analysis half of Lab 11 (steps 22 to 28) as a model,
+   using the lab's own tools: inputs on the left (the census blocks, MajorRoads and
+   CurrentLocations from a finished UtahCounty.gpkg); Field Calculator, Extract by Attribute,
+   Reproject Layer, Buffer and two Extract by Location in the middle; PotentialCustomers on the
+   right. Save it as `walmart.model3`. A correct run gives 1,871 blocks.
 3. Run the model from the toolbar, filling the inputs with the Lab 11 layers, and confirm the
    outputs appear in the Layers panel.
 4. Double-click the buffer algorithm, change the distance, and run again. Timing this is worth it:
@@ -51,8 +53,8 @@
 5. Click **Export as Python** and glance at the script. You only need to show it for thirty
    seconds, but know where the button is.
 6. Draw the Lab 11 workflow diagram by hand the way you will draw it on the board, with the
-   convention the final project report is graded on: layers as blue ellipses, tools as green
-   boxes, every layer labeled with its geometry type.
+   convention the decks and the self-check quiz teach: layers as rectangles, tools as ovals,
+   every layer labeled with its geometry type and, from step 25 on, its CRS.
 7. Open the **Mapping Final Projects** tab of the class sheet, clear last semester's rows, and
    check the column headers still match what you will ask groups to fill in.
 
@@ -66,7 +68,7 @@ input. Hover the red exclamation mark on the algorithm box to find which one.
 
 - [ ] The two decks open: [Final Mapping Project](https://byu-hydroinformatics.github.io/cce114-geomatics/slides/day-23/final-project.html) and [Concepts Review](https://byu-hydroinformatics.github.io/cce114-geomatics/slides/day-23/concepts-review.html). Press P for speaker notes.
 - [ ] The class Google Sheet open at the **Mapping Final Projects** tab (group members, chosen county, site-selection problem, data they will need). Clear old rows. Only one or two groups per county, and not Utah County.
-- [ ] A Model Designer model of the Lab 11 chain built in advance (buffer, clip, intersect, select) saved as `walmart.model3`, so the demo is a walk-through and not a build.
+- [ ] A Model Designer model of Lab 11 steps 22 to 28 built in advance (field calculator, extract by attribute, reproject, buffer, extract by location) saved as `walmart.model3`, so the demo is a walk-through and not a build.
 - [ ] The Exam 2 Kahoot from the Learning Suite **Kahoot** page (*Exam 2 Review*, or one of the *CCE 114 Exam 2* variants) at the lobby screen.
 - [ ] The "Some Examples" workflow diagram slides from the Week 12 Thursday entry on Learning Suite.
 
@@ -85,7 +87,7 @@ input. Hover the red exclamation mark on the algorithm box to find which one.
 
 #### 1. Diagrams first
 
-Show two or three of the example workflow diagrams. Then draw the Lab 11 one: Walmart points, roads, population or land-use layers in; buffers and selections in the middle; a suitable-sites layer out. Name the shape convention (blue ellipses are layers, green boxes are tools, every layer labelled with its geometry) because the final project report requires the diagram and graders look for it.
+Show two or three of the example workflow diagrams. Then draw the *shape* of the Lab 11 one, not every box (the full diagram is 10 points of the lab students are finishing this week): Walmart points, roads and census blocks in; extracts, a reproject and buffers in the middle; PotentialCustomers out. Name the shape convention (rectangles are layers, ovals are tools, every layer labeled with its geometry) because the final project report requires the diagram and graders look for it. Put the Reproject Layer oval in on purpose and ask why it is there.
 
 Say the elimination logic out loud: start with everything, remove what fails each criterion, what is left is the answer. Show the "all suitable areas" layer as its own output, not just pins, because the final project rubric asks for it.
 
@@ -101,7 +103,7 @@ Say the elimination logic out loud: start with everything, remove what fails eac
 1. Walk the [final project page](../assignments/final-project.md) and the option slides in the Final Mapping Project deck: five site-selection problems, any Utah county except Utah County, groups of two or three.
 2. What a good county looks like: enough data on UGRC (parcels, roads, zoning, hazards), a real constraint (floodplain, slope, distance to a highway), a problem you can describe in one sentence.
 3. Groups fill the **Mapping Final Projects** tab now: members, county, problem, and a first list of data. Circulate; the group that leaves without a county is the group that falls behind. Aim for every group registered before Kahoot starts.
-4. Timeline: work sessions Tuesday of Week 13 (Thanksgiving week, no Thursday) and Tuesday of Week 14 with Dr. Ames after his CCE 414 intro; presentations Thursday of Week 14 and Tuesday of Week 15; the report is due Saturday of Week 14.
+4. Timeline: work sessions Tuesday of Week 13 (Thanksgiving week, no Thursday) and Tuesday of Week 14; presentations Thursday of Week 14 and Tuesday of Week 15; the report is due Saturday of Week 14.
 
 ### Kahoot (14 minutes)
 
@@ -111,5 +113,13 @@ Run the Exam 2 review. Reread the questions most people miss. Exam 2 covers ever
 
 - **Model Designer will not run: "Missing parameter."** An input is unconnected. Hover the red exclamation on the algorithm box.
 - **The model output is a temporary layer.** Right-click the output box and set a destination, or save the layer afterwards.
+- **A student's Lab 11 count is near 2,500 instead of about 1,871.** They buffered in Web Mercator. Have them look for `[EPSG:3857]` in the Buffer dialog's input box and redo steps 25 and 26 with Reproject Layer first.
+
+  ![The 12 Utah County Walmart stores buffered 2 miles twice: in UTM, a true 2 miles, and in Web Mercator, visibly smaller circles of about 1.5 miles](images/w12-mercator-buffer.png)
+
+  A correct result looks like this: about 1,871 blocks in clusters around Orem, Provo, Lehi, Saratoga Springs and Springville, none within 2 miles of an orange store.
+
+  ![Correct Lab 11 result in QGIS 3.44: PotentialCustomers blocks in magenta along the I-15 corridor and around Utah Lake, the 12 existing stores in orange](images/w12-lab11-result.png)
+- **The Walmart layer will not add.** They connected to the older STORE_STATUS service or typed the URL wrong. Lab 11 step 7 has the exact URL; the layer is Walmart\_Facilities\_(Public) > Fieldlocations.
 - **Groups pick Utah County anyway.** It is excluded because Lab 11 and the examples use it; the point is to transfer the method.
 - **A group's problem has no data.** Send them to the UGRC SGID browser during lab hour; if the key layer does not exist, change the problem, not the county.
