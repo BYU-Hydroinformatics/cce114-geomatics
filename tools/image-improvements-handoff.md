@@ -173,6 +173,16 @@ side by side. The final map is a real result: `tools/lab11_run_analysis.py` runs
 to 28 with the lab's own algorithms and settings, and the slide's cluster names were checked
 against UGRC municipal boundaries. Rerun both if the lab's thresholds change.
 
+**Lab 11 re-run 2026-11-13.** Walmart retired its Open Data Hub site, so the stores now come from
+its `Walmart_Facilities_(Public)` REST service (12 Utah County stores after Sam's Club, including
+Eagle Mountain). UGRC downloads and both REST services arrive in Web Mercator, which shrinks a
+"2-mile" buffer to about 1.5 ground miles, so the lab now reprojects before buffering; the run gives
+1,871 PotentialCustomers blocks (162,396 people), against about 2,480 without the reprojection.
+Re-rendered `ws-census-blocks`, `ws-current-walmarts`, `ws-final-map` (insets now Orem and Lehi),
+and the new `ws-mercator-buffer`. Lab 11's `anchored4.png` (Banner field, not the shapefile's
+`business_2`), `reproject-layer.png` and `buffer-dialog.png` are real QGIS 3.44 dialogs from
+`tools/qgis_lab11_shots.py`; `anchored5.png` is the county panel of the re-run final map.
+
 **Instructor confirmations left as TODO comments in the decks:** Day 7 Air Force One room
 distances (re-measure for the actual classroom); Day 6 worked example keeps the source's
 non-GPS-scale numbers with a sanity-check callout; Day 12 and Day 23 class sign-up/scavenger

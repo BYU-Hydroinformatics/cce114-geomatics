@@ -24,7 +24,7 @@ Dr. Dan Ames and Dr. James Halgren
 <!-- Tuesday concept lecture, Week 12. This is the lecture behind Lab 11 and the pattern students will reuse in the final project. Thursday, we walk through the workflow diagrams and the final project description. -->
 
 <!-- stamp:begin -->
-<!-- _footer: '<span>CCE 114 · Day 22 — Project Site Selection<span class="updated">Last Updated: 2026-10-28</span></span><span>© 2026 Daniel P. Ames · <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></span>' -->
+<!-- _footer: '<span>CCE 114 · Day 22 — Project Site Selection<span class="updated">Last Updated: 2026-11-13</span></span><span>© 2026 Daniel P. Ames · <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></span>' -->
 <!-- stamp:end -->
 
 ---
@@ -235,9 +235,9 @@ When you run an **Intersection** or a **Union**, the attribute tables of both la
 - Let's use geoprocessing tools to solve a real **site selection** problem
 - Walmart really does this: a store is a nine-figure decision driven by drive time, competition, and density
 - We will do a simplified version with data you can download today
-- Store locations: [Walmart open data portal](https://walmart-open-data-walmarttech.opendata.arcgis.com/)
+- Store locations: Walmart's own public [ArcGIS REST service](https://services1.arcgis.com/WyIdBuoLrhwRHOSA/arcgis/rest/services), streamed into QGIS like the SGID in Lab 6
 
-<!-- This is the problem for the rest of the hour and for Lab 11. Walmart publishes its own store locations as open data, so students no longer have to digitize points off Google Maps the way the old version of this lab did. -->
+<!-- This is the problem for the rest of the hour and for Lab 11. Walmart publishes its own store locations as a public feature service, so students do not digitize points off Google Maps the way the old version of this lab did. Walmart retired the Open Data Hub download site in autumn 2026; the same kind of data is still public as the Walmart_Facilities_(Public) service, and Lab 11 step 7 now connects to it through the Data Source Manager. -->
 
 ---
 
@@ -328,10 +328,10 @@ When you run an **Intersection** or a **Union**, the attribute tables of both la
 - **Utah County boundary** and **roads and freeways**: [Utah Geospatial Resource Center (UGRC)](https://gis.utah.gov/), formerly AGRC
 - **Census blocks:** the "Census 2020 Blocks" dataset in UGRC's Demographics category
   - Download the Census redistricting file README too — it explains the column headers
-- **Existing Walmart locations:** the [Walmart open data portal](https://walmart-open-data-walmarttech.opendata.arcgis.com/) publishes store locations as a downloadable point layer
-- Everything lands in QGIS as a **layer**: a shapefile, a GeoPackage, or a downloaded GeoJSON
+- **Existing Walmart locations:** Walmart's own [ArcGIS REST service](https://services1.arcgis.com/WyIdBuoLrhwRHOSA/arcgis/rest/services), layer *Walmart_Facilities_(Public)*, about 5,600 stores, streamed live
+- Everything lands in QGIS as a **layer**, and every one of these arrives in **Web Mercator (EPSG:3857)**. Remember that for the buffer step.
 
-<!-- The 2021 version of this lab had students digitize Walmart locations by eye off Google Maps. They can still do that as a fallback, but the open data portal is faster and more defensible. Remind them to check the CRS of every layer before running a buffer: distances need a projected CRS. -->
+<!-- The 2021 version of this lab had students digitize Walmart locations by eye off Google Maps. Walmart's public feature service is faster and more defensible. Its Open Data Hub download page went away in autumn 2026, so Lab 11 now has students add an ArcGIS REST connection to Walmart's server, the Lab 6 skill again. The second bullet sets up the reproject slide: UGRC's downloads and both REST services are all EPSG:3857, whatever the project CRS says. -->
 
 ---
 
@@ -347,8 +347,9 @@ When you run an **Intersection** or a **Union**, the attribute tables of both la
 - **Select / Extract by Location** — features by where they sit
 - **Dissolve** — merge features that share a value
 - **Field Calculator** — a new column, e.g. a density field
+- **Reproject Layer** — into a projected CRS before any distance tool
 
-<!-- Fuller versions of each line: Select by Expression finds features matching a rule, e.g. all roads where RT_NAME = '0015', or all census blocks above a density threshold. Buffer is the area within a given distance of a feature. Clip cuts the input layer to the shape of an overlay layer. Intersection keeps only where two layers overlap and carries both attribute tables. Difference removes the input wherever the overlay covers it. Select by Location / Extract by Location picks features by how they sit relative to another layer. Dissolve merges features that share an attribute value into one. Field Calculator computes a new column, e.g. density = population / area. These are the tools for Lab 11 and the final project. Every one of them is in the Processing Toolbox; teach them the search box at the top of the toolbox rather than memorizing menu paths. Difference vs Erase is the naming trap; say it twice. -->
+<!-- Fuller versions of each line: Select by Expression finds features matching a rule, e.g. all roads where RT_NAME = '0015', or all census blocks above a density threshold. Buffer is the area within a given distance of a feature. Clip cuts the input layer to the shape of an overlay layer. Intersection keeps only where two layers overlap and carries both attribute tables. Difference removes the input wherever the overlay covers it. Select by Location / Extract by Location picks features by how they sit relative to another layer. Dissolve merges features that share an attribute value into one. Field Calculator computes a new column, e.g. density = population / area. Reproject Layer writes a copy of a layer in a new CRS; run it before Buffer whenever the layer is in Web Mercator or latitude/longitude. These are the tools for Lab 11 and the final project. Every one of them is in the Processing Toolbox; teach them the search box at the top of the toolbox rather than memorizing menu paths. Difference vs Erase is the naming trap; say it twice. -->
 
 ---
 
@@ -396,7 +397,15 @@ When you run an **Intersection** or a **Union**, the attribute tables of both la
 
 ![h:460 center](images/ws-buffer-i15.png)
 
-<!-- Two miles either side of the interstate, the same Buffer run twice in QGIS 3.44. Ask what went wrong on the left: I-15 inside the county is 180 separate line features, the buffer is drawn around each one, and the overlapping shapes show the segments. Check "Dissolve result" in the Buffer dialog, as Lab 11 step 25 says, and you get the one clean corridor polygon on the right. Also check the units: 2 miles is about 3219 meters. -->
+<!-- Two miles either side of the interstate, the same Buffer run twice in QGIS 3.44. Ask what went wrong on the left: I-15 inside the county is 180 separate line features, the buffer is drawn around each one, and the overlapping shapes show the segments. Check "Dissolve result" in the Buffer dialog, as Lab 11 step 25 says, and you get the one clean corridor polygon on the right. Also check the units: 2 miles is about 3219 meters, and the next slide shows what happens when those meters are the wrong kind. -->
+
+---
+
+# Reproject before you buffer
+
+![h:500 center](images/ws-mercator-buffer.png)
+
+<!-- The same "2 miles" typed into the same Buffer tool on the same 12 stores, twice. Green: the stores reprojected to UTM zone 12N, EPSG:26912, then buffered; a true 2 miles. Magenta, dashed: buffered while still in Web Mercator, EPSG:3857, the CRS every UGRC download and Walmart's REST service arrive in. A Web Mercator meter is stretched by one over the cosine of the latitude, about 1.31 at 40 degrees north, so the magenta circles are about 1.5 real miles across. The project CRS does not fix it: Buffer uses the layer's CRS. Run the whole lab in Web Mercator and about 2,480 blocks survive instead of 1,871, a third too many, because the Walmart buffer is too small. That is why Lab 11 steps 25 and 26 now run Reproject Layer first. Ask the room: which way would the error go at the equator? (None: cos 0 = 1.) In Alaska? (Much worse.) -->
 
 ---
 
@@ -404,7 +413,7 @@ When you run an **Intersection** or a **Union**, the attribute tables of both la
 
 ![h:440 center](images/ws-current-walmarts.png)
 
-<!-- Eleven existing stores from Walmart's own open data (Sam's Club left out, as Lab 11 does), strung along the I-15 corridor because that is where the people are. Ask why the stores are already clustered where our "close to roads" criterion says to build: the criteria are not independent, and the competitor layer will be doing most of the eliminating. -->
+<!-- Twelve existing stores from Walmart's own store service, Walmart_Facilities_(Public), checked November 2026 (the Provo Sam's Club left out, as Lab 11 does; the Eagle Mountain store is in this service but not in the older one the lab used to link to), strung along the I-15 corridor because that is where the people are. Ask why the stores are already clustered where our "close to roads" criterion says to build: the criteria are not independent, and the competitor layer will be doing most of the eliminating. -->
 
 ---
 
@@ -430,7 +439,7 @@ When you run an **Intersection** or a **Union**, the attribute tables of both la
 
 ![h:465 center](images/ws-census-blocks.png)
 
-<!-- UGRC's Census 2020 Blocks for Utah County, the same layer students download in Lab 11 (10,092 blocks, 659,399 people), with the 11 existing Walmart stores from Walmart's own open data on top, Sam's Club left out as the lab does. The pale blue blocks are water: Utah Lake is census blocks too, with nobody living in them. Blocks are tiny downtown and huge in the mountains, which is exactly why we need density, population divided by area, rather than raw population counts. That is a Field Calculator job. -->
+<!-- UGRC's Census 2020 Blocks for Utah County, the same layer students download in Lab 11 (10,092 blocks, 659,399 people), with the 12 existing Walmart stores from Walmart's own store service on top, Sam's Club left out as the lab does. The pale blue blocks are water: Utah Lake is census blocks too, with nobody living in them. Blocks are tiny downtown and huge in the mountains, which is exactly why we need density, population divided by area, rather than raw population counts. That is a Field Calculator job. -->
 
 ---
 
@@ -447,11 +456,11 @@ When you run an **Intersection** or a **Union**, the attribute tables of both la
 ![bg right:46% h:86%](images/ws-final-map.jpg)
 
 - Everything that survived every criterion
-- Biggest clusters: **Orem–Provo**, **Lehi**, **Eagle Mountain–Saratoga Springs**
+- Biggest clusters: **Orem–Provo**, **Lehi**, **Saratoga Springs**, **Springville**
 - Not "the site" — a shortlist for a human to argue about
 - Now go back and ask: which criterion did the most eliminating? What would change if 2 miles became 3?
 
-<!-- The payoff: Lab 11 run exactly as written, in QGIS 3.44 with the data students download. 2,006 census blocks, about 175,600 people, pass every criterion. Magenta is "requirements met," and the insets zoom into Orem and Eagle Mountain on Google Satellite, the lab's basemap. Students will have to pick two sites inside clusters like these. Push the sensitivity question: a site selection result is only as good as the thresholds, and a good analyst reports how sensitive the answer is to them. This is the standard the final project maps will be graded against. -->
+<!-- The payoff: Lab 11 run exactly as written, in QGIS 3.44 with UGRC's data and Walmart's store service, re-run November 2026 with the reproject step. 1,871 census blocks, about 162,400 people, pass every criterion: Orem 35,000 people, Provo 33,600, Lehi 31,900, Saratoga Springs 15,000, Springville 11,900 (UGRC municipal boundaries). Magenta is "requirements met," and the insets zoom into Orem and Lehi on Google Satellite, the lab's basemap. Students will have to pick two sites inside clusters like these. Push the sensitivity question: a site selection result is only as good as the thresholds, and a good analyst reports how sensitive the answer is to them. This is the standard the final project maps will be graded against. -->
 
 ---
 
@@ -500,9 +509,9 @@ When you run an **Intersection** or a **Union**, the attribute tables of both la
 **Before next class**
 
 - **Lab 11: Walmart Site Selection** is due **Saturday** — [Lab 11](https://byu-hydroinformatics.github.io/cce114-geomatics/assignments/lab-11/)
-  - Store locations: [Walmart open data portal](https://walmart-open-data-walmarttech.opendata.arcgis.com/)
+  - Stores: Walmart's REST service (step 7). **Reproject before you buffer.**
 - **Concepts Exam 2** is in the **Testing Center this week** — check the closing time and do not leave it to the last day
-- Read the geoprocessing and spatial analysis chapter in *GIS Fundamentals* (Bolstad & Manson) and take the open-book quiz on Learning Suite
+- No reading quiz this week; for the exam, review Bolstad & Manson's geoprocessing chapter and Quiz 8
 - Start reading the [final project description](https://byu-hydroinformatics.github.io/cce114-geomatics/assignments/final-project/) — it is introduced this week
 - Questions? Office hours: [calendly.com/dan-ames/office-hours](https://calendly.com/dan-ames/office-hours)
 

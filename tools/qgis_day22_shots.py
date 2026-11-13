@@ -2,7 +2,8 @@
 # bundled Python as Print Layout exports, with no QGIS window and no screen-recording permission.
 # They replace ArcMap-era captures: ws-census-blocks showed the 2010 blocks, and Lab 11 now has
 # students download UGRC's "Census 2020 Blocks"; ws-current-walmarts showed a store list that has
-# since grown. SHOT picks one of: census-blocks, utah-county, current-walmarts (default: all).
+# since grown. SHOT picks one of: census-blocks, utah-county, current-walmarts, udot-routes, buffer-i15,
+# final-map, mercator-buffer (default: all).
 #
 #   export PYTHONHOME=/Applications/QGIS.app/Contents/Frameworks \
 #          PROJ_LIB=/Applications/QGIS.app/Contents/Resources/qgis/proj \
@@ -19,7 +20,8 @@
 #     -sql "select name, shape from boundaries.county_boundaries"
 #   ogr2ogr -f GPKG -update ws.gpkg "$PG" -nln census_blocks_2020 \
 #     -sql "select * from demographic.census_blocks_2020 where countyfp20='049'"
-#   ogr2ogr -f GPKG -update ws.gpkg "<Walmart FeatureServer/0>/query?where=1%3D1&outFields=*&f=json" \
+#   WM='https://services1.arcgis.com/WyIdBuoLrhwRHOSA/arcgis/rest/services/Walmart_Facilities_(Public)/FeatureServer/0'
+#   ogr2ogr -f GPKG -update ws.gpkg "$WM/query?where=1%3D1&outFields=*&f=json" \
 #     -nln walmarts_all -t_srs EPSG:26912
 #   ogr2ogr -f GPKG -update ws.gpkg ws.gpkg -nln walmarts_utah_county -dialect sqlite \
 #     -sql "select w.* from walmarts_all w, utah_county c where st_intersects(w.geom, c.shape)"
@@ -34,9 +36,10 @@
 # tools/lab11_run_analysis.py writes from ws.gpkg; final-map fetches Google Satellite tiles.
 # Open SGID is UGRC's PostGIS mirror of the same SGID layer Lab 11 links to; countyfp20 '049'
 # gives 10,092 blocks summing to 659,399 people, the check figure the lab quotes. The Walmart
-# layer is the Walmart Open Data Hub service the lab links to ("Walmart Store Status Public
-# Data", services1.arcgis.com/WyIdBuoLrhwRHOSA/.../STORE_STATUS_PUBLIC_VIEW). Sam's Club is left
-# out, as Lab 11 step 20 has students do. Keep both directories outside ~/Desktop, ~/Documents
+# layer is "Walmart Store Locations (Public)", the Walmart_Facilities_(Public) feature service
+# Lab 11 step 7 connects to. Walmart retired its Open Data Hub site in autumn 2026; the older
+# STORE_STATUS_PUBLIC_VIEW service it used to link to was last updated 2026-08-03 and lacks the
+# Eagle Mountain store. Sam's Club is left out, as Lab 11 step 20 has students do, leaving 12. Keep both directories outside ~/Desktop, ~/Documents
 # and ~/Downloads: QGIS cannot read or write there on macOS.
 import os
 import sys
@@ -56,11 +59,12 @@ OUT = os.environ['DAY22_OUT']
 LAB11 = os.environ.get('DAY22_LAB11', '')  # UtahCounty.gpkg from tools/lab11_run_analysis.py
 SHOTS = [os.environ['SHOT']] if os.environ.get('SHOT') else ['census-blocks', 'utah-county',
                                                               'current-walmarts', 'udot-routes',
-                                                              'buffer-i15', 'final-map']
-# Close-ups on the final map: the two biggest clusters of candidate blocks, EPSG:26912 centers.
-# Checked against UGRC municipal boundaries: 319 of the 332 blocks in the first are in Orem, 162 of
-# 164 in the second are in Eagle Mountain.
-INSETS = [('Orem', (442000, 4462000)), ('Eagle Mountain', (416500, 4467000))]
+                                                              'buffer-i15', 'final-map',
+                                                              'mercator-buffer']
+# Close-ups on the final map: the two densest clusters of candidate blocks, EPSG:26912 centers.
+# Checked 2026-11-13 against UGRC municipal boundaries: 336 of the 345 blocks in the first are in
+# Orem, all 229 in the second are in Lehi.
+INSETS = [('Orem', (441000, 4463000)), ('Lehi', (425750, 4475500))]
 INSET_HALF = 2600
 os.makedirs(OUT, exist_ok=True)
 
@@ -348,9 +352,44 @@ def shot_final_map():
         ov.setFrameSymbol(QgsFillSymbol.createSimple(
             {'style': 'no', 'outline_color': '#111111', 'outline_width': '0.5'}))
     credit = add_label(layout, 'Inset imagery: Google Satellite, as in Lab 11 step 2. '
-                       'Data: UGRC Census 2020 Blocks and Utah Roads; Walmart Open Data.',
+                       'Data: UGRC Census 2020 Blocks and Utah Roads; Walmart Store Locations (Public).',
                        5, iy + ih + 1.5, pw - 10, 6, size=9)
     export(layout, 'final-map')
+
+
+def shot_mercator_buffer():
+    # Lab 11 steps 25-26: the same "2 miles" typed into Buffer on the stores in Web Mercator
+    # (EPSG:3857, what UGRC downloads and Walmart's service deliver) and in UTM (EPSG:26912).
+    cur = QgsVectorLayer(f'{GPKG}|layername=walmarts_utah_county', 'stores', 'ogr')
+    cur.setSubsetString("businessunit_banner_description <> 'Sam''s Club'")
+    merc = run_alg('native:reprojectlayer', {'INPUT': cur, 'TARGET_CRS': 'EPSG:3857'})
+    B = {'DISTANCE': 3218.69, 'SEGMENTS': 24, 'END_CAP_STYLE': 0, 'JOIN_STYLE': 0, 'MITER_LIMIT': 2,
+         'DISSOLVE': False}
+    utm = run_alg('native:buffer', dict(B, INPUT=cur))
+    wm = run_alg('native:buffer', dict(B, INPUT=merc))
+    utm.setName('Buffered in UTM, EPSG:26912 (a true 2 miles)')
+    wm.setName('Buffered in Web Mercator, EPSG:3857 (about 1.5 miles)')
+    utm.setRenderer(fill(color='92,190,172,60', outline_color='#1f6f60', outline_width=0.6))
+    wm.setRenderer(fill(color='216,27,140,70', outline_color='#a3126a', outline_width=0.6,
+                        outline_style='dash'))
+    for lyr in (utm, wm):
+        project.addMapLayer(lyr)
+    county.setRenderer(fill(color='#f6f2e4', outline_color='#3a3a3a', outline_width=0.5))
+    # A small page, so the legend text is large enough to read on a slide; at that size the legend
+    # is half the map's width, so it sits in a strip under the map rather than on it.
+    pw, mh, ph = 160.0, 112.0, 144.0
+    layout = new_layout(pw, ph)
+    m = add_map(layout, 0, 0, pw, mh, [stores, wm, utm, county, counties],
+                QgsRectangle(404000, 4426000, 452000, 4483000))
+    leg = add_legend(layout, m, [utm, wm, stores], pw - 4, 4)
+    leg.setBackgroundEnabled(False)
+    leg.setFrameEnabled(False)
+    leg.setReferencePoint(QgsLayoutItem.UpperLeft)
+    leg.attemptMove(QgsLayoutPoint(1, mh + 1, QgsUnitTypes.LayoutMillimeters))
+    add_scalebar(layout, m, pw - 3, mh - 14, per_segment=2)
+    export(layout, 'mercator-buffer', dpi=300)
+    return
+    export(layout, 'mercator-buffer')
 
 
 highlight = fill(color='#f6f2e4', outline_color='#3a3a3a', outline_width=0.6)
@@ -372,6 +411,8 @@ for shot in SHOTS:
         shot_buffer_i15()
     elif shot == 'final-map':
         shot_final_map()
+    elif shot == 'mercator-buffer':
+        shot_mercator_buffer()
 
 # app.exitQgis() segfaults on teardown; everything is written by now.
 os._exit(0)

@@ -46,7 +46,7 @@ You’ll also save all of your data layers for this project in a GeoPackage.
 * For this lab we will use the GIS software application, QGIS (also known as Quantum GIS). This is a free/open source GIS package that runs on Windows, Mac, and Linux operating systems. The software is pre-installed in the Clyde Building 234 computer lab. You can also download it and install it on your own computer from this website: [https://www.qgis.org/](https://www.qgis.org/). We will be using this version throughout the course: *“Long Term Version 3.44 (LTR)”.*   
 * There are no custom data downloads for this lab. Follow the instructions to download data from  
     * The State of Utah GIS web site: [https://gis.utah.gov/products/sgid/](https://gis.utah.gov/products/sgid/)  
-    * And the Walmart Open Data Hub on ArcGIS: [link](https://walmart-open-data-walmarttech.opendata.arcgis.com/datasets/39ce1c357bd2424ca481db84aed29464_0/explore?location=40.219229%2C-111.585158%2C10.61)  
+    * And Walmart's own public ArcGIS feature service of its store locations, which you will stream into QGIS the same way you streamed the SGID in Lab 6: [https://services1.arcgis.com/WyIdBuoLrhwRHOSA/arcgis/rest/services](https://services1.arcgis.com/WyIdBuoLrhwRHOSA/arcgis/rest/services)  
 * Imagery from Google will also be used as a base layer. 
 
 **REVIEW THE deliverables section at the end of the document before continuing. You should always do this before starting any of your labs. It will help you make sense of the lab and not waste time.**
@@ -61,17 +61,24 @@ You’ll also save all of your data layers for this project in a GeoPackage.
 ### **Step 2: Add the Data**
 
 2. Open a new QGIS project and set the XYZ base layer to the “Google Satellite” layer (not the “Satellite Hybrid” imagery)  
+    1. If you only have Google Satellite Hybrid from Lab 1, add a second XYZ connection the same way (Lab 1, step 6) named “Google Satellite”, with the URL `https://mt1.google.com/vt/lyrs=s&x={x}&y={y}&z={z}`. The only difference from the hybrid URL is `lyrs=s`, imagery with no labels.  
 3. Change the CRS to EPSG: 26912, our usual CRS for Utah  
-4. Use the Data Source Manager to connect to the Utah SGID web service via “ArcGIS REST Servers”. Look back at Lab 6, steps \#9-15 if you don’t remember how to do this. It may also still be connected if you are on the same computer that you used for Lab 6\.  
-5. Add the UtahCountyBoundaries layer (not the similarly named Utah\_County\_Boundaries) to the map, using the web service connection.   
-    1. If the ArcGIS REST servers aren't working, go to the Utah SGID website to download instead.  
+4. Use the Data Source Manager to connect to the Utah SGID web service via “ArcGIS REST Servers”. Look back at Lab 6, steps \#10-16 if you don’t remember how to do this. It may also still be connected if you are on the same computer that you used for Lab 6\.  
+5. Add the **Utah\_County\_Boundaries** layer (with the underscores) to the map, using the web service connection. Expand it and add the layer inside it.  
+    1. Don't use the similarly named UtahCountyBoundaries (no underscores). It is the same data, but QGIS 3.44 refuses to add it and reports *Could not retrieve layer extent*, the problem Lab 6 warned you about.  
+    2. If the REST server isn't answering at all, use the [Open SGID backup method from Lab 6](../lab-06/README.md#backup-method-connect-to-the-open-sgid-database-instead) and add `boundaries.county_boundaries` instead.  
 
 > [!WARNING]
 > **We will not be using the web service to access the larger datasets**, even though it is possible. There's over 400,000 lines in just the roads dataset, and **tools take much longer to run on files that aren't located locally** on your computer. If you're using tools on large datasets, sometimes it can be beneficial to download a large dataset and save the time.
 
 6. Go to the UGRC website (gis.utah.gov). Find and **download** the same “Utah Roads” dataset that we used in Lab 2 (see step 11), and another one in the Demographics category called “Census 2020 Blocks”  
-    1. If the shapefile download isn’t working, use the “File Geodatabase” instead and treat it like a shapefile  
-7. Follow this [link](https://walmart-open-data-walmarttech.opendata.arcgis.com/datasets/39ce1c357bd2424ca481db84aed29464_0/explore?location=40.218329%2C-111.585158%2C10.61) to the Walmart Open Data Hub and download the shapefile of their store locations. Add it to the map too. This is Walmart’s own public data \- every operating US store and Sam’s Club, about 5,200 points (5,209 when this was last checked), kept current by the company.
+    1. If the shapefile download isn’t working (UGRC sometimes says the file is still being prepared; the roads did exactly that when this lab was checked), choose the GeoPackage download instead, as in Lab 2. It is the same data in a different file format.  
+7. Add Walmart’s store locations, streamed from Walmart’s own web service. Walmart retired the Open Data Hub download page that earlier versions of this lab used, but the data behind it is still public as an ArcGIS REST service, so you connect to it exactly as you connected to the SGID in Lab 6:  
+    1. In the Data Source Manager, select “ArcGIS REST Server” and click New. Name the connection “Walmart” and paste this URL: [https://services1.arcgis.com/WyIdBuoLrhwRHOSA/arcgis/rest/services](https://services1.arcgis.com/WyIdBuoLrhwRHOSA/arcgis/rest/services)  
+    2. Leave Authentication on “No Authentication”, click OK, then Connect.  
+    3. Find **Walmart\_Facilities\_(Public)** in the list (*not* the older STORE\_STATUS or Store\_Status services), expand it, and add the **Fieldlocations** layer inside it.  
+    4. This is every Walmart, Neighborhood Market and Sam’s Club in the United States and Canada, about 5,600 points (5,617 when this was last checked, in November 2026), kept current by the company. It can take 20 to 30 seconds to draw the first time.  
+    5. If the Walmart server will not connect, tell a TA. Do not digitize the stores by hand.  
 
 ### **Step 3: Build the GeoPackage**
 
@@ -105,9 +112,9 @@ You’ll also save all of your data layers for this project in a GeoPackage.
 > **There are many ways to use the Extract by Location tool.** Each checkbox (intersect, touch, contain, etc...) will return different results, so be aware of which one(s) you need to use.
 
 19. Remove any other census blocks layers from your project besides the output  
-20. Next, our Walmart dataset also has Sam’s Club locations and we don’t want them included in our work. Use the “Extract by Attribute” tool on your most recent Walmart locations layer to create a new layer with all the points that are not Sam’s Club locations. (Hint: see image) Save this to the same “UtahCounty.gpkg” GeoPackage.  
+20. Next, our Walmart dataset also has Sam’s Club locations and we don’t want them included in our work. Use the “Extract by Attribute” tool on your most recent Walmart locations layer (the clipped one from step 13) to create a new layer with all the points that are not Sam’s Club locations. The store type is in the field QGIS lists as **Banner** (its full name is `businessunit_banner_description`). Save this to the same “UtahCounty.gpkg” GeoPackage as “CurrentLocations”. You should have 12 stores left in Utah County.  
 
-![Extract by Attribute dialog on the walmarts layer with business_2 not equal to Sam's Club, saving to the CurrentLocations table in UtahCounty.gpkg](images/anchored4.png)
+![Extract by Attribute dialog on the Clipped Walmart layer with the Banner field not equal to Sam's Club, saving to the CurrentLocations table in UtahCounty.gpkg](images/anchored4.png)
 
 21. Remove any other Walmart locations layers from your project, just keeping your most recent output. You should now only have 4 vector layers \- store locations, freeway/highways, census blocks, and the boundaries of Utah County.
 
@@ -120,18 +127,33 @@ You’ll also save all of your data layers for this project in a GeoPackage.
     4. Expression: “PP\_TOTAL / $area \* 2589988” \- This is the mathematical expression to divide the PP\_TOTAL field by the area, and multiply by the conversion factor of the default square meters to square miles. This results in a population density per square mile for each polygon.  
 23. Save the edits, and toggle the editing tool off. You can check the last column in the attribute table to ensure that it worked properly.  
 24. Use the Extract by Attribute tool to create a new layer that only contains the census blocks with a population density over 5000 people/mile². Be sure to save this new layer to the UtahCounty GeoPackage.  
-25. Create a 2 mile buffer around the major roads polyline using the Buffer tool. Set the units dropdown next to the Distance box to “miles” (or enter 3218.69 meters).  We will be interested in the areas inside this buffer.  
-    1. Segments: 12 or more  
-    2. Dissolve result: TRUE (checked)  
-26. Create a 2 mile buffer around the existing Walmarts, using the same settings as the previous step. We will be interested in the areas outside this buffer.  
+> [!WARNING]
+> **Reproject before you buffer.** Every layer you downloaded or streamed for this lab arrives in
+> Web Mercator (EPSG:3857), whatever you set the project CRS to in step 3. Look for `[EPSG:3857]`
+> after the layer name in any tool's Input layer box. Buffer measures distance in the *layer's*
+> units, and a Web Mercator “meter” in Utah is only about three quarters of a real one, so a
+> 2-mile buffer typed on a Web Mercator layer comes out about 1.5 miles wide. That is the
+> Week 10 “Reproject Before You Buffer” slide, for real. Steps 25 and 26 fix it.
+
+25. Reproject the major roads, then buffer them 2 miles.  
+    1. Open **Reproject Layer** (Processing Toolbox, under Vector general). Input layer: your major roads layer from step 15. Target CRS: **EPSG:26912 - NAD83 / UTM zone 12N**. Save it to the UtahCounty GeoPackage as “MajorRoads\_UTM”.  
+    2. Now open the **Buffer** tool on MajorRoads\_UTM. Enter 2 in the Distance box and set the units dropdown next to it to “miles” (or enter 3218.69 meters). We will be interested in the areas inside this buffer.  
+    3. Segments: 12 or more  
+    4. Dissolve result: TRUE (checked)  
+
+    ![Reproject Layer dialog with MajorRoads in EPSG:3857 as input, target CRS EPSG:26912 NAD83 UTM zone 12N, saving the MajorRoads_UTM table to UtahCounty.gpkg](images/reproject-layer.png)
+
+    ![Buffer dialog on MajorRoads_UTM in EPSG:26912 with a distance of 2 miles, 12 segments and Dissolve result checked](images/buffer-dialog.png)
+
+26. Do the same for the existing Walmarts: reproject CurrentLocations to EPSG:26912 (save it as “CurrentLocations\_UTM”), then buffer that 2 miles with the same settings as the previous step. We will be interested in the areas outside this buffer.  
 27. Now use the Extract by Location tool to create a new layer that contains all of the high-density census blocks that are within the major road’s 2 mile buffer  
 28. Use the Extract by Location tool again to create a new layer from the previous output, erasing all of the polygons that are within 2 miles of the existing Walmart locations. (Hint: this time you want the checkbox that keeps features disjoint from the Walmart buffer.) Save this layer to the UtahCounty GeoPackage that you created, and name it “PotentialCustomers”.  
 
 ![Extract by Location dialog with the disjoint predicate checked, comparing the extracted census blocks to the Walmart buffer and saving the PotentialCustomers table to UtahCounty.gpkg](images/extract-by-location.png)
 
-29. The final result will be some small polygons scattered throughout Utah County \- similar to the following image (you should have noticeably more resulting polygons \- this example map was made with a stricter cutoff of \>4000 people/km2, which works out to over 10,000 people/mi2):  
+29. The final result will be clusters of small census block polygons scattered along the I-15 corridor and around Utah Lake, similar to the following image. When we ran this lab in QGIS 3.44 in November 2026, PotentialCustomers held 1,871 blocks with about 162,000 people. Expect a number close to that; a few blocks either way is normal. If you got closer to 2,500, you buffered in Web Mercator: go back to the warning above steps 25 and 26.  
 
-![Example result: Utah County outline with small clusters of dark polygons along the I-15 corridor, existing Walmart locations shown as orange dots](images/anchored5.png)
+![Example result in QGIS 3.44: Utah County with the PotentialCustomers blocks in magenta, clustered in Lehi, Orem, Provo, Saratoga Springs and Springville, the 12 existing Walmart stores as orange dots, and major roads in gray](images/anchored5.png)
 
 30. Finally, you will need to decide on where you think the best locations for a Walmart would be. If you uncheck all of the intermediate layers you will be able to see the best areas to build a new Walmart. Ideal locations might be an empty field surrounded by the resulting polygons, which represent the ideal population that is not “served” by a nearby Walmart. Non-ideal locations would be parks, school playgrounds, and cemeteries. You will need to find two locations. Show them on your map and justify in your report why these locations are the best. You’ll have to create a new point layer to mark these points on your final map (a shapefile is fine, or add it to your GeoPackage). Use the digitizing steps outlined in previous labs to do this.
 
@@ -139,7 +161,8 @@ You’ll also save all of your data layers for this project in a GeoPackage.
 
 31. Create a layout that shows the following:  
     1. A zoomed-out view showing your final “PotentialCustomers” layer, and two points for potential locations  
-    2. Inset maps of your chosen locations
+    2. Inset maps of your chosen locations, one for each site, on the Google Satellite basemap  
+    3. The cartographic elements from Lab 2: a title, a legend, a north arrow, a scale bar, and a text box with your name, the date, and your data sources (UGRC and Walmart)
 
 ## **Deliverables**
 

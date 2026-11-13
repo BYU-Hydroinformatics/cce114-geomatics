@@ -15,7 +15,7 @@
 
 Press <kbd>F</kbd> for fullscreen and <kbd>P</kbd> for presenter view with speaker notes.
 
-**Materials:** [Walmart open data](https://walmart-open-data-walmarttech.opendata.arcgis.com/)
+**Materials:** [Walmart store locations (ArcGIS REST service; Walmart retired its open data site in 2026)](https://services1.arcgis.com/WyIdBuoLrhwRHOSA/arcgis/rest/services)
 
 </div>
 

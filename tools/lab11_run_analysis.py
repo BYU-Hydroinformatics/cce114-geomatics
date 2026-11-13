@@ -15,6 +15,12 @@
 #
 # Where the lab leaves a choice to the student, this takes the plain reading and says so:
 # step 18 and step 27 use the "intersect" predicate; step 28 uses "are disjoint".
+#
+# Steps 25 and 26 reproject to EPSG:26912 before buffering (added 2026-11-13). Students' downloads
+# and REST layers arrive in Web Mercator, where a 3218.69 m buffer is only about 1.5 ground miles
+# in Utah. This script's inputs are already EPSG:26912, so the reprojection is a no-op here, but it
+# is kept so the chain matches the lab. Re-run 2026-11-13 with Walmart's new Walmart_Facilities_
+# (Public) service: 12 stores, 1,871 PotentialCustomers blocks, 162,396 people.
 import os
 import sys
 
@@ -82,11 +88,14 @@ dens = run('native:fieldcalculator',
 # Step 24: Extract by Attribute, Density > 5000.
 dense = run('native:extractbyattribute',
             {'INPUT': dens, 'FIELD': 'Density', 'OPERATOR': 2, 'VALUE': '5000'}, 'HighDensity')
-# Steps 25 and 26: 2-mile buffers, 12 segments, dissolved.
+# Steps 25 and 26: reproject, then 2-mile buffers, 12 segments, dissolved.
 buf = {'DISTANCE': 3218.69, 'SEGMENTS': 12, 'END_CAP_STYLE': 0, 'JOIN_STYLE': 0,
        'MITER_LIMIT': 2, 'DISSOLVE': True}
-road_buf = run('native:buffer', dict(buf, INPUT=major), 'MajorRoadsBuffer')
-store_buf = run('native:buffer', dict(buf, INPUT=current), 'WalmartBuffer')
+major_utm = run('native:reprojectlayer', {'INPUT': major, 'TARGET_CRS': 'EPSG:26912'}, 'MajorRoads_UTM')
+current_utm = run('native:reprojectlayer', {'INPUT': current, 'TARGET_CRS': 'EPSG:26912'},
+                  'CurrentLocations_UTM')
+road_buf = run('native:buffer', dict(buf, INPUT=major_utm), 'MajorRoadsBuffer')
+store_buf = run('native:buffer', dict(buf, INPUT=current_utm), 'WalmartBuffer')
 # Step 27: dense blocks that intersect the road buffer.
 near = run('native:extractbylocation', {'INPUT': dense, 'PREDICATE': [0], 'INTERSECT': road_buf},
            'DenseNearRoads')
