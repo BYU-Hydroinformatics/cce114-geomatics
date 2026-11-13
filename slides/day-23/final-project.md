@@ -151,7 +151,7 @@ To find land at least 2 miles from an existing Walmart, inside Utah County, and 
 <li>Any order works — you get the same answer</li>
 </ol>
 
-<!-- A and C both work and give the same result; D is the trap, because B cannot run at all: Difference needs the buffers, and they do not exist yet. So the rule is: an operation can only run after the layers it eats exist, and among the orders that respect that, the surviving geometry is the same (Tuesday's "Buffer? What next?" activity). Clipping early is the better of A and C because every later step runs on less data. Ask them to defend an answer before you say which. This is the same idea as the Figure 9-1 true/false question that shows up on the concepts exam. -->
+<!-- A and C both work and give the same result; D is the trap, because B cannot run at all: Difference needs the buffers, and they do not exist yet. So the first rule is: an operation can only run after the layers it eats exist. A and C give the same polygons in this particular chain because both buffers are of the original layers and Clip and Difference commute here (Tuesday's "Buffer? What next?" activity); clipping early is the better of the two because every later step runs on less data. In general, though, swapping steps changes the answer: buffering the result of an intersect is not the same as intersecting a buffer. That general rule is the Figure 9-1 true/false question on the concepts exam, so do not let "same answer here" turn into "order never matters". Ask them to defend an answer before you say which. -->
 
 ---
 
