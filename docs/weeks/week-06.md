@@ -4,6 +4,7 @@
 
 > [!IMPORTANT] Also this week
 > - [BYU Belonging Map (Wednesday)](../assignments/deliverables.md#experiences)
+> - [Concepts Exam 1 is next week: read the study guide](../study-guides/midterm-1.md)
 
 <div class="week-card week-card--slides" markdown>
 

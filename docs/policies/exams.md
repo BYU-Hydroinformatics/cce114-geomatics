@@ -7,14 +7,15 @@ Suite; their place in the sequence is on the [schedule](../schedule.md).
 
 A **Testing Center** exam covering all of the textbook quizzes and concepts lecture material
 covered in class up to that point: introduction to GIS, data models and file types, map design and
-symbology, GPS, vector data, and raster data.
+symbology, GPS, vector data, and raster data. See the [Midterm 1 Study Guide](../study-guides/midterm-1.md).
 
 ## Concepts Exam 2
 
 A **Testing Center** exam covering all of the textbook quizzes and concepts lecture material
 covered in class so far, with emphasis on the material since Exam 1: web services and finding
-data, geodesy and projections, metadata, geoprocessing, and site selection. A study session is held
-in class beforehand.
+data, geodesy and projections, metadata, geoprocessing, georeferencing and geoplanning, and site
+selection. A review is held in class during the exam week. See the
+[Midterm 2 Study Guide](../study-guides/midterm-2.md).
 
 ## Final Exam (finals week)
 

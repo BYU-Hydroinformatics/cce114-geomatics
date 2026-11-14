@@ -3,7 +3,7 @@
 <span id="tuesday-project-site-selection-part-1"></span> <span id="thursday-workflow-walkthrough-final-project-kickoff-exam-2-kahoot"></span>
 
 > [!IMPORTANT] Also this week
-> - [Concepts Exam 2 (Testing Center)](../policies/exams.md)
+> - [Concepts Exam 2 (Testing Center; study guide)](../study-guides/midterm-2.md)
 
 <div class="week-card week-card--slides" markdown>
 

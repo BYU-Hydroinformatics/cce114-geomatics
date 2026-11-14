@@ -2,6 +2,9 @@
 
 <span id="tuesday-geoplanning-site-layout-and-design"></span> <span id="thursday-georeferencing-in-qgis-and-the-web-mapping-with-ai-kickoff"></span>
 
+> [!IMPORTANT] Also this week
+> - [Concepts Exam 2 is next week: read the study guide](../study-guides/midterm-2.md)
+
 <div class="week-card week-card--slides" markdown>
 
 ## :material-presentation-play: Presentation Slides

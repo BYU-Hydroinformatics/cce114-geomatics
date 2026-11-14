@@ -3,7 +3,7 @@
 <span id="tuesday-finding-spatial-data"></span> <span id="thursday-web-services-getting-data-without-downloading-it"></span>
 
 > [!IMPORTANT] Also this week
-> - [Concepts Exam 1 (Testing Center, midweek)](../policies/exams.md)
+> - [Concepts Exam 1 (Testing Center, midweek; study guide)](../study-guides/midterm-1.md)
 
 <div class="week-card week-card--slides" markdown>
 

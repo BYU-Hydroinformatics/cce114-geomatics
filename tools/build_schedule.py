@@ -213,16 +213,17 @@ WEEKS = {
     4: dict(theme="The Global Positioning System", quiz=(3, "GPS, Part 1"), lab=3),
     5: dict(theme="Working with Vector Data", quiz=(4, "GPS, Part 2"), lab=4),
     6: dict(theme="Working with Raster Data", quiz=(5, "Getting Started with Raster Data"), lab=5,
-            also=["BYU Belonging Map (Wednesday)"]),
+            also=["BYU Belonging Map (Wednesday)", "Concepts Exam 1 is next week: read the study guide"]),
     7: dict(theme="Finding Spatial Data and Web Services", lab=6,
-            also=["Concepts Exam 1 (Testing Center, midweek)"]),
+            also=["Concepts Exam 1 (Testing Center, midweek; study guide)"]),
     8: dict(theme="Geodesy, Projections, and Coordinate Systems", quiz=(6, "Map Projections and Coordinate Systems"), lab=7),
     9: dict(theme="Metadata", quiz=(7, "Metadata"), lab=8),
     10: dict(theme="Geoprocessing", quiz=(8, "Geoprocessing and Spatial Data Analysis"), lab=9,
              quiz_opens="Thursday of Week 9",
              also=["Community and Professional Map Experience (Wednesday)"]),
-    11: dict(theme="Geoplanning and Georeferencing", lab=10),
-    12: dict(theme="Project Site Selection", lab=11, also=["Concepts Exam 2 (Testing Center)"]),
+    11: dict(theme="Geoplanning and Georeferencing", lab=10,
+             also=["Concepts Exam 2 is next week: read the study guide"]),
+    12: dict(theme="Project Site Selection", lab=11, also=["Concepts Exam 2 (Testing Center; study guide)"]),
     13: dict(theme="Final Project"),
     14: dict(theme="Final Project", also=["Web Mapping with AI Experience (Wednesday)",
                                           "Final project presentations (Thursday)", "Final Project (Saturday)"]),
@@ -361,6 +362,9 @@ def lab_link(text: str, prefix: str) -> str:
         return f"[Lab {n}: {LABS[n]}]({prefix}assignments/lab-{n:02d}/README.md)"
     if text.startswith("Quiz"):
         return f"[{text}]({prefix}assignments/deliverables.md#reading-quizzes)"
+    m = re.match(r"Concepts Exam ([12])\b", text)
+    if m:
+        return f"[{text}]({prefix}study-guides/midterm-{m.group(1)}.md)"
     if "Exam" in text:
         return f"[{text}]({prefix}policies/exams.md)"
     if "Final Project" in text:
