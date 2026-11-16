@@ -17,12 +17,18 @@ theme:
   icon:
     logo: material/map
 
+extra:
+  # Target of the "Email the professor" item in the floating feedback tab (overrides/main.html).
+  # Change it here when instructors change.
+  instructor_email: james.halgren@byu.edu
+
 extra_css:
   - stylesheets/extra.css
 
 extra_javascript:
   - javascripts/external-links.js
   - javascripts/menu.js
+  - javascripts/feedback.js
 
 plugins:
   - search
