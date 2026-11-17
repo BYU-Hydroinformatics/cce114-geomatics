@@ -75,3 +75,23 @@ section.lead footer {
 section.lead footer > span:last-child { text-align: right; }
 section.lead footer .updated { display: block; color: #7d8ba0; }
 section.lead footer a { color: #9aa6b6; text-decoration: none; }
+
+/* Click-to-reveal answers and steps.
+   A quiz slide marks its correct choice <li class="answer"> and ends with a one-item Marp
+   fragment list whose only content is <i class="step"></i>. The first press of → after the slide
+   appears "shows" that invisible fragment, and the red rounded box draws itself around the
+   answer. Elements with class reveal-1 / reveal-2 fade in on the first / second press the same
+   way (one step item per press). Going back to a slide shows everything, as Marp does for its
+   own fragments. Static exports (PNG, PDF) have no fragment state, so answers stay hidden. */
+section ul:has(> li > i.step) { position: absolute; width: 0; height: 0; margin: 0; padding: 0; overflow: hidden; }
+section li.answer { position: relative; width: fit-content; }
+section li.answer::after {
+  content: ""; position: absolute; inset: -0.14em -0.5em -0.14em -2.0em;
+  border: 0.13em solid #c8102e; border-radius: 0.7em; pointer-events: none;
+  opacity: 0; transform: scale(1.35);
+  transition: opacity 0.3s ease, transform 0.55s cubic-bezier(0.2, 1.5, 0.4, 1);
+}
+section .reveal-1, section .reveal-2 { opacity: 0; transform: translateY(14px); transition: opacity 0.5s ease, transform 0.5s ease; }
+section:has(li[data-marpit-fragment="1"][data-bespoke-marp-fragment="active"]) li.answer::after,
+section:has(li[data-marpit-fragment="1"][data-bespoke-marp-fragment="active"]) .reveal-1,
+section:has(li[data-marpit-fragment="2"][data-bespoke-marp-fragment="active"]) .reveal-2 { opacity: 1; transform: none; }

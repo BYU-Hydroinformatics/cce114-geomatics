@@ -21,7 +21,7 @@ Civil & Construction Engineering
 Brigham Young University
 Dr. Dan Ames and Dr. James Halgren
 
-<!-- Tuesday concept lecture, Week 12. This is the lecture behind Lab 11 and the pattern students will reuse in the final project. Thursday, we walk through the workflow diagrams and the final project description. -->
+<!-- Tuesday concept lecture, Week 12. This is the lecture behind Lab 11 and the pattern students will reuse in the final project. Thursday, we walk through the workflow diagrams and review for the exam; the final project is introduced next Tuesday. -->
 
 <!-- stamp:begin -->
 <!-- _footer: '<span>CCE 114 · Day 22 — Project Site Selection<span class="updated">Last Updated: 2026-11-17</span></span><span>© 2026 Daniel P. Ames · <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></span>' -->
@@ -31,7 +31,7 @@ Dr. Dan Ames and Dr. James Halgren
 
 # Today's Goals
 
-![bg right:32% w:88%](images/ws-workflow-generic.jpg)
+![bg right:32% w:88%](images/ws-workflow-layers.png)
 
 - By the end of class you should be able to:
   - Explain site selection as a **process of elimination**
@@ -77,79 +77,6 @@ Dr. Dan Ames and Dr. James Halgren
 ## Review: the common spatial analyses
 
 <!-- Anime-style cartoon generated with gpt-image-2.5-flare, October 2026; prompt in tools/divider-images/week12.json. -->
-
----
-
-<!-- _class: quiz -->
-
-# Which of the following are geoprocessing tools?
-
-![bg right:40% w:94%](images/ws-quiz-tools.jpg)
-
-<ol type="A">
-<li>Buffer</li>
-<li>Union</li>
-<li>Intersection</li>
-<li>Difference</li>
-<li>All of the above</li>
-</ol>
-
-<!-- Answer: E. All four are in the QGIS Processing Toolbox under Vector overlay and Vector geometry. (For instructors: ArcGIS and some textbooks call Difference Erase. These students have never used ArcGIS, so do not bring it up unless someone asks.) -->
-
----
-
-<!-- _class: quiz -->
-
-# Finding all the area that is *near* a school is done with which tool?
-
-![bg right:40% w:94%](images/ws-quiz-near-school.jpg)
-
-<ol type="A">
-<li>Intersection</li>
-<li>Union</li>
-<li>Buffer</li>
-<li>Difference</li>
-<li>Clip</li>
-</ol>
-
-<!-- Answer: C, Buffer. "Near" is always a distance, and a distance from a feature is always a buffer. Ask them what the buffer distance should be and watch them realize the criterion has to be written down as a number before the tool can run. -->
-
----
-
-<!-- _class: quiz -->
-
-# Eliminating an area that does *not* satisfy your query is done with…
-
-![bg right:40% w:94%](images/ws-quiz-erase.jpg)
-
-<ol type="A">
-<li>Union</li>
-<li>Clip</li>
-<li>Difference</li>
-<li>Buffer</li>
-<li>Intersection</li>
-</ol>
-
-<!-- Answer: C, Difference. Clip is defensible as a partial answer: Clip keeps what is inside the cutter, Difference keeps what is outside it. Both eliminate; they just eliminate opposite halves. This is the heart of the elimination idea, so spend a minute here. -->
-
----
-
-<!-- _class: quiz -->
-
-# Intersection and Union
-
-![bg right:40% w:94%](images/ws-quiz-overlay-attributes.jpg)
-
-When you run an **Intersection** or a **Union**, the attribute tables of both layers are joined together for…
-
-<ol type="A">
-<li>Union only</li>
-<li>Intersection only</li>
-<li>Neither</li>
-<li>Both</li>
-</ol>
-
-<!-- Answer: D, Both. Overlay tools carry the attributes of every input layer into the output. That is what makes them different from Clip, which keeps only the input layer's attributes and uses the second layer purely as a cookie cutter. -->
 
 ---
 
@@ -213,6 +140,176 @@ When you run an **Intersection** or a **Union**, the attribute tables of both la
 
 <!-- Catchments intersected with counties. The output has one polygon for every place a catchment and a county overlap, and its table carries both sets of attributes, for example County 19 and Catchment C. Point out how many more features come out than went in: overlay tools split geometry. -->
 
+---
+
+<!-- _class: quiz -->
+
+# Which of the following are geoprocessing tools?
+
+![bg right:40% w:94%](images/ws-quiz-tools.jpg)
+
+<ol type="A">
+<li>Buffer</li>
+<li>Union</li>
+<li>Intersection</li>
+<li>Difference</li>
+<li class="answer">All of the above</li>
+</ol>
+
+* <i class="step"></i>
+
+<!-- Let them discuss, then press → once to circle the answer. Answer: E. All four are in the QGIS Processing Toolbox under Vector overlay and Vector geometry. (For instructors: ArcGIS and some textbooks call Difference Erase. These students have never used ArcGIS, so do not bring it up unless someone asks.) -->
+
+---
+
+<!-- _class: quiz -->
+
+# Finding all the area that is *near* a school is done with which tool?
+
+![bg right:40% w:94%](images/ws-quiz-near-school.jpg)
+
+<ol type="A">
+<li>Intersection</li>
+<li>Union</li>
+<li class="answer">Buffer</li>
+<li>Difference</li>
+<li>Clip</li>
+</ol>
+
+* <i class="step"></i>
+
+<!-- Let them discuss, then press → once to circle the answer. Answer: C, Buffer. "Near" is always a distance, and a distance from a feature is always a buffer. Ask them what the buffer distance should be and watch them realize the criterion has to be written down as a number before the tool can run. -->
+
+---
+
+<!-- _class: quiz -->
+
+# Eliminating an area that does *not* satisfy your query is done with…
+
+![bg right:40% w:94%](images/ws-quiz-erase.jpg)
+
+<ol type="A">
+<li>Union</li>
+<li>Clip</li>
+<li class="answer">Difference</li>
+<li>Buffer</li>
+<li>Intersection</li>
+</ol>
+
+* <i class="step"></i>
+
+<!-- Let them discuss, then press → once to circle the answer. Answer: C, Difference. Clip is defensible as a partial answer: Clip keeps what is inside the cutter, Difference keeps what is outside it. Both eliminate; they just eliminate opposite halves. This is the heart of the elimination idea, so spend a minute here. -->
+
+---
+
+<!-- _class: quiz -->
+
+# Intersection and Union
+
+![bg right:40% w:94%](images/ws-quiz-overlay-attributes.jpg)
+
+When you run an **Intersection** or a **Union**, the attribute tables of both layers are joined together for…
+
+<ol type="A">
+<li>Union only</li>
+<li>Intersection only</li>
+<li>Neither</li>
+<li class="answer">Both</li>
+</ol>
+
+* <i class="step"></i>
+
+<!-- Answer: D, Both. Overlay tools carry the attributes of every input layer into the output. That is what makes them different from Clip, which keeps only the input layer's attributes and uses the second layer purely as a cookie cutter. Students often miss that each layer has its own, separate attribute table; the next two slides show the two tables and what QGIS actually writes out. Press → once after the discussion to circle the answer. -->
+
+---
+# Two layers, two attribute tables
+
+<style scoped>
+.attr { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 0 36px; align-items: start; font-size: 0.68em; margin-top: 0; }
+.attr .inputs { display: grid; grid-template-columns: 200px 1fr; gap: 6px 16px; align-items: center; }
+.attr img { width: 200px; display: block; }
+.attr .out img { width: 230px; margin: -6px auto 2px; }
+.attr table { margin: 0; font-size: 1em; }
+.attr th, .attr td { padding: 2px 9px; }
+.attr td.null { color: #9a9a9a; font-style: italic; }
+.attr h3 { margin: 0 0 6px; font-size: 1.25em; color: #002e5d; }
+.attr .cap { margin: 8px 0 0; }
+</style>
+
+<div class="attr">
+<div class="inputs">
+<img src="images/ws-attr-counties.png" alt="Counties layer: West County and East County">
+<div><h3>Counties</h3><table><thead><tr><th>county_id</th><th>county</th></tr></thead><tbody><tr><td>1</td><td>West County</td></tr><tr><td>2</td><td>East County</td></tr></tbody></table></div>
+<img src="images/ws-attr-catchments.png" alt="Catchments layer: one round catchment">
+<div><h3>Catchments</h3><table><thead><tr><th>catch_id</th><th>catchment</th></tr></thead><tbody><tr><td>C1</td><td>Catchment A</td></tr></tbody></table></div>
+</div>
+<div class="out reveal-1">
+<h3>Intersection output</h3>
+<img src="images/ws-attr-intersection.png" alt="Intersection output: two pieces, numbered 1 and 2">
+<table><thead><tr><th>piece</th><th>county_id</th><th>county</th><th>catch_id</th><th>catchment</th></tr></thead><tbody><tr><td><b>1</b></td><td>1</td><td>West County</td><td>C1</td><td>Catchment A</td></tr><tr><td><b>2</b></td><td>2</td><td>East County</td><td>C1</td><td>Catchment A</td></tr></tbody></table>
+<p class="cap">Every column from <b>both</b> tables. One row per piece where they overlap.</p>
+</div>
+</div>
+
+
+* <i class="step"></i>
+
+<!-- Point at the left first: each layer has its own attribute table, and the two tables know nothing about each other. Counties has county_id and county; Catchments has catch_id and catchment. Ask what columns the output will have before you press →. Then press → to bring in the Intersection output: two pieces, one in each county, and each row carries the county's columns AND the catchment's columns. This is not a mock-up: tools/qgis_day22_attribute_demo.py builds these two invented layers in QGIS 3.44 and runs the real Intersection; the table is its output, row for row. -->
+---
+# Union: both tables again, with gaps
+
+<style scoped>
+.attr { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 0 36px; align-items: start; font-size: 0.68em; margin-top: 0; }
+.attr .inputs { display: grid; grid-template-columns: 200px 1fr; gap: 6px 16px; align-items: center; }
+.attr img { width: 200px; display: block; }
+.attr .out img { width: 230px; margin: -6px auto 2px; }
+.attr table { margin: 0; font-size: 1em; }
+.attr th, .attr td { padding: 2px 9px; }
+.attr td.null { color: #9a9a9a; font-style: italic; }
+.attr h3 { margin: 0 0 6px; font-size: 1.25em; color: #002e5d; }
+.attr .cap { margin: 8px 0 0; }
+</style>
+
+<div class="attr">
+<div class="inputs">
+<img src="images/ws-attr-counties.png" alt="Counties layer: West County and East County">
+<div><h3>Counties</h3><table><thead><tr><th>county_id</th><th>county</th></tr></thead><tbody><tr><td>1</td><td>West County</td></tr><tr><td>2</td><td>East County</td></tr></tbody></table></div>
+<img src="images/ws-attr-catchments.png" alt="Catchments layer: one round catchment">
+<div><h3>Catchments</h3><table><thead><tr><th>catch_id</th><th>catchment</th></tr></thead><tbody><tr><td>C1</td><td>Catchment A</td></tr></tbody></table></div>
+</div>
+<div class="out reveal-1">
+<h3>Union output</h3>
+<img src="images/ws-attr-union.png" alt="Union output: five pieces, numbered 1 to 5">
+<table><thead><tr><th>piece</th><th>county_id</th><th>county</th><th>catch_id</th><th>catchment</th></tr></thead><tbody><tr><td><b>1</b></td><td>1</td><td>West County</td><td>C1</td><td>Catchment A</td></tr><tr><td><b>2</b></td><td>2</td><td>East County</td><td>C1</td><td>Catchment A</td></tr><tr><td><b>3</b></td><td>1</td><td>West County</td><td class="null">NULL</td><td class="null">NULL</td></tr><tr><td><b>4</b></td><td>2</td><td>East County</td><td class="null">NULL</td><td class="null">NULL</td></tr><tr><td><b>5</b></td><td class="null">NULL</td><td class="null">NULL</td><td>C1</td><td>Catchment A</td></tr></tbody></table>
+<p class="cap">Still both tables. A piece in only one layer gets <b>NULL</b> for the other layer's columns.</p>
+</div>
+</div>
+
+
+* <i class="step"></i>
+
+<!-- Same two inputs, press → for the Union. Union keeps everything from either layer, so it makes five pieces instead of two: the two overlap pieces (1 and 2) carry both tables just like the Intersection, the parts of each county outside the catchment (3 and 4) have NULL catchment columns, and the part of the catchment outside both counties (5) has NULL county columns. So the quiz answer is Both: Intersection and Union each bring both tables along. Clip is the one that does not; it keeps only the input layer's columns. Real QGIS 3.44 Union output, from the same script. -->
+---
+# In QGIS: which fields come along?
+
+<div class="columns" style="grid-template-columns: 1.55fr 1fr; align-items: center;">
+<div>
+
+![w:740](images/ws-intersection-dialog-qgis.png)
+
+</div>
+<div style="font-size: 0.78em;">
+
+- **Intersection** keeps every field from both layers by default: leave both pickers **empty**
+- Click **…** beside a picker to keep only the fields you need
+- **Advanced Parameters ▸ Overlay fields prefix** adds a prefix such as `c_` to the overlay's columns, so you can tell them apart
+- **Union** has no picker: it always keeps both tables
+- **Clip** keeps only the input layer's fields
+
+</div>
+</div>
+
+<!-- There is no "bring the attributes along" checkbox to remember: keeping both tables is the default. The two optional pickers, Input fields to keep and Overlay fields to keep, only ever trim. Captured from the real QGIS 3.44.13 Intersection dialog (Processing Toolbox ▸ Vector overlay ▸ Intersection) with the two demo layers from the previous slides; the prefix option was checked in the same dialog with Advanced Parameters open. The Union parameters (Input, Overlay, Overlay fields prefix, no field pickers) were checked with qgis_process help native:union. -->
 ---
 
 <!-- _class: lead -->
@@ -351,13 +448,11 @@ When you run an **Intersection** or a **Union**, the attribute tables of both la
 <!-- Fuller versions of each line: Select by Expression finds features matching a rule, e.g. all roads where RT_NAME = '0015', or all census blocks above a density threshold. Buffer is the area within a given distance of a feature. Clip cuts the input layer to the shape of an overlay layer. Intersection keeps only where two layers overlap and carries both attribute tables. Difference removes the input wherever the overlay covers it. Select by Location / Extract by Location picks features by how they sit relative to another layer. Dissolve merges features that share an attribute value into one. Field Calculator computes a new column, e.g. density = population / area. Reproject Layer writes a copy of a layer in a new CRS; run it before Buffer whenever the layer is in Web Mercator or latitude/longitude. These are the tools for Lab 11 and the final project. Every one of them is in the Processing Toolbox; teach them the search box at the top of the toolbox rather than memorizing menu paths. -->
 
 ---
-
 # Geoprocessing workflows
 
-![w:1000 center](images/ws-workflow-generic.jpg)
+![w:1140 center](images/ws-workflow-layers.png)
 
-<!-- This is the shape of every geoprocessing job. A rectangle is a layer, an oval is an operation. An operation eats layers and produces a new layer, which the next operation eats. Nothing else happens. Have them draw this shape on paper before they open QGIS: it is the single most useful habit in the course. -->
-
+<!-- The shape of every geoprocessing job. A rectangle is a layer, an oval is an operation. An operation eats one or more layers and makes a new layer, which the next operation eats. Some operations eat one layer (Buffer, Dissolve, Reproject Layer); many eat two (Intersection, Difference, Clip, Select by Location), which is how a second input joins the chain. The layers made along the way are intermediate layers: keep them and give them names you will recognize, so you can check each step and retrace your work. Have them draw this shape on paper before they open QGIS: it is the single most useful habit in the course. Original figure drawn by tools/draw_day22_figures.py; it replaces the diagram from Bolstad's GIS Fundamentals. -->
 ---
 
 # Utah County
@@ -485,11 +580,9 @@ When you run an **Intersection** or a **Union**, the attribute tables of both la
 ![bg right:36% w:94%](images/ws-thursday-lab.jpg)
 
 - Review of **workflow diagrams**: how to draw one and how to read someone else's
-- The **final mapping project** description, walked through in detail
-  - [Final project page](https://byu-hydroinformatics.github.io/cce114-geomatics/assignments/final-project/)
 - **Study session for Concepts Exam 2** — bring your questions
 
-<!-- Preview of Thursday. The Thursday session is the workflow diagram review and the final project introduction, then opens the floor for exam review. -->
+<!-- Preview of Thursday: the workflow diagram review, then the floor opens for exam review. The final mapping project is introduced next Tuesday (Week 13), so do not promise it on Thursday. -->
 
 ---
 
@@ -511,7 +604,7 @@ When you run an **Intersection** or a **Union**, the attribute tables of both la
   - Stores: Walmart's REST service (step 7). **Reproject before you buffer.**
 - **Concepts Exam 2** is in the **Testing Center this week** — check the closing time and do not leave it to the last day
 - No reading quiz this week; for the exam, review Bolstad & Manson's geoprocessing chapter and Quiz 8
-- Start reading the [final project description](https://byu-hydroinformatics.github.io/cce114-geomatics/assignments/final-project/) — it is introduced this week
+- The **final mapping project** is introduced **next Tuesday**
 - Questions? Office hours: [calendly.com/dan-ames/office-hours](https://calendly.com/dan-ames/office-hours)
 
 </div>
