@@ -203,6 +203,23 @@ For whichever you pick: **What are the criteria? What data are required? What to
 
 ---
 
+
+# From Walmart to your own project
+
+![bg right:36% w:94%](images/ws-carry-forward.jpg)
+
+- Write the criteria down as **numbers with units** before you open QGIS
+- Draw the **workflow diagram** on paper: layers as rectangles, tools as ovals
+- Check the **CRS** of every layer before any distance-based tool
+- **Clip to your study area early** so later steps run on less data
+- Name intermediate layers so you can retrace your steps
+- Report your **assumptions and thresholds** on the map, not just the result
+
+<!-- The transferable part of Lab 11. Lab 12 is the same workflow on the problem and county each student just chose. The Lab 12 report asks for the workflow diagram (the biggest single rubric item), so tell them to draw it as they go rather than reverse-engineering it later. Moved here from the end of the Day 22 Walmart deck on 2026-11-17. -->
+
+
+---
+
 # What to include in your written report
 
 ![bg right:34%](images/fp-report-space.jpg)

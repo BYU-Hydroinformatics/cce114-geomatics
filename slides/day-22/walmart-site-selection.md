@@ -565,21 +565,6 @@ When you run an **Intersection** or a **Union**, the attribute tables of both la
 
 ---
 
-# From Walmart to your own project
-
-![bg right:36% w:94%](images/ws-carry-forward.jpg)
-
-- Write the criteria down as **numbers with units** before you open QGIS
-- Draw the **workflow diagram** on paper: layers as rectangles, tools as ovals
-- Check the **CRS** of every layer before any distance-based tool
-- **Clip to your study area early** so later steps run on less data
-- Name intermediate layers so you can retrace your steps
-- Report your **assumptions and thresholds** on the map, not just the result
-
-<!-- The transferable part. Lab 12, the final project, is this same workflow on a problem and county each student chooses, done individually. The Lab 12 report asks for the workflow diagram, so tell them to draw it as they go rather than reverse-engineering it later. -->
-
----
-
 <!-- _class: activity -->
 
 # Thursday: hands-on in QGIS
