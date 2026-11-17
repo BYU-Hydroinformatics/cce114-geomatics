@@ -29,7 +29,7 @@ Some assignments are *designed* around AI: Lab 3 requires an AI-generated error 
 
 One bright line applies to every lab: **never present AI-generated results, screenshots, or measurements as something you produced in QGIS or in the field.** Fabricated data is an integrity problem, not an AI style choice.
 
-## 4. Final Project
+## 4. Final Project (Lab 12)
 AI use is strongly encouraged throughout your workflow design, data processing troubleshooting, and report writing. Since this project emphasizes documenting your own data-processing steps and decisions, be sure your final map and analysis reflect your own work and reasoning — disclose any AI assistance used along the way.
 
 ## 5. In-Class Activities

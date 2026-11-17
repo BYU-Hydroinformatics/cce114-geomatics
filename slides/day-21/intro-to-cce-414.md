@@ -24,7 +24,7 @@ Dr. Dan Ames
 <!-- This is a preview lecture, not a hands-on session: no laptop needed today. The whole hour is a tour of the follow-on course, CCE 414, and of the engineering problems it solves with GIS. Lab 10, Domes for Mozambique, is still due Saturday. -->
 
 <!-- stamp:begin -->
-<!-- _footer: '<span>CCE 114 · Day 21 — Introduction to CCE 414<span class="updated">Last Updated: 2026-10-27</span></span><span>© 2026 Daniel P. Ames · <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></span>' -->
+<!-- _footer: '<span>CCE 114 · Day 21 — Introduction to CCE 414<span class="updated">Last Updated: 2026-11-17</span></span><span>© 2026 Daniel P. Ames · <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></span>' -->
 <!-- stamp:end -->
 
 ---
@@ -486,12 +486,11 @@ The front half of the biofuel siting analysis — and this is only half of it
 
 ![bg right:36% w:94%](images/ce414-before-next-class.jpg)
 
-- **Lab 10: [Domes for Mozambique](https://byu-hydroinformatics.github.io/cce114-geomatics/assignments/lab-10/)** is due **Saturday at 11:59 pm**
-- Next week is **Week 12: Project Site Selection** — Tuesday and Thursday both
-- The **Final Project** is introduced next week; start thinking about a study area and a question you care about
-- Check Learning Suite for the reading and the open-book quiz
+- Spend the rest of today on **[Lab 12](https://byu-hydroinformatics.github.io/cce114-geomatics/assignments/lab-12/)**: bring a specific question
+- **Lab 12 presentations** start **Thursday**; the PDF is due **Saturday at 11:59 pm**
+- The **Web Mapping with AI Experience** is due **Wednesday**
 - Questions? Office hours: [calendly.com/dan-ames/office-hours](https://calendly.com/dan-ames/office-hours)
 
-<!-- Week 12 is site selection — the Walmart lab — plus the launch of the final project, and Concepts Exam 2 opens in the Testing Center. Tell students that the site selection lectures are the closest model for what the final project asks them to do. -->
+<!-- This deck is given on Tuesday of Week 14, before a Lab 12 work session, so this slide points at this week's deadlines. Updated 2026-11-17: it still listed Lab 10 and Week 12 from the deck's old place in the schedule. -->
 
 <!-- Conversion notes (2026-09-02): source "14 - Intro to Engineering Applications of GIS CEEn 414.pptx" (2021), 21 slides, no hidden slides, no speaker notes in the source (all notes here are new). CEEn 414 renamed to CCE 414 throughout; the source's "if you liked 214" now reads "if you liked CCE 114". Source slide 9 ("ArcGIS ModelBuilder") and slide 10-11 ("ArcPy and Python") were kept as descriptions of CCE 414 content but reworded to name the QGIS equivalents (Graphical Modeler, PyQGIS) alongside the ESRI ones. Source slide title "Infrastructure Citing" corrected to "Siting". ArcGIS screenshots kept and flagged for a possible re-shoot: ce414-zonal-statistics-dialog.jpg, ce414-celltower-tool-dialog.png, ce414-arcpy-snippet.png, ce414-arcpy-script.jpg, ce414-celltower-model.png, ce414-celltower-code.png, ce414-atlasmaker-dialog.png, ce414-model-concept.png, ce414-model-iowa-siting.jpg, ce414-model-bear-river.jpg, ce414-watershed-model.png, ce414-3d-visualization.jpg (ArcMap/ArcCatalog/ArcGlobe windows), ce414-arcglobe-earth.jpg (cropped from an ArcGlobe view), and the ArcGIS credit lines inside ce414-terrain-analysis-maps.jpg. No source slide was dropped: all 21 became slides here, with the source "Modeling" slide split into three (concept, Bear River model, Iowa model) and the source "Watershed Hydrology" slide split into two (purpose + map, then the full model diagram); new slides added for goals, course facts, section leads, "Should you take CCE 414?", the prior-year recording, and Before Next Class. TODO: confirm which software CCE 414 uses this year (the 2021 screenshots are ArcGIS 10 / ArcMap, not ArcGIS Pro) and whether the geocaching, old maps, NDVI, butte volume, avalanche, and atlas labs are still in the syllabus. TODO: confirm the Learning Suite reading and quiz for this week; this deck has no textbook chapter of its own. -->

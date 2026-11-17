@@ -2,7 +2,7 @@
 marp: true
 theme: cce114
 paginate: true
-footer: "CCE 114 · Day 23 — Final Mapping Project"
+footer: "CCE 114 · Day 23 — Workflow Walkthrough"
 ---
 
 <!-- _class: lead -->
@@ -12,17 +12,17 @@ footer: "CCE 114 · Day 23 — Final Mapping Project"
 
 ![w:110](images/byu-medallion.svg)
 
-# Final Mapping Project
+# Workflow Walkthrough
 
 CCE 114 Geomatics
 Civil & Construction Engineering
 Brigham Young University
 Dr. James Halgren and Dr. Dan Ames
 
-<!-- Thursday working session. Today has two halves: this deck, where we walk the site-selection workflow one more time and hand out the final project, and the concepts review deck for Exam 2. Have the final project instructions open on Learning Suite before class so students can follow along. -->
+<!-- Thursday working session. Today has two halves: this deck, where we walk the site-selection workflow one more time, and the concepts review deck for Exam 2. The final project (Lab 12: Choose Your Own Adventure) is introduced next Tuesday with its own deck, so do not hand it out today. -->
 
 <!-- stamp:begin -->
-<!-- _footer: '<span>CCE 114 · Day 23 — Final Mapping Project<span class="updated">Last Updated: 2026-11-17</span></span><span>© 2026 Daniel P. Ames · <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></span>' -->
+<!-- _footer: '<span>CCE 114 · Day 23 — Workflow Walkthrough<span class="updated">Last Updated: 2026-11-17</span></span><span>© 2026 Daniel P. Ames · <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></span>' -->
 <!-- stamp:end -->
 
 ---
@@ -36,10 +36,10 @@ By the end of class you should be able to:
 - Read a **workflow diagram** and say what each box and oval holds
 - Rebuild the **Lab 11 site-selection workflow** from criteria to final map
 - Name the **QGIS tool** that does each step
-- Choose your final project **problem and county**, and sketch its workflow
+- Explain geoprocessing as **cookie cutting**, step by step
 - Say exactly what you have to hand in, and when
 
-<!-- Working session, not a lecture. The goal is that everyone leaves with a chosen project, a chosen county, and a first draft of their processing steps written down. -->
+<!-- Working session, not a lecture. The goal is that everyone can read and draw a workflow diagram, which they will need for Lab 11 and again for Lab 12. -->
 
 ---
 
@@ -51,7 +51,7 @@ By the end of class you should be able to:
 
 ## What are the criteria? What data? What tools? In what order?
 
-<!-- Lab 11 (Walmart Site Selection) is the closest model for what the final project asks for. Walk it once more, out loud, before handing out the project. -->
+<!-- Lab 11 (Walmart Site Selection) is the closest model for Lab 12, the final project students start next Tuesday. Walk it once more, out loud. -->
 
 <!-- Anime-style cartoon generated with gpt-image-2.5-flare, October 2026; prompt in tools/divider-images/week12.json. -->
 
@@ -68,7 +68,7 @@ By the end of class you should be able to:
 - Within 2 miles of a highway
 - In Utah County
 
-<!-- Start with the plain-English conditions. Do not let anyone name a tool yet: first the conditions, then the data, then the tools. This is the same order the final project report has to follow. -->
+<!-- Start with the plain-English conditions. Do not let anyone name a tool yet: first the conditions, then the data, then the tools. This is the same order the Lab 12 report has to follow. -->
 
 ---
 
@@ -81,7 +81,7 @@ By the end of class you should be able to:
 - **Population density:** over **5000 people per square mile** (Census 2020 blocks)
 - **Adequate space:** stores run 51,000–224,000 ft², average about **102,000 ft²** — find places where that fits without demolishing a neighborhood
 
-<!-- The jump from "near a highway" to "within 2 miles of I-15 or a highway" is the whole trick. Every criterion needs a number and a layer before you can run a single tool. Their final project criteria have to be written this way too. -->
+<!-- The jump from "near a highway" to "within 2 miles of I-15 or a highway" is the whole trick. Every criterion needs a number and a layer before you can run a single tool. Their Lab 12 criteria have to be written this way too. -->
 
 ---
 
@@ -95,7 +95,7 @@ By the end of class you should be able to:
 - **Existing Walmart locations** — Walmart's own public ArcGIS REST service, streamed in like the SGID in Lab 6
 - All four arrive in **Web Mercator**: reproject before you buffer
 
-<!-- Three of the four come from UGRC and the fourth from Walmart itself; Walmart retired its Open Data Hub download in 2026, so Lab 11 step 7 connects to the Walmart_Facilities_(Public) feature service instead. For the final project, if a layer they need does not exist, digitizing their own is a legitimate data source as long as they say so in the report. The last bullet is the lesson from Tuesday's reproject slide: every one of these layers is EPSG:3857, so a 2-mile buffer is only about 1.5 miles unless they reproject to EPSG:26912 first. Note the agency renamed from AGRC to UGRC; older lab handouts and slides still say AGRC. -->
+<!-- Three of the four come from UGRC and the fourth from Walmart itself; Walmart retired its Open Data Hub download in 2026, so Lab 11 step 7 connects to the Walmart_Facilities_(Public) feature service instead. For Lab 12, if a layer they need does not exist, digitizing their own is a legitimate data source as long as they say so in the report. The last bullet is the lesson from Tuesday's reproject slide: every one of these layers is EPSG:3857, so a 2-mile buffer is only about 1.5 miles unless they reproject to EPSG:26912 first. Note the agency renamed from AGRC to UGRC; older lab handouts and slides still say AGRC. -->
 
 ---
 
@@ -269,259 +269,14 @@ What to notice:
 <!-- An example final map made in QGIS 3.44 Print Layout: a small site-selection result (cell towers within 1 km of a major road in Utah County) with title, subtitle, legend, scale bar, north arrow, data sources, projection, a neat line, and the result stated in one sentence. This is the standard. Past student maps often add inset maps zoomed to the best candidate sites, which is a good addition when the candidates are small. -->
 
 ---
-
-<!-- _class: lead -->
-
-![bg right:50%](images/fp-divider-project.jpg)
-
-# Your Final Mapping Project
-
-## Same workflow, your problem, your county
-
-<!-- Anime-style cartoon generated with gpt-image-2.5-flare, October 2026; prompt in tools/divider-images/week12.json. -->
-
----
-
-# What the project asks for
-
-![bg right:32% w:90%](images/fp-project-pin.jpg)
-
-- Work **alone or in pairs**; choose one of the five projects and one **Utah county**
-- Sign up so no two teams take the same county
-- Find at least **four** appropriate datasets
-- Decide which spatial analyses solve your problem, and **write the steps down first**
-- Run the analyses in QGIS, then build the final map
-- Report the data, the analyses, and the result — with **intermediate maps** along the way
-
-<!-- Read the full instructions document on Learning Suite with them; this slide is the summary, not the specification. The "write the steps down first" line is the one that saves them the most time. -->
-
----
-
-# Choose your problem
-
-![bg right:36% w:94%](images/fp-choose-problem.jpg)
-
-Find a suitable location for:
-
-<div class="columns">
-<div>
-
-1. A **solar panel farm**
-2. A **landfill**
-3. An **airport**
-
-</div>
-<div>
-
-4. An **LDS temple**
-5. An **irrigation reservoir**
-
-</div>
-</div>
-
-For whichever you pick: **What are the criteria? What data are required? What tools and analyses are needed? In what order?**
-
-<!-- Give them two minutes to pick before you walk the five option slides. Any of the five works with the same tool set they used in Lab 11. -->
-
----
-
-# Site selection: solar panel farm
-
-<div class="columns">
-<div>
-
-<a href="https://www.youtube.com/watch?v=QmHzP-i-mm4" target="_blank">
-
-![w:480](images/fp-solar-farm.jpg)
-
-</a>
-
-<p style="font-size:0.62em;margin-top:0;"><a href="https://www.youtube.com/watch?v=QmHzP-i-mm4" target="_blank">youtube.com/watch?v=QmHzP-i-mm4</a></p>
-
-</div>
-<div>
-
-- What are the criteria?
-- What are the data?
-- What are the tools?
-- What is the workflow?
-
-</div>
-</div>
-
-<!-- Solar farms want flat ground, high solar radiation, a nearby transmission line and a road, and land that is not already built on or protected. Slope from a DEM, land cover, and transmission lines are the obvious layers. The linked video is a short piece on utility-scale solar siting; click the image to open it in a new tab. -->
-
----
-
-# Site selection: landfill
-
-<div class="columns">
-<div>
-
-![w:400](images/fp-landfill.jpg)
-
-![w:340](images/fp-landfill-cell.jpg)
-
-</div>
-<div>
-
-- What are the criteria?
-- What are the data?
-- What are the tools?
-- What is the workflow?
-
-</div>
-</div>
-
-<!-- Landfills are the classic exclusion problem: away from housing, away from streams and wells, away from floodplains, off steep slopes, on the right soils, but still within a reasonable haul distance of the population it serves. Almost all Difference and Buffer. -->
-
----
-
-# Site selection: airport
-
-<div class="columns">
-<div>
-
-![w:520](images/fp-airport.jpg)
-
-</div>
-<div>
-
-- What are the criteria?
-- What are the data?
-- What are the tools?
-- What is the workflow?
-
-</div>
-</div>
-
-<!-- Airports need a long flat run of land, clear approach paths, distance from dense housing because of noise, and road access. Slope and land cover from raster data, plus population from Census blocks. -->
-
----
-
-# Site selection: irrigation reservoir
-
-<div class="columns">
-<div>
-
-![w:520](images/fp-reservoir.jpg)
-
-</div>
-<div>
-
-- What are the criteria?
-- What are the data?
-- What are the tools?
-- What is the workflow?
-
-</div>
-</div>
-
-<!-- Reservoirs want a narrow valley with a large upstream drainage area, close to the farmland being served, and not on top of existing development. This one leans hardest on terrain data. -->
-
----
-
-# Site selection: temple
-
-<div class="columns">
-<div>
-
-![w:480](images/fp-temple.jpg)
-
-</div>
-<div>
-
-- What are the criteria?
-- What are the data?
-- What are the tools?
-- What is the workflow?
-
-</div>
-</div>
-
-<!-- Temple siting is a membership-density and drive-time problem: far enough from existing temples, close to a large membership, visible, and on a parcel large enough to hold the building and its grounds. -->
-
----
-
-# What to include in your written report
-
-![bg right:34%](images/fp-report-space.jpg)
-
-- **Introduce the problem** — what are you siting, where, and why
-- **Describe the data** — every layer, where it came from, its projection
-- **Describe the tools** — each analysis step, with the workflow diagram
-- **Describe your result** — the sites you selected and why they won
-
-<!-- The report is a short technical document, not an essay. Two to three pages of text is enough; the maps carry the rest. Anything they downloaded needs a source named. -->
-
----
-
-# What to include in your map
-
-![bg right:36% w:94%](images/fp-map-elements.jpg)
-
-- All **required cartographic elements**: title, legend, scale bar, north arrow, neatline, data sources, projection
-- At least one **inset map** zoomed to the selected sites
-- A **point marker** on each selected site
-- **IMPORTANT:** also include maps of your **intermediate results** — the data you worked on to get to the final map
-
-<!-- The intermediate maps are where most of the grade separation happens. A single beautiful final map with no evidence of the processing is not a complete submission. Screenshots from the QGIS map canvas are fine for the intermediates; the final map goes through Print Layout. -->
-
----
-
-# The deliverable
-
-![bg right:36% w:94%](images/fp-deliverable-report.jpg)
-
-- **One PDF report**, submitted online
-- Due the **Saturday of Week 14**
-- The PDF holds the write-up, the **intermediate maps and data** that show your processing steps, and the **final results map**
-- Full instructions: **Learning Suite**
-- Also on the course site: [Final Project page](https://byu-hydroinformatics.github.io/cce114-geomatics/assignments/final-project/)
-- Closest model for the workflow: [Lab 11 — Walmart Site Selection](https://byu-hydroinformatics.github.io/cce114-geomatics/assignments/lab-11/)
-
-<!-- One PDF. Not a folder of images, not a QGIS project file. Point them at the instructions document on Learning Suite for the grading breakdown. -->
-
----
-
-<!-- _class: activity -->
-
-# Get started right now
-
-![bg right:36% w:94%](images/fp-signup-sheet.jpg)
-
-- Enter your **name**, your **selected project**, and your **selected county** in the class sign-up sheet
-- Only **one or two people per county** — first come, first served
-- Then, on paper: list your **criteria**, the **layers** you will need, and a first **workflow diagram**
-- Bring that sketch to the Week 13 work session
-
-<!-- TODO: the sign-up sheet link lives on Learning Suite; the 2018 deck linked a Google Sheet that is no longer current. Paste this term's sheet link here or drop it in the Learning Suite announcement before class. -->
-
-<!-- Spend the last fifteen minutes of class on this. Walk the room; the students who leave without a county chosen are the ones who fall behind. -->
-
----
-
-# The next two weeks
-
-![bg right:36% w:94%](images/fp-work-session.jpg)
-
-- **Week 13 and Week 14 class sessions are work sessions.** Bring your data; both instructors are in the room to help
-- Come with a specific question: a tool that will not run, a projection mismatch, a layer you cannot find
-- Use the work sessions for the hard parts and do the writing and map layout on your own time
-
-<!-- Set the expectation that work sessions are for getting unstuck, not for starting from zero. -->
-
----
-
 # Final Thoughts
 
 ![bg right:36% w:94%](images/fp-before-next-class.jpg)
 
-- Choose your **project and county** and sign up
-- Download at least **two** of your four datasets and open them in QGIS
-- **Web Mapping with AI Experience** is due in **Week 14**
-- Final project PDF is due the **Saturday of Week 14**
+- **Lab 11: Walmart Site Selection** is due **Saturday**
 - Study for **Concepts Exam 2** — see the review deck from today's second half
+- **Next Tuesday:** Lab 12, Choose Your Own Adventure, your own site-selection project
+- **Web Mapping with AI Experience** is due in **Week 14**
 - Questions? Office hours: [calendly.com/dan-ames/office-hours](https://calendly.com/dan-ames/office-hours)
 
 <!-- Remind them the Testing Center has its own closing hours and that the exam is not open book. -->
@@ -529,3 +284,6 @@ For whichever you pick: **What are the criteria? What data are required? What to
 <!-- Conversion notes (2026-09-02): source "Final Project Discussion.pptx" (2026, 25 slides). Nothing dropped outright; source slides 14 and 15 both used the same cookie photo and were merged into one slide, and the "Get Started" Google Sheet link was replaced with a pointer to Learning Suite because the 2018 sheet URL is stale (marked TODO). Software wording updated to QGIS throughout: ArcMap digitizing to QGIS digitizing, Erase noted as QGIS "Difference", ArcToolbox implied tools mapped to the Processing Toolbox, AGRC updated to UGRC. ArcGIS-era artwork kept and flagged: images/fp-example-map.jpg is a student final map produced in ArcMap (map output rather than a software screenshot, so it is still a fair example, but a QGIS Print Layout example would be better). The tool-order quiz slide and the QGIS name table are new, written for this session. -->
 
 <!-- Update 2026-09-02: ArcGIS-era screenshots replaced with QGIS 3.44 captures made by tools/qgis_reshoot_screens.py: fp-example-map-qgis.png (QGIS Print Layout example) replaces the ArcMap student map. -->
+
+
+<!-- Update 2026-11-17: renamed from "Final Mapping Project" (final-project.md) to "Workflow Walkthrough". The project half (the five problem options, the report, the map, the deliverable and the sign-up) moved to slides/day-24/lab-12-choose-your-own-adventure.md, because the final project is now introduced on Tuesday of Week 13 as Lab 12. -->

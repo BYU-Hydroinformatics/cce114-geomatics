@@ -12,7 +12,7 @@ Your grade comes from these categories. Point values for the current semester ar
 | **Experiences** | BYU Belonging Map, Community and Professional Map Experience, Web Mapping with AI Experience | See [Assignments](../assignments/deliverables.md#experiences) |
 | **Concepts Exams** | Two Testing Center exams covering quizzes, readings, and lectures to date | See [Exams](exams.md) |
 | **Final Exam** | Hands-on practical exam in QGIS, given in class | See [Exams](exams.md) |
-| **Final Project** | A mapping term project submitted as a PDF report | See [Final Project](../assignments/final-project.md) |
+| **Final Project (Lab 12)** | Lab 12: Choose Your Own Adventure, your own site-selection analysis, done individually and submitted as a PDF report | See [Lab 12](../assignments/lab-12/README.md) |
 | **Attendance and participation** | Mark your own attendance on Learning Suite for each Tuesday and Thursday class | Points are entered at the end of the semester |
 | **Course evaluation** | Extra credit for completing the end-of-semester evaluation at studentratings.byu.edu | The instructor sees who completed it, not the content |
 

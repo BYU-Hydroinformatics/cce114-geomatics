@@ -59,13 +59,13 @@ data comes mostly from the [Utah SGID](https://gis.utah.gov/products/sgid/).
   lab. Quizzes and lab reports are due **Saturday at 11:59 pm**.
 - **Two Concepts Exams** in the Testing Center and a hands-on **Final Exam** in the regular classroom
   during finals week. See [Exams](policies/exams.md).
-- **A final mapping project** in the last weeks of the semester. See
-  [Final Project](assignments/final-project.md).
+- **Lab 12: Choose Your Own Adventure**, the final project: your own site-selection analysis, done
+  individually in the last weeks of the semester. See [Lab 12](assignments/lab-12/README.md).
 - Each class period starts with a brief mini-devotional: a prayer, a spiritual thought, and a
   personal note offered by class members.
 
 The [Assignments](assignments/deliverables.md) page gives an overview of every kind of graded work:
-labs, reading quizzes, in-class activities, experiences, and the final project.
+labs, reading quizzes, in-class activities, experiences, and the Lab 12 final project.
 
 ## Where Everything Lives
 

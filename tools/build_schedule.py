@@ -180,22 +180,26 @@ DAYS = [
          links=[("Walmart store locations (ArcGIS REST service; Walmart retired its open data site in 2026)",
                 "https://services1.arcgis.com/WyIdBuoLrhwRHOSA/arcgis/rest/services")]),
     dict(n=23, week=12, kind="hands-on", title="Project Site Selection, Part 2", handson="week-12",
-         slides=[("Final Mapping Project", f"{SITE}/slides/day-23/final-project.html"), ("Concepts Review", f"{SITE}/slides/day-23/concepts-review.html")],
-         topics=["Review workflow diagrams and the Lab 11 model", "Final mapping project kickoff: choose a county and a problem", "Exam 2 review Kahoot"],
+         slides=[("Workflow Walkthrough", f"{SITE}/slides/day-23/workflow-walkthrough.html"), ("Concepts Review", f"{SITE}/slides/day-23/concepts-review.html")],
+         topics=["Review workflow diagrams and the Lab 11 model", "Geoprocessing as cookie cutting, in QGIS tool names", "Exam 2 review Kahoot"],
          note="Concepts Exam 2 is taken in the Testing Center this week."),
-    dict(n=24, week=13, kind="other", title="Final Project Work Session",
-         topics=["No formal lecture; come work on your final project with help from the instructors and TAs"]),
-    dict(n=25, week=13, kind="other", title="Final Project Work Session or Holiday",
+    dict(n=24, week=13, kind="concepts", title="Lab 12 Kickoff: Choose Your Own Adventure",
+         slides=[("Lab 12: Choose Your Own Adventure", f"{SITE}/slides/day-24/lab-12-choose-your-own-adventure.html")],
+         topics=["Lab 12, the final project: your own site-selection problem in a Utah county of your choice, done individually",
+                 "The five problem options, the report and the maps, and the due date",
+                 "Sign up for a problem and a county, then sketch your criteria and workflow before you leave"],
+         links=[("Lab 12: Choose Your Own Adventure", "../assignments/lab-12/README.md")]),
+    dict(n=25, week=13, kind="other", title="Lab 12 Work Session or Holiday",
          topics=["In Fall this is Thanksgiving and there is no class; in Winter it is a work session"]),
-    dict(n=26, week=14, kind="other", title="Introduction to CCE 414 and Final Project Work Session",
+    dict(n=26, week=14, kind="other", title="Introduction to CCE 414 and Lab 12 Work Session",
          slides=[("Introduction to CCE 414", f"{SITE}/slides/day-21/intro-to-cce-414.html")],
          topics=["A short introduction to CCE 414: Engineering Applications of GIS, the follow-on course",
-                 "Then work on your final project in class, and into the lab hour, with the instructor's help"],
+                 "Then work on your Lab 12 project in class, and into the lab hour, with the instructor's help"],
          links=[("Prior-year recording of the CCE 414 introduction", "https://youtu.be/RIzy0JRB8VI")]),
-    dict(n=27, week=14, kind="other", title="Final Project Presentations",
-         topics=["Groups present their final mapping projects; presentations continue on Tuesday of Week 15"]),
-    dict(n=28, week=15, kind="other", title="Final Project Presentations, Part 2, and Exam Review",
-         topics=["Remaining final project presentations",
+    dict(n=27, week=14, kind="other", title="Lab 12 Presentations",
+         topics=["Students present their Lab 12 projects; presentations continue on Tuesday of Week 15"]),
+    dict(n=28, week=15, kind="other", title="Lab 12 Presentations, Part 2, and Exam Review",
+         topics=["Remaining Lab 12 presentations",
                  "Final exam review; the exam itself is given during finals week in the university-scheduled slot for this class, in the regular classroom (exact date and time on Learning Suite)",
                  "The final is a practical, hands-on exam in QGIS; AI tools are not permitted"]),
     dict(n=29, week=15, kind="other", title="Last Day of Class",
@@ -224,9 +228,9 @@ WEEKS = {
     11: dict(theme="Geoplanning and Georeferencing", lab=10,
              also=["Concepts Exam 2 is next week: read the study guide"]),
     12: dict(theme="Project Site Selection", lab=11, also=["Concepts Exam 2 (Testing Center; study guide)"]),
-    13: dict(theme="Final Project"),
-    14: dict(theme="Final Project", also=["Web Mapping with AI Experience (Wednesday)",
-                                          "Final project presentations (Thursday)", "Final Project (Saturday)"]),
+    13: dict(theme="Choose Your Own Adventure", also=["Lab 12: Choose Your Own Adventure, introduced Tuesday (due Saturday of Week 14)"]),
+    14: dict(theme="Choose Your Own Adventure", lab=12, also=["Web Mapping with AI Experience (Wednesday)",
+                                                              "Lab 12 presentations (Thursday)"]),
     15: dict(theme="Presentations and Exam Review", also=["Final Exam (finals week, university-scheduled slot)",
                                                           "Course evaluation (extra credit)"]),
 }
@@ -242,7 +246,8 @@ def due_items(w: int) -> list:
 LABS = {1: "Getting Started with GIS", 2: "Map Symbology and Layouts", 3: "GPS Data Collection and Importing Into QGIS",
         4: "Changing, Editing, and Fixing GIS Data", 5: "Working with Raster Data", 6: "Spatial Data Web Services",
         7: "Projections and Coordinate Systems", 8: "Metadata", 9: "The Yellowstone Disaster",
-        10: "Domes for Mozambique", 11: "Walmart Site Selection"}
+        10: "Domes for Mozambique", 11: "Walmart Site Selection",
+        12: "Choose Your Own Adventure"}
 
 # Session types. Each has a badge label and a CSS modifier class; docs/stylesheets/extra.css
 # renders them as colored pills. Instructors are deliberately not named here: who teaches which
@@ -271,7 +276,7 @@ THURSDAY_TITLE = {
     17: "Writing and Evaluating Metadata",
     19: "Cities Near Rivers",
     21: "Georeferencing in QGIS, and the Web Mapping with AI Kickoff",
-    23: "Workflow Walkthrough, Final Project Kickoff, Exam 2 Kahoot",
+    23: "Workflow Walkthrough and Exam 2 Kahoot",
 }
 
 # Tuesday activities with a fuller write-up (setup, how to run it, what goes on Learning Suite),
@@ -367,12 +372,12 @@ def lab_link(text: str, prefix: str) -> str:
         return f"[{text}]({prefix}study-guides/midterm-{m.group(1)}.md)"
     if "Exam" in text:
         return f"[{text}]({prefix}policies/exams.md)"
-    if "Final Project" in text:
-        return f"[{text}]({prefix}assignments/final-project.md)"
+    if text.startswith("Lab 12"):
+        return f"[{text}]({prefix}assignments/lab-12/README.md)"
     if "Web Mapping" in text:
         return f"[{text}]({prefix}assignments/web-mapping-with-ai.md)"
     if "presentations" in text:
-        return f"[{text}]({prefix}assignments/final-project.md)"
+        return f"[{text}]({prefix}assignments/lab-12/README.md)"
     if "Experience" in text or "Belonging" in text:
         return f"[{text}]({prefix}assignments/deliverables.md#experiences)"
     if "evaluation" in text:
@@ -387,6 +392,17 @@ def week_reading(w: int) -> str:
         if d.get("reading") and d["reading"] not in seen:
             seen.append(d["reading"])
     return "; ".join(seen)
+
+
+# Anchors that sessions had before they were renamed. Learning Suite links to week pages by these
+# #tuesday-... / #thursday-... ids, so a renamed session keeps answering to its old one too. Added
+# 2026-11-17 when the final project became Lab 12 and its kickoff moved to Week 13.
+LEGACY_ANCHORS = {
+    12: ["thursday-workflow-walkthrough-final-project-kickoff-exam-2-kahoot"],
+    13: ["tuesday-final-project-work-session", "thursday-final-project-work-session-or-holiday"],
+    14: ["tuesday-introduction-to-cce-414-and-final-project-work-session", "thursday-final-project-presentations"],
+    15: ["tuesday-final-project-presentations-part-2-and-exam-review"],
+}
 
 
 def slug(text: str) -> str:
@@ -484,8 +500,8 @@ def handson_index() -> str:
            "walkthrough, the graded upload, and the snags that usually come up.", "",
            "Weeks 1, 7, 13, 14 and 15 have no hands-on session. Week 1 meets once, Week 7's Thursday "
            "is a short lecture on web services that ends in a follow-along (its steps are in the slides), "
-           "Week 13 is a work session or holiday, and Weeks 14 and 15 are final project "
-           "presentations.", "",
+           "Week 13 opens Lab 12 and is otherwise a work session or holiday, and Weeks 14 and 15 are "
+           "Lab 12 presentations.", "",
            "| Week | Session | Feeds | Graded activity |",
            "| --- | --- | --- | --- |"]
     for w in WEEKS:
@@ -594,7 +610,8 @@ def week_page(w: int) -> str:
 
     out = [f"# Week {w} — {info['theme']}", ""]
     # Anchors for the old per-session headings, which Learning Suite and the schedule link to.
-    out += [" ".join(f'<span id="{slug(session_heading(d, wd))}"></span>' for d, wd in sessions), ""]
+    ids = [slug(session_heading(d, wd)) for d, wd in sessions] + LEGACY_ANCHORS.get(w, [])
+    out += [" ".join(f'<span id="{i}"></span>' for i in ids), ""]
 
     also = [f"- {lab_link(x, '../')}" for x in info.get("also", [])]
     also += [f"- {d['note']}" for d, _ in sessions if d.get("note") and d["kind"] != "hands-on"]

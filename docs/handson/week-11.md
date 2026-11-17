@@ -119,7 +119,7 @@ The assignment is on the site: [Web Mapping with AI Experience](../assignments/w
 2. **A finished example.** Open one: pan, zoom, click a feature, see a popup. This is the bar; it is not high.
 3. **Live, in ten minutes.** Right-click any layer in QGIS > **Export > Save Features As...**, format **GeoJSON**, CRS **EPSG:4326** (web maps expect degrees). Open an AI assistant and paste a prompt like: *Write a single HTML file that uses Leaflet from a CDN, shows an OpenStreetMap basemap centered on Provo, Utah, loads `data.geojson` from the same folder, styles it, and shows each feature's attributes in a popup.* Save the reply as `index.html` next to the GeoJSON. Open it in a browser (a local server may be needed for `fetch`; the assignment page has the one-line command). It works, or the AI fixes what it got wrong when you paste the error back.
 4. **Publish.** Create a GitHub repository, upload the two files, enable **Pages** in Settings. The page URL is the submission. The assignment page walks this with screenshots.
-5. **Where to get help.** Harrison's office hours and the Week 12 lab hour. Start this week; the last week of the semester is the final project.
+5. **Where to get help.** Harrison's office hours and the Week 12 lab hour. Start this week; the last weeks of the semester are for Lab 12, the final project.
 
 ### Common snags
 

@@ -27,7 +27,7 @@ Dr. James Halgren and Dr. Dan Ames
 <!-- Anime-style cartoon generated with gpt-image-2.5-flare, October 2026; prompt in tools/divider-images/week12.json. -->
 
 <!-- stamp:begin -->
-<!-- _footer: '<span>CCE 114 · Day 23 — Concepts Review<span class="updated">Last Updated: 2026-10-27</span></span><span>© 2026 Daniel P. Ames · <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></span>' -->
+<!-- _footer: '<span>CCE 114 · Day 23 — Concepts Review<span class="updated">Last Updated: 2026-11-17</span></span><span>© 2026 Daniel P. Ames · <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></span>' -->
 <!-- stamp:end -->
 
 ---
@@ -773,7 +773,7 @@ Which statement is most accurate?
 <li>They store the map's cartographic elements</li>
 </ol>
 
-<!-- Answer: B. Each intermediate layer is one criterion applied. If your final answer looks wrong, the intermediates tell you which step broke it — and in the final project they are a graded part of the report. -->
+<!-- Answer: B. Each intermediate layer is one criterion applied. If your final answer looks wrong, the intermediates tell you which step broke it — and in Lab 12 they are a graded part of the report. -->
 
 ---
 
@@ -796,9 +796,9 @@ Which statement is most accurate?
 ![bg right:36% w:94%](images/cr-before-next-class.jpg)
 
 - Take **Concepts Exam 2** in the Testing Center — closed book, closed notes, **no AI tools**
-- **Week 13 and Week 14 classes are final project work sessions** — bring your data and a specific question
+- **Next Tuesday:** Lab 12, Choose Your Own Adventure, the final project, done individually
 - **Web Mapping with AI Experience** is due in **Week 14**
-- The **final project PDF** is due the **Saturday of Week 14**
+- The **Lab 12 PDF** is due the **Saturday of Week 14**
 - Questions? Office hours: [calendly.com/dan-ames/office-hours](https://calendly.com/dan-ames/office-hours)
 
 <!-- Fill in the exam window dates before class. -->

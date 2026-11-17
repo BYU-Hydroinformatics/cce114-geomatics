@@ -50,7 +50,7 @@ preview, and Before Next Class slides, and with software wording updated from Ar
 | 4 | Maps, Symbology, and Cartography | 18 | Introduction to Geoprocessing |
 | 6 | GPS, Part 1 | 21 | Introduction to CCE 414 |
 | 7 | GPS, Part 2 | 22 | Project Site Selection (Walmart) |
-| 8 | Working with Vector Data | 23 | Final Mapping Project; Concepts Review |
+| 8 | Working with Vector Data | 23 | Workflow Walkthrough; Concepts Review |
 | 10 | Raster Analysis and Map Algebra | | |
 | 12 | Finding Spatial Data and Web Services | | |
 
@@ -354,8 +354,16 @@ Collected from the conversion notes at the end of each deck (search for `Convers
   2026-11-05 (site layout and design, built around Lab 10), with the `layout` self-check quiz and
   the Paper Site Plan activity and its printable handout.
 - **Surveying:** three archived Surveying decks are not in the current schedule and were not converted.
-- **Final project:** the site page is a placeholder that points to the Mapping Term Project
-  document on Learning Suite; converting that document into the page is the natural next step.
+- **Final project is Lab 12 (2026-11-17).** At Dan's request the final project became
+  `docs/assignments/lab-12/README.md`, "Lab 12: Choose Your Own Adventure" (the name CE 414 uses),
+  done **individually**, introduced on Tuesday of Week 13 with its own deck
+  (`slides/day-24/lab-12-choose-your-own-adventure.md`, the project half of the old Day 23 deck,
+  which is now `slides/day-23/workflow-walkthrough.md`). `docs/assignments/final-project.md` is a
+  pointer kept for old links, and `LEGACY_ANCHORS` in `tools/build_schedule.py` keeps the renamed
+  sessions' old `#tuesday-...` anchors working. Due date (Saturday of Week 14), presentations
+  (Thursday of Week 14 and Tuesday of Week 15) and the five problem options are unchanged. Still on
+  Learning Suite: the Mapping Term Project document and the assignment name, which still say final
+  project and allow pairs.
 - **Lab headings: done for all eleven (2026-09-10).** Every lab now uses "Step by Step Instructions"
   with numbered, active-voice subsection headings and one continuous step sequence, and none names a
   semester. If a heading is ever renamed again, check for inbound anchor links first; there were

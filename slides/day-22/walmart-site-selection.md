@@ -21,7 +21,7 @@ Civil & Construction Engineering
 Brigham Young University
 Dr. Dan Ames and Dr. James Halgren
 
-<!-- Tuesday concept lecture, Week 12. This is the lecture behind Lab 11 and the pattern students will reuse in the final project. Thursday, we walk through the workflow diagrams and review for the exam; the final project is introduced next Tuesday. -->
+<!-- Tuesday concept lecture, Week 12. This is the lecture behind Lab 11 and the pattern students will reuse in Lab 12, the final project. Thursday, we walk through the workflow diagrams and review for the exam; Lab 12 is introduced next Tuesday. -->
 
 <!-- stamp:begin -->
 <!-- _footer: '<span>CCE 114 · Day 22 — Project Site Selection<span class="updated">Last Updated: 2026-11-17</span></span><span>© 2026 Daniel P. Ames · <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></span>' -->
@@ -558,7 +558,7 @@ When you run an **Intersection** or a **Union**, the attribute tables of both la
 
 ---
 
-# What to carry into the final project
+# From Walmart to your own project
 
 ![bg right:36% w:94%](images/ws-carry-forward.jpg)
 
@@ -569,7 +569,7 @@ When you run an **Intersection** or a **Union**, the attribute tables of both la
 - Name intermediate layers so you can retrace your steps
 - Report your **assumptions and thresholds** on the map, not just the result
 
-<!-- The transferable part. Every final project is some version of this workflow with different criteria. Tell them the workflow diagram is a required deliverable for the project so they draw it now rather than reverse-engineering it later. -->
+<!-- The transferable part. Lab 12, the final project, is this same workflow on a problem and county each student chooses, done individually. The Lab 12 report asks for the workflow diagram, so tell them to draw it as they go rather than reverse-engineering it later. -->
 
 ---
 
@@ -582,7 +582,7 @@ When you run an **Intersection** or a **Union**, the attribute tables of both la
 - Review of **workflow diagrams**: how to draw one and how to read someone else's
 - **Study session for Concepts Exam 2** — bring your questions
 
-<!-- Preview of Thursday: the workflow diagram review, then the floor opens for exam review. The final mapping project is introduced next Tuesday (Week 13), so do not promise it on Thursday. -->
+<!-- Preview of Thursday: the workflow diagram review, then the floor opens for exam review. Lab 12, the final project, is introduced next Tuesday (Week 13), so do not promise it on Thursday. -->
 
 ---
 
@@ -604,7 +604,7 @@ When you run an **Intersection** or a **Union**, the attribute tables of both la
   - Stores: Walmart's REST service (step 7). **Reproject before you buffer.**
 - **Concepts Exam 2** is in the **Testing Center this week** — check the closing time and do not leave it to the last day
 - No reading quiz this week; for the exam, review Bolstad & Manson's geoprocessing chapter and Quiz 8
-- The **final mapping project** is introduced **next Tuesday**
+- **Lab 12: Choose Your Own Adventure**, the final project, is introduced **next Tuesday**
 - Questions? Office hours: [calendly.com/dan-ames/office-hours](https://calendly.com/dan-ames/office-hours)
 
 </div>

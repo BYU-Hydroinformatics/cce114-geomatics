@@ -1,6 +1,6 @@
 # Week 12 — Project Site Selection
 
-<span id="tuesday-project-site-selection-part-1"></span> <span id="thursday-workflow-walkthrough-final-project-kickoff-exam-2-kahoot"></span>
+<span id="tuesday-project-site-selection-part-1"></span> <span id="thursday-workflow-walkthrough-and-exam-2-kahoot"></span> <span id="thursday-workflow-walkthrough-final-project-kickoff-exam-2-kahoot"></span>
 
 > [!IMPORTANT] Also this week
 > - [Concepts Exam 2 (Testing Center; study guide)](../study-guides/midterm-2.md)
@@ -10,7 +10,7 @@
 ## :material-presentation-play: Presentation Slides
 
 - **Tuesday** — [Project Site Selection: the Walmart Problem](https://byu-hydroinformatics.github.io/cce114-geomatics/slides/day-22/walmart-site-selection.html) — Site selection as a process of elimination; Geoprocessing site selection example: Walmart
-- **Thursday** — [Final Mapping Project](https://byu-hydroinformatics.github.io/cce114-geomatics/slides/day-23/final-project.html)
+- **Thursday** — [Workflow Walkthrough](https://byu-hydroinformatics.github.io/cce114-geomatics/slides/day-23/workflow-walkthrough.html)
 - **Thursday** — [Concepts Review](https://byu-hydroinformatics.github.io/cce114-geomatics/slides/day-23/concepts-review.html)
 
 Press <kbd>F</kbd> for fullscreen and <kbd>P</kbd> for presenter view with speaker notes.
@@ -27,7 +27,7 @@ Press <kbd>F</kbd> for fullscreen and <kbd>P</kbd> for presenter view with speak
 
 **Hands-On Practice**{ .handson-cta__eyebrow }
 
-**Workflow Walkthrough, Final Project Kickoff, Exam 2 Kahoot**{ .handson-cta__title }
+**Workflow Walkthrough and Exam 2 Kahoot**{ .handson-cta__title }
 
 This session has its own step-by-step guide: what you need, an overview, the click-by-click QGIS walkthrough, what to hand in, and the snags that usually come up.
 

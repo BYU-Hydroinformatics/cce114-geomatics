@@ -1,12 +1,19 @@
-# Week 13 — Final Project
+# Week 13 — Choose Your Own Adventure
 
-<span id="tuesday-final-project-work-session"></span> <span id="thursday-final-project-work-session-or-holiday"></span>
+<span id="tuesday-lab-12-kickoff-choose-your-own-adventure"></span> <span id="thursday-lab-12-work-session-or-holiday"></span> <span id="tuesday-final-project-work-session"></span> <span id="thursday-final-project-work-session-or-holiday"></span>
+
+> [!IMPORTANT] Also this week
+> - [Lab 12: Choose Your Own Adventure, introduced Tuesday (due Saturday of Week 14)](../assignments/lab-12/README.md)
 
 <div class="week-card week-card--slides" markdown>
 
 ## :material-presentation-play: Presentation Slides
 
-*No slides this week.*
+- **Tuesday** — [Lab 12: Choose Your Own Adventure](https://byu-hydroinformatics.github.io/cce114-geomatics/slides/day-24/lab-12-choose-your-own-adventure.html) — Lab 12, the final project: your own site-selection problem in a Utah county of your choice, done individually; The five problem options, the report and the maps, and the due date; Sign up for a problem and a county, then sketch your criteria and workflow before you leave
+
+Press <kbd>F</kbd> for fullscreen and <kbd>P</kbd> for presenter view with speaker notes.
+
+**Materials:** [Lab 12: Choose Your Own Adventure](../assignments/lab-12/README.md)
 
 </div>
 
@@ -14,8 +21,7 @@
 
 ## :material-account-group: In-Class Practice
 
-- **Tuesday** — **Final Project Work Session.** No formal lecture; come work on your final project with help from the instructors and TAs.
-- **Thursday** — **Final Project Work Session or Holiday.** In Fall this is Thanksgiving and there is no class; in Winter it is a work session.
+- **Thursday** — **Lab 12 Work Session or Holiday.** In Fall this is Thanksgiving and there is no class; in Winter it is a work session.
 
 </div>
 

@@ -21,7 +21,7 @@ at the end to copy every letter onto the sheet.
 
 **What is not on this exam.** **Lab 11** (Walmart Site Selection) is due the same week as the exam,
 so no question depends on having finished it. The **Week 12 Tuesday lecture** on site selection is
-on the exam, though. The final project and the Web Mapping with AI Experience are not on it.
+on the exam, though. Lab 12 (the final project) and the Web Mapping with AI Experience are not on it.
 
 ## How to study for this exam
 

@@ -59,11 +59,12 @@ Learn how to build a website with a map on it, with AI assistance from the start
 page with an interactive map showing a layer you exported from QGIS, plus a short note on how you
 used the AI. Full instructions: [Web Mapping with AI Experience](web-mapping-with-ai.md).
 
-## Final Project
+## Final Project: Lab 12
 
-A mapping term project at the end of the semester that brings the skills from the labs together:
-finding data, building a workflow, running an analysis, and communicating the result with maps.
-See [Final Project](final-project.md).
+The final project is [Lab 12: Choose Your Own Adventure](lab-12/README.md), done individually: you
+choose a site-selection problem and a Utah county, then find the data, build the workflow, run the
+analysis in QGIS, and communicate the result with maps. It is introduced on Tuesday of Week 13 and
+due the Saturday of Week 14, with a short in-class presentation.
 
 ## Attendance and Course Evaluation
 

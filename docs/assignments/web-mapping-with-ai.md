@@ -25,7 +25,7 @@ The page itself must stay online through the last day of finals.
 | --- | --- |
 | Interactive map | Pan and zoom in the browser. Leaflet, MapLibre GL, or OpenLayers are all fine; Google Maps and ArcGIS JS are fine too if you can use them free. |
 | Basemap | Any tile basemap: OpenStreetMap, a Carto style, satellite. |
-| Your own layer | At least one layer **you exported from QGIS** as GeoJSON, drawn on the map. Something from a lab, the final project, or the Belonging Map all count. |
+| Your own layer | At least one layer **you exported from QGIS** as GeoJSON, drawn on the map. Something from a lab (Lab 12 included) or the Belonging Map all count. |
 | Popups | Clicking a feature shows at least two of its attributes. |
 | Title and credits | A title, your name, and one line naming the data source. |
 | Public | Hosted where anyone can open the URL without logging in. |
