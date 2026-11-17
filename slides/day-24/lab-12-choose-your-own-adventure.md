@@ -267,9 +267,9 @@ For whichever you pick: **What are the criteria? What data are required? What to
 
 ![bg right:36% w:94%](images/fp-work-session.jpg)
 
-- **The rest of today, Thursday of Week 13 (Winter only; Fall has Thanksgiving), and Tuesday of Week 14 are work sessions.** Bring your data; instructors are in the room to help
+- **The rest of today, Thursday of Week 13 (Winter only; Fall has Thanksgiving), and Tuesday and Thursday of Week 14 are work sessions.** Bring your data; instructors are in the room to help
 - Come with a specific question: a tool that will not run, a projection mismatch, a layer you cannot find
-- Presentations start **Thursday of Week 14**; the PDF is due the **Saturday of Week 14**
+- No presentation: the **PDF report** is the deliverable, due the **Saturday of Week 14**
 - Use the work sessions for the hard parts and do the writing and map layout on your own time
 
 <!-- Set the expectation that work sessions are for getting unstuck, not for starting from zero. -->
@@ -282,7 +282,7 @@ For whichever you pick: **What are the criteria? What data are required? What to
 - Sign up with your **problem and county** before you leave
 - Download at least **two** of your four datasets and open them in QGIS
 - **Web Mapping with AI Experience** is due in **Week 14**
-- **Lab 12** presentations start **Thursday of Week 14**; the PDF is due the **Saturday of Week 14**
+- The **Lab 12** PDF is due the **Saturday of Week 14**; there is no presentation
 - Questions? Office hours: [calendly.com/dan-ames/office-hours](https://calendly.com/dan-ames/office-hours)
 
 <!-- Built 2026-11-17 from the project half of the former Day 23 "Final Mapping Project" deck, when the final project was renamed Lab 12: Choose Your Own Adventure (the name CE 414 uses), made individual instead of pairs or groups, and moved from Thursday of Week 12 to Tuesday of Week 13. -->

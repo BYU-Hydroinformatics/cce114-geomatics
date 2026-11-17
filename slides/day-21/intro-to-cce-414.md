@@ -487,7 +487,7 @@ The front half of the biofuel siting analysis — and this is only half of it
 ![bg right:36% w:94%](images/ce414-before-next-class.jpg)
 
 - Spend the rest of today on **[Lab 12](https://byu-hydroinformatics.github.io/cce114-geomatics/assignments/lab-12/)**: bring a specific question
-- **Lab 12 presentations** start **Thursday**; the PDF is due **Saturday at 11:59 pm**
+- **Thursday** is the last Lab 12 work session; the PDF is due **Saturday at 11:59 pm**
 - The **Web Mapping with AI Experience** is due **Wednesday**
 - Questions? Office hours: [calendly.com/dan-ames/office-hours](https://calendly.com/dan-ames/office-hours)
 

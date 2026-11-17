@@ -1,6 +1,6 @@
-# Week 15 — Presentations and Exam Review
+# Week 15 — Exam Review
 
-<span id="tuesday-lab-12-presentations-part-2-and-exam-review"></span> <span id="thursday-last-day-of-class"></span> <span id="tuesday-final-project-presentations-part-2-and-exam-review"></span>
+<span id="tuesday-final-exam-review"></span> <span id="thursday-last-day-of-class"></span> <span id="tuesday-final-project-presentations-part-2-and-exam-review"></span> <span id="tuesday-lab-12-presentations-part-2-and-exam-review"></span>
 
 > [!IMPORTANT] Also this week
 > - [Final Exam (finals week, university-scheduled slot)](../policies/exams.md)
@@ -18,7 +18,7 @@
 
 ## :material-account-group: In-Class Practice
 
-- **Tuesday** — **Lab 12 Presentations, Part 2, and Exam Review.** Remaining Lab 12 presentations. Final exam review; the exam itself is given during finals week in the university-scheduled slot for this class, in the regular classroom (exact date and time on Learning Suite). The final is a practical, hands-on exam in QGIS; AI tools are not permitted.
+- **Tuesday** — **Final Exam Review.** Final exam review; the exam itself is given during finals week in the university-scheduled slot for this class, in the regular classroom (exact date and time on Learning Suite). The final is a practical, hands-on exam in QGIS; AI tools are not permitted.
 - **Thursday** — **Last Day of Class.** Final exam study session or wrap-up; in some semesters this is a university reading day with no class.
 
 </div>

@@ -92,7 +92,7 @@ discussion. It must include at least:
   data that show your processing steps, and the final results map. Not a folder of images and not a
   QGIS project file.
 * Due the **Saturday of Week 14** at 11:59 pm.
-* You also **present** your project in class, on Thursday of Week 14 or Tuesday of Week 15.
+* There is no presentation: the report is the deliverable.
 
 ## **Grading Rubric (60 points)**
 
@@ -109,7 +109,8 @@ discussion. It must include at least:
 ## **Getting Help**
 
 The rest of class on Tuesday of Week 13, Thursday of Week 13 in a Winter semester (it is
-Thanksgiving in Fall), and Tuesday of Week 14 are work sessions. Bring your data and a specific
+Thanksgiving in Fall), the second half of Tuesday of Week 14, and Thursday of Week 14 are work
+sessions. Bring your data and a specific
 question: a tool that will not run, a projection mismatch, a layer you cannot find. Use the work
 sessions for the hard parts and do the writing and map layout on your own time.
 

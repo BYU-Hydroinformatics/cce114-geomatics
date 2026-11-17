@@ -64,7 +64,7 @@ used the AI. Full instructions: [Web Mapping with AI Experience](web-mapping-wit
 The final project is [Lab 12: Choose Your Own Adventure](lab-12/README.md), done individually: you
 choose a site-selection problem and a Utah county, then find the data, build the workflow, run the
 analysis in QGIS, and communicate the result with maps. It is introduced on Tuesday of Week 13 and
-due the Saturday of Week 14, with a short in-class presentation.
+due the Saturday of Week 14. There is no presentation; the report is the deliverable.
 
 ## Attendance and Course Evaluation
 

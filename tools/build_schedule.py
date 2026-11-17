@@ -196,11 +196,10 @@ DAYS = [
          topics=["A short introduction to CCE 414: Engineering Applications of GIS, the follow-on course",
                  "Then work on your Lab 12 project in class, and into the lab hour, with the instructor's help"],
          links=[("Prior-year recording of the CCE 414 introduction", "https://youtu.be/RIzy0JRB8VI")]),
-    dict(n=27, week=14, kind="other", title="Lab 12 Presentations",
-         topics=["Students present their Lab 12 projects; presentations continue on Tuesday of Week 15"]),
-    dict(n=28, week=15, kind="other", title="Lab 12 Presentations, Part 2, and Exam Review",
-         topics=["Remaining Lab 12 presentations",
-                 "Final exam review; the exam itself is given during finals week in the university-scheduled slot for this class, in the regular classroom (exact date and time on Learning Suite)",
+    dict(n=27, week=14, kind="other", title="Lab 12 Work Session",
+         topics=["Last in-class work time on Lab 12 before the report is due Saturday; bring a specific question"]),
+    dict(n=28, week=15, kind="other", title="Final Exam Review",
+         topics=["Final exam review; the exam itself is given during finals week in the university-scheduled slot for this class, in the regular classroom (exact date and time on Learning Suite)",
                  "The final is a practical, hands-on exam in QGIS; AI tools are not permitted"]),
     dict(n=29, week=15, kind="other", title="Last Day of Class",
          topics=["Final exam study session or wrap-up; in some semesters this is a university reading day with no class"]),
@@ -229,9 +228,8 @@ WEEKS = {
              also=["Concepts Exam 2 is next week: read the study guide"]),
     12: dict(theme="Project Site Selection", lab=11, also=["Concepts Exam 2 (Testing Center; study guide)"]),
     13: dict(theme="Choose Your Own Adventure", also=["Lab 12: Choose Your Own Adventure, introduced Tuesday (due Saturday of Week 14)"]),
-    14: dict(theme="Choose Your Own Adventure", lab=12, also=["Web Mapping with AI Experience (Wednesday)",
-                                                              "Lab 12 presentations (Thursday)"]),
-    15: dict(theme="Presentations and Exam Review", also=["Final Exam (finals week, university-scheduled slot)",
+    14: dict(theme="Choose Your Own Adventure", lab=12, also=["Web Mapping with AI Experience (Wednesday)"]),
+    15: dict(theme="Exam Review", also=["Final Exam (finals week, university-scheduled slot)",
                                                           "Course evaluation (extra credit)"]),
 }
 
@@ -400,8 +398,9 @@ def week_reading(w: int) -> str:
 LEGACY_ANCHORS = {
     12: ["thursday-workflow-walkthrough-final-project-kickoff-exam-2-kahoot"],
     13: ["tuesday-final-project-work-session", "thursday-final-project-work-session-or-holiday"],
-    14: ["tuesday-introduction-to-cce-414-and-final-project-work-session", "thursday-final-project-presentations"],
-    15: ["tuesday-final-project-presentations-part-2-and-exam-review"],
+    14: ["tuesday-introduction-to-cce-414-and-final-project-work-session", "thursday-final-project-presentations",
+         "thursday-lab-12-presentations"],
+    15: ["tuesday-final-project-presentations-part-2-and-exam-review", "tuesday-lab-12-presentations-part-2-and-exam-review"],
 }
 
 
@@ -500,8 +499,8 @@ def handson_index() -> str:
            "walkthrough, the graded upload, and the snags that usually come up.", "",
            "Weeks 1, 7, 13, 14 and 15 have no hands-on session. Week 1 meets once, Week 7's Thursday "
            "is a short lecture on web services that ends in a follow-along (its steps are in the slides), "
-           "Week 13 opens Lab 12 and is otherwise a work session or holiday, and Weeks 14 and 15 are "
-           "Lab 12 presentations.", "",
+           "Week 13 opens Lab 12 and is otherwise a work session or holiday, Week 14 is Lab 12 work time, "
+           "and Week 15 is exam review.", "",
            "| Week | Session | Feeds | Graded activity |",
            "| --- | --- | --- | --- |"]
     for w in WEEKS:

@@ -71,8 +71,8 @@ and Georeferencing" (Thursday: a real scan with GCPs and residuals) because no g
 lecture or lab existed. The Tuesday was first a neighborhood-sketch georeferencing activity, which
 belonged to CE 414; on 2026-11-05 it became a geoplanning (site layout and design) lecture, Day 20,
 with a Paper Site Plan activity; the CCE 414 intro
-moved to Tuesday of Week 14, followed by project work; final project presentations are Thursday of
-Week 14 and Tuesday of Week 15. Graded in-class activities are one per class meeting, 5 points each;
+moved to Tuesday of Week 14, followed by project work; Thursday of Week 14 is Lab 12 work time and
+Tuesday of Week 15 is exam review (presentations were dropped 2026-11-17). Graded in-class activities are one per class meeting, 5 points each;
 new ones are First Map: Utah County (Week 2 Thu), DEM Profile (Week 6 Thu), Playing with Projections
 (Week 8 Thu), AGRC Metadata (Week 9 Thu), and Paper Site Plan (Week 11 Tue).
 
@@ -309,7 +309,7 @@ Collected from the conversion notes at the end of each deck (search for `Convers
 `TODO`) and from `tools/image-improvements-handoff.md`:
 
 - **Final exam day (resolved 2026-09-02):** the university slot for Fall 2026 is Thu Dec 17, 11:00 am to
-  2:00 pm, 234 CB. The site now says finals week generically; Dec 8 is presentations part 2 and review.
+  2:00 pm, 234 CB. The site now says finals week generically; Dec 8 is final exam review.
   Learning Suite's Dec 8 entry, a new Dec 17 entry, and the Final Exam assignment date were updated the
   same night (see the session notes); re-check each semester.
 - **Week 3's data bundle is now on the site; Week 10's is not (2026-09-17).** *United States
@@ -360,8 +360,9 @@ Collected from the conversion notes at the end of each deck (search for `Convers
   (`slides/day-24/lab-12-choose-your-own-adventure.md`, the project half of the old Day 23 deck,
   which is now `slides/day-23/workflow-walkthrough.md`). `docs/assignments/final-project.md` is a
   pointer kept for old links, and `LEGACY_ANCHORS` in `tools/build_schedule.py` keeps the renamed
-  sessions' old `#tuesday-...` anchors working. Due date (Saturday of Week 14), presentations
-  (Thursday of Week 14 and Tuesday of Week 15) and the five problem options are unchanged. Still on
+  sessions' old `#tuesday-...` anchors working. Due date (Saturday of Week 14) and the five problem options are unchanged.
+  On the same day Dan dropped the presentations: Thursday of Week 14 is a Lab 12 work session and
+  Tuesday of Week 15 is final exam review. Still on
   Learning Suite: the Mapping Term Project document and the assignment name, which still say final
   project and allow pairs.
 - **Lab headings: done for all eleven (2026-09-10).** Every lab now uses "Step by Step Instructions"
