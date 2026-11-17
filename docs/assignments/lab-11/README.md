@@ -55,8 +55,17 @@ You’ll also save all of your data layers for this project in a GeoPackage.
 
 ### **Step 1: Start Your Workflow Diagram**
 
-1. As you work through this lab, create a workflow diagram that shows the exact steps you took to complete this lab. Your workflow should be detailed enough that someone else could replicate your work with just your workflow. This includes every dataset and every step (aka tool) that you use.  
-    1. You’re welcome to do this on paper or find a convenient computer program, as long as it is legible (no tiny unreadable text) when you turn it in with your lab.
+1. As you work through this lab, draw a geoprocessing workflow diagram that shows the exact steps you took to complete this lab. Your workflow should be detailed enough that someone else could replicate your work with just your diagram. This includes every dataset and every step (aka tool) that you use.  
+    1. Draw it as a real diagram, not a numbered list, using the same convention as the lecture slides:
+        * Every **layer** is a **rectangle**, labeled with its name (for example, MajorRoads or CurrentLocations).
+        * Every **tool** is an **oval or circle**, labeled with the tool and its key setting (for example, "Buffer, 2 miles" or "Reproject Layer to UTM 12N").
+        * **Arrows** show the flow: from each input layer into the tool, and from the tool to the new layer it makes. A tool that takes two layers, such as Extract by Location, gets two arrows in.
+        * The layers you make along the way are **intermediate layers**; keep them in the diagram, all the way to your final PotentialCustomers layer.
+    2. You’re welcome to draw it on paper (a clear phone photo is fine) or in a convenient computer program, as long as it is legible (no tiny unreadable text) when you turn it in with your lab.
+
+    ![Example of the diagram convention: rectangles for layers, ovals for spatial operations, arrows between them. The first operation takes one input layer and the second takes two, and the layers in between are labeled intermediate layers.](images/workflow-diagram-example.png)
+
+    *The shape of a geoprocessing workflow diagram. Yours will have more boxes, and real layer and tool names in them.*
 
 ### **Step 2: Add the Data**
 
@@ -185,7 +194,7 @@ Copy the rubric and paste it into your lab report. Fill in your self evaluation 
 | Requirement | Score |
 | ----- | ----- |
 | Create and include the required map layout: Includes 1 view of Utah County, showing correct final “PotentialCustomers” output *(4 pts)* Includes 2 inset maps of the selected sites *(3 pts)* Includes all required cartographic elements *(3 pts)* | /10 |
-| Create and include your workflow diagram: Includes all steps taken in this lab *(6 pts)* Layout is neat and legible *(4 pts)* | /10 |
+| Create and include your workflow diagram: Includes every layer and tool used in this lab *(6 pts)* Drawn as a diagram (rectangles for layers, ovals for tools, arrows between them), neat and legible *(4 pts)* | /10 |
 | Provide complete, thoughtful justification of your site selections: Final sites are valid locations \- see step 30 for criteria *(5 pts)* Includes justification of both selected sites *(5 pts)* | /10 |
 | **Total** | **/30** |
 
