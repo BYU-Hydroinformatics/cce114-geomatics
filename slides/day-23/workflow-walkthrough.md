@@ -29,7 +29,7 @@ Dr. James Halgren and Dr. Dan Ames
 
 # Today's Goals
 
-![bg right:32% w:88%](images/fp-workflow-chain.jpg)
+![bg right:32% w:88%](images/ws-workflow-layers.png)
 
 By the end of class you should be able to:
 
@@ -125,15 +125,11 @@ By the end of class you should be able to:
 <!-- These all live in the QGIS Processing Toolbox under Vector overlay and Vector geometry. (For instructors: ArcGIS and some textbooks call Difference Erase. These students have never used ArcGIS, so do not bring it up unless someone asks.) One more tool that is not an overlay: the Field Calculator, in the attribute table window, computes a new attribute column, e.g. density = population divided by area. -->
 
 ---
+# Geoprocessing workflows
 
-# What is a workflow?
+![w:1140 center](images/ws-workflow-layers.png)
 
-![w:900 center](images/fp-workflow-chain.jpg)
-
-**Rectangles are layers. Ovals are operations. Every arrow makes a new layer.**
-
-<!-- This is the figure from chapter 9 of the textbook and it is the single most useful picture in the course. The order matters: a different order gives a different final layer. Their report has to contain a diagram like this one, drawn for their own project. -->
-
+<!-- The shape of every geoprocessing job, and the convention Lab 11 now requires: a rectangle is a layer, an oval is an operation, and every arrow makes a new layer. An operation eats one or more layers and makes a new one, which the next operation eats. Some operations eat one layer (Buffer, Dissolve, Reproject Layer); many eat two (Intersection, Difference, Clip, Select or Extract by Location), which is how a second input joins the chain. The layers made along the way are intermediate layers: keep them and give them names you will recognize, so you can check each step and retrace your work. The order matters: in general a different order gives a different final layer. Their Lab 11 and Lab 12 reports both need a diagram like this, drawn for their own analysis. Original figure drawn by tools/draw_day22_figures.py; it replaces the chapter 9 diagram from Bolstad's GIS Fundamentals that this slide used to show. Moved here from Tuesday's Day 22 deck on 2026-11-17. -->
 ---
 
 <!-- _class: quiz -->
@@ -152,6 +148,14 @@ To find land at least 2 miles from an existing Walmart, inside Utah County, and 
 </ol>
 
 <!-- A and C both work and give the same result; D is the trap, because B cannot run at all: Difference needs the buffers, and they do not exist yet. So the first rule is: an operation can only run after the layers it eats exist. A and C give the same polygons in this particular chain because both buffers are of the original layers and Clip and Difference commute here (Tuesday's "Buffer? What next?" activity); clipping early is the better of the two because every later step runs on less data. In general, though, swapping steps changes the answer: buffering the result of an intersect is not the same as intersecting a buffer. That general rule is the Figure 9-1 true/false question on the concepts exam, so do not let "same answer here" turn into "order never matters". Ask them to defend an answer before you say which. -->
+
+---
+
+# Putting it all together
+
+![h:560 center](images/ws-graphical-modeler-qgis.png)
+
+<!-- Moved here from Tuesday's Day 22 deck on 2026-11-17; it is the slide to have up for the Model Designer demo in the run sheet. The full workflow in the QGIS Model Designer (Processing ▸ Model Designer): yellow boxes are the three inputs, white boxes are algorithms, the green box is the output. Trace the three branches with them: census blocks to a density field and an extract by expression, roads to I-15 then Dissolve then Buffer, Walmarts to a Buffer. Intersection keeps the dense blocks near roads, Difference removes the existing-Walmart buffers, and out comes Possible Walmart locations. -->
 
 ---
 

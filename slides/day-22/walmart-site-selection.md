@@ -37,10 +37,9 @@ Dr. Dan Ames and Dr. James Halgren
   - Explain site selection as a **process of elimination**
   - Name the geoprocessing tools that do the eliminating: **Buffer, Clip, Intersection, Difference, Select by Location**
   - Turn a written **criterion** into a specific tool with specific settings
-  - Chain those tools into a **workflow**: input layer → operation → new layer → operation → output
-  - Sketch the workflow for the Walmart problem before touching QGIS
+  - Put the steps of a site-selection analysis **in order**, each one making a new layer
 
-<!-- Set expectations. Today is the thinking, not the clicking. Lab 11 is where they click. Tell them the exam is this week and that this material is on it. -->
+<!-- Set expectations. Today is the thinking, not the clicking. Lab 11 is where they click. Drawing the workflow diagram, and the Walmart model in the Model Designer, are Thursday. Tell them the exam is this week and that this material is on it. -->
 
 ---
 
@@ -520,13 +519,23 @@ When you run an **Intersection** or a **Union**, the attribute tables of both la
 
 - We have the Walmart points. **Buffer them 2 miles.** Then what?
 - In pairs, put the remaining steps in order and name the tool for each:
-  - Keep only what is inside Utah County
-  - Remove everything within 2 miles of an existing store
-  - Keep only what is within 2 miles of I-15 or a highway
-  - Keep only the census blocks over 5000 people per mi²
+  - <span class="ord reveal-1">1</span>Keep only what is inside Utah County
+  - <span class="ord reveal-4">4</span>Remove everything within 2 miles of an existing store
+  - <span class="ord reveal-3">3</span>Keep only what is within 2 miles of I-15 or a highway
+  - <span class="ord reveal-2">2</span>Keep only the census blocks over 5000 people per mi²
 - **Does the order matter?** Where would you put the slowest step?
 
-<!-- Five minutes in pairs, then a show of hands on the two questions worth arguing about: which pair of tools does "at least 2 miles from an existing Walmart" (Buffer, then Difference), and whether the order matters. For this chain, any order that runs each step after the layers it needs gives the same polygons, because both buffers are made from the original layers and Clip, Intersection and Difference commute here. What the order changes is run time: clip to the county first and every later step works on a fraction of the data, a real lesson for the final project. One catch inside this chain: compute density on whole census blocks before any clip or intersection, or the clipped areas change the density. Do not let "same answer here" become "order never matters": in general, swapping steps changes the answer (buffering the result of an intersection is not the same as intersecting a buffer), and the concepts exam tests the general rule. Thursday's order quiz comes back to this. -->
+<style scoped>
+.ord { display: inline-block; width: 1.35em; height: 1.35em; line-height: 1.35em; margin-right: 0.45em;
+       border-radius: 50%; background: #c8102e; color: #fff; font-weight: 700; text-align: center; font-size: 0.9em; }
+</style>
+
+* <i class="step"></i>
+* <i class="step"></i>
+* <i class="step"></i>
+* <i class="step"></i>
+
+<!-- After the pairs have committed to an order, press → four times: the red numbers appear 1, 2, 3, 4 in the order Lab 11 runs the steps. 1: keep the census blocks in Utah County (Extract by Location, Lab 11 step 18). 2: compute density and keep blocks over 5,000 people per square mile (Field Calculator, then Extract by Attribute, steps 22 to 24); this has to come before any cut, so the density is computed on whole blocks. 3: keep what is within 2 miles of I-15 or a highway (reproject, Buffer, then Extract by Location, steps 25 and 27). 4: remove what is within 2 miles of an existing store (reproject, Buffer, then Extract by Location as disjoint, steps 26 and 28). County first because every later step then runs on less data. Five minutes in pairs, then a show of hands on the two questions worth arguing about: which pair of tools does "at least 2 miles from an existing Walmart" (Buffer, then Difference), and whether the order matters. For this chain, any order that runs each step after the layers it needs gives the same polygons, because both buffers are made from the original layers and Clip, Intersection and Difference commute here. What the order changes is run time: clip to the county first and every later step works on a fraction of the data, a real lesson for the final project. One catch inside this chain: compute density on whole census blocks before any clip or intersection, or the clipped areas change the density. Do not let "same answer here" become "order never matters": in general, swapping steps changes the answer (buffering the result of an intersection is not the same as intersecting a buffer), and the concepts exam tests the general rule. Thursday's order quiz comes back to this. -->
 
 ---
 
@@ -535,20 +544,6 @@ When you run an **Intersection** or a **Union**, the attribute tables of both la
 ![h:465 center](images/ws-census-blocks.png)
 
 <!-- UGRC's Census 2020 Blocks for Utah County, the same layer students download in Lab 11 (10,092 blocks, 659,399 people), with the 12 existing Walmart stores from Walmart's own store service on top, Sam's Club left out as the lab does. The pale blue blocks are water: Utah Lake is census blocks too, with nobody living in them. Blocks are tiny downtown and huge in the mountains, which is exactly why we need density, population divided by area, rather than raw population counts. That is a Field Calculator job. -->
-
----
-# Geoprocessing workflows
-
-![w:1140 center](images/ws-workflow-layers.png)
-
-<!-- The shape of every geoprocessing job. A rectangle is a layer, an oval is an operation. An operation eats one or more layers and makes a new layer, which the next operation eats. Some operations eat one layer (Buffer, Dissolve, Reproject Layer); many eat two (Intersection, Difference, Clip, Select by Location), which is how a second input joins the chain. The layers made along the way are intermediate layers: keep them and give them names you will recognize, so you can check each step and retrace your work. Now that they have seen every piece of the Walmart analysis one at a time, this is the shape that ties them together, and the next slide is the same shape for the real Walmart model in the Model Designer. Have them draw this shape on paper before they open QGIS for Lab 11, which now requires it: it is the single most useful habit in the course. Original figure drawn by tools/draw_day22_figures.py; it replaces the diagram from Bolstad's GIS Fundamentals. -->
----
-
-# Putting it all together
-
-![h:560 center](images/ws-graphical-modeler-qgis.png)
-
-<!-- The full workflow in the QGIS Model Designer (Processing ▸ Model Designer): yellow boxes are the three inputs, white boxes are algorithms, the green box is the output. Trace the three branches with them: census blocks to a density field and an extract by expression, roads to I-15 then Dissolve then Buffer, Walmarts to a Buffer. Intersection keeps the dense blocks near roads, Difference removes the existing-Walmart buffers, and out comes Possible Walmart locations. -->
 
 ---
 
