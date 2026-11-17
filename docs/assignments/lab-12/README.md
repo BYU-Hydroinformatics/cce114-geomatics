@@ -62,19 +62,25 @@ it is in Web Mercator or latitude and longitude. This is the step that went wron
 
 ## **What to Include in Your Report**
 
-The report is a short technical document, not an essay. Two to three pages of text is enough; the
-maps carry the rest.
+The report is a brief technical document, not an essay: **4 to 5 pages**, mostly graphics with some
+discussion. It must include at least:
 
-* **Introduce the problem:** what you are siting, where, and why.
-* **Describe the data:** every layer, where it came from, and its projection.
-* **Describe the tools:** each analysis step, with your **workflow diagram**.
-* **Describe your result:** the sites you selected and why they won.
+* A **cover page**.
+* A **problem statement:** what you are siting, where, and why.
+* A **description of all the data** you used: every layer, where it came from, and its projection.
+* A **workflow diagram** (layers as rectangles, tools as ovals), or at least a bullet list of your
+  analysis steps in order. The diagram is worth the most points of any single item.
+* **Two maps** with all the required elements, described below.
+* A **discussion of your results**, ending with your **recommendation**: the site you would choose
+  and why it won.
 
 ## **What to Include in Your Maps**
 
-* **Intermediate maps** that show the data you worked on to get to the final map. These are where
-  most of the grade separation happens: a single beautiful final map with no evidence of the
-  processing is not a complete submission. Screenshots of the QGIS map canvas are fine for these.
+* One or more maps or screenshots of your **input data, intermediate data and processing steps**,
+  showing the "in-between" layers you made on the way to the final map. These are where most of
+  the grade separation happens: a single beautiful final map with no evidence of the processing is
+  not a complete submission. Screenshots of the QGIS map canvas are fine for these, and be liberal:
+  more screenshots of your work are better than fewer.
 * A **final results map** made in Print Layout, with all the required cartographic elements: title,
   legend, scale bar, north arrow, neatline, data sources and projection.
 * At least one **inset map** zoomed to your selected sites.
@@ -85,8 +91,20 @@ maps carry the rest.
 * **One PDF report**, submitted on Learning Suite, holding the write-up, the intermediate maps and
   data that show your processing steps, and the final results map. Not a folder of images and not a
   QGIS project file.
-* Due the **Saturday of Week 14** at 11:59 pm. Point values are on Learning Suite.
+* Due the **Saturday of Week 14** at 11:59 pm.
 * You also **present** your project in class, on Thursday of Week 14 or Tuesday of Week 15.
+
+## **Grading Rubric (60 points)**
+
+| Item | Points |
+| --- | --- |
+| Problem statement | 5 |
+| Data description | 5 |
+| Workflow diagram | 15 |
+| Maps | 15 |
+| Appropriate, working analysis | 10 |
+| Write-up | 10 |
+| **Total** | **60** |
 
 ## **Getting Help**
 

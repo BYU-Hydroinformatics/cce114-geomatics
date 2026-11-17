@@ -207,12 +207,15 @@ For whichever you pick: **What are the criteria? What data are required? What to
 
 ![bg right:34%](images/fp-report-space.jpg)
 
-- **Introduce the problem** — what are you siting, where, and why
-- **Describe the data** — every layer, where it came from, its projection
-- **Describe the tools** — each analysis step, with the workflow diagram
-- **Describe your result** — the sites you selected and why they won
+**4 to 5 pages**, mostly graphics, with at least:
 
-<!-- The report is a short technical document, not an essay. Two to three pages of text is enough; the maps carry the rest. Anything they downloaded needs a source named. -->
+- A **cover page** and a **problem statement** — what, where, and why
+- **All the data** — every layer, its source, its projection
+- A **workflow diagram** (or at least a bullet list of steps)
+- **Two maps** with all required elements
+- **Discussion and your recommendation** — the site you would pick, and why
+
+<!-- These are the required sections from the Mapping Term Project handout this lab replaced; the rubric on the Lab 12 page is the same 60 points (problem statement 5, data 5, workflow diagram 15, maps 15, working analysis 10, write-up 10). The workflow diagram is the biggest single item, so say so. Anything they downloaded needs a source named. -->
 
 ---
 
