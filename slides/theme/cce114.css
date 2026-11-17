@@ -80,7 +80,7 @@ section.lead footer a { color: #9aa6b6; text-decoration: none; }
    A quiz slide marks its correct choice <li class="answer"> and ends with a one-item Marp
    fragment list whose only content is <i class="step"></i>. The first press of → after the slide
    appears "shows" that invisible fragment, and the red rounded box draws itself around the
-   answer. Elements with class reveal-1 / reveal-2 fade in on the first / second press the same
+   answer. Elements with class reveal-1 … reveal-6 fade in on the first … sixth press the same
    way (one step item per press). Going back to a slide shows everything, as Marp does for its
    own fragments. Static exports (PNG, PDF) have no fragment state, so answers stay hidden. */
 section ul:has(> li > i.step) { position: absolute; width: 0; height: 0; margin: 0; padding: 0; overflow: hidden; }
@@ -91,7 +91,12 @@ section li.answer::after {
   opacity: 0; transform: scale(1.35);
   transition: opacity 0.3s ease, transform 0.55s cubic-bezier(0.2, 1.5, 0.4, 1);
 }
-section .reveal-1, section .reveal-2 { opacity: 0; transform: translateY(14px); transition: opacity 0.5s ease, transform 0.5s ease; }
+section .reveal-1, section .reveal-2, section .reveal-3, section .reveal-4, section .reveal-5, section .reveal-6 {
+  opacity: 0; transform: translateY(14px); transition: opacity 0.5s ease, transform 0.5s ease; }
 section:has(li[data-marpit-fragment="1"][data-bespoke-marp-fragment="active"]) li.answer::after,
 section:has(li[data-marpit-fragment="1"][data-bespoke-marp-fragment="active"]) .reveal-1,
-section:has(li[data-marpit-fragment="2"][data-bespoke-marp-fragment="active"]) .reveal-2 { opacity: 1; transform: none; }
+section:has(li[data-marpit-fragment="2"][data-bespoke-marp-fragment="active"]) .reveal-2,
+section:has(li[data-marpit-fragment="3"][data-bespoke-marp-fragment="active"]) .reveal-3,
+section:has(li[data-marpit-fragment="4"][data-bespoke-marp-fragment="active"]) .reveal-4,
+section:has(li[data-marpit-fragment="5"][data-bespoke-marp-fragment="active"]) .reveal-5,
+section:has(li[data-marpit-fragment="6"][data-bespoke-marp-fragment="active"]) .reveal-6 { opacity: 1; transform: none; }

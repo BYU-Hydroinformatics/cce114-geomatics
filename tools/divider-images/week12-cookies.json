@@ -1,0 +1,26 @@
+[
+ {
+  "id": "ws-cookie-1-dough",
+  "prompt": "A large, irregular, roughly round sheet of rolled-out pale sugar cookie dough, about half an inch thick with soft uneven edges, lying alone in the middle of a flour-dusted countertop. A wooden rolling pin rests at the edge of the frame. Nothing has been cut yet."
+ },
+ {
+  "id": "ws-cookie-2-county-cutter",
+  "prompt": "Two hands pressing a very large stainless steel cookie cutter down into the same rolled-out sugar cookie dough. The cutter is shaped like an irregular county outline: a lumpy, many-sided polygon, taller than it is wide, with a jagged eastern edge and a notch on the west side. It covers most of the dough, with a margin of dough showing outside it on every side."
+ },
+ {
+  "id": "ws-cookie-3-county-dough",
+  "prompt": "The irregular county-shaped piece of sugar cookie dough lying alone on the flour-dusted countertop, cut cleanly with straight vertical edges: a lumpy many-sided polygon, taller than wide, with a jagged eastern edge and a notch on the west side. The trimmed scraps of dough from outside the shape have been pushed into a small pile at the edge of the frame. The large county-shaped cutter lies nearby."
+ },
+ {
+  "id": "ws-cookie-4-band-cutter",
+  "prompt": "The tall, narrow, county-shaped piece of sugar cookie dough from the previous step (a lumpy many-sided polygon about twice as tall as it is wide, with a jagged right edge and a notch on the left side) lies alone on the flour-dusted countertop; there is no other dough anywhere, the round sheet is gone. Two hands press a long, narrow stainless steel cookie cutter into it: a gently curving band with rounded ends, like a stretched racetrack about one third as wide as the dough piece, running lengthwise from top to bottom and sticking out past both ends of the dough. Only the dough inside the band will be kept."
+ },
+ {
+  "id": "ws-cookie-5-round-cutters",
+  "prompt": "A long, narrow, gently curving strip of sugar cookie dough, the part that was inside the band-shaped cutter, lying on the flour-dusted countertop with the rest of the dough cleared away. Several small round stainless steel cookie cutters of the same size sit beside it, and one hand is pressing a round cutter into the strip, punching out a circle."
+ },
+ {
+  "id": "ws-cookie-6-result",
+  "prompt": "The finished piece: a long, narrow, gently curving strip of sugar cookie dough on the flour-dusted countertop with five or six round holes punched cleanly through it along its length, some holes cutting into its edges. The little round discs of dough that were punched out sit in a small pile to the side with the round cutters. Seen slightly from above, like the final shot of a recipe."
+ }
+]

@@ -312,6 +312,35 @@ When you run an **Intersection** or a **Union**, the attribute tables of both la
 <!-- There is no "bring the attributes along" checkbox to remember: keeping both tables is the default. The two optional pickers, Input fields to keep and Overlay fields to keep, only ever trim. Captured from the real QGIS 3.44.13 Intersection dialog (Processing Toolbox ▸ Vector overlay ▸ Intersection) with the two demo layers from the previous slides; the prefix option was checked in the same dialog with Advanced Parameters open. The Union parameters (Input, Overlay, Overlay fields prefix, no field pickers) were checked with qgis_process help native:union. -->
 ---
 
+# Site selection is cookie cutting
+
+<style scoped>
+.cookies { display: grid; grid-template-columns: repeat(3, 318px); justify-content: center; gap: 6px 18px; margin-top: -10px; }
+.cookies figure { margin: 0; }
+.cookies img { width: 100%; border-radius: 8px; display: block; }
+.cookies figcaption { font-size: 0.56em; margin-top: 4px; line-height: 1.25; }
+.cookies figcaption b { color: #002e5d; }
+</style>
+
+<div class="cookies">
+<figure><img src="images/ws-cookie-1-dough.jpg" alt="A big sheet of rolled-out sugar cookie dough on a floured counter"><figcaption><b>1. Everywhere.</b> Before any criterion, every place is a candidate.</figcaption></figure>
+<figure class="reveal-1"><img src="images/ws-cookie-2-county-cutter.jpg" alt="Hands pressing a county-shaped cutter into the dough"><figcaption><b>2. Cut to the county.</b> The study area is the first cutter: <b>Clip</b>.</figcaption></figure>
+<figure class="reveal-2"><img src="images/ws-cookie-3-county-dough.jpg" alt="The county-shaped piece of dough with the scraps pushed aside"><figcaption><b>3. A new layer.</b> Everything outside the county is gone.</figcaption></figure>
+<figure class="reveal-3"><img src="images/ws-cookie-4-band-cutter.jpg" alt="A long band-shaped cutter pressed into the county-shaped dough"><figcaption><b>4. Within 2 miles of I-15.</b> Keep what is <i>inside</i> the cutter: <b>Intersection</b>.</figcaption></figure>
+<figure class="reveal-4"><img src="images/ws-cookie-5-round-cutters.jpg" alt="Round cutters punching circles out of the remaining strip of dough"><figcaption><b>5. Not near a Walmart.</b> Remove what is <i>inside</i> each cutter: <b>Difference</b>.</figcaption></figure>
+<figure class="reveal-5"><img src="images/ws-cookie-6-result.jpg" alt="The strip of dough with round holes punched out of it"><figcaption><b>6. What is left</b> passes every criterion: the candidate sites.</figcaption></figure>
+</div>
+
+* <i class="step"></i>
+* <i class="step"></i>
+* <i class="step"></i>
+* <i class="step"></i>
+* <i class="step"></i>
+
+<!-- The whole Walmart lab in one picture, before we touch the real data. Press → once per panel. 1: the rolled dough is everywhere; nothing has been ruled out. 2: the county-shaped cutter is the study area, a Clip. 3: the cut piece is a brand new layer and the scraps are thrown away. 4: the long band is the 2-mile buffer around I-15; pressing it in and keeping what is inside is an Intersection. 5: each round cutter is a 2-mile buffer around an existing store; this time we throw away what is inside, a Difference. 6: what is left satisfies every criterion at once, and that leftover dough is the answer to the lab. The one idea to land: Intersection keeps what is inside the cutter, Difference removes it. (Bring cookies some semester; the analogy sticks even better with a real sugar cookie in hand.) The census-density cut is left out of the pictures to keep it to six; mention that it is one more cutter. Images generated with gpt-image-2.5-flare (panel 4 with gpt-image-2.5-sunburst), November 2026; prompts in tools/divider-images/week12-cookies.json. Day 23's Workflow Walkthrough deck has an older, different cookie series (state, county, lake, stores). -->
+
+---
+
 <!-- _class: lead -->
 
 ![bg right:50%](images/ws-divider-walmart.jpg)
@@ -337,83 +366,61 @@ When you run an **Intersection** or a **Union**, the attribute tables of both la
 
 ---
 
-# What are the conditions?
+# Criteria: from words to numbers
 
-<div class="columns">
-<div>
+![bg right:27% w:94%](images/ws-criteria-precise.jpg)
 
-- **Not near** an existing Walmart
-- **Near** a high density of family residences
-- **Within 2 miles** of a highway
-- **In** Utah County
+<style scoped>
+.crit { width: 100%; font-size: 0.76em; border-collapse: collapse; margin-top: 4px; }
+.crit th, .crit td { padding: 7px 12px; vertical-align: top; text-align: left; }
+.crit th:first-child, .crit td:first-child { width: 34%; }
+</style>
 
-</div>
-<div>
+<table class="crit">
+<thead><tr><th>The wish</th><th>Written precisely</th></tr></thead>
+<tbody>
+<tr><td>Not near an existing Walmart</td><td class="reveal-1">At least <b>2 miles</b> from any existing Walmart</td></tr>
+<tr><td>Near major roads</td><td class="reveal-1">Within <b>2 miles</b> of I-15 or a highway</td></tr>
+<tr><td>Near lots of people / families</td><td class="reveal-1">Over <b>5,000 people per square mile</b> (2020 Census blocks)</td></tr>
+<tr><td>In Utah County</td><td class="reveal-1">Inside the <b>Utah County boundary</b></td></tr>
+<tr><td>Room for a store</td><td class="reveal-1">Stores run 51,000–224,000 ft², averaging about <b style="white-space: nowrap;">102,000 ft²</b>: one must fit without demolishing large areas of buildings. <i>A judgment call.</i></td></tr>
+</tbody>
+</table>
 
-![w:340 center](images/ws-conditions.jpg)
+* <i class="step"></i>
 
-**Which tool does each one?**
-
-- "not near" → ?
-- "near a high density of…" → ?
-- "within 2 miles of" → ?
-- "in" → ?
-
-</div>
-</div>
-
-<!-- Read these out as ordinary English first, then ask the class to translate each one into a tool. "Not near" is a buffer plus a Difference. "Near a highway" is a buffer plus an Intersection. "In Utah County" is a Clip or an Intersection. "High density" is an attribute query. Every criterion is a tool. -->
+<!-- Read the left column as ordinary English: this is how a client states what they want. Then ask the class to rewrite each one so a computer could execute it, and let them try before you press →. Press → once to bring in the whole right column. The difference between a wish and a criterion is a number and a unit: "not near a Walmart" is a wish; "at least 2 miles from any existing Walmart" is something Buffer can execute. The last row, adequate space, is the hard one: no threshold in the toolbox decides it, so students have to make and defend a judgment call, in Lab 11 by looking at imagery. -->
 
 ---
 
-# From criteria to a plan
+# Criterion → data → tool
 
-<div class="columns">
-<div>
+![bg right:27% w:94%](images/ws-criteria-plan.jpg)
 
-![w:260 center](images/ws-criteria-plan.jpg)
+<style scoped>
+.cdt { width: 100%; font-size: 0.68em; border-collapse: collapse; margin-top: 4px; }
+.cdt th, .cdt td { padding: 6px 11px; vertical-align: top; text-align: left; }
+.cdt th:first-child, .cdt td:first-child { width: 22%; }
+.cdt th:nth-child(2), .cdt td:nth-child(2) { width: 34%; }
+.cdt-note { font-size: 0.7em; margin-top: 14px; }
+</style>
 
-**What are the criteria?**
+<table class="cdt">
+<thead><tr><th>Criterion</th><th>Data layer</th><th>QGIS tool(s)</th></tr></thead>
+<tbody>
+<tr><td>At least 2 mi from any Walmart</td><td>Walmart's store service, <i>Walmart_Facilities_(Public)</i></td><td class="reveal-1"><b>Buffer</b> 2 mi, then <b>Difference</b></td></tr>
+<tr><td>Within 2 mi of a highway</td><td>UGRC roads</td><td class="reveal-1">Select I-15 and highways, <b>Dissolve</b>, <b>Buffer</b> 2 mi, <b>Intersection</b></td></tr>
+<tr><td>Over 5,000 people/mi²</td><td>UGRC Census 2020 Blocks</td><td class="reveal-1"><b>Field Calculator</b> for density, then <b>Extract by Expression</b></td></tr>
+<tr><td>In Utah County</td><td>UGRC county boundary</td><td class="reveal-1"><b>Clip</b></td></tr>
+<tr><td>Room for a store</td><td>Satellite imagery</td><td class="reveal-1">No single tool: your judgment</td></tr>
+</tbody>
+</table>
 
-- Not too close to existing Walmarts
-- Close to roads
-- Close to families
+<p class="cdt-note">Every layer arrives in Web Mercator (EPSG:3857): <b>Reproject Layer</b> first, before any Buffer.</p>
 
-**What is the workflow?**
+* <i class="step"></i>
 
-- Select, Intersection, Buffer, Difference, …
-
-</div>
-<div>
-
-**What input data do we need?**
-
-- Existing Walmart locations
-- Utah County boundary
-- Census blocks
-- Major roads
-
-**What tools do we need?**
-
-- QGIS **Processing Toolbox**
-
-</div>
-</div>
-
-<!-- Three questions, always in this order: what are the criteria, what data answers each criterion, what tool turns that data into a yes or no. Students who skip straight to the tools get lost. Make them fill in the data column before they name a single tool. -->
-
----
-
-# Criteria, written precisely
-
-![bg right:36% w:94%](images/ws-criteria-precise.jpg)
-
-- **Proximity to other Walmarts:** find locations at least **2 miles** from any existing Walmart
-- **Proximity to major roads:** find locations **within 2 miles** of I-15 or a highway
-- **Population density:** using 2020 Census data, find areas with over **5000 people per square mile**
-- **Adequate space:** Walmart stores run 51,000–224,000 ft², averaging about **102,000 ft²**. Find locations where an average store would fit without demolishing large areas of existing buildings.
-
-<!-- This is the difference between a wish and a criterion: a number and a unit. "Not near a Walmart" is a wish; "at least 2 miles from any existing Walmart" is something Buffer can execute. The last criterion, adequate space, is the hard one, and it is where students have to make and defend a judgement call. -->
+<!-- Three questions, always in this order: what are the criteria, what data answers each criterion, what tool turns that data into a yes or no. Students who skip straight to the tools get lost, so with the tool column still hidden, have them name the tool for each row first, in pairs, then press → once to bring in the answers. "Not near" is a Buffer plus a Difference; "near" is a Buffer plus an Intersection; "in" is a Clip; "high density" is a new field plus an attribute query. Every criterion except the last is a tool; adequate space stays a judgment call made by looking at imagery. Lab 11 does several of these with Extract by Location and Extract by Attribute instead (same result, different tool), which is a good point to make: there is usually more than one right tool. The note at the bottom sets up the "Reproject before you buffer" slide later on: every UGRC download and Walmart's service arrive in EPSG:3857, so reproject before any Buffer or the 2 miles come out about 1.5. The slides that follow walk each row on the real data. -->
 
 ---
 
