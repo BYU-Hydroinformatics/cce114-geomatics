@@ -178,7 +178,7 @@ To find land at least 2 miles from an existing Walmart, inside Utah County, and 
 
 ![h:450 center](images/ws-cookie-2-county-cutter.jpg)
 
-<!-- The first cutter is the study area: the Utah County boundary. Everything outside it is about to go. In QGIS this is a Clip, or Extract by Location as Lab 11 does it for the census blocks. -->
+<!-- The first cutter is the study area, and it is the real Utah County outline. Everything outside it is about to go. In QGIS this is a Clip, or Extract by Location as Lab 11 does it for the census blocks. -->
 
 ---
 
@@ -202,7 +202,7 @@ To find land at least 2 miles from an existing Walmart, inside Utah County, and 
 
 ![h:450 center](images/ws-cookie-5-round-cutters.jpg)
 
-<!-- Each round cutter is a 2-mile buffer around an existing store. This time we throw away what is INSIDE the cutter: that is a Difference. Intersection keeps the inside, Difference removes it; that is the one idea to land. -->
+<!-- Each round cutter is a 2-mile buffer around an existing store, placed where the real stores are: note the overlapping cluster at the north end. This time we throw away what is INSIDE the cutter: that is a Difference. Intersection keeps the inside, Difference removes it; that is the one idea to land. -->
 
 ---
 
@@ -210,7 +210,7 @@ To find land at least 2 miles from an existing Walmart, inside Utah County, and 
 
 ![h:450 center](images/ws-cookie-6-result.jpg)
 
-<!-- What is left passes every criterion at once. It is a brand new layer that did not exist before; symbolized and put on a map with the required elements, it is the deliverable. The census-density cut is one more cutter that the pictures leave out. Same six images as the cookie slide in Tuesday's Day 22 deck (prompts in tools/divider-images/week12-cookies.json); they replaced an older series here on 2026-11-17 that cut the state, then the county, then Utah Lake. -->
+<!-- What is left passes every criterion at once. It is a brand new layer that did not exist before; symbolized and put on a map with the required elements, it is the deliverable. The census-density cut is one more cutter that the pictures leave out. Same six images as the cookie slide in Tuesday's Day 22 deck. The shapes are real Lab 11 geography: the Utah County outline, the 2-mile I-15 buffer (I-15 only; the lab adds the highways), and the 12 stores' buffers, made by tools/generate_cookie_series.py. They replaced an older series here on 2026-11-17 that cut the state, then the county, then Utah Lake. -->
 
 ---
 

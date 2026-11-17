@@ -337,7 +337,7 @@ When you run an **Intersection** or a **Union**, the attribute tables of both la
 * <i class="step"></i>
 * <i class="step"></i>
 
-<!-- The whole Walmart lab in one picture, before we touch the real data. Press → once per panel. 1: the rolled dough is everywhere; nothing has been ruled out. 2: the county-shaped cutter is the study area, a Clip. 3: the cut piece is a brand new layer and the scraps are thrown away. 4: the long band is the 2-mile buffer around I-15; pressing it in and keeping what is inside is an Intersection. 5: each round cutter is a 2-mile buffer around an existing store; this time we throw away what is inside, a Difference. 6: what is left satisfies every criterion at once, and that leftover dough is the answer to the lab. The one idea to land: Intersection keeps what is inside the cutter, Difference removes it. (Bring cookies some semester; the analogy sticks even better with a real sugar cookie in hand.) The census-density cut is left out of the pictures to keep it to six; mention that it is one more cutter. Images generated with gpt-image-2.5-flare (panel 4 with gpt-image-2.5-sunburst), November 2026; prompts in tools/divider-images/week12-cookies.json. Day 23's Workflow Walkthrough deck has an older, different cookie series (state, county, lake, stores). -->
+<!-- The whole Walmart lab in one picture, before we touch the real data. Press → once per panel. 1: the rolled dough is everywhere; nothing has been ruled out. 2: the county-shaped cutter is the study area, a Clip. 3: the cut piece is a brand new layer and the scraps are thrown away. 4: the long band is the 2-mile buffer around I-15; pressing it in and keeping what is inside is an Intersection. 5: each round cutter is a 2-mile buffer around an existing store; this time we throw away what is inside, a Difference. 6: what is left satisfies every criterion at once, and that leftover dough is the answer to the lab. The one idea to land: Intersection keeps what is inside the cutter, Difference removes it. (Bring cookies some semester; the analogy sticks even better with a real sugar cookie in hand.) The census-density cut is left out of the pictures to keep it to six; mention that it is one more cutter. The shapes are real: the cutter is the Utah County outline, the band is the 2-mile buffer around I-15 inside the county, and the round holes sit where the 12 existing stores' 2-mile buffers fall, all from the Lab 11 data. Point at the cluster of overlapping holes at the north end (Lehi and American Fork). The band is I-15 only; the lab also buffers the highways, which would make a branching cutter. Generated November 2026 as a chain of gpt-image-2.5-sunburst edits, each step from the previous photo plus a shape guide drawn from the Lab 11 GeoPackage: tools/generate_cookie_series.py. Thursday's Workflow Walkthrough uses the same six images. The first, generic-shape version is in tools/divider-images/archive/week12-cookies-v1/. -->
 
 ---
 
@@ -455,12 +455,6 @@ When you run an **Intersection** or a **Union**, the attribute tables of both la
 <!-- Fuller versions of each line: Select by Expression finds features matching a rule, e.g. all roads where RT_NAME = '0015', or all census blocks above a density threshold. Buffer is the area within a given distance of a feature. Clip cuts the input layer to the shape of an overlay layer. Intersection keeps only where two layers overlap and carries both attribute tables. Difference removes the input wherever the overlay covers it. Select by Location / Extract by Location picks features by how they sit relative to another layer. Dissolve merges features that share an attribute value into one. Field Calculator computes a new column, e.g. density = population / area. Reproject Layer writes a copy of a layer in a new CRS; run it before Buffer whenever the layer is in Web Mercator or latitude/longitude. These are the tools for Lab 11 and the final project. Every one of them is in the Processing Toolbox; teach them the search box at the top of the toolbox rather than memorizing menu paths. -->
 
 ---
-# Geoprocessing workflows
-
-![w:1140 center](images/ws-workflow-layers.png)
-
-<!-- The shape of every geoprocessing job. A rectangle is a layer, an oval is an operation. An operation eats one or more layers and makes a new layer, which the next operation eats. Some operations eat one layer (Buffer, Dissolve, Reproject Layer); many eat two (Intersection, Difference, Clip, Select by Location), which is how a second input joins the chain. The layers made along the way are intermediate layers: keep them and give them names you will recognize, so you can check each step and retrace your work. Have them draw this shape on paper before they open QGIS: it is the single most useful habit in the course. Original figure drawn by tools/draw_day22_figures.py; it replaces the diagram from Bolstad's GIS Fundamentals. -->
----
 
 # Utah County
 
@@ -542,6 +536,12 @@ When you run an **Intersection** or a **Union**, the attribute tables of both la
 
 <!-- UGRC's Census 2020 Blocks for Utah County, the same layer students download in Lab 11 (10,092 blocks, 659,399 people), with the 12 existing Walmart stores from Walmart's own store service on top, Sam's Club left out as the lab does. The pale blue blocks are water: Utah Lake is census blocks too, with nobody living in them. Blocks are tiny downtown and huge in the mountains, which is exactly why we need density, population divided by area, rather than raw population counts. That is a Field Calculator job. -->
 
+---
+# Geoprocessing workflows
+
+![w:1140 center](images/ws-workflow-layers.png)
+
+<!-- The shape of every geoprocessing job. A rectangle is a layer, an oval is an operation. An operation eats one or more layers and makes a new layer, which the next operation eats. Some operations eat one layer (Buffer, Dissolve, Reproject Layer); many eat two (Intersection, Difference, Clip, Select by Location), which is how a second input joins the chain. The layers made along the way are intermediate layers: keep them and give them names you will recognize, so you can check each step and retrace your work. Now that they have seen every piece of the Walmart analysis one at a time, this is the shape that ties them together, and the next slide is the same shape for the real Walmart model in the Model Designer. Have them draw this shape on paper before they open QGIS for Lab 11, which now requires it: it is the single most useful habit in the course. Original figure drawn by tools/draw_day22_figures.py; it replaces the diagram from Bolstad's GIS Fundamentals. -->
 ---
 
 # Putting it all together
