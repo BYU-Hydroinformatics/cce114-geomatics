@@ -24,7 +24,7 @@ Dr. Dan Ames and Dr. James Halgren
 <!-- Tuesday concept lecture, Week 12. This is the lecture behind Lab 11 and the pattern students will reuse in the final project. Thursday, we walk through the workflow diagrams and the final project description. -->
 
 <!-- stamp:begin -->
-<!-- _footer: '<span>CCE 114 · Day 22 — Project Site Selection<span class="updated">Last Updated: 2026-11-13</span></span><span>© 2026 Daniel P. Ames · <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></span>' -->
+<!-- _footer: '<span>CCE 114 · Day 22 — Project Site Selection<span class="updated">Last Updated: 2026-11-17</span></span><span>© 2026 Daniel P. Ames · <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></span>' -->
 <!-- stamp:end -->
 
 ---
@@ -90,11 +90,11 @@ Dr. Dan Ames and Dr. James Halgren
 <li>Buffer</li>
 <li>Union</li>
 <li>Intersection</li>
-<li>Difference (called Erase in ArcGIS)</li>
+<li>Difference</li>
 <li>All of the above</li>
 </ol>
 
-<!-- Answer: E. All four are in the QGIS Processing Toolbox under Vector overlay and Vector geometry. Point out the naming difference now so it does not trip them up in the lab: what the textbook and older ArcGIS material call Erase is called Difference in QGIS. -->
+<!-- Answer: E. All four are in the QGIS Processing Toolbox under Vector overlay and Vector geometry. (For instructors: ArcGIS and some textbooks call Difference Erase. These students have never used ArcGIS, so do not bring it up unless someone asks.) -->
 
 ---
 
@@ -130,7 +130,7 @@ Dr. Dan Ames and Dr. James Halgren
 <li>Intersection</li>
 </ol>
 
-<!-- Answer: C, Difference (Erase). Clip is defensible as a partial answer: Clip keeps what is inside the cutter, Difference keeps what is outside it. Both eliminate; they just eliminate opposite halves. This is the heart of the elimination idea, so spend a minute here. -->
+<!-- Answer: C, Difference. Clip is defensible as a partial answer: Clip keeps what is inside the cutter, Difference keeps what is outside it. Both eliminate; they just eliminate opposite halves. This is the heart of the elimination idea, so spend a minute here. -->
 
 ---
 
@@ -177,16 +177,15 @@ When you run an **Intersection** or a **Union**, the attribute tables of both la
 
 ---
 
-# Difference (Erase): cut a hole in a layer
+# Difference: cut a hole in a layer
 
 <div class="columns">
 <div>
 
-- **Difference** removes the target features wherever the erase layer covers them
+- **Difference** removes the target features wherever the overlay layer covers them
 - Which Boolean operation is like Difference?
   - *(Counties **NOT** Catchment)*
 - QGIS: **Vector overlay → Difference**
-- ArcGIS calls this same tool **Erase**
 
 </div>
 <div>
@@ -343,13 +342,13 @@ When you run an **Intersection** or a **Union**, the attribute tables of both la
 - **Buffer** — everything within a distance. Proximity.
 - **Clip** — cut the input to an overlay's shape. Cookie cutter.
 - **Intersection** — keep only the overlap, with both tables
-- **Difference** *(Erase in ArcGIS)* — remove the overlay's area
+- **Difference** — remove the overlay's area
 - **Select / Extract by Location** — features by where they sit
 - **Dissolve** — merge features that share a value
 - **Field Calculator** — a new column, e.g. a density field
 - **Reproject Layer** — into a projected CRS before any distance tool
 
-<!-- Fuller versions of each line: Select by Expression finds features matching a rule, e.g. all roads where RT_NAME = '0015', or all census blocks above a density threshold. Buffer is the area within a given distance of a feature. Clip cuts the input layer to the shape of an overlay layer. Intersection keeps only where two layers overlap and carries both attribute tables. Difference removes the input wherever the overlay covers it. Select by Location / Extract by Location picks features by how they sit relative to another layer. Dissolve merges features that share an attribute value into one. Field Calculator computes a new column, e.g. density = population / area. Reproject Layer writes a copy of a layer in a new CRS; run it before Buffer whenever the layer is in Web Mercator or latitude/longitude. These are the tools for Lab 11 and the final project. Every one of them is in the Processing Toolbox; teach them the search box at the top of the toolbox rather than memorizing menu paths. Difference vs Erase is the naming trap; say it twice. -->
+<!-- Fuller versions of each line: Select by Expression finds features matching a rule, e.g. all roads where RT_NAME = '0015', or all census blocks above a density threshold. Buffer is the area within a given distance of a feature. Clip cuts the input layer to the shape of an overlay layer. Intersection keeps only where two layers overlap and carries both attribute tables. Difference removes the input wherever the overlay covers it. Select by Location / Extract by Location picks features by how they sit relative to another layer. Dissolve merges features that share an attribute value into one. Field Calculator computes a new column, e.g. density = population / area. Reproject Layer writes a copy of a layer in a new CRS; run it before Buffer whenever the layer is in Web Mercator or latitude/longitude. These are the tools for Lab 11 and the final project. Every one of them is in the Processing Toolbox; teach them the search box at the top of the toolbox rather than memorizing menu paths. -->
 
 ---
 
@@ -431,7 +430,7 @@ When you run an **Intersection** or a **Union**, the attribute tables of both la
   - Keep only the census blocks over 5000 people per mi²
 - **Does the order matter?** Where would you put the slowest step?
 
-<!-- Five minutes in pairs, then take answers. The order does not change the final geometry, because intersection and difference commute here, but it changes the run time a lot: clip to the county first and every later step works on a fraction of the data. That is a real lesson for the final project. -->
+<!-- Five minutes in pairs, then a show of hands on the two questions worth arguing about: which pair of tools does "at least 2 miles from an existing Walmart" (Buffer, then Difference), and whether the order matters. For this chain, any order that runs each step after the layers it needs gives the same polygons, because both buffers are made from the original layers and Clip, Intersection and Difference commute here. What the order changes is run time: clip to the county first and every later step works on a fraction of the data, a real lesson for the final project. One catch inside this chain: compute density on whole census blocks before any clip or intersection, or the clipped areas change the density. Do not let "same answer here" become "order never matters": in general, swapping steps changes the answer (buffering the result of an intersection is not the same as intersecting a buffer), and the concepts exam tests the general rule. Thursday's order quiz comes back to this. -->
 
 ---
 
@@ -525,12 +524,10 @@ When you run an **Intersection** or a **Union**, the attribute tables of both la
 </div>
 </div>
 
-<!-- Confirm the Testing Center closing time and the exact reading chapter before class. Remind students that the exam covers the geoprocessing tools from today, including the QGIS names. -->
+<!-- Confirm the Testing Center closing time and the exact reading chapter before class. Remind students that the exam covers the geoprocessing tools from today. If the room has no signal, put the quiz URL on the board. -->
 
 <!-- Conversion notes (2026-09-02): source deck "Geoprocessing - Walmart Site Selection.pptx" (2021, 30 slides, no speaker notes in the original; all notes here are new). Dropped: source slide 26 "Buffer? What next?" reused the identical Current Walmarts image, so it became a text-only class activity; source slide 28 repeated the same generic workflow diagram already shown on slide 19, so it was replaced with the "what to carry into the final project" summary. Software wording updated to QGIS throughout (Erase renamed Difference, ArcToolbox renamed Processing Toolbox, Select By Attributes renamed Select by Expression, ModelBuilder noted as the QGIS Graphical Modeler). Data sources updated: AGRC renamed UGRC, and the "digitize Walmart locations off Google Maps" step replaced with the Walmart open data portal. ArcGIS screenshots kept and flagged for a QGIS re-shoot: images/ws-udot-routes-table.png (ArcMap attribute table), images/ws-select-i15.png (ArcMap Select By Attributes dialog), images/ws-model-builder.png (ArcGIS ModelBuilder diagram); the small Utah County, buffer, Walmart-points and census-block maps are plain map renders with no visible ArcGIS chrome. TODO for the instructor: confirm the Bolstad & Manson chapter number and the Testing Center closing time on the Before Next Class slide, and confirm the Lab 11 Saturday due date. -->
 
 <!-- Update 2026-10-28: the reclassify, buffer, difference and intersection figures came from Bolstad's GIS Fundamentals and the Esri tool help. All were replaced with original synthetic figures drawn by tools/draw_geoprocessing_figures.py; no real places or data are shown. -->
 
 <!-- Update 2026-09-02: ArcGIS-era screenshots replaced with QGIS 3.44 captures made by tools/qgis_reshoot_screens.py: ws-roads-attribute-table-qgis.png, ws-select-i15-qgis.png, ws-graphical-modeler-qgis.png replace the ArcMap table, dialog, and ModelBuilder diagram. -->
-
-<!-- Five minutes, in pairs, then take a show of hands on the two worth arguing about: which pair of tools implements "at least 2 miles from an existing Walmart," and whether the order of the steps matters. The last question — candidate set, not the site — is the standard the final project maps are graded against, so do not skip it. If the room has no signal, put the URL on the board. -->

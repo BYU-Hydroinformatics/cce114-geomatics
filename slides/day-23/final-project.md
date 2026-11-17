@@ -22,7 +22,7 @@ Dr. James Halgren and Dr. Dan Ames
 <!-- Thursday working session. Today has two halves: this deck, where we walk the site-selection workflow one more time and hand out the final project, and the concepts review deck for Exam 2. Have the final project instructions open on Learning Suite before class so students can follow along. -->
 
 <!-- stamp:begin -->
-<!-- _footer: '<span>CCE 114 · Day 23 — Final Mapping Project<span class="updated">Last Updated: 2026-11-13</span></span><span>© 2026 Daniel P. Ames · <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></span>' -->
+<!-- _footer: '<span>CCE 114 · Day 23 — Final Mapping Project<span class="updated">Last Updated: 2026-11-17</span></span><span>© 2026 Daniel P. Ames · <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></span>' -->
 <!-- stamp:end -->
 
 ---
@@ -114,7 +114,7 @@ By the end of class you should be able to:
 
 ![w:300 center](images/fp-tools-kit.jpg)
 
-- **Difference** (ArcGIS calls it *Erase*) — cut the input features out of the target
+- **Difference** — cut the input features out of the target
 - **Dissolve** — merge like features into one
 - **Reproject Layer** — into a projected CRS before any Buffer
 - **Digitize** — build a new layer by drawing features yourself
@@ -122,7 +122,7 @@ By the end of class you should be able to:
 </div>
 </div>
 
-<!-- These all live in the QGIS Processing Toolbox under Vector overlay and Vector geometry. Erase is the one name that changes: in QGIS it is Difference. One more tool that is not an overlay: the Field Calculator, in the attribute table window, computes a new attribute column, e.g. density = population divided by area. -->
+<!-- These all live in the QGIS Processing Toolbox under Vector overlay and Vector geometry. (For instructors: ArcGIS and some textbooks call Difference Erase. These students have never used ArcGIS, so do not bring it up unless someone asks.) One more tool that is not an overlay: the Field Calculator, in the attribute table window, computes a new attribute column, e.g. density = population divided by area. -->
 
 ---
 
@@ -203,7 +203,7 @@ To find land at least 2 miles from an existing Walmart, inside Utah County, and 
 
 ![h:450 center](images/fp-cookie-erase-lake.jpg)
 
-<!-- Difference (Erase in ArcGIS): remove the water. You cannot build a store in the lake, so the lake polygon is cut out of the candidate area. -->
+<!-- Difference: remove the water. You cannot build a store in the lake, so the lake polygon is cut out of the candidate area. -->
 
 ---
 

@@ -22,7 +22,7 @@ Dr. Dan Ames and Dr. James Halgren
 <!-- Tuesday concept lecture, Week 10. Today is the vocabulary and the logic of geoprocessing: what the common tools do and how you chain them together. Thursday runs the same ideas as a hands-on QGIS session, and Lab 9 (The Yellowstone Disaster) is the graded version. -->
 
 <!-- stamp:begin -->
-<!-- _footer: '<span>CCE 114 · Day 18 — Introduction to Geoprocessing<span class="updated">Last Updated: 2026-10-28</span></span><span>© 2026 Daniel P. Ames · <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></span>' -->
+<!-- _footer: '<span>CCE 114 · Day 18 — Introduction to Geoprocessing<span class="updated">Last Updated: 2026-11-17</span></span><span>© 2026 Daniel P. Ames · <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></span>' -->
 <!-- stamp:end -->
 
 ---
@@ -175,11 +175,9 @@ Cut the catchment out of the counties layer: keep only the parts of the counties
 
 **The question it answers:** *what is in the counties but not in the catchment?*
 
-ArcGIS calls this tool **Erase**; QGIS calls it **Difference**.
-
 ![w:950 center](images/gp-difference-counties.png)
 
-<!-- The counties layer comes out with a hole in it exactly the shape of the catchment. In QGIS this tool is called Difference, not Erase: Processing Toolbox ▸ Vector overlay ▸ Difference. Lab 9 Part 3 uses it to cut the ground crew's 5 km road buffer out of the park polygon, leaving the helicopter search area. -->
+<!-- The counties layer comes out with a hole in it exactly the shape of the catchment. In QGIS: Processing Toolbox ▸ Vector overlay ▸ Difference. Lab 9 Part 3 uses it to cut the ground crew's 5 km road buffer out of the park polygon, leaving the helicopter search area. (For instructors: ArcGIS and some textbooks call Difference Erase. These students have never used ArcGIS, so do not bring it up unless someone asks.) -->
 
 ---
 
@@ -258,30 +256,29 @@ Union the circle with the counties: **nothing** is thrown away, but every polygo
 Open the **Processing Toolbox**
 *(View ▸ Panels ▸ Processing Toolbox)*, then type the tool name in the search box.
 
-The old ArcGIS name is on the left; what QGIS calls it is on the right.
+Each tool, and the Toolbox group it lives in.
 
 </div>
 <div>
 
-| ArcGIS | QGIS |
+| Tool | Toolbox group |
 | --- | --- |
-| ArcToolbox | **Processing Toolbox** |
-| Reclassify | Reclassify by Table *(Raster analysis)* |
-| Buffer, Dissolve | Buffer, Dissolve *(Vector geometry)* |
-| Project | **Reproject Layer** *(Vector general)* |
-| Select Layer By Attribute | Select by Attribute *(Vector selection)* |
-| Select Layer By Location | Select by Location *(Vector selection)* |
-| Table Select | **Extract by Attribute** *(Vector selection)* |
-| Clip | Clip *(Vector overlay)* |
-| Repair Geometry | **Fix Geometries** *(Vector geometry)* |
-| **Erase** | **Difference** *(Vector overlay)* |
-| Intersect | **Intersection** *(Vector overlay)* |
-| Union | Union *(Vector overlay)* |
+| Reclassify by Table | Raster analysis |
+| Buffer, Dissolve | Vector geometry |
+| **Reproject Layer** | Vector general |
+| Select by Attribute | Vector selection |
+| Select by Location | Vector selection |
+| **Extract by Attribute** | Vector selection |
+| Clip | Vector overlay |
+| **Fix Geometries** | Vector geometry |
+| **Difference** | Vector overlay |
+| **Intersection** | Vector overlay |
+| Union | Vector overlay |
 
 </div>
 </div>
 
-<!-- Added for the QGIS version of the course. The rows run in the order Lab 9 uses them, with Intersection and Union last. Gotchas worth saying out loud: Erase is called Difference, Intersect is called Intersection, and Fix Geometries is only in the Toolbox, not on the Vector menu (checked in QGIS 3.44.13). Also mention that "Select by location" only highlights features, while "Extract by location" writes them to a new layer, which is usually what you actually want. -->
+<!-- Added for the QGIS version of the course. The rows run in the order Lab 9 uses them, with Intersection and Union last. Gotchas worth saying out loud: Fix Geometries is only in the Toolbox, not on the Vector menu (checked in QGIS 3.44.13). Also mention that "Select by location" only highlights features, while "Extract by location" writes them to a new layer, which is usually what you actually want. For instructors only: the table used to map ArcGIS names to QGIS ones (ArcToolbox = Processing Toolbox, Project = Reproject Layer, Table Select = Extract by Attribute, Repair Geometry = Fix Geometries, Erase = Difference, Intersect = Intersection). These students have never used ArcGIS, so the slide lists QGIS names only. -->
 
 ---
 
