@@ -161,65 +161,56 @@ To find land at least 2 miles from an existing Walmart, inside Utah County, and 
 
 # Geoprocessing is cookie cutting
 
-<!-- The next seven slides are one long analogy. Run them quickly, one click each. Students remember this. -->
+<!-- The next six slides are one long analogy. Run them quickly, one click each. Students remember this. -->
 
 <!-- Anime-style cartoon generated with gpt-image-2.5-flare, October 2026; prompt in tools/divider-images/week12.json. -->
 
 ---
-
 # Start with "everywhere"
 
-![h:450 center](images/fp-cookie-everywhere.jpg)
+![h:450 center](images/ws-cookie-1-dough.jpg)
 
 <!-- Rolled dough is the whole world. Before any criterion is applied, every location is still a candidate. -->
 
 ---
 
-# Find the State of Utah
+# Cut to the county
 
-![h:450 center](images/fp-cookie-cutter-utah.jpg)
+![h:450 center](images/ws-cookie-2-county-cutter.jpg)
 
-<!-- Line up the cutter: choose the layer that defines your study area. -->
+<!-- The first cutter is the study area: the Utah County boundary. Everything outside it is about to go. In QGIS this is a Clip, or Extract by Location as Lab 11 does it for the census blocks. -->
 
 ---
 
 # One cut, and you have a study area
 
-![h:450 center](images/fp-cookie-utah.jpg)
+![h:450 center](images/ws-cookie-3-county-dough.jpg)
 
-<!-- The cut shape is a new layer. The dough that is left over is discarded. That is a Clip. -->
-
----
-
-# Intersect Utah with Utah County
-
-![h:450 center](images/fp-cookie-intersect-county.jpg)
-
-<!-- Now a second, smaller cutter: intersect the state with the county so only the county remains. Each cut narrows the candidate area. -->
+<!-- The cut shape is a new layer. The dough that is left over is discarded. -->
 
 ---
 
-# Now cut out Utah Lake
+# Keep what is within 2 miles of I-15
 
-![h:450 center](images/fp-cookie-erase-lake.jpg)
+![h:450 center](images/ws-cookie-4-band-cutter.jpg)
 
-<!-- Difference: remove the water. You cannot build a store in the lake, so the lake polygon is cut out of the candidate area. -->
+<!-- The long band is the 2-mile buffer around I-15 and the highways. Press it in and keep what is INSIDE the cutter: that is an Intersection. -->
 
 ---
 
 # Cut out everything too close to an existing Walmart
 
-![h:450 center](images/fp-cookie-erase-buffers.jpg)
+![h:450 center](images/ws-cookie-5-round-cutters.jpg)
 
-<!-- Buffer the existing stores by 2 miles, then Difference those buffers out. What is left is every location that satisfies all the criteria at once. Each hole is one store's exclusion zone. -->
+<!-- Each round cutter is a 2-mile buffer around an existing store. This time we throw away what is INSIDE the cutter: that is a Difference. Intersection keeps the inside, Difference removes it; that is the one idea to land. -->
 
 ---
 
 # A new dataset, ready to share
 
-![h:450 center](images/fp-cookie-result.jpg)
+![h:450 center](images/ws-cookie-6-result.jpg)
 
-<!-- The output is a brand new layer that did not exist before. That layer, symbolised and put on a map with the required elements, is the deliverable. -->
+<!-- What is left passes every criterion at once. It is a brand new layer that did not exist before; symbolized and put on a map with the required elements, it is the deliverable. The census-density cut is one more cutter that the pictures leave out. Same six images as the cookie slide in Tuesday's Day 22 deck (prompts in tools/divider-images/week12-cookies.json); they replaced an older series here on 2026-11-17 that cut the state, then the county, then Utah Lake. -->
 
 ---
 
@@ -233,8 +224,8 @@ To find land at least 2 miles from an existing Walmart, inside Utah County, and 
 | Rolled dough | your input layers |
 | Line up the cutter | **Select by Expression** |
 | Cut the shape | **Clip** |
-| Cut with a second shape | **Intersect** |
-| Punch out a hole | **Difference** |
+| Second cutter, keep inside | **Intersection** |
+| Punch a hole, remove inside | **Difference** |
 | Ring around a feature | **Buffer** |
 | Merge crumbs | **Dissolve** |
 
@@ -250,7 +241,7 @@ Keep them. Those intermediate layers are what you screenshot for the report, and
 </div>
 </div>
 
-<!-- Emphasise "keep them". Students routinely overwrite their intermediates and then have nothing to show for the processing steps, which is a graded part of the report. Tell them to name layers as they go: step1_clip, step2_buffer, step3_difference, and so on. -->
+<!-- Emphasize "keep them". Students routinely overwrite their intermediates and then have nothing to show for the processing steps, which is a graded part of the report. Tell them to name layers as they go: step1_clip, step2_buffer, step3_difference, and so on. -->
 
 ---
 
@@ -263,7 +254,7 @@ What to notice:
 - A **title** that says what the map shows
 - **Legend, scale bar, north arrow, data sources, projection**
 - The **result stated in one line** in the margin
-- Candidate areas symbolised so they read at a glance
+- Candidate areas symbolized so they read at a glance
 - Nothing on the page that is not doing a job
 
 <!-- An example final map made in QGIS 3.44 Print Layout: a small site-selection result (cell towers within 1 km of a major road in Utah County) with title, subtitle, legend, scale bar, north arrow, data sources, projection, a neat line, and the result stated in one sentence. This is the standard. Past student maps often add inset maps zoomed to the best candidate sites, which is a good addition when the candidates are small. -->

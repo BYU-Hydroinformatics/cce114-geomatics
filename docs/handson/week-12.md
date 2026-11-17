@@ -97,7 +97,7 @@ Say the elimination logic out loud: start with everything, remove what fails eac
 
 #### 3. Cookie cutting, in QGIS names
 
-Switch to the second half of the Workflow Walkthrough deck. Each slide is one cut: start with everywhere, cut to the state, intersect with the county, take out the lake, take out everything within 2 miles of a store. Then the slide that names each cut as a QGIS tool. Run the order quiz in the middle of the deck and make them defend an answer before you give it; the speaker note explains why order gives the same polygons in this chain but not in general.
+Switch to the second half of the Workflow Walkthrough deck. Each slide is one cut: start with everywhere, cut to the county, keep what is inside the 2-mile I-15 band (Intersection), punch out the 2-mile store circles (Difference), and what is left is the answer. It is the same photo series students saw on Tuesday's cookie slide, one image at a time. Then the slide that names each cut as a QGIS tool. Run the order quiz in the middle of the deck and make them defend an answer before you give it; the speaker note explains why order gives the same polygons in this chain but not in general.
 
 End with one line about next Tuesday: Lab 12, Choose Your Own Adventure, is the same pattern on a problem and county each student picks, done individually. Do not hand it out today.
 
